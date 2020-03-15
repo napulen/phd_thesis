@@ -1,0 +1,14 @@
+What problems does MIDI pitch-spelling pose for symbolic music analysis? How can we solve them?
+
+Spelling of a note
+    Enharmonics
+    Temperament
+    Optimal spelling
+    Notated spelling
+    Composer style of pitch-spelling?
+MIDI pitch-spelling algorithms
+    History
+    Survey
+    Evaluation
+    Limitations
+    Solutions

@@ -1,0 +1,35 @@
+
+Provide a review of the specificities of sound signals that might affect the ability to estimate musical keys from audio recordings when compared to the estimation of musical keys from symbolic representations. Elaborate and describe a strategy for a systematic investigation of the influence of these specificities on the accuracy of musical key estimation. How could the results of this investigation be useful in a machine learning context?
+
+0. What is specific to sound that does not exist in symbolic representations?
+
+1. The specificities of sound signals are encompassed by what we call audio features or descriptors
+2. Musical keys may be considered a high-level descriptor of audio signals
+3. As other high-level descriptors (e.g., polyphonic fundamental frequency estimation, presence of vibrato, portamento), they are affected by lower level features and audio degradation
+4. With a few exceptions, symbolic features and audio features are very different, even when used to solve the same Music Information Retrieval problem
+5. Ergo, what affects the low level audio descriptors correlated with musical keys will not affect the retrieval of musical keys from symbolic sources and viceversa
+6. In order to find how sensible the features used for audio key estimation are, experiments can be performed with audio degradation tools, looking to see the effect they have in historically relevant descriptors correlated with musical keys
+7. Features are the food for any machine learning model, in order to test the robustness of the model to degraded features, experiments can be run with both, original and degraded signals to extract the relevant features and test the accuracy of a machine learning model
+5. The criteria for determining the accuracy of a Music Information Retrieval system is a specialized research area. General guidelines of evaluation have been discussed by researchers and community efforts have been placed in running evaluation campaigns of Music Information Retrieval systems
+5. Finally, a possible methodology for addressing the robustness of a symbolic and audio musical key estimation system could be:
+
+
+Audio Features (specificities of sound)
+    Low Level Descriptors
+    High Level Descriptors
+    Taxonomies
+        MPEG-7
+        Peeters
+        Mitrovic
+    Known extractors
+        Moffat
+        Bogdanov
+
+Audio features and musical keys
+    Survey of historically-relevant audio features in musical key
+
+Comparison of audio and symbolic features in musical key
+
+Evaluation of audio features
+
+Audio degradation

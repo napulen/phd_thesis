@@ -1,0 +1,36 @@
+﻿Year,Task,Authors
+2000,Audio music classification, Batlle and Cano 
+2001,Audio melody spotting, Durey and Clements 
+2002,Audio music indexing, Jin and Jagadish 
+2003,Audio pitch tracking, Orio and Sette 
+2003,Symbolic roman numeral analysis, Raphael and Stoddard 
+2003,Audio chord labelling, Sheh and Ellis 
+2003,Query by humming, Shifrin and Birmingham 
+2005,Audio chord labelling, Bello and Pickens 
+2005,Query by humming, Jang et al. 
+2005,Audio melody spotting, Pikrakis and Theodoridis 
+2006,Audio instrument recognition, Eichner et al. 
+2006,Audio chord labelling, Lee and Slaney 
+2006,Audio key estimation, Noland and Sandler 
+2006,Audio drum transcription, Paulus 
+2006,Audio key estimation, Peeters 
+2006,Optical music recognition, Pugin 
+2007,Audio chord-and-key detection, Catteau et al. 
+2007,Audio chord-and-key detection, Lee and Slaney 
+2007,Audio chord labelling, Papadopoulos and Peeters 
+2007,Audio drum transcription, Paulus 2007 
+2007,Optical music recognition, Pugin et al. 
+2007,Pitch-spelling, Teodoru and Raphael 
+2009,Audio chord labelling, Khadkevich and Omologo 
+2010,Music structural segmentation, Paulus 
+2010,Audio chord labelling, Ueda et al. 
+2012,Audio chord labelling, Chen et al. 
+2013,Audio music transcription, Benetos and Weyde 
+2014,Piano fingering, Nakamura et al. 
+2015,Audio music transcription, Jancovic et al. 
+2015,Score following, Narakmura et al. 
+2016,Guitar fingering, Hori and Sagayama 
+2017,Audio music transcription, Cazau et al. 
+2017,Symbolic chord labelling, Masada and Bunescu 
+2017,Audio pitch tracking, Nishikimi et al. 
+2017,Confidence measures in music labelling systems, Pauwels et al. 

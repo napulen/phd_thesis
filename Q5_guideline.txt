@@ -1,0 +1,21 @@
+
+// OPTIONAL
+// Musical key
+//   History
+//   Definition
+// The importance of musical key
+//    In music theory
+//        Scale
+//        Diatonic tone / Nondiatonic tone
+//        Functional harmony
+//        Tonic, Subdominant, Dominant
+//    In today's music
+//    In Music Information Retrieval
+
+Musicological questions about key
+    What is the distribution of keys in all music from X composer?
+    Does that distribution deviate from other composers of the same period?
+    How has that changed in today's music?
+    How useful is key as a feature for music classification?
+    Does the density of local keys has changed in romantic music compared to baroque?
+    How can we determine a modulation computationally?

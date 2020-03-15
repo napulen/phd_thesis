@@ -1,0 +1,345 @@
+% !TEX root = ./main.tex
+
+\chapter{A survey of key-finding algorithms}
+\label{chap:chap3}
+
+\begin{quote}
+    Provide a literature review of key-finding algorithms both in the audio and the symbolic domain. Explain the advantages and disadvantages of the reviewed algorithms. What is the state-the-art method? [10-12 pages]
+\end{quote}
+\clearpage
+
+% \section{Audio Key-Finding}
+% \section{Symbolic Key-Finding}
+
+% There have been many algorithms trying to deal with musical key, both in the symbolic and audio domain.
+% The pioneer is most likely the approach by Longuet-Higgins in the 1970s.
+% It took time to apply these algorithms in the audio domain, however, models started appearing around 1996.
+% Since then, there have been numerous approaches and techniques to key detection.
+% A good review of the techniques up until 2010 is presented in the thesis of Spencer Campbell.
+
+In the simplest way, a key-finding algorithm can be defined as an algorithm that given a piece of music---in a symbolic or audio representation---is able to determine the musical key of the piece.
+
+In the following sections, we summarize the different efforts that have been placed for finding the key of a musical excerpt. The approaches are divided by those using symbolic music representations as inputs and those using audio music representations instead.
+
+% As the concept of musical key is by itself an open research question (see Question \ref{chap:chap8} for a further discussion on key and tonality), designing a key-finding algorithm requires to delimit the expectations and metrics used to evaluate its success.
+
+% \section{Finding a musical key}
+
+% As a first point, a key-finding algorithm implies several assumptions about the music that is being analyzed.
+
+% \subsection{Assumptions}
+
+% \begin{enumerate}
+%     \item The music that we are analyzing has a key in the first place.
+%     \item The music is not expected to belong to a different music tradition than the Western music tradition.
+%     \item Within Western music, the music adheres to the major-minor system of tonal music and, therefore, belongs to a period and type of music where this major-minor system applies (e.g., music is not atonal or modal music).
+%     \item The music is assumed to conform to an equal-tempered system, so that pitch-class distributions of different keys are transpositionally equivalent\footnote{This may not be a hard restriction for some systems, but most key-finding algorithms make heavy use of transposition either on the music or the parameters of the algorithm}.
+% \end{enumerate}
+
+% In practice, however, there are many problems that can derivate from this definition.
+
+% \section{Limitations of key-finding}
+
+% By stating that an algorithm is able to retrieve the musical key from a piece of music, we are assuming that there is a musical key in the piece in the first place, but this is not always the case.
+
+% The concept of ``musical key'' resonates strongly in Western music because it has been used for a long period of time and is ubiquituous in a lot of Western music nowadays. Nevertheless, there have been other systems of music in the Western tradition, for example, modal and atonal music.
+
+% The delimitation of when and where tonality started in Western music is not clear, and the types of music to which it applies are not stricly delimited.
+
+% However, when it comes to the design of algorithms for finding the musical key of a piece of music, none of these factors are usually mentioned and remain unaddressed.
+
+% This survey does not account either for such musicological sensibilities of the problem of key-finding, although I consider it necessary to mention their existence and important connotation to the problem.
+
+% We focus on the mathematical problem, which is finding
+
+% The problems and sensibilities in the study of musical keys span multiple fields, such as musicology, music theory, music cognition, acoustics, and computer science. Therefore, they go well beyond the scope of most researchers when designing a key-finding algorithm, mostly, because the problem of finding a musical key (assuming the input presents no complications) is very difficult already.
+
+% Perhaps, in practice, the most important cue that prescribes in which context a given algorithm is expected to work, is the dataset used to train and test the algorithm.
+
+% \section{The ground-truth of key detection}
+
+% Among the datasets that have been compiled over the years to train and test key-finding models, we can find the following:
+
+% \begin{itemize}
+%     \item Albrecht and Shanahan (2008): A dataset consisting of 982 symbolic music files with key annotations for the overall piece. The files were originally found in the KernScores website from Stanford University and curated by the authors \cite{albrecht_use_2013}. An audio-synthesized version of this dataset has also been applied to test a key detection algorithm in the audio domain \cite{napoles_lopez_key-finding_2019}
+%     \item Giantsteps key: A collection of short excerpts (2-minutes long) of Electronic Dance Music (EDM) that have been curated \cite{faraldo_key_2016}. This dataset is divided in two parts, the \emph{MTG Giantsteps Key Dataset}, which consists of 1486 excerpts, and the Giantsteps Key Dataset, which consists of 604 files. 
+%     \item McGill Billboard
+%     \item QMUL Beatles
+%     \item QMUL Queen
+%     \item Robbie Williams
+%     \item MIREX 2005
+% \end{itemize}
+
+
+% \subsection{McGill Billboard}
+% \subsection{QMUL Beatles}
+% \subsection{QMUL Queen}
+% \subsection{Robbie Williams}
+% \subsection{MIREX 2005}
+
+
+% \section{Evaluation of a key-finding algorithm}
+
+% Additionally to the assumptions listed at the previous section, when decided to evaluate a key-finding algorithm, one more assumption needs to be made: the key of the piece is not ambiguous (i.e., if analyzed by several expert analysts, they would all agree on what is the key of the piece).
+
+% Considering all the assumptions are met, there are two ways of evaluating a key-finding algorithm: absolute and weighted. In an absolute classification approach, the algorithm is scored correctly only when the predicted key is the key of the piece. In a weighted evaluation, the algorithm is scored according to how \emph{close} is the predicted key to the key of the piece, achieving the maximum score when the predicted key is the key of the piece.
+
+% The absolute evaluation is the standard in many machine learning tasks and has been used in the evaluations reported by several key-finding algorithms. \todo{which ones?}
+
+% Regarding weighted evaluations, probably the most popular one is the one by the Music Information Retrieval Evaluation eXchange (MIREX) key detection task, which started in 2005 and it is still in use.
+
+% \subsection{MIREX}
+
+% The Music Information Retrieval Evaluation eXchange (MIREX) started in 2005 and since then, has evaluated many algorithms of different MIR problems.
+
+% In the campaign of 2005, the task for audio key detection introduced the following weighted evaluation metric:
+
+% \begin{center}
+%     \begin{tabular}{ c|c }
+%     Relation to the key of the piece & Score \\
+%     \hline
+%     Same & 1.0 \\
+%     Dominant / Subdominant & 0.5 \\
+%     Relative & 0.3 \\
+%     Parallel & 0.2 \\
+%     Other & 0.0 \\
+%     \end{tabular}
+%     \label{tab:mirexscore}
+% \end{center}
+
+% As shown in Table \ref{tab:mirexscore}, the weighted evaluation metric implicitly imposes a notion of \emph{key distance}, which assumes that a key is closer to a specific group of keys than it is to the rest of musical keys. Although most music researchers would agree that this is true, assigning a specific quantitative value to such relationships is somewhat controversial and prone to disagreement.
+
+% Nevertheless, an absolute evaluation does not consider this asymmetrical relationship between keys at all, it seems reasonable that a key-finding algorithm predicting a dominant or subdominant of the key of the piece should have a partial score in the evaluation.
+
+% \section{Differences of audio and symbolic music analysis}
+
+% \todo[inline]{This section}
+
+\section{Symbolic Key Finding}
+
+\subsection{Longuet-Higgins (1971)}
+
+Arguably the first key-finding algorithm ever designed, the one by Longuet-Higgins computed the key of a piece through an elimination process \cite{longuet-higgins_interpreting_1971}. The notes of the piece were read from left to right, one by one, and all the keys in which the notes were not contained as diatonic steps of the scale were eliminated, until a single key was remaining. As this was almost certainly not leading to a satisfactory solution in many scenarios, the system contained several rules for deciding the key in difficult cases. The algorithm was able to explain all the keys in the \emph{Well-Tempered Clavier}, however, it was relatively easy to find adversarial examples where it did not work \cite{temperley_pitch-class_2008}.
+
+\subsection{Krumhansl and Schmuckler (1990)}
+
+% The algorithm is based on a set of “key-profiles,” first proposed by Krumhansl and Kessler (1982), representing the stability or compatibility of each pitch-class relative to each key. The key-profiles are based on experiments in which participants were played a key-establishing musical context such as a cadence or scale, followed by a probe-tone, and were asked to judge how well the probe-tone “fit” given the context (on a scale of 1 to 7, with higher ratings representing better fitness). Krumhansl and Kessler averaged the rating across different contexts and keys to create a single major key-profile and minor key-profile, shown in Figure 2 (we will refer to these as the K-K profiles). The K-K key-profiles reflect some well accepted principles of Western tonality, such as the structural primacy of the tonic triad and of diatonic pitches over their chromatic embellishments. In both the major and minor profiles, the tonic pitch is rated most highly, followed by other notes of the tonic triad, followed by other notes of the scale (assuming the natural minor scale in minor), followed by chromatic notes. Given these key-profiles, the K-S algorithm judges the key of a piece by generating an “input vector”; this is, again, a twelve-valued vector, showing the total duration of each pitch-class in the piece. The correlation is then calculated between each key-profile vector and the input vector; the key whose profile yields the highest correlation value is the preferred key. The use of correlation means that a key will score higher if the peaks of its key-profile (such as the tonic-triad notes) have high values in the input vector. In other words, the listener’s sense of the fit between a pitch-class and a key (as reflected in the key-profiles) is assumed to be highly correlated with the frequency and duration of that pitch-class in pieces in that key. The K-S model has had great influence in the field of key-finding research. One question left open by the model is how to handle modulation: the model can output a key judgment for any segment of music it is given, but how is it to detect changes in key? Krumhansl herself (1990) proposed a simple variant of the model for this purpose, which outputs key judgments for each measure of a piece, based on the algorithm’s judgment for that measure (using the basic K-S algorithm) combined with lower-weighted judgments for the previous and following measures. Other ways of incorporating modulation into the K-S model have also been proposed (Huron & Parncutt, 1993; Schmuckler \& Tomovski, 2005; Shmulevich \& Yli-Harja, 2000; Temperley, 2001; Toiviainen \& Krumhansl, 2003). Other authors have presented models that differ from the K-S model in certain respects, but are still essentially distributional, in that they are affected only by the distribution of pitch-classes and not by the arrangement of notes in time.
+
+Another algorithm, known as the Krumhansl-Schmuckler algorithm, was introduced in 1990 \cite{krumhansl_cognitive_1990}. Although introduced in 1990 as an automatic key finder, the main components of the algorithm, the key profiles, were introduced in 1982 \cite{krumhansl_tracing_1982}. This algorithm and its method based on key profiles influenced many other algorithms in the symbolic and audio domains. Furthermore, it motivated the generation of other key profiles using alternative methodologies to the ones used by Krumhansl and Kessler (i.e., the \emph{probe-tone} technique). The computation of the key consisted of measuring the correlation between the pitch-class distribution of the key profile and the histogram of pitches in the musical score. During a series of experiments, Sapp \cite{sapp_computational_2011} found that when mistaken, this algorithm tends to skew toward the dominant.
+
+\subsection{Vos and van Geenen (1996)}
+
+% Each pitch in a melody contributes points to each key whose scale contains the pitch or whose I, IV, or V7 chords contain it, and the highest scoring key is the one chosen.
+
+In 1996, a model for single-voiced pieces of music was proposed by Vos and van Geenen \cite{vos_parallel-processing_1996}. Similarly to the Longuet-Higgins model, it was tested in excerpts of the \emph{Well-Tempered Clavier}, particularly, the themes of the fugues. Although the model seemed to improve the results of the Longuet-Higgins model, the model did not become as influential as the Krumhansl-Schmuckler in future research directions.
+
+
+\subsection{Temperley (1999)}
+
+Responding to some concerns with the Krumhansl-Schmuckler algorithm, Temperley proposed two modifications to the original algorithm \cite{temperley_whats_1999}. The first modification consisted in replacing the correlation operation with a dot product. The second modification is a change in the probability distributions of the original Krumhansl-Kessler key profiles. The new distribution was fine-tuned by Temperley heuristically and through a trial-and-error process. This algorithm provided better results than the original algorithm and it was further extended into a probabilistic framework using Bayes' rule in 2002 \cite{temperley_bayesian_2002}.
+
+\subsection{Chew (2002)}
+
+% pitches are located in a three-dimensional space; every key is given a characteristic point in this space, and the key of a passage of music can then be identified by finding the average position of all events in the space and choosing the key whose “key point” is closest.
+
+% proposes the Center of Effect Generator (CEG) key-finding method. In the CEG algorithm, a passage of music is mapped to a point within the three-dimensional space, known as the Center of Effect, by summing all of the pitches and determining a composite of their individual positions in the model. The algorithm then performs a nearest-neighbor search in order to locate the position of the key that is closest to the Center of Effect. The “closest key” can be interpreted as the global key for the piece, although the proximity can be measured to several keys, which allows for tonal ambiguities
+
+Through the \emph{Spiral Array}, Chew \cite{chew_spiral_2002} facilitated the modelling of tonality as a spatial representation. In this representation, a sequence of notes could be localized in a point of the tonal space, known as the \emph{Center of Effect}, and related to a key through a nearest-neighbours search. Although the geometric approach for localizing a point in space influenced further research on key-finding algorithms, the model did not perform better than the approaches based on distributions and key profiles.
+
+\subsection{Aarden (2003)}
+
+In 2003, Aarden proposed an alternative, data-driven, methodology for obtaining a distribution of scale degrees \cite{aarden_dynamic_2003}, which could take the place of the key profiles by Krumhansl and Kessler \cite{krumhansl_tracing_1982} in a key-finding algorithm. For this purpose, 1000 songs from the Essen Folksong Collection and 250 music excerpts from the MuseData database were used for comparing the approaches. The distribution of scale degrees outperformed the key profiles from Krumhansl and Kessler \cite{krumhansl_tracing_1982}. 
+
+% These results were confirmed by other researchers \cite{albrecht_use_2013}. In future experiments, Sapp \cite{sapp_computational_2011} showed that, when unable to predict the correct key, the Aarden-Essen distribution tends to favor the subdominant instead of the tonic.
+
+% \subsection{Yoshino and Abe (2005)}
+
+% similar to Vos and Van Geenen’s, in that pitches contribute points to keys depending on their function within the key; temporal ordering is not considered, except to distinguish “ornamental” chromatic tones from other chromatic tones
+
+\subsection{Bellmann (2005)}
+
+A similar effort for scale-degree probability distributions was proposed by Bellmann, who used the chord frequencies collected by Budge during her dissertation \cite{budge_study_1943} to create a new scale degree probability distribution \cite{bellmann_about_2006}. This probability distribution is used to obtain the most likely key of a fragment of a score (typically, a measure long) by computing the dot product between the notes found in the excerpt and the scale degree distribution. The results of this algorithm were also favorable, showing that chord frequencies can be helpful in estimating the musical key.
+
+% \subsection{Temperley (2007)}
+% Distributional keyfinding model based on probabilistic reasoning. This probabilistic model assumes a generative model in which melodies are generated from keys. A key-profile in this case represents a probability function, indicating the probability of each scale-degree given a key.
+
+
+% \subsection{Madsen and Widmer (2007)}
+% argue that in addition to the pitch-class distribution, the order of notes appearing in a piece of music may also help determine the key. They propose a key-finding system that incorporates this temporal information by also analyzing the distribution of intervals within a piece of music. Interval Profiles are 12x12 matrices representing the transition probability between any two scale degrees. The profiles are then learned from key annotated data for all 24 keys. Using a corpus of 8325 Finnish folk songs in MIDI format, the system was trained using 5550 songs and evaluated with the remainder. A comparison was also performed between the use of Interval Profiles and several types of pitch class profiles. The maximum key recognition rate using the Interval Profiles was 80.2\%, whereas the maximum recognition rate using pitch class profiles was 71\%.
+
+% \subsection{Gatzsche et al. (2007)}
+
+% \subsection{Quinn (2010)}
+
+\subsection{Sapp (2011)}
+In order to explore the capabilities of different key profiles at different window lengths, Sapp performed a series of experiments running every possible window in a piece with different key profiles \cite{sapp_computational_2011}. The results of such computations were visualized and rendered into what Sapp referred as \emph{keyscapes}. The algorithm used for computing the keys was the original Krumhansl-Schmuckler correlation algorithm, alternating the different key profiles. Additionally, Sapp introduced a new key profile named \emph{simple weights}. 
+
+\subsection{Albrecht and Shanahan (2013)}
+In 2013, Albrecht and Shanahan introduced a new key-finding algorithm that improves the accuracy for pieces in the minor mode \cite{albrecht_use_2013}. This algorithm utilizes Euclidean distance to measure the similarity between the notes in the piece and a new key profile. The key profile was obtained by analyzing the first and last measures of a training dataset, which consisted of 982 pieces of music from the baroque to the romantic period. The model outperformed every other symbolic key finding algorithm when used in this dataset.
+
+% \subsection{Lam and Lee (2014)}
+
+% \subsection{White (2015)}
+
+% \subsection{White (2018)}
+
+\subsection{N\'apoles L\'opez et al. (2019)}
+In 2019, a new key-finding algorithm was introduced that works in the symbolic and audio domains \cite{napoles_lopez_key-finding_2019}. This algorithm is also able to extract local and global keys and it is based on a Hidden Markov Model (HMM). The algorithm provides state-of-the-art performance in the symbolic domain, however, it underperforms the predictions for pieces in a minor mode, unlike the Albrecht and Shanahan algorithm, which performs well in the minor mode.
+
+\section{Audio Key-Finding}
+
+\subsection{Leman (1992)}
+% derives key directly from an acoustic signal, rather than from a representation where notes have already been identified. The model is essentially a key-profile model, but in this case the input vector represents the strength of each pitch-class (and its harmonics) in the auditory signal; key-profiles are generated in a similar fashion, based on the frequency content of the primary chords of each key. 
+
+% the system is based heavily on a model of the human auditory system and consists of two stages. The first step is to extract local tone centers in a bottom-up manner for the piece of music. The second stage of the system uses a pattern-matching algorithm to compare the extracted tone center data with predetermined templates derived from self-organizing maps
+
+Arguably the first audio key-finding algorithm. It consists of two stages. In the first stage, the algorithm extracts the strength of each pitch-class, including its harmonics, from the audio signal. Then, in the second stage, the algorithm tries to match the pitch-class information of the first stage with a set of templates, analogous to a key profile, which were obtained through Self-Organizing Maps (SOM) networks. 
+
+\subsection{Izmirli and Bilgen (1994)}
+% proposed a system for audio key finding that implements partial score transcription in combination with a pattern-matching algorithm. In the first stage of the system, the fast Fourier transform (FFT) function is used in order to convert a single-part, melodic audio input into a sequence of note intervals with associated onset times. A second stage then employs a finite-state automata algorithm to compare the note sequences with predetermined scale patterns. The model then outputs a tonal context vector, where each element is known as a tonal component. Each tonal component represents the extent of any given scale usage within the melody for the corresponding location in time.
+
+Izmirli and Bilgen propose a model that consists of two stages \cite{izmirli_recognition_1994}. The first stage converts monophonic audio signals into a sequence of note intervals and their occurrence times, similar to a pianoroll representation. The second stage uses a series of finite state automatas to match patterns of scales. In total, they used three pattern-matching automatas: major scale, natural minor scale, and harmonic minor scale.
+
+\subsection{Purwins et al. (2000)}
+% the system employs the CQtransform to extract a pitch-class distribution from the audio signal. A fuzzy distance algorithm is then used to compare the pitch-class distribution with the cognitive-based templates. The system is able to track the key over time and thus is capable of identifying modulations in the music. An evaluation was performed using Chopin’s C minor prelude, Op. 28, No. 20 and was fairly successful at tracking the key, although no quantitative results were explicitly reported.
+
+Purwins et al. propose a model that is based on the constant-Q transform, extracting pitch-class distributions from the audio signal based on a few basic music-theoretical assumptions, for example, the octave equivalence and the division of the octave in the chromatic scale \cite{purwins_new_2000}. Using these distributions, the system tracks the key over time by comparing the distributions of the signals with the Krumhansl and Kessler key profiles. The model is not quantitatively evaluated but an example of the keys tracked in Chopin's Prelude Op. 28 No. 20 is provided, showing similar key segmentations as the ones provided by an expert annotator.
+
+
+\subsection{Gomez and Herrera (2004)}
+% noted that the majority of audio key detection models developed up until 2004 were based on perceptual studies of tonality, which they called cognition-inspired models. They performed an experiment in which they directly compared an implementation of a cognition-inspired model with several machine-learning algorithms for audio key determination. The cognition-inspired model was based on the K-S algorithm but extended to handle polyphonic audio input. Numerous machine learning techniques were implemented, including binary trees, Bayesian estimation, neural networks, and support vector machines. The various algorithms were evaluated on three criteria: estimating the “key note” (i.e., tonic), the mode, and the “tonality” (i.e., tonic and mode). A corpus of 878 excerpts of classical music from various composers was used for training and testing. The excerpts were split into two sets: 661 excerpts for training and 217 excerpts for evaluation. The results, summarized in Figure 2.9, show that for the case of estimating the “tonality,” the best machine learning algorithm (a multilayer perceptron, neural network) outperforms the cognition-inspired model, but a combination of the two approaches produces the best results.
+
+Gomez and Herrera proposed a comparison of what they denominated cognition-inspired models against models derived from machine learning techniques \cite{gomez_estimating_2004}. The cognition-inspired model is a modification of the Krumhansl-Schmuckler algorithm that works with Harmonic Pitch Class Profile features (HPCP) as input instead of note histograms. The machine learning models tested included binary trees, bayesian estimation, neural networks, support vector machines, boosting, and bagging. In an experiment with 661 audio files used for training and 217 used for testing, the best machine learning model had a slightly better performance than the cognitive-based model, however, the best overall performance resulted from the combination of both models.
+
+% \subsection{Pauws (2004)}
+% The system incorporates signal processing techniques designed to improve the salience of the extracted pitch-class distribution. The pitch-class distribution is then used as input to the maximum-key profile algorithm in order to identify the key. The model was tested on a corpus of 237 classical piano sonatas, with a maximum key identification rate of 66.2\%. 
+
+% \subsection{Shenoy et al. (2004)}
+% present a novel, rule-based approach for estimating the key of an audio signal. The system utilizes a combination of pitch-class distribution information, rhythmic information, and chord progression patterns in order to estimate the key. The audio signal is first segmented into quarter note frames using onset detection and dynamic programming techniques. Once segmented, an algorithm is employed to extract the pitchclass distribution for each frame. Using this information, the system is then able to make inferences about the presence of chords over the duration of the audio signal. Finally, the chord progression patterns are used to make an estimate for the key of the piece. The system was evaluated with 20 popular English songs and had a key recognition rate of 90\%.
+
+% \subsection{Martens et al. (2004)}
+% implemented a model using a classification-tree for key recognition. The classification tree was trained using 264 pitch-class templates that were constructed from Shepard sequences and chord sequences of various synthesized instruments. They conducted an experiment that compared the performance of the tree-based system with a classical distance-based model using two pieces: “Eternally” by Quadran and “Inventions No. 1 in C major” by J. S. Bach. The results led them to favor the classification-tree system due to its ability to stabilize key estimations over longer time periods. They also noted the advantage of being able to tune the system for specific types of music by using a corresponding category of music to train the model
+
+\subsection{Burgoyne and Saul (2005)}
+Burgoyne and Saul provide a model for harmonic analysis in the audio domain, using a corpus of Mozart symphonies (15 movements) for training \cite{burgoyne_learning_2005}. The input to their model is a chromagram vector (denoted as pitch-class profile by the authors). They use an HMM to train Dirichlet distributions for major and minor keys on the chromagram vectors. Their system attempts to find chords and keys simultaneously. The model was only tested on a single piece, the second movement of Mozart's KV550.
+
+\subsection{Chai and Vercoe (2005)}
+Chai and Vercoe propose an HMM to detect keys in audio files \cite{chai_detection_2005}. Their approach takes as input a chromagram vector of 24 bins and first extracts the best match of a major-and-relative-minor pair of keys (similar to an algorithm that extracts the key signature). A second step uses heuristics to determine the mode. In order to evaluate their algorithm, they used 10 pieces of piano music from the classical and romantic period, which were manually annotated by the authors.
+
+\subsection{Chuan and Chew (2005)}
+% they formulate hypotheses for sources of errors during the pitch class generation stage and propose a modified algorithm that uses fuzzy analysis in order to eliminate some of the errors. The fuzzy analysis method consists of three main components: clarifying low frequencies, adaptive level weighting, and flattening high and low values. They performed a direct comparison of the fuzzy analysis key-finding system with two other models: a peak detection model and a MIDI key-finding model. The evaluation utilized excerpts from a corpus of 410 classical music MIDI files, where only the first 15 seconds of the first movement was considered. The fuzzy analysis and peak detection algorithms operated on audio files that were synthesized using Winamp, and the MIDI key-finding model operated directly on the MIDI files. The maximum key identification rates for the peak detection, fuzzy analysis, and MIDI key-finding models were 70.17\%, 75.25\%, and 80.34\%, respectively. 
+
+% we evaluate the technique by comparing the results of symbolic (MIDI) key finding, audio key finding with peak detection, and audio key finding with fuzzy analysis. We showed that the fuzzy analysis technique was superior to a simple peak detection policy, increasing the percentage of correct key identifications by 12.18\% on average.
+
+Chuan and Chew propose a real-time algorithm based on the extraction of pitches and pitch-strengths through the Fast Fourier Transform (FFT) \cite{chuan_polyphonic_2005}. The key detection model is based on the \emph{Center of Effect Generator} algorithm from Chew \cite{chew_spiral_2002} and determines the key based on the pitch-strength information. In their evaluation, the model achieved a recognition rate of 96\% within the first fifteen seconds of their test set, which consisted of 61 audio files with different performances of 21 Mozart Symphonies. Their system outperformed the Krumhansl-Schmuckler algorithm and the modified version of Temperley when evaluated within the first seconds of the recordings. A further improvement was proposed in \cite{chuan_fuzzy_2005}, which incorporated fuzzy analysis to improve the pitch-class distributions computed from the audio. During the MIREX evaluation, however, the model from Chuan and Chew underperformed other state-of-the-art models.
+
+% \subsection{Zhu et al. (2005)}
+% utilizes the CQ-transform and detects the key in two distinct steps: diatonic scale root estimation and mode determination. The system is evaluated on a corpus of 60 pop songs and 12 classical music recordings, using only the first 2 minutes of each piece. The correct scale root was detected for 91\% of the pop songs but only 50\% of the classical music pieces. The rate of successful mode determination for the pop songs was 90\% and 83.3\% for the classical pieces
+
+\subsection{Harte et al. (2006)}
+% they then propose an audio key-finding model that is based on projecting collections of pitches onto the interior space contained by the hypertorus. This is essentially mapping to three distinct feature spaces: the circle of fifths, the circle of major thirds, and the circle of minor thirds. This 6-dimensional space is called the tonal centroid. The algorithm first applies the CQ-transform in order to extract the pitch-class distribution. The 12-D pitch-class distribution is then mapped to the 6-D tonal centroid with a mapping matrix. The algorithm was applied in a chord recognition system, however, the authors point out that it could be adapted for other classification tasks such as key detection. Fig. 2.12: If enharmonic and octave equivalence are considered, then the Spiral Array model can be represented as a hypertorus (from Harte et al. 2006).
+
+Harte et al. \cite{harte_detecting_2006} propose a new model that applies a similar principle to the spatial representation of Chew \cite{chew_towards_2000}. The model from Harte et al. has a 6-dimensional interior space contained by the surface of a hypertorus. The 6 dimensions of their model correspond to 2-axes for localizing a point in the circle of fifths, 2-axes for localizing a point in the circle of major thirds, and 2-axes for localizing a point in the circle of minor thirds. Using this spatial representation, a similar methodology to Chew's \emph{Center of Effect} can be used for computing the key. The authors present an evaluation of the model in the detection of chord changes within 16 songs of \emph{The Beatles}.
+
+% \subsection{Izmirli and Bilgen (2006)}
+
+% \subsection{Mardirossian and Chew (2006)}
+
+\subsection{Noland and Sandler (2006)}
+Noland and Sandler (2006) proposed a model based on an HMM. The model is comprised of 24 hidden states, which represent each of the major and minor keys. As observations, the HMM considers a chord transition (a pair of consecutive chords). The emission probabilities of the model are initialized by assuming a strong correlation between key and the key implied in a given chord transition. The transition probabilities of the model were obtained using a table of correlations between the transposed Krumhansl and Kessler key profiles. The model was evaluated in a dataset of 110 songs of the Beatles, for which the chord transitions were already annotated. The algorithm was able to predict the key of the songs in 91\% of the cases. A further change on the observations of the HMM was necessary to work directly on audio inputs.
+
+\subsection{Peeters (2006)}
+% implements one HMM for each of the 24 possible keys. A front-end algorithm is used to extract a sequence of time-based chroma-vectors (i.e., pitch-class distributions) for each of the songs in a training set of key annotated music. All of the chroma-vectors for songs in the major mode are then mapped to C major and all of the chroma-vectors for songs in the minor mode are mapped to C minor. 
+
+Peeters proposes a model that extracts the information about the periodicity of pitches from the audio signals, maps that information into the chroma domain, and decides the global key of the music piece from a succession of chroma-vectors over time \cite{peeters_chroma-based_2006}. For the initial analysis, Peeters proposes a Harmonic Peak Substraction algorithm, which reduces the influence of the higher harmonics of each pitch. The pre-processed signal is mapped into the chroma domain and used as the observation for an HMM model that predicts the global key. The HMM classification consists of one HMM for each of the 24 possible keys, which were trained using the Baum-Welch algorithm. The model was tested in 302 audio files containing classical piano, chamber, and orchestral music, obtaining a 89.1\% accuracy using the MIREX evaluation score.
+
+% \subsection{van der Par et al. (2006)}
+% present an extension to the work of Pauws (2004) in which they utilize three different temporal weighting functions in the calculation of the pitchclass templates. This results in three different templates for each key. Similarly, during the actual key detection, three different pitch-class profiles are extracted, one for each temporal weighting function. Each of the three pitch-class profiles is then correlated with the corresponding templates and a final correlation value is calculated from the combined values. The system was evaluated using the same corpus of 237 classical piano sonatas as Pauws (2004) and received a maximum key recognition rate of 98.1%.
+
+
+\subsection{Catteau et al. (2007)}
+Catteau et al. devised a model that simultaneously tries to predict chords and keys in audio signals \cite{catteau_probabilistic_2007}. Their model is an extension over a previous model \cite{bello_robust_2005} and it is based on music theory, which requires no training. The music theory components of the model were borrowed from Lerdahl's Tonal Pitch Space \cite{lerdahl_tonal_2005}. They tested their model with synthesized audio, recorded audio, and presented their model for evaluation in the Key and Chord detection tasks from MIREX. For testing the local keys, they used short sequences of chords, similar as those from the Krumhansl and Kessler \cite{krumhansl_tracing_1982}. Their performance on synthesized audio was good, but the performance on recorded audio decreased significantly.
+
+\subsection{Izmirli (2007)}
+% a model for localized key finding from audio is proposed. Besides being able to estimate the key in which a piece starts, the model can also identify points of modulation and label multiple sections with their key names throughout a single piece.
+
+Izmirli proposes a model to find local keys in audio signals \cite{izmirli_localized_2007}. As a pre-processing step, the model adapts the tuning of the signal before computing the spectral analysis and the chroma features. In a later stage, Non-negative matrix factorization is used to segment contiguous chroma vectors, identifying potential local keys. The model identifies segments that are candidates for unique local keys in relation to the neighboring key centers. The model was evaluated in three datasets: 17 pop songs with at least one modulation, excerpts from the beginning of 152 classical music pieces from the Naxos website, and the examples from the Kostka and Payne harmony textbook. In the paper, the results for three different evaluation methods are provided for each of the datasets.
+
+\subsection{Lee and Slaney (2007)}
+Lee and Slaney present a model for chord and key extraction from audio sources \cite{lee_unified_2007}. The model was trained by creating a separate HMM for each of the 24 keys. In order to obtain the training data, they annotated a harmonic analysis of several MIDI files. These harmonic analyses were performed using the rule-based system from Temperley and Sleator, the Melisma Music Analyzer \cite{temperley_cognition_2004}. The corpus for performing the harmonic analysis was obtained from mididb.com, and consisted 1046 MIDI files of rock music. The annotated files were synthesized with a sample-based synthesizer (Timidity++, using the FluidR3 soundfont) and perfectly aligned to the annotations. Their chord detection model is able to distinguish only major and minor triads.
+
+% \subsection{Cheng et al. (2008)}
+
+% \subsection{Lee and Slaney (2008)}
+
+% \subsection{Arndt et al. (2008)}
+% making use of a model based on circular pitch spaces (CPS). They introduce the music theory-based concept of a CPS and go on to present a geometric tonality model that describes the relationship between keys. Furthermore, they implement an audio key-finding system that makes use of the model. The CQ-transform is employed in order to extract a pitch-class distribution, which is in turn input to the CPS model. The model then maps the vector to 7 different circular pitch spaces, which essentially gives 7 different predictions for the key. 
+
+% \subsection{Hu and Saul (2009)}
+
+\subsection{Papadopoulos and Peeters (2009)}
+% approach the local audio key estimation problem by considering combinations and extensions of previous methods for global audio key finding. The system consists of three stages: feature extraction, harmonic and metric structure estimation, and local key estimation. The feature extraction algorithm extracts a chromagram from the audio signal, consisting of a sequence of time-based pitch-class distributions (Papadopoulos and Peeters 2008). Metric structure estimation is then achieved by simultaneously detecting chord progressions and downbeats using a previously proposed method (Papadopoulos and Peeters 2008). The final stage of the system performs local key estimation using an HMM with observation probabilities that are derived from pitch-class templates. They create five different versions of the system using different types of pitch-class templates: Krumhansl (1990), Temperley (2001), diatonic, Temperley-diatonic (Peeters 2006b), and an original template where all pitchclasses have an equal value except for the tonic, which has triple the value. The system is then evaluated using five movements of Mozart piano sonatas, with manually annotated ground truth data corresponding to chords and local key. A maximum local key recognition rate of 80.22\% was achieved by using the newly proposed pitch-class template.
+
+A different local key estimation algorithm was proposed by Papadopoulos and Peeters \cite{papadopoulos_local_2009}. The method extends on previous work \cite{papadopoulos_simultaneous_2008} for adding a stage of local key estimation using an HMM. The observations of the model are derived from different key profiles: Krumhansl and Kessler \cite{krumhansl_tracing_1982}, Temperley \cite{temperley_whats_1999}, and a flat diatonic key profile (a uniform distribution for diatonic pitch-classes and \emph{zero} elsewhere). The system was evaluated in five piano sonatas by Mozart, where the local keys and chords were manually annotated. The maximum accuracy achieved was 80.22\%
+
+\subsection{Campbell (2010)}
+In 2010, Campbell proposed a new algorithm based on four stages: frequency analysis, pitch-class extraction, pitch-class aggregation, and key classification \cite{campbell_automatic_2010}. A thorough experiment was performed with different solutions for each of the stages. The best performing model was evaluated in a dataset of classical music, another one of popular music, and an audio-synthesized dataset of MIDI files of classical music. The best performing model consisted of features extracted with the \emph{jAudio} feature extractor and a k-nearest neighbours classifier.
+
+\subsection{Mauch and Dixon (2010)}
+Mauch and Dixon propose a model that can simultaneously compute the chords, bass notes, metric position of the chords, and the key \cite{mauch_simultaneous_2010}. Although it is claimed that the model detects the key of the audio input, it really computes the key signature, classifying a major key and its relative minor with the same class. Due to this restriction, the model was not explicitly evaluated on musical key. Nevertheless, using the key classifications of the model as features, it showed to improve the results of their main task, chord recognition.
+
+% \subsection{Rocher et al. (2010)}
+
+% \subsection{Papadopoulos and Tzanetakis (2012)}
+
+% \subsection{Dieleman and Schrauwen (2014)}
+
+% \subsection{McVicar et al. (2014)}
+
+% \subsection{Pauwels and Martens (2014)}
+
+% \subsection{Faraldo et al. (2016)}
+
+% \subsection{Bernardes et al. (2017)}
+
+% \subsection{Faraldo et al. (2017)}
+
+% \subsection{Dawson and Zielinski (2018)}
+
+% \subsection{Korzeniowski (2018)}
+
+\subsection{Korzeniowski and Widmer (2018)}
+% we show the network only short snippets instead of the whole piece at training time. [...] From our datasets, we found 20 seconds to be sufficient (with the exception of classical music, which we need to treat differently, due to the possibility of extended periods of modulation). Each time the network is presented a song, we cut a random 20 s snippet from the spectrogram. The network thus sees a different variation of each song every epoch.
+
+% we expect this modification to have the following effects. (i) Back-propagation will be faster and require less memory, because the network sees shorter snippets; we can thus train faster, and process larger models. (ii) The network will be less prone to over-fitting, since it almost never sees the same training input; we expect the model to generalise better. (iii) The network will be forced to find evidence for a key in each excerpt of the training pieces, instead of relying on parts where the key is more obvious; by asking more of the model, we expect it to pick up more subtle relationships between the audio and its key.
+
+Korzeniowski and Widmer propose a key-finding model that generalizes across different music genres \cite{korzeniowski_genre-agnostic_2018}. The model is based on a Convolutional Neural Network (CNN) that receives a log-magnitude log-frequency spectrogram as its input. Initially, the training procedure of the model is to receive the full spectrogram, however, the computation is very expensive. Korzeniowski and Widmer propose showing the network only \emph{snippets} (20 seconds) of the spectrogram. This improvement speeds the training time but carries the problem of assuming that any arbitrary snippet of the audio inputs imply the ground truth key, disallowing the model to work with any data that has local keys or modulations. The model was trained on three datasets: the GiantSteps MTG Key dataset, the McGill Billboard dataset, and an internal dataset with classical music. The model was submitted to the MIREX campaign of 2018 and it was very successful at generalizing the key of different genres, outperforming the state-of-the-art in global key detection.
+
+% \subsection{Schreiber and Mueller (2019)}
+
+\subsection{N\'apoles L\'opez et al. (2019)}
+A new model was proposed in 2019 by N\'apoles L\'opez et al. \cite{napoles_lopez_key-finding_2019}. This model performs local and global key detection and it is able to work in the symbolic and audio domains. The model was originally designed for symbolic inputs, however, it is able to work in the audio domain by making use of chroma features \cite{mauch_approximate_2010} and discretizing certain energy values above a threshold as pitch-class events.
+
+\section{Conclusion}
+After the pioneering models, many different alternatives have been proposed for finding the musical key of symbolic and audio inputs. The models consider different methodologies, initially inspired by music perception and cognition and slowly transitioning into data-driven and machine learning approaches. As may be observed from the evaluation sections of the literature, it is difficult to know which models are better than the rest, mostly due to little agreement (except for the MIREX campaigns) in the methods used for comparing the capabilities of one model or another, or in the use of a similar test dataset. Furthermore, some of the models output different results, ranging from key signatures, local keys, global keys, and chords, which complicates the task of comparing key-finding models even more. Nevertheless, as a general trend, it can be seen that the research by Krumhansl and Kessler that introduced the key profiles, together with the use of chroma features, have been very useful in the design of newer, more robust key-finding models throughout the years. 
+
+% \section{Local key-finding models}
+
+% All of the algorithms that have been discussed until now are concerned with finding the key of an entire piece. We refer to them as \emph{global} key-finding algorithms.
+
+% There have been numerous examples of algorithms that attempt to find the global key of the piece and the evaluation metrics discussed at the beginning \todo{change this for a ref} consider as well the evaluation of a global key-finding algorithm. However, some researchers are interested in detecting the changes of key \emph{throughout} the piece. We refer to these keys as \emph{local} keys.
+
+% Although numerous algorithms of this type have been proposed, they have not been evaluated with the same level of detail than global key-finding algorithms, mostly due to the lack of high-quality annotations and datasets of local key detection.
+
+% Additionally, the already elusive landscape that surrounds global keys becomes more complicated with the consideration of local keys, which overlaps with music-theoretical concepts like \emph{modulation} and \emph{tonicization} (see Question \ref{chap:6} for a further discussion on this subject).
+
+% \section{Key-and-chord-finding algorithms}
+
+% Similar to the interest in finding local keys, some researchers have explored the idea of finding keys at the same time that they try to find chords.
+
+% A derivate exploration is the idea that a model that informs its key predictions from chord recognition and viceversa is going to perform better at both tasks, given that they are highly related with each other.
+
+% Although the idea is technically sound, none of these models has succeeded in outperforming dedicated key and chord detection models.
+
+\bibliographystyle{plainnat}
+\bibliography{zoterorefs}
