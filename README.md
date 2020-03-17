@@ -1,4 +1,4 @@
-March 15, 2020
+### March 15, 2020
 
 Today, I started the journey. I revised the theses from Gabriel Vigliensoni, Andrew Hankinson, and Ivan Franco. I was looking for a McGill PhD thesis template. What I found is that all these thesis have a different style (margins, font, layout, etc). There seems not to be a general template available.
 
@@ -20,7 +20,7 @@ I will schedule myself ~250 words each day, about my current thoughts and concer
 
 The next topic that I want to think about is the name and number of chapters in my dissertation. I foresee that this harmony and key duality will continue to be an issue until I put it to an end in writing.
 
-March 17, 2020
+### March 17, 2020
 
 I sent a couple of internship project proposals to Avid. The first one is a harmonizer model. The second one, a pitch-spelling model.
 
