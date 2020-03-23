@@ -4,7 +4,7 @@ Today, I started the journey. I revised the theses from Gabriel Vigliensoni, And
 
 I decided to recycle the project that I used for my comps.
 
-I started writing some titles. 
+I started writing some titles.
 
 I realized how difficult it is to think of a title. Broad. I could write about anything and it sounds related to what I am doing. It is quite a good exercise, actually.
 
@@ -38,4 +38,20 @@ I often think of roman numerals as a natural language describing harmonic change
 
 I hope that will enabe the musically-aware models that researchers in my field strive for.
 
+### March 23, 2020
 
+Today, I was analyzing a short fragment from Tchaikovsky's Manual of Harmony. Example 185-a. 
+
+Laurent Feisthauer and I are encoding these examples to collect a dataset of local key. We want to use such dataset to measure the performance of our algorithms.
+
+In this example, 185-a, Tchaikovsky passes through the following keys: C major, D minor, E minor, F major, and Bb minor. Unlike most examples, there is no pivot chord connecting the keys. What Tchaikovsky denotes as the beginning of a new key, often does not refer to a tonic chord in that key. Moreover, the keys in this example, except for Bb minor, show a progression of diatonic degrees in C major. It is almost as Tchaikovsky is "tonicizing" the scale degrees ii, iii, and IV of C major.
+
+It made me think about a possible idea for differentiating modulations from tonicizations.
+
+In tonicizations, post-tonicization harmonies contradict the "tonal space" of the tonicized key. They support the "tonal space" of the main key. In other words, the harmonies after a tonicization bring the original key back.
+
+In modulations, post-modulation harmonies support the "tonicized" key. They support the departure of the "tonal space" of the piece, away from its origin. In other words, the harmonies after a modulation disrupt the original key.
+
+What is novel about this idea is that modulations and tonicizations are short-term. Modulation is not accomplished by the _length_ of the departure but by a **disruption** in the "tonal space". When that tonal space is not disrupted, we are observing a tonicization.
+
+This sounds very close to what theorists say, but it somehow feels different in my mind. Like I am about to be able to quantify it.
