@@ -55,3 +55,15 @@ In modulations, post-modulation harmonies support the "tonicized" key. They supp
 What is novel about this idea is that modulations and tonicizations are short-term. Modulation is not accomplished by the _length_ of the departure but by a **disruption** in the "tonal space". When that tonal space is not disrupted, we are observing a tonicization.
 
 This sounds very close to what theorists say, but it somehow feels different in my mind. Like I am about to be able to quantify it.
+
+### April 4, 2020
+
+I was extracting useful references from the "Counterpoint by Convolution" (COCONET) paper.
+
+I ended up with a compilation of 10 papers that I could investigate further. Most of the papers deal with Bach chorales. This is the best initial approach for me as well.
+
+I went to give a brief look at the Bach chorales annotated by Craig Sapp on the Verovio Humdrum Viewer. I realized the quality of these files is very high. Craig annotated harmonies that coincided with cadences in a very systematic way. The rest of the notation is very close to `**harm` syntax. My `harmalysis` parser should be able to deal with this information with ease.
+
+I noticed that the annotations often ignore passing tones and non-functional harmonies. Using this information to reduce the vocabulary of classes in the training process is a must. I can try both approaches, raw pitch-class sets (no annotation needed) and annotated. This will, for once, tell us if expert-curated data improves machine learning models.
+
+I haven't revised the other papers collected from COCONET. I should start with Allan and Williams (2005), they used chord vocabularies.
