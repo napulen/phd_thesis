@@ -8,4 +8,4 @@
 
 [April 02, 2020](phd_journal/2020_04_02.md)
 
-[April 04, 2020](phd_journal/2020_04_03.md)
+[April 03, 2020](phd_journal/2020_04_03.md)
