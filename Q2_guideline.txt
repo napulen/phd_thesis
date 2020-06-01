@@ -1,9 +1,0 @@
-Artificial Neural Networks
-    History
-    The 3 waves of Neural Network research
-Deep Learning
-    Convolutional Neural Networks
-    Recurrent Neural Networks
-    AutoEncoders
-    U-Net
-Applications in MIR
