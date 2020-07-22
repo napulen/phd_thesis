@@ -8,17 +8,22 @@ Introduction
 
     A word on "music theories" and "rules"
         There is no "true" modulation theory, as there is no true "harmony" or "counterpoint" theory.
-        There is only a better theory than the best-known theory.
-        A better theory generalizes better than the best-known theory to date.
-        Many ideas taken as a baseline for this dissertation are the best-known theories in modulation and harmony, which have been adopted by many theorists, taught in college-level music curricula, and achieve good generalization (but imperfect) in common practice music.
-        Examples of these theories and workflows include roman numeral analysis and Riemannian-theory
-        Other theories (Schenkerian, GTTM) have not achieved widespread reach as to replace them in textbooks and other forms of music education
+        There can only be a "better theory" than the one we know.
+        A better theory generalizes better than the preceding theory. That is, it demonstrates with data (or some other mean) that, in fact, the theory is able to describe, characterize, or summarize the music composed for a particular period.
+        Many ideas taken as a baseline for this dissertation are the best-known theories in modulation and harmony, which have been adopted by many theorists, taught in college-level music curricula, and achieve good (but imperfect) generalization in common-practice music.
+        Examples of these theories and workflows include roman numeral analysis and Riemannian-theory.
+        Other theories (Schenkerian, GTTM) have not achieved widespread reach as to replace them in the core textbooks and resources used in music education institutions.
 
-    Cognitive of tonality is elusive, culturally-dependent, and for the most part, an open research field. 
-    It is expected that music cognition will help answering many questions about the topics discussed here, however, the knowledge in this area is far from replacing the theories that are taught to aspiring musicians, composers, theorists, and scholars.
-    This work deals with two basic domains: music theory and data science.
+    Cognition of tonality is elusive, culturally-dependent, and for the most part, an open research question. 
+    It is expected that music cognition will help answering many questions about the topics discussed here, however, the knowledge in this area is far from able to replace the theories that are taught to aspiring musicians, composers, theorists, and scholars.
+
     Cognitive theories of tonality are briefly discussed, but they are not at the core of this work.
 
+    A word on music theories in comparison to machine learning algorithms
+        A very basic and opinionated way in which I like to think about music theories is in a similar way than modern machine learning algorithms. There are many parameters that have been achieved and fine-tuned by iteration, approximation, and correction. In the case of machine learning algorithms, a computer is responsible of performing these iterations and converging toward a solution of the problem. In music theory, the iterations are hundreds of years of fine-tuning and human analysis, which have resulted in our Western music theory. Roman numerals are applied to music composed a hundred years ago, not because composers thought that way, but because the roman numerals are those "parameters" that human analysts have fine-tuned over the years to generalize their understanding and explicability of the music they study.
+    
+    This work deals with two basic domains: music theory and data science.
+    
 Literature review
     History of modulation
         The origin of the term "modulation"
@@ -54,42 +59,39 @@ Literature review
 
         A summarized comparison of modulation, tonicization, secondary chords, modal mixture, and local keys
     
-    Changes of key in Music Information Retrieval (MIR)
+    Modulation in Music Information Retrieval (MIR)
         Global key-estimation models
         Local key-estimation models
 
-    The cognition of modulation
+    Modulation in Music Cognition
         Perception of musical keys
         Perception of modulations
         Perception of tonicizations
         Perception of musical keys compared to predictions of key-estimation algorithms
         Unanswered questions
+        Closing remarks on tonality and music cognition
 
-Modulation in the common-practice repertoire
-    Modulation in Bach
-    Modulation in Rameau
-    Modulation in Vivaldi
+Computing modulation
+    Pitch classes
+        justkeydding
+    Symbolic and Audio
+        justkeydding
+    Harmony and key analysis
+        pitch class sets
+    Structural cues of modulation
+        PAC
+        Motivic analysis
 
-    Modulation in Haydn
-    Modulation in Beethoven
-    Modulation in Mozart
+Quantifying modulation
+    Modulation and tonicization MIR tasks
+    MIREX
+    Key distance
+    Weber diagrams
+    Krumhansl key distance model
+    Lerdahl's Tonal Pitch Space    
 
-    Modulation in Chopin
-    Modulation in Brahms
-    Modulation in Schumann
-    Modulation in Schubert
+Applications of a key modulation model
+    Categorizing music using pitch-class sets
+    Assigning roman numeral analysis labels
+    MIDI pitch spelling
 
-    Modulation in post-romantic composers
-
-
-A model for detecting modulation
-
-Applications of a model for modulation/tonicization
-
-    Key estimation
-
-    Music generation
-
-    Informing pitch spelling
-
-    Roman numeral analysis
