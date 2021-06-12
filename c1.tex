@@ -6,8 +6,67 @@
 % \end{quote}
 % \clearpage
 
+\section{Goal}
+
+The main objective of this dissertation is to propose improvements over the existing methods for automatic tonal analysis, tailored around the \emph{common-practice} period of Western music. 
+
+In recent years, improvement has been observed using multi-task learning (MTL) workflows for tonal analysis.
+This research extends over that, proposing additional ways of doing data augmentation, and strengthening the shared representations of MTL approaches with additional tonal tasks.
+
 \section{Motivation}
+
+\guide{Why did people invent harmony theories and counterpoint theories.}
+Throughout the history of Western tonal music, different theories explaining the organization of the sounds have been presented.
+Music is a multi-dimensional phenomenon.
+Multiple melodic streams, multiple timbres, and multiple rhythmic patterns in synergy.
+It may be argued that these theories were introduced in order to train new composers.
+It may also be argued that these theories were introduced to understand how previous composers thought about music.
+To disentangle the patterns in the music of previous composers.
+To understand how music ``works''.
+To simplify the perceptual organization of simultaneous notes into a set of rules that could be easily understood.
+In any case, many theories have emerged over the years.
+One of the meta-theories we use nowadays, in Western tonal music, is Roman numeral analysis.
+An analytical tool, in principle, Roman numeral analysis is useful as a framework for a theorist or musician to describe the harmonic context of the music.
+This is necessary as more complex tonal relationships (e.g., modulations) are introduced in the music composition process.
+When moving to the digital domain, we can still think of this framework as an analytical tool that allows us to understand music in a simpler way.
+A summary of the harmonic context.
+My motivation with this dissertation is to connect the theories that have evolved over the years, with the ruthless and methodological outputs of computer algorithms.
+
+
+Automatic Chord Recognition (ACR) has been explored thoroughly in the field of Music Information Retrieval (MIR). 
+ACR systems typically seek to predict the root and quality of the chords throughout a piece of music via either an audio or a symbolic representation.
+A more specific type of chordal analysis, particularly relevant for Western classical music, is functional harmony, or Roman numeral analysis. 
+The main difference between ACR and functional harmony is that the latter requires other adjacent tasks to be solved simultaneously, notably including detection and identification of key changes (modulations \cite{feisthauer_estimating_2020, schreiber_local_2020} and tonicizations \cite{napoles_lopez_local_2020}).
+
+% Partly due to the repertoires typically targeted, Roman numeral analysis also involves handling of some additional `special chords' such as Neapolitan and Augmented sixth chords.
+
+\guide{Roman Numeral Analysis.}
+The analytical process of functional harmony is commonly described through Roman numeral annotations. 
+This annotation system is particularly popular in Western music theory for the analysis of `common-practice' tonal music.
+Roman numeral annotations encode a great deal of information about tonality, in a compact syntax.
+For instance, an annotation like  \texttt{C:viio65/V} includes an account of the local key (here C), the quality of the chord (diminished seventh), the chord inversion (first), and nature of any tonicization (optional, here true: of the dominant). 
+
+\guide{Problem.}
+From a computational perspective, predicting such annotations is challenging given that the model has to predict multiple features correctly and simultaneously. 
+In the past, MIR researchers have reconstructed Roman numeral annotations by predicting six sub-tasks: chord quality, chord root, local key, inversion, primary degree, and secondary degree \cite{chen_functional_2018, micchi_not_2020}. 
+%
+Thus, as a machine learning problem, functional harmony can be expressed as the task of correctly predicting enough features in order to reconstruct the original Roman numeral label. 
+
+% I would cut this duplication of the above: In spite of their compactness, Roman numeral strings are sufficient to provide all of these features, and thus show to be convenient as an annotation system for creating functional harmony datasets.
+
+Recent efforts in this area have seen a great standardization of the notation and conversion routines, \cite{gotham_romantext_2019} which in turn has facilitated the amassing of a relatively large meta-corpus of Roman numeral analyses \cite{gotham_romantext_2019}.
+However, despite these developments and the wider resurgence of interest in the field, the performance of functional harmony models for predicting full Roman numeral labels remains relatively low.
+
+\guide{Solution.}
+In this paper, we propose a new neural network architecture that improves the prediction of functional harmony and its relevant features. 
+Beside the architecture itself, our model benefits from increased data augmentation (beyond key transpositions), and an additional set of output tasks that enhance the effects of multi-task learning demonstrated by other researchers \cite{chen_functional_2018}.
+
+To facilitate the work of other researchers, we release all of our preprocessed datasets, data splits, experiment logs, and the full source code of our network in [ANONYMIZED], under a permissive MIT license.
+
+
 \section{Research objectives}
+
+
 \section{Thesis structure}
 
 \bibliographystyle{plain}

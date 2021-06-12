@@ -1,0 +1,388 @@
+%%
+%% This is file `sample-sigconf.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `sigconf')
+%%
+%% IMPORTANT NOTICE:
+%%
+%% For the copyright see the source file.
+%%
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-sigconf.tex.
+%%
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%%
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%%%% Proceedings format for most of ACM conferences (with the exceptions listed below) and all ICPS volumes.
+\documentclass[sigconf]{acmart}
+%%%% As of March 2017, [siggraph] is no longer used. Please use sigconf (above) for SIGGRAPH conferences.
+
+%%%% Proceedings format for SIGPLAN conferences
+% \documentclass[sigplan, anonymous, review]{acmart}
+
+%%%% Proceedings format for SIGCHI conferences
+% \documentclass[sigchi, review]{acmart}
+
+%%%% To use the SIGCHI extended abstract template, please visit
+% https://www.overleaf.com/read/zzzfqvkmrfzn
+
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%Key
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+%% Rights management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+\setcopyright{acmcopyright}
+
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+%%
+%% end of the preamble, start of the body of the document source.
+\begin{document}
+
+\copyrightyear{2019}
+\acmYear{2019}
+\acmConference[DLfM '19]{6th International Conference on Digital Libraries for Musicology}{November 9, 2019}{The Hague, Netherlands}
+\acmBooktitle{6th International Conference on Digital Libraries for Musicology (DLfM '19), November 9, 2019, The Hague, Netherlands}
+\acmPrice{15.00}
+\acmDOI{10.1145/3358664.3358675}
+\acmISBN{978-1-4503-7239-8/19/11}
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{Key-Finding Based on a Hidden Markov Model and Key Profiles}
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+\author{N\'estor N\'apoles L\'opez}
+\affiliation{%
+  \institution{McGill University, CIRMMT}
+  \city{Montr\'eal}
+  \state{QC}
+  \country{Canada}
+}
+\email{nestor.napoleslopez@mail.mcgill.ca}
+
+\author{Claire Arthur}
+\affiliation{%
+  \institution{Georgia Institute of Technology}
+  \city{Atlanta}
+  \state{GA}
+  \country{USA}
+}
+\email{claire.arthur@gatech.edu}
+
+\author{Ichiro Fujinaga}
+\affiliation{%
+  \institution{McGill University, CIRMMT}
+  \city{Montr\'eal}
+  \state{QC}
+  \country{Canada}
+}
+\email{ichiro.fujinaga@mcgill.ca}
+
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+% \renewcommand{\shortauthors}{N\'apoles L\'opez, et al.}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+
+\begin{abstract}
+Musicologists and musicians often would like to search by keys in a digital music library. In this paper, we introduce a new key-finding algorithm that can be applied to music in both symbolic and audio formats. The algorithm, which is based on a Hidden Markov Model (HMM), provides two stages of key-finding output; the first one referring to local keys and the second one to the \emph{global} key.
+
+We describe the input, the two output stages, and the parameters of the model. In particular, we describe two configurable parameters, the \emph{transition probability distributions}, which are based on a matrix of neighbouring keys, and the \emph{emission probability distributions}, which make use of established key profiles.
+
+We discuss the \emph{local} key-finding capabilities of the algorithm, presenting an example analysis of the Prelude Op. 28 No. 20 in C minor by Chopin, showing the local key regions obtained using different key profiles. We evaluate the \emph{global} key-finding capabilities of the model, using an existing dataset and six well-known key profiles as different model parameters.
+
+Since different key profiles will tend to err or misclassify in different ways and across different pieces, we train an ensemble method with the predictions from all the key profiles (6) through our model. We show that the ensemble method achieves state-of-the-art performance for major and overall keys, however, it still underperforms the state-of-the-art for minor keys.
+\end{abstract}
+
+%%
+%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
+%% Please copy and paste the code instead of the example below.
+%%
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10002951.10003317.10003371.10003386.10003390</concept_id>
+<concept_desc>Information systems~Music retrieval</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10010405.10010469.10010475</concept_id>
+<concept_desc>Applied computing~Sound and music computing</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10010147.10010257.10010293</concept_id>
+<concept_desc>Computing methodologies~Machine learning approaches</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+<concept>
+<concept_id>10010147.10010257.10010293.10010316</concept_id>
+<concept_desc>Computing methodologies~Markov decision processes</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Information systems~Music retrieval}
+\ccsdesc[500]{Applied computing~Sound and music computing}
+\ccsdesc[300]{Computing methodologies~Machine learning approaches}
+\ccsdesc[300]{Computing methodologies~Markov decision processes}
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{symbolic key-finding, audio key-finding. music information retrieval, symbolic music analysis, key profiles, hidden markov model}
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
+
+\section{Introduction}
+Within musicology and music information retrieval (MIR), it is often desirable to automatically extract the key of a piece of music. Numerous key-finding algorithms have been developed over the past decades for exactly this purpose. Typically, however, these key-finding algorithms are domain-specific, working exclusively on either representations of digital audio \emph{or} symbolic music.\footnote{For a brief overview of recent symbolic approaches, see \cite{quinn2017}; for an overview of audio approaches---including common methods and limitations---see \cite{korzeniowski017}.} As the fields of computational musicology and MIR continue to grow, it is becoming more common for numerous tasks to require datasets that include both symbolic and audio representations of music (e.g., music performance analysis, automatic chord analysis, etc.). In this scenario, applying the same algorithm to the audio and symbolic data could prove to be convenient for accessing larger amounts of annotated data and to simultaneously increase the performance and consistency of the model across domains. In this paper, we propose a novel key-finding algorithm that is capable of processing symbolic data with an accuracy level that matches or exceeds the state-of-the-art \cite{albrecht2013use} while maintaining a similar performance in the audio domain. Moreover, our algorithm automatically segments the music and provides key labels for each segment---what we call the \emph{local} key, as well as an overall key estimate for the entire piece---what we call the \emph{global} key. To our knowledge our algorithm is the first to comprehensively provide local and global keys in the same model while delivering similar performance in the symbolic and audio domains. Given these characteristics of the model, we believe this is the first of its kind.
+
+\section{Overview of the Model}
+In this section we introduce the design of the model: its inputs, parameters, and outputs. For practical applications, a full implementation of the model (supporting raw MIDI and WAV files) is made available.\footnote{https://github.com/napulen/justkeydding}
+
+\subsection{Inputs}
+Our model requires a sequence of pitch classes as input (i.e., the letter-name or chroma representation of each note). In order to automatically obtain the sequence in both domains, the model pre-processes symbolic and audio inputs in a fairly different way.
+
+\subsubsection{Symbolic} \label{symbolicinput}
+For symbolic inputs, the only pre-processing required is the removal of all information accompanying each note aside from its pitch class. Our model is implemented to accept MIDI files, however, working with other symbolic music representations (e.g., Humdrum, Lilypond, MEI, and MusicXML) is trivial if an external parser for that format is available.
+\subsubsection{Audio} \label{audioinput}
+For audio inputs, an external algorithm is used to compute chromagram\footnote{A chromagram is a reduction of all the harmonic content of an audio signal into 12 (or more) \emph{bins} or classes. It is typically computed over small time windows, similar to a spectrogram.} features of the raw audio. The individual chroma \emph{bins} (12) in each chromagram-frame are converted into discrete pitch-class events when their energy surpasses a threshold value. The chromagram algorithm used in the implementation of the model is the \emph{NNLS Chroma} \cite{mauch2010} with its default parameters.
+
+After the corresponding pre-processing steps, the pitch-class sequences are ready to be consumed by the model. When several notes sound simultaneously, a bottom-to-top approach is preferred for dispatching the notes into the algorithm. Figure \ref{fig:input} shows an example of a pitch-class sequence.\footnote{Although the example utilizes conventional music notation (including accidentals) to denote the pitch classes (e.g., E$\flat$), in practice, the model encodes pitch classes with numbers from 0 to 11 instead.}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\linewidth]{figures/input}
+  \caption{Pitch-class sequence from the first measure of Chopin's Op. 28 No. 20}
+  \label{fig:input}
+  \Description{Pitch-class sequence from the first measure of Chopin's Op. 28 No. 20}
+\end{figure}
+
+Although additional information beyond pitch class (e.g., pitch spelling, pitch height, time signature, duration, and measures) is potentially available in symbolic music files, we omit this information from the model, by design, in order to facilitate the use of the model on audio data, where this information is not easily obtainable (e.g., polyphonic pitch estimation, pitch spelling, duration, etc.). Consequently, this also simplifies the parameters of the model.
+
+\subsection{Parameters}
+Our model is based on a Hidden Markov Model (HMM) \cite{rabiner1986introduction}. An HMM typically consists of \emph{observation symbols}, \emph{states}, a \emph{transition probability distribution}, an \emph{emission probability distribution}, and an \emph{initial state} distribution. We describe each of these parameters.
+
+\subsubsection{Observation symbols}
+Each observation is one of the twelve pitch classes, denoted by the numbers [0-11]. Every enharmonic spelling of the same pitch class is collapsed into the same number.
+
+\subsubsection{States}
+Each of the 24 musical keys, denoted by the numbers [0-23]. Similarly, all enharmonic spellings are collapsed. The numbers [0-11] denote major keys and [12-23] minor keys.
+
+\subsubsection{Initial state}
+We assume a uniform distribution across all possible starting keys. That is, starting in a given key is just as likely as starting in any other key.
+
+\subsubsection{Transition probability distribution}
+In general, this parameter determines how likely it is to change from one state to another. Here, where the states represent the musical keys, the \emph{transition probability distribution} determines how likely it is to change from one key to another.
+
+\begin{table}[ht]
+  \caption{Matrix of neighbouring keys. Column-wise, the keys follow the \emph{circle-of-fifths}. Row-wise, each key is surrounded by its relative and parallel major (or minor) keys}
+  \label{tab:keydistance}
+  \begin{tabular}{ccccccccc}
+    \toprule
+    A$\sharp$ & a$\sharp$ & C$\sharp$ & c$\sharp$ & E  & e  & G  & g  & B$\flat$\\
+    D$\sharp$ & d$\sharp$ & F$\sharp$ & f$\sharp$ & A  & a  & C  & c  & E$\flat$\\
+    G$\sharp$ & g$\sharp$ & B  & b  & D  & d  & F  & f  & A$\flat$\\
+    C$\sharp$ & c$\sharp$ & E  & e  & G  & g  & B$\flat$ & b$\flat$ & D$\flat$\\
+    F$\sharp$ & f$\sharp$ & A  & a  & C  & c  & E$\flat$ & e$\flat$ & G$\flat$\\
+    B  & b  & D  & d  & F  & f  & A$\flat$ & a$\flat$ & C$\flat$\\
+    E  & e  & G  & g  & B$\flat$ & b$\flat$ & D$\flat$ & d$\flat$ & F$\flat$\\
+    A  & a  & C  & c  & E$\flat$ & e$\flat$ & G$\flat$ & g$\flat$ & B$\flat$$\flat$\\
+    D  & d  & F  & f  & A$\flat$ & a$\flat$ & C$\flat$ & c$\flat$ & E$\flat$$\flat$\\
+  \bottomrule
+\end{tabular}
+\end{table}
+
+Assuming that we know the \emph{current} key in an excerpt of tonal music, we also know that if that the key changes, some keys (e.g., dominant or relative major/minor) are more likely to be the new key than others. Using the theoretical concept of \emph{distance} between keys, these transitions of key can be formalized as probabilities. Thus, we define the notion of \emph{key distance} using a table of neighbouring keys, shown in Table \ref{tab:keydistance}, and originally introduced by Weber \cite{weber1851}.
+
+Taking any one key as the \emph{current} key and measuring the euclidean distance to the other keys in the matrix permits the grouping of the 24 keys into 9 groups. Each group is sequentially \emph{further away} from the \emph{current} key, and all of the keys within a group are located at the same distance from the \emph{current} key. Table \ref{tab:keyclusters} shows an example of the groups obtained if the current key is C Major.\footnote{Notice that all the enharmonic keys have been collapsed into a single spelling and, when the distance between two enharmonics differs (e.g., $d(C, D\flat) \neq d(C, C\sharp)$), the smallest distance has been used.}
+
+\begin{table}[ht]
+  \caption{Key distance groups with respect to C Major}
+  \label{tab:keyclusters}
+  \begin{tabular}{c|ccccccccc}
+    Group & 1 & 2 & 3 & 4        & 5        & 6        & 7         & 8         & 9\\
+    \toprule
+          & C & F & d & D        & E        & D$\flat$ & e$\flat$  & c$\sharp$ & F$\sharp$\\
+    Keys  &   & G & e & E$\flat$ & A$\flat$ & B        & f$\sharp$ & e$\flat$\\
+          &   & a & f & A        & b$\flat$\\
+          &   & c & g & B$\flat$ & b\\
+\end{tabular}
+\end{table}
+
+The transition probability distributions are computed by assigning a probability to every key according to these 9 groups of key distance with respect to the \emph{current} key. The decrease in probability of key distance between the current key group and a given subsequent key group is controlled by a \emph{ratio} parameter. For example, a ratio of $10$ means that any key in that subsequent group is 10 times less likely than any key in the current group.
+Figure \ref{fig:keytransitions} shows the distributions obtained for 3 different ratios when the current key is C Major. The distributions for other keys are obtained through transposition.\footnote{Throughout this paper, we assume that pitch classes and keys are transpositionally equivalent, although we know that research does not support that claim \cite{quinn2017}. Further exploration is still needed to address these issues in future versions of the model.}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\linewidth]{figures/keytransitions}
+  \caption{Probability of \emph{transitioning} to any key if the current key is C Major}
+  \label{fig:keytransitions}
+  \Description{Probability of \emph{transitioning} to any key if the current key is C Major}
+\end{figure}
+
+\subsubsection{Emission probability distributions}
+In general, the \emph{emission probability distribution} parameter determines how likely it is that one state \emph{emits} an observation symbol. Here, where the observation symbols represent pitch classes, the \emph{emission probability distribution} determines how likely it is that a key \emph{emits} a particular pitch class.
+
+Key profiles have been used in several key-finding algorithms in the past. We consider them to be adequate for defining the \emph{emission probability distribution} of the HMM. We collected and normalized six well-known key profiles to be used as \emph{emission probability distributions}: Krumhansl-Kessler (KK) \cite{krumhansl1982}, Aarden-Essen (AE) \cite{aarden2003dynamic}, Bellman-Budge (BB) \cite{bellman06}, Temperley (T) \cite{temperley2002}, Sapp (S) \cite{sapp2011computational}, and Albrecht-Shanahan (AS) \cite{albrecht2013use}. Figure \ref{fig:keyprofiles} shows the \emph{emission} probability of each pitch class if the keys were C Major or C Minor. Similarly, the distributions of other keys are obtained through transposition.$^{6}$
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\linewidth]{figures/keyprofiles}
+  \caption{Probabilities of \emph{emitting} a pitch class in C Major (top) and C Minor (bottom), obtained from six key profiles}
+  \label{fig:keyprofiles}
+  \Description{Probabilities of \emph{emitting} a pitch class in C Major (top) and C Minor (bottom), obtained from six key profiles}
+\end{figure}
+
+\subsection{Outputs}
+We consider it advantageous to divide the output of the model into two stages, as some users might be more interested in \emph{local} keys (e.g., those studying roman numeral analysis) while others may only be interested in the \emph{global} key (e.g., for metadata labeling).
+
+\subsubsection{Stage 1: Local key segmentation}
+In this stage, a key is assigned to each pitch class of the input sequence.
+
+The process for assigning the keys depends entirely on the output of the \emph{viterbi} algorithm \cite{forney1973viterbi} given the parameters of the model and the pitch-class input sequence as a series of \emph{observations}. In general terms, the model favors a key that can explain all the pitch classes in a sequence as diatonic degrees. When the current pitch class in a pitch-class sequence can no longer be explained by the prevailing key, the model will carry out a transition to another key (typically, one that is \emph{close} to the current key), thus segmenting the sequence into \emph{local} keys. A simple intuition of this stage is: \emph{for each pitch class in a sequence of pitch classes, what is the local key that most likely generated that pitch class?}
+
+\subsubsection{Stage 2: Global key}
+Here, the segmentation of \emph{local} keys from the first stage is re-analyzed to find the \emph{global} key. The process is very similar to the previous stage except that now the \emph{local keys} (as opposed to pitch classes) become the new \emph{observations} of the model. A simple intuition of this stage is: \emph{given a sequence of local keys, what is the global key that best explains the sequence?}
+
+\section{Evaluating the model}
+We describe the dataset utilized, discuss the \emph{local} key-finding capabilities of the model, and evaluate its \emph{global} key-finding performance by comparing it against other \emph{global} key-finding algorithms in the symbolic domain.
+
+\subsection{Dataset}
+We used the dataset derived from Albrecht and Shanahan \cite{albrecht2013use}, which consists of 982 symbolic music files encoded in \texttt{**kern} format. The files have been converted to MIDI using the Humdrum Toolkit \cite{huron2002music} and dispatched into the implementation of our HMM model.
+
+\subsection{Local keys in Prelude Op. 28 No. 20}
+We selected a short piece with a relatively simple structure, the Prelude Op. 28 No. 20 in C minor by Chopin (part of the Albrecht-Shanahan dataset), to illustrate the \emph{local} key segmentation output of our algorithm.
+In this case, the segmentation is affected exclusively by the selection of the key profile. Figure \ref{fig:localkeys} shows the segmentation of the model for this musical piece, according to which of the six key profiles was used as the emission probability distribution. The $x$-axis represents each individual note in the piece.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\linewidth]{figures/localkeys}
+  \caption{Output of the local key segmentation in Prelude Op.28 No.20 in C minor by Fr\'ed\'eric Chopin. Measures are delimited by dashed vertical lines.}
+  \label{fig:localkeys}
+  \Description{Output of the local key segmentation in Prelude Op.28 No.20 in C minor by Fr\'ed\'eric Chopin. Measures are delimited by dashed vertical lines.}
+\end{figure}
+
+Most of the key profiles output a similar \emph{local} key segmentation, however, it is visually evident that the Krumhansl-Kessler (KK) key profile provides a segmentation with fewer (and therefore longer) local keys.
+An inspection of Figure \ref{fig:keyprofiles} shows that the probability distribution in the KK key profile assigns higher values to non-diatonic pitch classes in both major and minor modes, compared to the other key profiles. Thus, relying on the KK profile has an obvious effect in the segmentation of the piece, such that the ``tolerance'' for non-diatonic tones is higher, and therefore they tend to be explained by the same \emph{local} key. A contrasting example to the KK profile is the Sapp (S) key profile. An inspection of Figure \ref{fig:keyprofiles} shows that the probability from S assigns a lower value (in fact, zero) to the non-diatonic pitch classes. In the local key segmentations, this coincides with more (and therefore shorter) local keys, which are particularly visible in Figure \ref{fig:localkeys} during measures 3, 6, and 10.
+
+Further work is still needed in order to provide a quantitative evaluation of the \emph{local} keys provided by our model.
+
+\subsection{Global key-finding results}
+In the evaluation of the \emph{global} key-finding capabilities of the model, we followed a similar methodology to Albrecht and Shanahan. We divided the dataset in two parts, 490 files reserved for training and 492 reserved for testing. Since a specific ``split'' of the training and testing data may provide significantly different results than another one, it is a common practice to perform cross-validation experiments with different sets of training and testing data. In our evaluation, we cross-validated our results by running our model over 20 random permutations of the dataset, splitting it in 490 files for training and 492 for testing every time. For this, we used the \texttt{ShuffleSplit} class in \emph{scikit-learn} \cite{pedregosa2011}. We report the average accuracy obtained throughout the experiment.
+
+\subsubsection{Individual key profiles}
+The results of the individual key profiles in the HMM can be seen in the middle group of rows in Table \ref{tab:results}. For all of these evaluations, the model used a key distance \emph{ratio} of 15. Therefore, the difference in the results corresponds exclusively with the key profile used as \emph{emission probability distribution}.
+
+\begin{table}[ht]
+  \caption{Accuracy Ratings for Key-Finding Methods in Major, Minor, and Overall pieces}
+  \label{tab:results}
+  \begin{tabular}{lcccc}
+    \toprule
+    Algorithm & Major & Minor & Overall\\
+    \midrule
+    Krumhansl-Schmuckler & 69.0\% & 83.2\% & 74.2\%\\
+    Temperley (with KS algorithm) & 96.8\% & 74.3\% & 88.6\%\\
+    Bellman-Budge & 94.9\% & 84.4\% & 91.1\%\\
+    Aarden-Essen & 90.7\% & 93.3\% & 90.4\%\\
+    Sapp & 92.3\% & 87.2\% & 90.4\%\\
+    Albrecht-Shanahan1 & 92.7\% & 85.5\% & 90.0\%\\
+    Albrecht-Shanahan2 & 89.1\% & 95.0\% & 91.3\%\\
+    \midrule
+    justkeydding (KK) & 79.5\% & 76.3\% & 78.4\%\\
+    justkeydding (AE) & 86.1\% & 89.9\% & 87.5\%\\
+    justkeydding (S) & 89.2\% & 87.4\% & 88.5\%\\
+    justkeydding (BB) & 94.3\% & 81.1\% & 89.5\%\\
+    justkeydding (T) & 94.2\% & 83.3\% & 90.2\%\\
+    justkeydding (AS) & 93.1\% & 88.1\% & 91.3\%\\
+    \midrule
+    justkeydding (meta-classifier) &  96.1\% & 91.5\% & 94.4\%\\
+    \bottomrule
+\end{tabular}
+\end{table}
+\subsubsection{Ensemble method}
+We observed that different key profiles will tend to predict or misclassify in different ways and across different pieces, motivating the use of those predictions as the input features of a meta-classifier. For this, we used an additional model, a \emph{Logistic Regression} classifier, where the predictions from each HMM classifier are used as input features. In addition to the six HMMs derived from the different key profiles, we also used three \emph{ratios} (5, 10, and 15) of distance between groups of keys. In total, for every training example, the meta-classifier receives 432 input features (6 key profiles * 3 \emph{ratios} of key distance * probability assigned to 24 keys).\footnote{The logistic regression meta-classifier was trained using the \emph{scikit-learn} \cite{pedregosa2011} library, with a parameter $C=0.7$ and an \emph{lbfgs} solver}
+
+\subsubsection{Audio}
+In order to evaluate the robustness of the model in the audio domain compared to the symbolic domain, the previous experiment was repeated over a synthesized-audio version of the same dataset. The audio was synthesized using the default soundfont of the \emph{MuseScore 2} music notation editor. The configurations of the model (i.e., key profiles and key distance \emph{ratios}) were the same ones as above. The results for that experiment show a similar performance of the model, averaging 96.0\% for pieces in major keys, 90.9\% for pieces in minor keys, and 94.2\% overall accuracy, using audio input data. We acknowledge that these results are based on the use of synthesized audio and may not reflect the performance obtained in ``real'' recorded audio. However, an earlier version of the HMM model was evaluated with recorded audio (from several genres) in the MIREX key estimation task of 2018.\footnote{\url{https://www.music-ir.org/mirex/wiki/2018:Audio_Key_Detection_Results}} This evaluated version did not include the meta-classifier and corresponds to a single HMM model with the Sapp (S) key profile. We thus suspect that our current model would out-perform our previous one.
+
+\section{Conclusion and future work}
+In this paper, we presented a novel key-finding algorithm that is capable of processing data in the symbolic and audio domains. Moreover, the algorithm  provides two stages of output: \emph{local} keys and a \emph{global} key. We consider that \emph{local} keys could be useful in contexts where high-granularity annotations of the current key are required (e.g., roman numeral analysis), while digital music libraries could index their 
+pieces through automatic \emph{global} key annotations.
+
+Although different models for processing symbolic and audio data simultaneously \cite{pickens2003, toiviainen_visualization_2007, tzanetakis_pitch_2002, collins_bridging_2014}, finding \emph{local} keys \cite{papadopoulos2009}, and finding \emph{global} keys \cite{albrecht2013use, korzeniowski017} have been proposed over the years, we propose them within a single, comprehensive, model. We evaluate our model, showing that it maintains or exceeds the accuracy of the state-of-the-art \emph{global} key-finding in the symbolic domain. Given these characteristics, we consider that it is the first of its kind. 
+
+An evaluation of the model in the audio domain has been presented, showing that a similar performance is maintained in a dataset of synthesized audio. Future work could investigate the use of datasets of recorded audio and the performance of our model against other \emph{global} key-finding algorithms in the audio domain. 
+
+Similarly, further work is still needed in order to provide a quantitative evaluation of \emph{local} keys, however, this would require expert ground truth data for \emph{local} keys---something that is currently scarce.
+
+%%
+%% The acknowledgments section is defined using the "acks" environment
+%% (and NOT an unnumbered section). This ensures the proper
+%% identification of the section in the article metadata, and the
+%% consistent spelling of the heading.
+\begin{acks}
+This research has been supported by the Social Sciences and Humanities Research Council of Canada (SSHRC) and the Fonds de recherche du Qu\'ebec--Soci\'et\'e et culture (FRQSC).
+\end{acks}
+
+%%
+%% The next two lines define the bibliography style to be used, and
+%% the bibliography file.
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{sample-base}
+
+%%
+%% If your work has an appendix, this is the place to put it.
+% \appendix
+
+\end{document}
+\endinput
+%%
+%% End of file `sample-sigconf.tex'.
