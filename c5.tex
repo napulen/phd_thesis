@@ -1,167 +1,129 @@
-\chapter{Model}
+\chapter{Experimental evaluation}
 \label{chap:chap5}
 
 % \begin{quote}
-%     Parallel fifths and other familiar creatures.
+%     The key of tonality is the musical key.
 % \end{quote}
 % \clearpage
 
-The AugmentedNet is similar in size and design to the network proposed by Micchi et al. \cite{micchi_not_2020}. The network is characterized by a different design of the convolutional layers, the representation of pitch spelling, and the separation of bass and chroma features inputs into independent convolutional blocks.
+\subsection{Datasets}
 
-\subsection{Inputs}
+In the past, the models by Micchi et al. \cite{micchi_not_2020} and Chen and Su \cite{chen_attend_2021} have been evaluated using the Beethoven Piano Sonatas (BPS) and the Well-Tempered Clavier (WTC) datasets. We too provide direct comparisons in these two datasets, however, we also share the results of our model across the Annotated Beethoven Corpus (ABC) \cite{neuwirth_annotated_2018}, annotated Haydn string quartets Op.20 (HaydnOp20) \cite{napoles_lopez_automatic_2017}, Theme and Variation Encodings with Roman Numerals (TAVERN) \cite{devaney_theme_2015}, and When-in-Rome (WiR) \cite{gotham_romantext_2019} datasets. 
 
-\textbf{Reference note per timestep.}
-The input to the network consists of a sequence of timesteps, which are sampled from the score at symbolically regular note duration values.
-In this study, we use the thirty-second note (`demisemiquaver') as this atomic value (i.e.~eight timesteps per quarter note in the score) in order to match the most fine-grained frame sampling seen in previous work. The length of the sequence is set by a fixed number of timesteps. Following Micchi et al., we set that number at 640 frames (or 80 quarter notes) per sequence example.
-%Each timestep contains a vector of bass and chroma features.
+For all datasets, the same procedure was followed regarding data splits. 
+ Training, validation, and test splits were produced randomly (except in BPS, where they were provided by Chen and Su \cite{chen_functional_2018}).
+ %\footnote{In the original splits of BPS, there is a duplicated example in the validation and test sets. We noticed that Micchi et al. \cite{micchi_not_2020} corrected the splits to remove the data leakage. Thus, we follow the splits by Micchi et al. \cite{micchi_not_2020}}  
+A summary of all datasets is shown in Table \ref{tab:datasets}. The summary indicates the number of files in each split and the number of sequences (each of 640 frames) that were collected from that split.
 
-\textbf{Bass and spelled chroma features.}
-We also follow the Micchi et al.~input representation of pitch as a vector containing bass spelling and spelled `chroma features'\footnote{A chroma feature representation is typically a vector of 12 pitch classes, where the activation of each pitch class at a given timestep is indicated in a many-hot encoding fashion (symbolic data), or as continous values (audio data). 
-Due to the similarity of this input representation to chroma features, except for the spelling aspect, we refer to them as \emph{spelled} chroma features.} at every timestep, however the details differ in subtle but important ways. 
-In the Micchi et al. representation, each timestep has 70 features: 35 for the bass and 35 for the chroma features. 
-We consolidate this information in 38 features: 19 for the bass, and 19 for the chroma features. The reduction in number of features is due to an alternative encoding of pitch spelling, described below.
 
-\textbf{Encoding the pitch spelling.}
-%In previous work, Micchi et al. \cite{micchi_not_2020} have encoded pitch spellings as a one-hot encoded vector with 35 features, which encodes pitch spellings up to two sharps or two flats of every note letter (7 * 5 = 35). 
-We split the representation of a pitch spelling into two components: the pitch class (0--12) and the generic note letter (A--G).
-Each spelled pitch thus leads to a two-hot encoded vector with 19 features (1 of 12 pitch classes, and 1 of 7 note names).
-This reduces the number of parameters in the network without any observable compromise in performance.
+Preliminary experiments were conducted in the training set, using the validation set to assess the generalization, adjust the hyper parameters, and inform the design of the network architecture.
+The best-performing version of our model was run once in the test set, this time including the validation portion as part of the training.
+The results obtained for all the rows labeled \emph{Full dataset} in Table \ref{tab:results} report the results obtained on the corresponding test split. 
+To support reproduction of this work, we provide the exact data splits at [ANONYMIZED].
 
-\guide{Separating the inputs.}
-Furthermore, the bass and spelled chroma features are connected to the network independently and concatenated only after they have passed through their own convolutional blocks. 
-In preliminary experiments, we discovered that this separation of the inputs (bass and spelled chroma features) was beneficial to the learning process.
-Thus, two parallel convolutional blocks are computed.
+\textbf{Data augmentation} For every training example, we synthesized and texturized an additional one, using only the Roman numeral annotations (and ignoring the original score). The original and texturized training examples were transposed to different keys for further data augmentation. Both forms of data augmentation were only applied to the training set of a particular experiment, leaving the validation/test set intact to prevent any data leakage.
 
-\subsection{Convolutional block}
-
-\guide{Micchi and DenseNet-like convolutions.}
-Using the feature maps of all previous layers as an input to a convolutional layer has proven beneficial, for instance by strengthening feature propagation and reducing the number of parameters \cite{huang_densely_2017}. 
-Moreover, DenseNet-like architectures have shown to work well for the specific task of functional harmony \cite{micchi_not_2020}.
-
-\begin{figure*}
- \centerline{
- \includegraphics[width=\textwidth]{figs/network.png}}
- \caption{\emph{AugmentedNet}. The bass and chroma inputs are processed through independent convolutional blocks and then concatenated. Both convolutional blocks are identical and expanded on the top of the figure. A convolutional block has six 1D convolutional layers. Each layer doubles the kernel size (number of timesteps covered) and halves the number of output filters, prioritizing short-term dependencies but providing long-term context that benefits the subsequent GRU layers.}
- \label{fig:network}
-\end{figure*}
-
-\guide{Convolutional layers.}
-We follow similar methods, reusing the feature maps computed for a given timestep in subsequent convolutions. 
-Figure \ref{fig:network} provides a schematic diagram of our network, with the convolutional block on the top left area of the figure. 
-In our preliminary experiments, we noticed that different tonal tasks of functional harmony have different time dependencies. 
-For example, losing information about a specific timestep often leads to poor performance in predicting the inversion, whereas losing long-term dependencies hinders performance in local key estimation. 
-Our architecture implicitly prioritizes short-term dependencies in the initial convolutional layers, by having more filters and covering less timesteps. Going further, the convolutions provide more context about future timesteps, but output a smaller number of filters. These increments (in kernel size) and decrements (in filters) are done in powers of 2. With a configuration of 6 convolutional layers in each block (as shown in Figure \ref{fig:network}), the first layer convolves a single timestep (`demisemiquaver') and the sixth layer convolves 32 timesteps (`whole note'). The output shape of the block is the original length of the sequence with 82 features per timestep.
-
-\subsection{Dense and recurrent layers}
-
-Two time-distributed dense layers are applied to the concatenated outputs of the convolutional blocks. The dense layers help reducing the number of features before the GRU layers. These have 64 and 32 neurons, respectively. 
-% All convolutional and dense layers have batch normalization \cite{ioffe_batch_2015} before the activation function. Similarly, all convolutional and dense layers use the rectified linear unit (ReLU) as their activation function.
-
-Two bidirectional GRU \cite{cho_learning_2014} layers are applied after the second dense layer. 
-Both GRU layers return outputs at every timestep. 
-Throughout the entire network, the dimensionality of the timesteps axis remains constant. That is, our input and output sequences have the same length, and the model predicts one Roman numeral label per timestep. 
-
-\subsection{Multi-outputs}
-
-The output of the network follows a MTL approach with hard parameter sharing, similar to that proposed by Chen and Su \cite{chen_functional_2018}. For each of the output tasks, a time-distributed dense layer is attached to the second GRU, and used to predict its corresponding task. 
-Six conventional tasks are learned (similar to Micchi et al. and Chen and Su \cite{micchi_not_2020, chen_attend_2021}), plus five additional ones. All the tasks (eleven in total) and their number of output classes are shown on the right side of Figure \ref{fig:network}.
-
-\subsubsection{Six conventional functional harmony tasks}
-All the conventional tasks, except for the local key, have the same number of output classes described by Micchi et al. \cite{micchi_not_2020}. The local key includes four additional keys: $\{F\flat, G\sharp, d\flat, e\sharp\}$. These were included because the data exploration process revealed modulations reaching $G\sharp$ major in the dataset.
-Thus, the number of allowed key signatures was extended by one sharp and one flat, in both modes.
-% This also introduced more training examples during the data augmentation process via key transposition. 
-
-\subsubsection{Five Additional tasks.}\label{sec:additionaltasks}
-
-It is argued that MTL helps improving the generalization of a model by preferring representations that are useful to related tasks, acting as an implicit form of data augmentation and regularization method \cite{ruder_overview_2017}.
-Roman numeral labels can be decomposed into multiple different features, of which the six conventional tasks are known examples.
-Motivated by the possibility of improving the performance of our network, we included five additional tasks with hard parameter sharing in our MTL approach.
-We describe the five additional tasks, which have relevance to harmonic analysis. 
-One of them, RomanNumeral75, was also used as an alternative task when reconstructing the final Roman numeral label, a process we explain below.
-
-\begin{table}[]
-\begin{tabular}{l|l|l|l|l}
-1--15    & 16--30    & 31--45    & 46--60     & 61--75    \\
-\hline
-I       & V/V      & Ger     & viio7/v   & V+       \\
-V7      & v        & N        & viio7/iii & viio/vi  \\
-V       & V7/ii    & viio7/vi & IV/V      & III+     \\
-i       & III      & V/ii     & I+        & V/iii    \\
-IV      & iiø7     & viiø7    & I7        & ii/V     \\
-ii      & iii      & V9       & viio/IV   & I/bVI    \\
-vi      & iio      & viio/ii  & V/III     & viio7/IV \\
-iv      & viio/V   & V/iv     & V7/iii    & V7/v     \\
-viio7   & V7/vi    & Cad/V    & viio/iv   & i7       \\
-viio    & VII      & iv7      & iio7      & iii7     \\
-V7/V    & viio7/ii & viio7/iv & VI7       & Fr      \\
-V7/IV   & I/V      & IV7      & I/III     & V/IV     \\
-viio7/V & V7/iv    & V7/III   & V7/VI     & vii      \\
-VI      & V/vi     & viiø7/V  & bVII      & V/v      \\
-ii7     & vi7      & It       & bVI       & II      
-\end{tabular}
-\caption{The 75 most-common Roman numeral strings, where the inversion has been removed and learned independently. During data exploration, these classes spanned 98\% of the Roman numeral annotations across all the annotated data. Predicting these classes is an alternative to predicting the chord root, chord quality, primary degree, and secondary degree simultaneously.}
-\label{tab:top75rn}
+\begin{table}
+ \begin{center}
+ \begin{tabular}{l|lll}
+  & & Files (Seqs) & \\
+  Dataset & Training & Validation & Test \\
+  \hline
+  ABC \cite{neuwirth_annotated_2018} & 50 (448) & 10 (97) & 10 (99) \\
+  BPS \cite{chen_functional_2018} & 18 (155) & 7 (75) & 7 (75) \\
+  HaydnOp20 \cite{napoles_lopez_automatic_2017} & 16 (91) & 4 (19) & 4 (19) \\
+  TAVERN \cite{devaney_theme_2015} & 38 (404) & 8 (68) & 8 (64) \\
+  WiR \cite{gotham_romantext_2019} & 107 (301) & 21 (61) & 21 (51) \\
+  WTC \cite{gotham_romantext_2019} & 12 (25) & 6 (13) & 6 (14) \\
+  \hline
+  Total & 241 (1424) & 56 (333) & 56 (329) \\
+%   +Transposition & XX & - & - \\
+%   +Synthetic & XX & - & - \\
+%   Grand total & XX & - & - \\ 
+ \end{tabular}
+\end{center}
+ \caption{The functional harmony datasets used in our experiments. The splits were generated randomly (except for BPS). For each split, the number of files and the number of sequences (in parenthesis) are indicated.}
+ \label{tab:datasets}
 \end{table}
 
-\textbf{RomanNumeral75}. During data exploration, we found that, when inversions were removed and synonyms (e.g., \texttt{bII6} and \texttt{N6}) were standardized, a set of 75 Roman numeral strings spanned approximately $98\%$ of all the annotations across all datasets. This was a motivation to predict the Roman numeral string itself. The correct prediction of this task is equivalent to predicting the chord root, chord quality, primary degree, and secondary degree simultaneously. As an additional experiment in our results section, we substituted the final reconstruction of the Roman numeral label in this fashion, using the local key, the inversion, and the RomanNumeral75 outputs. The performance with this method is always better than through the four conventional tasks. The 75 classes of common Roman numeral strings are shown in Table \ref{tab:top75rn}. 
+\begin{table*}
+\begin{center}
+\begin{tabular}{lll|lllll|l}
+Dataset & Trained with & Model & Key & Degree & Quality & Inversion & 75RN & RN[, AltRN] \\ [1.5ex]
+\hline \hline
+WiR & Full dataset & AugNet & 81.6 & 70.0 & 87.1 & 90.9 & 70.1 & 55.8, \textbf{61.6} \\ [1ex]
+\hline\hline
+HaydnOp20 & Full dataset & AugNet & 79.5 & 61.8 & 78.2 & 80.9 & 56.9 & 45.7, \textbf{48.4}\\ [1ex]
+\hline\hline
+ABC & Full dataset & AugNet & 82.3 & 65.5 & 78.2 & 75.8 & 63.9 & 43.8, \textbf{47.4} \\ [1ex]
+\hline\hline
+TAVERN & Full dataset & AugNet & 91.0 & 60.3 & 78.1 & 77.2 & 67.3 & 43.9, \textbf{53.5} \\ [1ex]
+\hline\hline
+WTC & Full dataset & AugNet & 75.2 & 66.1 & 74.5 & 75.2 & 60.2 & 45.0, \textbf{47.7} \\
+\hline
+% WTC & BPS+WTC & AugmentedNet & \textbf{87.1} & 69.9 & 72.4 & 73.3 & & 47.5, \textbf{49.9} \\
+WTC & BPS+WTC & AugNet & \textbf{85.1}$_{\pm4.0}$ & 62.9$_{\pm5.5}$ & 69.1$_{\pm1.9}$ & 70.1$_{\pm3.7}$ & 59.9$_{\pm3.4}$ & 42.9$_{\pm4.2}$, \textbf{46.9}$_{\pm4.7}$ \\
+WTC & BPS+WTC & CS21 & 56.3$_{\pm2.5}$ & - & - & - & - & 26.0$_{\pm1.7}$ \\ [1ex]
+\hline\hline
+BPS & Full dataset & AugNet & \textbf{83.5} & \textbf{71.8} & \textbf{79.8} & \textbf{72.7} & 69.1 & 44.6, \textbf{48.4} \\
+BPS & Full dataset & Mi20 & 82.9 & 68.3 & 76.6 & 72.0 & - & 42.8 \\
+\hline
+BPS & BPS+WTC & AugNet & \textbf{84} & 70.4 & 79.4 & 70.2 & 67.5 & 43.4, \textbf{46.2} \\
+BPS & BPS+WTC & CS21 & 79.0 & - & - & - & - & 41.7 \\
+\hline
+BPS & BPS & AugNet & \textbf{83.7} & \textbf{69.6} & \textbf{80} & \textbf{70.4} & 67.6 & 42.9, \textbf{46.5} \\
+BPS & BPS & Mi20 & 80.6 & 66.5 & 76.3 & 68.1 & - & 39.1 \\
+BPS & BPS & CS19 & 78.4 & 65.1 & 74.6 & 62.1 & - & - \\
+BPS & BPS & CS18 & 66.7 & 51.8 & 60.6 & 59.1 & -  & 25.7 
+\end{tabular}
+\end{center}
+ \caption{Summary of the performance of five functional harmony models: Chen and Su (2018, 2019, and 2021), Micchi et al. (2020), and AugmentedNet. For the WTC dataset, the experiment with training done over BPS+WTC replicated the 4-fold cross validation presented by Chen and Su \cite{chen_attend_2021}. In this case, $\pm$ indicates the standard deviation. For all other rows, the results present the performance on the held test set. The comma-separated values in RN of the AugmentedNet rows indicate different methods for reconstructing the Roman numeral, as explained in \ref{sec:additionaltasks}.}
+ \label{tab:results}
+\end{table*}
+
+\subsection{Training procedure}
+
+\textbf{Epochs.}
+We set a fixed number of 100 epochs in all experiments. 
+We found that the use of early stopping was unreliable to determine the end of the training process.
+Instead, we saved the weights after each epoch. 
+After all epochs, we selected the best weights based on a custom metric that prefers the highest accuracy on the six conventional functional harmony tasks.
+% We set the number of layers in the initial convolutional block to 6. 
+% Each convolutional layer has a kernel size of 1, 2, 4, 8, 16, and 32 timesteps, respectively. In practice, this means that the last convolutional layer provides information up to a whole note away from the current timestep.
+
+\textbf{Other hyper-parameters.}
+Each of the layers in the network is accompanied by batch normalization before the activation function. In the recurrent layers, we apply the batch normalization after the activation function. All convolutional and dense layers use the rectified linear unit (ReLU) as their activation function. However, the two GRU layers use $\tanh$. In all of our experiments, we used 16 sequences per batch and Adam \cite{kingma_adam_2014} as our optimizer, with a learning rate of $10^{-7}$.
 
 
-\textbf{Harmonic Rhythm.} Whether a Roman numeral annotation label starts at the given timestep. A binary classification task that may be relevant for chord segmentation.
 
-\textbf{Bass}. The bass note implied by the Roman numeral label. This is predicted with 35 output classes, similarly to the chord root. The 35 classes represent a spelled pitch. This task is related to predicting the chord inversion.
+\textbf{Computing time.} The network was trained on a personal laptop\footnote{Intel i7 10750h, Nvidia RTX 2070, 32GB DDR4} with a Linux operating system, Tensorflow 2.4.1, and GPU acceleration.
+With these hardware and software conditions, the training times are approximately ~30 minutes (BPS only), ~40 minutes (BPS+WTC), and ~250 minutes (Full dataset). 
+The number of trainable parameters in the network is close to 90,000. This number already includes all the parameters introduced by the additional output tasks. Therefore, the model is similar in size to recent models \cite{micchi_not_2020, chen_attend_2021}.
 
-\textbf{Tonicization}. The tonicization is predicted from the key implied by a secondary degree (if any). 
-% When not present, the tonicization encodes the local key instead, to reduce the sparsity of classes. 
-% This idea is adapted from N\'apoles L\'opez et al. \cite{napoles_lopez_local_2020}. 
-The output classes are identical to the ones of the local key and is an alternative approach to learn the secondary degrees.
+\subsection{Results}
 
-\textbf{Pitch Class Sets}. The set of pitch classes implied by the chord. The number of classes (93) results from computing all pitch class sets in all diatonic triad and seventh chords, plus all augmented sixth chords in all keys. This task is related to the chord quality, primary degree, and to non-chord tones \cite{ju_non-chord_2017}.
-All additional tasks except for the RomanNumeral75 are computed solely for their contributions to the shared representation of the MTL approach.
 
-\subsection{Data augmentation}
+\textbf{Beethoven Piano Sonatas.} The last rows of Table \ref{tab:results} show the results of our model when evaluated over the BPS dataset. 
+To the best of our efforts, we replicate the experimental conditions of the models we compare to. Single lines in the table delimit experiments that are directly comparable. 
+For example, the upper rows of BPS compare the results of Micchi et al. \cite{micchi_not_2020} using all of their available training data and our model using all of our available training data. 
 
-\subsubsection{Transposition}
+\textbf{Well-Tempered Clavier.}
+The second to last group of rows in Table \ref{tab:results} show the results of our model when evaluated on the WTC dataset.
+The model by Chen and Su \cite{chen_attend_2021} presented the results over 4-fold cross validation. We replicate this study for direct comparison.\footnote{However, we used our test split for the \emph{Full dataset} experiment in WTC.} As they have, we include the average accuracy across the 4 folds, and the standard deviation. 
 
-As in most automatic tonal music analysis research, we transpose each piece to different keys as a means for data augmentation. 
-Particularly, we transpose to all the keys that lie within a range of key signatures in both modes.
-When we transpose a piece, we verify that all the modulations within the piece fall in the target range of key signatures.
-This process of transposition and data augmentation was introduced and described by Micchi et al. \cite{micchi_not_2020}.
-In our data exploration, we found G$\sharp$ major to be the furthest key to the center of the \emph{line-of-fifths} \cite{temperley_line_2000} in the dataset. 
-Thus, we transposed in the range of keys within 8 flats to 8 sharps in their key signature.
-% Due to modulations, two pieces of music may be transposed a different number of times. 
-% Generally, chromatic pieces (passing through many different keys) can be transposed to fewer new keys, while more diatonic pieces (which remain in one or few key/s) can be transposed more.
+The results show that our model outperforms both the recent convolutional methods \cite{micchi_not_2020} and Transformer-based ones \cite{chen_attend_2021} in the reconstruction of the Roman numeral label. 
+% Furthermore, the addition of data from a different dataset seems to improve the results. For example, training with WTC and BPS benefits the performance in BPS and vice versa.
+For ABC, HaydnOp20, TAVERN, and WiR, we show the generalization of our model when using all the training data available on the corresponding held test set. 
 
-\subsubsection{Synthetic examples}
+\textbf{Alternative resolution of Roman numeral annotations.}
+As discussed in Section \ref{sec:additionaltasks}, it is possible to use the 75 most-common Roman numeral strings as an alternative task to the chord root, chord quality, primary degree, and secondary degree tasks. 
+Thus, an alternative resolution of the Roman numeral label (AltRN) is presented in the last column of the AugmentedNet results. This accuracy corresponds to the reconstruction of the Roman numeral using the 75 most-common Roman numerals, chord inversion, and local key tasks. 
+We assume that if these three tasks are predicted correctly, the Roman numeral label has been reconstructed correctly.
+We found that this, in fact, leads to better results compared to the six conventional tonal tasks. 
+Table \ref{tab:results} shows the comma-separated accuracy values for the Roman numeral, the one computed from the six conventional tonal tasks (RN), and the alternative approach (AltRN). For completeness, we show too the accuracy of the RomanNumeral75 output task, labeled 75RN in the table.
 
-\guide{Additional data augmentation.}
-In addition to transposition, we implemented a variation of a recent data-augmentation technique proposed by N\'apoles L\'opez and Fujinaga \cite{napoles_lopez_harmonic_2020}.
-Starting with the Roman numeral analyses of our dataset, we synthesized `new' training examples by realizing the chords implied by each Roman numeral annotation.
-The synthesis was done using the music21 Python library \cite{cuthbert_music21_2010}, which converts RomanText \cite{gotham_romantext_2019} files into scores of \emph{block chord} realizations.
+In summary, the \emph{Full dataset} rows show the best results achieved by our model for each dataset. In all cases, the results of our model are higher than existing methods in the final reconstruction of the Roman numeral label. Additionally, the best results in the reconstruction are achieved via the chord inversion, local key, and our RomanNumeral75 task.
 
-\begin{figure}
- \centerline{
- \includegraphics[width=\columnwidth]{figs/texturization.png}}
- \caption{Example of texturization. The \emph{block chord} texture (b) was synthesized using music21 \cite{cuthbert_music21_2010} from an input RomanText file \cite{gotham_romantext_2019}. The texturized output (c) was generated by recursively applying musical patterns to the \emph{block chord} scores. The three musical patterns of \emph{bass-split}, \emph{Alberti bass}, and \emph{syncopation} are indicated in measures 1--3, respectively. The original music score (a) is shown for reference: mm. 1--4 of Beethoven's Piano Sonata Op.2 No.1.}
- \label{fig:texturization}
-\end{figure}
-
-We found the default \emph{block chord} texture of the synthetic examples to be only slightly beneficial for the model, possibly because it did not capture the complex texture of real keyboard music, for example.
-In order to account for this difference, we artificially ``texturized'' the generated training examples, departing from the default \emph{block chords}.
-The texturization process involved applying three simple note patterns recursively.
-Figure \ref{fig:texturization} shows an example of the texturization patterns, alongside the original score and the default \emph{block chords} provided by music21. We describe the texturization patterns below.
-
-\textbf{Bass-split (measure 1).} The original chord duration is divided by half, playing
-the bass note in isolation during the first half, followed by the remaining upper notes.
-
-\textbf{Alberti bass (measure 2).} A 4-note melodic pattern with the contour lowest, highest, middle, highest.
-
-\textbf{Syncopation (measure 3).} The highest note is played in isolation, followed by the remaining lower notes, played in syncopation.
-
-\textbf{Mixture (measure 4).} We applied these patterns randomly and recursively. For example, the \emph{mixture} in measure 4 displays a \emph{bass-split} pattern over the whole-note chord, followed by a \emph{syncopation} pattern applied over the three upper notes, in the second half of the measure. 
-
-As part of the randomization, some chords were left unaltered (e.g., the anacrusis of Figure \ref{fig:texturization}), and the patterns were applied across different duration values. 
-To constraint the depth of the recursion, we applied these patterns only to the slices of the score that contained 3--4 simultaneous notes.  
-This process resulted in the generation of `new' pieces that showed improvements in the learning process of the model, further the than \emph{block chord} synthetic scores.
 
 \bibliographystyle{plain}
 \bibliography{zoterorefs}

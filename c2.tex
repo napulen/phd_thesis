@@ -1,4 +1,4 @@
-\chapter{Related work: Music Information Retrieval}
+\chapter{Background}
 \label{chap:chap2}
 
 % \begin{quote}
@@ -6,7 +6,13 @@
 % \end{quote}
 % \clearpage
 
-\section{Automatic key estimation}
+\section{Music Theory}
+\subsection{A brief History of Roman numeral analysis}
+\subsection{Digitization of Roman numeral annotations}
+\subsection{Ambiguity and inter-annotator agreement in Roman numeral analysis}
+
+\section{Music Information Retrieval}
+\subsection{Automatic key estimation}
 
 Key identification is a fundamental task in the analysis of tonal music. 
 It is often a preliminary or concurrent step to other common musicological tasks like harmonic analysis and cadence detection. 
@@ -34,7 +40,7 @@ The ideas presented in this paper may be useful to improve the interpretability 
 %\cite{longuet1971tonality,  krumhansl1990cognitive, lerdahl88tps, vos96keyfinding, Temperley99:tonality, temperley2006,Zhu2003MusicSM}). 
 %In this paper, however, rather than global-key estimation, we focus on the algorithms that model the changes of key \emph{within} a piece of music (often called \emph{local keys} in the context of computational musicology and music information retrieval).
 
-\subsection{Global-Key-Estimation Models}
+\subsubsection{Global-Key-Estimation Models}
 Researchers have designed a number of global-key-estimation algorithms throughout the years. 
 The first one, to our knowledge, is the one by Longuet-Higgins~\cite{longuet1971tonality} from 1971.
 Starting from the beginning of a score, the algorithm considers each pitch in order of occurrence and discards the keys that do not include that pitch within their diatonic scale degrees. 
@@ -56,7 +62,7 @@ Alternative key-profile distributions---and techniques for applying them---have 
 
 Key profiles are the basis of many global-key-estimation models for symbolic music files and, starting from the 2000s, audio files as well. More exhaustive surveys of modern global-key-estimation techniques, with a focus on audio, are available \cite{korzeniowski_harmonic_2018, campbell_automatic_2010}. Key profiles have also been useful in the design of local-key estimation models.
 
-\subsection{Local Keys, Modulation, and Tonicization}\label{ssec:terminology}
+\subsubsection{Local Keys, Modulation, and Tonicization}\label{ssec:terminology}
 
 In MIR, it is common to describe algorithms that model \emph{changes of key} as local-key-estimation algorithms. 
 The \emph{local keys} being the predictions that these models generate. Conversely, in music theory, the concepts of \emph{modulation} and \emph{tonicization} are often the manner in which changes of key are explained, and the term \emph{local key} is virtually non-existent.
@@ -86,7 +92,7 @@ Are the predictions of the musical key provided by a local-key-estimation algori
 These predictions are given at a finer level of granularity than the entire piece (e.g., notes, onsets, fixed-duration timesteps, audio frames, etc.).
 In principle, no music-theoretical meaning is inferred from them. They may coincide with modulations or tonicizations.
 
-\subsection{Local-Key-Estimation Models}\label{ssec:localkey}
+\subsubsection{Local-Key-Estimation Models}\label{ssec:localkey}
 
 Contrary to the global-key estimation approaches, local-key estimation models have a relatively recent history.
 
@@ -147,7 +153,7 @@ The model computes the cost of being in a key on a given beat, and estimates the
 % Most of them are audio-based ... 
 
 %\subsection{Evaluation and datasets}
-\subsection{Existing Datasets to Evaluate Local-Key-Estimation Models}
+\subsubsection{Existing Datasets to Evaluate Local-Key-Estimation Models}
 
 Most of the models discussed have been evaluated using different datasets, which are presented in Table~\ref{tab:corpus}.
 
@@ -187,9 +193,9 @@ Additionally, each dataset has often been used to evaluate a single model, which
 In this paper, we contribute further discussion around this topic by focusing on the following question: \emph{What is the relationship between the local keys, modulations, and tonicizations of the same musical fragment?} 
 For this purpose, we describe: (1) our methodology for comparing annotations of local keys, modulations, and tonicizations, (2) a dataset that we collected from five music theory textbooks, and (3) an experiment where we evaluated three existing local-key-estimation models.
 
-\section{Automatic chord recognition}
-\section{Pitch spelling}
-\section{Multi-task tonal analysis}
+\subsection{Automatic chord recognition}
+\subsection{Pitch spelling}
+\subsection{Multi-task tonal analysis}
 
 \bibliographystyle{plain}
 \bibliography{zoterorefs}
