@@ -1,3 +1,5 @@
+import os
+
 contents = """
 1 Introduction
 1.1 Motivation
@@ -41,17 +43,87 @@ contents = """
 5.5 Discussion
 6 Conclusions"""
 
+root = "test"
 
-def formatsection(s):
+def formatdivision(s):
     return s.replace(".", "_")
 
 def formatname(s):
     return '_'.join([c.lower() for c in s.split(" ")])
 
-for line in contents.split("\n")[1:]:
-    # print(line)
-    section, name = line.split(" ", 1)
-    level = section.count(".")
-    fsection = formatsection(section)
-    fname = formatname(name)
-    print(level, fsection, fname)
+def getTOC():
+    toc = {}
+    for line in contents.split("\n")[1:]:
+        division, name = line.split(" ", 1)
+        level = division.count(".")
+        fdivision = formatdivision(division)
+        fname = formatname(name)
+        if level == 0:
+            toc[fdivision] = {"name": name}
+        elif level == 1:
+            chapter, section = division.split(".")
+            toc[chapter][section] = {"name": name}
+        elif level == 2:
+            chapter, section, subsection = division.split(".")
+            toc[chapter][section][subsection] = {"name": name}
+    return toc
+
+def chapterheader(chapter, name):
+    formattedname = formatname(name)
+    return f"""\
+\\chapter{{{name}}}
+\\label{{chap:{formattedname}}}
+
+
+% \\begin{{quote}}
+%     A quote
+% \\end{{quote}}
+% \\clearpage
+
+"""
+
+def sectionheader(name):
+    formattedname = formatname(name)
+    return f"""\
+\\section{{{name}}}
+\\label{{sec:{formattedname}}}
+
+"""
+
+def subsectionheader(name):
+    formattedname = formatname(name)
+    return f"""\
+\\subsection{{{name}}}
+\\label{{sec:{formattedname}}}
+
+"""
+
+toc = getTOC()
+for chapter, c in toc.items():
+    chaptername = c["name"]
+    chapterdir = os.path.join(root, "chapters", chapter)
+    chapterfile = os.path.join(chapterdir, f"{chapter}.tex")
+    os.makedirs(chapterdir, exist_ok=True)
+    chapterfd = open(chapterfile, "w")
+    chapterfd.write(chapterheader(chapter, chaptername))
+    for section, s in c.items():
+        if section == "name":
+            continue
+        sectionname = s["name"]
+        chaptersection = f"{chapter}_{section}"
+        sectionfile = os.path.join(chapterdir, f"{chaptersection}.tex")
+        sectionfd = open(sectionfile, "w")
+        sectionfd.write(sectionheader(sectionname))
+        for subsection, ss in s.items():
+            if subsection == "name":
+                continue
+            subsectionname = ss["name"]
+            chaptersubsection = f"{chaptersection}_{subsection}"
+            subsectionfile = os.path.join(chapterdir, f"{chaptersubsection}.tex")
+            subsectionfd = open(subsectionfile, "w")
+            subsectionfd.write(subsectionheader(subsectionname))
+            subsectionfd.close()
+            sectionfd.write(f"\\input{{{subsectionfile}}}\n")
+        sectionfd.close()
+        chapterfd.write(f"\\input{{{sectionfile}}}\n")
+    chapterfd.close()
