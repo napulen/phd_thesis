@@ -43,7 +43,7 @@ contents = """
 5.5 Discussion
 6 Conclusions"""
 
-root = "test"
+root = ""
 
 def formatdivision(s):
     return s.replace(".", "_")
