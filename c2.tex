@@ -1,5 +1,5 @@
 \chapter{Background}
-\label{chap:chap2}
+\label{chap:background}
 
 % \begin{quote}
 %     Learning from symbolic music representations using deep learning.
@@ -7,7 +7,116 @@
 % \clearpage
 
 \section{Music Theory}
-\subsection{A brief History of Roman numeral analysis}
+\subsection{A brief history of Roman numeral analysis}
+
+Roman numeral analysis is a common methodology presented in music theory textbooks focused on the common practice period.
+The name derives from the use of Roman numerals to denote scale degrees, which, in turn, denote diatonic chords in a certain key context.
+It is difficult to place a specific time when this notational system emerged.
+It would appear to be more accurate to say that this notation did not ``appear'' but evolved, slowly, from the sporadic use of Roman numerals to denote scale degrees to the complex syntax of applied chords and chord inversions used today.
+
+In this chapter, I summarize a brief timeline of this evolution process.
+There is existing literature describing the process to a certain extent. 
+For example, in the chapters on tonality of the Cambridge History of Western Music Theory~\parencite{christensen_2002}.
+
+\begin{itemize}
+    \item According to Hyer, there are two branches of tonal music theory around the early nineteenth century: scale-degree theories and functional theories
+    \item Scale-degree theories are best characterized by the work of Weber and Schenker
+    \item Functional theories include those of Rameau and Riemann
+    \item Roman numerals, nowadays unify concepts from these two theories, acting as a metalanguage
+    \item Combination of theories is common, for example, Fuxian theory taught by first analyzing the harmonic context of the C.F., and other examples
+    \item Arguable, Rameau's work influenced every other subsequent harmonic theory
+    \item Rameau introduced the concepts of tonic, dominant, and subdominant chords
+    \item However, he never used the term ``function'', which was established by Riemann
+    \item Vogler introduced Roman numerals for the first time
+    \item First, in 17XX, where he used them to denote the ``VII'' degree
+    \item Then, 1802, he used them for every scale degree
+    \item Weber firmly established Roman numerals
+    \item Nowadays, Roman numerals have borrowed ideas from both branches of music theories
+\end{itemize}
+
+
+
+It is generally agreed that the first to introduce Roman numerals to indicate degrees was Vogler.
+Furthermore, the first to unambiguously introduce Roman numerals to denote chords was Weber~\parencite{weber_theory_2018}.
+Beyond these assertions, little is known about how the syntax evolved into the conventions followed nowadays.
+% In order to complement this information with evidence of the literature of the time, I include a table of music textbooks and their adoption of Roman numeral syntax.
+Although there is not an official standardization of Roman numeral analysis, modern annotations often feature the following characteristics:
+
+% $$
+% k:r^{q}^{x}_{y}/r
+% $$
+% where $k$ represents a key, $r$ a scale degree, $q$ a qualitative alteration (e.g., diminished or augmented), $x$ is the numerator of an inversion, $y$ another number for denoting certain inversions.
+
+\begin{enumerate}
+    \item A numeric inversion with one or two digits (e.g., $^6_5$, $^4_3$, $^2$, $^6_4$, $^6$)
+    \item A slash followed by a scale degree to denote an applied chord, secondary dominant, or tonicization (e.g., V/V)
+    \item A distinction between major and minor triads (e.g., I (major) i (minor))
+\end{enumerate}
+
+In order to better visualize this organic evolution of the syntax, I have compiled my observations across several harmony books starting in the late nineteenth century.
+In each textbook, I have indicated whether the chords are annotated using Roman numerals, and whether other modern traits are observed (e.g., inversions depicted with arabic numerals next to the Roman numerals, or secondary dominants presented as V/V).
+
+\begin{table}[]
+\begin{tabular}{rlllllll}
+\multicolumn{1}{l}{Year} & Book & Author & Language & Roman numerals? & Lower and upper case? & Numeric inversions? & Applied chords? \\
+1832 & A treatise on harmony : written and composed for the use of the pupils at the Royal Conservatoire of Music in Paris by Catel & Charles-Simon Catel & English & No & - & Yes &  \\
+1853 & Theory of musical composition, treated with a view to a naturally consecutive arrangement of topics by Godfrey Weber & Gottfried Weber & English & Yes & Yes & No & No \\
+1854 & A rudimentary and practical treatise on music & Charles Child Spencer & English & No & No & No & No \\
+1855 & Course of harmony : being a manual of instruction in the principles of thorough-bass and harmony, comp. from the works of the best writers & L. H. Southard & English & No & - & Yes & No \\
+1860 & Harmonielehre & Wilhelm V. Volckmar & German & No & No & No & No \\
+1865 & A cathecism of the rudiments of harmony and thorough bass & James A. Hamilton & English & Yes & No & Yes & No \\
+1868 & A treatise on harmony & F. A. Gore Ouseley & English & No & No & No & No \\
+1868 & System und methode der harmonielehre & Otto Tiersch & German & No & No & No & No \\
+1878 & Theory and rudimental harmony & James Tracy & English & Yes & Yes & No & No \\
+1879 & Elements of harmony & Stephen Emery & English & Yes & Yes & Yes* &  \\
+1880 & Harmony on the inductive method & Hugh A. Clarke & English & No & No & No & No \\
+1883 & Harmony & Carl Mangold & English & No &  & No & No \\
+1883 & Harmony and Instrumentation & Oscar Coon & English & Yes & Yes & No (on upper staff) & No \\
+1883 & Neue schule der melodik & Hugo Riemann & German & Scarce (for different purposes than chords, it seems) & No & No & No \\
+1889 & Logier's system of and self instructor in the science of music, harmony, and practical composition & J. B. Logier & English & No & No & No & No \\
+1889 & A System of Harmony for Teacher and Pupil & John Andrew Broekhoven & English & Yes & Yes & No &  \\
+1889 & Harmony its theory and practice & Ebenezer Prout & English & No & No & No & No \\
+1892 & The theory and practice of tone-relations & Percy Goetschius & English & Yes & Yes & Somewhat (sometimes mixed with figured bass) & Key regions under brackets \\
+1893 & Goodrich's analytical harmony & A. J. Goodrich & English & No & No & No & No \\
+1896 & A manual of harmony by S. Jadassohn & Salomon Jadassohn & English & Yes & Yes & No & No \\
+1896 & Harmony Simplified & F. H. Shepard & English & Yes & Yes & No & YES! \\
+1897 & Harmony: a course of study & G. W. Chadwick & English & Yes & Yes & Yes & No \\
+1898 & Five-part harmony & Francis Edward Gladstone & English & No & No & No & No \\
+1898 & A system of Harmony & H. A. Clarke & English & No & No & No & No \\
+1899 & Exercises in Harmony & Benjamin Cutter & English & Yes &  & Yes & No \\
+1899 & A system of Harmony & Cyrill Kistler & English & No* (used in explanations, but not in musical examples) & No & No & No \\
+1902 & Harmonic Analysis & Benjaming Cutter & English & Yes & Yes & Yes! &  \\
+1903 & Practical harmony : a comprehensive system of musical theory on a French basis by Homer A. Norris v.03 & Homer Norris & English & No & - & No & No \\
+1904 & A method of teaching harmony & Frederick Shinn & English & No & No & No & No \\
+1905 & Modern harmony in its theory and practice & Arthur Foote & English & Yes & Yes &  &  \\
+1907 & Lessons of Harmony & Arthur Beacox & English & Yes & Yes & Yes! &  \\
+1909 & The nature of music; original harmony in one voice by Julius Klauser & Julius Klauser & English & Yes & More or less & No &  \\
+1911 & A Treatise on Harmony & Joseph Humfrey Anger Henry Clough-Leighter & English & Twa & No & No & No \\
+1912 & Essentials of Music Theory Elementary & Carl E. Gardner & English & Yes & Yes & No (on upper staff) & No \\
+1913 & Lessons in harmony & John Mokrejs & English & Yes & No & Yes & No \\
+1914 & The evolution of Harmony & C. H. Kitson & English & No (only in headers, not in musical examples) & No & No & No \\
+1915 & Harmony & S. Reid Spencer & English & Yes & Yes &  &  \\
+1916 & Practical Lesson Plans in Harmony & Helen S. Leavitt & English & Yes & Yes & Yes! & No \\
+1917 & The theory of harmony; an inquiry into the natural principles of harmony, with an examination of the chief systems of harmony from Rameau to the present day by Matthew Shirlaw & Matthew Shirlaw & English & Mostly no (appear at pp.360) & No & No & No \\
+1917 & A short history of harmony by Charles Macpherson. With numerous musical illustrations & Charles Macpherson & English & ?? & ?? & ?? & ?? \\
+1918 & Harmony in pianoforte-study & Ernest Fowles & English & No & No & No & No \\
+1918 & Aural Harmony & Franklin Robinson & English & Yes & No & Yes & No \\
+1919 & The Foundations of Music & Henry Watt & English & No & No & No & No \\
+1920 & Melody and harmony : a treatise for the teacher and the student & Stewart Macpherson & English & Yes & No & No & No \\
+1921 & Applied Harmony & Carolyn Alchin & English & Yes (inconsistently) & Yes (inconsistently) & No & No \\
+1967 & Richter's Manual of harmony: a practical guide to its study, prepared especially for the Conservatory of music at Leipsic By Ernst Friedrich Richter & E. F. Richter & English & Yes & Yes & No &  \\
+\multicolumn{1}{l}{??} & Harmony and melody & Elie Siegmeister & English & ?? & ?? & ?? & ?? \\
+\multicolumn{1}{l}{??} & Modern harmony in its theory and practice & A. Eaglefield Hull & English & Scarce (pp. 79) & No & Yes (letter) & No \\
+\multicolumn{1}{l}{??} & Harmony Simplified, or the Theory of the Tonal Functions of Chords & Hugo Riemann & English & No & No & No & No \\
+\multicolumn{1}{l}{??} & Harmony Book for Beginners & Preston Ware Orem & English & Yes & Yes & Yes & No \\
+\multicolumn{1}{l}{??} & The Rudiments of Music and Elementary Harmony & Albert Ham & English & No & No & No & no \\
+\multicolumn{1}{l}{??} & Text Book of Harmony & George Oakey & English & No & No & No & No \\
+\multicolumn{1}{l}{??} & A manual of harmony for schools &  & English &  &  &  & 
+\end{tabular}
+\caption{}
+\label{tab:books}
+\end{table}
+
 \subsection{Digitization of Roman numeral annotations}
 \subsection{Ambiguity and inter-annotator agreement in Roman numeral analysis}
 
@@ -21,7 +130,7 @@ Due to its importance, key estimation is a well-studied research topic in Music 
 Broadly, there are two types of key-estimation algorithms: those that find the \emph{main key} of the piece (often called \emph{global-key-estimation} models in the context of computational musicology and MIR), and those that find the changes of key \emph{within} the piece (often called \emph{local-key-estimation} models). The annotations provided by these models have found applications in music technologies.
 
 %%%%%%%% DLfM relevance %%%%%%%%%
-In some contexts such as guitar tablatures \cite{ultimateguitar} and electronic dance music \cite{beatport}, global-key annotations are useful as one of the search parameters of a digital music library. 
+In some contexts such as guitar tablatures \cite{ultimateguitar} and electronic dance music \cite{gomez_tonal_2006}, global-key annotations are useful as one of the search parameters of a digital music library. 
 Local-key annotations, however, have not yet been used for this purpose. 
 It would be useful to complement key-related searches with local-key annotations, using them to search for musical pieces, based on their underlying changes of key. 
 % As modulation are powerful tools to change the mood of a score, indexing local keys within the score could help the musicologist make bridges between lyrics and the tonal path. 
@@ -196,6 +305,3 @@ For this purpose, we describe: (1) our methodology for comparing annotations of 
 \subsection{Automatic chord recognition}
 \subsection{Pitch spelling}
 \subsection{Multi-task tonal analysis}
-
-\bibliographystyle{plain}
-\bibliography{zoterorefs}

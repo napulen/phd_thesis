@@ -3,11 +3,13 @@
 \usepackage{setspace}
 \doublespacing
 
-\usepackage{natbib}
-\usepackage{chapterbib}
+% \usepackage{natbib}
 \usepackage{graphicx}
 \usepackage{todonotes}
 \usepackage[french,english]{babel}
+\usepackage[authordate,backend=bibtex,sorting=nty]{biblatex-chicago}
+\bibliography{references}
+\usepackage[nottoc]{tocbibind}
 
 \usepackage[T1]{fontenc}
 \usepackage{stix2}
@@ -21,7 +23,7 @@
 
 \pagenumbering{roman}
 
-\include{title}
+\include{c00-title}
 \tableofcontents{}
 \include{c0a-abstract}
 \include{c0b-resume}
@@ -29,13 +31,15 @@
 
 \pagenumbering{arabic}
 
-\include{c1}
+% \include{c1}
 \include{c2}
-\include{c3}
-\include{c4}
-\include{c5}
-\include{c6}
-\include{c7}
-\include{c8}
+% \include{c3}
+% \include{c4}
+% \include{c5}
+% \include{c6}
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
 
 \end{document}
+

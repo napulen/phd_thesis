@@ -1,12 +1,33 @@
 \chapter{Experimental evaluation}
-\label{chap:chap5}
+\label{chap:experiment}
 
 % \begin{quote}
 %     The key of tonality is the musical key.
 % \end{quote}
 % \clearpage
 
-\subsection{Datasets}
+\subsection{Training procedure}
+
+\textbf{Epochs.}
+We set a fixed number of 100 epochs in all experiments. 
+We found that the use of early stopping was unreliable to determine the end of the training process.
+Instead, we saved the weights after each epoch. 
+After all epochs, we selected the best weights based on a custom metric that prefers the highest accuracy on the six conventional functional harmony tasks.
+% We set the number of layers in the initial convolutional block to 6. 
+% Each convolutional layer has a kernel size of 1, 2, 4, 8, 16, and 32 timesteps, respectively. In practice, this means that the last convolutional layer provides information up to a whole note away from the current timestep.
+
+\subsection{Hyperparameters}
+
+\textbf{Other hyper-parameters.}
+Each of the layers in the network is accompanied by batch normalization before the activation function. In the recurrent layers, we apply the batch normalization after the activation function. All convolutional and dense layers use the rectified linear unit (ReLU) as their activation function. However, the two GRU layers use $\tanh$. In all of our experiments, we used 16 sequences per batch and Adam \cite{kingma_adam_2014} as our optimizer, with a learning rate of $10^{-7}$.
+
+
+
+\textbf{Computing time.} The network was trained on a personal laptop\footnote{Intel i7 10750h, Nvidia RTX 2070, 32GB DDR4} with a Linux operating system, Tensorflow 2.4.1, and GPU acceleration.
+With these hardware and software conditions, the training times are approximately ~30 minutes (BPS only), ~40 minutes (BPS+WTC), and ~250 minutes (Full dataset). 
+The number of trainable parameters in the network is close to 90,000. This number already includes all the parameters introduced by the additional output tasks. Therefore, the model is similar in size to recent models \cite{micchi_not_2020, chen_attend_2021}.
+
+\subsection{Evaluation procedure}
 
 In the past, the models by Micchi et al. \cite{micchi_not_2020} and Chen and Su \cite{chen_attend_2021} have been evaluated using the Beethoven Piano Sonatas (BPS) and the Well-Tempered Clavier (WTC) datasets. We too provide direct comparisons in these two datasets, however, we also share the results of our model across the Annotated Beethoven Corpus (ABC) \cite{neuwirth_annotated_2018}, annotated Haydn string quartets Op.20 (HaydnOp20) \cite{napoles_lopez_automatic_2017}, Theme and Variation Encodings with Roman Numerals (TAVERN) \cite{devaney_theme_2015}, and When-in-Rome (WiR) \cite{gotham_romantext_2019} datasets. 
 
@@ -81,24 +102,6 @@ BPS & BPS & CS18 & 66.7 & 51.8 & 60.6 & 59.1 & -  & 25.7
  \label{tab:results}
 \end{table*}
 
-\subsection{Training procedure}
-
-\textbf{Epochs.}
-We set a fixed number of 100 epochs in all experiments. 
-We found that the use of early stopping was unreliable to determine the end of the training process.
-Instead, we saved the weights after each epoch. 
-After all epochs, we selected the best weights based on a custom metric that prefers the highest accuracy on the six conventional functional harmony tasks.
-% We set the number of layers in the initial convolutional block to 6. 
-% Each convolutional layer has a kernel size of 1, 2, 4, 8, 16, and 32 timesteps, respectively. In practice, this means that the last convolutional layer provides information up to a whole note away from the current timestep.
-
-\textbf{Other hyper-parameters.}
-Each of the layers in the network is accompanied by batch normalization before the activation function. In the recurrent layers, we apply the batch normalization after the activation function. All convolutional and dense layers use the rectified linear unit (ReLU) as their activation function. However, the two GRU layers use $\tanh$. In all of our experiments, we used 16 sequences per batch and Adam \cite{kingma_adam_2014} as our optimizer, with a learning rate of $10^{-7}$.
-
-
-
-\textbf{Computing time.} The network was trained on a personal laptop\footnote{Intel i7 10750h, Nvidia RTX 2070, 32GB DDR4} with a Linux operating system, Tensorflow 2.4.1, and GPU acceleration.
-With these hardware and software conditions, the training times are approximately ~30 minutes (BPS only), ~40 minutes (BPS+WTC), and ~250 minutes (Full dataset). 
-The number of trainable parameters in the network is close to 90,000. This number already includes all the parameters introduced by the additional output tasks. Therefore, the model is similar in size to recent models \cite{micchi_not_2020, chen_attend_2021}.
 
 \subsection{Results}
 
@@ -124,6 +127,4 @@ Table \ref{tab:results} shows the comma-separated accuracy values for the Roman 
 
 In summary, the \emph{Full dataset} rows show the best results achieved by our model for each dataset. In all cases, the results of our model are higher than existing methods in the final reconstruction of the Roman numeral label. Additionally, the best results in the reconstruction are achieved via the chord inversion, local key, and our RomanNumeral75 task.
 
-
-\bibliographystyle{plain}
-\bibliography{zoterorefs}
+\subsection{Discussion}

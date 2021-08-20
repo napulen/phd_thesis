@@ -2,11 +2,18 @@
 \addcontentsline{toc}{chapter}{R\'esum\'e}
 \label{chap:chap0-res}
 
-Cette th\'ese propose un flux de travail automatique pour l'analyse tonale multi-t\^aches de la musique occidentale de pratique courante. 
-Dans ce workflow, les annotations de chiffres romains sont d\'ecompos\'ees en plusieurs probl\`emes de classification tonale. 
-Ces probl\`emes de classification sont r\'esolus simultan\'ement en utilisant un r\'eseau neuronal profond avec une configuration d'apprentissage multi-t\^aches.
-
-L'analyse des num\'eraux romains est un cadre analytique enseign\'e dans les cours de th\'eorie musicale tonale.
-Dans ce cadre, une grande quantit\'e d'informations sur le contexte tonal d'un accord est r\'esum\'ee à l'aide d'une syntaxe compacte. 
-Par exemple, une annotation comme \texttt{C:viio65/V} transmet des informations sur une tonalit\'e locale de Do-majeur, un accord de septi\'me diminu\'ee de Fa$\sharp$ en premier renversement, et une tonification de (ou un accord appliqu\'e dans) la tonalit\'e de Sol-majeur.
-Ainsi, les annotations en chiffres romains fournissent une description compl\`ete, en particulier, mais pas exclusivement, des changements de tonalit\'e et des accords.
+L'une des façons les plus courantes d'analyser un morceau de musique tonale est l'analyse des chiffres romains.
+Cela nécessite l'inspection de plusieurs attributs liés aux accords et aux tonalités.
+Les accords peuvent être inspectés en fonction de leurs propriétés : racine, qualité, inversion et fonction.
+Les clés peuvent être inspectées en termes de leur portée temporelle comme les modulations ou les tonifications.
+Chacun de ces attributs (ou tâches) de l'analyse des chiffres romains peut être modélisé de manière isolée.
+Cependant, des recherches récentes ont montré que l'analyse simultanée de plusieurs tâches tonales conduit à des modèles MIR plus robustes.
+Ceci a motivé la recherche de modèles multitâches pour l'analyse des chiffres romains.
+Dans cette thèse, je développe cette ligne de recherche en :
+(1) améliorant le processus de curation des données pour les ensembles de données existants ;
+(2) développant une nouvelle technique d'augmentation des données pour les modèles d'analyse des chiffres romains ;
+(3) améliorant la conception des réseaux neuronaux récurrents convolutionnels existants ;
+et (4) l'extraction de plus de tâches tonales à partir des annotations de numéraux romains.
+En combinant ces idées, j'ai formé un nouveau modèle d'analyse des numéraux romains.
+Entre autres applications, cela facilitera la recherche avancée dans les collections de musique.
+Par exemple, la recherche par progression d'accords ou par trajectoires de modulation.

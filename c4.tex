@@ -1,5 +1,5 @@
 \chapter{Model design}
-\label{chap:chap4}
+\label{chap:model}
 
 % \begin{quote}
 %     Parallel fifths and other familiar creatures.
@@ -61,7 +61,7 @@ Two bidirectional GRU \cite{cho_learning_2014} layers are applied after the seco
 Both GRU layers return outputs at every timestep. 
 Throughout the entire network, the dimensionality of the timesteps axis remains constant. That is, our input and output sequences have the same length, and the model predicts one Roman numeral label per timestep. 
 
-\subsection{Multi-outputs}
+\subsection{Multitask learning with additional tonal tasks}
 
 The output of the network follows a MTL approach with hard parameter sharing, similar to that proposed by Chen and Su \cite{chen_functional_2018}. For each of the output tasks, a time-distributed dense layer is attached to the second GRU, and used to predict its corresponding task. 
 Six conventional tasks are learned (similar to Micchi et al. and Chen and Su \cite{micchi_not_2020, chen_attend_2021}), plus five additional ones. All the tasks (eleven in total) and their number of output classes are shown on the right side of Figure \ref{fig:network}.
@@ -118,7 +118,7 @@ The output classes are identical to the ones of the local key and is an alternat
 \textbf{Pitch Class Sets}. The set of pitch classes implied by the chord. The number of classes (93) results from computing all pitch class sets in all diatonic triad and seventh chords, plus all augmented sixth chords in all keys. This task is related to the chord quality, primary degree, and to non-chord tones \cite{ju_non-chord_2017}.
 All additional tasks except for the RomanNumeral75 are computed solely for their contributions to the shared representation of the MTL approach.
 
-\subsection{Data augmentation}
+% \subsection{Data augmentation}
 
 \subsubsection{Transposition}
 
@@ -163,5 +163,3 @@ As part of the randomization, some chords were left unaltered (e.g., the anacrus
 To constraint the depth of the recursion, we applied these patterns only to the slices of the score that contained 3--4 simultaneous notes.  
 This process resulted in the generation of `new' pieces that showed improvements in the learning process of the model, further the than \emph{block chord} synthetic scores.
 
-\bibliographystyle{plain}
-\bibliography{zoterorefs}
