@@ -1,3 +1,85 @@
 \subsection{Digitization of Roman numeral annotations}
 \label{sec:digitization_of_roman_numeral_annotations}
 
+\guide{The lack of a ``standard'' notation.}
+There is no ``standard'' way of writing Roman numeral analysis.
+Personally, I have studied or interacted with several teachers/theorists using this technique in the different places I have lived: M\'exico (Guillermo Salvador Fern\'andez, Gamaliel Cano, Jose Luis Gonz\'alez Moya, Alejandro Moreno), Barcelona (Montserrat Castro, Rafael Caro Repetto), Montr\'eal (William Caplin).
+
+Each of these teachers have used a slightly different notation for Roman numeral analysis. 
+A thorough analysis of the literature of Harmony textbooks will reveal something similar to the reader.
+
+The differences include:
+\begin{itemize}
+    \item Use of case-sensitive or case-insensitive numerals
+    \item Different ways of denoting certain chords, notably, the so-called ``cadential six-four'' chord
+    \item Different notations for other chords (e.g., Neapolitan and Augmented sixth chords)
+    \item Different ways of notating inversions
+\end{itemize}
+
+\guide{Case-sensitive versus case-insensitive Roman numerals.}
+A clear separation of chord qualities (major and minor) using case-sensitive Roman numerals has been common since Weber.
+This is, however, a more time-consuming notation for the analyst.
+Thus, some analysts have preferred to indicate the scale degrees using a Roman numeral, regardless of the chord quality implied by the chord.
+This is often fine for other human analysts, as the reader of the analysis will usually be able to disambiguate the information.
+Computers will not be able to disambiguate this notation, however.
+In digital annotations, having explicit information about the chord quality is unequivocally better.
+Every digital representation considers Roman numerals to be case-sensitive for that reason.
+
+\guide{Cadential six-four chords.}
+A tonic triad in second inversion is a frequent chord used before a cadence (see Figure~\ref{fig:cadential64}).
+When in this context (generally preceding a `V' chord) it receives the name of \emph{Cadential six-four}.
+When denoting this chord using Roman numerals, it is common to see it written as `I64`, `V64`, and `Cad64`.
+Cad64 (or a similar token) is unequivocally the best representation for a digital annotation, as it disambiguates the chord as functioning in this specific way (e.g., a second-inversion tonic triad could also be a passing chord, which is not considered a cadential six-four). 
+
+\guide{Neapolitans, Augmented sixth chords, and other conventions.}
+Neapolitan chords are a chromatic substitution of the subdominant chord.
+The root of the chord is the flattened second degree of the relevant major/minor key.
+For example, the Neapolitan of C major (and C minor) is D$\flat$ major.
+For this reason, it is either known as $\flat$II or as N.
+
+\guide{Notating inversions.}
+Inversions are generally notated using stacked Arabic numerals.
+The conventions for common triad and seventh chords are relatively standardized.
+
+\begin{itemize}
+    \item 6
+    \item 64
+    \item 65
+    \item 43
+    \item 42 (or 2)
+\end{itemize}
+
+Inversions have also been indicated with letters.
+This notation is common since the nineteenth century.
+It is also the notation of the first digital system, **harm.
+
+\guide{On the need for standardization.}
+In the classroom setting, the flexibility of the notation is arguably a desirable goal.
+Students may be encouraged to develop their own ``style'' of tonal analysis, incorporating aspects of voice-leading, motivic, and key analysis, as they see fit.
+This is useful to extend the intrinsic limitations of Roman numeral analysis to summarize tonal music.
+
+Flexibility is, however, a problem in computational work.
+A large and undocumented method of analysis leads to incompatible and unreliable annotations.
+It is unfeasible to assume that a single person will be able to annotate a sufficiently large number of Roman numeral analyses to be used for computational models.
+Thus, compatibility between annotations and cooperation of different analysts is necessary.
+This can only be achieved by standardizing the notation, and the practice of Roman numeral analysis.
+Several notational systems have emerged over the years to attempt to solve this problem
+
+In this section, I discuss the efforts that have been done regarding the standardization of Roman numeral analysis into a digital format.
+
+\subsubsection{The **harm syntax}
+The **harm syntax was proposed by David Huron as part of the Humdrum (**kern) format.
+This syntax includes a comprehensive notation of triads, seventh chords, special chords, and descriptive (arbitrary) chords using Roman numeral notation.
+The notation is well documented, although many aspects of the notation are missing from the explanations.
+
+\subsubsection{The RomanText syntax}
+This notation was first proposed by Tymoczko et al. \parencite{tymoczko}.
+The syntax is clearly explained in the conference publication.
+The most prominent aspect of this notation is its software implementation as a module in the music21 Python library.
+
+\subsubsection{The DCML syntax}
+A notational system first introduced by \parencite{neuwirth}.
+
+\subsubsection{The harmalysis grammar}
+A Roman numeral analysis grammar introduced by N\'apoles L\'opez and Fujinaga \cite{napoleslopez}
+
