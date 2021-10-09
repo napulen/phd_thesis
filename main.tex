@@ -5,7 +5,7 @@
 \doublespacing
 
 \usepackage{graphicx}
-\usepackage{todonotes}
+\usepackage{xcolor}
 \usepackage[french,english]{babel}
 \usepackage{csquotes}
 \usepackage[authordate,backend=bibtex,sorting=nty]{biblatex-chicago}
@@ -14,29 +14,42 @@
 \usepackage[T1]{fontenc}
 \usepackage{stix2}
 
+\newcommand{\rnformat}[1]{\textbf{#1}\relax}
+\newcommand{\rn}[1]{\rnformat{#1}\relax}
+\newcommand{\rndim}{{\footnotesize {}^\rnformat{o}{}\relax}}
+\newcommand{\rnhdim}{{\footnotesize {}^\rnformat{\o}{}\relax}}
+\newcommand{\rnsix}{{\footnotesize {}^\rnformat{6}\relax}}
+\newcommand{\rnsixfour}{{\footnotesize {}^\rnformat{6}_\rnformat{4}\relax}}
+\newcommand{\rnsixfive}{{\footnotesize {}^\rnformat{6}_\rnformat{5}\relax}}
+\newcommand{\rnfourthree}{{\footnotesize {}^\rnformat{4}_\rnformat{3}\relax}}
+\newcommand{\rntwo}{{\footnotesize {}^\rnformat{2}\relax}}
+
+
+
+
+\newcommand{\missing}[1]{{\color{red} A #1 will be inserted here}}
 \newcommand{\guide}[1]{\textbf{#1}}
 % \newcommand{\guide}[1]{}
-
-\newcommand{\missing}[1]{\textcolor{red}{[A #1 will be inserted here]}}
 
 \begin{document}
 
 \pagenumbering{roman}
 
-\include{chapters/0/c00-title}
-\tableofcontents{}
-\include{chapters/0/c0a-abstract}
-\include{chapters/0/c0b-resume}
+% \include{chapters/0/c00-title}
+% \tableofcontents{}
+% \include{chapters/0/c0a-abstract}
+% \include{chapters/0/c0b-resume}
 % \include{chapters/0/c0c-acknowledgements}
 
 \pagenumbering{arabic}
 
-\include{chapters/1/1}
+\setcounter{chapter}{1}
+% \include{chapters/1/1}
 \include{chapters/2/2}
-\include{chapters/3/3}
-\include{chapters/4/4}
-\include{chapters/5/5}
-\include{chapters/6/6}
+% \include{chapters/3/3}
+% \include{chapters/4/4}
+% \include{chapters/5/5}
+% \include{chapters/6/6}
 
 \addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
