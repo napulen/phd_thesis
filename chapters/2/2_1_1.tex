@@ -27,7 +27,7 @@ This is evident in the presence of pitch spelling.
 The G$\flat$--G$\natural$ results in a strange voice leading, whereas the F$\sharp$--G is a customary leading-tone to tonic minor second.
 These subtle interactions of spelling are generally honored by the Roman numeral analysis notation.
 There are multiple examples that come to mind, such as Neapolitans, Augmented Sixth Chords, and \emph{Cadential six-four} chords, where the syntax of Roman numerals is helpful to provide a more thorough description of the annotated chord.
-These differences might not seem very important to some readers, but I would like to make a few arguments here: (1) in tonal music theory textbooks, it is more common to see Roman numeral analysis notation than chord labels, which might suggest that the more granular notation is preferred (2) in machine learning contexts, as is the case for this dissertation, more information in the annotations can be really helpful, without this additional information, we could not attempt to learn a key-estimation model simultaneously using the same annotated data, (3) the syntax of Roman numeral analysis is highly compressed, it is generally not more time-consuming to write Roman numerals than it is to write chord labels, the time-consuming aspect of Roman numerals is the train of thought required to commit to a particular interpretation of the analysis (i.e., key context, chord, inversion, function of the chord), and that is precisely the thorough thought pattern that we want to capture in the data.
+These differences might seem negligible to some, but I would like to make a few arguments: (1) in tonal music theory textbooks, it is more common to see Roman numeral analysis notation than chord labels, which might suggest that the more granular notation is preferred (2) in machine learning contexts, as is the case for this dissertation, more information in the annotations can be really helpful, without this additional information, we could not attempt to learn a key-estimation model simultaneously using the same annotated data, (3) the syntax of Roman numeral analysis is highly compressed, it is generally not more time-consuming to write Roman numerals than it is to write chord labels, the time-consuming aspect of Roman numerals is the train of thought required to commit to a particular interpretation of the analysis (i.e., key context, chord, inversion, function of the chord), and that is precisely the thorough thought pattern that we want to capture in the data.
 
 
 \guide{How did Roman numeral analysis emerge?}
@@ -40,7 +40,7 @@ For example, the chapters on tonality of the Cambridge History of Western Music 
 The historical events discussed by previous scholars are complemented with a timeline of Roman numeral analysis syntax that I collected from different textbooks of the nineteenth century.
 
 \guide{Important developments that lead to the modern Roman numeral analysis syntax.}
-There are a few historical figures who influenced the notation we know today.
+There are a few historical figures who influenced the notation that we know today.
 Rameau's fundamental bass, Vogler's first use of Roman numerals, Weber's notation for Roman numerals with chord qualities (big case for major triads, small case for minor triads, circle postfix to denote diminished triads), Riemann's concept of function and applied chords, Schoenberg's take on function, Schenker's tonicization.
 
 \guide{Rameau's fundamental bass.}
@@ -87,7 +87,7 @@ In a subsequent work in 1802, Vogler used Roman numerals to denote each scale de
 This was the first use of Roman numerals for this purpose.
 An interesting side effect of using the Roman numeral symbols for these annotations, is that Vogler and other authors could also use Arabic numerals to annotate figured bass annotations.
 The evidence I have found in textbooks of the nineteenth century suggests that it was common for authors to write figured bass and Roman numerals for the same music excerpt.
-Sometimes, these annotations would overlap (e.g., annotating certaing chords, such as, augmented sixth chords, using Arabic numerals (figured bass) rather than Roman numerals).
+Sometimes, these annotations would overlap (e.g., annotating certain chords, such as, augmented sixth chords, using Arabic numerals (figured bass) rather than Roman numerals).
 This was a very common practice I observed.
 Arguably, this was the reason why the notation evolved to denote chord inversions using Arabic numerals nowadays.
 
@@ -140,36 +140,57 @@ In this section, I present a summary of Roman numeral analysis notation across o
 The primary sources were collected from three keyword searches in the \emph{worldcat} library catalog.
 The three keywords are: \emph{harmony}, \emph{harmonie}, and \emph{harmonielehre}.
 These keywords were used to search for books in English, French, and German, respectively.
-For books with multiple editions, the earliest available\footnote{An accessible ebook, or the earliest edtion accessible on McGill's Marvin Duchow Library.} edition was preferred.
+For books with multiple editions, the earliest available\footnote{Physically available at the McGill Marvin Duchow Library, or digitally available in e-book form.} edition was preferred.
 
 The objective of reviewing the resulting primary sources was to observe the evolution of the Roman numeral analysis syntax across harmony textbooks.
 Only the musical examples (e.g., an annotated musical staff) were taken into account.
 The review was centered around Roman numeral annotations and figured bass.
 
 \textcite{kirnberger1774kunst} introduced the first Roman numeral annotations that indicated scale-degree relationships.
-These appeared in two tables of \emph{Die Kunst der reinen Satzes in der Musik}.
+These appeared in two tables of \emph{Die Kunst der reinen Satzes in der Musik}, shown in Figure~\ref{fig:kirnberger1774kunst015}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/kirnberger1774kunst015.png}
+    \caption{Roman numerals in \textcite{kirnberger1774kunst}.}
+    \label{fig:kirnberger1774kunst015}
+\end{figure}
 
 Later, \textcite{vogler1778grunde, vogler1802handbuch} introduced the first Roman numeral symbols underneath a staff to indicate scale degrees.
-These are used a few times on the \emph{Gründe der Kuhrpfälzischen Tonschule} and \emph{Handbuch zur Harmonielehre und für den Generalbaß}.
+These are used a few times on both works.
+Figure~\ref{fig:vogler1778grunde021} shows an example in \textcite{vogler1778grunde}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/vogler1778grunde021.png}
+    \caption{Roman numerals in \textcite{vogler1778grunde}.}
+    \label{fig:vogler1778grunde021}
+\end{figure}
 
 While it is difficult to credit someone with ``inventing'' Roman numeral analysis, the modern notation would probably not exist without the precedent of \textcite{weber1817versuch}.
 Weber extended the notation to indicate not only scale degrees but their chord quality.
 A special notation separates diminished triads (i.e., the seventh degree) from major and minor chords; whereas major and minor are distinguished by the size of the Roman numeral.
 Weber introduced several other traits of modern Roman numeral analysis.
 Changes of key are indicated using a colon (``:''), multi-layered analyses with several rows of keys and Roman numeral indications.
-Finally, whereas previous theorists used the Roman numeral notations sporadically, Weber embraced this notation thoroughly throughout the \emph{Versuch einer geordneten Theorie der Tonsetzkunst} \textcite{weber1817versuch}.
+Finally, whereas previous theorists used the Roman numeral notations sporadically, Weber embraced this notation thoroughly throughout the \emph{Versuch einer geordneten Theorie der Tonsetzkunst} \parencite{weber1817versuch}.
 In this book, Weber also indicated dominant seventh chords as $\rn{V}\rnseven$, a notation that is still in use today.
-Whereas others relied on figured bass to explain their examples, Weber relied on his Roman numerals.
-
-One of the first adopters of Roman numerals in the English-speaking world appears to be \textcite{hamilton1840catechism}.
-Hamilton, and several others in the future, did not adopt the case-sensitive notation for chord qualities.
-All scale degrees are indicated with a single Roman numeral style, regardless of their chord qualities.
-At first, it is difficult to know whether Hamilton's Roman numeral indicate scale degrees melodically or as chord roots.
-At page 44, however, it becomes clear that they mean melodic scale degrees, regardless of the root \ref{fig:hamilton1840cathecism044}.
+Whereas others relied on figured bass to explain their examples, Weber relied mostly on Roman numerals.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter/2/primary_sources/hamilton1840cathecism044.png}
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/weber1817versuch205.png}
+    \caption{Roman numerals in \textcite{weber1817versuch}. Keys are indicated with colons (e.g., mm. 1 and mm.5). Dominant seventh chords indicated as $\rn{V}\rnseven$. Smaller Roman numerals indicate minor triads.}
+    \label{fig:weber1817versuch205}
+\end{figure}
+
+After Weber, the first adopter of Roman numerals I could find among my primary sources is \textcite{hamilton1840catechism}.
+Hamilton, and several others in the future, did not adopt the case-sensitive notation for chord qualities.
+All scale degrees are indicated with a single Roman numeral style, regardless of their chord qualities.
+In Hamilton's annotations, Roman numerals indicate melodic scale degrees, instead of chord roots, as shown in Figure~\ref{fig:hamilton1840cathecism044}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/hamilton1840cathecism044.png}
     \caption{Use of Roman numerals in \textcite{hamilton1840catechism}, indicating the scale degree of the bass, regardless of the chord root. In modern Roman numeral notation, these annotations would be written as $\rn{V}\rnsixfive$, $\rn{V}\rnfourthree$, $\rn{V}\rntwo$, $\rn{V}\rnfourthree$, and $\rn{V}\rnseven$, respectively.}
     \label{fig:hamilton1840cathecism044}
 \end{figure}
@@ -177,57 +198,56 @@ At page 44, however, it becomes clear that they mean melodic scale degrees, rega
 The next adopter of the Roman numeral notation among German theorists appears to be \textcite{meister1852vollstandige}.
 Meister often accompanies the Roman numeral notation with chord labels and figured bass indications, as in Figure \ref{fig:meister1852vollstandige32}.
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter/2/primary_sources/meister1852vollstandige32.png}
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/meister1852vollstandige32.png}
     \caption{Use of Roman numerals in \textcite{meister1852vollstandige}, accompanied by chord label and figured bass indications.}
     \label{fig:meister1852vollstandige32}
 \end{figure}
 
 Other authors adopted Roman numerals in the nineteenth century \parencite{sechter1853grundsatze, richter1860lehrbuch, tiersch1874elementarbuch, tracy1878theory}.
 
-An interesting example is one by \textcite{bussler1878praktische}, who presents Roman numerals and figured bass annotations in the same analytical layer (see Figure \ref{fig:bussler1878praktische063}).
+An interesting example by \textcite{bussler1878praktische} is shown in Figure \ref{fig:bussler1878praktische063}, who presents Roman numerals and figured bass annotations in the same analytical layer.
 One could claim that this syntax is an early version of the modern chord inversion syntax, where inversions are denoted by stacks of Arabic numerals next to the Roman numeral.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter/2/primary_sources/bussler1878praktische063.png}
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/bussler1878praktische063.png}
     \caption{Use of Roman numerals in \textcite{bussler1878praktische}, accompanied by figured bass indications.}
     \label{fig:bussler1878praktische063}
 \end{figure}
 
 This practice is further developed by \textcite{emery1879elements}.
-Emery also introduced a new symbol to the Roman numeral notation to denote Neapolitan chords.
+Emery also introduced a special symbol to denote Neapolitan chords, $\rn{N.6}$.
 For the augmented sixth chords (i.e., Italian, French, and German), Emery uses a stack of Arabic numerals.
-The example shown in Figure \ref{fig:emery1879elements051} shows this notation. 
-Notices that additionally to the stack of Arabic numerals in the layer of Roman numeral analysis, Emery also presents a figured bass layer above the staff.
-Lastly, notice that Emery's notation for the augmented sixth quality is the `+' symbol.
-Nowadays, this symbol is commonly used to denote augmented triads (e.g., c:III+ in the C harmonic minor scale).
+The example shown in Figure~\ref{fig:emery1879elements051} shows this notation. 
+Notice that additionally to the stack of Arabic numerals in the layer of Roman numeral analysis, Emery also presents a figured bass layer above the staff.
+Lastly, Emery's notation for the augmented sixth quality is the $\rn{+}$ symbol.
+Nowadays, this symbol is commonly used to denote augmented triads as well (e.g., $\rn{c:III+}$ in the C harmonic minor scale).
 This practice was not conventional around this time.
-Thus, it is possible that Emery's notation of augmented sixth intervals could have influenced the use of `+' for augmented triads appended to a Roman numeral, similar to Weber's `o' notation for diminished triads.
-Up until this point, the notation for modulations is to indicate the changes of key at the level of the Roman numeral annotations. 
-A full example of the notation can be seen in another excerpt by Emery.
+Up to this point, the notation for modulations is to indicate the changes of key at the level of the Roman numeral annotations. 
+A full example of the notation can be seen in another excerpt by Emery, shown in Figure~\ref{fig:emery1879elements102}.
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter/2/primary_sources/emery1879elements051.png}
-    \caption{Use of Roman numerals in \textcite{emery1879elements}, with a special symbol for Neapolitan chords and augmented sixth chords indicated with stacks of Arabic numerals.}
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/emery1879elements051.png}
+    \caption{Use of Roman numerals in \textcite{emery1879elements}, with notations for Neapolitan chords and augmented sixth chords.}
     \label{fig:emery1879elements051}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter/2/primary_sources/emery1879elements102.png}
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/emery1879elements102.png}
     \caption{Modulations in \textcite{emery1879elements}.}
-    \label{fig:emery1879elements051}
+    \label{fig:emery1879elements102}
 \end{figure}
 
 A notation for augmented triads was introduced by \textcite{jadassohn1883lehrbuch}, who used a single quote after the augmented scale degree.
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter/2/primary_sources/jadassohn1883lehrbuch038.png}
-    \caption{Augmented triads in \textcite{jadassohn1883lehrbuch}.}
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/jadassohn1883lehrbuch038.png}
+    \caption{Augmented triads in \textcite{jadassohn1883lehrbuch}, indicated as $\rn{III'}$.}
     \label{fig:jadassohn1883lehrbuch038}
 \end{figure}
 
@@ -235,80 +255,153 @@ This syntax of the single-quote augmented triad appeared in at least the treatis
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter/2/primary_sources/broekhoven1889system028.png}
-    \caption{Augmented triads in \textcite{broekhoven1889system}.}
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/broekhoven1889system028.png}
+    \caption{Augmented triads in \textcite{broekhoven1889system}, using a similar notation to the one found in \textcite{jadassohn1883lehrbuch}.}
     \label{fig:broekhoven1889system028}
 \end{figure}
 
 An important component of the modern Roman numeral analysis syntax is the one used for tonicizations.
 Tonicizations are slight deviations of key, which usually return to the original key, without ``invoking'' a modulation.
 Nowadays, tonicizations are generally written with a slash symbol, where the numerator indicates the scale degree and the denominator indicates the tonicized key.
-A common example is $\rn{V}\rn{/V}$ or (dominant of the dominant).
+A common example is $\rn{V/V}$ or (dominant of the dominant).
 It is unclear where this notation originally emerged, however, a similar notation was introduced by \textcite{shepard1889how}.
-Shepard's notation, which he calls ``[A]ttendant chords'' is presented in the music notation in the form ``[A] of $\rn{V}$''.
+Shepard's notation, which he calls ``[A]ttendant chords'', is presented as ``$\rn{[A] of V}$'' in the notation, shown in Figure~\ref{fig:shepard1889how005}.
 This is analogous to $\rn{V/V}$.
-An advantage of the modern notation is that other degrees other than the dominant can be annotated using the same syntax.
-Piston in fact used Shepard's notation in this way, using a syntax of the form ``$\rn{V} of \rn{V}$''.
-In the explanations of his modulation method, Shepard also introduces a modulation ``formula'' that resembles very much the fraction-like notation we use today (see Figure \ref{img:shepard1896harmony179}).
-Lastly, Shepard included figured bass annotations next to the Roman numeral to indicate certain chord inversions, namely, the cadential six-four chord, as shown in \ref{img:shepard1896harmony184}.
-This notation was consistent even when there was no music notation involved, where Shepard would write the arabic numerals next to the Roman numeral in plain-text form, as shown in \ref{img:shepard1896harmony117}.
+An advantage of the modern notation is that other degrees other than $\rn{V}$ (in the numerator) can be annotated using the same syntax.
+Piston in fact used Shepard's notation in this way, using a syntax of the form ``$\rn{V of V}$''.
+In the explanations of his modulation method, Shepard also introduces a modulation ``formula'' that resembles the fraction-like notation we use today (see Figure~\ref{fig:shepard1889how010}).
+Lastly, Shepard included figured bass annotations next to the Roman numeral to indicate certain chord inversions, notably, the cadential six-four chord, as shown in Figure~\ref{fig:shepard1896harmony184}.
+This notation was consistent even when there was no music notation involved, where Shepard would write the Arabic numerals next to the Roman numeral in plain-text form, as shown in Figure~\ref{fig:shepard1896harmony117}.
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter/2/primary_sources/shepard1889how005.png}
-    \caption{Attendant chords in Sheppard \textcite{shepard1889how}.}
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/shepard1889how005.png}
+    \caption{Attendant chords in \textcite{shepard1889how}.}
     \label{fig:shepard1889how005}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter/2/primary_sources/shepard1896harmony179.png}
-    \caption{Shepard's modulation formula \textcite{shepard1896harmony}.}
-    \label{fig:shepard1896harmony179}
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/shepard1889how010.png}
+    \caption{Modulation formula in \textcite{shepard1889how}.}
+    \label{fig:shepard1889how010}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter/2/primary_sources/shepard1896harmony184.png}
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/shepard1896harmony184.png}
     \caption{Shepard's Arabic-numeral inversions \textcite{shepard1896harmony}.}
     \label{fig:shepard1896harmony184}
 \end{figure}
 
-Regarding numeric inversions, Chadwick made this notation explicit in his manual \textcite{chadwick1897harmony}. 
-Figure \ref{fig:chadwick1897harmony012} shows his explanation.
-This notation goes beyond triads, as Chadwick introduces, for example, 
-$\rn{V}\rnfourthree$, as in \ref{fig:chadwick1897harmony028}.
-
-\begin{figure}
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter/2/primary_sources/chadwick1897harmony012.png}
-    \caption{Shepard's Arabic-numeral inversions \textcite{chadwick1897harmony}.}
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/shepard1896harmony117.png}
+    \caption{Shepard's Arabic-numeral inversions \textcite{shepard1896harmony}.}
+    \label{fig:shepard1896harmony117}
+\end{figure}
+
+Regarding numeric inversions, \textcite{chadwick1897harmony} made this notation explicit. 
+Figure~\ref{fig:chadwick1897harmony012} shows his explanation.
+This notation goes beyond triads, including for example 
+$\rn{V}\rnfourthree$, shown in Figure~\ref{fig:chadwick1897harmony028}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/chadwick1897harmony012.png}
+    \caption{Chadwick's Arabic-numeral inversions \textcite{chadwick1897harmony}.}
     \label{fig:chadwick1897harmony012}
 \end{figure}
 
-Chadwick adopted the Riemann notation for augmented triads, using the (`+') symbol next to the Roman numeral (see Figure \ref{img:chadwick1897harmony053}).
-As with Shepard, the numeric inversions are visible even in annotations without any music notation (see Figure \ref{img:chadwick1897harmony064}).
-Similarly to Emery, Chadwick expressed Neapolitan chords using a special figure (`N').
-Chadwick was explicit in expressing a Neapolitan as being in first inversion ($\rn{N}\rnsix$), as shown in Figure \ref{fig:chadwick1897harmony148}).
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/chadwick1897harmony028.png}
+    \caption{A dominant seventh chord in second inversion in \textcite{chadwick1897harmony}.}
+    \label{fig:chadwick1897harmony028}
+\end{figure}
 
-Halm can be considered another pioneer of the $\rn{V/V}$ notation.
-He used a similar notation `$\rn{V--V}$' to refer to secondary dominant chords.
-The meaning of this notation is not very clear, because previously he uses it in the form of `I-V' and `I-IV' to denote chords that act as a tonic in one key and as a dominant in another key, but this notation does not work for his `V-V', which should be written as `#II-V' or similarly.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/chadwick1897harmony053.png}
+    \caption{The notation for augmented triads in \textcite{chadwick1897harmony}, which is similar to the one by \textcite{riemann1890katechismus}.}
+    \label{fig:chadwick1897harmony053}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/chadwick1897harmony064.png}
+    \caption{\textcite{chadwick1897harmony} describing numeric inversions even in examples without music notation in them.}
+    \label{fig:chadwick1897harmony064}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/chadwick1897harmony148.png}
+    \caption{Neapolitan in \textcite{chadwick1897harmony}.}
+    \label{fig:chadwick1897harmony148}
+\end{figure}
+
+Chadwick adopted the Riemann notation for augmented triads, using $\rn{III+}$, as shown in Figure~\ref{fig:chadwick1897harmony053}.
+As with Shepard, the numeric inversions are visible even in annotations without any music notation (see Figure~\ref{fig:chadwick1897harmony064}).
+Similarly to Emery, Chadwick expressed Neapolitan chords using a special figure $\rn{N}$.
+Chadwick was explicit in expressing a Neapolitan as being in first inversion, $\rn{N}\rnsix$, as shown in Figure~\ref{fig:chadwick1897harmony148}.
+
+\textcite{halm1900harmonielehre} can be considered another pioneer of the $\rn{V/V}$ notation.
+He used a similar notation $\rn{V--V}$ to refer to secondary dominant chords.
+The meaning of this notation is not very clear, because previously he uses it in the form of $\rn{I--V}$ and $\rn{I--IV}$ to denote chords that act as a tonic in one key and as a dominant in another key, but this notation does not work for his $\rn{V--V}$, which should be written as $\sharp{}\rn{II--V}$ or similarly.
 Nevertheless, the spirit of the notation is similar to the modern way of thinking about applied chords.
+An example of Halm's notation is shown in Figure~\ref{fig:halm1900harmonielehreXVII}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/halm1900harmonielehreXVII.png}
+    \caption{Notation for secondary dominants in \textcite{halm1900harmonielehre}.}
+    \label{fig:halm1900harmonielehreXVII}
+\end{figure}
+
 
 Another notation for chord inversions adopted by several theorists consists of the use of letters.
-In Cutter's \emph{Harmonic Analysis: A Course in the Analysis of the Chords and of the Non-harmonic Tones to Be Found in Music, Classic and Modern} \textcite{cutter1902harmonic}, both notations are explained (see Figure \ref{fig:cutter1902harmonic004}.
+In \textcite{cutter1902harmonic}, both notations are explained (see Figure~\ref{fig:cutter1902harmonic004}).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/cutter1902harmonic004.png}
+    \caption{Inversions by Arabic numerals and by letters explained in \textcite{halm1900harmonielehre}.}
+    \label{fig:cutter1902harmonic004}
+\end{figure}
+
 The numeric inversion syntax was already used by previous theorists, however, the letters ${a, b, c , d}$ do not seem to appear before this treatise.
-It is also unusual that Cutter mentions both syntaxes in the same work, possibly because this is a treatise on harmonic analysis, rather than harmony (i.e., harmonization).
+It is also unusual that Cutter mentions both syntaxes in the same work, possibly because this is a treatise on harmonic analysis, rather than a harmony textbook (i.e., harmonization).
 Throughout the examples, however, only the numeric inversions are used.
 
-Schenker adopted several notational conventions in \emph{Neue Musikalische Theorien und Phantasien: Harmonielehre} \textcite{schenker1906neue}.
+Schenker adopted several notational conventions in \emph{Neue Musikalische Theorien und Phantasien: Harmonielehre} \parencite{schenker1906neue}.
 Throughout this book, pivot chords that have multiple meanings in different keys are usually expressed in Roman numerals.
-Schenker sometimes uses the notation VI=IV, and other times VI/IV.
+Schenker sometimes uses the notation $\rn{VI=IV}$, and other times $\rn{VI/IV}$.
 Some of his specific examples can be seen in Figures \ref{fig:schenker1906neue078, fig:schenker1906neue079, fig:schenker1906neue190}.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/schenker1906neue078.png}
+    \caption{Schenker notation for applied chords.}
+    \label{fig:schenker1906neue078}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/schenker1906neue079.png}
+    \caption{Schenker notation for applied chords.}
+    \label{fig:schenker1906neue079}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter/2/primary_sources/schenker1906neue190.png}
+    \caption{Schenker notation for applied chords.}
+    \label{fig:schenker1906neue190}
+\end{figure}
+
 The numeric inversion notation could have started, additionally to augmented sixth chords, with cadential six four chords.
-A clear example of this can be seen in Loewengard's treatise \textcite{loewengard1908lehrbuch}, where the cadential six-four figure has the numeric inversion notation, but the ii6 chord in the same line does not (see Figure \ref{img:loewengard1908lehrbuch045}).
+A clear example of this can be seen in Loewengard's treatise \textcite{loewengard1908lehrbuch}, where the cadential six-four figure has the numeric inversion notation, but the ii6 chord in the same line does not (see Figure \ref{fig:loewengard1908lehrbuch045}).
 
 The notation for chord inversions based on letters is less common than the stacks of Arabic numerals.
 An author who preferred the letter notation was York, who prominently presented in \emph{A practical introduction to composition: Harmony simplified} \textcite{york1909practical}.
@@ -319,7 +412,7 @@ In this notation, secondary dominants are presented within parenthesis, indicati
 It is clear that these changes of key are different from the other indications of change, like the multirow analysis with a second row of Roman numerals, which permanently change the key in the next chord.
 This is consistent with a notation of \emph{tonicizations} and \emph{modulations}, as seen in recent works of computational music theory.
 
-The notation of \emph{VofV} is observed in the book of Mokrejs \textcite{mokrejs1913lessons}, which is shown in Figure \ref{img:mokrejs1913lessons079}.
+The notation of \emph{VofV} is observed in the book of Mokrejs \textcite{mokrejs1913lessons}, which is shown in Figure \ref{fig:mokrejs1913lessons079}.
 
 Gilson presented a numerator/denominator notation of Roman numerals \textcite{gilson1919traite}, which is shown in \ref{fig:gilson1919traite049}.
 The Roman numeral notation by Gilson is a mixture of Riemannian functions and scale-degree Roman numerals, an unconventional style in current workflows.
