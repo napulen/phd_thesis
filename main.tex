@@ -25,13 +25,14 @@
 \newcommand{\rnfourthree}{{\footnotesize {}^\rnformat{4}_\rnformat{3}\relax}}
 \newcommand{\rntwo}{{\footnotesize {}^\rnformat{2}\relax}}
 
-\newcommand{\figure}[2][Caption placeholder]{
+\newcommand{\thesisfigure}[2][Caption placeholder]{
     \begin{figure}[h!]
         \centering
         \includegraphics[width=0.6\textwidth]{chapters/\arabic{chapter}/figures/#2}
         \caption{#1.}
         \label{fig:#2}
     \end{figure}
+    \relax
 }
 
 \newcommand{\missing}[1]{{\color{red} A #1 will be inserted here}}
@@ -43,21 +44,21 @@
 \pagenumbering{roman}
 
 
-\include{chapters/0/c00-title}
-\tableofcontents{}
-\include{chapters/0/c0a-abstract}
-\include{chapters/0/c0b-resume}
-\include{chapters/0/c0c-acknowledgements}
+% \include{chapters/0/c00-title}
+% \tableofcontents{}
+% \include{chapters/0/c0a-abstract}
+% \include{chapters/0/c0b-resume}
+% \include{chapters/0/c0c-acknowledgements}
 
 \pagenumbering{arabic}
 
-% \setcounter{chapter}{1}
-\include{chapters/1/1}
+\setcounter{chapter}{1}
+% \include{chapters/1/1}
 \include{chapters/2/2}
-\include{chapters/3/3}
-\include{chapters/4/4}
-\include{chapters/5/5}
-\include{chapters/6/6}
+% \include{chapters/3/3}
+% \include{chapters/4/4}
+% \include{chapters/5/5}
+% \include{chapters/6/6}
 
 \addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
