@@ -6,6 +6,7 @@
 *.bcf
 *.blg
 *.pdf
+*.toc
 *.run.xml
 *.synctex.gz
 .ipynb_checkpoints
