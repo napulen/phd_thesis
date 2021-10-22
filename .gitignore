@@ -1,5 +1,11 @@
-main.aux
-main.fdb_latexmk
-main.fls
-main.log
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.bbl
+*.bcf
+*.blg
+*.pdf
+*.run.xml
+*.synctex.gz
 .ipynb_checkpoints
