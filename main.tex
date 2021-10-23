@@ -13,6 +13,7 @@
 
 \usepackage[T1]{fontenc}
 \usepackage{stix2}
+\usepackage{titlecaps}
 
 \newcommand{\rnformat}[1]{\textbf{#1}\relax}
 \newcommand{\rn}[1]{\rnformat{#1}\relax}
@@ -25,7 +26,7 @@
 \newcommand{\rnfourthree}{{\footnotesize {}^\rnformat{4}_\rnformat{3}\relax}}
 \newcommand{\rntwo}{{\footnotesize {}^\rnformat{2}\relax}}
 
-\newcommand{\thesisfigure}[2][Caption placeholder]{
+\newcommand{\phdfigure}[2][Caption placeholder]{
     \begin{figure}[h!]
         \centering
         \includegraphics[width=0.6\textwidth]{chapters/\arabic{chapter}/figures/#2}
@@ -35,14 +36,30 @@
     \relax
 }
 
+
+% Amazing trick to remove spaces betwen words by:
+% https://tex.stackexchange.com/questions/87509/removing-the-spaces-between-words
+\makeatletter
+\def\RemoveSpaces#1{\zap@space#1 \@empty}
+\makeatother
+
+\newcommand{\phdinput}[1]{\input{chapters/\arabic{chapter}/#1.tex}}
+
 \newcommand{\missing}[1]{{\color{red} A #1 will be inserted here}}
 \newcommand{\guide}[1]{\textbf{#1}}
 % \newcommand{\guide}[1]{}
 
+\newcommand{\phdchapter}[1]{\chapter{\titlecap{#1}}\label{chap:\RemoveSpaces{#1}}}
+\newcommand{\phdsection}[1]{\section{\titlecap{#1}}\label{sec:\RemoveSpaces{#1}}}
+\newcommand{\phdsubsection}[1]{\subsection{\titlecap{#1}}\label{sec:\RemoveSpaces{#1}}}
+\newcommand{\phdsubsubsection}[1]{\subsubsection{\titlecap{#1}}\label{sec:\RemoveSpaces{#1}}}
+
+
 \begin{document}
 
+% \def\compilechapter{2}
 
-\def\chapteronly{1}
+\ifx\compilechapter\undefined
 
 \pagenumbering{roman}
 
@@ -54,13 +71,20 @@
 
 \pagenumbering{arabic}
 
-\setcounter{chapter}{1}
+% \setcounter{chapter}{1}
 \include{chapters/1/1}
 \include{chapters/2/2}
 \include{chapters/3/3}
 \include{chapters/4/4}
 \include{chapters/5/5}
 \include{chapters/6/6}
+
+\else
+
+\setcounter{chapter}{1}
+\include{chapters/2/2}
+
+\fi
 
 \addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
