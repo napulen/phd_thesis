@@ -1,0 +1,28 @@
+% Taken verbatim from thesis proposal
+
+\guide{Problem}
+One of the most common ways to analyze a piece of tonal music is through Roman numeral analysis.
+This requires the inspection of several attributes related to chords and keys.
+Chords can be inspected in terms of their properties: root, quality, inversion, and function.
+Keys can be inspected in terms of their temporal scope as modulations or tonicizations~\cite{napoles_lopez_local_2020}.
+Each of these attributes (or tasks) of Roman numeral analysis can be modeled in isolation.
+As a result, many models for automatic key and chord analysis exist in the Music Information Retrieval (MIR) literature.
+Recent research has found that analyzing several tonal tasks simultaneously leads to more robust MIR models.
+This happens via multitask learning, a technique where a machine learning model solves several problems at once~\cite{ruder_overview_2017}.
+This has motivated the research of multitask models for Roman numeral analysis.
+However, even the best of the models has significant limitations.
+For example, recent models output the correct Roman numeral annotation $\sim$42\% of the times~\cite{chen_attend_2021, micchi_not_2020}.
+
+\guide{Proposal}
+In this dissertation, I propose to address existing limitations in multitask Roman numeral analysis models.
+% I consider that enhancements are possible all along the process.
+In particular, I will focus on four improvements:
+(1) to standardize the syntax and quality across various existing Roman numeral analysis datasets;
+(2) to investigate new data-augmentation techniques that overcome the scarcity of expert-annotated data;
+(3) to enhance the design of neural network architectures for Roman numeral analysis;
+and (4) to explore different combinations of tonal tasks in multitask learning configurations.
+
+Combining these ideas, I will train a new Roman numeral analysis model.
+The resulting model will be capable of annotating large amounts of symbolic music files with Roman numeral labels.
+Among other applications, this will facilitate advanced searching in music collections.
+For example, searching by chord progressions or by modulation trajectories.
