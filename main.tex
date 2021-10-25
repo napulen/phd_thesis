@@ -36,7 +36,6 @@
     \relax
 }
 
-
 % Amazing trick to remove spaces betwen words by:
 % https://tex.stackexchange.com/questions/87509/removing-the-spaces-between-words
 \makeatletter
@@ -57,32 +56,33 @@
 
 \begin{document}
 
-% \def\compilechapter{2}
+% COMPILE A SINGLE CHAPTER. Comment to compile the full thesis
+\def\compilechapter{2}
 
 \ifx\compilechapter\undefined
 
-\pagenumbering{roman}
+    \pagenumbering{roman}
 
-\include{chapters/0/c00-title}
-\tableofcontents{}
-\include{chapters/0/c0a-abstract}
-\include{chapters/0/c0b-resume}
-\include{chapters/0/c0c-acknowledgements}
+    \include{chapters/0/c00-title}
+    \tableofcontents{}
+    \include{chapters/0/c0a-abstract}
+    \include{chapters/0/c0b-resume}
+    \include{chapters/0/c0c-acknowledgements}
 
-\pagenumbering{arabic}
+    \pagenumbering{arabic}
 
-% \setcounter{chapter}{1}
-\include{chapters/1/1}
-\include{chapters/2/2}
-\include{chapters/3/3}
-\include{chapters/4/4}
-\include{chapters/5/5}
-\include{chapters/6/6}
+    \include{chapters/1/1}
+    \include{chapters/2/2}
+    \include{chapters/3/3}
+    \include{chapters/4/4}
+    \include{chapters/5/5}
+    \include{chapters/6/6}
 
 \else
 
-\setcounter{chapter}{1}
-\include{chapters/2/2}
+    \setcounter{chapter}{\compilechapter}
+    \addtocounter{chapter}{-1}
+    \include{chapters/\compilechapter/\compilechapter}
 
 \fi
 
