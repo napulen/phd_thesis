@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[margin=1in]{geometry}
 \usepackage{setspace}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=teal]{hyperref}
 \doublespacing
 
 \usepackage{graphicx}
@@ -45,7 +46,7 @@
 \newcommand{\phdinput}[1]{\input{chapters/\arabic{chapter}/#1.tex}}
 
 \newcommand{\missing}[1]{{\color{red} A #1 will be inserted here}}
-\newcommand{\guide}[1]{\textbf{#1}}
+\newcommand{\guide}[1]{{\color{gray}\textbf{#1}}}
 % \newcommand{\guide}[1]{}
 
 \newcommand{\phdchapter}[1]{\chapter{\titlecap{#1}}\label{chap:\RemoveSpaces{#1}}}
@@ -53,6 +54,11 @@
 \newcommand{\phdsubsection}[1]{\subsection{\titlecap{#1}}\label{sec:\RemoveSpaces{#1}}}
 \newcommand{\phdsubsubsection}[1]{\subsubsection{\titlecap{#1}}\label{sec:\RemoveSpaces{#1}}}
 
+\newcommand{\refchap}[1]{\hyperref[chap:#1]{Chapter~\ref*{chap:#1}}}
+\newcommand{\refsec}[1]{\hyperref[sec:#1]{Section~\ref*{sec:#1}}}
+\newcommand{\reffig}[1]{\hyperref[fig:#1]{Figure~\ref*{fig:#1}}}
+\newcommand{\reftab}[1]{\hyperref[tab:#1]{Table~\ref*{tab:#1}}}
+\newcommand{\refeq}[1]{\hyperref[eq:#1]{Equation~\ref*{eq:#1}}}
 
 \begin{document}
 
@@ -60,17 +66,13 @@
 % \def\compilechapter{2}
 
 \ifx\compilechapter\undefined
-
     \pagenumbering{roman}
-
     \include{chapters/0/c00-title}
     \tableofcontents{}
     \include{chapters/0/c0a-abstract}
     \include{chapters/0/c0b-resume}
     \include{chapters/0/c0c-acknowledgements}
-
     \pagenumbering{arabic}
-
     \include{chapters/1/1}
     \include{chapters/2/2}
     \include{chapters/3/3}
@@ -78,13 +80,10 @@
     \include{chapters/5/5}
     \include{chapters/6/6}
     \include{chapters/7/7}
-
 \else
-
     \setcounter{chapter}{\compilechapter}
     \addtocounter{chapter}{-1}
     \include{chapters/\compilechapter/\compilechapter}
-
 \fi
 
 \addcontentsline{toc}{chapter}{Bibliography}

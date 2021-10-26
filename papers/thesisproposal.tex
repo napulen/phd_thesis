@@ -1,0 +1,203 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\title{Multitask tonal analysis in symbolic music representations}
+\author{N\'estor N\'apoles L\'opez, PhD Candidate}
+\date{}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+\usepackage{enumitem}
+
+% \newcommand{\guide}[1]{\textbf{#1}.}
+\newcommand{\guide}[1]{}
+
+\makeatletter
+\renewcommand\@dotsep{200}   % default value 4.5
+\makeatother
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction / Motivation}
+
+\guide{Problem}
+One of the most common ways to analyze a piece of tonal music is through Roman numeral analysis.
+This requires the inspection of several attributes related to chords and keys.
+Chords can be inspected in terms of their properties: root, quality, inversion, and function.
+Keys can be inspected in terms of their temporal scope as modulations or tonicizations~\cite{napoles_lopez_local_2020}.
+Each of these attributes (or tasks) of Roman numeral analysis can be modeled in isolation.
+As a result, many models for automatic key and chord analysis exist in the Music Information Retrieval (MIR) literature.
+Recent research has found that analyzing several tonal tasks simultaneously leads to more robust MIR models.
+This happens via multitask learning, a technique where a machine learning model solves several problems at once~\cite{ruder_overview_2017}.
+This has motivated the research of multitask models for Roman numeral analysis.
+However, even the best of the models has significant limitations.
+For example, recent models output the correct Roman numeral annotation $\sim$42\% of the times~\cite{chen_attend_2021, micchi_not_2020}.
+
+\guide{Proposal}
+In this dissertation, I propose to address existing limitations in multitask Roman numeral analysis models.
+% I consider that enhancements are possible all along the process.
+In particular, I will focus on four improvements:
+(1) to standardize the syntax and quality across various existing Roman numeral analysis datasets;
+(2) to investigate new data-augmentation techniques that overcome the scarcity of expert-annotated data;
+(3) to enhance the design of neural network architectures for Roman numeral analysis;
+and (4) to explore different combinations of tonal tasks in multitask learning configurations.
+
+Combining these ideas, I will train a new Roman numeral analysis model.
+The resulting model will be capable of annotating large amounts of symbolic music files with Roman numeral labels.
+Among other applications, this will facilitate advanced searching in music collections.
+For example, searching by chord progressions or by modulation trajectories.
+
+
+\section*{Previous Work}
+
+\guide{Historical}
+The first computational works on Roman numeral analysis were by Winograd~\cite{winograd_linguistics_1968} and Maxwell~\cite{maxwell_expert_1992}.
+Later, the independent contributions by Temperley, Sleator, and Sapp led to the first end-to-end automatic Roman numeral analysis system~\cite{temperley_cognition_2004, sleator_melisma_2003, sapp_tsroot_2009}.
+Subsequent studies include those of Raphael and Stoddard~\cite{raphael_functional_2004}, Illescas et al.~\cite{illescas_harmonic_2007}, and Magalh\~aes and de Haas~\cite{magalhaes_functional_2011}, who proposed Hidden Markov Models (HMMs), dynamic programming, and grammar-based approaches, respectively.
+
+\guide{Nowadays}
+More recently, deep neural networks have been the preferred method for approaching this problem.
+Chen and Su~\cite{chen_functional_2018} were the first to introduce \emph{multitask learning}~\cite{ruder_overview_2017}.
+With it, a neural network shares hidden representations across related tasks.
+In their experiments, multitask learning outperforms task-specific models for key and chord analysis.
+Chen and Su have recently continued this line of research using Transformer-based deep neural networks~\cite{chen_attend_2021}.
+Meanwhile, Micchi et al.~\cite{micchi_not_2020} have also favored multitask learning, adapting it for convolutional recurrent neural networks.
+
+
+\section*{Proposed Research / Methodology}
+
+The methods of this dissertation follow the conventions of supervised machine learning projects.
+In supervised learning, a model is trained with expert-annotated data to solve a task.
+Here, several tonal tasks are solved simultaneously via multitask learning.
+The model is then tested on unseen examples to evaluate its generalizability.
+The evaluation metric used here consists of assigning the correct Roman numeral label.
+The research process can be roughly divided in three steps:
+(i) data acquisition and preparation;
+(ii) model design;
+and (iii) an experimental evaluation of the model.
+
+\emph{Data acquisition and preparation.}
+The training examples given to the neural network are $(score, annotation)$ input-output pairs.
+The inputs are symbolic music scores in MusicXML~\cite{good2001musicxml}.
+The outputs are digital Roman numeral annotations in RomanText~\cite{gotham_romantext_2019}.
+There are currently seven datasets of Roman numeral analysis data, comprising $\sim$400 pieces of music with $\sim$100,000 Roman numeral annotations.
+One caveat is that these seven datasets vary in their file formats, notational conventions, and the quality of their contents.
+% Training a model requires them with a unified format and syntax.
+% This process was started by Gotham et al.~\cite{gotham_romantext_2019} but misses two newer datasets~\cite{hentschel2021annotated, weiss2021schubert}. I will complete this work.
+% Additionally,
+I will develop automatic tools to clean the datasets.
+This includes:
+disambiguating synonyms (e.g., $\flat$\texttt{II6} and \texttt{N6});
+detecting mislabeled data (e.g., wrong inversion);
+and standardizing the format of the annotations (e.g., writing scripts to convert among different file formats~\cite{gotham_romantext_2019, napoles_lopez_harmalysis_2020}).
+The datasets will then be homogenized to consistently train the model.
+However, the resulting data will likely remain insufficient for training a deep learning model.
+Thus, in addition to cleaning the data, I will develop a new data-augmentation technique.
+The new data-augmentation technique will extend an existing approach based on dynamic programming and voice-leading rules~\cite{napoles_lopez_harmonic_2020}.
+This will allow me to artificially augment the number of training examples.
+
+\emph{Model design.}
+Currently, there are two preferred architectures for multitask tonal analysis:
+convolutional recurrent neural networks~\cite{micchi_not_2020} and Transformer-based networks~\cite{chen_attend_2021}.
+% I will develop over convolutional neural networks, among other reasons, because it is easier to visualize what these networks learn~\cite{lin2016visualizing}.
+% A goal of the new model is then to visualize the musical patterns it learns.
+I will focus my research on convolutional recurrent neural networks because, among other reasons, it is easier to visualize what these networks learn~\cite{lin2016visualizing}.
+The aspects of model design that I will investigate include:
+new input representations to the neural network;
+new ways to encode pitch spelling, which has benefitted previous models~\cite{micchi_not_2020};
+and the extraction of additional tasks from the Roman numeral annotations (e.g., harmonic rhythm), as multitask learning often improves with more tasks.
+
+\emph{Experimental evaluation of the model.}
+It is conventional for machine learning projects to start with a \emph{baseline} model.
+This is an initial model that has to be improved by the newer one.
+In this dissertation, I will consider a previous convolutional recurrent neural network~\cite{micchi_not_2020} and a Transformer~\cite{chen_attend_2021} model as my baselines.
+These models have been evaluated on Beethoven Piano Sonatas~\cite{chen_functional_2018} and the Well-Tempered Clavier~\cite{gotham_romantext_2019} datasets.
+I will replicate these experiments for direct comparison.
+Additionally, I will report the generalization of my model in five other datasets.
+
+\section*{Summary and Contributions}
+In recent literature dealing with chord and key analysis, multitask models are preferred over task-specific ones.
+This has musical relevance to Roman numeral analysis, where keys and chords are analyzed together.
+Thus, there has been a recent emergence of deep neural networks for Roman numeral analysis.
+In this dissertation, I intend to extend this line of research by:
+(1) improving the data-curation process for existing datasets;
+(2) developing a new data-augmentation technique for Roman numeral analysis models;
+(3) improving the design of existing convolutional recurrent neural networks;
+and (4) extracting more tonal tasks from the Roman numeral annotations.
+This will improve the ways in which we annotate and search over large collections of digital music scores.
+% This will be useful for annotating and searching over large collections of digital music scores.
+
+\bibliographystyle{plain}
+{\footnotesize
+\bibliography{references}}
+
+\clearpage
+
+\tableofcontents
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\pagenumbering{gobble}
+
+\section*{Table of contents}
+\section{Introduction}
+\subsection{Motivation}
+% \subsection{Research objectives}
+\subsection{Thesis structure}
+
+\section{Background}
+\subsection{Music theory}
+\subsubsection{A brief history of Roman numeral analysis}
+\subsubsection{Digitization of Roman numeral annotations}
+% \subsubsection{Ambiguity and inter-annotator agreement in Roman numeral analysis}
+
+\subsection{Music Information Retrieval}
+\subsubsection{Automatic chord and key estimation}
+\subsubsection{Multitask tonal analysis}
+
+\section{Data acquisition and preparation}
+\subsection{Available datasets}
+\subsubsection{Annotated Beethoven Corpus (ABC)}
+\subsubsection{Beethoven Piano Sonatas (BPS)}
+\subsubsection{Haydn ``Sun'' String Quartets (HaydnSun)}
+\subsubsection{Mozart Piano Sonatas (MPS)}
+\subsubsection{Theme and Variation Encodings with Roman Numerals (TAVERN)}
+\subsubsection{Schubert Winterreise (SW)}
+\subsubsection{When-in-Rome (WiR)}
+\subsection{Data preparation}
+\subsubsection{Aligning a score and an annotation file}
+\subsubsection{Standardizing the notation between datasets}
+\subsection{Data augmentation}
+% \subsubsection{Synthesizing examples with voice-leading rules}
+\subsubsection{Synthesis and artificial texturization of scores}
+
+\section{Model design}
+\subsection{Inputs}
+\subsubsection{Encoding pitch spelling}
+\subsection{The bass and chroma convolutional blocks}
+\subsection{Dense and recurrent layers}
+\subsection{Multitask learning configurations}
+\subsubsection{Six conventional tonal tasks}
+\subsubsection{Five additional tonal tasks}
+
+\section{Experimental evaluation}
+\subsection{Training procedure}
+\subsection{Hyperparameters}
+\subsubsection{Training epochs and weight selection}
+\subsubsection{Learning schedule and learning rate}
+\subsection{Evaluation procedure}
+\subsection{Results}
+\subsection{Discussion}
+% \subsection{Visualization of learned convolutional filters}
+
+% \section{Applications}
+% \subsection{Music generation conditioned on tonal context}
+% \subsection{Visualization of learned tonal features}
+
+\section{Conclusions}
+
+\clearpage
+
+\end{document}

@@ -1,0 +1,68 @@
+Roman numeral analysis is a common methodology in
+contemporary music theory textbooks dealing with tonal
+music. The name derives from the use of Roman numerals to
+denote scale degrees, which, in turn, indicate diatonic
+chords in a certain key context.
+
+\guide{Why is Roman numeral analysis important compared to, say, chord labels?}
+Roman numeral labels provide more information than chord
+labels. Generally, a chord label indicates the root of a
+chord and its quality. A Roman numeral label provides this
+as well, but also information about keys, inversions, and
+spellings. For example, Roman numerals are always relative
+to a key, so the key must be indicated at all times to
+disambiguate the meaning of the Roman numeral. This is a
+helpful property for passages of music that feature quick
+modulations or changes of key. In the modern syntax, it is
+also customary to indicate \emph{applied chords} or
+\emph{secondary dominants}. Once the concept of
+\emph{tonicization} emerged, in the twentieth century, this
+quickly became an important idea of tonal music,
+particularly relevant to analyze the chromatic music of the
+nineteenth century. Roman numerals facilitate the indication
+of modulations as well as tonicizations. With these, a
+musical analysis of a particular person can be more
+informative, for example, indicating how the analyst
+envisions the key context at a particular moment of the
+piece. Roman numerals indicate inversions for triads and
+seventh chords. Presumably, the Arabic numeral notations
+employed to denote inversions in Roman numerals evolved from
+figured bass. However, there is generally a small vocabulary
+of numerical annotations appended to a Roman numeral, which
+indicate the inversion of the chord. There are other subtle
+but important differences that come with Roman numeral
+analysis compared to chord labels. Think of a diminished
+seventh chord, say, F$\sharp$ diminished seventh. The most
+usual context of that chord is to anticipate a resolution to
+a G minor triad. However, if the chord is in first
+inversion, then it is enharmonically equivalent to an A
+diminished seventh chord. It is tempting to write the chord
+as A diminished, rather than F$\sharp$ with A in the bass,
+however, these chords have two very different meanings
+contextually. This is evident in the presence of pitch
+spelling. The G$\flat$--G$\natural$ results in a strange
+voice leading, whereas the F$\sharp$--G is a customary
+leading-tone to tonic minor second. These subtle
+interactions of spelling are generally honored by the Roman
+numeral analysis notation. There are multiple examples that
+come to mind, such as Neapolitans, Augmented Sixth Chords,
+and \emph{Cadential six-four} chords, where the syntax of
+Roman numerals is helpful to provide a more thorough
+description of the annotated chord. These differences might
+seem negligible to some, but I would like to make a few
+arguments: (1) in tonal music theory textbooks, it is more
+common to see Roman numeral analysis notation than chord
+labels, which might suggest that the more granular notation
+is preferred (2) in machine learning contexts, as is the
+case for this dissertation, more information in the
+annotations can be really helpful, without this additional
+information, we could not attempt to learn a key-estimation
+model simultaneously using the same annotated data, (3) the
+syntax of Roman numeral analysis is highly compressed, it is
+generally not more time-consuming to write Roman numerals
+than it is to write chord labels, the time-consuming aspect
+of Roman numerals is the train of thought required to commit
+to a particular interpretation of the analysis (i.e., key
+context, chord, inversion, function of the chord), and that
+is precisely the thorough thought pattern that we want to
+capture in the data.
