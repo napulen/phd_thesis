@@ -1,11 +1,31 @@
-# Phd Journal
+# Automatic Roman numeral analysis in symbolic music representations
 
-[March 15, 2020](phd_journal/2020_03_15.md)
+Author: Néstor Nápoles López. Supervisor: Ichiro Fujinaga
 
-[March 17, 2020](phd_journal/2020_03_17.md)
+Each chapter is a standalone document in the `chapters/` folder. Each chapter contains all of its figures as well.
 
-[March 23, 2020](phd_journal/2020_03_23.md)
+The main file (`main.tex`) compiles each chapter and puts them together into a full document.
 
-[April 02, 2020](phd_journal/2020_04_02.md)
+Individual chapters can be compiled if
 
-[April 03, 2020](phd_journal/2020_04_03.md)
+```latex
+\def\compilechapter{2}
+```
+
+is set up. Otherwise, the full document will be compiled.
+
+The document is laid out automatically thanks to different macros that automate some operations (e.g., inserting a figure, starting a section, etc).
+
+The custom macros include:
+
+- `\phdinput`: a replacement of `\input` used to insert a `.tex` document inside a chapter
+- `\phdchapter`: create a new chapter, `\label` it automatically
+- `\phdsection`: create a new section, `\label` it automatically
+- `\phdsubsection`: create a new subsection, `\label` it automatically
+- `\phdsubsubsection`: create a new subsubsection, `\label` it automatically
+- `\phdfigure`: create a new figure, `\caption` it automatically
+- `\refchap`: use `hyperref` to reference a chapter
+- `\refsec`: use `hyperref` to reference a section
+- `\reffig`: use `hyperref` to reference a figure
+- `\reftab`: use `hyperref` to reference a table
+- `\refeq`: use `hyperref` to reference an equation
