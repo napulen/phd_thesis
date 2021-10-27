@@ -1,0 +1,318 @@
+% Taken verbatim from Comps Q2
+
+Artificial Neural Networks (ANNs) are machine learning
+algorithms that learn arbitrary functions by automatically
+learning weights (or parameters) that connect the nodes in
+the neural network architecture. Generally, a non-linear
+activation function is applied to such weights, introducing
+a non-linear behavior in the neural network that allows it
+to learn functions of higher complexity, which a linear
+model could not possibly learn. The training of the weights
+is not achieved by programming task-specific rules but
+instead, by identifying simple characteristics of the
+training examples and extending them into more complex, more
+abstract characteristics. The process of decomposing an
+example into a combination of simpler features is known as
+\emph{representation learning}, and it is one of the main
+ideas that differentiate ANNs from other classes of machine
+learning.
+
+The study of ANNs started around the 1940s, and it has been
+known through different names throughout the years
+\parencite{goodfellow2016deep}.
+
+\guide{A brief history of ANNs}
+
+The research on ANNs can be traced back to the 1940s, when a
+bio-inspired \emph{neuron} model was introduced
+\parencite{mcculloch1943logical}. This neuron allowed to
+model very simple functions by manually setting the weights
+that connected the input into the neuron. This idea was
+later extended to propose the Perceptron
+\parencite{rosenblatt1958perceptron:} and Adaline
+\parencite{widrow1960adaptive} models, which were able to
+automatically derivate such weights from the data. Although
+these models showed promise, their popularity decreased
+significantly when it was demonstrated that they could not
+learn relatively simple functions, like the \emph{XOR}
+function \parencite{minsky1972perceptrons:}. Due to their
+importance, the achievements carried out during this wave of
+research (1940s-1960s) are acknowledged by the current
+literature \parencite{goodfellow2016deep} and usually
+referred to as the \emph{cybernetics} wave of neural
+networks research.
+
+Following the wave of cybernetics, a new one started around
+the 1980s-1990s, colloquially known as \emph{connectionism}.
+During the work of the \emph{connectionists},\footnote{A
+term typically used to refer to the scientists of this time
+period and research field} the research community benefited
+from the development of the current form of the
+back-propagation algorithm
+\parencite{rumelhart1988learning}. The back-propagation
+algorithm became (and remains) an elemental process in the
+training of neural networks, which allows to propagate the
+error throughout the network by making use of the
+\emph{chain rule}. Finding the derivatives of each parameter
+in the network, the values of such parameters can be updated
+in the ``right direction'' (against the gradient) to improve
+the classification accuracy through the next batch of
+training examples. This facilitates the automatic training
+of large and complicated neural networks, with multiple
+layers, neurons, and non-linear activation functions. Even
+though this and other improvements made neural networks a
+promising area of research, they were still very difficult
+to train in practice (due to the difficulty of finding a
+good initialization of the weights) and were typically
+outperformed by domain-knowledge techniques, losing the
+interest of many scientists as a consequence.
+
+Finally, a third wave of research started around 2006, when
+new methods for training neural networks were introduced
+\parencite{hinton2006fast}. These new methods not only
+facilitated the training of neural networks but the training
+of \textbf{much larger} neural networks. The interest in
+such larger architectures extended, and in a historical
+evaluation of the ImageNet dataset in 2012
+\parencite{krizhevsky2012imagenet}, neural networks
+outperformed the most sophisticated methods of computer
+vision, setting a prominent gap in performance between
+neural networks and every other method. This had an enormous
+implication in the way that neural networks were perceived
+by the research community and motivated their application
+into different problems and fields of study. We know this
+last wave of research as \emph{deep learning}, and it is
+currently an active and growing wave of research across many
+fields. Around this umbrella term of \emph{deep learning},
+many state-of-the-art machine learning techniques have been
+developed and continue to be improved.
+
+\guide{Deep learning and Music Information Retrieval}
+After the growing interest for neural networks in the wave
+of deep learning research, many new models, architectures,
+and applications have been proposed and put into practice in
+recent years.
+%achieving good results and generating subfields of research
+%within the umbrella term of deep learning.
+Among the most important innovations to the original neural
+network architectures, we can consider Convolutional Neural
+Networks (CNNs), AutoEncoders, Recurrent Neural Networks
+(RNNs), and extensions of CNNs, such as the U-Net.
+
+\guide{Convolutional Neural Networks (CNNs)}
+Convolutional Neural Networks (CNNs) might seem recent,
+however, they were introduced during the
+\emph{connectionist} wave of research on neural networks, in
+1989 \parencite{lecun_generalization_1989,
+le_cun_handwritten_1989}. The main innovation of CNNs is the
+idea of \emph{shared parameters}. In a traditional
+feedforward network (e.g., Multi-Layer Perceptron), every
+neuron of the network is typically connected to another
+neuron of the network in the following layer using a
+\emph{unique} parameter (i.e., used exclusively for
+connecting those two neurons). Although that gives the
+network more expressive power and the capability of
+modelling very complex functions, in practice, it also
+contributes to a combinatorial explosion of parameters as
+the neural network grows in number of layers and neurons,
+which makes it unfeasible (or even impossible) to train it
+due to the limitations in memory and computing power of
+modern computers. CNNs, on the other hand, consider re-using
+the same parameter for connecting different neurons of the
+network with the neurons of the following layer. By doing
+this, the number of parameters is reduced, typically, in one
+or several orders of magnitude compared to a
+fully-connected, feedforward network.
+
+The idea of sharing parameters is not only important for
+reducing the effort of training the network, it is also a
+bio-inspired design motivated by the mechanics of the visual
+system. It is customary, for example, to refer to the
+collection of neurons that make use of the same parameter as
+the \emph{receptive field} of the parameter, a term taken
+from neurophysiology.
+
+The shared parameters are modelled through a \emph{kernel}
+vector. The kernel vector multiplies the inputs of the
+neural network layer in a way that resembles the
+mathematical operation of \emph{convolution}, which
+motivated the use of the term \emph{Convolutional Neural
+Networks}. After training, it is assumed that each of those
+kernels will learn a low-level, localized, feature, which is
+going to be searched across the entire input vector of the
+network and propagated to deeper (higher-level) kernels of
+the network.
+
+Given the way that convolutional kernels work, CNNs have
+become the standard methodology for dealing with
+fixed-length, grid-like structures (e.g., images), producing
+state-of-the-art performance in many tasks. For example,
+they have systematically been the state-of-the-art in the
+ImageNet challenge since 2012
+\parencite{krizhevsky2012imagenet}, identifying over 1,000
+classes of objects in an image.
+
+In Music Information Retrieval (MIR), CNNs have been used
+for genre recognition \parencite{dieleman2011audio-based},
+chord recognition \parencite{humphrey2012rethinking},
+structural analysis \parencite{ullrich_boundary_2014,
+grill_music_2015}, music tagging
+\parencite{choi2016automatic}, instrument recognition
+\parencite{lostanlen2016deep}, Optical Music Recognition
+(OMR) \parencite{calvo-zaragoza_end--end_2017,
+pacha_optical_2018}, beat tracking
+\parencite{gkiokas2017convolutional}, source separation
+\parencite{miron2017monaural}, syllable segmentation
+\parencite{pons2017score-informed}, key detection
+\parencite{korzeniowski2018genre-agnostic}, and tempo
+estimation \parencite{schreiber_single-step_2018,
+schreiber_musical_2019}.
+
+\guide{AutoEncoders}
+AutoEncoders are models designed to copy the input signal
+into the output, considering a number of restrictions. This
+process is achieved through two steps, the first corresponds
+to the \emph{encoding} of the input into a \emph{latent}
+representation or \emph{code}, and the second step
+corresponds to the \emph{decoding} of the latent
+representation (code) into the output.
+
+One of the most useful restrictions imposed to the
+AutoEncoder architecture is to reduce the size of the latent
+representation compared to the size of the input. By doing
+this, the model is forced to learn a restricted amount of
+data that \emph{characterizes} the input well enough so that
+the decoder part of the model is able to reconstruct the
+original signal as much as possible. This can also be
+thought as a \emph{compression} of the input signal or a
+reduction of the dimensionality of the input.
+
+Other restrictions imposed to AutoEncoders are the
+reconstruction of the original signal given a
+\emph{distorted} or \emph{noisy} input signal. This is
+usually known as a Denoising AutoEncoder (DAE). AutoEncoders
+can be thought as unsupervised neural networks given that
+the training mechanisms are practically identical to the
+ones used in other neural network architectures. They are
+also useful in combination with other neural network
+architectures, as the latent representation of the
+AutoEncoder can be used as an input feature, for example.
+
+In MIR, AutoEncoders have been used, for example, in Optical
+Music Recognition (OMR) problems
+\parencite{castellanos2018document}.
+
+\guide{Recurrent Neural Networks (RNNs)}
+Recurrent Neural Networks (RNNs) are a type of neural
+networks designed for dealing with sequential data. Unlike
+most other neural network architectures, RNNs do not assume
+that inputs are \emph{independent} from each other and,
+therefore, they update their parameters considering not only
+the current input to the network but also the previous
+inputs processed by the network.
+
+RNNs were introduced after the backpropagation algorithm
+\parencite{rumelhart1988learning} was extended into the
+\emph{Backpropagation Through Time} (BPTT) algorithm, around
+1988 \parencite{werbos_generalization_1988,
+werbos_backpropagation_1990}. Nevertheless, the difficulty
+of training such RNN architectures made them unfeasible in
+practical applications before the invention of the Long
+Short-Term Memory (LSTM) architecture
+\parencite{hochreiter1997long}. They were popularized during
+the \emph{deep learning} wave of research and, since then,
+achieved state-of-the-art performance in many tasks
+involving sequential data (e.g., speech recognition, natural
+language processing, music).
+
+Throughout the years, different strategies have been
+proposed to design RNNs, for example, connecting the output
+of one time step into the next time step (Jordan RNN),
+connecting the hidden state of one time step to the next
+(Elman RNN), and training the network in both directions
+\parencite{schuster1997bidirectional}.
+
+It is also not uncommon to see several of these techniques
+combined in a single architecture, for example, a
+bidirectional LSTM architecture with convolutional layers
+(CBLSTM). For a further discussion on RNNs, see Question
+\ref{chap:chap9}.
+
+In MIR, RNNs and hybrid RNN models with convolutional layers
+have been quite popular in numerous tasks, for example,
+onset detection \parencite{eyben2010universal}, chord
+recognition \parencite{boulanger-lewandowski_audio_2013,
+sigtia_end--end_2016, sears_evaluating_2018}, voice
+separation \parencite{huang2014singing-voice}, music
+transcription \parencite{sigtia2014rnn-based}, tempo
+estimation \parencite{bock2015accurate}, beat and downbeat
+tracking \parencite{bock_joint_2016, krebs2016downbeat},
+music generation \parencite{liu_predicting_2016,
+liang_automatic_2017, lim_chord_2017}, music transcription
+\parencite{rigaud_singing_2016, sigtia_end--end_2016,
+southall_automatic_2016, vogl_recurrent_2016,
+southall_automatic_2017, vogl_drum_2017, basaran_main_2018},
+OMR \parencite{calvo-zaragoza_one-step_2017,
+wel_optical_2017, calvo-zaragoza_camera-primus:_2018},
+sequence modelling \parencite{ycart2017study}, mood
+detection \parencite{delbouys2018music}, and instrument
+recognition \parencite{gururani2018instrument}.
+
+\guide{U-Net}
+Often, the problems that are expected to be solved by
+machine learning algorithms require more than identifying
+the presence of an object in a given input image. This is
+the case, for example, with image segmentation, where an
+output class needs to be provided for every pixel in the
+image.
+
+For such problems, a traditional CNN architecture is not
+feasible, mainly, because the information of the
+\emph{location} of the target class is lost through the
+convolutional layers of the network. More specifically, the
+\emph{pooling} layers of a CNN facilitate the identification
+of the strongest features that have been found incrementally
+across the image, at the expense of losing the information
+regarding \emph{where} they have been found.
+
+The U-Net is a modification of the traditional CNN
+architecture, designed to deal with image segmentation
+problems and making heavy use of data augmentation
+\parencite{ronneberger2015u-net:}. It was introduced in 2015
+for the segmentation of images in the field of biomedical
+image processing and, since its introduction, has been
+applied to numerous tasks in different fields.
+
+The U-Net architecture consists of two stages, the first one
+corresponds to a series of
+convolution-nonlinearity-and-pooling layers, analogous to a
+regular CNN (referred to as the contracting path). The
+hidden layer that results after several of these
+convolutional layers is then expanded back to almost the
+size of the original image (but smaller than the original).
+The expansion is achieved by replacing the \emph{pooling}
+layers with up-convolutions. A cropped version of the
+corresponding hidden layer in the contracting path is copied
+onto the expanding path, giving the characteristic u-shape
+of the architecture.
+
+In MIR, models based on the U-Net have been proposed for
+source separation \parencite{jansson_singing_2017,
+stoller_wave-u-net:_2018} and OMR
+\parencite{hajic2018towards}.
+
+\guide{Other deep learning architectures in MIR}
+Throughout the years, the solutions presented in the
+research field of deep learning have been applied to
+multiple Music Information Retrieval (MIR) tasks. The most
+popular ones have already been discussed, however, other
+applications include the historical Self-Organizing Maps
+(SOMs) in the early 2000s
+\parencite{kiernan_score-based_2000,
+harford_automatic_2003}, Deep Belief Networks (DBNs)
+\parencite{hamel_learning_2010, schmidt_learning_2013,
+chacon_developing_2014, raczynski_multiple_2010,
+battenberg_analyzing_2012, herwaarden_predicting_2014,
+zhou_chord_2015}, and deep feedforward networks
+\parencite{cherla_multiple_2014,  liang_content-aware_2015,
+dawson_key-finding_2018, valk_deep_2018}.
