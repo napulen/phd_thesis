@@ -29,3 +29,20 @@ The custom macros include:
 - `\reffig`: use `hyperref` to reference a figure
 - `\reftab`: use `hyperref` to reference a table
 - `\refeq`: use `hyperref` to reference an equation
+
+
+## Normalizing reference identifiers in bibtex
+
+Often it'll be necessary to move into different formats of references.
+I like the convention adoped by Google scholar for publication identifiers: `<firstauthor><year><firstword>`
+
+An easy way to transform between other formats (e.g., the default in Zotero) is to use a regular expression and string-replace commands.
+
+Transform an identifier in the form `<firstauthor>_<firstword>_<year>` into `<firstauthor><year><firstword>`.
+In the VSCode syntax:
+
+```
+Search:  \\cite\{(.*)_(.*)_(\d+)\}
+
+Replace: \cite{$1$3$2}
+```
