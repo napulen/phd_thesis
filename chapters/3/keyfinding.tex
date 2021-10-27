@@ -1,6 +1,3 @@
-\section{Music Information Retrieval}
-\subsection{Automatic key estimation}
-
 Key identification is a fundamental task in the analysis of tonal music.
 It is often a preliminary or concurrent step to other common musicological tasks like harmonic analysis and cadence detection.
 In particular, the knowledge of the musical key can help a music analyst to find boundaries in a musical piece, interpret the role of notes and chords, or suggest a musical form to which the analyzed piece conforms.
@@ -27,7 +24,7 @@ The ideas presented in this paper may be useful to improve the interpretability 
 %\cite{longuet1971tonality,  krumhansl1990cognitive, lerdahl88tps, vos96keyfinding, Temperley99:tonality, temperley2006,Zhu2003MusicSM}).
 %In this paper, however, rather than global-key estimation, we focus on the algorithms that model the changes of key \emph{within} a piece of music (often called \emph{local keys} in the context of computational musicology and music information retrieval).
 
-\subsubsection{Global-Key-Estimation Models}
+\guide{Global-Key-Estimation Models}
 Researchers have designed a number of global-key-estimation algorithms throughout the years.
 The first one, to our knowledge, is the one by Longuet-Higgins~\cite{longuet1971tonality} from 1971.
 Starting from the beginning of a score, the algorithm considers each pitch in order of occurrence and discards the keys that do not include that pitch within their diatonic scale degrees.
@@ -49,7 +46,7 @@ Alternative key-profile distributions---and techniques for applying them---have 
 
 Key profiles are the basis of many global-key-estimation models for symbolic music files and, starting from the 2000s, audio files as well. More exhaustive surveys of modern global-key-estimation techniques, with a focus on audio, are available \cite{korzeniowski_harmonic_2018, campbell_automatic_2010}. Key profiles have also been useful in the design of local-key estimation models.
 
-\subsubsection{Local Keys, Modulation, and Tonicization}\label{ssec:terminology}
+\guide{Local Keys, Modulation, and Tonicization}\label{ssec:terminology}
 
 In MIR, it is common to describe algorithms that model \emph{changes of key} as local-key-estimation algorithms.
 The \emph{local keys} being the predictions that these models generate. Conversely, in music theory, the concepts of \emph{modulation} and \emph{tonicization} are often the manner in which changes of key are explained, and the term \emph{local key} is virtually non-existent.
@@ -67,19 +64,19 @@ Regarding local keys, most researchers, as Papadopoulos et al. \cite{papadopoulo
 
 For the scope of this work, we define these terms as follows:
 
-\subsubsection{Modulation}
+\guide{Modulation}
 Is the change from one key to another. We refer to the initial key as the \emph{departure} key, and the second key as the \emph{destination} key.
 
-\subsubsection{Tonicization}
+\guide{Tonicization}
 Is a brief deviation to a different key, usually with the intention of emphasizing a certain scale degree or harmony.
 The tonicization often returns to the original key briefly after the deviation.
 
-\subsubsection{Local keys}
+\guide{Local keys}
 Are the predictions of the musical key provided by a local-key-estimation algorithm.
 These predictions are given at a finer level of granularity than the entire piece (e.g., notes, onsets, fixed-duration timesteps, audio frames, etc.).
 In principle, no music-theoretical meaning is inferred from them. They may coincide with modulations or tonicizations.
 
-\subsubsection{Local-Key-Estimation Models}\label{ssec:localkey}
+\guide{Local-Key-Estimation Models}\label{ssec:localkey}
 
 Contrary to the global-key estimation approaches, local-key estimation models have a relatively recent history.
 
@@ -140,46 +137,42 @@ The model computes the cost of being in a key on a given beat, and estimates the
 % Most of them are audio-based ...
 
 %\subsection{Evaluation and datasets}
-\subsubsection{Existing Datasets to Evaluate Local-Key-Estimation Models}
+\guide{Existing Datasets to Evaluate Local-Key-Estimation Models}
 
 Most of the models discussed have been evaluated using different datasets, which are presented in Table~\ref{tab:corpus}.
 
-\begin{table}
-  \caption{Datasets used to evaluate local-key-estimation models.}
-  \label{tab:corpus}
-  \begin{tabular}{lcl}
-    \toprule
-    Model&Files&Dataset\\
-    \midrule
-    Catteau~\cite{Catteau07tonalkey} & 10 & Manually-built\\
-    & & chord sequences\\
-    Chai~\cite{chai_detection_2005} & 10 & Various (Classical)\\
-    Chen~\cite{chen18harmony,chen19harmony}, Micchi~\cite{Micchi20:roman} & 23 & Beethoven\\
-    Chew~\cite{chew2002key} & 2 & Bach\\
-    Feisthauer~\cite{feisthauer2020smc} & 38 & Mozart (Classical) \\
-    Izmirli~\cite{izmirli_localized_2007} & 17 & Pop songs\\
-    & 152 & Naxos set (Classical)\\
-    & 17 & Kostka-Payne (Classical)\\
-    Mearns~\cite{mearns2011automatically} & 12 & Bach Chorales \\
-    Micchi~\cite{Micchi20:roman} &  27 &  TAVERN (Classical)\\
-    & 70 & ABC (Beethoven)\\
-    & 72 & Roman Text (Classical)\\
-    Papadopoulos~\cite{papadopoulos_local_2009} & 5 & Mozart\\
-    Pauwels~\cite{pauwels_combining_2014} & 142 & SEMA Set (Pop)\\
-    & 210 & MIREX 2009\\
-    Purwins~\cite{purwins_new_2000} and & 1 & Chopin\\
-    Napol\'{e}s Lop\'{e}z~\cite{napoleslopez2019key} & & \\
-    Rocher~\cite{thomas_rocher_2010_1417485} & 174 & Beatles\\
-    Weiss~\cite{weiss2014chroma} & 10 & Various (Classical) \\
-  \bottomrule
-\end{tabular}
-\end{table}
+% \begin{table}
+%   \caption{Datasets used to evaluate local-key-estimation models.}
+%   \label{tab:corpus}
+%   \begin{tabular}{lcl}
+%     \toprule
+%     Model&Files&Dataset\\
+%     \midrule
+%     Catteau~\cite{Catteau07tonalkey} & 10 & Manually-built\\
+%     & & chord sequences\\
+%     Chai~\cite{chai_detection_2005} & 10 & Various (Classical)\\
+%     Chen~\cite{chen18harmony,chen19harmony}, Micchi~\cite{Micchi20:roman} & 23 & Beethoven\\
+%     Chew~\cite{chew2002key} & 2 & Bach\\
+%     Feisthauer~\cite{feisthauer2020smc} & 38 & Mozart (Classical) \\
+%     Izmirli~\cite{izmirli_localized_2007} & 17 & Pop songs\\
+%     & 152 & Naxos set (Classical)\\
+%     & 17 & Kostka-Payne (Classical)\\
+%     Mearns~\cite{mearns2011automatically} & 12 & Bach Chorales \\
+%     Micchi~\cite{Micchi20:roman} &  27 &  TAVERN (Classical)\\
+%     & 70 & ABC (Beethoven)\\
+%     & 72 & Roman Text (Classical)\\
+%     Papadopoulos~\cite{papadopoulos_local_2009} & 5 & Mozart\\
+%     Pauwels~\cite{pauwels_combining_2014} & 142 & SEMA Set (Pop)\\
+%     & 210 & MIREX 2009\\
+%     Purwins~\cite{purwins_new_2000} and & 1 & Chopin\\
+%     Napol\'{e}s Lop\'{e}z~\cite{napoleslopez2019key} & & \\
+%     Rocher~\cite{thomas_rocher_2010_1417485} & 174 & Beatles\\
+%     Weiss~\cite{weiss2014chroma} & 10 & Various (Classical) \\
+%   \bottomrule
+% \end{tabular}
+% \end{table}
 
 The datasets used for evaluating local-key-estimation algorithms are typically small.
 Additionally, each dataset has often been used to evaluate a single model, which makes the comparison between models somewhat dubious.
 In this paper, we contribute further discussion around this topic by focusing on the following question: \emph{What is the relationship between the local keys, modulations, and tonicizations of the same musical fragment?}
 For this purpose, we describe: (1) our methodology for comparing annotations of local keys, modulations, and tonicizations, (2) a dataset that we collected from five music theory textbooks, and (3) an experiment where we evaluated three existing local-key-estimation models.
-
-\subsection{Automatic chord recognition}
-\subsection{Pitch spelling}
-\subsection{Multi-task tonal analysis}

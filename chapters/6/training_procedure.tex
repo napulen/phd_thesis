@@ -1,22 +1,14 @@
-\chapter{Experimental evaluation}
-\label{chap:experiment}
-
-% \begin{quote}
-%     The key of tonality is the musical key.
-% \end{quote}
-% \clearpage
-
-\subsection{Training procedure}
+\guide{Training procedure}
 
 \textbf{Epochs.}
-We set a fixed number of 100 epochs in all experiments. 
+We set a fixed number of 100 epochs in all experiments.
 We found that the use of early stopping was unreliable to determine the end of the training process.
-Instead, we saved the weights after each epoch. 
+Instead, we saved the weights after each epoch.
 After all epochs, we selected the best weights based on a custom metric that prefers the highest accuracy on the six conventional functional harmony tasks.
-% We set the number of layers in the initial convolutional block to 6. 
+% We set the number of layers in the initial convolutional block to 6.
 % Each convolutional layer has a kernel size of 1, 2, 4, 8, 16, and 32 timesteps, respectively. In practice, this means that the last convolutional layer provides information up to a whole note away from the current timestep.
 
-\subsection{Hyperparameters}
+\guide{Hyperparameters}
 
 \textbf{Other hyper-parameters.}
 Each of the layers in the network is accompanied by batch normalization before the activation function. In the recurrent layers, we apply the batch normalization after the activation function. All convolutional and dense layers use the rectified linear unit (ReLU) as their activation function. However, the two GRU layers use $\tanh$. In all of our experiments, we used 16 sequences per batch and Adam \cite{kingma_adam_2014} as our optimizer, with a learning rate of $10^{-7}$.
@@ -24,22 +16,22 @@ Each of the layers in the network is accompanied by batch normalization before t
 
 
 \textbf{Computing time.} The network was trained on a personal laptop\footnote{Intel i7 10750h, Nvidia RTX 2070, 32GB DDR4} with a Linux operating system, Tensorflow 2.4.1, and GPU acceleration.
-With these hardware and software conditions, the training times are approximately ~30 minutes (BPS only), ~40 minutes (BPS+WTC), and ~250 minutes (Full dataset). 
+With these hardware and software conditions, the training times are approximately ~30 minutes (BPS only), ~40 minutes (BPS+WTC), and ~250 minutes (Full dataset).
 The number of trainable parameters in the network is close to 90,000. This number already includes all the parameters introduced by the additional output tasks. Therefore, the model is similar in size to recent models \cite{micchi_not_2020, chen_attend_2021}.
 
-\subsection{Evaluation procedure}
+\guide{Evaluation procedure}
 
-In the past, the models by Micchi et al. \cite{micchi_not_2020} and Chen and Su \cite{chen_attend_2021} have been evaluated using the Beethoven Piano Sonatas (BPS) and the Well-Tempered Clavier (WTC) datasets. We too provide direct comparisons in these two datasets, however, we also share the results of our model across the Annotated Beethoven Corpus (ABC) \cite{neuwirth_annotated_2018}, annotated Haydn string quartets Op.20 (HaydnOp20) \cite{napoles_lopez_automatic_2017}, Theme and Variation Encodings with Roman Numerals (TAVERN) \cite{devaney_theme_2015}, and When-in-Rome (WiR) \cite{gotham_romantext_2019} datasets. 
+In the past, the models by Micchi et al. \cite{micchi_not_2020} and Chen and Su \cite{chen_attend_2021} have been evaluated using the Beethoven Piano Sonatas (BPS) and the Well-Tempered Clavier (WTC) datasets. We too provide direct comparisons in these two datasets, however, we also share the results of our model across the Annotated Beethoven Corpus (ABC) \cite{neuwirth_annotated_2018}, annotated Haydn string quartets Op.20 (HaydnOp20) \cite{napoles_lopez_automatic_2017}, Theme and Variation Encodings with Roman Numerals (TAVERN) \cite{devaney_theme_2015}, and When-in-Rome (WiR) \cite{gotham_romantext_2019} datasets.
 
-For all datasets, the same procedure was followed regarding data splits. 
+For all datasets, the same procedure was followed regarding data splits.
  Training, validation, and test splits were produced randomly (except in BPS, where they were provided by Chen and Su \cite{chen_functional_2018}).
- %\footnote{In the original splits of BPS, there is a duplicated example in the validation and test sets. We noticed that Micchi et al. \cite{micchi_not_2020} corrected the splits to remove the data leakage. Thus, we follow the splits by Micchi et al. \cite{micchi_not_2020}}  
+ %\footnote{In the original splits of BPS, there is a duplicated example in the validation and test sets. We noticed that Micchi et al. \cite{micchi_not_2020} corrected the splits to remove the data leakage. Thus, we follow the splits by Micchi et al. \cite{micchi_not_2020}}
 A summary of all datasets is shown in Table \ref{tab:datasets}. The summary indicates the number of files in each split and the number of sequences (each of 640 frames) that were collected from that split.
 
 
 Preliminary experiments were conducted in the training set, using the validation set to assess the generalization, adjust the hyper parameters, and inform the design of the network architecture.
 The best-performing version of our model was run once in the test set, this time including the validation portion as part of the training.
-The results obtained for all the rows labeled \emph{Full dataset} in Table \ref{tab:results} report the results obtained on the corresponding test split. 
+The results obtained for all the rows labeled \emph{Full dataset} in Table \ref{tab:results} report the results obtained on the corresponding test split.
 To support reproduction of this work, we provide the exact data splits at [ANONYMIZED].
 
 \textbf{Data augmentation} For every training example, we synthesized and texturized an additional one, using only the Roman numeral annotations (and ignoring the original score). The original and texturized training examples were transposed to different keys for further data augmentation. Both forms of data augmentation were only applied to the training set of a particular experiment, leaving the validation/test set intact to prevent any data leakage.
@@ -60,7 +52,7 @@ To support reproduction of this work, we provide the exact data splits at [ANONY
   Total & 241 (1424) & 56 (333) & 56 (329) \\
 %   +Transposition & XX & - & - \\
 %   +Synthetic & XX & - & - \\
-%   Grand total & XX & - & - \\ 
+%   Grand total & XX & - & - \\
  \end{tabular}
 \end{center}
  \caption{The functional harmony datasets used in our experiments. The splits were generated randomly (except for BPS). For each split, the number of files and the number of sequences (in parenthesis) are indicated.}
@@ -95,7 +87,7 @@ BPS & BPS+WTC & CS21 & 79.0 & - & - & - & - & 41.7 \\
 BPS & BPS & AugNet & \textbf{83.7} & \textbf{69.6} & \textbf{80} & \textbf{70.4} & 67.6 & 42.9, \textbf{46.5} \\
 BPS & BPS & Mi20 & 80.6 & 66.5 & 76.3 & 68.1 & - & 39.1 \\
 BPS & BPS & CS19 & 78.4 & 65.1 & 74.6 & 62.1 & - & - \\
-BPS & BPS & CS18 & 66.7 & 51.8 & 60.6 & 59.1 & -  & 25.7 
+BPS & BPS & CS18 & 66.7 & 51.8 & 60.6 & 59.1 & -  & 25.7
 \end{tabular}
 \end{center}
  \caption{Summary of the performance of five functional harmony models: Chen and Su (2018, 2019, and 2021), Micchi et al. (2020), and AugmentedNet. For the WTC dataset, the experiment with training done over BPS+WTC replicated the 4-fold cross validation presented by Chen and Su \cite{chen_attend_2021}. In this case, $\pm$ indicates the standard deviation. For all other rows, the results present the performance on the held test set. The comma-separated values in RN of the AugmentedNet rows indicate different methods for reconstructing the Roman numeral, as explained in \ref{sec:additionaltasks}.}
@@ -103,28 +95,28 @@ BPS & BPS & CS18 & 66.7 & 51.8 & 60.6 & 59.1 & -  & 25.7
 \end{table*}
 
 
-\subsection{Results}
+\guide{Results}
 
 
-\textbf{Beethoven Piano Sonatas.} The last rows of Table \ref{tab:results} show the results of our model when evaluated over the BPS dataset. 
-To the best of our efforts, we replicate the experimental conditions of the models we compare to. Single lines in the table delimit experiments that are directly comparable. 
-For example, the upper rows of BPS compare the results of Micchi et al. \cite{micchi_not_2020} using all of their available training data and our model using all of our available training data. 
+\textbf{Beethoven Piano Sonatas.} The last rows of Table \ref{tab:results} show the results of our model when evaluated over the BPS dataset.
+To the best of our efforts, we replicate the experimental conditions of the models we compare to. Single lines in the table delimit experiments that are directly comparable.
+For example, the upper rows of BPS compare the results of Micchi et al. \cite{micchi_not_2020} using all of their available training data and our model using all of our available training data.
 
 \textbf{Well-Tempered Clavier.}
 The second to last group of rows in Table \ref{tab:results} show the results of our model when evaluated on the WTC dataset.
-The model by Chen and Su \cite{chen_attend_2021} presented the results over 4-fold cross validation. We replicate this study for direct comparison.\footnote{However, we used our test split for the \emph{Full dataset} experiment in WTC.} As they have, we include the average accuracy across the 4 folds, and the standard deviation. 
+The model by Chen and Su \cite{chen_attend_2021} presented the results over 4-fold cross validation. We replicate this study for direct comparison.\footnote{However, we used our test split for the \emph{Full dataset} experiment in WTC.} As they have, we include the average accuracy across the 4 folds, and the standard deviation.
 
-The results show that our model outperforms both the recent convolutional methods \cite{micchi_not_2020} and Transformer-based ones \cite{chen_attend_2021} in the reconstruction of the Roman numeral label. 
+The results show that our model outperforms both the recent convolutional methods \cite{micchi_not_2020} and Transformer-based ones \cite{chen_attend_2021} in the reconstruction of the Roman numeral label.
 % Furthermore, the addition of data from a different dataset seems to improve the results. For example, training with WTC and BPS benefits the performance in BPS and vice versa.
-For ABC, HaydnOp20, TAVERN, and WiR, we show the generalization of our model when using all the training data available on the corresponding held test set. 
+For ABC, HaydnOp20, TAVERN, and WiR, we show the generalization of our model when using all the training data available on the corresponding held test set.
 
 \textbf{Alternative resolution of Roman numeral annotations.}
-As discussed in Section \ref{sec:additionaltasks}, it is possible to use the 75 most-common Roman numeral strings as an alternative task to the chord root, chord quality, primary degree, and secondary degree tasks. 
-Thus, an alternative resolution of the Roman numeral label (AltRN) is presented in the last column of the AugmentedNet results. This accuracy corresponds to the reconstruction of the Roman numeral using the 75 most-common Roman numerals, chord inversion, and local key tasks. 
+As discussed in Section \ref{sec:additionaltasks}, it is possible to use the 75 most-common Roman numeral strings as an alternative task to the chord root, chord quality, primary degree, and secondary degree tasks.
+Thus, an alternative resolution of the Roman numeral label (AltRN) is presented in the last column of the AugmentedNet results. This accuracy corresponds to the reconstruction of the Roman numeral using the 75 most-common Roman numerals, chord inversion, and local key tasks.
 We assume that if these three tasks are predicted correctly, the Roman numeral label has been reconstructed correctly.
-We found that this, in fact, leads to better results compared to the six conventional tonal tasks. 
+We found that this, in fact, leads to better results compared to the six conventional tonal tasks.
 Table \ref{tab:results} shows the comma-separated accuracy values for the Roman numeral, the one computed from the six conventional tonal tasks (RN), and the alternative approach (AltRN). For completeness, we show too the accuracy of the RomanNumeral75 output task, labeled 75RN in the table.
 
 In summary, the \emph{Full dataset} rows show the best results achieved by our model for each dataset. In all cases, the results of our model are higher than existing methods in the final reconstruction of the Roman numeral label. Additionally, the best results in the reconstruction are achieved via the chord inversion, local key, and our RomanNumeral75 task.
 
-\subsection{Discussion}
+\guide{Discussion}
