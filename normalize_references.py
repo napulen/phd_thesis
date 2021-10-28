@@ -1,6 +1,6 @@
-from os import replace
 import re
 import argparse
+import os
 
 
 def remove_separators(m):
@@ -44,7 +44,7 @@ def replace_nonenglish_letters(old):
     return new
 
 
-if __name__ == "__main__":
+def cli():
     parser = argparse.ArgumentParser(
         description="Normalize the format of the references."
     )
@@ -52,23 +52,33 @@ if __name__ == "__main__":
         "file",
         help="a file to normalize",
     )
-    args = parser.parse_args()
-    zotero = (
+    return parser.parse_args()
+
+
+if __name__ == "__main__":
+    args = cli()
+    zoteroformat = re.compile(
         r"(?P<beginning>\{|,\s?)"
         + r"(?P<firstauthor>[A-Za-z_\-\:]+)_"
         + r"(?P<firstword>[A-Za-z\-\:]+)_"
-        + r"(?P<year>\d+)"
+        + r"(?P<year>\d{2}|\d{4})"
         + r"(?P<ending>\}|,)"
     )
-    google = (
+    googleformat = re.compile(
         r"(?P<beginning>\{|,\s?)"
         + r"(?P<firstauthor>[A-Za-z_\-\:]+)"
-        + r"(?P<year>\d+)"
+        + r"(?P<year>\d{2}|\d{4})"
         + r"(?P<firstword>[A-Za-z_\-\:]+)"
         + r"(?P<ending>\}|,)"
     )
-    with open(args.file) as fd:
-        contents = fd.read()
-    contentsEN = replace_nonenglish_letters(contents)
-    googleformat = re.sub(zotero, zotero_to_google_id, contentsEN)
-    re.sub(google, remove_separators, googleformat)
+    for root, _, filename in os.walk("."):
+        latex = [
+            f for f in filename if f.endswith(".tex") or f.endswith(".bib")
+        ]
+        print(root, latex)
+        for f in latex:
+            with open(os.path.join(root, f)) as fd:
+                contents = fd.read()
+            contentsEN = replace_nonenglish_letters(contents)
+            google = re.sub(zoteroformat, zotero_to_google_id, contentsEN)
+            re.sub(googleformat, remove_separators, google)
