@@ -1,11 +1,4 @@
-\chapter{Local and global musical keys}
-\label{chap:chap60}
-
-\begin{quote}
-    How does one deal with the problem of local key v. global key. (i.e., tonicization, modulation, and the key of the whole movement) in symbolic music analysis? [3-5 pages]
-\end{quote}
-\clearpage
-
+% Taken verbatim from comps Q6
 
 % Typically, when studying local keys computationally, an overlap between modulations, tonicizations, and chords is also observed, and this can be corroborated in the literature that uses local key estimation as means for chord detection. \todo{there are papers that do exactly this}
 
@@ -19,7 +12,7 @@ This might seem like a minor complication, however, it presents two significant 
 
 In the following section, a few of the uses of these terms are discussed in the context of music theory and MIR research.
 
-\section{The terminology in MIR}
+\guide{The terminology in MIR}
 MIR, as a research field, has made use of the concepts of modulation, applied dominants, tonicization, local key, and global key, mostly in the design of new algorithms that retrieve such musical information from the input.
 
 Purwins et al., for example, introduced a method for tracking \emph{modulations} in audio signals \cite{purwins2000new}. In order to test their model, they compared the segmentation of their algorithm with an expert annotation of Chopin's Prelude Op. 28 No. 20. In the expert annotation, there are changes of key that happen as quickly as after a quarter note. In the annotation, those changes are marked with parentheses (as tonicizations), however, the model from Purwins et al. does not make a distinction between the two types of annotations. The term \emph{local} key does not appear in the paper either.
@@ -34,17 +27,17 @@ Izmirli introduced a local key and modulation detection model \cite{izmirli2007l
 
 In their work on a local key-finding algorithm \cite{papadopoulos2009local}, Papadopoulos and Peeters adopted a very similar approach as Izmirli \cite{izmirli2007localized}. A modulation is the precise moment when there is a change of key, while a local key is the resulting segmentation of the piece in different keys.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/Q5_1.png}
-    \caption{Visualization of the difference between a modulation and a tonicization, according to Sapp \cite{sapp2011computational}. The horizontal lines in the bottom plot delimit a tonicization from a modulation}
-    \label{fig:Q5_1}
-\end{figure}
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.7\textwidth]{figures/Q5_1.png}
+%     \caption{Visualization of the difference between a modulation and a tonicization, according to Sapp \cite{sapp2011computational}. The horizontal lines in the bottom plot delimit a tonicization from a modulation}
+%     \label{fig:Q5_1}
+% \end{figure}
 
 Finally, Sapp discussed the possible overlap of the terms modulation and tonicization in music theory and proposes that the difference between a modulation and a tonicization can be observed in his \emph{keyscape} diagrams \cite{sapp2011computational}. This visualization can be seen in Figure \ref{fig:Q5_1}, the dotted horizontal lines \emph{separate} one concept from another. In the paper, Sapp did not include any evaluation that compared whether the annotations from an expert theorist would match the divisions in his \emph{keyscapes} figures. Yet, this is probably the only---quantitative and computationally-applicable---proposal for distinguishing a modulation from a tonicization.
 
 
-\section{The terminology in music theory}
+\guide{The terminology in music theory}
 
 In traditional music theory, the terms \emph{local key} and \emph{global key} are virtually non-existent. The issues of ambiguity concern mostly the distinction between tonicization, modulation, and applied dominants.
 
@@ -54,12 +47,12 @@ Holtmeier writes about Hauptmann’s theory and the emergence of applied dominan
 
 Tchaikovsky does not talk about tonicization \cite{tchaikovsky2005guide}, instead, discusses \emph{transient modulations}. Transient modulations are modulations in which several keys are reached first, temporarily, before arriving to the final key destination.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/Q6_2.png}
-    \caption{Example of a \emph{transient modulation} as it appears in Tchaikovsky's manual of harmony.}
-    \label{fig:Q6_2}
-\end{figure}
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.7\textwidth]{figures/Q6_2.png}
+%     \caption{Example of a \emph{transient modulation} as it appears in Tchaikovsky's manual of harmony.}
+%     \label{fig:Q6_2}
+% \end{figure}
 
 For Rameau \cite{rameau1971treatise}, the concept of a modulation, rather than a change of key, seems to refer to a key region (similar to what Izmirli and Papadopoulos would consider a local key). This is most clear in his seventh rule for passing from one key to another: \emph{After having passed through several other keys, we must modulate in this principal key for a little longer towards the end than at the beginning.} The fact that one may ``modulate for a little longer'' in a given key, is an uncommon idea in later music theories. In this sense, Rameau's modulation is, in some way, more compatible with modern local key-finding algorithms.
 
@@ -67,14 +60,14 @@ For Rameau \cite{rameau1971treatise}, the concept of a modulation, rather than a
 
 
 
-% \subsection{What is a modulation?}
+% \guide{What is a modulation?}
 
 % A shift between a previously established key and a new perceived key
 % A change in the distribution of pitch classes of the current scale
 % A perfect authentic cadence in a different key than the main key(?)
 
 
-% \subsection{What is a tonicization?}
+% \guide{What is a tonicization?}
 % A sudden reinterpretation of the tonal context for a specific chord or short chord sequence
 % A deceptive modulation, which abruptly comes back to the original key
 % A modulation that happens on a local scale, without major implications on the length of a piece
@@ -82,13 +75,13 @@ For Rameau \cite{rameau1971treatise}, the concept of a modulation, rather than a
 
 
 
-% \subsection{Differentiating a modulation from a tonicization}
+% \guide{Differentiating a modulation from a tonicization}
 % Most people who study these concepts quantitatively agrees that these concepts differ only in their scale, but represent the same phenomenon
 % People who disagree with the two concepts being different only in their length will typically do it on the basis of structural constraints (or rules) that apply to modulations for being modulations and do not apply to tonicizations
 % This sort of disagreement lies within what Temperley calls the “distributional” and “structural” views of computational music analysis
 
 
-% \subsection{Dealing with keys in computational studies}
+% \guide{Dealing with keys in computational studies}
 
 % Computationally, researchers have usually characterized this phenomenon (different musical keys within a piece) with the umbrella term, local keys, which differs with the key of the entire piece, that is, the global key
 % Local keys refer to keys within a sequence of music
@@ -96,7 +89,7 @@ For Rameau \cite{rameau1971treatise}, the concept of a modulation, rather than a
 % This is also problematic and controversial
  
  
-%  \section{On the unambiguous determination of local and global keys}
+%  \guide{On the unambiguous determination of local and global keys}
 % Whether we are referring to a symbolic or audio representation of music, musical inputs such as the ones received by a key-finding algorithm are typically sequential. 
 
 % In symbolic representations, the units of the input sequences can take the form of individual notes, onset slices with one or more notes, measures, pitch-class vectors, or other units.
@@ -116,12 +109,7 @@ For Rameau \cite{rameau1971treatise}, the concept of a modulation, rather than a
  
  
 
-% \subsection{The length of a piece}
+% \guide{The length of a piece}
 % Easiest solution, describes a single movement
 % Single movements are not always explained by a single key
 % This issue can suffer of similar contradictions as modulations/tonicizations
-
-
-
-\bibliographystyle{plainnat}
-\bibliography{zoterorefs}
