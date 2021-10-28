@@ -4,47 +4,62 @@ import logging
 import os
 import sys
 
+NONENGLISH = (
+    r"ÀÁÂÃÄÅĀĄÈÉÊËĘȨÌÍÎÏÒÓÔÕÖØÙÚÛÜàáâãäåāąèéêëęȩìíîïòóôõöøùúûüÆÇĊÐŁÑæçċðłñß"
+)
+
 ZOTEROLIKE = re.compile(
     r"(?P<beginning>\{|,\s?)"
-    + r"(?P<firstauthor>[A-Za-z_\-\:]+)_"
-    + r"(?P<firstword>[A-Za-z\-\:]+)_"
+    + r"(?P<firstauthor>[A-Za-z_\-\:"
+    + NONENGLISH
+    + r"]+)_"
+    + r"(?P<firstword>[A-Za-z\-\:"
+    + NONENGLISH
+    + r"]+)_"
     + r"(?P<year>\d{2}|\d{4})"
     + r"(?P<ending>\}|,)"
 )
 
 GOOGLELIKE = re.compile(
     r"(?P<beginning>\{|,\s?)"
-    + r"(?P<firstauthor>[A-Za-z_\-\:]+)"
+    + r"(?P<firstauthor>[A-Za-z_\-\:"
+    + NONENGLISH
+    + r"]+)"
     + r"(?P<year>\d{2}|\d{4})"
-    + r"(?P<firstword>[A-Za-z_\-\:]+)"
+    + r"(?P<firstword>[A-Za-z_\-\:"
+    + NONENGLISH
+    + r"]+)"
     + r"(?P<ending>\}|,)"
 )
 
 
 def remove_separators(m):
-    original = ''.join(m.groups())
+    original = "".join(m.groups())
     if (
         m["firstauthor"].startswith("tab:")
         or m["firstauthor"].startswith("fig:")
         or m["firstauthor"].startswith("sec:")
     ):
         return original
-    firstauthor = re.sub(r"[_:\-]", "", m["firstauthor"]).lower()
-    firstword = re.sub(r"[_:\-]", "", m["firstword"]).lower()
+    firstauthor = replace_nonenglish_letters(m["firstauthor"]).lower()
+    firstword = replace_nonenglish_letters(m["firstword"]).lower()
+    firstauthor = re.sub(r"[_:\-]", "", firstauthor)
+    firstword = re.sub(r"[_:\-]", "", firstword)
     ret = f"{m['beginning']}{firstauthor}{m['year']}{firstword}{m['ending']}"
     if ret != original:
         logging.info(f"\t\t{original} -> {ret}")
     return ret
 
+
 def zotero_to_google_id(m):
-    original = ''.join(m.groups())
+    original = "".join(m.groups())
     ret = f"{m['beginning']}{m['firstauthor']}{m['year']}{m['firstword']}{m['ending']}"
     logging.info(f"\t\t{original} -> {ret}")
     return ret
 
 
 def replace_nonenglish_letters(old):
-    """Removes common nonenglish characters."""
+    """Replaces common nonenglish characters."""
 
     new = re.sub(r"[ÀÁÂÃÄÅĀĄ]", "A", old)
     new = re.sub(r"[ÈÉÊËĘȨ]", "E", new)
@@ -97,11 +112,11 @@ if __name__ == "__main__":
             with open(path) as fd:
                 contents = fd.read()
             # homogenize non-English names and words
-            logging.info("\tHomogenizing non-English characters")
-            contentsEN = replace_nonenglish_letters(contents)
+            # logging.info("\tHomogenizing non-English characters")
+            # contentsEN = replace_nonenglish_letters(contents)
             # turn all zotero-like identifiers into google-scholar-like ones
             logging.info("\tTurning zotero-like ids into google-scholar-like")
-            google = re.sub(ZOTEROLIKE, zotero_to_google_id, contentsEN)
+            google = re.sub(ZOTEROLIKE, zotero_to_google_id, contents)
             # normalize everything else (dashes, colons, compound names, etc.)
             logging.info("\tNormalizing dashes, colons, etc. in identifiers")
             subs = re.sub(GOOGLELIKE, remove_separators, google)
