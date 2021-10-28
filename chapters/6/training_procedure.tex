@@ -11,21 +11,21 @@ After all epochs, we selected the best weights based on a custom metric that pre
 \guide{Hyperparameters}
 
 \textbf{Other hyper-parameters.}
-Each of the layers in the network is accompanied by batch normalization before the activation function. In the recurrent layers, we apply the batch normalization after the activation function. All convolutional and dense layers use the rectified linear unit (ReLU) as their activation function. However, the two GRU layers use $\tanh$. In all of our experiments, we used 16 sequences per batch and Adam \cite{kingma_adam_2014} as our optimizer, with a learning rate of $10^{-7}$.
+Each of the layers in the network is accompanied by batch normalization before the activation function. In the recurrent layers, we apply the batch normalization after the activation function. All convolutional and dense layers use the rectified linear unit (ReLU) as their activation function. However, the two GRU layers use $\tanh$. In all of our experiments, we used 16 sequences per batch and Adam \cite{kingma2014adam} as our optimizer, with a learning rate of $10^{-7}$.
 
 
 
 \textbf{Computing time.} The network was trained on a personal laptop\footnote{Intel i7 10750h, Nvidia RTX 2070, 32GB DDR4} with a Linux operating system, Tensorflow 2.4.1, and GPU acceleration.
 With these hardware and software conditions, the training times are approximately ~30 minutes (BPS only), ~40 minutes (BPS+WTC), and ~250 minutes (Full dataset).
-The number of trainable parameters in the network is close to 90,000. This number already includes all the parameters introduced by the additional output tasks. Therefore, the model is similar in size to recent models \cite{micchi_not_2020, chen_attend_2021}.
+The number of trainable parameters in the network is close to 90,000. This number already includes all the parameters introduced by the additional output tasks. Therefore, the model is similar in size to recent models \cite{micchi2020not, chen2021attend}.
 
 \guide{Evaluation procedure}
 
-In the past, the models by Micchi et al. \cite{micchi_not_2020} and Chen and Su \cite{chen_attend_2021} have been evaluated using the Beethoven Piano Sonatas (BPS) and the Well-Tempered Clavier (WTC) datasets. We too provide direct comparisons in these two datasets, however, we also share the results of our model across the Annotated Beethoven Corpus (ABC) \cite{neuwirth_annotated_2018}, annotated Haydn string quartets Op.20 (HaydnOp20) \cite{napoles_lopez_automatic_2017}, Theme and Variation Encodings with Roman Numerals (TAVERN) \cite{devaney_theme_2015}, and When-in-Rome (WiR) \cite{gotham_romantext_2019} datasets.
+In the past, the models by Micchi et al. \cite{micchi2020not} and Chen and Su \cite{chen2021attend} have been evaluated using the Beethoven Piano Sonatas (BPS) and the Well-Tempered Clavier (WTC) datasets. We too provide direct comparisons in these two datasets, however, we also share the results of our model across the Annotated Beethoven Corpus (ABC) \cite{neuwirth2018annotated}, annotated Haydn string quartets Op.20 (HaydnOp20) \cite{napoleslopez2017automatic}, Theme and Variation Encodings with Roman Numerals (TAVERN) \cite{devaney2015theme}, and When-in-Rome (WiR) \cite{gotham2019romantext} datasets.
 
 For all datasets, the same procedure was followed regarding data splits.
- Training, validation, and test splits were produced randomly (except in BPS, where they were provided by Chen and Su \cite{chen_functional_2018}).
- %\footnote{In the original splits of BPS, there is a duplicated example in the validation and test sets. We noticed that Micchi et al. \cite{micchi_not_2020} corrected the splits to remove the data leakage. Thus, we follow the splits by Micchi et al. \cite{micchi_not_2020}}
+ Training, validation, and test splits were produced randomly (except in BPS, where they were provided by Chen and Su \cite{chen2018functional}).
+ %\footnote{In the original splits of BPS, there is a duplicated example in the validation and test sets. We noticed that Micchi et al. \cite{micchi2020not} corrected the splits to remove the data leakage. Thus, we follow the splits by Micchi et al. \cite{micchi2020not}}
 A summary of all datasets is shown in Table \ref{tab:datasets}. The summary indicates the number of files in each split and the number of sequences (each of 640 frames) that were collected from that split.
 
 
@@ -42,12 +42,12 @@ To support reproduction of this work, we provide the exact data splits at [ANONY
   & & Files (Seqs) & \\
   Dataset & Training & Validation & Test \\
   \hline
-  ABC \cite{neuwirth_annotated_2018} & 50 (448) & 10 (97) & 10 (99) \\
-  BPS \cite{chen_functional_2018} & 18 (155) & 7 (75) & 7 (75) \\
-  HaydnOp20 \cite{napoles_lopez_automatic_2017} & 16 (91) & 4 (19) & 4 (19) \\
-  TAVERN \cite{devaney_theme_2015} & 38 (404) & 8 (68) & 8 (64) \\
-  WiR \cite{gotham_romantext_2019} & 107 (301) & 21 (61) & 21 (51) \\
-  WTC \cite{gotham_romantext_2019} & 12 (25) & 6 (13) & 6 (14) \\
+  ABC \cite{neuwirth2018annotated} & 50 (448) & 10 (97) & 10 (99) \\
+  BPS \cite{chen2018functional} & 18 (155) & 7 (75) & 7 (75) \\
+  HaydnOp20 \cite{napoleslopez2017automatic} & 16 (91) & 4 (19) & 4 (19) \\
+  TAVERN \cite{devaney2015theme} & 38 (404) & 8 (68) & 8 (64) \\
+  WiR \cite{gotham2019romantext} & 107 (301) & 21 (61) & 21 (51) \\
+  WTC \cite{gotham2019romantext} & 12 (25) & 6 (13) & 6 (14) \\
   \hline
   Total & 241 (1424) & 56 (333) & 56 (329) \\
 %   +Transposition & XX & - & - \\
@@ -90,7 +90,7 @@ BPS & BPS & CS19 & 78.4 & 65.1 & 74.6 & 62.1 & - & - \\
 BPS & BPS & CS18 & 66.7 & 51.8 & 60.6 & 59.1 & -  & 25.7
 \end{tabular}
 \end{center}
- \caption{Summary of the performance of five functional harmony models: Chen and Su (2018, 2019, and 2021), Micchi et al. (2020), and AugmentedNet. For the WTC dataset, the experiment with training done over BPS+WTC replicated the 4-fold cross validation presented by Chen and Su \cite{chen_attend_2021}. In this case, $\pm$ indicates the standard deviation. For all other rows, the results present the performance on the held test set. The comma-separated values in RN of the AugmentedNet rows indicate different methods for reconstructing the Roman numeral, as explained in \ref{sec:additionaltasks}.}
+ \caption{Summary of the performance of five functional harmony models: Chen and Su (2018, 2019, and 2021), Micchi et al. (2020), and AugmentedNet. For the WTC dataset, the experiment with training done over BPS+WTC replicated the 4-fold cross validation presented by Chen and Su \cite{chen2021attend}. In this case, $\pm$ indicates the standard deviation. For all other rows, the results present the performance on the held test set. The comma-separated values in RN of the AugmentedNet rows indicate different methods for reconstructing the Roman numeral, as explained in \ref{sec:additionaltasks}.}
  \label{tab:results}
 \end{table*}
 
@@ -100,13 +100,13 @@ BPS & BPS & CS18 & 66.7 & 51.8 & 60.6 & 59.1 & -  & 25.7
 
 \textbf{Beethoven Piano Sonatas.} The last rows of Table \ref{tab:results} show the results of our model when evaluated over the BPS dataset.
 To the best of our efforts, we replicate the experimental conditions of the models we compare to. Single lines in the table delimit experiments that are directly comparable.
-For example, the upper rows of BPS compare the results of Micchi et al. \cite{micchi_not_2020} using all of their available training data and our model using all of our available training data.
+For example, the upper rows of BPS compare the results of Micchi et al. \cite{micchi2020not} using all of their available training data and our model using all of our available training data.
 
 \textbf{Well-Tempered Clavier.}
 The second to last group of rows in Table \ref{tab:results} show the results of our model when evaluated on the WTC dataset.
-The model by Chen and Su \cite{chen_attend_2021} presented the results over 4-fold cross validation. We replicate this study for direct comparison.\footnote{However, we used our test split for the \emph{Full dataset} experiment in WTC.} As they have, we include the average accuracy across the 4 folds, and the standard deviation.
+The model by Chen and Su \cite{chen2021attend} presented the results over 4-fold cross validation. We replicate this study for direct comparison.\footnote{However, we used our test split for the \emph{Full dataset} experiment in WTC.} As they have, we include the average accuracy across the 4 folds, and the standard deviation.
 
-The results show that our model outperforms both the recent convolutional methods \cite{micchi_not_2020} and Transformer-based ones \cite{chen_attend_2021} in the reconstruction of the Roman numeral label.
+The results show that our model outperforms both the recent convolutional methods \cite{micchi2020not} and Transformer-based ones \cite{chen2021attend} in the reconstruction of the Roman numeral label.
 % Furthermore, the addition of data from a different dataset seems to improve the results. For example, training with WTC and BPS benefits the performance in BPS and vice versa.
 For ABC, HaydnOp20, TAVERN, and WiR, we show the generalization of our model when using all the training data available on the corresponding held test set.
 

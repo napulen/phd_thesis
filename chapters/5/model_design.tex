@@ -1,4 +1,4 @@
-The AugmentedNet is similar in size and design to the network proposed by Micchi et al. \cite{micchi_not_2020}. The network is characterized by a different design of the convolutional layers, the representation of pitch spelling, and the separation of bass and chroma features inputs into independent convolutional blocks.
+The AugmentedNet is similar in size and design to the network proposed by Micchi et al. \cite{micchi2020not}. The network is characterized by a different design of the convolutional layers, the representation of pitch spelling, and the separation of bass and chroma features inputs into independent convolutional blocks.
 
 \guide{Inputs}
 
@@ -14,7 +14,7 @@ In the Micchi et al. representation, each timestep has 70 features: 35 for the b
 We consolidate this information in 38 features: 19 for the bass, and 19 for the chroma features. The reduction in number of features is due to an alternative encoding of pitch spelling, described below.
 
 \textbf{Encoding the pitch spelling.}
-%In previous work, Micchi et al. \cite{micchi_not_2020} have encoded pitch spellings as a one-hot encoded vector with 35 features, which encodes pitch spellings up to two sharps or two flats of every note letter (7 * 5 = 35).
+%In previous work, Micchi et al. \cite{micchi2020not} have encoded pitch spellings as a one-hot encoded vector with 35 features, which encodes pitch spellings up to two sharps or two flats of every note letter (7 * 5 = 35).
 We split the representation of a pitch spelling into two components: the pitch class (0--12) and the generic note letter (A--G).
 Each spelled pitch thus leads to a two-hot encoded vector with 19 features (1 of 12 pitch classes, and 1 of 7 note names).
 This reduces the number of parameters in the network without any observable compromise in performance.
@@ -27,8 +27,8 @@ Thus, two parallel convolutional blocks are computed.
 \guide{Convolutional block}
 
 \guide{Micchi and DenseNet-like convolutions.}
-Using the feature maps of all previous layers as an input to a convolutional layer has proven beneficial, for instance by strengthening feature propagation and reducing the number of parameters \cite{huang_densely_2017}.
-Moreover, DenseNet-like architectures have shown to work well for the specific task of functional harmony \cite{micchi_not_2020}.
+Using the feature maps of all previous layers as an input to a convolutional layer has proven beneficial, for instance by strengthening feature propagation and reducing the number of parameters \cite{huang2017densely}.
+Moreover, DenseNet-like architectures have shown to work well for the specific task of functional harmony \cite{micchi2020not}.
 
 % \begin{figure*}
 %  \centerline{
@@ -47,25 +47,25 @@ Our architecture implicitly prioritizes short-term dependencies in the initial c
 \guide{Dense and recurrent layers}
 
 Two time-distributed dense layers are applied to the concatenated outputs of the convolutional blocks. The dense layers help reducing the number of features before the GRU layers. These have 64 and 32 neurons, respectively.
-% All convolutional and dense layers have batch normalization \cite{ioffe_batch_2015} before the activation function. Similarly, all convolutional and dense layers use the rectified linear unit (ReLU) as their activation function.
+% All convolutional and dense layers have batch normalization \cite{ioffe2015batch} before the activation function. Similarly, all convolutional and dense layers use the rectified linear unit (ReLU) as their activation function.
 
-Two bidirectional GRU \cite{cho_learning_2014} layers are applied after the second dense layer.
+Two bidirectional GRU \cite{cho2014learning} layers are applied after the second dense layer.
 Both GRU layers return outputs at every timestep.
 Throughout the entire network, the dimensionality of the timesteps axis remains constant. That is, our input and output sequences have the same length, and the model predicts one Roman numeral label per timestep.
 
 \guide{Multitask learning with additional tonal tasks}
 
-The output of the network follows a MTL approach with hard parameter sharing, similar to that proposed by Chen and Su \cite{chen_functional_2018}. For each of the output tasks, a time-distributed dense layer is attached to the second GRU, and used to predict its corresponding task.
-Six conventional tasks are learned (similar to Micchi et al. and Chen and Su \cite{micchi_not_2020, chen_attend_2021}), plus five additional ones. All the tasks (eleven in total) and their number of output classes are shown on the right side of Figure \ref{fig:network}.
+The output of the network follows a MTL approach with hard parameter sharing, similar to that proposed by Chen and Su \cite{chen2018functional}. For each of the output tasks, a time-distributed dense layer is attached to the second GRU, and used to predict its corresponding task.
+Six conventional tasks are learned (similar to Micchi et al. and Chen and Su \cite{micchi2020not, chen2021attend}), plus five additional ones. All the tasks (eleven in total) and their number of output classes are shown on the right side of Figure \ref{fig:network}.
 
 \guide{Six conventional functional harmony tasks}
-All the conventional tasks, except for the local key, have the same number of output classes described by Micchi et al. \cite{micchi_not_2020}. The local key includes four additional keys: $\{F\flat, G\sharp, d\flat, e\sharp\}$. These were included because the data exploration process revealed modulations reaching $G\sharp$ major in the dataset.
+All the conventional tasks, except for the local key, have the same number of output classes described by Micchi et al. \cite{micchi2020not}. The local key includes four additional keys: $\{F\flat, G\sharp, d\flat, e\sharp\}$. These were included because the data exploration process revealed modulations reaching $G\sharp$ major in the dataset.
 Thus, the number of allowed key signatures was extended by one sharp and one flat, in both modes.
 % This also introduced more training examples during the data augmentation process via key transposition.
 
 \guide{Five Additional tasks.}\label{sec:additionaltasks}
 
-It is argued that MTL helps improving the generalization of a model by preferring representations that are useful to related tasks, acting as an implicit form of data augmentation and regularization method \cite{ruder_overview_2017}.
+It is argued that MTL helps improving the generalization of a model by preferring representations that are useful to related tasks, acting as an implicit form of data augmentation and regularization method \cite{ruder2017overview}.
 Roman numeral labels can be decomposed into multiple different features, of which the six conventional tasks are known examples.
 Motivated by the possibility of improving the performance of our network, we included five additional tasks with hard parameter sharing in our MTL approach.
 We describe the five additional tasks, which have relevance to harmonic analysis.
@@ -104,10 +104,10 @@ ii7     & vi7      & It       & bVI       & II
 
 \textbf{Tonicization}. The tonicization is predicted from the key implied by a secondary degree (if any).
 % When not present, the tonicization encodes the local key instead, to reduce the sparsity of classes.
-% This idea is adapted from N\'apoles L\'opez et al. \cite{napoles_lopez_local_2020}.
+% This idea is adapted from N\'apoles L\'opez et al. \cite{napoleslopez2020local}.
 The output classes are identical to the ones of the local key and is an alternative approach to learn the secondary degrees.
 
-\textbf{Pitch Class Sets}. The set of pitch classes implied by the chord. The number of classes (93) results from computing all pitch class sets in all diatonic triad and seventh chords, plus all augmented sixth chords in all keys. This task is related to the chord quality, primary degree, and to non-chord tones \cite{ju_non-chord_2017}.
+\textbf{Pitch Class Sets}. The set of pitch classes implied by the chord. The number of classes (93) results from computing all pitch class sets in all diatonic triad and seventh chords, plus all augmented sixth chords in all keys. This task is related to the chord quality, primary degree, and to non-chord tones \cite{ju2017nonchord}.
 All additional tasks except for the RomanNumeral75 are computed solely for their contributions to the shared representation of the MTL approach.
 
 % \subsection{Data augmentation}
@@ -117,8 +117,8 @@ All additional tasks except for the RomanNumeral75 are computed solely for their
 As in most automatic tonal music analysis research, we transpose each piece to different keys as a means for data augmentation.
 Particularly, we transpose to all the keys that lie within a range of key signatures in both modes.
 When we transpose a piece, we verify that all the modulations within the piece fall in the target range of key signatures.
-This process of transposition and data augmentation was introduced and described by Micchi et al. \cite{micchi_not_2020}.
-In our data exploration, we found G$\sharp$ major to be the furthest key to the center of the \emph{line-of-fifths} \cite{temperley_line_2000} in the dataset.
+This process of transposition and data augmentation was introduced and described by Micchi et al. \cite{micchi2020not}.
+In our data exploration, we found G$\sharp$ major to be the furthest key to the center of the \emph{line-of-fifths} \cite{temperley2000line} in the dataset.
 Thus, we transposed in the range of keys within 8 flats to 8 sharps in their key signature.
 % Due to modulations, two pieces of music may be transposed a different number of times.
 % Generally, chromatic pieces (passing through many different keys) can be transposed to fewer new keys, while more diatonic pieces (which remain in one or few key/s) can be transposed more.
@@ -126,14 +126,14 @@ Thus, we transposed in the range of keys within 8 flats to 8 sharps in their key
 \guide{Synthetic examples}
 
 \guide{Additional data augmentation.}
-In addition to transposition, we implemented a variation of a recent data-augmentation technique proposed by N\'apoles L\'opez and Fujinaga \cite{napoles_lopez_harmonic_2020}.
+In addition to transposition, we implemented a variation of a recent data-augmentation technique proposed by N\'apoles L\'opez and Fujinaga \cite{napoleslopez2020harmonic}.
 Starting with the Roman numeral analyses of our dataset, we synthesized `new' training examples by realizing the chords implied by each Roman numeral annotation.
-The synthesis was done using the music21 Python library \cite{cuthbert_music21_2010}, which converts RomanText \cite{gotham_romantext_2019} files into scores of \emph{block chord} realizations.
+The synthesis was done using the music21 Python library \cite{cuthbert_music21_2010}, which converts RomanText \cite{gotham2019romantext} files into scores of \emph{block chord} realizations.
 
 % \begin{figure}
 %  \centerline{
 %  \includegraphics[width=\columnwidth]{figs/texturization.png}}
-%  \caption{Example of texturization. The \emph{block chord} texture (b) was synthesized using music21 \cite{cuthbert_music21_2010} from an input RomanText file \cite{gotham_romantext_2019}. The texturized output (c) was generated by recursively applying musical patterns to the \emph{block chord} scores. The three musical patterns of \emph{bass-split}, \emph{Alberti bass}, and \emph{syncopation} are indicated in measures 1--3, respectively. The original music score (a) is shown for reference: mm. 1--4 of Beethoven's Piano Sonata Op.2 No.1.}
+%  \caption{Example of texturization. The \emph{block chord} texture (b) was synthesized using music21 \cite{cuthbert_music21_2010} from an input RomanText file \cite{gotham2019romantext}. The texturized output (c) was generated by recursively applying musical patterns to the \emph{block chord} scores. The three musical patterns of \emph{bass-split}, \emph{Alberti bass}, and \emph{syncopation} are indicated in measures 1--3, respectively. The original music score (a) is shown for reference: mm. 1--4 of Beethoven's Piano Sonata Op.2 No.1.}
 %  \label{fig:texturization}
 % \end{figure}
 

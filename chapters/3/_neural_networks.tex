@@ -29,13 +29,13 @@ bio-inspired \emph{neuron} model was introduced
 model very simple functions by manually setting the weights
 that connected the input into the neuron. This idea was
 later extended to propose the Perceptron
-\parencite{rosenblatt1958perceptron:} and Adaline
+\parencite{rosenblatt1958perceptron} and Adaline
 \parencite{widrow1960adaptive} models, which were able to
 automatically derivate such weights from the data. Although
 these models showed promise, their popularity decreased
 significantly when it was demonstrated that they could not
 learn relatively simple functions, like the \emph{XOR}
-function \parencite{minsky1972perceptrons:}. Due to their
+function \parencite{minsky1972perceptrons}. Due to their
 importance, the achievements carried out during this wave of
 research (1940s-1960s) are acknowledged by the current
 literature \parencite{goodfellow2016deep} and usually
@@ -104,7 +104,7 @@ Convolutional Neural Networks (CNNs) might seem recent,
 however, they were introduced during the
 \emph{connectionist} wave of research on neural networks, in
 1989 \parencite{lecun1989generalization,
-le_cun1989handwritten}. The main innovation of CNNs is the
+lecun1989handwritten}. The main innovation of CNNs is the
 idea of \emph{shared parameters}. In a traditional
 feedforward network (e.g., Multi-Layer Perceptron), every
 neuron of the network is typically connected to another
@@ -153,19 +153,19 @@ ImageNet challenge since 2012
 classes of objects in an image.
 
 In Music Information Retrieval (MIR), CNNs have been used
-for genre recognition \parencite{dieleman2011audio-based},
+for genre recognition \parencite{dieleman2011audiobased},
 chord recognition \parencite{humphrey2012rethinking},
 structural analysis \parencite{ullrich2014boundary,
 grill2015music}, music tagging
 \parencite{choi2016automatic}, instrument recognition
 \parencite{lostanlen2016deep}, Optical Music Recognition
-(OMR) \parencite{calvo-zaragoza_end--end_2017,
+(OMR) \parencite{calvozaragoza2017endend,
 pacha2018optical}, beat tracking
 \parencite{gkiokas2017convolutional}, source separation
 \parencite{miron2017monaural}, syllable segmentation
-\parencite{pons2017score-informed}, key detection
-\parencite{korzeniowski2018genre-agnostic}, and tempo
-estimation \parencite{schreiber_single-step_2018,
+\parencite{pons2017scoreinformed}, key detection
+\parencite{korzeniowski2018genreagnostic}, and tempo
+estimation \parencite{schreiber2018singlestep,
 schreiber2019musical}.
 
 \guide{AutoEncoders}
@@ -241,19 +241,19 @@ bidirectional LSTM architecture with convolutional layers
 In MIR, RNNs and hybrid RNN models with convolutional layers
 have been quite popular in numerous tasks, for example,
 onset detection \parencite{eyben2010universal}, chord
-recognition \parencite{boulanger-lewandowski_audio_2013,
-sigtia_end--end_2016, sears2018evaluating}, voice
-separation \parencite{huang2014singing-voice}, music
-transcription \parencite{sigtia2014rnn-based}, tempo
+recognition \parencite{boulangerlewandowski2013audio,
+sigtia2016endend, sears2018evaluating}, voice
+separation \parencite{huang2014singingvoice}, music
+transcription \parencite{sigtia2014rnnbased}, tempo
 estimation \parencite{bock2015accurate}, beat and downbeat
 tracking \parencite{bock2016joint, krebs2016downbeat},
 music generation \parencite{liu2016predicting,
 liang2017automatic, lim2017chord}, music transcription
-\parencite{rigaud2016singing, sigtia_end--end_2016,
+\parencite{rigaud2016singing, sigtia2016endend,
 southall2016automatic, vogl2016recurrent,
 southall2017automatic, vogl2017drum, basaran2018main},
-OMR \parencite{calvo-zaragoza_one-step_2017,
-wel2017optical, calvo-zaragoza_camera-primus:_2018},
+OMR \parencite{calvozaragoza2017onestep,
+wel2017optical, calvozaragoza2018cameraprimus},
 sequence modelling \parencite{ycart2017study}, mood
 detection \parencite{delbouys2018music}, and instrument
 recognition \parencite{gururani2018instrument}.
@@ -278,7 +278,7 @@ regarding \emph{where} they have been found.
 The U-Net is a modification of the traditional CNN
 architecture, designed to deal with image segmentation
 problems and making heavy use of data augmentation
-\parencite{ronneberger2015u-net:}. It was introduced in 2015
+\parencite{ronneberger2015unet}. It was introduced in 2015
 for the segmentation of images in the field of biomedical
 image processing and, since its introduction, has been
 applied to numerous tasks in different fields.
@@ -298,7 +298,7 @@ of the architecture.
 
 In MIR, models based on the U-Net have been proposed for
 source separation \parencite{jansson2017singing,
-stoller_wave-u-net:_2018} and OMR
+stoller2018waveunet} and OMR
 \parencite{hajic2018towards}.
 
 \guide{Other deep learning architectures in MIR}
@@ -308,11 +308,11 @@ multiple Music Information Retrieval (MIR) tasks. The most
 popular ones have already been discussed, however, other
 applications include the historical Self-Organizing Maps
 (SOMs) in the early 2000s
-\parencite{kiernan_score-based_2000,
+\parencite{kiernan2000scorebased,
 harford2003automatic}, Deep Belief Networks (DBNs)
 \parencite{hamel2010learning, schmidt2013learning,
 chacon2014developing, raczynski2010multiple,
 battenberg2012analyzing, herwaarden2014predicting,
 zhou2015chord}, and deep feedforward networks
-\parencite{cherla2014multiple,  liang_content-aware_2015,
-dawson_key-finding_2018, valk2018deep}.
+\parencite{cherla2014multiple,  liang2015contentaware,
+dawson2018keyfinding, valk2018deep}.
