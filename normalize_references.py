@@ -9,26 +9,26 @@ NONENGLISH = (
 )
 
 ZOTEROLIKE = re.compile(
-    r"(?P<beginning>\{|,\s?)"
-    + r"(?P<firstauthor>[A-Za-z_\-\:"
+    r"(?P<beginning>\{|,?\s+)"
+    + r"(?P<firstauthor>[A-Za-z_:"
     + NONENGLISH
-    + r"]+)_"
-    + r"(?P<firstword>[A-Za-z\-\:"
+    + r"-]+)_"
+    + r"(?P<firstword>[A-Za-z:"
     + NONENGLISH
-    + r"]+)_"
+    + r"-]+)_"
     + r"(?P<year>\d{2}|\d{4})"
     + r"(?P<ending>\}|,)"
 )
 
 GOOGLELIKE = re.compile(
-    r"(?P<beginning>\{|,\s?)"
-    + r"(?P<firstauthor>[A-Za-z_\-\:"
+    r"(?P<beginning>\{|,?\s+)"
+    + r"(?P<firstauthor>[A-Za-z_:"
     + NONENGLISH
-    + r"]+)"
+    + r"-]+)"
     + r"(?P<year>\d{2}|\d{4})"
-    + r"(?P<firstword>[A-Za-z_\-\:"
+    + r"(?P<firstword>[A-Za-z_:"
     + NONENGLISH
-    + r"]+)"
+    + r"-]+)"
     + r"(?P<ending>\}|,)"
 )
 
