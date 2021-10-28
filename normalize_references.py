@@ -1,20 +1,46 @@
 import re
 import argparse
+import logging
 import os
+import sys
+
+ZOTEROLIKE = re.compile(
+    r"(?P<beginning>\{|,\s?)"
+    + r"(?P<firstauthor>[A-Za-z_\-\:]+)_"
+    + r"(?P<firstword>[A-Za-z\-\:]+)_"
+    + r"(?P<year>\d{2}|\d{4})"
+    + r"(?P<ending>\}|,)"
+)
+
+GOOGLELIKE = re.compile(
+    r"(?P<beginning>\{|,\s?)"
+    + r"(?P<firstauthor>[A-Za-z_\-\:]+)"
+    + r"(?P<year>\d{2}|\d{4})"
+    + r"(?P<firstword>[A-Za-z_\-\:]+)"
+    + r"(?P<ending>\}|,)"
+)
 
 
 def remove_separators(m):
-    print(m)
+    original = ''.join(m.groups())
+    if (
+        m["firstauthor"].startswith("tab:")
+        or m["firstauthor"].startswith("fig:")
+        or m["firstauthor"].startswith("sec:")
+    ):
+        return original
     firstauthor = re.sub(r"[_:\-]", "", m["firstauthor"])
     firstword = re.sub(r"[_:\-]", "", m["firstword"])
-    r = f"{m['beginning']}{firstauthor}{m['year']}{firstword}{m['ending']}"
-    print(r)
-    return f"{m['beginning']}{firstauthor}{m['year']}{firstword}{m['ending']}"
-
+    ret = f"{m['beginning']}{firstauthor}{m['year']}{firstword}{m['ending']}"
+    if ret != original:
+        logging.info(f"\t\t{original} -> {ret}")
+    return ret
 
 def zotero_to_google_id(m):
-    print(m)
-    return f"{m['beginning']}{m['firstauthor']}{m['year']}{m['firstword']}{m['ending']}"
+    original = ''.join(m.groups())
+    ret = f"{m['beginning']}{m['firstauthor']}{m['year']}{m['firstword']}{m['ending']}"
+    logging.info(f"\t\t{original} -> {ret}")
+    return ret
 
 
 def replace_nonenglish_letters(old):
@@ -49,36 +75,39 @@ def cli():
         description="Normalize the format of the references."
     )
     parser.add_argument(
-        "file",
-        help="a file to normalize",
+        "--modify",
+        action="store_true",
+        help="update the changes in the files (CAREFUL!)",
     )
+    parser.add_argument("-v", action="store_true", help="verbose output")
     return parser.parse_args()
 
 
 if __name__ == "__main__":
     args = cli()
-    zoteroformat = re.compile(
-        r"(?P<beginning>\{|,\s?)"
-        + r"(?P<firstauthor>[A-Za-z_\-\:]+)_"
-        + r"(?P<firstword>[A-Za-z\-\:]+)_"
-        + r"(?P<year>\d{2}|\d{4})"
-        + r"(?P<ending>\}|,)"
-    )
-    googleformat = re.compile(
-        r"(?P<beginning>\{|,\s?)"
-        + r"(?P<firstauthor>[A-Za-z_\-\:]+)"
-        + r"(?P<year>\d{2}|\d{4})"
-        + r"(?P<firstword>[A-Za-z_\-\:]+)"
-        + r"(?P<ending>\}|,)"
-    )
-    for root, _, filename in os.walk("."):
-        latex = [
-            f for f in filename if f.endswith(".tex") or f.endswith(".bib")
-        ]
-        print(root, latex)
-        for f in latex:
-            with open(os.path.join(root, f)) as fd:
+    loglevel = logging.INFO if args.v else logging.WARNING
+    logging.basicConfig(level=loglevel)
+    for root, _, filenames in os.walk("."):
+        for f in filenames:
+            if not f.endswith(".tex") and not f.endswith(".bib"):
+                # logging.info(f"Ignoring file {f}")
+                continue
+            path = os.path.join(root, f)
+            logging.info(path)
+            with open(path) as fd:
                 contents = fd.read()
+            # homogenize non-English names and words
+            logging.info("\tHomogenizing non-English characters")
             contentsEN = replace_nonenglish_letters(contents)
-            google = re.sub(zoteroformat, zotero_to_google_id, contentsEN)
-            re.sub(googleformat, remove_separators, google)
+            # turn all zotero-like identifiers into google-scholar-like ones
+            logging.info("\tTurning zotero-like ids into google-scholar-like")
+            google = re.sub(ZOTEROLIKE, zotero_to_google_id, contentsEN)
+            # normalize everything else (dashes, colons, compound names, etc.)
+            logging.info("\tNormalizing dashes, colons, etc. in identifiers")
+            subs = re.sub(GOOGLELIKE, remove_separators, google)
+            if args.modify:
+                with open(path, "w") as fd:
+                    fd.write(subs)
+    if not args.modify:
+        logging.warning("Dry-run mode. All suggestions were ignored.")
+        logging.warning("Add --modify to make changes permanent.")
