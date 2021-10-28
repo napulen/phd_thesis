@@ -86,7 +86,7 @@ def cli():
 if __name__ == "__main__":
     args = cli()
     loglevel = logging.INFO if args.v else logging.WARNING
-    logging.basicConfig(level=loglevel)
+    logging.basicConfig(stream=sys.stdout, level=loglevel)
     for root, _, filenames in os.walk("."):
         for f in filenames:
             if not f.endswith(".tex") and not f.endswith(".bib"):
