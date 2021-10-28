@@ -42,7 +42,6 @@ Transform an identifier in the form `<firstauthor>_<firstword>_<year>` into `<fi
 In the VSCode syntax:
 
 ```
-Search:  \\cite\{(.*)_(.*)_(\d+)\}
-
-Replace: \cite{$1$3$2}
+Search:  (\{|,\s)(\w+)_(\w+)_(\d+)
+Replace: $1$2$4$3
 ```
