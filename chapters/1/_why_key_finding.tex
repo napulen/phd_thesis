@@ -1,10 +1,4 @@
-\chapter{Motivations for key-finding}
-\label{chap:chap50}
-
-\begin{quote}
-    Why does key-finding matter? Give examples of questions one could ask of a symbolic corpus that require key identification. [3-5 pages]
-\end{quote}
-\clearpage
+% Taken verbatim from comps Q5
 
 % Across the literature, the most mentioned application of key-finding algorithms is its use in \emph{harmonic mixing} applications for DJs.
 % There are companies that value accurate and automatic annotations of the musical key for this purpose.
@@ -20,13 +14,13 @@
 
 % \todo[inline]{Locate applications based on the papers for this question}
 
-% \subsection{Global key-finding applications}
+% \guide{Global key-finding applications}
 
 % Some of the utilities of key-finding algorithms are music classification, music cataloguing, and harmonic mixing for DJs.
 
 % These applications appear frequently across the literature of key-finding models.
 
-% \subsection{Local key-finding applications}
+% \guide{Local key-finding applications}
 
 % Although not as frequently mentioned as the applications of global keys, researchers have also found useful applications for local key-finding models across the field of Music Information Retrieval.
 % \begin{enumerate}
@@ -41,7 +35,7 @@
 
 % Local key-finding models and their applications are, nevertheless, less common. Mainly, because local key-finding models are very difficult to evaluate. On the other hand, global key-finding models are relatively easier to evaluate quantitatively, and have become more popular over the years.
 
-% \subsection{Going further into new research questions}
+% \guide{Going further into new research questions}
 
 % Sapp \cite{sapp2011computational} studied tonality through the computation of a key-finding model at different window lengths of a piece of music.
 
@@ -56,7 +50,7 @@
 %     \label{fig:Q5_1}
 % \end{figure}
 
-% \subsection{Concrete questions that we can ask in a symbolic music corpus}
+% \guide{Concrete questions that we can ask in a symbolic music corpus}
 
 % How many changes of key (modulations) happen in a given piece?
 % How many tonicizations happen in a given piece?
@@ -67,7 +61,7 @@
 % How many times does the local key mismatches the global key of the beginning of the piece?
 % How many times does the local key mismatches the global key of the end of the piece?
 
-% \subsection{Interesting properties of musical keys in the study of tonality}
+% \guide{Interesting properties of musical keys in the study of tonality}
 
 % What does evaluation has to do with any of this? I should be really talking about applications.
 
@@ -79,7 +73,7 @@ During the research literature, the applications for key-finding models are ofte
 
 Nevertheless, aside from the necessity of key-finding models in digital libraries and commercial applications, researchers have also encountered themselves (maybe as a byproduct of research and design decisions), with interesting musicological questions. Here, I decide to concentrate on those, formulating a few questions based on the research inquiries, claims, and assumptions that can be found surrounding the literature of key-finding algorithms.\footnote{Unless explicitly mentioned, the questions listed here are not direct quotes from the cited papers but questions formulated given a---sensible---interpretation of the statements in the cited papers. Following the question, comes a discussion of the paper (and the context) from which the question was formulated.}
 
-\section{Questions regarding the study of key-finding algorithms}
+\guide{Questions regarding the study of key-finding algorithms}
 
 \textbf{\emph{What is the field that studies musical keys and tonality?}}
 
@@ -113,6 +107,3 @@ Using the chord frequencies annotated in Budge's dissertation \cite{budge1943stu
 Regarding how the key-finding algorithms should process the musical inputs, Quinn has explicitly pointed out a few questions that, through observation, seem as much of a musicological nature as they seem of an engineering nature \cite{quinn2010are}. Quinn considers that these questions ``dominate'' the key-finding literature and the choices done by researchers on the field: ``\textbf{\emph{Should window size be defined in terms of chronological time, notational (metrical) time, or number of note onsets? How big should the window be? How does key-finding for a given window take into account results for previous windows? How should pitch-class distributions be weighted? How is a key determination made from a given pitch-class distribution?}}''
 
 Finally, in a data-driven study by White and Quinn \cite{white2018chord}, a Hidden Markov Model (HMM) was given the freedom to learn harmonic functions from Bach chorales, examples of the Kostka-Payne harmony textbook, and the McGill Billboard dataset. This process followed mostly an unsupervised approach, without the explicit involvement of the human experts deciding which functions needed to be learnt by the model. As a result, the model came up with different architectures for each type of music, sometimes defying the expectations of music theory, and sometimes, at least partially, validating them. This poses the following question: \textbf{\emph{can we use key-finding and chord recognition models, to propose new music theories?}}
-
-\bibliographystyle{plainnat}
-\bibliography{zoterorefs}
