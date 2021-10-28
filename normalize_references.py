@@ -29,8 +29,8 @@ def remove_separators(m):
         or m["firstauthor"].startswith("sec:")
     ):
         return original
-    firstauthor = re.sub(r"[_:\-]", "", m["firstauthor"])
-    firstword = re.sub(r"[_:\-]", "", m["firstword"])
+    firstauthor = re.sub(r"[_:\-]", "", m["firstauthor"]).lower()
+    firstword = re.sub(r"[_:\-]", "", m["firstword"]).lower()
     ret = f"{m['beginning']}{firstauthor}{m['year']}{firstword}{m['ending']}"
     if ret != original:
         logging.info(f"\t\t{original} -> {ret}")
