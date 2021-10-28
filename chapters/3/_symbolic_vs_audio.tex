@@ -1,25 +1,20 @@
-\chapter{Specificities of audio signals}
-\label{chap:chap40}
+% Taken verbatim from comps Q4
 
-\begin{quote}
-    Provide a review of the specificities of sound signals that might affect the ability to estimate musical keys from audio recordings when compared to the estimation of musical keys from symbolic representations. Elaborate and describe a strategy for a systematic investigation of the influence of these specificities on the accuracy of musical key estimation. How could the results of this investigation be useful in a machine learning context? [10-12 pages]
-\end{quote}
-\clearpage
 
-% \section{Audio features (\emph{specificities of sound})}
+% \guide{Audio features (\emph{specificities of sound})}
 % Knowing what \emph{characterizes} sound is a difficult problem. Researchers have come with different methods to define and classify the specificities of sound. In the field of Music Information Retrieval, these characteristics are usually encompased by the extraction of audio features or descriptors. There are multiple taxonomies of musical features...
-% \subsection{Taxonomies}
+% \guide{Taxonomies}
 % \cite{peeters2004large, lindsay_mpeg-7_2001, mitrovic2010features}
 % These taxonomies generally consider that there are Low-Level Descriptors (LLDs) and High-Level Descriptors (HLDs). These descriptors can be extracted using feature extraction tools. Over the years, there have been multiple feature extraction tools...
-% \subsection{Extractors}
+% \guide{Extractors}
 % A good summary of feature extraction tools can be found here \cite{moffat2015evaluation}, evaluating in detail 10 audio feature extraction toolboxes according to 4 out of 6 metrics of the Cranfield model, selected according their popularity, availability, and constant updates. The evaluations performed here are mostly in terms of number of features, usability, and time performance of the tools. An evaluation of the accuracy and implementation of the features is approached, however, by other researchers...
-% \section{Evaluations}
+% \guide{Evaluations}
 
-% \section{Audio features and musical keys}
+% \guide{Audio features and musical keys}
 % A survey of historically-relevant audio features in musical key
 
-% \section{Audio and symbolic musical key features compared}
-% \section{Audio degradation}
+% \guide{Audio and symbolic musical key features compared}
+% \guide{Audio degradation}
 
 % The most systematic description of what are the \emph{specificities of sound} are, in my opinion, the audio features or audio descriptors.
 
@@ -27,7 +22,7 @@
 
 % There are multiple methods and implementations for computing those audio features. I took the examples shown in the survey by Moffat.
 
-% \subsection{Moffat \cite{moffat2015evaluation} }
+% \guide{Moffat \cite{moffat2015evaluation} }
 % 10 audio feature extraction toolboxes analyzed.
 
 % Evaluated according to the Cranfield Model for evaluation of information retrieval systems.
@@ -54,7 +49,7 @@ Over the years, there have been numerous versions of key-finding algorithms that
 
 These representations encode music in two very different ways (as notation and as an acoustic signal) and do not contain the same information nor operate at the same semantic level.
 
-\section{Difference between audio and symbolic music representations}
+\guide{Difference between audio and symbolic music representations}
 
 Among the differences between the audio and symbolic music representations, we can find the following \cite{fremerey2009towards}:
 
@@ -70,7 +65,7 @@ Among the differences between the audio and symbolic music representations, we c
 
 The list presented here is not an exhaustive list of differences between audio and symbolic music representations, but it should give an idea of why researchers have opted to design models tailored towards musical inputs in a specific representation. In the next section, the relevant information for finding musical keys in each representation is discussed.
 
-\section{Relevant information for finding musical keys}
+\guide{Relevant information for finding musical keys}
 
 In symbolic representations, the input that is typically sent to a key-finding algorithm consists of a sequence of either: 
 \begin{itemize}
@@ -81,15 +76,15 @@ In symbolic representations, the input that is typically sent to a key-finding a
 
 In audio representations, on the other hand, the most popular feature used by key-finding algorithms (see Question \ref{chap:chap3} for a list of models that make use of this feature) is the \emph{Chromagram}.\footnote{They are also referred as \emph{chroma features}, Harmonic Pitch Class Profiles (HPCP), and a few other names}
 
-\section{Chromagrams in audio key-finding}
+\guide{Chromagrams in audio key-finding}
 
 There are a few exceptions of key-finding algorithms that work with different features, for example, a log-magnitude log-frequency spectrogram \cite{korzeniowski2018genreagnostic} or a spatial representation of tonality \cite{arndt2008circular, harte2006detecting, lee2007unified}. For the most part, audio key-finding algorithms use a chromagram as their input.
 
 Regarding chromagrams and the problems they may introduce to a key-finding system, Campbell says \cite{campbell2010automatic}: \emph{[...] most of the errors encountered during the feature extraction stage [of a key-finding algorithm] can be attributed to problems with the pitch-class generation algorithm.} A pitch class generation algorithm, in this case, is a chromagram extractor. He considers that these issues can be related to tuning variations, low frequency resolution, and the effects of partials.\footnote{In the paper, Campbell credits Chuan and Chew (2005) for the taxonomy of issues related with chromagrams, however, the taxonomy does not appear in the referenced Chuan and Chew (2005) paper}
 
-\subsection{Issues introduced by chromagram features}
+\guide{Issues introduced by chromagram features}
 
-% \section{Campbell (2010) and issues with chromagrams}
+% \guide{Campbell (2010) and issues with chromagrams}
 \begin{enumerate}
     \item Tuning variations: The tuning in an audio recording may fluctuate due to the use of a different tuning system (e.g., different from the $A4=440Hz$ standard tuning), a different temperament (common in audio recordings of baroque music), or simply because the instruments in the recording are out-of-tune. A chromagram extractor that does not account for these issues may lead to inaccurate pitch-class distributions.
     \item Low frequency resolution: Similar to how MFCCs (by the use of the Mel scale), log-magnitude log-frequency spectrograms, and other features attempt to take human perception into consideration when extracting the features, a good chromagram extractor should account for the fact that the energy levels at different frequency ranges should contribute differently to the output pitch-class distribution.
@@ -98,9 +93,9 @@ Regarding chromagrams and the problems they may introduce to a key-finding syste
 
 Given that chromagrams are ubiquitous in many MIR tasks that involve the analysis of tonal features, most of these issues have already been addressed by researchers studying the design of chromagram feature extractors. One such example of increasing the robustness of a chromagram feature, is the proposal by Bello and Pickens \cite{bello2005robust}.
 
-\subsection{Robusting the chromagram}
+\guide{Robusting the chromagram}
 
-\subsubsection{Hand-crafted improvements}
+\guide{Hand-crafted improvements}
 The approach from Bello and Pickens proposes a mid-level harmonic-and-rhythmic representation, akin to a chromagram \cite{bello2005robust}. They describe the process for generating such representation starting from a polyphonic music signal.
 
 Their approach consists of four stages: computing a 36-bin chromagram, tuning the chromagram, perform beat-synchronous (tactus) segmentation, and finally, producing a 12-bin chromagram reduction. The last stage can be used as a pitch class distribution for different classification models.
@@ -115,7 +110,7 @@ After this stage, the chromagram is averaged and reduced from 36 bins to 12 bins
 
 Although the techniques for hand-crafting chromagrams (such as this one) have become increasingly better (a survey provided by Cho and Bello \cite{cho2014relative}), in 2016, Korzeniowski and Widmer proposed to increase the robustness of a chromagram extractor through the use of deep learning.
 
-\subsubsection{Deep-learning-based chromagram extractor}
+\guide{Deep-learning-based chromagram extractor}
 Korzeniowski and Widmer propose a new type of chromagram extractor based on artificial neural networks \cite{korzeniowski2016feature}. The chromagram is trained to compute chroma features that encode harmonic information important for chord recognition tasks but that learns to ignore irrelevant interferences in the signal. The training process is achieved by feeding an audio spectrum with harmonic context (a chord label) instead of a regular spectral frame.
 
 Korzeniowski and Widmer claim that a chromagram derived from ground truth annotations is able to recognize 97\% of the major and minor chords in the Beatles dataset, even using a simple logistic regression classifier. This motivated them to create a chromagram extractor that learns to recognize the relevant harmonic information and be robust to spectral content that is harmonically irrelevant.
@@ -128,7 +123,7 @@ Their deep neural network architecture consisted of feedforward layers: 3 hidden
 
 In their experiments, their deep learning chromagram extractor, which they called \emph{deepchroma}, was able to outperform the state-of-the-art baseline methods in a chord recognition experiment. This showed that chromagrams not only remain to be useful features, they can also benefit from the improvements of deep learning algorithms. 
 
-\section{In search of a different kind of robustness}
+\guide{In search of a different kind of robustness}
 
 Although the previous section has discussed the relevance and robustness of chromagrams in different chord and key-finding algorithms, it has not directly addressed some of the issues presented at the beginning of this chapter, such as the differences between symbolic music representations and audio music representations. Among those differences, we identified that symbolic and audio music representations differ in how they present repetition, ambiguity (mostly in duration), tempo, loudness, and timbre.
 
@@ -139,7 +134,3 @@ Assessing this question requires a different type of robustness study. For examp
 Nevertheless, one also risks that, by modifying the symbolic source too much (e.g., in our ``arpeggiating'' alteration), indeed, the alterations could have perceptual effects in the perceived key of the piece, at which point it would be unfair to expect that if the algorithm predicts a different key than the one that we intend it to predict, it should be considered a mistake. For that kind of assessment, one could take as a reference the study from Serr\`a et al. \cite{serra2008statistical}, who studied the relation between chroma statistics and human judgments of tonality.
 
 A combination of these approaches could give us insight about a few things: the robustness of chromagrams to changes in audio-synthesized symbolic music representations, the viability of a hybrid key-finding model, and maybe, the most critical differences between a music score and a real performance, key-finding-wise.
-
-
-\bibliographystyle{plainnat}
-\bibliography{zoterorefs}
