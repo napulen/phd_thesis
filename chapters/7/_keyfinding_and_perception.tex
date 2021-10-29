@@ -1,91 +1,279 @@
 % Taken verbatim from comps Q8
 
-Regarding the Krumhansl-Schmuckler algorithm, Ian Quinn writes \cite{quinn2010are}: ``\emph{Most current approaches to key-finding, either from symbolic data such as MIDI or from digital audio data, use some form of the procedure developed by Krumhansl and Schmuckler}''
+Regarding the Krumhansl-Schmuckler algorithm, Ian Quinn
+writes \cite{quinn2010are}: ``\emph{Most current approaches
+to key-finding, either from symbolic data such as MIDI or
+from digital audio data, use some form of the procedure
+developed by Krumhansl and Schmuckler}''
 
-The contribution of the Krumhansl-Schmuckler algorithm is ubiquitous in the current landscape of symbolic and audio key-finding algorithms. Although usually referred to as the \emph{Krumhansl-Schmuckler algorithm}, the resulting algorithm is only the last of three fundamental contributions introduced by Krumhansl and her collaborators: the \emph{probe-tone technique} (1979), the \emph{key profiles} (1982), and the Krumhansl-Schmuckler key-finding algorithm (1990).
+The contribution of the Krumhansl-Schmuckler algorithm is
+ubiquitous in the current landscape of symbolic and audio
+key-finding algorithms. Although usually referred to as the
+\emph{Krumhansl-Schmuckler algorithm}, the resulting
+algorithm is only the last of three fundamental
+contributions introduced by Krumhansl and her collaborators:
+the \emph{probe-tone technique} (1979), the \emph{key
+profiles} (1982), and the Krumhansl-Schmuckler key-finding
+algorithm (1990).
 
-During their 1979 study, Krumhansl and Shepard \cite{krumhansl1979quantification} introduced the \emph{probe-tone} technique, which has, since then, become a norm in many studies investigating the perception and cognition of tonality. In this framework, a tonal context is given to the participant, followed by a \emph{probe-tone}, which is rated by the participant according to how well it ``completes'' the scale. The ratings can then be compared, averaged, and evaluated among participants.
+During their 1979 study, Krumhansl and Shepard
+\cite{krumhansl1979quantification} introduced the
+\emph{probe-tone} technique, which has, since then, become a
+norm in many studies investigating the perception and
+cognition of tonality. In this framework, a tonal context is
+given to the participant, followed by a \emph{probe-tone},
+which is rated by the participant according to how well it
+``completes'' the scale. The ratings can then be compared,
+averaged, and evaluated among participants.
 
-The original 1979 study only included tonal contexts in which a scale was played prior to the probe-tone. In 1982, Krumhansl and Kessler extended this experiment to include chord sequences \cite{krumhansl1982tracing}. As they were also interested in evaluating ideas regarding tonicizations and modulations, 8 out of the 10 chord sequences presented some form of modulation. As one of the results of this study, Krumhansl and Kessler provided the distributions of the ratings of the participants for every pitch-class in major and minor contexts, something that became known as \emph{key profiles}. 
+The original 1979 study only included tonal contexts in
+which a scale was played prior to the probe-tone. In 1982,
+Krumhansl and Kessler extended this experiment to include
+chord sequences \cite{krumhansl1982tracing}. As they were
+also interested in evaluating ideas regarding tonicizations
+and modulations, 8 out of the 10 chord sequences presented
+some form of modulation. As one of the results of this
+study, Krumhansl and Kessler provided the distributions of
+the ratings of the participants for every pitch-class in
+major and minor contexts, something that became known as
+\emph{key profiles}.
 
-Finally, in one of the chapters of the 1990 book by Krumhansl \cite{krumhansl1990cognitive}, the Krumhansl-Schmuckler algorithm was introduced. This algorithm correlated a histogram of pitch-classes\footnote{Over the years, researchers have replaced a histogram with the histogram of a sub-sample (window) of the piece, chroma features, and other inputs. There is no real restriction for the input of the algorithm as long as it is a 12-dimensional vector.} in a symbolic music representation of music with the \emph{key profiles} from the Krumhansl and Kessler study from 1982.
+Finally, in one of the chapters of the 1990 book by
+Krumhansl \cite{krumhansl1990cognitive}, the
+Krumhansl-Schmuckler algorithm was introduced. This
+algorithm correlated a histogram of
+pitch-classes\footnote{Over the years, researchers have
+replaced a histogram with the histogram of a sub-sample
+(window) of the piece, chroma features, and other inputs.
+There is no real restriction for the input of the algorithm
+as long as it is a 12-dimensional vector.} in a symbolic
+music representation of music with the \emph{key profiles}
+from the Krumhansl and Kessler study from 1982.
 
-The Krumhansl-Schmuckler algorithm has become very popular in the field of Music Information Retrieval (MIR), where its basic components have been adjusted for multiple tasks and purposes\footnote{See Question \ref{chap:chap3} for a review of key-finding algorithms, where the influence of the Krumhansl-Schmuckler algorithm is ubiquitous in many newer key-finding algorithms}. Nevertheless, the assessment of whether the prediction obtained by the algorithm corresponds with the perceived key by a human listener has not received as much attention. 
+The Krumhansl-Schmuckler algorithm has become very popular
+in the field of Music Information Retrieval (MIR), where its
+basic components have been adjusted for multiple tasks and
+purposes\footnote{See Question \ref{chap:chap3} for a review
+of key-finding algorithms, where the influence of the
+Krumhansl-Schmuckler algorithm is ubiquitous in many newer
+key-finding algorithms}. Nevertheless, the assessment of
+whether the prediction obtained by the algorithm corresponds
+with the perceived key by a human listener has not received
+as much attention.
 
-In the following section, the most thorough study assessing the correlation between the Krumhansl-Schmuckler algorithm and the perception of key by trained musicians is presented.
+In the following section, the most thorough study assessing
+the correlation between the Krumhansl-Schmuckler algorithm
+and the perception of key by trained musicians is presented.
 
 \guide{Perceived key by musicians versus predictions from the Krumhansl-Schmuckler algorithm}
 
-In 2005, during a series of experiments proposed by Schmuckler and Tomovski \cite{schmuckler2005perceptual}, the correlation between the predictions of the Krumhansl-Schmuckler algorithm and the perceived key of a number of trained musicians (12 to 16 depending on the experiment) was tested.
+In 2005, during a series of experiments proposed by
+Schmuckler and Tomovski \cite{schmuckler2005perceptual}, the
+correlation between the predictions of the
+Krumhansl-Schmuckler algorithm and the perceived key of a
+number of trained musicians (12 to 16 depending on the
+experiment) was tested.
 
 The investigation was separated into three experiments.
 
 \guide{Experiment 1}
 
-In the first experiment, the authors addressed two research questions: 
+In the first experiment, the authors addressed two research
+questions:
 \begin{enumerate}
-    \item Whether the participants and the algorithm could infer the key of 48 preludes given a really short excerpt of each piece (approximately the first 4 notes). The preludes consisted of all the preludes in the first volume of Bach's \emph{Well-Tempered Clavier} and of all the preludes in Chopin's Op. 28.
-    \item Whether there was a correlation between the inferred keys by the participants and the predicted key by the algorithm.
-\end{enumerate} 
+    \item Whether the participants and the algorithm could
+    infer the key of 48 preludes given a really short
+    excerpt of each piece (approximately the first 4 notes).
+    The preludes consisted of all the preludes in the first
+    volume of Bach's \emph{Well-Tempered Clavier} and of all
+    the preludes in Chopin's Op. 28.
+    \item Whether there was a correlation between the
+    inferred keys by the participants and the predicted key
+    by the algorithm.
+\end{enumerate}
 
-The first conclusion of that experiment is that for most of the preludes in the \emph{Well-Tempered Clavier}, the intended key can be perceived from an example as short as 4 notes by both, the participants and the Krumhansl-Schmuckler algorithm. More specifically, the participants perceived the intended key for 21 out of the 24 preludes and the algorithm predicted the intended key for 23 out of 24 of the preludes.
+The first conclusion of that experiment is that for most of
+the preludes in the \emph{Well-Tempered Clavier}, the
+intended key can be perceived from an example as short as 4
+notes by both, the participants and the Krumhansl-Schmuckler
+algorithm. More specifically, the participants perceived the
+intended key for 21 out of the 24 preludes and the algorithm
+predicted the intended key for 23 out of 24 of the preludes.
 
-The second conclusion of that experiment is that the correlation between the perceived key of the participants and the predicted key by the algorithm is mostly positive and significant. That is, the participants and the algorithm tend to agree on the key.
+The second conclusion of that experiment is that the
+correlation between the perceived key of the participants
+and the predicted key by the algorithm is mostly positive
+and significant. That is, the participants and the algorithm
+tend to agree on the key.
 
-Respecting the Chopin preludes, neither the participants nor the algorithm tend to perceive/predict the intended key. This becomes the motivation for the second experiment.
+Respecting the Chopin preludes, neither the participants nor
+the algorithm tend to perceive/predict the intended key.
+This becomes the motivation for the second experiment.
 
 \guide{Experiment 2}
 
-Given that the results of the first experiment did not work very well for the Chopin preludes, in the second experiment, the authors evaluated whether the reason for not perceiving/predicting the intended key was that the stimuli was too short for Chopin's music.
+Given that the results of the first experiment did not work
+very well for the Chopin preludes, in the second experiment,
+the authors evaluated whether the reason for not
+perceiving/predicting the intended key was that the stimuli
+was too short for Chopin's music.
 
-This time, the stimuli consisted of samples from 8 Chopin preludes, taking approximately the first 4 measures from each of the preludes as the sample. The samples were further divided into four incremental ``contexts'': measure 1, measure 1-2, measure 1-3, and measure 1-4.
+This time, the stimuli consisted of samples from 8 Chopin
+preludes, taking approximately the first 4 measures from
+each of the preludes as the sample. The samples were further
+divided into four incremental ``contexts'': measure 1,
+measure 1-2, measure 1-3, and measure 1-4.
 
-In this experiment, the intended key of several of the preludes was perceived by the participants and predicted by the algorithm. However, for some of the preludes, the intended key was not perceived by the listeners or predicted by the algorithm. 
+In this experiment, the intended key of several of the
+preludes was perceived by the participants and predicted by
+the algorithm. However, for some of the preludes, the
+intended key was not perceived by the listeners or predicted
+by the algorithm.
 
-Interestingly, the correlation between the perceived key of the participants and the prediction of the algorithm was mostly positive and significant. In other words, when the algorithm failed to predict the intended key, the participants failed to perceive it as well (e.g., Op. 28 No. 2), but they both, listeners and algorithm, ``agree'' in their guess.
+Interestingly, the correlation between the perceived key of
+the participants and the prediction of the algorithm was
+mostly positive and significant. In other words, when the
+algorithm failed to predict the intended key, the
+participants failed to perceive it as well (e.g., Op. 28 No.
+2), but they both, listeners and algorithm, ``agree'' in
+their guess.
 
-Schmuckler and Tomovski interpreted these results in a positive way: \emph{Together, Experiments 1 and 2 strongly suggest that the keyfinding algorithm can model listeners’ percepts of tonality in situations of both tonal clarity and tonal ambiguity.}
+Schmuckler and Tomovski interpreted these results in a
+positive way: \emph{Together, Experiments 1 and 2 strongly
+suggest that the keyfinding algorithm can model listeners’
+percepts of tonality in situations of both tonal clarity and
+tonal ambiguity.}
 
 \guide{Experiment 3}
 
-In the third experiment, the authors explored the changes of key (modulations) throughout the full length of one of the Chopin preludes, Op. 28 No. 4, which is in the key of E minor.
+In the third experiment, the authors explored the changes of
+key (modulations) throughout the full length of one of the
+Chopin preludes, Op. 28 No. 4, which is in the key of E
+minor.
 
-For this purpose, they placed 8 different markers at different places of the prelude. The markers were chosen, according to the authors, based on the ``\emph{interesting harmonic or tonal changes occurring at these points}''. The participants were presented with samples that spanned from the beginning of the piece, up to a specific marker. After that, their perceived tonality was assessed.\footnote{Throughout all of the experiments in this study, the perceived tonality of the participants was assessed using the probe-tone technique.} By the time the participants reached the eighth marker, they heard the entire piece, from beginning to end.
+For this purpose, they placed 8 different markers at
+different places of the prelude. The markers were chosen,
+according to the authors, based on the ``\emph{interesting
+harmonic or tonal changes occurring at these points}''. The
+participants were presented with samples that spanned from
+the beginning of the piece, up to a specific marker. After
+that, their perceived tonality was
+assessed.\footnote{Throughout all of the experiments in this
+study, the perceived tonality of the participants was
+assessed using the probe-tone technique.} By the time the
+participants reached the eighth marker, they heard the
+entire piece, from beginning to end.
 
-The results of this experiment were interesting, as the correlation between the predictions of the algorithm and the perceived key of the participants is positive and significant throughout the piece, except for a few specific instances. Particularly, when the prelude was played from the beginning up to the end of mm.2 (second marker), the participants perceived a key around G$\sharp$ minor or B major, but the algorithm predicted keys around E minor or B minor.
+The results of this experiment were interesting, as the
+correlation between the predictions of the algorithm and the
+perceived key of the participants is positive and
+significant throughout the piece, except for a few specific
+instances. Particularly, when the prelude was played from
+the beginning up to the end of mm.2 (second marker), the
+participants perceived a key around G$\sharp$ minor or B
+major, but the algorithm predicted keys around E minor or B
+minor.
 
-The authors explained this phenomenon by saying that it was a ``strange'' harmonic context in the piece: ``\emph{This point in the passage presents a somewhat unusual harmonic event, in which the piece moves from the chord built on the 5th scale degree to the chord built on the 2nd scale degree, which (in a minor key) is an extremely rare diminished chord.}''
+The authors explained this phenomenon by saying that it was
+a ``strange'' harmonic context in the piece: ``\emph{This
+point in the passage presents a somewhat unusual harmonic
+event, in which the piece moves from the chord built on the
+5th scale degree to the chord built on the 2nd scale degree,
+which (in a minor key) is an extremely rare diminished
+chord.}''
 
 
 
 
-% \guide{Krumhansl-Schmuckler and the human cognition of keys}
-% The Krumhansl-Schmuckler does not fully explain the perception of tonality in the listener.
+% \guide{Krumhansl-Schmuckler and the human cognition of
+% keys} The Krumhansl-Schmuckler does not fully explain the
+% perception of tonality in the listener.
 
-% It is a major step towards the study of the phenomenon through statistical modeling and distributions.
+% It is a major step towards the study of the phenomenon
+% through statistical modeling and distributions.
 
-% It has been supported by experimental studies that even a randomly-generated sequence of notes from these distributions is perceived by the listeners in a given “key” significantly above random chance.
+% It has been supported by experimental studies that even a
+% randomly-generated sequence of notes from these
+% distributions is perceived by the listeners in a given
+% “key” significantly above random chance.
 
 % It does not provide a fully convincing explanation.
 
-% There are certainly aspects that may be missing from a distributional view, however, structural approaches haven’t fully explained the phenomenon either.
+% There are certainly aspects that may be missing from a
+% distributional view, however, structural approaches
+% haven’t fully explained the phenomenon either.
 
-% Moreover, distributional approaches fail to go beyond the Western tradition, whereas the distributional approach has been shown to generalize across cultures, giving an incomplete, but more generalizable explanation for how listeners perceive a tonal center.
+% Moreover, distributional approaches fail to go beyond the
+% Western tradition, whereas the distributional approach has
+% been shown to generalize across cultures, giving an
+% incomplete, but more generalizable explanation for how
+% listeners perceive a tonal center.
 
-% Regardless of what is found in the future, the studies by Krumhansl have contributed to stimulating discussion and research in the topic that has been necessary for such an elusive research topic.
+% Regardless of what is found in the future, the studies by
+% Krumhansl have contributed to stimulating discussion and
+% research in the topic that has been necessary for such an
+% elusive research topic.
 
-% Aarden: The Shepard and Krumhansl probe-tone method has been very influential, and is possibly the single most famous technique for studying music perception in the psychological literature.
+% Aarden: The Shepard and Krumhansl probe-tone method has
+% been very influential, and is possibly the single most
+% famous technique for studying music perception in the
+% psychological literature.
 
-% For their study, they decided to evaluate the significance of a "distributional" view in the listener's perception of key through an experiment involving melodies generated arbitrarily from pitch-class distributions (key profiles). The hypothesis is that a high rate of correlation between the random melodies and the perceived key by the listeners would confirm the validity of the distributional approach for key finding.
+% For their study, they decided to evaluate the significance
+% of a "distributional" view in the listener's perception of
+% key through an experiment involving melodies generated
+% arbitrarily from pitch-class distributions (key profiles).
+% The hypothesis is that a high rate of correlation between
+% the random melodies and the perceived key by the listeners
+% would confirm the validity of the distributional approach
+% for key finding.
 
-% In their experiment, the participants judged the key of random melodies, which were sampled from the distributions of such statistical models like the Krumhansl-Kessler key profiles.
+% In their experiment, the participants judged the key of
+% random melodies, which were sampled from the distributions
+% of such statistical models like the Krumhansl-Kessler key
+% profiles.
 
-% There were two conditions in the experiment, in the first condition, the participants were allowed to sing (hum) the note that they believed was the key of the melody, before entering in a keyboard. In the second condition, the participants were asked to present their answer sooner and without being able to sing their predicted key.
+% There were two conditions in the experiment, in the first
+% condition, the participants were allowed to sing (hum) the
+% note that they believed was the key of the melody, before
+% entering in a keyboard. In the second condition, the
+% participants were asked to present their answer sooner and
+% without being able to sing their predicted key.
 
-% One of the conclusions from the authors is that a distributional model may not give the full picture of how tonality works and is perceived by the listener. However, given that their results are highly above random chance, it is also a proof that distributional models characterize tonality and the perceived key of the listener, to a certain degree.
+% One of the conclusions from the authors is that a
+% distributional model may not give the full picture of how
+% tonality works and is perceived by the listener. However,
+% given that their results are highly above random chance,
+% it is also a proof that distributional models characterize
+% tonality and the perceived key of the listener, to a
+% certain degree.
 
-% Distributional views have also been supported because they have been tested in cross-cultural studies, presenting a high correlation between the responses of the listeners and the key profiles. This means that to a certain extent, we know that these distributions characterize a shared cognitive mechanism that works across cultures, even if it fails to provide a full, accurate, explanation of what the listeners perceive.
+% Distributional views have also been supported because they
+% have been tested in cross-cultural studies, presenting a
+% high correlation between the responses of the listeners
+% and the key profiles. This means that to a certain extent,
+% we know that these distributions characterize a shared
+% cognitive mechanism that works across cultures, even if it
+% fails to provide a full, accurate, explanation of what the
+% listeners perceive.
 
-% From this study, Temperley and Marvin reached three conclusions: 1) listeners perceive the key of the sampled melodies of a key profiles at better-than-chance levels, 2) the performance of participants with absolute pitch on these experiment is no different than the one of participants without absolute pitch, 3) the extent to which participants agree in their key judgements with the probabilistic model designed by Temperley (2007) matches their judgments better than other models.
+% From this study, Temperley and Marvin reached three
+% conclusions: 1) listeners perceive the key of the sampled
+% melodies of a key profiles at better-than-chance levels,
+% 2) the performance of participants with absolute pitch on
+% these experiment is no different than the one of
+% participants without absolute pitch, 3) the extent to
+% which participants agree in their key judgements with the
+% probabilistic model designed by Temperley (2007) matches
+% their judgments better than other models.
 
-% As it has been mentioned, there is skepticism about the validity, in general, of distributional approaches for modeling musical key. Temperley and Marvin mention that the low agreement between participants casts serious doubt on the distributional view of key perception, however, at the same time, their results show that distributional approaches match perceived keys at better-than-chance levels. Therefore, distributional approaches have valuable information, but they do not provide the full picture of key modeling.
+% As it has been mentioned, there is skepticism about the
+% validity, in general, of distributional approaches for
+% modeling musical key. Temperley and Marvin mention that
+% the low agreement between participants casts serious doubt
+% on the distributional view of key perception, however, at
+% the same time, their results show that distributional
+% approaches match perceived keys at better-than-chance
+% levels. Therefore, distributional approaches have valuable
+% information, but they do not provide the full picture of
+% key modeling.
