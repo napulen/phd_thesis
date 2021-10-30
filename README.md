@@ -36,12 +36,29 @@ The custom macros include:
 Often it'll be necessary to move into different formats of references.
 I like the convention adoped by Google scholar for publication identifiers: `<firstauthor><year><firstword>`
 
-An easy way to transform between other formats (e.g., the default in Zotero) is to use a regular expression and string-replace commands.
-
-Transform an identifier in the form `<firstauthor>_<firstword>_<year>` into `<firstauthor><year><firstword>`.
-In the VSCode syntax:
+The script `normalize_references.py` will automatically navigate through the `.tex` and `.bib` files to standardize
+every reference with this convention.
 
 ```
-Search:  (\{|,\s)(\w+)_(\w+)_(\d+)
-Replace: $1$2$4$3
+usage: normalize_references.py [-h] [--modify] [-v]
+
+Normalize the format of the references.
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --modify    update the changes in the files (CAREFUL!)
+  -v          verbose output
 ```
+
+If run as
+
+```python
+python3 normalize_references.py -v
+```
+
+the script will make suggestions (i.e., *dry-run* mode). If run as
+```python
+python3 normalize_references.py -v --modify
+```
+
+the script will proceed with the changes to all files, according to the reference format.
