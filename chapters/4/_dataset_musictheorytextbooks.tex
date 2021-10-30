@@ -1,0 +1,169 @@
+\guide{Dataset}~\label{sec:dataset} All the labels in the
+dataset have been obtained from the modulation excerpts of
+five music theory textbooks, written by different music
+theorists and/or composers (whom we simply refer to as
+``theorists'' for the rest of this paper).
+
+The dataset contains, in total, 201 excerpts of music with
+annotated modulations and tonicizations. The annotations are
+encoded in the form of roman numerals of all the chords in
+the dataset, which can be helpful for utilizing the dataset
+for other purposes beside the one presented here (e.g.,
+chord labeling or cadence detection). Each file has been
+encoded in Humdrum (**kern) symbolic music representations
+~\cite{huron02humdrum}. As mentioned, the roman numeral
+annotations have been digitally encoded
+\cite{napoleslopez20harmalysis} within the scores.
+
+When the theorists provided roman numeral annotations, those
+have been preserved in our digital transcriptions.
+Otherwise, we furnished them. All the annotations related to
+modulations have been obtained exclusively from the
+textbooks. Tonicizations rely on the roman numeral
+annotations of the chords and these were not always provided
+in the textbooks, therefore, we supplied some of them.
+
+The issues of ambiguity discussed in Section
+\ref{sec:ambiguity} might have implications mostly for
+tonicizations (the ones we sometimes contributed ourselves).
+However, modulations have always been provided by the
+theorists, and we expect this to reduce the impact of these
+issues. For some onsets, multiple key annotations were
+provided by the theorists. For these excerpts, we decided to
+encode the keys in chronological order. An example is shown
+in Figure \ref{fig:multiplekeys}.\footnote{Whenever a new
+key was established according to the theorists' annotations,
+we considered that to be the only key in the modulation
+column, until a new one appeared to replace it. We applied
+this process systematically throughout the dataset.
+%Despite the loss of informations, this unique annotation line is more easily processed by local key estimation models.
+}
+
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics[width=\linewidth]{figs/multiplekey2}
+%   \caption{Example 18-3 in Kostka-Payne's Tonal
+%   Harmony~\cite{kostka2008tonal}. Two concurrent keys (G
+%   Major and F Major) are annotated in the fourth beat of
+%   measure 1. We considered the key label of this onset to be
+%   ``F Major'' for the modulation column.}
+%   \Description{Example 18-3 in Kostka-Payne's Tonal Harmony.
+%   Two concurrent keys appear in the same onset.}
+%   \label{fig:multiplekeys}
+% \end{figure}
+
+We describe the five textbooks and their abbreviations,
+which we use throughout the experiment section.
+
+\guide{Sources of the Annotations}
+
+	\guide{Aldwell, Schachter, and Cadwallader~(ASC) [USA, contemporary]}
+	The modulation excerpts are taken from chapter 27
+	\emph{Diatonic Modulations} of the \emph{Harmony and
+	Voice Leading} ~\cite{aldwell2018harmony}. This textbook
+	provided seven excerpts to the dataset, the smallest
+	amount among all textbooks. These excerpts are extracts
+	from Bach Chorales (4), Mozart's Trio for Clarinet (1),
+	and two original examples.
+
+	\guide{Kostka and Payne~(KP) [USA, contemporary]}
+	The modulation excerpts are taken from the 18th and 19th
+	chapters of \emph{Tonal Harmony}~\cite{kostka2008tonal}.
+	We took fifteen excerpts from this book, which are
+	fragments of pieces written by Classical and Romantic
+	composers. Previously, the annotated audio excerpts of
+	the accompanying workbook were used for another
+	local-key estimation study \cite{izmirli2007localized},
+	however, we encoded the score excerpts of the main
+	textbook.
+
+	\guide{Reger~(Reg) [Germany, 1904]}
+	A hundred modulation excerpts are taken from \emph{On
+	the Theory of Modulation}\footnote{The book we used is
+	the republication by \emph{Dover} with the title
+	\emph{Modulation} (2007).}~\cite{regermodulation}. The
+	excerpts are very short and they are all written by
+	Reger himself. Reger's goal was to provide cadence-like
+	examples of modulation from two keys (C major and A
+	minor) to almost every other possible key.
+
+	Seventeen of the examples had two terminations: one in a
+	major key and one in a minor key.\footnote{Usually
+	parallel keys that shared a closing dominant harmony and
+	resolved to either the major or minor mode, with the
+	same tonic.} We separated these examples into two files,
+	one for each of the terminations. This increased the
+	total number of examples from 100 to 117.
+
+	\guide{Rimsky-Korsakov~(Rim) [Russia, 1886]}
+	The modulation excerpts are taken from the third section
+	of the \emph{Practical Manual of
+	Harmony}~\cite{rimskitonality}. As with Reger, all the
+	thirty-seven examples in this textbook are written by
+	the author himself. Some of the examples, however, are
+	more detailed and longer in duration than the ones by
+	Reger.
+
+	\guide{Tchaikovsky~(Tch) [Russia, 1872]}
+	The modulation examples considered are taken from the
+	third section of the \emph{Guide to the Practical Study
+	of Harmony}~\cite{tchaikovsky1872guide}. All twenty-five
+	examples were written by Tchaikovsky himself.
+
+\guide{Statistics About the Dataset}\label{ssec:stats}
+
+Some statistics about the dataset are presented in
+Table~\ref{tab:dataset}. We report, for each of the
+textbooks: the number of files (excerpts), the number of
+modulations, the number of tonicizations, and the number of
+labels (which is equivalent to the number of onsets, as we
+supplied one label per onset).
+
+% \begin{table}
+%   \caption{Summary of the dataset. Each value indicates the number of occurrences in the corresponding textbook.}
+% % The column ``Tonicized'' denotes the number of labels with
+% % a tonicization label that differs from the key of the
+% % modulation (e.g., Offset 2 in Table
+% % \ref{tab:annotations}).
+%   \label{tab:dataset}
+%   \begin{tabular}{l|cccc}
+%     \toprule
+%     Sample & Files & Modulations & Tonicizations & Labels\\
+%     \midrule
+%     ASC & 7 & 8 & 7 & 185\\
+%     KP & 15 & 21 & 11 & 554\\
+%     Reg & 117 & 220 & 40 & 768\\
+%     Rim & 37 & 44 & 107 & 257\\
+%     Tch & 25 & 60 & 38 & 238\\
+%     Total & 201 & 555 & 203 & 2002 \\
+%   \bottomrule
+% \end{tabular}
+% \end{table}
+
+The \emph{Reg} textbook is by far the one that contributed
+the largest number of excerpts. However, the ones providing
+a higher ratio of labels per number of files are \emph{ASC}
+($26.42$) and \emph{KP} ($36.93$). This may be due to the
+use of musical examples taken from the literature, where
+modulations occur within a musical context and, therefore,
+span longer regions.
+
+\emph{Rim} and \emph{Tch} are the textbooks that provided
+the highest number of tonicizations. They show tonicizations
+in $41.63\%$ and $15.97\%$ of the onsets, respectively. In
+terms of investigating the relationship between predicted
+local keys and modulations/tonicizations, these textbooks
+contributed the most interesting examples.
+
+\emph{Rim} and \emph{Tch} also tend to set the annotations
+of the \emph{destination} key of a modulation in the tonic
+degree, considering any preceding dominant chords as
+secondary dominants and, consequently, part of the
+\emph{departure} key (as shown on Figure~\ref{fig:example}).
+Other theorists, on the other hand, often set the
+\emph{destination} key already in the dominant chords that
+precede the tonic. Therefore, they do not annotate (or
+imply)\footnote{For the cases in which we provided the roman
+numeral annotations because they were not provided by the
+theorists.} a tonicization for the preceding dominant
+chords.
