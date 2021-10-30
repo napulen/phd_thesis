@@ -43,13 +43,14 @@ biggest challenges of research in RNNs.
 
 Over the years, RNNs have gained a reputation as
 architectures that are very difficult to train
-\cite{pascanu2013difficulty}, given that many attempts of
-training such models have failed. For example, in 1994,
+\parencite{pascanu2013difficulty}, given that many attempts
+of training such models have failed. For example, in 1994,
 experiments showed that as the span of dependencies that
 need to be captured by the RNN increases, the probability of
 successfully training the network via the Stochastic
 Gradient Descent (SGD) optimizer rapidly reaches 0 for
-sequences of 10 or 20 time steps \cite{bengio1994learning}.
+sequences of 10 or 20 time steps
+\parencite{bengio1994learning}.
 
 The main difficulty of training an RNN is something known as
 the \emph{vanishing} and \emph{exploding} gradients. When
@@ -91,9 +92,9 @@ large exponent (e.g., $0.5^{1000}$ or $10^{1000}$).
 By making use of modern solutions, however, RNNs have been
 able to successfully learn long-term dependencies (in the
 order of hundreds or thousands of time steps
-\cite{hochreiter1997long}), making them practical for many
-tasks. There have been many proposed solutions
-\cite{elhihi1995hierarchical, yildiz2012revisiting,
+\parencite{hochreiter1997long}), making them practical for
+many tasks. There have been many proposed solutions
+\parencite{elhihi1995hierarchical, yildiz2012revisiting,
 jaeger2012long}, however, the most successful ones are the
 \emph{gated RNNs}. Particularly, a type of gated RNN known
 as the Long Short-Term Memory (LSTM) architecture.
@@ -102,9 +103,9 @@ as the Long Short-Term Memory (LSTM) architecture.
 
 The Long Short-Term Memory architecture was introduced in
 1997 by Hochreiter and Schmidhuber
-\cite{hochreiter1997long}. Since its introduction, the LSTM
-has become an increasingly popular architecture, which has
-been used in many tasks and problems. LSTM architectures
+\parencite{hochreiter1997long}. Since its introduction, the
+LSTM has become an increasingly popular architecture, which
+has been used in many tasks and problems. LSTM architectures
 extend the basic structure of RNNs and it is relatively safe
 to assume that any problem that involves an RNN can
 substitute the RNN with an LSTM, matching or even improving
@@ -144,7 +145,7 @@ detecting the changes of key in a symbolic music file
 % memory cell is that the memory cell has gates that allow
 % the gradient of the unit to be controlled and always norm
 % 1. These gates keep the value of the memory cell under
-% control.
+%    control.
 
 % Further improvements on LSTMs have extended the elements
 % of the LSTM, for example, adding a forget cell, which
@@ -205,8 +206,8 @@ encoding scheme, yielding a fixed input vector of dimension
 128 for every time step. Nevertheless, given that some
 local-key-finding models have been successfully implemented
 without octave information
-\cite{napoleslopez2019keyfinding}, the input vector can be
-substituted by a 12-dimensional pitch-class vector in a
+\parencite{napoleslopez2019keyfinding}, the input vector can
+be substituted by a 12-dimensional pitch-class vector in a
 one-hot encoding scheme. This reduces the number of
 parameters by an order of magnitude and, therefore, is
 expected to reduce the computational cost of training the
@@ -220,9 +221,10 @@ the input to the network uses a \emph{Rectified linear unit}
 
 As a proof of concept and given the scarce data available
 for training the network, an existing probabilistic model
-that requires no training \cite{napoleslopez2019keyfinding}
-is used for generating local key annotations in a corpus of
-892 MIDI files of classical music. The success criteria of
-this LSTM system is, therefore, to provide a similar
-local-key segmentation on unseen MIDI examples as the
-segmentation provided by the baseline, probabilistic model.
+that requires no training
+\parencite{napoleslopez2019keyfinding} is used for
+generating local key annotations in a corpus of 892 MIDI
+files of classical music. The success criteria of this LSTM
+system is, therefore, to provide a similar local-key
+segmentation on unseen MIDI examples as the segmentation
+provided by the baseline, probabilistic model.

@@ -73,7 +73,7 @@
 
 % \guide{Going further into new research questions}
 
-% Sapp \cite{sapp2011computational} studied tonality through
+% Sapp \parencite{sapp2011computational} studied tonality through
 % the computation of a key-finding model at different window
 % lengths of a piece of music.
 
@@ -110,7 +110,7 @@
 % be really talking about applications.
 
 After the first attempt of designing a key-finding algorithm
-by Longuet-Higgins \cite{longuethiggins1971interpreting},
+by Longuet-Higgins \parencite{longuethiggins1971interpreting},
 many algorithms have followed throughout the years. These
 algorithms, using different approaches and methodologies,
 attempt to retrieve the key of digital music representations
@@ -120,7 +120,7 @@ in the symbolic and audio domains (see Question
 The problem of designing an algorithm that is able to
 retrieve musical keys, among other tonal features, has also
 been the motivation of several dissertations
-\cite{gomez2006tonal, campbell2010automatic,
+\parencite{gomez2006tonal, campbell2010automatic,
 korzeniowski2018harmonic, sapp2011computational,
 chew2000towards}.
 
@@ -133,7 +133,7 @@ on the web, which does not usually include the annotation of
 the musical key; and the reliable extraction of musical keys
 as machine learning features, which have been shown to be
 useful in other Music Information Retrieval (MIR) tasks
-\cite{mauch2010approximate, chai2005detection}. Another
+\parencite{mauch2010approximate, chai2005detection}. Another
 application, particularly interesting for those pursuing the
 commercial viability of key-finding models, comes
 surrounding certain music communities, for example,
@@ -167,7 +167,7 @@ formulated.}
 \textbf{\emph{What is the field that studies musical keys
 and tonality?}}
 
-According to Vos \cite{vos2000tonality}, there is a natural
+According to Vos \parencite{vos2000tonality}, there is a natural
 ``bias'' in the scientific study of tonality, due to the
 interdisciplinarity of the problem and the fact that no
 person is specialized in music theory, music history,
@@ -178,14 +178,14 @@ asymmetrical, which leads to a biased view of the problem
 towards the area where the researcher has more expertise.
 This has a noticeable effect in the research of key-finding
 algorithms, as a successful algorithm for finding musical
-keys \cite{korzeniowski2018harmonic}  could reduce its
+keys \parencite{korzeniowski2018harmonic}  could reduce its
 discussion on musical implications of keys, tonality,
 harmonic tension, and ambiguity to a negligible part of the
 research document, completing the rest of the document with
 thorough, well-designed experiments of machine learning and
 statistical analysis, typical of computer science but
 difficult to find in any music-theoretical study. Krumhansl
-revisits this issue \cite{krumhansl2004cognition}, surveying
+revisits this issue \parencite{krumhansl2004cognition}, surveying
 studies from multiple disciplines that try to explain what
 tonality is (musical keys included), according to different
 perspectives. In that study, Krumhansl dedicates a section
@@ -195,7 +195,7 @@ science.
 
 In a very different---almost comedic---work, Aucouturier and
 Bigand also touch on the issues of interdisciplinarity
-\cite{aucouturier2012mel}.
+\parencite{aucouturier2012mel}.
 
 \textbf{\emph{Can we use key-finding algorithms as
 ``debugging'' tools for testing music theories? For example,
@@ -203,7 +203,7 @@ can we use them to observe the difference between a
 modulation and a tonicization?}}
 
 In his dissertation, Sapp introduced the \emph{keyscapes}
-\cite{sapp2011computational}, which allow the computation of
+\parencite{sapp2011computational}, which allow the computation of
 key-finding algorithms at different window sizes in a music
 score and, moreover, visualizing the resulting output. He
 claims that such visualization techniques can be useful as
@@ -227,7 +227,7 @@ establishment of ``tonal music'' had something to do with
 the refinement of temperament?}}
 
 In the same paper discussed previously
-\cite{vos2000tonality}, Vos argues that one of the root
+\parencite{vos2000tonality}, Vos argues that one of the root
 causes in the ``fuzziness'' of the term \emph{tonality} and
 what it refers to, is that there is no clear boundary of
 when and where that term should be applied historically. He
@@ -252,13 +252,13 @@ addressing this question.
 to evaluate the capability of spatial representations of
 music?}}
 
-In her dissertation \cite{chew2000towards}, Chew introduced
+In her dissertation \parencite{chew2000towards}, Chew introduced
 a spatial representation of tonality, which consists of
 multiple dimensions and allowed the computation of keys and
 chords by locating them in such tonal space. This approach
 has been followed by other researchers who have proposed
 other spatial representations of tonality
-\cite{harte2006detecting}. Such representations are very
+\parencite{harte2006detecting}. Such representations are very
 difficult to assess by humans, however, using computational
 approaches to predict the key or chords in a musical excerpt
 could be a useful way of measuring their validity. This
@@ -272,7 +272,7 @@ how tonality works.
 throughout a musical piece reveal the structure of the
 piece?}}
 
-In their study, Chai and Vercoe \cite{chai2005detection}
+In their study, Chai and Vercoe \parencite{chai2005detection}
 found that in the self-similarity matrix of a piano sonata
 by Mozart, with no apparent repetitions, the repetitions
 became obvious as soon as the information of key changes
@@ -285,19 +285,19 @@ movements.
 the relationship between chords and keys?}}
 
 Using the chord frequencies annotated in Budge's
-dissertation \cite{budge1943study}, Bellmann
-\cite{bellmann2006about} designed a \emph{key profile} to be
+dissertation \parencite{budge1943study}, Bellmann
+\parencite{bellmann2006about} designed a \emph{key profile} to be
 used with a new key-finding algorithm. The resulting
 key-finding algorithm outperformed the accuracy of the
 Krumhansl-Schmuckler algorithm
-\cite{krumhansl1990cognitive}, using solely information
+\parencite{krumhansl1990cognitive}, using solely information
 about chord progressions.
 
 Regarding how the key-finding algorithms should process the
 musical inputs, Quinn has explicitly pointed out a few
 questions that, through observation, seem as much of a
 musicological nature as they seem of an engineering nature
-\cite{quinn2010are}. Quinn considers that these questions
+\parencite{quinn2010are}. Quinn considers that these questions
 ``dominate'' the key-finding literature and the choices done
 by researchers on the field: ``\textbf{\emph{Should window
 size be defined in terms of chronological time, notational
@@ -309,7 +309,7 @@ determination made from a given pitch-class
 distribution?}}''
 
 Finally, in a data-driven study by White and Quinn
-\cite{white2018chord}, a Hidden Markov Model (HMM) was given
+\parencite{white2018chord}, a Hidden Markov Model (HMM) was given
 the freedom to learn harmonic functions from Bach chorales,
 examples of the Kostka-Payne harmony textbook, and the
 McGill Billboard dataset. This process followed mostly an

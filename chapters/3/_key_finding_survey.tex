@@ -8,9 +8,9 @@
 % the 1970s. It took time to apply these algorithms in the
 % audio domain, however, models started appearing around
 % 1996. Since then, there have been numerous approaches and
-% techniques to key detection. A good review of the
-% techniques up until 2010 is presented in the thesis of
-% Spencer Campbell.
+%       techniques to key detection. A good review of the
+%       techniques up until 2010 is presented in the thesis
+%       of Spencer Campbell.
 
 In the simplest way, a key-finding algorithm can be defined
 as an algorithm that given a piece of music---in a symbolic
@@ -109,18 +109,19 @@ audio music representations instead.
 %     key annotations for the overall piece. The files were
 %     originally found in the KernScores website from
 %     Stanford University and curated by the authors
-%     \cite{albrecht2013use}. An audio-synthesized version
-%     of this dataset has also been applied to test a key
-%     detection algorithm in the audio domain
-%     \cite{napoleslopez2019keyfinding} \item Giantsteps
-%     key: A collection of short excerpts (2-minutes long)
-%     of Electronic Dance Music (EDM) that have been curated
-%     \cite{faraldo2016key}. This dataset is divided in two
-%     parts, the \emph{MTG Giantsteps Key Dataset}, which
-%     consists of 1486 excerpts, and the Giantsteps Key
-%     Dataset, which consists of 604 files. \item McGill
-%     Billboard \item QMUL Beatles \item QMUL Queen \item
-%     Robbie Williams \item MIREX 2005 \end{itemize}
+%     \parencite{albrecht2013use}. An audio-synthesized
+%     version of this dataset has also been applied to test
+%     a key detection algorithm in the audio domain
+%     \parencite{napoleslopez2019keyfinding} \item
+%     Giantsteps key: A collection of short excerpts
+%     (2-minutes long) of Electronic Dance Music (EDM) that
+%     have been curated \parencite{faraldo2016key}. This
+%     dataset is divided in two parts, the \emph{MTG
+%     Giantsteps Key Dataset}, which consists of 1486
+%     excerpts, and the Giantsteps Key Dataset, which
+%     consists of 604 files. \item McGill Billboard \item
+%     QMUL Beatles \item QMUL Queen \item Robbie Williams
+%     \item MIREX 2005 \end{itemize}
 
 
 % \guide{McGill Billboard} \guide{QMUL Beatles} \guide{QMUL
@@ -200,7 +201,7 @@ audio music representations instead.
 Arguably the first key-finding algorithm ever designed, the
 one by Longuet-Higgins computed the key of a piece through
 an elimination process
-\cite{longuethiggins1971interpreting}. The notes of the
+\parencite{longuethiggins1971interpreting}. The notes of the
 piece were read from left to right, one by one, and all the
 keys in which the notes were not contained as diatonic steps
 of the scale were eliminated, until a single key was
@@ -210,7 +211,7 @@ contained several rules for deciding the key in difficult
 cases. The algorithm was able to explain all the keys in the
 \emph{Well-Tempered Clavier}, however, it was relatively
 easy to find adversarial examples where it did not work
-\cite{temperley2008pitchclass}.
+\parencite{temperley2008pitchclass}.
 
 \guide{Krumhansl and Schmuckler (1990)}
 
@@ -269,21 +270,21 @@ easy to find adversarial examples where it did not work
 
 Another algorithm, known as the Krumhansl-Schmuckler
 algorithm, was introduced in 1990
-\cite{krumhansl1990cognitive}. Although introduced in 1990
-as an automatic key finder, the main components of the
+\parencite{krumhansl1990cognitive}. Although introduced in
+1990 as an automatic key finder, the main components of the
 algorithm, the key profiles, were introduced in 1982
-\cite{krumhansl1982tracing}. This algorithm and its method
-based on key profiles influenced many other algorithms in
-the symbolic and audio domains. Furthermore, it motivated
-the generation of other key profiles using alternative
-methodologies to the ones used by Krumhansl and Kessler
-(i.e., the \emph{probe-tone} technique). The computation of
-the key consisted of measuring the correlation between the
-pitch-class distribution of the key profile and the
-histogram of pitches in the musical score. During a series
-of experiments, Sapp \cite{sapp2011computational} found that
-when mistaken, this algorithm tends to skew toward the
-dominant.
+\parencite{krumhansl1982tracing}. This algorithm and its
+method based on key profiles influenced many other
+algorithms in the symbolic and audio domains. Furthermore,
+it motivated the generation of other key profiles using
+alternative methodologies to the ones used by Krumhansl and
+Kessler (i.e., the \emph{probe-tone} technique). The
+computation of the key consisted of measuring the
+correlation between the pitch-class distribution of the key
+profile and the histogram of pitches in the musical score.
+During a series of experiments, Sapp
+\parencite{sapp2011computational} found that when mistaken,
+this algorithm tends to skew toward the dominant.
 
 \guide{Vos and van Geenen (1996)}
 
@@ -294,7 +295,7 @@ dominant.
 
 In 1996, a model for single-voiced pieces of music was
 proposed by Vos and van Geenen
-\cite{vos1996parallelprocessing}. Similarly to the
+\parencite{vos1996parallelprocessing}. Similarly to the
 Longuet-Higgins model, it was tested in excerpts of the
 \emph{Well-Tempered Clavier}, particularly, the themes of
 the fugues. Although the model seemed to improve the results
@@ -307,7 +308,7 @@ directions.
 
 Responding to some concerns with the Krumhansl-Schmuckler
 algorithm, Temperley proposed two modifications to the
-original algorithm \cite{temperley1999whats}. The first
+original algorithm \parencite{temperley1999whats}. The first
 modification consisted in replacing the correlation
 operation with a dot product. The second modification is a
 change in the probability distributions of the original
@@ -316,7 +317,7 @@ fine-tuned by Temperley heuristically and through a
 trial-and-error process. This algorithm provided better
 results than the original algorithm and it was further
 extended into a probabilistic framework using Bayes' rule in
-2002 \cite{temperley2002bayesian}.
+2002 \parencite{temperley2002bayesian}.
 
 \guide{Chew (2002)}
 
@@ -338,33 +339,34 @@ extended into a probabilistic framework using Bayes' rule in
 % proximity can be measured to several keys, which allows
 % for tonal ambiguities
 
-Through the \emph{Spiral Array}, Chew \cite{chew2002spiral}
-facilitated the modelling of tonality as a spatial
-representation. In this representation, a sequence of notes
-could be localized in a point of the tonal space, known as
-the \emph{Center of Effect}, and related to a key through a
-nearest-neighbours search. Although the geometric approach
-for localizing a point in space influenced further research
-on key-finding algorithms, the model did not perform better
-than the approaches based on distributions and key profiles.
+Through the \emph{Spiral Array}, Chew
+\parencite{chew2002spiral} facilitated the modelling of
+tonality as a spatial representation. In this
+representation, a sequence of notes could be localized in a
+point of the tonal space, known as the \emph{Center of
+Effect}, and related to a key through a nearest-neighbours
+search. Although the geometric approach for localizing a
+point in space influenced further research on key-finding
+algorithms, the model did not perform better than the
+approaches based on distributions and key profiles.
 
 \guide{Aarden (2003)}
 
 In 2003, Aarden proposed an alternative, data-driven,
 methodology for obtaining a distribution of scale degrees
-\cite{aarden2003dynamic}, which could take the place of the
-key profiles by Krumhansl and Kessler
-\cite{krumhansl1982tracing} in a key-finding algorithm. For
-this purpose, 1000 songs from the Essen Folksong Collection
-and 250 music excerpts from the MuseData database were used
-for comparing the approaches. The distribution of scale
-degrees outperformed the key profiles from Krumhansl and
-Kessler \cite{krumhansl1982tracing}.
+\parencite{aarden2003dynamic}, which could take the place of
+the key profiles by Krumhansl and Kessler
+\parencite{krumhansl1982tracing} in a key-finding algorithm.
+For this purpose, 1000 songs from the Essen Folksong
+Collection and 250 music excerpts from the MuseData database
+were used for comparing the approaches. The distribution of
+scale degrees outperformed the key profiles from Krumhansl
+and Kessler \parencite{krumhansl1982tracing}.
 
 % These results were confirmed by other researchers
-% \cite{albrecht2013use}. In future experiments, Sapp
-% \cite{sapp2011computational} showed that, when unable to
-% predict the correct key, the Aarden-Essen distribution
+% \parencite{albrecht2013use}. In future experiments, Sapp
+% \parencite{sapp2011computational} showed that, when unable
+% to predict the correct key, the Aarden-Essen distribution
 % tends to favor the subdominant instead of the tonic.
 
 % \guide{Yoshino and Abe (2005)}
@@ -380,8 +382,8 @@ Kessler \cite{krumhansl1982tracing}.
 A similar effort for scale-degree probability distributions
 was proposed by Bellmann, who used the chord frequencies
 collected by Budge during her dissertation
-\cite{budge1943study} to create a new scale degree
-probability distribution \cite{bellmann2006about}. This
+\parencite{budge1943study} to create a new scale degree
+probability distribution \parencite{bellmann2006about}. This
 probability distribution is used to obtain the most likely
 key of a fragment of a score (typically, a measure long) by
 computing the dot product between the notes found in the
@@ -423,7 +425,7 @@ In order to explore the capabilities of different key
 profiles at different window lengths, Sapp performed a
 series of experiments running every possible window in a
 piece with different key profiles
-\cite{sapp2011computational}. The results of such
+\parencite{sapp2011computational}. The results of such
 computations were visualized and rendered into what Sapp
 referred as \emph{keyscapes}. The algorithm used for
 computing the keys was the original Krumhansl-Schmuckler
@@ -434,7 +436,7 @@ named \emph{simple weights}.
 \guide{Albrecht and Shanahan (2013)}
 In 2013, Albrecht and Shanahan introduced a new key-finding
 algorithm that improves the accuracy for pieces in the minor
-mode \cite{albrecht2013use}. This algorithm utilizes
+mode \parencite{albrecht2013use}. This algorithm utilizes
 Euclidean distance to measure the similarity between the
 notes in the piece and a new key profile. The key profile
 was obtained by analyzing the first and last measures of a
@@ -452,9 +454,9 @@ used in this dataset.
 \guide{N\'apoles L\'opez et al. (2019)}
 In 2019, a new key-finding algorithm was introduced that
 works in the symbolic and audio domains
-\cite{napoleslopez2019keyfinding}. This algorithm is also
-able to extract local and global keys and it is based on a
-Hidden Markov Model (HMM). The algorithm provides
+\parencite{napoleslopez2019keyfinding}. This algorithm is
+also able to extract local and global keys and it is based
+on a Hidden Markov Model (HMM). The algorithm provides
 state-of-the-art performance in the symbolic domain,
 however, it underperforms the predictions for pieces in a
 minor mode, unlike the Albrecht and Shanahan algorithm,
@@ -505,7 +507,7 @@ profile, which were obtained through Self-Organizing Maps
 % location in time.
 
 Izmirli and Bilgen propose a model that consists of two
-stages \cite{izmirli1994recognition}. The first stage
+stages \parencite{izmirli1994recognition}. The first stage
 converts monophonic audio signals into a sequence of note
 intervals and their occurrence times, similar to a pianoroll
 representation. The second stage uses a series of finite
@@ -530,13 +532,13 @@ constant-Q transform, extracting pitch-class distributions
 from the audio signal based on a few basic music-theoretical
 assumptions, for example, the octave equivalence and the
 division of the octave in the chromatic scale
-\cite{purwins2000new}. Using these distributions, the system
-tracks the key over time by comparing the distributions of
-the signals with the Krumhansl and Kessler key profiles. The
-model is not quantitatively evaluated but an example of the
-keys tracked in Chopin's Prelude Op. 28 No. 20 is provided,
-showing similar key segmentations as the ones provided by an
-expert annotator.
+\parencite{purwins2000new}. Using these distributions, the
+system tracks the key over time by comparing the
+distributions of the signals with the Krumhansl and Kessler
+key profiles. The model is not quantitatively evaluated but
+an example of the keys tracked in Chopin's Prelude Op. 28
+No. 20 is provided, showing similar key segmentations as the
+ones provided by an expert annotator.
 
 
 \guide{Gomez and Herrera (2004)}
@@ -566,18 +568,19 @@ expert annotator.
 
 Gomez and Herrera proposed a comparison of what they
 denominated cognition-inspired models against models derived
-from machine learning techniques \cite{gomez2004estimating}.
-The cognition-inspired model is a modification of the
-Krumhansl-Schmuckler algorithm that works with Harmonic
-Pitch Class Profile features (HPCP) as input instead of note
-histograms. The machine learning models tested included
-binary trees, bayesian estimation, neural networks, support
-vector machines, boosting, and bagging. In an experiment
-with 661 audio files used for training and 217 used for
-testing, the best machine learning model had a slightly
-better performance than the cognitive-based model, however,
-the best overall performance resulted from the combination
-of both models.
+from machine learning techniques
+\parencite{gomez2004estimating}. The cognition-inspired
+model is a modification of the Krumhansl-Schmuckler
+algorithm that works with Harmonic Pitch Class Profile
+features (HPCP) as input instead of note histograms. The
+machine learning models tested included binary trees,
+bayesian estimation, neural networks, support vector
+machines, boosting, and bagging. In an experiment with 661
+audio files used for training and 217 used for testing, the
+best machine learning model had a slightly better
+performance than the cognitive-based model, however, the
+best overall performance resulted from the combination of
+both models.
 
 % \guide{Pauws (2004)} The system incorporates signal
 % processing techniques designed to improve the salience of
@@ -621,8 +624,8 @@ of both models.
 \guide{Burgoyne and Saul (2005)}
 Burgoyne and Saul provide a model for harmonic analysis in
 the audio domain, using a corpus of Mozart symphonies (15
-movements) for training \cite{burgoyne2005learning}. The
-input to their model is a chromagram vector (denoted as
+movements) for training \parencite{burgoyne2005learning}.
+The input to their model is a chromagram vector (denoted as
 pitch-class profile by the authors). They use an HMM to
 train Dirichlet distributions for major and minor keys on
 the chromagram vectors. Their system attempts to find chords
@@ -631,8 +634,8 @@ single piece, the second movement of Mozart's KV550.
 
 \guide{Chai and Vercoe (2005)}
 Chai and Vercoe propose an HMM to detect keys in audio files
-\cite{chai2005detection}. Their approach takes as input a
-chromagram vector of 24 bins and first extracts the best
+\parencite{chai2005detection}. Their approach takes as input
+a chromagram vector of 24 bins and first extracts the best
 match of a major-and-relative-minor pair of keys (similar to
 an algorithm that extracts the key signature). A second step
 uses heuristics to determine the mode. In order to evaluate
@@ -669,21 +672,21 @@ by the authors.
 
 Chuan and Chew propose a real-time algorithm based on the
 extraction of pitches and pitch-strengths through the Fast
-Fourier Transform (FFT) \cite{chuan2005polyphonic}. The key
-detection model is based on the \emph{Center of Effect
-Generator} algorithm from Chew \cite{chew2002spiral} and
-determines the key based on the pitch-strength information.
-In their evaluation, the model achieved a recognition rate
-of 96\% within the first fifteen seconds of their test set,
-which consisted of 61 audio files with different
-performances of 21 Mozart Symphonies. Their system
+Fourier Transform (FFT) \parencite{chuan2005polyphonic}. The
+key detection model is based on the \emph{Center of Effect
+Generator} algorithm from Chew \parencite{chew2002spiral}
+and determines the key based on the pitch-strength
+information. In their evaluation, the model achieved a
+recognition rate of 96\% within the first fifteen seconds of
+their test set, which consisted of 61 audio files with
+different performances of 21 Mozart Symphonies. Their system
 outperformed the Krumhansl-Schmuckler algorithm and the
 modified version of Temperley when evaluated within the
 first seconds of the recordings. A further improvement was
-proposed in \cite{chuan2005fuzzy}, which incorporated fuzzy
-analysis to improve the pitch-class distributions computed
-from the audio. During the MIREX evaluation, however, the
-model from Chuan and Chew underperformed other
+proposed in \parencite{chuan2005fuzzy}, which incorporated
+fuzzy analysis to improve the pitch-class distributions
+computed from the audio. During the MIREX evaluation,
+however, the model from Chuan and Chew underperformed other
 state-of-the-art models.
 
 % \guide{Zhu et al. (2005)} utilizes the CQ-transform and
@@ -714,10 +717,10 @@ state-of-the-art models.
 % model can be represented as a hypertorus (from Harte et
 % al. 2006).
 
-Harte et al. \cite{harte2006detecting} propose a new model
-that applies a similar principle to the spatial
-representation of Chew \cite{chew2000towards}. The model
-from Harte et al. has a 6-dimensional interior space
+Harte et al. \parencite{harte2006detecting} propose a new
+model that applies a similar principle to the spatial
+representation of Chew \parencite{chew2000towards}. The
+model from Harte et al. has a 6-dimensional interior space
 contained by the surface of a hypertorus. The 6 dimensions
 of their model correspond to 2-axes for localizing a point
 in the circle of fifths, 2-axes for localizing a point in
@@ -763,12 +766,12 @@ Peeters proposes a model that extracts the information about
 the periodicity of pitches from the audio signals, maps that
 information into the chroma domain, and decides the global
 key of the music piece from a succession of chroma-vectors
-over time \cite{peeters2006chromabased}. For the initial
-analysis, Peeters proposes a Harmonic Peak Substraction
-algorithm, which reduces the influence of the higher
-harmonics of each pitch. The pre-processed signal is mapped
-into the chroma domain and used as the observation for an
-HMM model that predicts the global key. The HMM
+over time \parencite{peeters2006chromabased}. For the
+initial analysis, Peeters proposes a Harmonic Peak
+Substraction algorithm, which reduces the influence of the
+higher harmonics of each pitch. The pre-processed signal is
+mapped into the chroma domain and used as the observation
+for an HMM model that predicts the global key. The HMM
 classification consists of one HMM for each of the 24
 possible keys, which were trained using the Baum-Welch
 algorithm. The model was tested in 302 audio files
@@ -794,17 +797,19 @@ score.
 \guide{Catteau et al. (2007)}
 Catteau et al. devised a model that simultaneously tries to
 predict chords and keys in audio signals
-\cite{catteau2007probabilistic}. Their model is an extension
-over a previous model \cite{bello2005robust} and it is based
-on music theory, which requires no training. The music
-theory components of the model were borrowed from Lerdahl's
-Tonal Pitch Space \cite{lerdahl2005tonal}. They tested their
+\parencite{catteau2007probabilistic}. Their model is an
+extension over a previous model \parencite{bello2005robust}
+and it is based on music theory, which requires no training.
+The music theory components of the model were borrowed from
+Lerdahl's
+% Tonal Pitch Space \parencite{lerdahl2005tonal}. They
+% tested their
 model with synthesized audio, recorded audio, and presented
 their model for evaluation in the Key and Chord detection
 tasks from MIREX. For testing the local keys, they used
 short sequences of chords, similar as those from the
-Krumhansl and Kessler \cite{krumhansl1982tracing}. Their
-performance on synthesized audio was good, but the
+Krumhansl and Kessler \parencite{krumhansl1982tracing}.
+Their performance on synthesized audio was good, but the
 performance on recorded audio decreased significantly.
 
 \guide{Izmirli (2007)}
@@ -815,10 +820,10 @@ performance on recorded audio decreased significantly.
 % throughout a single piece.
 
 Izmirli proposes a model to find local keys in audio signals
-\cite{izmirli2007localized}. As a pre-processing step, the
-model adapts the tuning of the signal before computing the
-spectral analysis and the chroma features. In a later stage,
-Non-negative matrix factorization is used to segment
+\parencite{izmirli2007localized}. As a pre-processing step,
+the model adapts the tuning of the signal before computing
+the spectral analysis and the chroma features. In a later
+stage, Non-negative matrix factorization is used to segment
 contiguous chroma vectors, identifying potential local keys.
 The model identifies segments that are candidates for unique
 local keys in relation to the neighboring key centers. The
@@ -831,19 +836,19 @@ are provided for each of the datasets.
 
 \guide{Lee and Slaney (2007)}
 Lee and Slaney present a model for chord and key extraction
-from audio sources \cite{lee2007unified}. The model was
+from audio sources \parencite{lee2007unified}. The model was
 trained by creating a separate HMM for each of the 24 keys.
 In order to obtain the training data, they annotated a
 harmonic analysis of several MIDI files. These harmonic
 analyses were performed using the rule-based system from
 Temperley and Sleator, the Melisma Music Analyzer
-\cite{temperley2004cognition}. The corpus for performing the
-harmonic analysis was obtained from mididb.com, and
-consisted 1046 MIDI files of rock music. The annotated files
-were synthesized with a sample-based synthesizer
-(Timidity++, using the FluidR3 soundfont) and perfectly
-aligned to the annotations. Their chord detection model is
-able to distinguish only major and minor triads.
+\parencite{temperley2004cognition}. The corpus for
+performing the harmonic analysis was obtained from
+mididb.com, and consisted 1046 MIDI files of rock music. The
+annotated files were synthesized with a sample-based
+synthesizer (Timidity++, using the FluidR3 soundfont) and
+perfectly aligned to the annotations. Their chord detection
+model is able to distinguish only major and minor triads.
 
 % \guide{Cheng et al. (2008)}
 
@@ -891,15 +896,15 @@ able to distinguish only major and minor triads.
 % pitch-class template.
 
 A different local key estimation algorithm was proposed by
-Papadopoulos and Peeters \cite{papadopoulos2009local}. The
-method extends on previous work
-\cite{papadopoulos2008simultaneous} for adding a stage of
-local key estimation using an HMM. The observations of the
-model are derived from different key profiles: Krumhansl and
-Kessler \cite{krumhansl1982tracing}, Temperley
-\cite{temperley1999whats}, and a flat diatonic key profile
-(a uniform distribution for diatonic pitch-classes and
-\emph{zero} elsewhere). The system was evaluated in five
+Papadopoulos and Peeters \parencite{papadopoulos2009local}.
+The method extends on previous work
+\parencite{papadopoulos2008simultaneous} for adding a stage
+of local key estimation using an HMM. The observations of
+the model are derived from different key profiles: Krumhansl
+and Kessler \parencite{krumhansl1982tracing}, Temperley
+\parencite{temperley1999whats}, and a flat diatonic key
+profile (a uniform distribution for diatonic pitch-classes
+and \emph{zero} elsewhere). The system was evaluated in five
 piano sonatas by Mozart, where the local keys and chords
 were manually annotated. The maximum accuracy achieved was
 80.22\%
@@ -908,7 +913,7 @@ were manually annotated. The maximum accuracy achieved was
 In 2010, Campbell proposed a new algorithm based on four
 stages: frequency analysis, pitch-class extraction,
 pitch-class aggregation, and key classification
-\cite{campbell2010automatic}. A thorough experiment was
+\parencite{campbell2010automatic}. A thorough experiment was
 performed with different solutions for each of the stages.
 The best performing model was evaluated in a dataset of
 classical music, another one of popular music, and an
@@ -920,14 +925,14 @@ neighbours classifier.
 \guide{Mauch and Dixon (2010)}
 Mauch and Dixon propose a model that can simultaneously
 compute the chords, bass notes, metric position of the
-chords, and the key \cite{mauch2010simultaneous}. Although
-it is claimed that the model detects the key of the audio
-input, it really computes the key signature, classifying a
-major key and its relative minor with the same class. Due to
-this restriction, the model was not explicitly evaluated on
-musical key. Nevertheless, using the key classifications of
-the model as features, it showed to improve the results of
-their main task, chord recognition.
+chords, and the key \parencite{mauch2010simultaneous}.
+Although it is claimed that the model detects the key of the
+audio input, it really computes the key signature,
+classifying a major key and its relative minor with the same
+class. Due to this restriction, the model was not explicitly
+evaluated on musical key. Nevertheless, using the key
+classifications of the model as features, it showed to
+improve the results of their main task, chord recognition.
 
 % \guide{Rocher et al. (2010)}
 
@@ -974,9 +979,9 @@ their main task, chord recognition.
 
 Korzeniowski and Widmer propose a key-finding model that
 generalizes across different music genres
-\cite{korzeniowski2018genreagnostic}. The model is based on
-a Convolutional Neural Network (CNN) that receives a
-log-magnitude log-frequency spectrogram as its input.
+\parencite{korzeniowski2018genreagnostic}. The model is
+based on a Convolutional Neural Network (CNN) that receives
+a log-magnitude log-frequency spectrogram as its input.
 Initially, the training procedure of the model is to receive
 the full spectrogram, however, the computation is very
 expensive. Korzeniowski and Widmer propose showing the
@@ -996,13 +1001,13 @@ outperforming the state-of-the-art in global key detection.
 
 \guide{N\'apoles L\'opez et al. (2019)}
 A new model was proposed in 2019 by N\'apoles L\'opez et al.
-\cite{napoleslopez2019keyfinding}. This model performs local
-and global key detection and it is able to work in the
+\parencite{napoleslopez2019keyfinding}. This model performs
+local and global key detection and it is able to work in the
 symbolic and audio domains. The model was originally
 designed for symbolic inputs, however, it is able to work in
 the audio domain by making use of chroma features
-\cite{mauch2010approximate} and discretizing certain energy
-values above a threshold as pitch-class events.
+\parencite{mauch2010approximate} and discretizing certain
+energy values above a threshold as pitch-class events.
 
 \guide{Conclusion}
 After the pioneering models, many different alternatives

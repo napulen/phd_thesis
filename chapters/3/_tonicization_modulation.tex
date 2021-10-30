@@ -12,10 +12,10 @@ dominants}, and \emph{tonicization} are related (but not
 interchangeable) terms that describe the change of the
 musical key throughout the piece. The term \emph{modulation}
 is at least as old as Jean-Philippe Rameau's \emph{Trait\'e
-de l'harmonie} \cite{rameau1971treatise}, while the terms
-\emph{applied dominant} and \emph{tonicization} seem to have
-emerged from the functional theory of Riemann around the
-19th century \cite{gollin2012reception}.
+de l'harmonie} \parencite{rameau1971treatise}, while the
+terms \emph{applied dominant} and \emph{tonicization} seem
+to have emerged from the functional theory of Riemann around
+the 19th century \parencite{gollin2012reception}.
 
 In Music Information Retrieval (MIR), it is common to
 describe the context in which a key-finding algorithm
@@ -56,27 +56,28 @@ retrieve such musical information from the input.
 
 Purwins et al., for example, introduced a method for
 tracking \emph{modulations} in audio signals
-\cite{purwins2000new}. In order to test their model, they
-compared the segmentation of their algorithm with an expert
-annotation of Chopin's Prelude Op. 28 No. 20. In the expert
-annotation, there are changes of key that happen as quickly
-as after a quarter note. In the annotation, those changes
-are marked with parentheses (as tonicizations), however, the
-model from Purwins et al. does not make a distinction
-between the two types of annotations. The term \emph{local}
-key does not appear in the paper either.
+\parencite{purwins2000new}. In order to test their model,
+they compared the segmentation of their algorithm with an
+expert annotation of Chopin's Prelude Op. 28 No. 20. In the
+expert annotation, there are changes of key that happen as
+quickly as after a quarter note. In the annotation, those
+changes are marked with parentheses (as tonicizations),
+however, the model from Purwins et al. does not make a
+distinction between the two types of annotations. The term
+\emph{local} key does not appear in the paper either.
 
 In 2014, Pauwels and Martens proposed a system that was
 both, a local key-finding and chord recognition algorithm
-\cite{pauwels2014combining}.\footnote{This combination of
-local key and chords has become increasingly popular in many
-MIR systems.} In their paper, they discuss the distinction
-between local and global keys. In their definition, a local
-key assigns a key label to a time segment of the input and a
-global key assigns a key to an entire \emph{song}.
+\parencite{pauwels2014combining}.\footnote{This combination
+of local key and chords has become increasingly popular in
+many MIR systems.} In their paper, they discuss the
+distinction between local and global keys. In their
+definition, a local key assigns a key label to a time
+segment of the input and a global key assigns a key to an
+entire \emph{song}.
 
 Chai and Vercoe designed a model for detecting the change of
-key \cite{chai2005detection}. In their paper, the term
+key \parencite{chai2005detection}. In their paper, the term
 \emph{modulation} means ``a change of key''. They do not
 make use of the terms tonicization or local key.
 
@@ -85,13 +86,13 @@ recognition. Part of their model deals with
 \emph{modulation}. In their context, a modulation is defined
 in a similar way than the modulations in the chord sequence
 experiments by Krumhansl and Kessler
-\cite{krumhansl1982tracing}, which considered that each
+\parencite{krumhansl1982tracing}, which considered that each
 chord belonged to a certain key. Catteau et al. also
 borrowed the chord sequences from Krumhansl and Kessler to
 test their model.
 
 Izmirli introduced a local key and modulation detection
-model \cite{izmirli2007localized}. In the paper, he
+model \parencite{izmirli2007localized}. In the paper, he
 discusses the concepts of tonicization, secondary functions,
 and modulation: ``\emph{Secondary functions and
 tonicizations are heard as short deviations from the
@@ -107,26 +108,27 @@ His work is one of the few works in MIR that addresses, at
 least briefly, the terminology regarding musical keys.
 
 In their work on a local key-finding algorithm
-\cite{papadopoulos2009local}, Papadopoulos and Peeters
+\parencite{papadopoulos2009local}, Papadopoulos and Peeters
 adopted a very similar approach as Izmirli
-\cite{izmirli2007localized}. A modulation is the precise
-moment when there is a change of key, while a local key is
-the resulting segmentation of the piece in different keys.
+\parencite{izmirli2007localized}. A modulation is the
+precise moment when there is a change of key, while a local
+key is the resulting segmentation of the piece in different
+keys.
 
 % \begin{figure}[h] \centering
 %     \includegraphics[width=0.7\textwidth]{figures/Q5_1.png}
 %     \caption{Visualization of the difference between a
 %     modulation and a tonicization, according to Sapp
-%     \cite{sapp2011computational}. The horizontal lines in
-%     the bottom plot delimit a tonicization from a
+%     \parencite{sapp2011computational}. The horizontal
+%     lines in the bottom plot delimit a tonicization from a
 %     modulation} \label{fig:Q5_1} \end{figure}
 
 Finally, Sapp discussed the possible overlap of the terms
 modulation and tonicization in music theory and proposes
 that the difference between a modulation and a tonicization
 can be observed in his \emph{keyscape} diagrams
-\cite{sapp2011computational}. This visualization can be seen
-in Figure \ref{fig:Q5_1}, the dotted horizontal lines
+\parencite{sapp2011computational}. This visualization can be
+seen in Figure \ref{fig:Q5_1}, the dotted horizontal lines
 \emph{separate} one concept from another. In the paper, Sapp
 did not include any evaluation that compared whether the
 annotations from an expert theorist would match the
@@ -144,16 +146,16 @@ ambiguity concern mostly the distinction between
 tonicization, modulation, and applied dominants.
 
 Regarding this, Kostka and Payne write in their book
-\cite{kostka2018tonal}: \emph{The line between modulation
-and tonicization (using secondary functions--V/V and so on)
-is not clearly defined in tonal music, nor is it meant to
-be. One listener might find that a very short passage
-tonicizing a new tonality is enough to make a convincing
-modulation}.
+\parencite{kostka2018tonal}: \emph{The line between
+modulation and tonicization (using secondary functions--V/V
+and so on) is not clearly defined in tonal music, nor is it
+meant to be. One listener might find that a very short
+passage tonicizing a new tonality is enough to make a
+convincing modulation}.
 
 Holtmeier writes about Hauptmann’s theory and the emergence
 of applied dominants as a terminology
-\cite{gollin2012reception}: \emph{In the eyes of its
+\parencite{gollin2012reception}: \emph{In the eyes of its
 supporters, function theory was predestined ``to demonstrate
 how superficial are judgments that assert: `Wagner is always
 modulating!' '' Applied dominants and Hauptmann's concept of
@@ -166,7 +168,7 @@ distanced itself from a narrow diatonic notion of
 relations.}
 
 Tchaikovsky does not talk about tonicization
-\cite{tchaikovsky2005guide}, instead, discusses
+\parencite{tchaikovsky2005guide}, instead, discusses
 \emph{transient modulations}. Transient modulations are
 modulations in which several keys are reached first,
 temporarily, before arriving to the final key destination.
@@ -177,7 +179,7 @@ temporarily, before arriving to the final key destination.
 %     it appears in Tchaikovsky's manual of harmony.}
 %     \label{fig:Q6_2} \end{figure}
 
-For Rameau \cite{rameau1971treatise}, the concept of a
+For Rameau \parencite{rameau1971treatise}, the concept of a
 modulation, rather than a change of key, seems to refer to a
 key region (similar to what Izmirli and Papadopoulos would
 consider a local key). This is most clear in his seventh

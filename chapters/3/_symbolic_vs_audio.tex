@@ -9,14 +9,14 @@
 % characteristics are usually encompased by the extraction
 % of audio features or descriptors. There are multiple
 % taxonomies of musical features... \guide{Taxonomies}
-% \cite{peeters2004large, lindsay_mpeg-7_2001,
+% \parencite{peeters2004large, lindsay_mpeg-7_2001,
 % mitrovic2010features} These taxonomies generally consider
 % that there are Low-Level Descriptors (LLDs) and High-Level
 % Descriptors (HLDs). These descriptors can be extracted
 % using feature extraction tools. Over the years, there have
 % been multiple feature extraction tools...
 % \guide{Extractors} A good summary of feature extraction
-% tools can be found here \cite{moffat2015evaluation},
+% tools can be found here \parencite{moffat2015evaluation},
 % evaluating in detail 10 audio feature extraction toolboxes
 % according to 4 out of 6 metrics of the Cranfield model,
 % selected according their popularity, availability, and
@@ -44,7 +44,7 @@
 % computing those audio features. I took the examples shown
 % in the survey by Moffat.
 
-% \guide{Moffat \cite{moffat2015evaluation} } 10 audio
+% \guide{Moffat \parencite{moffat2015evaluation} } 10 audio
 % feature extraction toolboxes analyzed.
 
 % Evaluated according to the Cranfield Model for evaluation
@@ -73,8 +73,8 @@ representation of the music.
 
 There are several music representations available. In
 general, we can consider three categories of music
-representations \cite{muller2015music}: digital sheet music
-images, symbolic music representations, and audio
+representations \parencite{muller2015music}: digital sheet
+music images, symbolic music representations, and audio
 representations.
 
 Digital sheet music images consist of the digital version of
@@ -108,7 +108,7 @@ symbolic and audio music representations (see Question
 key-finding algorithms). Usually, an algorithm focuses in a
 single type of digital music representation but algorithms
 that operate in both representations are possible
-\cite{napoleslopez2019keyfinding}.
+\parencite{napoleslopez2019keyfinding}.
 
 These representations encode music in two very different
 ways (as notation and as an acoustic signal) and do not
@@ -119,7 +119,7 @@ semantic level.
 
 Among the differences between the audio and symbolic music
 representations, we can find the following
-\cite{fremerey2009towards}:
+\parencite{fremerey2009towards}:
 
 \textbf{Repetition}: repetitions may be encoded semantically
 in symbolic music representations (e.g., using a repetition
@@ -198,16 +198,16 @@ Profiles (HPCP), and a few other names}
 There are a few exceptions of key-finding algorithms that
 work with different features, for example, a log-magnitude
 log-frequency spectrogram
-\cite{korzeniowski2018genreagnostic} or a spatial
-representation of tonality \cite{arndt2008circular,
+\parencite{korzeniowski2018genreagnostic} or a spatial
+representation of tonality \parencite{arndt2008circular,
 harte2006detecting, lee2007unified}. For the most part,
 audio key-finding algorithms use a chromagram as their
 input.
 
 Regarding chromagrams and the problems they may introduce to
 a key-finding system, Campbell says
-\cite{campbell2010automatic}: \emph{[...] most of the errors
-encountered during the feature extraction stage [of a
+\parencite{campbell2010automatic}: \emph{[...] most of the
+errors encountered during the feature extraction stage [of a
 key-finding algorithm] can be attributed to problems with
 the pitch-class generation algorithm.} A pitch class
 generation algorithm, in this case, is a chromagram
@@ -250,14 +250,14 @@ involve the analysis of tonal features, most of these issues
 have already been addressed by researchers studying the
 design of chromagram feature extractors. One such example of
 increasing the robustness of a chromagram feature, is the
-proposal by Bello and Pickens \cite{bello2005robust}.
+proposal by Bello and Pickens \parencite{bello2005robust}.
 
 \guide{Robusting the chromagram}
 
 \guide{Hand-crafted improvements}
 The approach from Bello and Pickens proposes a mid-level
 harmonic-and-rhythmic representation, akin to a chromagram
-\cite{bello2005robust}. They describe the process for
+\parencite{bello2005robust}. They describe the process for
 generating such representation starting from a polyphonic
 music signal.
 
@@ -279,7 +279,8 @@ that if a note is mistuned in the original signal, having a
 higher number of chroma bins will help the model to decide
 to which bin the pitch-class should go to. To accomplish
 this tuning process, they build on top of the algorithm
-proposed by Harte and Sandler \cite{harte2005automatic}.
+proposed by Harte and Sandler
+\parencite{harte2005automatic}.
 
 The next stage consists in the beat-synchronous
 segmentation. The motivation for this stage is to overcome
@@ -294,19 +295,20 @@ bins and collapsing them into 12 semitones.
 
 Although the techniques for hand-crafting chromagrams (such
 as this one) have become increasingly better (a survey
-provided by Cho and Bello \cite{cho2014relative}), in 2016,
-Korzeniowski and Widmer proposed to increase the robustness
-of a chromagram extractor through the use of deep learning.
+provided by Cho and Bello \parencite{cho2014relative}), in
+2016, Korzeniowski and Widmer proposed to increase the
+robustness of a chromagram extractor through the use of deep
+learning.
 
 \guide{Deep-learning-based chromagram extractor}
 Korzeniowski and Widmer propose a new type of chromagram
 extractor based on artificial neural networks
-\cite{korzeniowski2016feature}. The chromagram is trained to
-compute chroma features that encode harmonic information
-important for chord recognition tasks but that learns to
-ignore irrelevant interferences in the signal. The training
-process is achieved by feeding an audio spectrum with
-harmonic context (a chord label) instead of a regular
+\parencite{korzeniowski2016feature}. The chromagram is
+trained to compute chroma features that encode harmonic
+information important for chord recognition tasks but that
+learns to ignore irrelevant interferences in the signal. The
+training process is achieved by feeding an audio spectrum
+with harmonic context (a chord label) instead of a regular
 spectral frame.
 
 Korzeniowski and Widmer claim that a chromagram derived from
@@ -386,13 +388,13 @@ of our knowledge), a study that explored the robustness of
 chroma features to audio degradations could be an initial
 reference. Urbano et al. studied the effect that different
 audio degradations had in the computation of chroma features
-\cite{urbano2014what}. During their study, they modified the
-input audio signal by changing the sampling rate,
-compression codec, and bitrate. Correlating the signals from
-the different alterations to find whether the feature
-extraction had been compromised. A similar study with a
-key-finding stage at the end could possibly address our
-specific case.
+\parencite{urbano2014what}. During their study, they
+modified the input audio signal by changing the sampling
+rate, compression codec, and bitrate. Correlating the
+signals from the different alterations to find whether the
+feature extraction had been compromised. A similar study
+with a key-finding stage at the end could possibly address
+our specific case.
 
 Nevertheless, one also risks that, by modifying the symbolic
 source too much (e.g., in our ``arpeggiating'' alteration),
@@ -402,7 +404,7 @@ unfair to expect that if the algorithm predicts a different
 key than the one that we intend it to predict, it should be
 considered a mistake. For that kind of assessment, one could
 take as a reference the study from Serr\`a et al.
-\cite{serra2008statistical}, who studied the relation
+\parencite{serra2008statistical}, who studied the relation
 between chroma statistics and human judgments of tonality.
 
 A combination of these approaches could give us insight
