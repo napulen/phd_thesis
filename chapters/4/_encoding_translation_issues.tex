@@ -1,0 +1,11 @@
+% Taken verbatim from Encoding Matters
+
+We introduce a series of examples in which different encodings effectively modify the content of two---apparently equivalent---symbolic music files. These examples have been obtained from comparing three different encodings of a string quartet movement by Ludwig van Beethoven.
+
+We present two scenarios in which encoding discrepancies may be introduced. In the first scenario, they have been introduced during the encoding of the symbolic music file by either the music notation software or the human encoder. The discrepancies introduced in this scenario are typically difficult to notice because they are \emph{visually} identical to an accurate encoding. In the second scenario, the discrepancies have been introduced during the translation of the original file into other symbolic formats. In this scenario, the discrepancies may be related to propagating errors in the original encoding or to an erroneous translation of certain attributes of the musical content. Finally, we discuss the possibility of using the examples provided here for the mitigation of some of these discrepancies in the future.
+
+\guide{From conclusions}
+
+In this paper, we have presented examples of discrepancies in symbolic music files that were encoded by different human encoders and music notation software. We also investigated the discrepancies introduced when these files were translated into other symbolic music formats. Several of the discrepancies repeat systematically in the form of patterns (e.g., users place a \emph{slur} between two notes of the same pitch when they meant to place a \emph{tie} or incomplete measures are interpreted differently in distinct music notation software).
+
+In many cases, developing better methodologies for symbolic music corpora creation \cite{mckay2018} should set the basis for reliable data and reproducible research, however, whenever this is not sufficient, detecting the patterns leading to discrepancies---as the ones described here---seems to be a promising and worthy effort in the comparison, evaluation, and, possibly, the auto-correction of symbolic music files, which is in the interest of music researchers and digital music libraries.
