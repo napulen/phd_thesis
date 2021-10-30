@@ -1,0 +1,63 @@
+\guide{Results}
+
+
+\textbf{Beethoven Piano Sonatas.} The last rows of Table
+\ref{tab:results} show the results of our model when
+evaluated over the BPS dataset. To the best of our efforts,
+we replicate the experimental conditions of the models we
+compare to. Single lines in the table delimit experiments
+that are directly comparable. For example, the upper rows of
+BPS compare the results of Micchi et al.
+\cite{micchi2020not} using all of their available training
+data and our model using all of our available training data.
+
+\textbf{Well-Tempered Clavier.}
+The second to last group of rows in Table \ref{tab:results}
+show the results of our model when evaluated on the WTC
+dataset. The model by Chen and Su \cite{chen2021attend}
+presented the results over 4-fold cross validation. We
+replicate this study for direct
+comparison.\footnote{However, we used our test split for the
+\emph{Full dataset} experiment in WTC.} As they have, we
+include the average accuracy across the 4 folds, and the
+standard deviation.
+
+The results show that our model outperforms both the recent
+convolutional methods \cite{micchi2020not} and
+Transformer-based ones \cite{chen2021attend} in the
+reconstruction of the Roman numeral label.
+% Furthermore, the addition of data from a different dataset
+% seems to improve the results. For example, training with
+% WTC and BPS benefits the performance in BPS and vice
+% versa.
+For ABC, HaydnOp20, TAVERN, and WiR, we show the
+generalization of our model when using all the training data
+available on the corresponding held test set.
+
+\textbf{Alternative resolution of Roman numeral annotations.}
+As discussed in Section \ref{sec:additionaltasks}, it is
+possible to use the 75 most-common Roman numeral strings as
+an alternative task to the chord root, chord quality,
+primary degree, and secondary degree tasks. Thus, an
+alternative resolution of the Roman numeral label (AltRN) is
+presented in the last column of the AugmentedNet results.
+This accuracy corresponds to the reconstruction of the Roman
+numeral using the 75 most-common Roman numerals, chord
+inversion, and local key tasks. We assume that if these
+three tasks are predicted correctly, the Roman numeral label
+has been reconstructed correctly. We found that this, in
+fact, leads to better results compared to the six
+conventional tonal tasks. Table \ref{tab:results} shows the
+comma-separated accuracy values for the Roman numeral, the
+one computed from the six conventional tonal tasks (RN), and
+the alternative approach (AltRN). For completeness, we show
+too the accuracy of the RomanNumeral75 output task, labeled
+75RN in the table.
+
+In summary, the \emph{Full dataset} rows show the best
+results achieved by our model for each dataset. In all
+cases, the results of our model are higher than existing
+methods in the final reconstruction of the Roman numeral
+label. Additionally, the best results in the reconstruction
+are achieved via the chord inversion, local key, and our
+RomanNumeral75 task.
