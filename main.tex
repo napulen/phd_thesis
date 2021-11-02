@@ -11,6 +11,7 @@
 \usepackage{csquotes}
 \usepackage[authordate,backend=biber,sorting=nty]{biblatex-chicago}
 \bibliography{fullbib}
+\renewcommand*{\bibfont}{\normalfont\footnotesize}
 
 \usepackage[T1]{fontenc}
 \usepackage{stix2}
@@ -59,6 +60,7 @@
 \newcommand{\reffig}[1]{\hyperref[fig:#1]{Figure~\ref*{fig:#1}}}
 \newcommand{\reftab}[1]{\hyperref[tab:#1]{Table~\ref*{tab:#1}}}
 \newcommand{\refeq}[1]{\hyperref[eq:#1]{Equation~\ref*{eq:#1}}}
+
 
 \begin{document}
 
