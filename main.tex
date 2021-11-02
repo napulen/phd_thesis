@@ -31,7 +31,7 @@
 \newcommand{\phdfigure}[2][Caption placeholder]{
     \begin{figure}[h!]
         \centering
-        \includegraphics[width=0.6\textwidth]{chapters/\arabic{chapter}/figures/#2}
+        \includegraphics[width=1.0\textwidth]{chapters/\arabic{chapter}/figures/#2}
         \caption{#1.}
         \label{fig:#2}
     \end{figure}
@@ -65,7 +65,7 @@
 \begin{document}
 
 % COMPILE A SINGLE CHAPTER. Comment to compile the full thesis
-% \def\compilechapter{2}
+\def\compilechapter{2}
 
 \ifx\compilechapter\undefined
     \pagenumbering{roman}
