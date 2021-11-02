@@ -54,7 +54,7 @@ key.
 Researchers have designed a number of global-key-estimation
 algorithms throughout the years. The first one, to our
 knowledge, is the one by
-Longuet-Higgins~\cite{longuet1971tonality} from 1971.
+Longuet-Higgins~\parencite{longuet1971tonality} from 1971.
 Starting from the beginning of a score, the algorithm
 considers each pitch in order of occurrence and discards the
 keys that do not include that pitch within their diatonic
@@ -64,18 +64,18 @@ with the most difficult cases. This algorithm was able to
 retrieve the key of the fugues in J. S. Bach's
 \emph{Well-tempered Clavier}. It also served as a reference
 for later models, such as the one by Vos and van
-Geenen~\cite{vos96keyfinding}.
+Geenen~\parencite{vos96keyfinding}.
 
 With the introduction of the \emph{probe-tone} technique and
 \emph{key profiles} in 1979
-\cite{krumhansl1979quantification}, and their later
+\parencite{krumhansl1979quantification}, and their later
 application to the design of a global-key-estimation
-algorithm in 1990 \cite{krumhansl1990cognitive}, research
+algorithm in 1990 \parencite{krumhansl1990cognitive}, research
 regarding global-key-estimation models saw a shift toward
 more \emph{distributional} approaches
-\cite{temperley2008pitch}. Key profiles, originally
+\parencite{temperley2008pitch}. Key profiles, originally
 introduced as listener ratings by Krumhansl et al.
-\cite{krumhansl1979quantification, krumhansl1982tracing},
+\parencite{krumhansl1979quantification, krumhansl1982tracing},
 have transitioned into probability distributions that can be
 used to predict the key of a musical piece. Alternative
 key-profile distributions---and techniques for applying
@@ -85,7 +85,7 @@ Key profiles are the basis of many global-key-estimation
 models for symbolic music files and, starting from the
 2000s, audio files as well. More exhaustive surveys of
 modern global-key-estimation techniques, with a focus on
-audio, are available \cite{korzeniowski2018harmonic,
+audio, are available \parencite{korzeniowski2018harmonic,
 campbell2010automatic}. Key profiles have also been useful
 in the design of local-key estimation models.
 
@@ -109,14 +109,14 @@ musical fragment?
 According to the Grove Music Online dictionary, a modulation
 ``refers to a firmly established change of key, as opposed
 to a passing reference to another key, known as a
-`tonicization' ''~\cite{saslawgrovemodulation}. Moreover, a
+`tonicization' ''~\parencite{saslawgrovemodulation}. Moreover, a
 tonicization is ``the act of establishing a new key centre,
 or of giving a degree other than the first the role of
-tonic''~\cite{drabkintonicization}.
+tonic''~\parencite{drabkintonicization}.
 
 A formal definition of local keys is difficult to find.
 According to Papadopoulos et
-al.~\cite{papadopoulos2009local}, a local key is the ``key
+al.~\parencite{papadopoulos2009local}, a local key is the ``key
 of each segment'' of a ``[segmented] musical piece [...]
 according to the points of modulation''.
 
@@ -125,10 +125,10 @@ understand the distinction between modulations and
 tonicizations. Kostka and Payne have suggested that such
 distinction is not possible: ``The line between modulation
 and tonicization is not clearly defined in tonal music, nor
-is it meant to be'' \cite{kostka2008tonal}.
+is it meant to be'' \parencite{kostka2008tonal}.
 
 Regarding local keys, most researchers, as Papadopoulos et
-al. \cite{papadopoulos2009local}, associate them with
+al. \parencite{papadopoulos2009local}, associate them with
 modulations, however, this relationship has not been
 explored sufficiently. It would certainly benefit the
 computational musicology and MIR communities to engage in
@@ -167,39 +167,39 @@ estimation models have a relatively recent history.
 Purwins et al. introduced a method for tracking changes of
 key in audio signals %using cq-profiles, which are
 calculated with the constant Q filter bank
-\cite{purwins2000new}. Their goal is to track the tone
+\parencite{purwins2000new}. Their goal is to track the tone
 center and its variation during the piece. Their references
 annotate both modulations and tonicizations but consider
 that the ground truth is the one indicated by the
 tonicizations.
 
 % symbolic
-Chew~\cite{chew2002key} measured the distance from a
+Chew~\parencite{chew2002key} measured the distance from a
 sequence of pitches to a key using the \emph{spiral array}
-~\cite{chew2000towardsam}. The succession of keys is then
+~\parencite{chew2000towardsam}. The succession of keys is then
 modeled as a sequence of \emph{boundaries} dividing the
 score in different key areas.
 
 % Audio
 Chai and Vercoe designed a model based on a Hidden Markov
 Model (HMM) to detect changes of
-key~\cite{chai2005detection}. They describe the term
+key~\parencite{chai2005detection}. They describe the term
 \emph{modulation} as ``the change of key at some point''.
 Their model detects, at first, the tonal center, and then,
 the mode of the key.
 
 % Audio
-Catteau et al.~\cite{catteau07tonalkey} introduced a model
+Catteau et al.~\parencite{catteau07tonalkey} introduced a model
 for scale and chord recognition, assuming that there is a
 correspondence between a major scale and a major key, and
 between a harmonic minor scale and a minor key. Their model
 is based on the key profiles by Temperley
-\cite{temperley99tonality} and Lerdahl's \emph{tonal pitch
-spaces} \cite{lerdahl88tps}.
+\parencite{temperley99tonality} and Lerdahl's \emph{tonal pitch
+spaces} \parencite{lerdahl88tps}.
 
 Izmirli introduced a model to find local keys from audio
 sources, based on non-negative matrix factorization for
-segmentation~\cite{izmirli2007localized}. Izmirli also
+segmentation~\parencite{izmirli2007localized}. Izmirli also
 attempted to disambiguate modulations and tonicizations in
 the following manner: ``Secondary functions and
 tonicizations are heard as short deviations from the
@@ -213,7 +213,7 @@ key center''.
 
 Papadopoulos and Peeters adopted a similar approach to
 Izmirli for audio local-key estimation
-\cite{papadopoulos2009local}. Their model attempts to
+\parencite{papadopoulos2009local}. Their model attempts to
 segment the score based on the points of modulation. They
 introduced key dependencies on the harmonic and metric
 structures of global-key-finding methods, in order to
@@ -224,14 +224,14 @@ convert them into local-key-finding ones.
 Rocher et al. introduced a model that provides (chord, key)
 duples for each audio frame of an input excerpt. The model
 is based on a graph and the \emph{best-path} estimation
-method~\cite{thomas_rocher_2010_1417485}. For evaluating key
+method~\parencite{thomas_rocher_2010_1417485}. For evaluating key
 distances, they used the key profiles by
-Temperley~\cite{temperley99tonality}. The authors alluded to
+Temperley~\parencite{temperley99tonality}. The authors alluded to
 the term modulation when discussing their key predictions.
 
 Mearns et al. used an HMM to estimate modulations over audio
 transcriptions of Bach
-chorales~\cite{mearns2011automatically}. The HMM is trained
+chorales~\parencite{mearns2011automatically}. The HMM is trained
 with chord progressions. The emission probability
 distributions are obtained from two tables with the
 probabilities of chords existing in a given key. These
@@ -242,12 +242,12 @@ tonicizations.
 
 In 2014, Pauwels and Martens present a probabilistic
 framework for the simultaneous estimation of chords and keys
-from audio~\cite{pauwels2014combining}. They mention the
+from audio~\parencite{pauwels2014combining}. They mention the
 importance of ``integrating prior musical knowledge'' into a
 local-key-estimation system, however, they do not allude to
 the terms modulation and tonicization. The same year, Weiss
 et al. proposed an audio scale
-estimator~\cite{weiss2014chroma}. They argue that this
+estimator~\parencite{weiss2014chroma}. They argue that this
 estimator can help to determine the local tonality based on
 G\'{a}rdonyi's scale analysis method. They did not use the
 term tonicization, however, they discussed ``short-time
@@ -256,8 +256,8 @@ local modulations'', which resemble tonicizations.
 Machine learning approaches, especially using neural
 networks, have recently gained popularity in MIR research,
 including key estimation. Independently, Chen et al.
-\cite{chen18harmony,chen19harmony} and Micchi et
-al.~\cite{micchi20roman} designed models that estimate local
+\parencite{chen18harmony,chen19harmony} and Micchi et
+al.~\parencite{micchi20roman} designed models that estimate local
 keys as well as roman numeral analysis annotations.
 Tonicization information is implied by the roman numeral
 analysis annotations.
@@ -265,13 +265,13 @@ analysis annotations.
 N\'apoles L\'opez et al. introduced a model to find changes
 of key (local-key estimation) as well as the main key of a
 piece (global-key estimation), using an HMM
-\cite{napoleslopez2019key}. The model is also capable of
+\parencite{napoleslopez2019key}. The model is also capable of
 working with symbolic and audio data. They do not allude to
 the terms modulation or tonicization, always referring to
 their predictions as \emph{local keys}.
 
 One of the most recent models for finding changes of key is
-by Feisthauer et al.~\cite{feisthauer2020smc}, which has
+by Feisthauer et al.~\parencite{feisthauer2020smc}, which has
 been designed to detect modulations in Classical music. It
 uses three proximity measures established from pitch
 compatibility, tonality anchoring, and tonality proximity.
@@ -300,33 +300,33 @@ Table~\ref{tab:corpus}.
 %     \toprule
 %     Model&Files&Dataset\\
 %     \midrule
-%     Catteau~\cite{catteau07tonalkey} & 10 & Manually-built\\
+%     Catteau~\parencite{catteau07tonalkey} & 10 & Manually-built\\
 %     & & chord sequences\\
-%     Chai~\cite{chai2005detection} & 10 & Various
+%     Chai~\parencitencitencite{chai2005detection} & 10 & Various
 %     (Classical)\\
-%     Chen~\cite{chen18harmony,chen19harmony},
-%     Micchi~\cite{micchi20roman} & 23 & Beethoven\\
-%     Chew~\cite{chew2002key} & 2 & Bach\\
-%     Feisthauer~\cite{feisthauer2020smc} & 38 & Mozart
+%     Chen~\parencitencitencitencitencitencite{chen18harmony,chen19harmony},
+%     Micchi~\parencite{micchi20roman} & 23 & Beethoven\\
+%     Chew~\parencite{chew2002key} & 2 & Bach\\
+%     Feisthauer~\parencite{feisthauer2020smc} & 38 & Mozart
 %     (Classical) \\
-%     Izmirli~\cite{izmirli2007localized} & 17 & Pop songs\\
+%     Izmirli~\parencitencite{izmirli2007localized} & 17 & Pop songs\\
 %     & 152 & Naxos set (Classical)\\
 %     & 17 & Kostka-Payne (Classical)\\
-%     Mearns~\cite{mearns2011automatically} & 12 & Bach
+%     Mearns~\parencitencitencitencite{mearns2011automatically} & 12 & Bach
 %     Chorales \\
-%     Micchi~\cite{micchi20roman} &  27 &  TAVERN
+%     Micchi~\parencite{micchi20roman} &  27 &  TAVERN
 %     (Classical)\\
 %     & 70 & ABC (Beethoven)\\
 %     & 72 & Roman Text (Classical)\\
-%     Papadopoulos~\cite{papadopoulos2009local} & 5 & Mozart\\
-%     Pauwels~\cite{pauwels2014combining} & 142 & SEMA Set
+%     Papadopoulos~\parencite{papadopoulos2009local} & 5 & Mozart\\
+%     Pauwels~\parencite{pauwels2014combining} & 142 & SEMA Set
 %     (Pop)\\
 %     & 210 & MIREX 2009\\
-%     Purwins~\cite{purwins2000new} and & 1 & Chopin\\
-%     Napol\'{e}s Lop\'{e}z~\cite{napoleslopez2019key} & & \\
-%     Rocher~\cite{thomas_rocher_2010_1417485} & 174 &
+%     Purwins~\parencite{purwins2000new} and & 1 & Chopin\\
+%     Napol\'{e}s Lop\'{e}z~\parencite{napoleslopez2019key} & & \\
+%     Rocher~\parencite{thomas_rocher_2010_1417485} & 174 &
 %     Beatles\\
-%     Weiss~\cite{weiss2014chroma} & 10 & Various (Classical)
+%     Weiss~\parencite{weiss2014chroma} & 10 & Various (Classical)
 %     \\
 %   \bottomrule
 % \end{tabular}
@@ -363,7 +363,7 @@ granularity. There are multiple ways to determine the
 ``slicing'' of the musical excerpt or level of granularity.
 We opted for \emph{onsets}.\footnote{The precise moment when
 a note (or simultaneously-sounding group of notes) is played
-~\cite{bello05onset}.} That is, for every note \emph{onset}
+~\parencite{bello05onset}.} That is, for every note \emph{onset}
 in the score, we have a corresponding annotation of the key.
 This level of granularity is especially convenient for
 encoding roman numeral analysis annotations, the way in
@@ -374,7 +374,7 @@ dataset.
 %   \centering
 %   \includegraphics[width=\linewidth]{figs/example-w-ambiguity}
 %   \caption{Example 3-17b in Rimsky-Korsakov's
-%   \emph{Practical Manual of Harmony} \cite{rimskitonality}.
+%   \emph{Practical Manual of Harmony} \parencite{rimskitonality}.
 %   Roman numeral annotations describe the harmonies on each
 %   onset of the score and have been written by the theorist.
 %   Some of the roman numeral annotations also indicate
@@ -397,7 +397,7 @@ Throughout the excerpt, there are also six tonicizations,
 identified by the presence of at least one forward slash
 symbol (``/'') in the roman numeral annotation.\footnote{The
 slash is a conventional notation in roman numeral analysis
-~\cite{Tymoczko2019, huron_representation}. The roman
+~\parencite{Tymoczko2019, huron_representation}. The roman
 numeral before the slash symbol denotes a chord, and the
 roman numeral after the slash symbol denotes a tonicized
 key.} The tonicizations that occur during the first
@@ -409,10 +409,10 @@ major (measures 5 and 7).
 Table \ref{tab:annotations} shows the generated
 modulation-and-tonicization labels of every onset. There are
 several conventions for digitally encoding roman numeral
-annotations \cite{huron_representation, Tymoczko2019,
+annotations \parencite{huron_representation, Tymoczko2019,
 napoleslopez20harmalysis}. We opted for \emph{harmalysis}
-\cite{napoleslopez20harmalysis}, an extension of
-\emph{**harm} \cite{huron_representation}. Once the roman
+\parencite{napoleslopez20harmalysis}, an extension of
+\emph{**harm} \parencite{huron_representation}. Once the roman
 numeral annotations have been digitally encoded within the
 scores, it is fairly simple to retrieve the sequence of key
 labels.
@@ -483,12 +483,12 @@ decision to encode tonicizations as roman numeral
 annotations reflects this relationship.
 
 There are datasets available with encoded roman numeral
-analysis annotations \cite{neuwirth2018annotated,
+analysis annotations \parencite{neuwirth2018annotated,
 devaney2015tavern, Tymoczko2019}, which could be used for
 studying changes of key in the manner that we have presented
 here. However, it is important to acknowledge that roman
 numeral annotations are subject to issues such as ambiguity
-and disagreement \cite{condit-schultz2018, koops19,
+and disagreement \parencite{condit-schultz2018, koops19,
 selway2020, arthur2017harmony}, which may have implications
 for determining \emph{where} the changes of key occur. For
 example, the dashed regions in Figure \ref{fig:example} show

@@ -2,11 +2,11 @@
 
 \guide{Datasets}
 
-In the past, the models by Micchi et al. \cite{micchi2020not} and Chen and Su \cite{chen2021attend} have been evaluated using the Beethoven Piano Sonatas (BPS) and the Well-Tempered Clavier (WTC) datasets. We too provide direct comparisons in these two datasets, however, we also share the results of our model across the Annotated Beethoven Corpus (ABC) \cite{neuwirth2018annotated}, annotated Haydn string quartets Op.20 (HaydnOp20) \cite{napoleslopez2017automatic}, Theme and Variation Encodings with Roman Numerals (TAVERN) \cite{devaney2015theme}, and When-in-Rome (WiR) \cite{gotham2019romantext} datasets.
+In the past, the models by Micchi et al. \parencite{micchi2020not} and Chen and Su \parencite{chen2021attend} have been evaluated using the Beethoven Piano Sonatas (BPS) and the Well-Tempered Clavier (WTC) datasets. We too provide direct comparisons in these two datasets, however, we also share the results of our model across the Annotated Beethoven Corpus (ABC) \parencite{neuwirth2018annotated}, annotated Haydn string quartets Op.20 (HaydnOp20) \parencite{napoleslopez2017automatic}, Theme and Variation Encodings with Roman Numerals (TAVERN) \parencite{devaney2015theme}, and When-in-Rome (WiR) \parencite{gotham2019romantext} datasets.
 
 For all datasets, the same procedure was followed regarding data splits.
- Training, validation, and test splits were produced randomly (except in BPS, where they were provided by Chen and Su \cite{chen2018functional}).
- %\footnote{In the original splits of BPS, there is a duplicated example in the validation and test sets. We noticed that Micchi et al. \cite{micchi2020not} corrected the splits to remove the data leakage. Thus, we follow the splits by Micchi et al. \cite{micchi2020not}}
+ Training, validation, and test splits were produced randomly (except in BPS, where they were provided by Chen and Su \parencite{chen2018functional}).
+ %\footnote{In the original splits of BPS, there is a duplicated example in the validation and test sets. We noticed that Micchi et al. \parencite{micchi2020not} corrected the splits to remove the data leakage. Thus, we follow the splits by Micchi et al. \parencite{micchi2020not}}
 A summary of all datasets is shown in Table \ref{tab:datasets}. The summary indicates the number of files in each split and the number of sequences (each of 640 frames) that were collected from that split.
 
 
@@ -23,12 +23,12 @@ To support reproduction of this work, we provide the exact data splits at [ANONY
   & & Files (Seqs) & \\
   Dataset & Training & Validation & Test \\
   \hline
-  ABC \cite{neuwirth2018annotated} & 50 (448) & 10 (97) & 10 (99) \\
-  BPS \cite{chen2018functional} & 18 (155) & 7 (75) & 7 (75) \\
-  HaydnOp20 \cite{napoleslopez2017automatic} & 16 (91) & 4 (19) & 4 (19) \\
-  TAVERN \cite{devaney2015theme} & 38 (404) & 8 (68) & 8 (64) \\
-  WiR \cite{gotham2019romantext} & 107 (301) & 21 (61) & 21 (51) \\
-  WTC \cite{gotham2019romantext} & 12 (25) & 6 (13) & 6 (14) \\
+  ABC \parencite{neuwirth2018annotated} & 50 (448) & 10 (97) & 10 (99) \\
+  BPS \parencite{chen2018functional} & 18 (155) & 7 (75) & 7 (75) \\
+  HaydnOp20 \parencite{napoleslopez2017automatic} & 16 (91) & 4 (19) & 4 (19) \\
+  TAVERN \parencite{devaney2015theme} & 38 (404) & 8 (68) & 8 (64) \\
+  WiR \parencite{gotham2019romantext} & 107 (301) & 21 (61) & 21 (51) \\
+  WTC \parencite{gotham2019romantext} & 12 (25) & 6 (13) & 6 (14) \\
   \hline
   Total & 241 (1424) & 56 (333) & 56 (329) \\
 %   +Transposition & XX & - & - \\
@@ -71,7 +71,7 @@ BPS & BPS & CS19 & 78.4 & 65.1 & 74.6 & 62.1 & - & - \\
 BPS & BPS & CS18 & 66.7 & 51.8 & 60.6 & 59.1 & -  & 25.7
 \end{tabular}
 \end{center}
- \caption{Summary of the performance of five functional harmony models: Chen and Su (2018, 2019, and 2021), Micchi et al. (2020), and AugmentedNet. For the WTC dataset, the experiment with training done over BPS+WTC replicated the 4-fold cross validation presented by Chen and Su \cite{chen2021attend}. In this case, $\pm$ indicates the standard deviation. For all other rows, the results present the performance on the held test set. The comma-separated values in RN of the AugmentedNet rows indicate different methods for reconstructing the Roman numeral, as explained in \ref{sec:additionaltasks}.}
+ \caption{Summary of the performance of five functional harmony models: Chen and Su (2018, 2019, and 2021), Micchi et al. (2020), and AugmentedNet. For the WTC dataset, the experiment with training done over BPS+WTC replicated the 4-fold cross validation presented by Chen and Su \parencite{chen2021attend}. In this case, $\pm$ indicates the standard deviation. For all other rows, the results present the performance on the held test set. The comma-separated values in RN of the AugmentedNet rows indicate different methods for reconstructing the Roman numeral, as explained in \ref{sec:additionaltasks}.}
  \label{tab:results}
 \end{table*}
 
@@ -86,10 +86,10 @@ After all epochs, we selected the best weights based on a custom metric that pre
 % Each convolutional layer has a kernel size of 1, 2, 4, 8, 16, and 32 timesteps, respectively. In practice, this means that the last convolutional layer provides information up to a whole note away from the current timestep.
 
 \textbf{Other hyper-parameters.}
-Each of the layers in the network is accompanied by batch normalization before the activation function. In the recurrent layers, we apply the batch normalization after the activation function. All convolutional and dense layers use the rectified linear unit (ReLU) as their activation function. However, the two GRU layers use $\tanh$. In all of our experiments, we used 16 sequences per batch and Adam \cite{kingma2014adam} as our optimizer, with a learning rate of $10^{-7}$.
+Each of the layers in the network is accompanied by batch normalization before the activation function. In the recurrent layers, we apply the batch normalization after the activation function. All convolutional and dense layers use the rectified linear unit (ReLU) as their activation function. However, the two GRU layers use $\tanh$. In all of our experiments, we used 16 sequences per batch and Adam \parencite{kingma2014adam} as our optimizer, with a learning rate of $10^{-7}$.
 
 
 
 \textbf{Computing time.} The network was trained on a personal laptop\footnote{Intel i7 10750h, Nvidia RTX 2070, 32GB DDR4} with a Linux operating system, Tensorflow 2.4.1, and GPU acceleration.
 With these hardware and software conditions, the training times are approximately ~30 minutes (BPS only), ~40 minutes (BPS+WTC), and ~250 minutes (Full dataset).
-The number of trainable parameters in the network is close to 90,000. This number already includes all the parameters introduced by the additional output tasks. Therefore, the model is similar in size to recent models \cite{micchi2020not, chen2021attend}.
+The number of trainable parameters in the network is close to 90,000. This number already includes all the parameters introduced by the additional output tasks. Therefore, the model is similar in size to recent models \parencite{micchi2020not, chen2021attend}.

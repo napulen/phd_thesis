@@ -4,11 +4,11 @@
 
 The output of the network follows a MTL approach with hard
 parameter sharing, similar to that proposed by Chen and Su
-\cite{chen2018functional}. For each of the output tasks, a
+\parencite{chen2018functional}. For each of the output tasks, a
 time-distributed dense layer is attached to the second GRU,
 and used to predict its corresponding task. Six conventional
 tasks are learned (similar to Micchi et al. and Chen and Su
-\cite{micchi2020not, chen2021attend}), plus five additional
+\parencite{micchi2020not, chen2021attend}), plus five additional
 ones. All the tasks (eleven in total) and their number of
 output classes are shown on the right side of Figure
 \ref{fig:network}.
@@ -16,7 +16,7 @@ output classes are shown on the right side of Figure
 \guide{Six conventional functional harmony tasks}
 All the conventional tasks, except for the local key, have
 the same number of output classes described by Micchi et al.
-\cite{micchi2020not}. The local key includes four additional
+\parencite{micchi2020not}. The local key includes four additional
 keys: $\{F\flat, G\sharp, d\flat, e\sharp\}$. These were
 included because the data exploration process revealed
 modulations reaching $G\sharp$ major in the dataset. Thus,
@@ -32,7 +32,7 @@ It is argued that MTL helps improving the generalization of
 a model by preferring representations that are useful to
 related tasks, acting as an implicit form of data
 augmentation and regularization method
-\cite{ruder2017overview}. Roman numeral labels can be
+\parencite{ruder2017overview}. Roman numeral labels can be
 decomposed into multiple different features, of which the
 six conventional tasks are known examples. Motivated by the
 possibility of improving the performance of our network, we
@@ -98,7 +98,7 @@ the key implied by a secondary degree (if any).
 % When not present, the tonicization encodes the local key
 % instead, to reduce the sparsity of classes. This idea is
 % adapted from N\'apoles L\'opez et al.
-% \cite{napoleslopez2020local}.
+% \parencite{napoleslopez2020local}.
 The output classes are identical to the ones of the local
 key and is an alternative approach to learn the secondary
 degrees.
@@ -108,7 +108,7 @@ by the chord. The number of classes (93) results from
 computing all pitch class sets in all diatonic triad and
 seventh chords, plus all augmented sixth chords in all keys.
 This task is related to the chord quality, primary degree,
-and to non-chord tones \cite{ju2017nonchord}. All additional
+and to non-chord tones \parencite{ju2017nonchord}. All additional
 tasks except for the RomanNumeral75 are computed solely for
 their contributions to the shared representation of the MTL
 approach.

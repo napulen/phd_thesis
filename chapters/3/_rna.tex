@@ -19,7 +19,7 @@ predict multiple features correctly and asimultaneously. In
 the past, MIR researchers have reconstructed Roman numeral
 annotations by predicting six sub-tasks: chord quality,
 chord root, local key, inversion, primary degree, and
-secondary degree \cite{chen2018functional, micchi2020not}.
+secondary degree \parencite{chen2018functional, micchi2020not}.
 
 Thus, as a machine learning problem, functional harmony can
 be expressed as the task of correctly predicting enough
@@ -28,9 +28,9 @@ label.
 
 Recent efforts in this area have seen a great
 standardization of the notation and conversion routines,
-\cite{gotham2019romantext} which in turn has facilitated the
+\parencite{gotham2019romantext} which in turn has facilitated the
 amassing of a relatively large meta-corpus of Roman numeral
-analyses \cite{gotham2019romantext}. However, despite these
+analyses \parencite{gotham2019romantext}. However, despite these
 developments and the wider resurgence of interest in the
 field, the performance of functional harmony models for
 predicting full Roman numeral labels remains relatively low.
@@ -39,33 +39,33 @@ predicting full Roman numeral labels remains relatively low.
 \guide{First end-to-end system.}
 The first end-to-end system of automatic Roman numeral
 analysis can be attributed to the independent contributions
-of Temperley and Sleator \cite{temperley2004cognition}, and
-Sapp \cite{sapp2009tsroot}. Temperley's preference rules
+of Temperley and Sleator \parencite{temperley2004cognition}, and
+Sapp \parencite{sapp2009tsroot}. Temperley's preference rules
 were implemented by Sleator as part of a suite of programs
 called \emph{Melisma (version 1)}.\footnote{Although Melisma
 (version 2) exists, it does not provide Roman numeral
 analysis output.} The contributions of Sapp to the Humdrum
-toolkit \cite{huron2002music} made it possible to process
+toolkit \parencite{huron2002music} made it possible to process
 any encoded musical score with Roman numeral annotations
 using \emph{Melisma}.
 
 \guide{Before deep learning.}
 Notable subsequent studies include Raphael and Stoddard
-\cite{raphael2004functional}, Illescas et al.
-\cite{illescas2007harmonic}, and Magalh\=aes and de Haas
-\cite{magalhaes2011functional}, who proposed Hidden Markov
+\parencite{raphael2004functional}, Illescas et al.
+\parencite{illescas2007harmonic}, and Magalh\=aes and de Haas
+\parencite{magalhaes2011functional}, who proposed Hidden Markov
 Models (HMMs), dynamic programming, and grammar-based
 approaches, respectively.
 
 \guide{Chen and Su (2018).}
 More recently, deep neural networks have become the
 preferred tool for approaching this problem. Chen and Su
-\cite{chen2018functional} were the first to introduce
-`multi-task learning' (MTL) \cite{ruder2017overview} to the
+\parencite{chen2018functional} were the first to introduce
+`multi-task learning' (MTL) \parencite{ruder2017overview} to the
 problem as a suitable way for the neural network to share
 representations between related tonal tasks. Chen and Su's
 model consists of a bidirectional LSTM
-\cite{hochreiter1997long} followed by task-specific dense
+\parencite{hochreiter1997long} followed by task-specific dense
 layers, which implement the MTL aspect. In this work, the
 authors also introduced the `Beethoven Piano Sonata
 Functional Harmony' dataset for evaluating such models. The
@@ -73,20 +73,20 @@ MTL layout outperformed single-task configurations and it
 has continued to prove the best-performing approach in
 subsequent deep learning studies. Recently, the same authors
 have adopted Transformer-based networks to deal with
-functional harmony and ACR \cite{chen2019harmony,
+functional harmony and ACR \parencite{chen2019harmony,
 chen2021attend}. The work with these networks has explored
 the capability of the attention mechanisms to improve the
 performance of ACR, paying special consideration to chord
 segmentation and its evaluation.
 
 \guide{Micchi et al (2020).}
-Micchi et al. \cite{micchi2020not}, in turn, proposed a
-DenseNet-like \cite{huang2017densely} convolutional neural
+Micchi et al. \parencite{micchi2020not}, in turn, proposed a
+DenseNet-like \parencite{huang2017densely} convolutional neural
 network, followed by a recurrent component. The recurrent
 component consists of a bidirectional GRU
-\cite{cho2014learning} connected to task-specific dense
+\parencite{cho2014learning} connected to task-specific dense
 layers, similar to those of Chen and Su
-\cite{chen2018functional}. In their experiments, the
+\parencite{chen2018functional}. In their experiments, the
 DenseNet-like convolutions outperformed dilated convolutions
 and a GRU by itself (i.e., with pooling instead of the
 convolutional blocks). Micchi et al.~also demonstrated the

@@ -22,7 +22,7 @@ relationship that the predicted key has to the ground truth.
 The MIREX score has been used in the annual Music
 Information Retrieval Evaluation eXchange (MIREX) evaluation
 of global-key-estimation algorithms since 2005
-\cite{downie2005}.
+\parencite{downie2005}.
 
 % \begin{table}[h] \begin{tabular}{l|l} \textbf{Key
 % prediction's relation to the ground truth} &
@@ -152,7 +152,7 @@ incorporate these global-key predictions as a baseline
 model, to compare it against the more specialized
 local-key-estimation models. The global-key-estimation model
 that we considered is the default key-estimation model in
-music21 \cite{cuthbert2010music21}.
+music21 \parencite{cuthbert2010music21}.
 
 \guide{Modulation (B3) and tonicization (B4) ground truth}
 
@@ -192,7 +192,7 @@ symbolic and audio local-key-estimation models.
 
 \guide{N\'{a}poles L\'opez et al. (M1)} This model computes
 two stages of output: local keys and a global key
-\cite{napoleslopez2019key}. Both stages are computed through
+\parencite{napoleslopez2019key}. Both stages are computed through
 an HMM. The main parameters of the HMM are a set of
 \emph{key profiles} and a table of key distances. We compute
 both stages but only evaluate the local-key predictions. The
@@ -201,7 +201,7 @@ model is applied with its default parameters.
 \guide{Feisthauer et al. (M2)}
 This model estimates the succession of keys and can be
 configured by adjusting the weights associated to three
-proximity measures~\cite{feisthauer2020smc}. Two sets of
+proximity measures~\parencite{feisthauer2020smc}. Two sets of
 weights are used. The first set consists of the default
 weights when the model is not trained (M2a). The second set
 consists of the optimal weights after training the model on
@@ -209,7 +209,7 @@ Mozart's string quartets (M2b).
 
 \guide{Micchi et al. (M3)}
 This model was introduced by Micchi et
-al.~\cite{micchi20roman} and utilizes an LSTM network to
+al.~\parencite{micchi20roman} and utilizes an LSTM network to
 provide the harmonic analysis of a musical excerpt, which is
 described through six features: key, degree 1, degree 2,
 quality, inversion, and root. We evaluate the key
