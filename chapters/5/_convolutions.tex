@@ -10,19 +10,19 @@ parameters \parencite{huang2017densely}. Moreover, DenseNet-like
 architectures have shown to work well for the specific task
 of functional harmony \parencite{micchi2020not}.
 
-\begin{figure*}
- \centerline{\includegraphics[width=\textwidth]{figs/network.png}}
- \caption{\emph{AugmentedNet}. The bass and chroma inputs
- are processed through independent convolutional blocks and
- then concatenated. Both convolutional blocks are identical
- and expanded on the top of the figure. A convolutional
- block has six 1D convolutional layers. Each layer doubles
- the kernel size (number of timesteps covered) and halves
- the number of output filters, prioritizing short-term
- dependencies but providing long-term context that benefits
- the subsequent GRU layers.}
- \label{fig:network}
-\end{figure*}
+% \begin{figure*}
+%  \centerline{\includegraphics[width=\textwidth]{figs/network.png}}
+%  \caption{\emph{AugmentedNet}. The bass and chroma inputs
+%  are processed through independent convolutional blocks and
+%  then concatenated. Both convolutional blocks are identical
+%  and expanded on the top of the figure. A convolutional
+%  block has six 1D convolutional layers. Each layer doubles
+%  the kernel size (number of timesteps covered) and halves
+%  the number of output filters, prioritizing short-term
+%  dependencies but providing long-term context that benefits
+%  the subsequent GRU layers.}
+%  \label{fig:network}
+% \end{figure*}
 
 \guide{Convolutional layers.}
 We follow similar methods, reusing the feature maps computed
