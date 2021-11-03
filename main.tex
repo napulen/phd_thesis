@@ -7,6 +7,7 @@
 
 \usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage{xparse}
 \usepackage[french,english]{babel}
 \usepackage{csquotes}
 \usepackage[authordate,backend=biber,sorting=nty]{biblatex-chicago}
@@ -28,12 +29,12 @@
 \newcommand{\rnfourthree}{{\footnotesize {}^\rnformat{4}_\rnformat{3}\relax}}
 \newcommand{\rntwo}{{\footnotesize {}^\rnformat{2}\relax}}
 
-\newcommand{\phdfigure}[2][Caption placeholder]{
-    \begin{figure}[h!]
+\NewDocumentCommand{\phdfigure}{ O{Caption placeholder} O{0.6} O{h} m}{
+    \begin{figure}[#3]
         \centering
-        \includegraphics[width=1.0\textwidth]{chapters/\arabic{chapter}/figures/#2}
+        \includegraphics[width=#2\textwidth]{chapters/\arabic{chapter}/figures/#4}
         \caption{#1.}
-        \label{fig:#2}
+        \label{fig:#4}
     \end{figure}
     \relax
 }
