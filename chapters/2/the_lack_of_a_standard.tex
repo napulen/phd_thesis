@@ -1,6 +1,6 @@
 \guide{The lack of a ``standard'' notation.}
 Because the Roman numeral notation evolved in a rather
-``organic'' way, there is no ``standard'' way of writing
+unstructured way, there is no \emph{standard} way of writing
 Roman numeral annotations.
 % Personally, I studied or interacted with several
 % teachers/theorists using this technique in the different
@@ -8,11 +8,11 @@ Roman numeral annotations.
 % Fern\'andez, Gamaliel Cano, Jose Luis Gonz\'alez Moya,
 % Alejandro Moreno), Barcelona (Montserrat Castro, Rafael
 % Caro Repetto), Montr\'eal (William Caplin).
-Personally, I studied Roman numeral analysis with several
-teachers located in Guadalajara, Barcelona, and Montreal.
-Each of these teachers used a slightly different approach. A
-survey of the literature on Harmony will reveal something
-similar in published works. Some of the differences include:
+Personally, studying with several harmony teachers from
+Guadalajara, Barcelona, and Montreal, I noticed that Each of
+these teachers used a slightly different notation. A survey
+of the Harmony literature will reveal something similar
+among published works. Some of the differences include:
 \begin{itemize}
     \item Use of case-sensitive or case-insensitive numerals
     \item Different ways of denoting certain chords,
@@ -30,39 +30,42 @@ similar in published works. Some of the differences include:
 A clear separation of chord qualities (major and minor)
 using case-sensitive Roman numerals has been proposed since
 \textcite{weber1817versuch}. However, some analysts have
-preferred to indicate the scale degrees using a Roman
-numeral, regardless of the chord quality implied by the
-chord. This is often fine for other human analysts, as the
-reader of the analysis will usually be able to complement
-the information. Computers will not be able to disambiguate
-this notation, however. In digital annotations, having
-explicit information about the chord quality is
+preferred to indicate the scale degrees using an upper-case
+Roman numeral, regardless of the chord quality implied by
+the chord. This is often fine for other human analysts, as
+the reader of the analysis will usually be able to
+complement the information. Computers will not be able to
+disambiguate this notation, however. In digital annotations,
+having explicit information about the chord quality is
 unequivocally better. Every digital representation considers
 Roman numerals to be case-sensitive for that reason.
 
 \phdfigure[Instances of the $\rn{V}\rnsixfour$, $\rn{I}\rnsixfour$, and $\rn{Cad}\rnsixfour$ chords, as suggested for digital representations][1.0]{v64_i64_and_cad64}
 
 \guide{Cadential six-four chords.}
-A tonic triad in second inversion is a frequent chord used
-before a cadence (see \reffig{v64_i64_and_cad64}). When in
-this context (generally preceding a $\rn{V}$ chord) it
-receives the name of \emph{cadential six-four}. When
-indicating this chord using Roman numerals, it is common to
-write it as as $\rn{I}\rnsixfour$, $\rn{V}\rnsixfour$, or
-$\rn{Cad}\rnsixfour$. $\rn{Cad}\rnsixfour$ (or a similar
-token) is unequivocally the best representation for a
-digital annotation, as it disambiguates the chord as
-functioning in this specific way and not as a passing chord
-(e.g., a second-inversion tonic or dominant triads could be
-passing chords, which are neither considered a cadential
-six-four). \reffig{v64_i64_and_cad64} exemplifies the suggested notation, which mitigates the ambiguity and provides a machine-readable annotation of these chords.
+A tonic triad in second inversion is a chord frequently used
+before a cadence. When it is used in this context (preceding
+a $\rn{V}$ chord) it receives the name of \emph{cadential
+six-four}. In order to indicate this chord using Roman
+numerals, it is common to write it as $\rn{I}\rnsixfour$,
+$\rn{V}\rnsixfour$, or $\rn{Cad}\rnsixfour$.
+$\rn{Cad}\rnsixfour$ (or a similar token) is unequivocally
+the best representation for a digital annotation, as it
+disambiguates the chord as functioning in this specific way
+and not as a passing chord (e.g., a second-inversion tonic
+or dominant triads could be passing chords, which are
+neither considered a cadential six-four).
+\reffig{v64_i64_and_cad64} exemplifies the suggested
+notation, which mitigates the ambiguity and provides a
+machine-readable annotation of these chords.
 
 \guide{Neapolitans, Augmented sixth chords, and other conventions.}
 Neapolitan chords are a chromatic substitution of the
 subdominant chord. The root of the chord is the flattened
 second degree of the relevant major/minor key. For example,
-the Neapolitan of C major (and C minor) is D$\flat$ major.
-For this reason, it is either known as $\flat$II or as N.
+the Neapolitan of $\rn{C major}$ (and $\rn{C minor}$) is
+$\rn{D}\flat$. For this reason, it is either known as
+$\flat\rn{II}$ or as $\rn{N}$.
 
 \guide{Notating inversions.}
 Inversions are generally notated using stacked Arabic
