@@ -28,32 +28,34 @@ similar in published works. Some of the differences include:
 
 \guide{Case-sensitive versus case-insensitive Roman numerals.}
 A clear separation of chord qualities (major and minor)
-using case-sensitive Roman numerals has been common since
-Weber. This is, however, a more time-consuming notation for
-the analyst. Thus, some analysts have preferred to indicate
-the scale degrees using a Roman numeral, regardless of the
-chord quality implied by the chord. This is often fine for
-other human analysts, as the reader of the analysis will
-usually be able to disambiguate the information. Computers
-will not be able to disambiguate this notation, however. In
-digital annotations, having explicit information about the
-chord quality is unequivocally better. Every digital
-representation considers Roman numerals to be case-sensitive
-for that reason.
+using case-sensitive Roman numerals has been proposed since
+\textcite{weber1817versuch}. However, some analysts have
+preferred to indicate the scale degrees using a Roman
+numeral, regardless of the chord quality implied by the
+chord. This is often fine for other human analysts, as the
+reader of the analysis will usually be able to complement
+the information. Computers will not be able to disambiguate
+this notation, however. In digital annotations, having
+explicit information about the chord quality is
+unequivocally better. Every digital representation considers
+Roman numerals to be case-sensitive for that reason.
+
+\phdfigure[Instances of the $\rn{V}\rnsixfour$, $\rn{I}\rnsixfour$, and $\rn{Cad}\rnsixfour$ chords, as suggested for digital representations][1.0]{v64_i64_and_cad64}
 
 \guide{Cadential six-four chords.}
 A tonic triad in second inversion is a frequent chord used
-before a cadence (see \reffig{cadential64}). When in this
-context (generally preceding a $\rn{V}$ chord) it receives
-the name of \emph{cadential six-four}. When indicating this
-chord using Roman numerals, it is common to write it as as
-$\rn{I}\rnsixfour$, $\rn{V}\rnsixfour$, or
+before a cadence (see \reffig{v64_i64_and_cad64}). When in
+this context (generally preceding a $\rn{V}$ chord) it
+receives the name of \emph{cadential six-four}. When
+indicating this chord using Roman numerals, it is common to
+write it as as $\rn{I}\rnsixfour$, $\rn{V}\rnsixfour$, or
 $\rn{Cad}\rnsixfour$. $\rn{Cad}\rnsixfour$ (or a similar
 token) is unequivocally the best representation for a
 digital annotation, as it disambiguates the chord as
-functioning in this specific way (e.g., a second-inversion
-tonic triad could also be a passing chord, which is not
-considered a cadential six-four).
+functioning in this specific way and not as a passing chord
+(e.g., a second-inversion tonic or dominant triads could be
+passing chords, which are neither considered a cadential
+six-four). \reffig{v64_i64_cad64} exemplifies the suggested notation, which mitigates the ambiguity and provides a machine-readable annotation of these chords.
 
 \guide{Neapolitans, Augmented sixth chords, and other conventions.}
 Neapolitan chords are a chromatic substitution of the
