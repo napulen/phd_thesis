@@ -75,9 +75,9 @@ O{Caption2 placeholder} m m}{
 
 \newcommand{\phdtable}[1]{\input{chapters/\arabic{chapter}/tables/#1.tex}}
 
-\newcommand{\missing}[1]{{\color{red} A #1 will be inserted
-here}} \newcommand{\guide}[1]{{\color{gray}\textbf{#1}}}
-% \newcommand{\guide}[1]{}
+\newcommand{\missing}[1]{{\color{red} A #1 will be inserted here}}
+% \newcommand{\guide}[1]{{\color{gray}\textbf{#1}}}
+\newcommand{\guide}[1]{}
 
 \newcommand{\phdchapter}[1]{\chapter{\titlecap{#1}}\label{chap:\RemoveSpaces{#1}}}
 \newcommand{\phdsection}[1]{\section{\titlecap{#1}}\label{sec:\RemoveSpaces{#1}}}
@@ -89,6 +89,8 @@ here}} \newcommand{\guide}[1]{{\color{gray}\textbf{#1}}}
 \newcommand{\reffig}[1]{\hyperref[fig:#1]{Figure~\ref*{fig:#1}}}
 \newcommand{\reftab}[1]{\hyperref[tab:#1]{Table~\ref*{tab:#1}}}
 \newcommand{\refeq}[1]{\hyperref[eq:#1]{Equation~\ref*{eq:#1}}}
+
+\newcommand{\code}[1]{\texttt{#1}}
 
 
 \begin{document}
