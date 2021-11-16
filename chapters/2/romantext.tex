@@ -1,5 +1,36 @@
-This notation was first proposed by Tymoczko et al.
-\parencite{tymoczko}. The syntax is clearly explained in the
-conference publication. The most prominent aspect of this
-notation is its software implementation as a module in the
-music21 Python library.
+This notation was first proposed by
+\textcite{gotham2019romantext}. The syntax is clearly
+explained in the conference publication. An utilitarian
+aspect of this notation is that it is implemented as a
+module inside the \code{music21} Python
+library.\footnote{\href{https://web.mit.edu/music21/doc/moduleReference/moduleRoman.html}{https://web.mit.edu/music21/doc/moduleReference/moduleRoman.html}}
+
+
+The RomanText is intended as a stand-alone format for Roman
+numeral analysis, meaning it does not require the score. As
+part of the plain-text Roman numeral annotations, the
+location of the annotations (measure and beat) is a
+compulsory attribute of the annotation.
+
+Compared to the \code{**harm} notation, a clear advantage is
+that the software implementation facilitates a vast number
+of operations with the Roman numeral annotations. For
+example:
+
+\begin{itemize}
+    \item A RomanText annotation file can be realized into a
+    score with block chords
+    \item The Roman numeral annotations can be transformed
+    into Chord labels, pitch class sets, or other
+    representations relatively easy
+    \item Easy access is provided to the secondary degrees,
+    secondary keys, and other elements implicitly encoded in
+    the annotation
+\end{itemize}
+
+Some disadvantages of the numeric notation for inversions
+preferred in RomanText is that it does not allow an
+intuitive way to encode inversions for extended 9th, 11th,
+and 13th chords. All the inversions are encoded through
+numbers, whereas the **harm syntax defines inversions by
+letter exactly to disambiguate these scenarios.
