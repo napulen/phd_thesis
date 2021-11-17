@@ -1,0 +1,53 @@
+% Taken verbatim from comps Q4
+
+A preliminary step before doing any Music Information
+Retrieval (MIR) is to encode musical information in a
+digital representation. According to
+\textcite{muller2015music}, there are generally three types
+of music representations: digital sheet music images,
+symbolic music representations, and audio representations.
+
+Digital sheet music images consist of the digital version of
+printed musical scores. Image representations are useful to
+distribute musical scores among musicians, or to print them
+on paper. However, accessing the musical content of the
+scores (e.g., note names, durations, key signatures, or time
+signatures) is quite a difficult task, which usually
+involves the development of complex Optical Music
+Recognition (OMR) systems
+\parencite{calvozaragoza2020understanding}.
+
+Symbolic music representations also often refer to digital
+representations of sheet music. The main difference is that
+symbolic representations are encoded in machine-readable
+formats, where the musical content is readily available for
+computational analysis. Examples of such representations
+include Humdrum(\code{**kern}), Lilypond, MEI, MIDI, and
+MusicXML.
+
+Audio representations refer to digital representations of
+acoustic sound waves. These representations are very
+popular, as a musical performance can be captured and played
+by diverse listeners, for example, in music streaming
+services. Many MIR tasks operate on audio data.
+
+An automatic Roman numeral analysis algorithm is closely
+related to automatic chord recognition (ACR), automatic key
+estimation, and MIDI pitch spelling. Over the years, there
+have been numerous proposed chord and key estimation
+algorithms for symbolic and audio music representations.
+These representations encode music in different ways (music
+notation and acoustic signals, respectively) and do not
+contain the same information nor operate at the same
+semantic level. Usually, an algorithm focuses in a single
+type of digital music representation but algorithms that
+operate in both representations are possible
+\parencite{napoleslopez2019keyfinding}. Pitch spelling is
+dealt almost always exclusively in the symbolic domain,
+because it is closely related to music notation (e.g., how a
+black piano key would be notated in a score). Thus, there is
+more research and knowledge available to approach automatic
+Roman numeral analysis in the symbolic domain. Potentially,
+the techniques may be extended to audio representations.
+
+This chapter reviews the methods that have been proposed for chord estimation, key estimation, and pitch spelling.
