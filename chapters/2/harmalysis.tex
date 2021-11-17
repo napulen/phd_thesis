@@ -3,13 +3,15 @@
 introduced by \textcite{napoleslopez2020harmalysis}.
 
 The \code{harmalysis} grammar is based principally on
-Huron‘s \code{**harm} syntax (see \refsec{harm}). The syntax
+Huron‘s \code{**harm} syntax (see \refsec{**harm}). The syntax
 is extended by borrowing elements from the RomanText format
-(see \refsec{romantext}), MuseScore‘s notation for Roman
+(see \refsec{RomanText}), MuseScore‘s notation for Roman
 numeral
-analysis\footnote{\href{https://musescore.org/en/handbook/3/chord-symbols}{https://musescore.org/en/handbook/3/chord-symbols}},
+analysis\footnote{\href{https://musescore.org/en/handbook/3/chord-symbols\#rna}{https://musescore.org/en/handbook/3/chord-symbols}},
 and conventions observed in existing datasets of Roman
 numeral analysis.  As  a result,  the harmalysis language is
 a superset  of  the \code{**harm} syntax,  which includes
 additional features and supports a wider range of customs of
 harmonic analysis.
+
+The main advantage of this syntax is that it is formally defined as a context-free grammar. Thus, the exact mathematical validation of the syntax is available for review and discussion, which might not be the case for representations defined by their textual explanations.
