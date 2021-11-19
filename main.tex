@@ -119,18 +119,18 @@ O{Caption2 placeholder} m m}{
     \include{chapters/0/c0b-resume}
     \include{chapters/0/c0c-acknowledgements}
     \pagenumbering{arabic}
-    \include{chapters/1/1}
-    \include{chapters/2/2}
-    \include{chapters/3/3}
-    \include{chapters/4/4}
-    \include{chapters/5/5}
-    \include{chapters/6/6}
-    \include{chapters/7/7}
+    \include{chapters/1/main}
+    \include{chapters/2/main}
+    \include{chapters/3/main}
+    \include{chapters/4/main}
+    \include{chapters/5/main}
+    \include{chapters/6/main}
+    \include{chapters/7/main}
 \else
     \setcounter{chapter}{\compilechapter}
     \addtocounter{chapter}{-1}
     \tableofcontents{}
-    \include{chapters/\compilechapter/\compilechapter}
+    \include{chapters/\compilechapter/main}
 \fi
 
 \addcontentsline{toc}{chapter}{Bibliography}
