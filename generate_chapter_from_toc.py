@@ -51,17 +51,23 @@ def treeheader(name, level):
     fname = name.replace("_", " ")
     header = "% Copyright 2021 Néstor Nápoles López\n\n"
     if level == CHAPTER:
-        header += f"\\phdchapter{{{fname}}}\n\n"
+        header += f"\\phdchapter{{{fname}}}\n\n\\phdinput{{chapter_intro}}\n"
     else:
-        text = formattext(fname)
-        if SECTION <= level <= SUBSUBSECTION:
-            sec = "sec"
-        else:
-            sec = "parag"
         nospace = fname.replace(" ", "")
         header += f"""\
-This is \\ref{sec}{{{nospace}}},
+This is \\refsec{{{nospace}}},
 which introduces the \\titlecap{{{fname}}}.\n
+"""
+    return header
+
+
+def chapterintroheader(name):
+    fname = name.replace("_", "")
+    header = f"""\
+% Copyright 2021 Néstor Nápoles López
+
+This is the introduction to \\refchap{{{fname}}},
+which goes before any of its sections.
 """
     return header
 
@@ -109,9 +115,12 @@ if __name__ == "__main__":
     for chapter, c in tocdict.items():
         chaptername = c["name"]
         chapterdir = os.path.join(root, "_chapters", chaptername)
-        chapterfile = os.path.join(chapterdir, "main.tex")
         os.makedirs(chapterdir, exist_ok=True)
-        chapterfd = open(chapterfile, "w")
+        chapterintro = os.path.join(chapterdir, "chapter_intro.tex")
+        with open(chapterintro, "w") as introfd:
+            introfd.write(chapterintroheader(chaptername))
+        chaptermain = os.path.join(chapterdir, "main.tex")
+        chapterfd = open(chaptermain, "w")
         chapterfd.write(treeheader(chaptername, CHAPTER))
         for section, s in c.items():
             if section == "name":
