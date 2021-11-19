@@ -3,11 +3,11 @@
 \newcommand{\phdtable}[1]{\input{chapters/\arabic{chapter}/tables/#1.tex}}
 \newcommand{\phdinput}[1]{\input{chapters/\arabic{chapter}/#1.tex}}
 
-\newcommand{\phdchapter}[1]{\chapter{\titlecap{#1}}\label{chap:\RemoveSpaces{#1}}}
-\newcommand{\phdsection}[1]{\section{\titlecap{#1}}\label{sec:\RemoveSpaces{#1}}}
-\newcommand{\phdsubsection}[1]{\subsection{\titlecap{#1}}\label{sec:\RemoveSpaces{#1}}}
-\newcommand{\phdsubsubsection}[1]{\subsubsection{\titlecap{#1}}\label{sec:\RemoveSpaces{#1}}}
-\newcommand{\phdparagraph}[1]{\paragraph{\titlecap{#1}}\label{par:\RemoveSpaces{#1}}}
+\newcommand{\phdchapter}[1]{\chapter{\titlecapwrap{#1}}\label{chap:\RemoveSpaces{#1}}}
+\newcommand{\phdsection}[1]{\section{\titlecapwrap{#1}}\label{sec:\RemoveSpaces{#1}}}
+\newcommand{\phdsubsection}[1]{\subsection{\titlecapwrap{#1}}\label{sec:\RemoveSpaces{#1}}}
+\newcommand{\phdsubsubsection}[1]{\subsubsection{\titlecapwrap{#1}}\label{sec:\RemoveSpaces{#1}}}
+\newcommand{\phdparagraph}[1]{\paragraph{\titlecapwrap{#1}}\label{par:\RemoveSpaces{#1}}}
 
 \newcommand{\refchap}[1]{\hyperref[chap:#1]{Chapter~\ref*{chap:#1}}}
 \newcommand{\refsec}[1]{\hyperref[sec:#1]{Section~\ref*{sec:#1}}}

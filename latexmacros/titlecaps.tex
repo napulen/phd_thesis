@@ -10,3 +10,9 @@ off over under again further then once here there
 when where why how all any both each few more most
 other some such no nor not only own same so than
 too very can will just don should now vs}
+
+
+% This is a workaround for a "token not allowed" issue
+\newcommand{\titlecapwrap}[1]{
+    \texorpdfstring{\titlecap{#1}}{#1}
+}
