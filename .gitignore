@@ -11,3 +11,6 @@
 *.run.xml
 *.synctex.gz
 .ipynb_checkpoints
+
+__pycache__/
+_chapters
