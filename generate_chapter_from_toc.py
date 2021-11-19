@@ -1,52 +1,5 @@
 import os
-
-# Needs to be tab (\t) indented, otherwise it won't work
-contents = """
-Background
-    Music Representation
-        Types of representation
-        Symbolic music formats
-            Humdrum(**kern)
-            MEI
-            MIDI
-            MusicXML
-            MNX
-            Others
-        Symbolic vs audio representations
-    Deep neural networks
-        Feed forward networks
-        Convolutional neural networks
-        Recurrent neural networks
-            LSTM
-            GRU
-        Transformer networks
-    Music Information Retrieval
-        Key estimation
-            Global-key estimation
-            Local-key estimation
-                Local key
-                Modulation
-                Tonicization
-            Perception of key
-            Ambiguity of key
-            Inter-annotator agreement
-            MIR models
-        Chord recognition
-            Chord syntax
-            Chord vocabulary
-            MIR algorithms
-            Perception of chords
-            Ambiguity of chords
-            Inter-annotator agreement
-            MIR models
-        Automatic Roman numeral analysis
-            Beyond chords and keys
-            Grammar-based approaches
-            Reductionist approaches
-            MIR models
-"""
-
-root = ""
+import table_of_contents as toc
 
 CHAPTER = 0
 SECTION = 1
@@ -59,8 +12,12 @@ def formatname(s):
     return "_".join([c.lower() for c in s.split(" ")])
 
 
-def getTOC():
-    toc = {}
+def formattext(s):
+    return s.replace("_", " ").replace("*", "").replace("-", "")
+
+
+def getTOC(contents):
+    tocd = {}
     chapter, section, subsec, subsubsec, item = 0, 0, 0, 0, 0
     for line in contents.split("\n"):
         if not line:
@@ -71,43 +28,54 @@ def getTOC():
         if level == CHAPTER:
             chapter += 1
             section, subsec, subsubsec, item = 0, 0, 0, 0
-            toc[chapter] = {"name": fname}
+            tocd[chapter] = {"name": fname}
         if level == SECTION:
             section += 1
             subsec, subsubsec, item = 0, 0, 0
-            toc[chapter][section] = {"name": fname}
+            tocd[chapter][section] = {"name": fname}
         elif level == SUBSECTION:
             subsec += 1
             subsubsec, item = 0, 0
-            toc[chapter][section][subsec] = {"name": fname}
+            tocd[chapter][section][subsec] = {"name": fname}
         elif level == SUBSUBSECTION:
             subsubsec += 1
             item = 0
-            toc[chapter][section][subsec][subsubsec] = {"name": fname}
+            tocd[chapter][section][subsec][subsubsec] = {"name": fname}
         elif level == ITEMIZE:
             item += 1
-            toc[chapter][section][subsec][subsubsec][item] = {"name": fname}
-    return toc
+            tocd[chapter][section][subsec][subsubsec][item] = {"name": fname}
+    return tocd
 
 
 def treeheader(name, level):
     fname = name.replace("_", " ")
+    header = "% Copyright 2021 Néstor Nápoles López\n\n"
     if level == CHAPTER:
-        return f"\\phdchapter{{{fname}}}\n\n"
+        header += f"\\phdchapter{{{fname}}}\n\n"
     else:
-        return f"{fname}\n"
+        text = formattext(fname)
+        if SECTION <= level <= SUBSUBSECTION:
+            sec = "sec"
+        else:
+            sec = "parag"
+        nospace = fname.replace(" ", "")
+        header += f"""\
+This is \\ref{sec}{{{nospace}}},
+which introduces the \\titlecap{{{fname}}}.\n
+"""
+    return header
 
 
 def registerchild(name, path, level):
     fname = name.replace("_", " ")
     if CHAPTER < level < ITEMIZE:
-        trimpath = path.split("/", 2)[-1]
+        trimpath = path.split("/", 3)[-1]
         trimpath = trimpath.replace(".tex", "")
         ind = "\t" * level
         sub = "sub" * (level - 1)
         return f"{ind}\\phd{sub}section{{{fname}}}\\phdinput{{{trimpath}}}\n"
     elif level == ITEMIZE:
-        return f"\\paragraph{{{fname}}}\n"
+        return f"\\phdparagraph{{{fname}}}\n"
     return ""
 
 
@@ -135,8 +103,10 @@ def chaptertree(root, rootfd, treename, children, level):
 
 
 if __name__ == "__main__":
-    toc = getTOC()
-    for chapter, c in toc.items():
+    root = "."
+    contents = toc.introduction + toc.roman_numerals + toc.background
+    tocdict = getTOC(contents)
+    for chapter, c in tocdict.items():
         chaptername = c["name"]
         chapterdir = os.path.join(root, "_chapters", chaptername)
         chapterfile = os.path.join(chapterdir, "main.tex")
