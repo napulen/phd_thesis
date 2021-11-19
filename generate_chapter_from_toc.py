@@ -110,7 +110,15 @@ def chaptertree(root, rootfd, treename, children, level):
 
 if __name__ == "__main__":
     root = "."
-    contents = toc.introduction + toc.roman_numerals + toc.background
+    contents = (
+        toc.introduction
+        + toc.roman_numerals
+        + toc.background
+        + toc.data_acquisition
+        + toc.model_design
+        + toc.experimental_evaluation
+        + toc.conclusions
+    )
     tocdict = getTOC(contents)
     for chapter, c in tocdict.items():
         chaptername = c["name"]
