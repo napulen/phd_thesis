@@ -1,0 +1,15 @@
+
+
+\newcommand{\phdtable}[1]{\input{chapters/\arabic{chapter}/tables/#1.tex}}
+\newcommand{\phdinput}[1]{\input{chapters/\arabic{chapter}/#1.tex}}
+
+\newcommand{\phdchapter}[1]{\chapter{\titlecap{#1}}\label{chap:\RemoveSpaces{#1}}}
+\newcommand{\phdsection}[1]{\section{\titlecap{#1}}\label{sec:\RemoveSpaces{#1}}}
+\newcommand{\phdsubsection}[1]{\subsection{\titlecap{#1}}\label{sec:\RemoveSpaces{#1}}}
+\newcommand{\phdsubsubsection}[1]{\subsubsection{\titlecap{#1}}\label{sec:\RemoveSpaces{#1}}}
+
+\newcommand{\refchap}[1]{\hyperref[chap:#1]{Chapter~\ref*{chap:#1}}}
+\newcommand{\refsec}[1]{\hyperref[sec:#1]{Section~\ref*{sec:#1}}}
+\newcommand{\reffig}[1]{\hyperref[fig:#1]{Figure~\ref*{fig:#1}}}
+\newcommand{\reftab}[1]{\hyperref[tab:#1]{Table~\ref*{tab:#1}}}
+\newcommand{\refeq}[1]{\hyperref[eq:#1]{Equation~\ref*{eq:#1}}}

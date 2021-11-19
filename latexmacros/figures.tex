@@ -1,0 +1,30 @@
+\NewDocumentCommand{\phdfigure}{ O{Caption placeholder}
+O{0.6} O{h!} m}{
+    \begin{figure}[#3]
+        \centering
+        \includegraphics[width=#2\textwidth]{chapters/\arabic{chapter}/figures/#4}
+        \caption{#1.}
+        \label{fig:#4}
+    \end{figure}
+    \relax
+}
+
+\NewDocumentCommand{\phdtwofigures}{ O{Caption1 placeholder}
+O{Caption2 placeholder} m m}{
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=0.9\linewidth]{chapters/\arabic{chapter}/figures/#3}
+      \captionof{figure}{#1.}
+      \label{fig:#3}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=0.9\linewidth]{chapters/\arabic{chapter}/figures/#4}
+      \captionof{figure}{#2.}
+      \label{fig:#4}
+    \end{minipage}
+    \end{figure}
+    \relax
+}

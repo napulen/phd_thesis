@@ -1,115 +1,42 @@
 \documentclass[12pt]{report}
-\usepackage[utf8]{inputenc}
-\usepackage[margin=1in]{geometry}
-\usepackage{setspace}
-\usepackage[colorlinks=true, linkcolor=blue, citecolor=teal]{hyperref}
-\doublespacing
 
+% All packages imported
+\usepackage[french,english]{babel}
+\usepackage{caption}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
+\usepackage{setspace}\doublespacing
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=teal]{hyperref}
+\usepackage{stix2}
+\usepackage{titlecaps}
 \usepackage{xcolor}
 \usepackage{xparse}
-\usepackage{caption}
-\usepackage[french,english]{babel}
-\usepackage{csquotes}
+
 \usepackage[authordate,backend=biber,sorting=nty]{biblatex-chicago}
 \bibliography{references}
 \renewcommand*{\bibfont}{\normalfont\footnotesize}
 
-\usepackage[T1]{fontenc}
-\usepackage{stix2}
-\usepackage{titlecaps}
-\Addlcwords{i me my myself we our ours ourselves you your
-yours yourself yourselves he him his himself she her hers
-herself it its itself they them their theirs themselves
-what which who whom this that these those am is are was
-were be been being have has had having do does did doing
-a an the and but if or because as until while of at by
-for with about against between into through during
-before after above below to from up down in out on
-off over under again further then once here there
-when where why how all any both each few more most
-other some such no nor not only own same so than
-too very can will just don should now}
-
-\newcommand{\rnformat}[1]{\textbf{#1}\relax}
-\newcommand{\rn}[1]{\rnformat{#1}\relax}
-\newcommand{\rndim}{{\footnotesize {}^\rnformat{o}{}\relax}}
-\newcommand{\rnhdim}{{\footnotesize
-{}^\rnformat{\o}{}\relax}}
-\newcommand{\rnseven}{{\footnotesize {}^\rnformat{7}\relax}}
-\newcommand{\rnsix}{{\footnotesize {}^\rnformat{6}\relax}}
-\newcommand{\rnsixfour}{{\footnotesize
-{}^\rnformat{6}_\rnformat{4}\relax}}
-\newcommand{\rnsixfive}{{\footnotesize
-{}^\rnformat{6}_\rnformat{5}\relax}}
-\newcommand{\rnfourthree}{{\footnotesize
-{}^\rnformat{4}_\rnformat{3}\relax}}
-\newcommand{\rntwo}{{\footnotesize {}^\rnformat{2}\relax}}
-
-\NewDocumentCommand{\phdfigure}{ O{Caption placeholder}
-O{0.6} O{h!} m}{
-    \begin{figure}[#3]
-        \centering
-        \includegraphics[width=#2\textwidth]{chapters/\arabic{chapter}/figures/#4}
-        \caption{#1.}
-        \label{fig:#4}
-    \end{figure}
-    \relax
-}
-
-\NewDocumentCommand{\phdtwofigures}{ O{Caption1 placeholder}
-O{Caption2 placeholder} m m}{
-\begin{figure}[h!]
-    \centering
-    \begin{minipage}{.5\textwidth}
-      \centering
-      \includegraphics[width=0.9\linewidth]{chapters/\arabic{chapter}/figures/#3}
-      \captionof{figure}{#1.}
-      \label{fig:#3}
-    \end{minipage}%
-    \begin{minipage}{.5\textwidth}
-      \centering
-      \includegraphics[width=0.9\linewidth]{chapters/\arabic{chapter}/figures/#4}
-      \captionof{figure}{#2.}
-      \label{fig:#4}
-    \end{minipage}
-    \end{figure}
-    \relax
-}
-
-% Amazing trick to remove spaces betwen words by:
-% https://tex.stackexchange.com/questions/87509/removing-the-spaces-between-words
-\makeatletter
-\def\RemoveSpaces#1{\zap@space#1 \@empty}
-\makeatother
-
-\newcommand{\phdinput}[1]{\input{chapters/\arabic{chapter}/#1.tex}}
-
-\newcommand{\phdtable}[1]{\input{chapters/\arabic{chapter}/tables/#1.tex}}
-
-\newcommand{\missing}[1]{{\color{red} A #1 will be inserted here}}
-% \newcommand{\guide}[1]{{\color{gray}\textbf{#1}}}
-\newcommand{\guide}[1]{}
-
-\newcommand{\phdchapter}[1]{\chapter{\titlecap{#1}}\label{chap:\RemoveSpaces{#1}}}
-\newcommand{\phdsection}[1]{\section{\titlecap{#1}}\label{sec:\RemoveSpaces{#1}}}
-\newcommand{\phdsubsection}[1]{\subsection{\titlecap{#1}}\label{sec:\RemoveSpaces{#1}}}
-\newcommand{\phdsubsubsection}[1]{\subsubsection{\titlecap{#1}}\label{sec:\RemoveSpaces{#1}}}
-
-\newcommand{\refchap}[1]{\hyperref[chap:#1]{Chapter~\ref*{chap:#1}}}
-\newcommand{\refsec}[1]{\hyperref[sec:#1]{Section~\ref*{sec:#1}}}
-\newcommand{\reffig}[1]{\hyperref[fig:#1]{Figure~\ref*{fig:#1}}}
-\newcommand{\reftab}[1]{\hyperref[tab:#1]{Table~\ref*{tab:#1}}}
-\newcommand{\refeq}[1]{\hyperref[eq:#1]{Equation~\ref*{eq:#1}}}
-
-\newcommand{\code}[1]{\texttt{#1}}
-
+% The stopwords to remove from titlecase
+\input{latexmacros/titlecaps}
+% The command to remove spaces
+\input{latexmacros/remove_spaces}
+% The definitions for the Roman numeral syntax
+\input{latexmacros/roman_numerals}
+% The shortcuts for figures with less code
+\input{latexmacros/figures}
+% Other shortcuts for an easier workflow
+\input{latexmacros/phdshortcuts}
+% A few formatting macros
+\input{latexmacros/formatting}
 
 \begin{document}
 
 % COMPILE A SINGLE CHAPTER. Comment to compile the full
 % thesis
-\def\compilechapter{3}
+% \def\compilechapter{2}
 
 \ifx\compilechapter\undefined
     \pagenumbering{roman}
