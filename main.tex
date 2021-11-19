@@ -32,11 +32,13 @@
 % A few formatting macros
 \input{latexmacros/formatting}
 
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
 \begin{document}
 
-% COMPILE A SINGLE CHAPTER. Comment to compile the full
-% thesis
-% \def\compilechapter{2}
+% COMPILE A SINGLE CHAPTER. Comment for full thesis
+\def\compilechapter{8}
 
 \ifx\compilechapter\undefined
     \pagenumbering{roman}
