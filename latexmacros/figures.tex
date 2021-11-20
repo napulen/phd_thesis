@@ -10,20 +10,48 @@ O{0.6} O{h!} m}{
 }
 
 \NewDocumentCommand{\phdtwofigures}{ O{Caption1 placeholder}
-O{Caption2 placeholder} O{0.5} O{0.5} O{h!} m m}{
-\begin{figure}[#5]
+O{Caption2 placeholder} O{0.5} O{0.5} m m}{
+\begin{figure}[h!]
     \centering
     \begin{minipage}{#3\textwidth}
       \centering
-      \includegraphics[width=0.9\linewidth]{chapters/\arabic{chapter}/figures/#6}
+      \includegraphics[width=0.9\linewidth]{chapters/\arabic{chapter}/figures/#5}
       \captionof{figure}{#1.}
-      \label{fig:#6}
+      \label{fig:#5}
     \end{minipage}%
     \begin{minipage}{#4\textwidth}
       \centering
-      \includegraphics[width=0.9\linewidth]{chapters/\arabic{chapter}/figures/#7}
+      \includegraphics[width=0.9\linewidth]{chapters/\arabic{chapter}/figures/#6}
       \captionof{figure}{#2.}
+      \label{fig:#6}
+    \end{minipage}
+    \end{figure}
+    \relax
+}
+
+
+\NewDocumentCommand{\phdthreefigures}{ O{Caption1
+placeholder} O{Caption2 placeholder} O{Caption3 placeholder}
+O{0.33} O{0.33} O{0.33} m m m}{
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{#4\textwidth}
+      \centering
+      \includegraphics[width=0.9\linewidth]{chapters/\arabic{chapter}/figures/#7}
+      \captionof{figure}{#1.}
       \label{fig:#7}
+    \end{minipage}%
+    \begin{minipage}{#5\textwidth}
+      \centering
+      \includegraphics[width=0.9\linewidth]{chapters/\arabic{chapter}/figures/#8}
+      \captionof{figure}{#2.}
+      \label{fig:#8}
+    \end{minipage}%
+    \begin{minipage}{#6\textwidth}
+      \centering
+      \includegraphics[width=0.9\linewidth]{chapters/\arabic{chapter}/figures/#9}
+      \captionof{figure}{#3.}
+      \label{fig:#9}
     \end{minipage}
     \end{figure}
     \relax
