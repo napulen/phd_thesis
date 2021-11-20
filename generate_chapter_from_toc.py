@@ -5,7 +5,7 @@ CHAPTER = 0
 SECTION = 1
 SUBSECTION = 2
 SUBSUBSECTION = 3
-ITEMIZE = 4
+PARAGRAPH = 4
 
 # Use a counter to avoid \labels with the same name
 duplicatesections = {}
@@ -21,7 +21,7 @@ def formattext(s):
 
 def getTOC(contents):
     tocd = {}
-    chapter, section, subsec, subsubsec, item = 0, 0, 0, 0, 0
+    chapter, section, subsec, subsubsec, par = 0, 0, 0, 0, 0
     for line in contents.split("\n"):
         if not line:
             continue
@@ -30,23 +30,23 @@ def getTOC(contents):
         fname = formatname(name)
         if level == CHAPTER:
             chapter += 1
-            section, subsec, subsubsec, item = 0, 0, 0, 0
+            section, subsec, subsubsec, par = 0, 0, 0, 0
             tocd[chapter] = {"name": fname}
         if level == SECTION:
             section += 1
-            subsec, subsubsec, item = 0, 0, 0
+            subsec, subsubsec, par = 0, 0, 0
             tocd[chapter][section] = {"name": fname}
         elif level == SUBSECTION:
             subsec += 1
-            subsubsec, item = 0, 0
+            subsubsec, par = 0, 0
             tocd[chapter][section][subsec] = {"name": fname}
         elif level == SUBSUBSECTION:
             subsubsec += 1
-            item = 0
+            par = 0
             tocd[chapter][section][subsec][subsubsec] = {"name": fname}
-        elif level == ITEMIZE:
-            item += 1
-            tocd[chapter][section][subsec][subsubsec][item] = {"name": fname}
+        elif level == PARAGRAPH:
+            par += 1
+            tocd[chapter][section][subsec][subsubsec][par] = {"name": fname}
     return tocd
 
 
@@ -89,17 +89,13 @@ def disambiguateduplicates(name, level):
 def registerchild(name, path, level):
     fname = name.replace("_", " ")
     idx = disambiguateduplicates(name, level)
-    if CHAPTER < level < ITEMIZE:
-        trimpath = path.split("/", 3)[-1]
-        trimpath = trimpath.replace(".tex", "")
-        ind = "\t" * level
-        sub = "sub" * (level - 1)
-        return (
-            f"{ind}\\phd{sub}section{{{fname}{idx}}}\\phdinput{{{trimpath}}}\n"
-        )
-    elif level == ITEMIZE:
+    if level == PARAGRAPH:
         return f"\\phdparagraph{{{fname}{idx}}}\n"
-    return ""
+    trimpath = path.split("/", 3)[-1]
+    trimpath = trimpath.replace(".tex", "")
+    ind = "\t" * level
+    sub = "sub" * (level - 1)
+    return f"{ind}\\phd{sub}section{{{fname}{idx}}}\\phdinput{{{trimpath}}}\n"
 
 
 def treefooter(name, level):
@@ -110,7 +106,7 @@ def chaptertree(root, rootfd, treename, children, level):
     treedir = os.path.join(root, treename)
     treefile = os.path.join(root, f"{treename}.tex")
     rootfd.write(registerchild(treename, treefile, level))
-    if level < ITEMIZE:
+    if level < PARAGRAPH:
         if level < SUBSUBSECTION:
             os.makedirs(treedir, exist_ok=True)
         treefd = open(treefile, "w")
@@ -138,8 +134,8 @@ if __name__ == "__main__":
     )
     tocdict = getTOC(contents)
     for chapter, c in tocdict.items():
-        chaptername = c["name"]
-        chapterdir = os.path.join(root, "_chapters", chaptername)
+        chapternumber, chaptername = c["name"].split('-', 1)
+        chapterdir = os.path.join(root, "_chapters", chapternumber)
         os.makedirs(chapterdir, exist_ok=True)
         chapterintro = os.path.join(chapterdir, "chapter_intro.tex")
         with open(chapterintro, "w") as introfd:

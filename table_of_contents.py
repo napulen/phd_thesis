@@ -1,13 +1,13 @@
 
 # What's important in an introduction?
 introduction = """
-Introduction
+1-Introduction
     Motivation
     Thesis structure
 """
 
 roman_numerals = """
-Introduction to Roman numeral analysis
+2-Introduction to Roman numeral analysis
     Roman numeral analysis and chord labels
     A brief history of roman numeral analysis
         The Roman numeral timeline
@@ -24,7 +24,7 @@ Introduction to Roman numeral analysis
 """
 
 background = """
-Background
+3-Background
     Music Representation
         Types of representation
         Symbolic music formats
@@ -92,7 +92,7 @@ Background
 """
 
 data_acquisition = """
-Data acquisition and preparation
+4-Data acquisition and preparation
     Roman numeral analysis datasets
         Definition
         Other types of datasets
@@ -219,7 +219,7 @@ Data acquisition and preparation
 """
 
 model_design = """
-Model design
+5-Model design
     Inputs
         Encoding pitch spelling
     The bass and chroma convolutional blocks
@@ -230,7 +230,7 @@ Model design
 """
 
 experimental_evaluation = """
-Experimental evaluation
+6-Experimental evaluation
     Training procedure
     Hyperparameters
         Training epochs and weight selection
@@ -241,7 +241,7 @@ Experimental evaluation
 """
 
 conclusions = """
-Conclusions
+7-Conclusions
     Summary
     Discussion
     Future work
