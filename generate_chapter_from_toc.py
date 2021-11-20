@@ -7,6 +7,9 @@ SUBSECTION = 2
 SUBSUBSECTION = 3
 ITEMIZE = 4
 
+# Use a counter to avoid \labels with the same name
+duplicatesections = {}
+
 
 def formatname(s):
     return "_".join([c.lower() for c in s.split(" ")])
@@ -54,9 +57,10 @@ def treeheader(name, level):
         header += f"\\phdchapter{{{fname}}}\n\n\\phdinput{{chapter_intro}}\n"
     else:
         nospace = fname.replace(" ", "")
+        sub = "sub" * (level - 1)
         header += f"""\
-This is \\refsec{{{nospace}}},
-which introduces the \\titlecap{{{fname}}}.\n
+This is \\ref{sub}sec{{{nospace}}},
+which introduces the {{{fname}}}.\n
 """
     return header
 
@@ -72,16 +76,29 @@ which goes before any of its sections.
     return header
 
 
+def disambiguateduplicates(name, level):
+    identifier = (name, level)
+    if identifier not in duplicatesections:
+        duplicatesections[identifier] = 1
+        return ""
+    index = duplicatesections[identifier]
+    duplicatesections[identifier] += 1
+    return str(index)
+
+
 def registerchild(name, path, level):
     fname = name.replace("_", " ")
+    idx = disambiguateduplicates(name, level)
     if CHAPTER < level < ITEMIZE:
         trimpath = path.split("/", 3)[-1]
         trimpath = trimpath.replace(".tex", "")
         ind = "\t" * level
         sub = "sub" * (level - 1)
-        return f"{ind}\\phd{sub}section{{{fname}}}\\phdinput{{{trimpath}}}\n"
+        return (
+            f"{ind}\\phd{sub}section{{{fname}{idx}}}\\phdinput{{{trimpath}}}\n"
+        )
     elif level == ITEMIZE:
-        return f"\\phdparagraph{{{fname}}}\n"
+        return f"\\phdparagraph{{{fname}{idx}}}\n"
     return ""
 
 
