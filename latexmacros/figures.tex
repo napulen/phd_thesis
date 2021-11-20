@@ -10,20 +10,20 @@ O{0.6} O{h!} m}{
 }
 
 \NewDocumentCommand{\phdtwofigures}{ O{Caption1 placeholder}
-O{Caption2 placeholder} m m}{
-\begin{figure}[h!]
+O{Caption2 placeholder} O{0.5} O{0.5} O{h!} m m}{
+\begin{figure}[#5]
     \centering
-    \begin{minipage}{.5\textwidth}
+    \begin{minipage}{#3\textwidth}
       \centering
-      \includegraphics[width=0.9\linewidth]{chapters/\arabic{chapter}/figures/#3}
+      \includegraphics[width=0.9\linewidth]{chapters/\arabic{chapter}/figures/#6}
       \captionof{figure}{#1.}
-      \label{fig:#3}
+      \label{fig:#6}
     \end{minipage}%
-    \begin{minipage}{.5\textwidth}
+    \begin{minipage}{#4\textwidth}
       \centering
-      \includegraphics[width=0.9\linewidth]{chapters/\arabic{chapter}/figures/#4}
+      \includegraphics[width=0.9\linewidth]{chapters/\arabic{chapter}/figures/#7}
       \captionof{figure}{#2.}
-      \label{fig:#4}
+      \label{fig:#7}
     \end{minipage}
     \end{figure}
     \relax
