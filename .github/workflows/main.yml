@@ -25,7 +25,7 @@ jobs:
       - name: Generate all chapters
         env:
           CHAPTERS: 1 2 3 4 5 6 7
-        run: for c in $CHAPTERS; do sed 's/\% \\def\\compilechapter{1}/\\def\\compilechapter{$c}/' > chapter$c.tex ; done
+        run: for c in $CHAPTERS; do sed "s/% \\\\def\\\\compilechapter{1}/\\\\def\\\\compilechapter{$c}/" main.tex > chapter$c.tex ; done
       - name: Compile main LaTeX document and individual chapters
         uses: xu-cheng/latex-action@v2
         with:
