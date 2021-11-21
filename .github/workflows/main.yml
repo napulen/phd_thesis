@@ -1,12 +1,11 @@
-name: Build LaTeX document
+name: Build PhD thesis and release
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
+  # Triggers the workflow on pushing new tags
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    tags:
+      - "v*"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -38,10 +37,22 @@ jobs:
             chapter5.tex
             chapter6.tex
             chapter7.tex
-      - uses: actions/upload-artifact@v2
+      # - uses: actions/upload-artifact@v2
+      #   with:
+      #     name: PhDThesis
+      #     path: |
+      #       main.pdf
+      #       chapter1.pdf
+      #       chapter2.pdf
+      #       chapter3.pdf
+      #       chapter4.pdf
+      #       chapter5.pdf
+      #       chapter6.pdf
+      #       chapter7.pdf
+      - name: Create release
+        uses: softprops/action-gh-release@v1
         with:
-          name: PhDThesis
-          path: |
+          files: |
             main.pdf
             chapter1.pdf
             chapter2.pdf
