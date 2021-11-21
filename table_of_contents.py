@@ -29,20 +29,20 @@ background = """
         Types of representation
         Symbolic music formats
             Humdrum(**kern)
-                Origin
-                Applications
+                Origin of **kern
+                Applications of **kern
             MEI
-                Origin
-                Applications
+                Origin of MEI
+                Applications of MEI
             MIDI
-                Origin
-                Applications
+                Origin of MIDI
+                Applications of MIDI
             MusicXML
-                Origin
-                Applications
+                Origin of MusicXML
+                Applications of MusicXML
             MNX
-                Origin
-                Applications
+                Origin of MNX
+                Applications of MNX
             Others
                 Lilypond
                 ABC
@@ -59,36 +59,35 @@ background = """
         Transformer networks
     Music Information Retrieval
         Key estimation
-            Task description
+            The key-estimation task
             Global-key estimation
             Local-key estimation
                 Local key
                 Modulation
                 Tonicization
             Perception of key
-            Ambiguity of key
-            Inter-annotator agreement
-            MIR models
+            Ambiguity of key annotations
+            Key inter-annotator agreement
+            Key-estimation models
         Chord recognition
-            Task description
+            The chord recognition task
             Chord syntax
             Chord vocabulary
-            MIR algorithms
             Perception of chords
-            Ambiguity of chords
-            Inter-annotator agreement
-            MIR models
+            Ambiguity of chord annotations
+            Chord inter-annotator agreement
+            Chord recognition models
         Automatic pitch spelling
-            Task description
+            The MIDI pitch-spelling task
             Relationship to key and chord estimation
             Relationship to Roman numeral analysis
-            MIR models
+            Pitch-spelling models
         Automatic Roman numeral analysis
-            Task description
+            The Roman numeral analysis task
                 Beyond chords and keys
             Grammar-based approaches
             Reductionist approaches
-            MIR models
+            Roman numeral analysis models
 """
 
 data_acquisition = """
@@ -105,99 +104,100 @@ data_acquisition = """
                 Giantsteps MTG Key
     Available datasets
         Annotated Beethoven Corpus (ABC)
-            Description
+            Description of ABC
                 Neuwirth et al. (2018)
-            Format
-                DCML standard
+            Format of ABC
+                DCML standard in ABC
             Revisions
                 Version 1
                 Version 2
-            Statistical analysis
-                Number of annotations
-                Chord distribution
-                Global key distribution
-                Modulation distribution
-                Tonicization distribution
+            Statistical analysis of ABC
+                Number of annotations in ABC
+                Chord distributions in ABC
+                Global key distribution in ABC
+                Modulation distribution in ABC
+                Tonicization distribution in ABC
         Beethoven Piano Sonatas (BPS)
-            Description
+            Description of BPS
                 Chen and Su (2018)
-            Format
-                Tabular format
+            Format of BPS
+                Tabular format of BPS
                 Limitations of format
             Accompanying scores
                 No scores provided
                 Aligning scores is not trivial
-            Statistical analysis
-                Number of annotations
-                Chord distribution
-                Global key distribution
-                Modulation distribution
-                Tonicization distribution
+            Statistical analysis of BPS
+                Number of annotations in BPS
+                Chord distribution in BPS
+                Global key distribution in BPs
+                Modulation distribution in BPS
+                Tonicization distribution in BPS
         Haydn ``Sun'' String Quartets (HaydnSun)
-            Description
+            Description of HaydnSun
                 N\'apoles L\'opez (2017)
-            Format
-                Humdrum(**harm)
-            Statistical analysis
-                Number of annotations
-                Chord distribution
-                Global key distribution
-                Modulation distribution
-                Tonicization distribution
+            Format of HaydnSun
+                Humdrum(**harm) in HaydnSun
+            Statistical analysis of HaydnSun
+                Number of annotations in HaydnSun
+                Chord distribution in HaydnSun
+                Global key distribution in HaydnSun
+                Modulation distribution in HaydnSun
+                Tonicization distribution in HaydnSun
         Mozart Piano Sonatas (MPS)
-            Description
+            Description of MPS
                 Hentschel et al. (2021)
-            Format
-                DCML standard
-            Statistical analysis
-                Number of annotations
-                Chord distribution
-                Global key distribution
-                Modulation distribution
-                Tonicization distribution
+            Format of MPS
+                DCML standard in MPS
+            Statistical analysis of MPS
+                Number of annotations in MPS
+                Chord distribution in MPS
+                Global key distribution in MPS
+                Modulation distribution in MPS
+                Tonicization distribution in MPS
         Theme and Variation Encodings with Roman numerals (TAVERN)
-            Description
-            Format
-            Statistical analysis
-                Number of annotations
-                Chord distribution
-                Global key distribution
-                Modulation distribution
-                Tonicization distribution
+            Description of TAVERN
+            Format of TAVERN
+                Humdrum(**harm) in TAVERN
+            Statistical analysis of TAVERN
+                Number of annotations in TAVERN
+                Chord distribution in TAVERN
+                Global key distribution in TAVERN
+                Modulation distribution in TAVERN
+                Tonicization distribution in TAVERN
         Schubert Winterreise (SW)
-            Description
+            Description of SW
                 Weiss et al. (2021)
-            Format
+            Format of SW
                 Borderline not Roman numeral analysis
-                Tabular format
-            Statistical analysis
-                Number of annotations
-                Chord distribution
-                Global key distribution
-                Modulation distribution
-                Tonicization distribution
+                Tabular format of SW
+            Statistical analysis of SW
+                Number of annotations in SW
+                Chord distribution in SW
+                Global key distribution in SW
+                Modulation distribution in SW
+                Tonicization distribution in SW
         When-in-Rome (WiR)
-            Description
+            Description of WiR
                 Tymoczko et al. (2019)
                 Gotham et al. (2021)
-            Format
+            Format of WiR
                 RomanText
             Converted corpora
                 TAVERN
                 HaydnSun
-                ABC
+                Converted ABC
             Original corpora
                 OpenScore Lieder
                 Well-Tempered Clavier
                 Bach Chorales
                 Monteverdi Madrigals
                 Miscellaneous pieces
-            Statistical analysis
-                Number of annotations
-                Chord distribution
-                Global key distribution
-                Modulation distribution
-                Tonicization distribution
+            Statistical analysis of WiR
+                Number of annotations of WiR
+                Chord distribution of WiR
+                Global key distribution of WiR
+                Modulation distribution of WiR
+                Tonicization distribution of WiR
     Data preparation
         Problems of diverse datasets
             Examples of misalignment in BPS
@@ -243,6 +243,5 @@ experimental_evaluation = """
 conclusions = """
 7-Conclusions
     Summary
-    Discussion
     Future work
 """

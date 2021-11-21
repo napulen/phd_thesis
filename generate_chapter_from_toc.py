@@ -7,8 +7,8 @@ SUBSECTION = 2
 SUBSUBSECTION = 3
 PARAGRAPH = 4
 
-# Use a counter to avoid \labels with the same name
-duplicatesections = {}
+# Use a counter to avoid duplicate \labels
+duplicatelabels = {}
 
 
 def formatname(s):
@@ -60,7 +60,7 @@ def treeheader(name, level):
         sub = "sub" * (level - 1)
         header += f"""\
 This is \\ref{sub}sec{{{nospace}}},
-which introduces the {{{fname}}}.\n
+which introduces the {fname}.\n
 """
     return header
 
@@ -76,26 +76,23 @@ which goes before any of its sections.
     return header
 
 
-def disambiguateduplicates(name, level):
-    identifier = (name, level)
-    if identifier not in duplicatesections:
-        duplicatesections[identifier] = 1
-        return ""
-    index = duplicatesections[identifier]
-    duplicatesections[identifier] += 1
-    return str(index)
+def checkduplicate(name, level):
+    label = (name, level)
+    if label in duplicatelabels:
+        print(f"WARNING: label of {label} will collide with another one!")
+    duplicatelabels[label] = True
 
 
 def registerchild(name, path, level):
     fname = name.replace("_", " ")
-    idx = disambiguateduplicates(name, level)
+    checkduplicate(name, level)
     if level == PARAGRAPH:
-        return f"\\phdparagraph{{{fname}{idx}}}\n"
+        return f"\\phdparagraph{{{fname}}}\n"
     trimpath = path.split("/", 3)[-1]
     trimpath = trimpath.replace(".tex", "")
     ind = "\t" * level
     sub = "sub" * (level - 1)
-    return f"{ind}\\phd{sub}section{{{fname}{idx}}}\\phdinput{{{trimpath}}}\n"
+    return f"{ind}\\phd{sub}section{{{fname}}}\\phdinput{{{trimpath}}}\n"
 
 
 def treefooter(name, level):
@@ -134,7 +131,7 @@ if __name__ == "__main__":
     )
     tocdict = getTOC(contents)
     for chapter, c in tocdict.items():
-        chapternumber, chaptername = c["name"].split('-', 1)
+        chapternumber, chaptername = c["name"].split("-", 1)
         chapterdir = os.path.join(root, "_chapters", chapternumber)
         os.makedirs(chapterdir, exist_ok=True)
         chapterintro = os.path.join(chapterdir, "chapter_intro.tex")
