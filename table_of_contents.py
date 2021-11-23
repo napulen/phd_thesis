@@ -222,8 +222,8 @@ model_design = """
 5-Model design
     Input
         Symbolic score
-            MusicXML
-            Humdrum
+            MusicXML inputs
+            Humdrum inputs
         Frames
             32nd note frames
             640 frames
@@ -253,12 +253,26 @@ model_design = """
         Dense layer 1
         Dense layer 2
         Recurrent layers
-            GRU
-            LSTM
+            GRU layers
+            LSTM layers
             Bidirectional
     Multitask learning configurations
         Six conventional tasks
+            Local key
+                Number of classes
+                Encoding
+                Examples
+            Primary degree
+            Secondary degree
+            Quality
+            Inversion
+            Root
         Five additional tasks
+            Common Roman numerals
+            Harmonic Rhythm
+            Bass
+            Tonicization
+            Pitch class set
     Implementation
         Dataset repositories
             When-in-Rome repo
