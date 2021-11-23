@@ -220,13 +220,77 @@ data_acquisition = """
 
 model_design = """
 5-Model design
-    Inputs
+    Input
+        Symbolic score
+            MusicXML
+            Humdrum
+        Frames
+            32nd note frames
+            640 frames
         Encoding pitch spelling
+            19 two-hot encoding
+                advantages of 19
+                example plot with 19 two-hot
+            35 one-hot encoding
+                advantages of 35
+                example plot with 35 one-hot
     The bass and chroma convolutional blocks
+        Convolutional layers
+            6-layer configuration
+            Power-of-two shapes
+                Increasing convolution window
+                Decreasing filters
+        Bass convolutional block
+            Encoding of the bass
+                example plot of a bass input
+        Chroma convolutional block
+            Encoding of the chroma
+                example plot of a chroma input
+        Merging the blocks
+            Concatenation of the blocks
+            Adding the blocks
     Dense and recurrent layers
+        Dense layer 1
+        Dense layer 2
+        Recurrent layers
+            GRU
+            LSTM
+            Bidirectional
     Multitask learning configurations
         Six conventional tasks
         Five additional tasks
+    Implementation
+        Dataset repositories
+            When-in-Rome repo
+            TAVERN repo
+            ABC repo
+            HaydnSun Repo
+            BPS repo
+        Recursive submodules
+            Map of score-annotation pairs
+            Listing of all data used
+        MLOps
+            Data quality metrics
+                Alignment
+                Pitch content
+                Wrong inversion
+            Unit tests
+                Standard modules
+        Texturization patterns
+            Source code of texturization pattern
+            Examples of texturization patterns
+        DataFrame of score
+            Columns
+        Code
+            Diagram
+                Diagram blocks and modules
+            GitHub Repository
+                README
+                Releases
+                Zenodo archive
+                API documentation
+                GitHub pages
+            Demos
 """
 
 experimental_evaluation = """
