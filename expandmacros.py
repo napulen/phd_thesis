@@ -40,13 +40,13 @@ def recurse(path, cwd, includeonly):
         if ret:
             line = re.sub(regex["cwdsub"], cwd, line)
         ret = reMatch("include", line)
-        if ret and includeonly:
-            if ret != includeonly:
-                print(f"% ignoring {ret}")
-                line = re.sub(regex["includesub"], "", line)
+        if ret:
+            line = re.sub(regex["includesub"], "", line)
+            if includeonly and ret != includeonly:
+                if ret != includeonly:
+                    print(f"% ignoring {ret}")
             else:
                 print(f"% recursing over {ret}")
-                line = re.sub(regex["includesub"], "", line)
                 if not ret.endswith(".tex"):
                     recursepath = f"{ret}.tex"
                 else:
