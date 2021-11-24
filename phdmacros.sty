@@ -1,0 +1,119 @@
+
+
+% Amazing trick to remove spaces betwen words by:
+% https://tex.stackexchange.com/questions/87509/removing-the-spaces-between-words
+\makeatletter
+\def\RemoveSpaces#1{\zap@space#1 \@empty}
+\makeatother
+
+\Addlcwords{i me my myself we our ours ourselves you your
+yours yourself yourselves he him his himself she her hers
+herself it its itself they them their theirs themselves
+what which who whom this that these those am is are was
+were be been being have has had having do does did doing
+a an the and but if or because as until while of at by
+for with about against between into through during
+before after above below to from up down in out on
+off over under again further then once here there
+when where why how all any both each few more most
+other some such no nor not only own same so than
+too very can will just don should now vs}
+
+% This is a workaround for a "token not allowed" issue
+\newcommand{\titlecapwrap}[1]{
+    \texorpdfstring{\titlecap{#1}}{#1}
+}
+
+\newcommand{\cwd}{.}
+\newcommand{\changecwd}[1]{\renewcommand{\cwd}{#1}}
+
+\newcommand{\phdchapter}[1]{\chapter{\titlecapwrap{#1}}\label{chap:\RemoveSpaces{#1}}}
+\newcommand{\phdsection}[1]{\section{\titlecapwrap{#1}}\label{sec:\RemoveSpaces{#1}}}
+\newcommand{\phdsubsection}[1]{\subsection{\titlecapwrap{#1}}\label{subsec:\RemoveSpaces{#1}}}
+\newcommand{\phdsubsubsection}[1]{\subsubsection{\titlecapwrap{#1}}\label{subsubsec:\RemoveSpaces{#1}}}
+\newcommand{\phdparagraph}[1]{\paragraph{\titlecapwrap{#1}}\label{par:\RemoveSpaces{#1}}}
+
+\newcommand{\refchap}[1]{\hyperref[chap:#1]{Chapter~\ref*{chap:#1}}}
+\newcommand{\refsec}[1]{\hyperref[sec:#1]{Section~\ref*{sec:#1}}}
+\newcommand{\refsubsec}[1]{\hyperref[subsec:#1]{Subsection~\ref*{subsec:#1}}}
+\newcommand{\refsubsubsec}[1]{\hyperref[subsubsec:#1]{Subsubsection~\ref*{subsubsec:#1}}}
+\newcommand{\refpar}[1]{\hyperref[par:#1]{Paragraph~\ref*{par:#1}}}
+\newcommand{\reffig}[1]{\hyperref[fig:#1]{Figure~\ref*{fig:#1}}}
+\newcommand{\reftab}[1]{\hyperref[tab:#1]{Table~\ref*{tab:#1}}}
+\newcommand{\refeq}[1]{\hyperref[eq:#1]{Equation~\ref*{eq:#1}}}
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+\newcommand{\missing}[1]{{\color{red} A #1 will be inserted here}}
+% \newcommand{\guide}[1]{{\color{gray}\textbf{#1}}}
+\newcommand{\guide}[1]{}
+
+\NewDocumentCommand{\phdfigure}{ O{Caption placeholder}
+O{0.6} O{h!} m}{
+    \begin{figure}[#3]
+        \centering
+        \includegraphics[width=#2\textwidth]{\cwd/figures/#4}
+        \caption{#1.}
+        \label{fig:#4}
+    \end{figure}
+    \relax
+}
+
+\NewDocumentCommand{\phdtwofigures}{ O{Caption1 placeholder}
+O{Caption2 placeholder} O{0.5} O{0.5} m m}{
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{#3\textwidth}
+      \centering
+      \includegraphics[width=0.9\linewidth]{\cwd/figures/#5}
+      \captionof{figure}{#1.}
+      \label{fig:#5}
+    \end{minipage}%
+    \begin{minipage}{#4\textwidth}
+      \centering
+      \includegraphics[width=0.9\linewidth]{\cwd/figures/#6}
+      \captionof{figure}{#2.}
+      \label{fig:#6}
+    \end{minipage}
+    \end{figure}
+    \relax
+}
+
+
+\NewDocumentCommand{\phdthreefigures}{ O{Caption1
+placeholder} O{Caption2 placeholder} O{Caption3 placeholder}
+O{0.33} O{0.33} O{0.33} m m m}{
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{#4\textwidth}
+      \centering
+      \includegraphics[width=0.9\linewidth]{\cwd/figures/#7}
+      \captionof{figure}{#1.}
+      \label{fig:#7}
+    \end{minipage}%
+    \begin{minipage}{#5\textwidth}
+      \centering
+      \includegraphics[width=0.9\linewidth]{\cwd/figures/#8}
+      \captionof{figure}{#2.}
+      \label{fig:#8}
+    \end{minipage}%
+    \begin{minipage}{#6\textwidth}
+      \centering
+      \includegraphics[width=0.9\linewidth]{\cwd/figures/#9}
+      \captionof{figure}{#3.}
+      \label{fig:#9}
+    \end{minipage}
+    \end{figure}
+    \relax
+}
+
+\newcommand{\rnformat}[1]{\textbf{#1}\relax}
+\newcommand{\rn}[1]{\rnformat{#1}\relax}
+\newcommand{\rndim}{{\footnotesize {}^\rnformat{o}{}\relax}}
+\newcommand{\rnhdim}{{\footnotesize{}^\rnformat{\o}{}\relax}}
+\newcommand{\rnseven}{{\footnotesize {}^\rnformat{7}\relax}}
+\newcommand{\rnsix}{{\footnotesize {}^\rnformat{6}\relax}}
+\newcommand{\rnsixfour}{{\footnotesize{}^\rnformat{6}_\rnformat{4}\relax}}
+\newcommand{\rnsixfive}{{\footnotesize{}^\rnformat{6}_\rnformat{5}\relax}}
+\newcommand{\rnfourthree}{{\footnotesize{}^\rnformat{4}_\rnformat{3}\relax}}
+\newcommand{\rntwo}{{\footnotesize {}^\rnformat{2}\relax}}
