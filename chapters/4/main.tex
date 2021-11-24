@@ -1,3 +1,4 @@
+\renewcommand{\absdir}{chapters/4}
 \phdchapter{data acquisition and preparation}
 
 % \begin{quote} A quote \end{quote} \clearpage
@@ -7,14 +8,14 @@
     \phdsubsection{beethoven piano sonatas (BPS)}
     \phdsubsection{haydn ``sun'' string quartets (HaydnSun)}
     \phdsubsection{music theory examples (MuThEx)}
-        \phdinput{_dataset_musictheorytextbooks}
+        \input{\absdir/_dataset_musictheorytextbooks}
     \phdsubsection{mozart piano sonatas (MPS)}
     \phdsubsection{theme and variation encodings with roman numerals (TAVERN)}
     \phdsubsection{schubert winterreise (SW)}
 \phdsection{data preparation}
     \phdsubsection{encoding issues}
-        \phdinput{_encoding_translation_issues}
-        \phdinput{_are_localkeys_modulations}
+        \input{\absdir/_encoding_translation_issues}
+        \input{\absdir/_are_localkeys_modulations}
     \phdsubsection{aligning a score and an annotation file}
     \phdsubsection{standardizing the notation between datasets}
 \phdsection{data augmentation}
