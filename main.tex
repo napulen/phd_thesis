@@ -47,13 +47,13 @@
 \include{frontmatter/abstract-fr}
 \include{frontmatter/acknowledgements}
 \pagenumbering{arabic}
-\renewcommand{\absdir}{chapters/1}\include{\absdir/main}
-\renewcommand{\absdir}{chapters/2}\include{\absdir/main}
-\renewcommand{\absdir}{chapters/3}\include{\absdir/main}
-\renewcommand{\absdir}{chapters/4}\include{\absdir/main}
-\renewcommand{\absdir}{chapters/5}\include{\absdir/main}
-\renewcommand{\absdir}{chapters/6}\include{\absdir/main}
-\renewcommand{\absdir}{chapters/7}\include{\absdir/main}
+\changecwd{chapters/1}\include{\cwd/main}
+\changecwd{chapters/2}\include{\cwd/main}
+\changecwd{chapters/3}\include{\cwd/main}
+\changecwd{chapters/4}\include{\cwd/main}
+\changecwd{chapters/5}\include{\cwd/main}
+\changecwd{chapters/6}\include{\cwd/main}
+\changecwd{chapters/7}\include{\cwd/main}
 
 \addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
