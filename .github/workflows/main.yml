@@ -34,11 +34,11 @@ jobs:
         run: |
           git --version
           git tag --column
-          ${{ steps.tags.outputs.previoustag }}
-          IFS=' ' read -a array <<< $(git tag --column)
-          prevtag=${array[-2]}
-          echo $prevtag
-          git show $prevtag:./main.tex > mainprev.tex
+          echo ${{ steps.tags.outputs.previoustag }}
+          # IFS=' ' read -a array <<< $(git tag --column)
+          # prevtag=${array[-2]}
+          # echo $prevtag
+          # git show $prevtag:./main.tex > mainprev.tex
       - name: Get the standalone current and previous main.tex
         run: |
           python3 expandmacros.py main.tex > mainexp.tex
