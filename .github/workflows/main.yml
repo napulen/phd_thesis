@@ -33,7 +33,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: |
-            "napoleslopez22phdthesis${{ github.ref_name }}.tex"
+            napoleslopez22phdthesis${{github.ref_name}}.tex
             chapter1diff.tex
             chapter2diff.tex
             chapter3diff.tex
@@ -45,7 +45,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            "napoleslopez22phdthesis${{ github.ref_name }}.pdf"
+            napoleslopez22phdthesis${{ github.ref_name }}.pdf
             chapter1diff.pdf
             chapter2diff.pdf
             chapter3diff.pdf
