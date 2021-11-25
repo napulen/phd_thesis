@@ -38,6 +38,11 @@ jobs:
         run: |
           python3 expandmacros.py main.tex > mainexp.tex
           python3 expandmacros.py mainprev.tex > mainprevexp.tex
+      - name: Diff the current and previous tag
+        run: |
+          chmod +x latexdiff-so
+          ./latexdiff-so mainprevexp.tex mainexp.tex > diff.tex
+          cat diff.tex
       # - name: Compile main LaTeX document and individual chapters
       #   uses: xu-cheng/latex-action@v2
       #   with:
