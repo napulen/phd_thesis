@@ -30,7 +30,7 @@ jobs:
       - name: Get the main.tex from the last tag
         run: |
           git --version
-          git tag --column
+          git describe --abbrev=0 --tags "${{github.ref_name}}^"
           IFS=' ' read -a array <<< $(git tag --column)
           prevtag=${array[-2]}
           $prevtag
