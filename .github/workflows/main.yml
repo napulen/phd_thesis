@@ -23,15 +23,17 @@ jobs:
         uses: actions/checkout@v2
         with:
             fetch-depth: "0"
-      - name: Generate all chapters with diffs
+      - name: Generate diff files for all chapters
         run: |
           chmod +x generate_chapter_diffs.sh
           ./generate_chapter_diffs.sh
-      - name: Compile main LaTeX document and individual chapters
+      - name: Rename main.tex to current version of the thesis
+        run: mv "main.tex" "napoleslopez22phdthesis${{ github.ref_name }}.tex"
+      - name: Compile main LaTeX document and chapter diffs
         uses: xu-cheng/latex-action@v2
         with:
           root_file: |
-            main.tex
+            "napoleslopez22phdthesis${{ github.ref_name }}.tex"
             chapter1diff.tex
             chapter2diff.tex
             chapter3diff.tex
@@ -43,7 +45,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            main.pdf
+            "napoleslopez22phdthesis${{ github.ref_name }}.pdf"
             chapter1diff.pdf
             chapter2diff.pdf
             chapter3diff.pdf
