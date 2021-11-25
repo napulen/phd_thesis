@@ -1,3 +1,4 @@
+# from tempfile import TemporaryFile
 import os
 import table_of_contents as toc
 
@@ -9,6 +10,29 @@ PARAGRAPH = 4
 
 # Use a counter to avoid duplicate \labels
 duplicatelabels = {}
+
+
+# class PhDFile(object):
+#     def __init__(self, path):
+#         self.fd = TemporaryFile("w+")
+#         self.path = path
+#         if os.path.exists(path):
+#             self.isnew = False
+#             print(f"exists... {path}")
+#         else:
+#             self.isnew = True
+#             print(f"creating... {path}")
+
+#     def write(self, text):
+#         self.fd.write(text)
+
+#     def close(self):
+#         contents = self.fd.seek(0).read()
+#         if self.isnew:
+#             with open(self.path) as fd:
+#                 fd.write(contents)
+
+#         self.close()
 
 
 def formatname(s):
@@ -51,7 +75,7 @@ def treeheader(name, level):
         header += f"""\
 \\phdchapter{{{fname}}}
 
-\\input{{\\cwd/chapter_intro}}
+\\input{{\\cwd/_chapter_intro}}
 """
     else:
         nospace = fname.replace(" ", "")
@@ -99,7 +123,7 @@ def treefooter(name, level):
 
 def chaptertree(root, rootfd, treename, children, level):
     treedir = os.path.join(root, treename)
-    treefile = os.path.join(root, f"{treename}.tex")
+    treefile = os.path.join(root, f"_{treename}.tex")
     rootfd.write(registerchild(treename, treefile, level))
     if level < PARAGRAPH:
         if level < SUBSUBSECTION:
@@ -127,11 +151,12 @@ if __name__ == "__main__":
     toclist = getTOC(contents)
     for chapter, sections in toclist:
         chapternumber, chaptername = chapter.split("-", 1)
-        chapterdir = os.path.join(root, "_chapters", chapternumber)
+        chapterdir = os.path.join(root, "chapters", chapternumber)
         os.makedirs(chapterdir, exist_ok=True)
-        chapterintro = os.path.join(chapterdir, "chapter_intro.tex")
-        with open(chapterintro, "w") as introfd:
-            introfd.write(chapterintroheader(chaptername))
+        chapterintro = os.path.join(chapterdir, "_chapter_intro.tex")
+        introfd = open(chapterintro, "w")
+        introfd.write(chapterintroheader(chaptername))
+        introfd.close()
         chaptermain = os.path.join(chapterdir, "main.tex")
         chapterfd = open(chaptermain, "w")
         chapterfd.write(treeheader(chaptername, CHAPTER))
