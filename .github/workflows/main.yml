@@ -23,6 +23,8 @@ jobs:
         uses: actions/checkout@v2
         with:
             fetch-depth: "0"
+      - name: Generate all chapters from table of contents
+        run: python3 generate_chapters_from_toc.py
       - name: Generate diff files for all chapters
         run: |
           chmod +x generate_chapter_diffs.sh
