@@ -31,7 +31,7 @@ jobs:
         run: |
           git --version
           echo "${{github.ref_name}}"
-          prevtag=$(git describe --abbrev=0 --tags "{{github.ref_name}}^")
+          prevtag=$(git describe --abbrev=0 --tags "${{github.ref_name}}^")
           echo $prevtag
           git show $prevtag:./main.tex > mainprev.tex
       - name: Get the standalone current and previous main.tex
