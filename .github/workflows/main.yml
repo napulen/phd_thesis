@@ -33,9 +33,6 @@ jobs:
           echo "${{github.ref_name}}"
           prevtag=$(git describe --abbrev=0 --tags "{{github.ref_name}}^")
           echo $prevtag
-          IFS=' ' read -a array <<< $(git tag --column)
-          prevtag=${array[-2]}
-          $prevtag
           git show $prevtag:./main.tex > mainprev.tex
       - name: Get the standalone current and previous main.tex
         run: |
