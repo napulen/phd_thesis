@@ -25,10 +25,16 @@ jobs:
         env:
           CHAPTERS: 1 2 3 4 5 6 7
         run: for c in $CHAPTERS; do sed "s/% \\\\includeonly{chapters\/1\/main/\\\\includeonly{chapters\/$c\/main/" main.tex > chapter$c.tex ; done
+      - name: Get git tag info
+        id: tags
+        uses: mathieudutour/github-tag-action@v6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Get the main.tex from the last tag
         run: |
           git --version
           git tag --column
+          ${{ steps.tags.outputs.previoustag }}
           IFS=' ' read -a array <<< $(git tag --column)
           prevtag=${array[-2]}
           echo $prevtag
