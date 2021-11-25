@@ -25,22 +25,32 @@ jobs:
         env:
           CHAPTERS: 1 2 3 4 5 6 7
         run: for c in $CHAPTERS; do sed "s/% \\\\includeonly{chapters\/1\/main/\\\\includeonly{chapters\/$c\/main/" main.tex > chapter$c.tex ; done
-      - name: Compile main LaTeX document and individual chapters
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: |
-            main.tex
-            chapter1.tex
-            chapter2.tex
-            chapter3.tex
-            chapter4.tex
-            chapter5.tex
-            chapter6.tex
-            chapter7.tex
-      # - uses: actions/upload-artifact@v2
+      - name: Get the main.tex from the last tag
+        run: |
+          IFS=' ' read -a array <<< $(git tag --column)
+          prevtag=${array[-2]}
+          echo $prevtag
+          git show $prevtag:./main.tex > mainprev.tex
+      - name: Get the standalone current and previous main.tex
+        run: |
+          python3 expandmacros.py main.tex > mainexp.tex
+          python3 expandmacros.py mainprev.tex > mainprevexp.tex
+      # - name: Compile main LaTeX document and individual chapters
+      #   uses: xu-cheng/latex-action@v2
       #   with:
-      #     name: PhDThesis
-      #     path: |
+      #     root_file: |
+      #       main.tex
+      #       chapter1.tex
+      #       chapter2.tex
+      #       chapter3.tex
+      #       chapter4.tex
+      #       chapter5.tex
+      #       chapter6.tex
+      #       chapter7.tex
+      # - name: Create release
+      #   uses: softprops/action-gh-release@v1
+      #   with:
+      #     files: |
       #       main.pdf
       #       chapter1.pdf
       #       chapter2.pdf
@@ -49,15 +59,3 @@ jobs:
       #       chapter5.pdf
       #       chapter6.pdf
       #       chapter7.pdf
-      - name: Create release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            main.pdf
-            chapter1.pdf
-            chapter2.pdf
-            chapter3.pdf
-            chapter4.pdf
-            chapter5.pdf
-            chapter6.pdf
-            chapter7.pdf
