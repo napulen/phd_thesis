@@ -13,4 +13,4 @@
 .ipynb_checkpoints
 
 __pycache__/
-_chapters
+_*.tex
