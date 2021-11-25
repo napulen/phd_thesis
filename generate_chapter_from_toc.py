@@ -20,8 +20,7 @@ def formattext(s):
 
 
 def getTOC(contents):
-    tocd = {}
-    chapter, section, subsec, subsubsec, par = 0, 0, 0, 0, 0
+    toclist = []
     for line in contents.split("\n"):
         if not line:
             continue
@@ -29,25 +28,20 @@ def getTOC(contents):
         level = line.count("    ")  # or line.count("\t")
         fname = formatname(name)
         if level == CHAPTER:
-            chapter += 1
-            section, subsec, subsubsec, par = 0, 0, 0, 0
-            tocd[chapter] = {"name": fname}
+            toclist.append((fname, []))
         if level == SECTION:
-            section += 1
-            subsec, subsubsec, par = 0, 0, 0
-            tocd[chapter][section] = {"name": fname}
+            _, sections = toclist[-1]
+            sections.append((fname, []))
         elif level == SUBSECTION:
-            subsec += 1
-            subsubsec, par = 0, 0
-            tocd[chapter][section][subsec] = {"name": fname}
+            _, subsections = sections[-1]
+            subsections.append((fname, []))
         elif level == SUBSUBSECTION:
-            subsubsec += 1
-            par = 0
-            tocd[chapter][section][subsec][subsubsec] = {"name": fname}
+            _, subsubsections = subsections[-1]
+            subsubsections.append((fname, []))
         elif level == PARAGRAPH:
-            par += 1
-            tocd[chapter][section][subsec][subsubsec][par] = {"name": fname}
-    return tocd
+            _, paragraphs = subsubsections[-1]
+            paragraphs.append((fname, []))
+    return toclist
 
 
 def treeheader(name, level):
@@ -112,12 +106,9 @@ def chaptertree(root, rootfd, treename, children, level):
             os.makedirs(treedir, exist_ok=True)
         treefd = open(treefile, "w")
         treefd.write(treeheader(treename, level))
-        for child, gc in children.items():
-            if child == "name":
-                continue
-            childname = gc["name"]
+        for child, grandchildren in children:
             newrootfd = treefd if level == SUBSUBSECTION else rootfd
-            chaptertree(treedir, newrootfd, childname, gc, level + 1)
+            chaptertree(treedir, newrootfd, child, grandchildren, level + 1)
         treefd.write(treefooter(treename, level))
         treefd.close()
 
@@ -133,9 +124,9 @@ if __name__ == "__main__":
         + toc.experimental_evaluation
         + toc.conclusions
     )
-    tocdict = getTOC(contents)
-    for chapter, c in tocdict.items():
-        chapternumber, chaptername = c["name"].split("-", 1)
+    toclist = getTOC(contents)
+    for chapter, sections in toclist:
+        chapternumber, chaptername = chapter.split("-", 1)
         chapterdir = os.path.join(root, "_chapters", chapternumber)
         os.makedirs(chapterdir, exist_ok=True)
         chapterintro = os.path.join(chapterdir, "chapter_intro.tex")
@@ -144,10 +135,7 @@ if __name__ == "__main__":
         chaptermain = os.path.join(chapterdir, "main.tex")
         chapterfd = open(chaptermain, "w")
         chapterfd.write(treeheader(chaptername, CHAPTER))
-        for section, s in c.items():
-            if section == "name":
-                continue
-            sectionname = s["name"]
-            chaptertree(chapterdir, chapterfd, sectionname, s, SECTION)
+        for section, subsections in sections:
+            chaptertree(chapterdir, chapterfd, section, subsections, SECTION)
         chapterfd.write(treefooter(chaptername, CHAPTER))
         chapterfd.close()
