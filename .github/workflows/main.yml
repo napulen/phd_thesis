@@ -27,6 +27,7 @@ jobs:
         run: for c in $CHAPTERS; do sed "s/% \\\\includeonly{chapters\/1\/main/\\\\includeonly{chapters\/$c\/main/" main.tex > chapter$c.tex ; done
       - name: Get the main.tex from the last tag
         run: |
+          echo $(git tag --column)
           IFS=' ' read -a array <<< $(git tag --column)
           prevtag=${array[-2]}
           echo $prevtag
