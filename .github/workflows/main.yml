@@ -42,28 +42,29 @@ jobs:
         run: |
           chmod +x latexdiff-so
           ./latexdiff-so mainprevexp.tex mainexp.tex > diff.tex
-          cat diff.tex
-      # - name: Compile main LaTeX document and individual chapters
-      #   uses: xu-cheng/latex-action@v2
-      #   with:
-      #     root_file: |
-      #       main.tex
-      #       chapter1.tex
-      #       chapter2.tex
-      #       chapter3.tex
-      #       chapter4.tex
-      #       chapter5.tex
-      #       chapter6.tex
-      #       chapter7.tex
-      # - name: Create release
-      #   uses: softprops/action-gh-release@v1
-      #   with:
-      #     files: |
-      #       main.pdf
-      #       chapter1.pdf
-      #       chapter2.pdf
-      #       chapter3.pdf
-      #       chapter4.pdf
-      #       chapter5.pdf
-      #       chapter6.pdf
-      #       chapter7.pdf
+      - name: Compile main LaTeX document and individual chapters
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: |
+            main.tex
+            diff.tex
+            chapter1.tex
+            chapter2.tex
+            chapter3.tex
+            chapter4.tex
+            chapter5.tex
+            chapter6.tex
+            chapter7.tex
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            main.pdf
+            diff.pdf
+            chapter1.pdf
+            chapter2.pdf
+            chapter3.pdf
+            chapter4.pdf
+            chapter5.pdf
+            chapter6.pdf
+            chapter7.pdf
