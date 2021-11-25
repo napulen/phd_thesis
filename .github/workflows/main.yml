@@ -23,48 +23,50 @@ jobs:
         uses: actions/checkout@v2
         with:
             fetch-depth: "0"
-      - name: Generate all chapters
-        env:
-          CHAPTERS: 1 2 3 4 5 6 7
-        run: for c in $CHAPTERS; do sed "s/% \\\\includeonly{chapters\/1\/main/\\\\includeonly{chapters\/$c\/main/" main.tex > chapter$c.tex ; done
-      - name: Get the main.tex from the last tag
+      - name: Generate all chapters with diffs
+        # env:
+        #   CHAPTERS: 1 2 3 4 5 6 7
         run: |
-          git --version
-          echo "${{github.ref_name}}"
-          prevtag=$(git describe --abbrev=0 --tags "${{github.ref_name}}^")
-          echo $prevtag
-          git show $prevtag:./main.tex > mainprev.tex
-      - name: Get the standalone current and previous main.tex
-        run: |
-          python3 expandmacros.py main.tex > mainexp.tex
-          python3 expandmacros.py mainprev.tex > mainprevexp.tex
-      - name: Diff the current and previous tag
-        run: |
+          chapters="1 2 3 4 5 6 7"
+          currenttag=$(git describe --abbrev=0 --tags)
+          prevtag=$(git describe --abbrev=0 --tags "$currenttag^")
+          git checkout $prevtag
+          for c in $chapters; do
+              from="% \\\\includeonly{chapters\/1"
+              to="\\\\includeonly{chapters\/$c"
+              sed "s/$from/$to/" main.tex > "chapter${c}prev.tex";
+          done
+          git checkout $currenttag
+          for c in $chapters; do
+              sed "s/$from/$to/" main.tex > "chapter${c}.tex";
+          done
           chmod +x latexdiff-so
-          ./latexdiff-so mainprevexp.tex mainexp.tex > diff.tex
+          for c in $chapters; do
+              python3 expandmacros.py "chapter${c}prev.tex" > "chapter${c}prevso.tex"
+              python3 expandmacros.py "chapter${c}.tex" > "chapter${c}so.tex"
+              ./latexdiff-so "chapter${c}prevso.tex" "chapter${c}so.tex" > "chapter${c}diff.tex"
+          done
       - name: Compile main LaTeX document and individual chapters
         uses: xu-cheng/latex-action@v2
         with:
           root_file: |
             main.tex
-            diff.tex
-            chapter1.tex
-            chapter2.tex
-            chapter3.tex
-            chapter4.tex
-            chapter5.tex
-            chapter6.tex
-            chapter7.tex
+            chapter1diff.tex
+            chapter2diff.tex
+            chapter3diff.tex
+            chapter4diff.tex
+            chapter5diff.tex
+            chapter6diff.tex
+            chapter7diff.tex
       - name: Create release
         uses: softprops/action-gh-release@v1
         with:
           files: |
             main.pdf
-            diff.pdf
-            chapter1.pdf
-            chapter2.pdf
-            chapter3.pdf
-            chapter4.pdf
-            chapter5.pdf
-            chapter6.pdf
-            chapter7.pdf
+            chapter1diff.pdf
+            chapter2diff.pdf
+            chapter3diff.pdf
+            chapter4diff.pdf
+            chapter5diff.pdf
+            chapter6diff.pdf
+            chapter7diff.pdf
