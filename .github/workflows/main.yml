@@ -28,6 +28,7 @@ jobs:
       - name: Get the main.tex from the last tag
         run: |
           git --version
+          git tag --column
           IFS=' ' read -a array <<< $(git tag --column)
           prevtag=${array[-2]}
           echo $prevtag
