@@ -24,28 +24,9 @@ jobs:
         with:
             fetch-depth: "0"
       - name: Generate all chapters with diffs
-        # env:
-        #   CHAPTERS: 1 2 3 4 5 6 7
         run: |
-          chapters="1 2 3 4 5 6 7"
-          currenttag=$(git describe --abbrev=0 --tags)
-          prevtag=$(git describe --abbrev=0 --tags "$currenttag^")
-          git checkout $prevtag
-          for c in $chapters; do
-              from="% \\\\includeonly{chapters\/1"
-              to="\\\\includeonly{chapters\/$c"
-              sed "s/$from/$to/" main.tex > "chapter${c}prev.tex";
-          done
-          git checkout $currenttag
-          for c in $chapters; do
-              sed "s/$from/$to/" main.tex > "chapter${c}.tex";
-          done
-          chmod +x latexdiff-so
-          for c in $chapters; do
-              python3 expandmacros.py "chapter${c}prev.tex" > "chapter${c}prevso.tex"
-              python3 expandmacros.py "chapter${c}.tex" > "chapter${c}so.tex"
-              ./latexdiff-so "chapter${c}prevso.tex" "chapter${c}so.tex" > "chapter${c}diff.tex"
-          done
+          chmod +x generate_chapter_diffs.sh
+          ./generate_chapter_diffs.sh
       - name: Compile main LaTeX document and individual chapters
         uses: xu-cheng/latex-action@v2
         with:
