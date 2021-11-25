@@ -54,7 +54,11 @@ def treeheader(name, level):
     fname = name.replace("_", " ")
     header = "% Copyright 2021 Néstor Nápoles López\n\n"
     if level == CHAPTER:
-        header += f"\\phdchapter{{{fname}}}\n\n\\phdinput{{chapter_intro}}\n"
+        header += f"""\
+\\phdchapter{{{fname}}}
+
+\\input{{\\cwd/chapter_intro}}
+"""
     else:
         nospace = fname.replace(" ", "")
         sub = "sub" * (level - 1)
@@ -92,7 +96,7 @@ def registerchild(name, path, level):
     trimpath = trimpath.replace(".tex", "")
     ind = "\t" * level
     sub = "sub" * (level - 1)
-    return f"{ind}\\phd{sub}section{{{fname}}}\\phdinput{{{trimpath}}}\n"
+    return f"{ind}\\phd{sub}section{{{fname}}}\\input{{\\cwd/{trimpath}}}\n"
 
 
 def treefooter(name, level):
