@@ -1,4 +1,3 @@
-# from tempfile import TemporaryFile
 import os
 import table_of_contents as toc
 
@@ -12,27 +11,33 @@ PARAGRAPH = 4
 duplicatelabels = {}
 
 
-# class PhDFile(object):
-#     def __init__(self, path):
-#         self.fd = TemporaryFile("w+")
-#         self.path = path
-#         if os.path.exists(path):
-#             self.isnew = False
-#             print(f"exists... {path}")
-#         else:
-#             self.isnew = True
-#             print(f"creating... {path}")
+def rreplace(s, old, new, count):
+    """Like str.replace() but right-to-left."""
+    return new.join(s.rsplit(old, count))
 
-#     def write(self, text):
-#         self.fd.write(text)
 
-#     def close(self):
-#         contents = self.fd.seek(0).read()
-#         if self.isnew:
-#             with open(self.path) as fd:
-#                 fd.write(contents)
+class AllegedFile(object):
+    """Maybe a file. It may be copied from an existing file instead."""
 
-#         self.close()
+    def __init__(self, path, mode):
+        self.realpath = rreplace(path, "/_", "/", 1)
+        self.fd = open(path, mode)
+        if os.path.exists(self.realpath):
+            self.replaced = True
+            print(f"replaced by real file... {path}")
+            with open(self.realpath) as realfd:
+                self.fd.write(realfd.read())
+        else:
+            self.replaced = False
+            print(f"generating... {path}")
+
+    def write(self, text):
+        if self.replaced:
+            return 0
+        return self.fd.write(text)
+
+    def close(self):
+        self.fd.close()
 
 
 def formatname(s):
@@ -128,7 +133,7 @@ def chaptertree(root, rootfd, treename, children, level):
     if level < PARAGRAPH:
         if level < SUBSUBSECTION:
             os.makedirs(treedir, exist_ok=True)
-        treefd = open(treefile, "w")
+        treefd = AllegedFile(treefile, "w")
         treefd.write(treeheader(treename, level))
         for child, grandchildren in children:
             newrootfd = treefd if level == SUBSUBSECTION else rootfd
@@ -154,7 +159,7 @@ if __name__ == "__main__":
         chapterdir = os.path.join(root, "chapters", chapternumber)
         os.makedirs(chapterdir, exist_ok=True)
         chapterintro = os.path.join(chapterdir, "_chapter_intro.tex")
-        introfd = open(chapterintro, "w")
+        introfd = AllegedFile(chapterintro, "w")
         introfd.write(chapterintroheader(chaptername))
         introfd.close()
         chaptermain = os.path.join(chapterdir, "main.tex")
