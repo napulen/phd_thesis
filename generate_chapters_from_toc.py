@@ -131,7 +131,7 @@ def chaptertree(root, rootfd, treename, children, level):
     treefile = os.path.join(root, f"_{treename}.tex")
     rootfd.write(registerchild(treename, treefile, level))
     if level < PARAGRAPH:
-        if level < SUBSUBSECTION:
+        if level < SUBSUBSECTION and children:
             os.makedirs(treedir, exist_ok=True)
         treefd = AllegedFile(treefile, "w")
         treefd.write(treeheader(treename, level))
