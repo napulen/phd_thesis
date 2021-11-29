@@ -134,7 +134,7 @@ data_acquisition = """
                 Tonicization distribution in BPS
         Haydn ``Sun'' String Quartets (HaydnSun)
             Description of HaydnSun
-                N\'apoles L\'opez (2017)
+                N\\'apoles L\\'opez (2017)
             Format of HaydnSun
                 Humdrum(**harm) in HaydnSun
             Statistical analysis of HaydnSun
