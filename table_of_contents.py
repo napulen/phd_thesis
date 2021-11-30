@@ -3,7 +3,43 @@
 introduction = """
 1-Introduction
     Motivation
-    Thesis structure
+        Musical example
+        Why Analyzing Music?
+            Removes complexity
+            Compresses the information
+        Why Analyzing Chords
+            Intelligibility of simultaneous sounds
+            Tonal context
+        Why Analyzing Key Changes
+            Because keys change
+            And those changes are important
+        Why Roman numeral analysis
+            Because it summarizes several analytical dimensions
+    Challenges
+        Main challenges
+            Overlapping tasks
+            Ambiguity
+            Scarcity of data
+                Comparison against MNIST annotations
+                Expert-annotated data
+                More time consuming
+        Progress
+            Predict tasks simultaneously
+            Provide better representations
+            Applying music-theory domain knowledge
+        Remaining challenges
+            Segmentation
+            Data scarcity
+        Short-term goal: better models
+        Long-term goal: better music theories
+    Thesis contributions
+        Outline of contributions
+            Additional tonal tasks
+            Aritificial training examples
+            Alternative ways to reconstruct Roman numeral labels
+            Original input representation of pitch spelling
+            Original layout of neural network
+        Thesis structure
 """
 
 roman_numerals = """
@@ -309,11 +345,41 @@ model_design = """
 
 experimental_evaluation = """
 6-Experimental evaluation
-    Training procedure
-    Hyperparameters
-        Training epochs and weight selection
-        Learning schedule and learning rate
+    Model configurations
+        With additional tasks
+        Without additional tasks
+        With artificial examples
+        Without artificial examples
+    Choosing the best configuration
+        Average accuracy across individual datasets
+        AugmentedNet11+
+    Comparison against SOTA
+        Models considered
+            Chen and Su (2018, 2019, 2021)
+            Micchi et al.
+        Datasets considered
+            BPS test set
+            WTC test set
+            All other test sets
+        Training procedure
+            Data splits
+            Epochs
+            Computing time
+        Hyperparameters
+            Training epochs and weight selection
+            Learning schedule and learning rate
     Evaluation procedure
+        Baselines
+            Chen and Su 2018
+            Chen and Su 2019
+            Chen and Su 2021
+            Micchi et al. 2020
+        Accuracy of individual tasks
+            Conventional tasks
+            Additional tasks
+        Roman numeral accuracy
+            Conventional
+            Alternative method
     Results
     Discussion
 """
@@ -321,5 +387,9 @@ experimental_evaluation = """
 conclusions = """
 7-Conclusions
     Summary
+        Chapters 1--3
+        Chapter 4
+        Chapter 5
+        Chapter 6
     Future work
 """
