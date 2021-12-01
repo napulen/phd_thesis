@@ -32,14 +32,16 @@ introduction = """
             Data scarcity
         Short-term goal: better models
         Long-term goal: better music theories
-    Thesis contributions
-        Outline of contributions
-            Additional tonal tasks
-            Aritificial training examples
-            Alternative ways to reconstruct Roman numeral labels
-            Original input representation of pitch spelling
-            Original layout of neural network
-        Thesis structure
+    Outline of thesis contributions
+        Additional tonal tasks
+        Aritificial training examples
+        Improved data workflows (MLOps)
+            Unit tests for cross-dataset quality assurance
+            First work using all publicly available data in a machine-learning model
+        Alternative ways to reconstruct Roman numeral labels
+        Original input representation of pitch spelling
+        Original layout of neural network
+    Thesis structure
 """
 
 roman_numerals = """
@@ -62,7 +64,6 @@ roman_numerals = """
 background = """
 3-Background
     Music Representation
-        Types of representation
         Symbolic music formats
             Humdrum(**kern)
                 Origin of **kern
@@ -87,6 +88,7 @@ background = """
             Chroma-based features
             Pitch spelling
     Deep neural networks
+        Supervised learning
         Feed forward networks
         Convolutional neural networks
         Recurrent neural networks
@@ -105,7 +107,7 @@ background = """
             Ambiguity of key annotations
             Key inter-annotator agreement
             Key-estimation models
-        Chord recognition
+        Automatic chord recognition
             The chord recognition task
             Chord syntax
             Chord vocabulary
