@@ -19,7 +19,7 @@ on paper. However, accessing the musical content of the
 scores (e.g., note names, durations, key signatures, or time
 signatures) is quite a difficult task, which usually
 involves the development of complex Optical Music
-Recognition (OMR) systems
+Recognition systems
 \parencite{calvozaragoza2020understanding}.
 
 Symbolic music representations also often refer to digital
@@ -31,22 +31,25 @@ include Humdrum(\code{**kern}), Lilypond, MEI, MIDI, and
 MusicXML.
 
 Audio representations refer to digital representations of
-acoustic sound waves. These representations are very
-popular, as a musical performance can be captured and played
-by diverse listeners, for example, in music streaming
-services. Many MIR tasks operate on audio data.
+acoustic sound waves. These representations are popular in
+digital media, because they more closely resemble the
+musical experience that most users want to consume. For
+example, as a musical performance streamed using a
+music-streaming service. Many MIR tasks operate on audio
+data because of the importance of audio representations in
+the daily experience of music.
 
 An automatic Roman numeral analysis algorithm is closely
-related to automatic chord recognition (ACR), automatic key
-estimation, and MIDI pitch spelling. Over the years, there
-have been numerous proposed chord and key estimation
-algorithms for symbolic and audio music representations.
-These representations encode music in different ways (music
-notation and acoustic signals, respectively) and do not
-contain the same information nor operate at the same
-semantic level. Usually, an algorithm focuses in a single
-type of digital music representation but algorithms that
-operate in both representations are possible
+related to a few ``satellite'' tasks: automatic chord
+recognition (ACR), automatic key estimation, and MIDI pitch
+spelling. Over the years, there have been numerous proposed
+chord and key estimation algorithms for symbolic and audio
+music representations. These representations encode music in
+different ways (music notation and acoustic signals,
+respectively) and do not contain the same information nor
+operate at the same semantic level. Usually, an algorithm
+focuses in a single type of digital music representation but
+algorithms that operate in both representations are possible
 \parencite{napoleslopez2019keyfinding}.
 
 For the most part, automatic Roman numeral analysis models
@@ -54,6 +57,6 @@ operate with symbolic music data. Thus,
 \refsubsec{symbolicmusicformats} presents the
 characteristics of some of the most common symbolic music
 formats. However, the techniques could potentially be
-extended to the audio domain.
+extended to the audio domain in the future.
 \refsubsec{symbolicvsaudiorepresentations} discusses the
 implications and existing work on this.
