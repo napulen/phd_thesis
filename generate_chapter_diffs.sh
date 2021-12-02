@@ -12,8 +12,9 @@ for c in $chapters; do
     sed "s/$from/$to$c/" main.tex > "chapter${c}prev.tex";
     python3 expandmacros.py "chapter${c}prev.tex" > "chapter${c}prevso.tex"
 done
-rm -R chapters
 git checkout $currenttag
+rm -r chapters
+git checkout chapters
 python3 generate_chapters_from_toc.py
 for c in $chapters; do
     sed "s/$from/$to$c/" main.tex > "chapter${c}.tex";
