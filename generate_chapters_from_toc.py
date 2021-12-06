@@ -162,8 +162,8 @@ if __name__ == "__main__":
         introfd = AllegedFile(chapterintro, "w")
         introfd.write(chapterintroheader(chaptername))
         introfd.close()
-        chaptermain = os.path.join(chapterdir, "main.tex")
-        chapterfd = open(chaptermain, "w")
+        chaptermain = os.path.join(chapterdir, "_main.tex")
+        chapterfd = AllegedFile(chaptermain, "w")
         chapterfd.write(treeheader(chaptername, CHAPTER))
         for section, subsections in sections:
             chaptertree(chapterdir, chapterfd, section, subsections, SECTION)
