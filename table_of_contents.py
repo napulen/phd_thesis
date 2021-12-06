@@ -68,18 +68,23 @@ background = """
             Humdrum(**kern)
                 Origin of **kern
                 Applications of **kern
+                Humdrum in Roman numeral analysis
             MEI
                 Origin of MEI
                 Applications of MEI
+                MEI in Roman numeral analysis
             MIDI
                 Origin of MIDI
                 Applications of MIDI
+                MIDI in Roman numeral analysis
             MusicXML
                 Origin of MusicXML
                 Applications of MusicXML
+                MusicXML in Roman numeral analysis
             MNX
                 Origin of MNX
                 Applications of MNX
+                MNX in Roman numeral analysis
             Others
                 Lilypond
                 ABC
