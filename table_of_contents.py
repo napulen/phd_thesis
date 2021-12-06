@@ -1,4 +1,3 @@
-
 # What's important in an introduction?
 introduction = """
 1-Introduction
@@ -88,7 +87,7 @@ background = """
             Others
                 Lilypond
                 ABC
-                Plain-and-easy
+                Plaine-and-Easy
         Symbolic vs audio representations
             Chroma-based features
             Pitch spelling
@@ -172,7 +171,7 @@ data_acquisition = """
             Statistical analysis of BPS
                 Number of annotations in BPS
                 Chord distribution in BPS
-                Global key distribution in BPs
+                Global key distribution in BPS
                 Modulation distribution in BPS
                 Tonicization distribution in BPS
         Haydn ``Sun'' String Quartets (HaydnSun)
