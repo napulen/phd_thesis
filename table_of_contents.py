@@ -4,13 +4,12 @@ introduction = """
     Motivation
         Musical example
         Why Analyzing Music?
-            Removes complexity
-            Compresses the information
+            Highlights ``important'' information
+            Lossy compression of the music around that information
         Why Analyzing Chords
             Intelligibility of simultaneous sounds
-            Tonal context
         Why Analyzing Key Changes
-            Because keys change
+            Because they often occur in common-practice music
             And those changes are important
         Why Roman numeral analysis
             Because it summarizes several analytical dimensions
@@ -198,6 +197,7 @@ data_acquisition = """
                 Tonicization distribution in MPS
         Theme and Variation Encodings with Roman numerals (TAVERN)
             Description of TAVERN
+                Devaney et al. (2015)
             Format of TAVERN
                 Humdrum(**harm) in TAVERN
             Statistical analysis of TAVERN
@@ -257,6 +257,7 @@ data_acquisition = """
                 Alberti bass
                 Bass split
                 Syncopation
+            Data-driven texturization
         Retrieving tonal tasks from Roman numeral annotations
 """
 
@@ -351,6 +352,9 @@ model_design = """
 
 experimental_evaluation = """
 6-Experimental evaluation
+    Artificial texturization of augmented data
+        Heuristic texturization
+        Data-driven texturization
     Model configurations
         With additional tasks
         Without additional tasks
