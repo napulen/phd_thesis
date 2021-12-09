@@ -2,17 +2,18 @@
 introduction = """
 1-Introduction
     Motivation
-        Musical example
-        Why Analyzing Music?
-            Highlights ``important'' information
-            Lossy compression of the music around that information
-        Why Analyzing Chords
-            Intelligibility of simultaneous sounds
-        Why Analyzing Key Changes
-            Because they often occur in common-practice music
-            And those changes are important
-        Why Roman numeral analysis
-            Because it summarizes several analytical dimensions
+        Musical analysis
+            Why Analyze Music?
+                Highlights ``important'' information
+                Lossy compression of the music around that information
+            Why Analyzing Chords
+                Intelligibility of simultaneous sounds
+            Why Analyzing Key Changes
+                Because they often occur in common-practice music
+                And those changes are important
+            Why Roman numeral analysis
+                Because it summarizes several analytical dimensions
+        Computational musical analysis
     Challenges
         Main challenges
             Overlapping tasks
@@ -32,8 +33,9 @@ introduction = """
         Long-term goal: better music theories
     Outline of thesis contributions
         Additional tonal tasks
-        Aritificial training examples
+        Artificial training examples
         Improved data workflows (MLOps)
+            Data hygienist
             Unit tests for cross-dataset quality assurance
             First work using all publicly available data in a machine-learning model
         Alternative ways to reconstruct Roman numeral labels
