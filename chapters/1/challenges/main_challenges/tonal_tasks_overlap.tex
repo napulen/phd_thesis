@@ -1,0 +1,41 @@
+% Copyright 2021 Néstor Nápoles López
+
+% This is \refsubsubsec{tonaltasksoverlap}, which introduces
+% the tonal tasks overlap.
+
+Unlike other perceptual problems, tonal music analysis is
+often not well defined, in terms of what constitutes one
+task or the other.
+
+\phdparagraph{the boundary between chords and keys}
+
+In his work with ``keyscapes'',
+\textcite{sapp2011computational} presents examples of key
+analysis with different window lengths. In some of these
+analysis, with sufficiently short windows, an overlap
+between key analysis and chord analysis can be inferred. In
+our work designing a local-key-estimation algorithm
+\parencite{napoleslopez2019keyfinding}, we found something
+similar with key-profiles and sequences of pitch classes
+analyzed with a Hidden Markov Model. A key profile that
+heavily penalizes non-diatonic degrees finds a ``change of
+key'' in Chopin's Op.28 No.20, which corresponds to a
+Neapolitan chord. It is unclear whether this type of
+chromatic chord could be considered a deviation of the
+musical key. Arguments can be made for both positions on
+this topic. Thus, the line between \emph{key analysis} and
+\emph{chord analysis} can be blurry.
+
+\phdparagraph{pitch spelling}
+
+In their work on a pitch spelling algorithm,
+\textcite{teodoru2007pitch} describe the dependency of this
+task to local-key estimation and chord recognition, noting
+that ``[some tonal] situations require a deeper notion of
+the harmonic state than provided by the local key, as in the
+German augmented sixth chord, which seems nearly impossible
+to spell correctly without recognizing it as such.'' This
+poses the question of whether it is possible to design an
+algorithm to spell the pitches in a MIDI file, without also
+developing a key estimation and chord recognition
+algorithms. Similar ``chicken and egg'' problems can be observed in several tasks related to perceived tonal features, which make the definition and evaluation of the problems quite challenging.
