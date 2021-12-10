@@ -18,8 +18,10 @@ introduction = """
             We need to learn in order to explain
     Challenges
         Main challenges
-            Overlapping tasks
-            Ambiguity
+            Tonal tasks overlap
+                The boundary between chords and keys
+                Pitch spelling
+            Ambiguous annotations
             Scarcity of data
                 Comparison against MNIST annotations
                 Expert-annotated data
