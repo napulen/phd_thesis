@@ -1,4 +1,3 @@
-# What's important in an introduction?
 introduction = """
 1-Introduction
     Motivation
