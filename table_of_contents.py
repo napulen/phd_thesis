@@ -3,7 +3,7 @@ introduction = """
 1-Introduction
     Motivation
         Musical analysis
-            Why Analyze Music?
+            Why Analyze Music
                 Highlights ``important'' information
                 Lossy compression of the music around that information
             Why Analyzing Chords
@@ -14,6 +14,9 @@ introduction = """
             Why Roman numeral analysis
                 Because it summarizes several analytical dimensions
         Computational musical analysis
+            What was the motivation of the first computational musicologists
+            Computers are fast
+            We need to learn in order to explain
     Challenges
         Main challenges
             Overlapping tasks
