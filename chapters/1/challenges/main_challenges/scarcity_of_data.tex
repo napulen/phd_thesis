@@ -3,20 +3,28 @@
 % This is \refsubsubsec{scarcityofdata}, which introduces
 % the scarcity of data.
 
-\reffig{mnist} shows a grid of nine handwritten digits,
-which could be labeled to create a training examples.
-\reffig{chords} shows a chord progression with nine chords.
-Each of the chords can be labeled with a Roman numeral
-annotation to create training examples. It can be noted
-that:
+Compared to other machine learning tasks, there is not as
+much high-quality data available for training Roman numeral
+analysis models. In order to illustrate some of the reasons
+why this is the case, I contrast the process of annotating
+data for the well-known MNIST dataset against Roman numeral
+analysis. \reffig{mnist} shows a grid of nine handwritten
+digits, which could be labeled to create a training
+examples. \reffig{chords} shows a chord progression with
+nine chords. Each of the chords can be labeled with a Roman
+numeral annotation to create training examples. It can be
+noted that:
 
 \begin{enumerate}
-    \item The handwritten digits can be labeled by a wider range of annotators, whereas the chords require an expert annotator of harmony
-    \item The handwritten digits take less time to annotate than the chords
+    \item The handwritten digits can be labeled by a wider
+    range of annotators, whereas the chords require an
+    expert annotator of harmony
+    \item The handwritten digits take less time to annotate
+    than the chords
 \end{enumerate}
 
 \phdtwofigures[MNIST annotations][Roman numeral annotations][0.3][0.7]{mnist}{chords}
 
 % \phdparagraph{comparison against mnist annotations}
-% \phdparagraph{expert-annotated data}
-% \phdparagraph{more time consuming}
+% \phdparagraph{expert-annotated data} \phdparagraph{more
+% time consuming}
