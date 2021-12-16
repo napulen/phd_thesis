@@ -78,13 +78,10 @@ background = """
                 Origin of MusicXML
                 Applications of MusicXML
                 MusicXML in Roman numeral analysis
-            MNX
-                Origin of MNX
-                Applications of MNX
-                MNX in Roman numeral analysis
             Others
-                Lilypond
                 ABC
+                Lilypond
+                MNX
                 Plaine-and-Easy
         Symbolic vs audio representations
             Chroma-based features
