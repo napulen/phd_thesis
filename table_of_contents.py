@@ -12,10 +12,6 @@ introduction = """
                 And those changes are important
             Why Roman numeral analysis
                 Because it summarizes several analytical dimensions
-        Computational musical analysis
-            What was the motivation of the first computational musicologists
-            Computers are fast
-            We need to learn in order to explain
     Challenges
         Main challenges
             Tonal tasks overlap
@@ -38,10 +34,7 @@ introduction = """
     Outline of thesis contributions
         Additional tonal tasks
         Artificial training examples
-        Improved data workflows (MLOps)
-            Data hygienist
-            Unit tests for cross-dataset quality assurance
-            First work using all publicly available data in a machine-learning model
+        Improved data operations (MLOps) and data hygiene
         Alternative ways to reconstruct Roman numeral labels
         Original input representation of pitch spelling
         Original layout of neural network
