@@ -1,0 +1,87 @@
+% Copyright 2021 Néstor Nápoles López
+
+% This is \refsubsec{recurrentneuralnetworks}, which
+% introduces the recurrent neural networks.
+
+Recurrent Neural Networks (RNNs) are a special type of ANNs
+(see Question 2 for more information on ANNs) where the
+inputs are not considered to be independent but part of a
+sequence. This distinction allows the network to model
+time-varying processes and tasks that require
+sequence-to-sequence models (e.g., language, music, and
+weather). An additional benefit of RNN archictures is that,
+unlike other types of deep learning networks such as
+Convolutional Neural Networks (CNNs), RNNs can process
+inputs of arbitrary length. This has made CNNs the most
+robust choice for fixed-size grid-like data (e.g., images)
+and RNNs a popular choice for tasks where the length of the
+input is unknown.
+
+Although modern RNNs have achieved state-of-the-art accuracy
+in many tasks that involve sequential inputs, this was not
+easily achieved and required many years of innovations. The
+most important aspect in which RNNs have seemed to take more
+time to progress in comparison to other deep learning
+techniques, is the successful training of the networks,
+which seemed to be very unstable and remains one of the
+biggest challenges of research in RNNs.
+
+\guide{Training RNNs}
+
+Over the years, RNNs have gained a reputation as
+architectures that are very difficult to train
+\parencite{pascanu2013difficulty}, given that many attempts
+of training such models have failed. For example, in 1994,
+experiments showed that as the span of dependencies that
+need to be captured by the RNN increases, the probability of
+successfully training the network via the Stochastic
+Gradient Descent (SGD) optimizer rapidly reaches 0 for
+sequences of 10 or 20 time steps
+\parencite{bengio1994learning}.
+
+The main difficulty of training an RNN is something known as
+the \emph{vanishing} and \emph{exploding} gradients. When
+the gradients vanish---something very common---the network
+is unable to learn long-term dependencies and can only model
+the dependencies of inputs that were provided a few time
+steps in the past (rather than modelling the entire
+sequence, which is usually the goal). When the gradients
+explode---something less common but more damaging---the
+convergence of the training is compromised because the large
+value of the gradient occludes the search of a local minimum
+by the optimizer algorithm.
+
+One of the reasons why RNNs are more prone to vanishing and
+exploding gradients is their heavy reliability on
+\emph{parameter sharing}. Other architectures (e.g. CNNs)
+also share parameters between different neurons in order to
+reduce the number of parameters and, hence, the effort of
+training the network. RNNs, however, make a heavier use of
+parameter sharing, as their input is usually a fixed-size
+vector designed to receive the time steps of the input
+sequence, one at a time. This design decision implies two
+things: 1) the parameters of the network are shared for
+every input of the sequence, 2) the parameters need to be
+updated for every time step of every input sequence.
+
+The second of these design decisions is what mostly
+contributes to the vanishing and exploding gradients. In
+other architectures, it is expected that the parameters will
+be updated once per training example, while in RNNs the
+parameters are updated several times per training example.
+
+When the RNN is updating its shared parameters, it is very
+easy that these parameters grow out of control (explode) or
+drop to zero really fast (vanishing), similar to how a
+scalar number would vanish or explode when raised by
+large exponents (e.g., $0.5^{1000}$ or $10^{1000}$).
+
+By making use of modern solutions, however, RNNs have been
+able to successfully learn long-term dependencies (in the
+order of hundreds or thousands of time steps
+\parencite{hochreiter1997long}), making them practical for
+many tasks. There have been many proposed solutions
+\parencite{elhihi1995hierarchical, yildiz2012revisiting,
+jaeger2012long}, however, the most successful ones are the
+\emph{gated RNNs}. Particularly, a type of gated RNN known
+as the Long Short-Term Memory (LSTM) architecture.
