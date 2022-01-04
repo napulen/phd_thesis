@@ -99,74 +99,6 @@ network architectures, we can consider Convolutional Neural
 Networks (CNNs), AutoEncoders, Recurrent Neural Networks
 (RNNs), and extensions of CNNs, such as the U-Net.
 
-\guide{Convolutional Neural Networks (CNNs)}
-Convolutional Neural Networks (CNNs) might seem recent,
-however, they were introduced during the
-\emph{connectionist} wave of research on neural networks, in
-1989 \parencite{lecun1989generalization,
-lecun1989handwritten}. The main innovation of CNNs is the
-idea of \emph{shared parameters}. In a traditional
-feedforward network (e.g., Multi-Layer Perceptron), every
-neuron of the network is typically connected to another
-neuron of the network in the following layer using a
-\emph{unique} parameter (i.e., used exclusively for
-connecting those two neurons). Although that gives the
-network more expressive power and the capability of
-modelling very complex functions, in practice, it also
-contributes to a combinatorial explosion of parameters as
-the neural network grows in number of layers and neurons,
-which makes it unfeasible (or even impossible) to train it
-due to the limitations in memory and computing power of
-modern computers. CNNs, on the other hand, consider re-using
-the same parameter for connecting different neurons of the
-network with the neurons of the following layer. By doing
-this, the number of parameters is reduced, typically, in one
-or several orders of magnitude compared to a
-fully-connected, feedforward network.
-
-The idea of sharing parameters is not only important for
-reducing the effort of training the network, it is also a
-bio-inspired design motivated by the mechanics of the visual
-system. It is customary, for example, to refer to the
-collection of neurons that make use of the same parameter as
-the \emph{receptive field} of the parameter, a term taken
-from neurophysiology.
-
-The shared parameters are modelled through a \emph{kernel}
-vector. The kernel vector multiplies the inputs of the
-neural network layer in a way that resembles the
-mathematical operation of \emph{convolution}, which
-motivated the use of the term \emph{Convolutional Neural
-Networks}. After training, it is assumed that each of those
-kernels will learn a low-level, localized, feature, which is
-going to be searched across the entire input vector of the
-network and propagated to deeper (higher-level) kernels of
-the network.
-
-Given the way that convolutional kernels work, CNNs have
-become the standard methodology for dealing with
-fixed-length, grid-like structures (e.g., images), producing
-state-of-the-art performance in many tasks. For example,
-they have systematically been the state-of-the-art in the
-ImageNet challenge since 2012
-\parencite{krizhevsky2012imagenet}, identifying over 1,000
-classes of objects in an image.
-
-In Music Information Retrieval (MIR), CNNs have been used
-for genre recognition \parencite{dieleman2011audiobased},
-chord recognition \parencite{humphrey2012rethinking},
-structural analysis \parencite{ullrich2014boundary,
-grill2015music}, music tagging
-\parencite{choi2016automatic}, instrument recognition
-\parencite{lostanlen2016deep}, Optical Music Recognition
-(OMR) \parencite{calvozaragoza2017endend, pacha2018optical},
-beat tracking \parencite{gkiokas2017convolutional}, source
-separation \parencite{miron2017monaural}, syllable
-segmentation \parencite{pons2017scoreinformed}, key
-detection \parencite{korzeniowski2018genreagnostic}, and
-tempo estimation \parencite{schreiber2018singlestep,
-schreiber2019musical}.
-
 \guide{AutoEncoders}
 AutoEncoders are models designed to copy the input signal
 into the output, considering a number of restrictions. This
@@ -200,62 +132,6 @@ AutoEncoder can be used as an input feature, for example.
 In MIR, AutoEncoders have been used, for example, in Optical
 Music Recognition (OMR) problems
 \parencite{castellanos2018document}.
-
-\guide{Recurrent Neural Networks (RNNs)}
-Recurrent Neural Networks (RNNs) are a type of neural
-networks designed for dealing with sequential data. Unlike
-most other neural network architectures, RNNs do not assume
-that inputs are \emph{independent} from each other and,
-therefore, they update their parameters considering not only
-the current input to the network but also the previous
-inputs processed by the network.
-
-RNNs were introduced after the backpropagation algorithm
-\parencite{rumelhart1988learning} was extended into the
-\emph{Backpropagation Through Time} (BPTT) algorithm, around
-1988 \parencite{werbos1988generalization,
-werbos1990backpropagation}. Nevertheless, the difficulty of
-training such RNN architectures made them unfeasible in
-practical applications before the invention of the Long
-Short-Term Memory (LSTM) architecture
-\parencite{hochreiter1997long}. They were popularized during
-the \emph{deep learning} wave of research and, since then,
-achieved state-of-the-art performance in many tasks
-involving sequential data (e.g., speech recognition, natural
-language processing, music).
-
-Throughout the years, different strategies have been
-proposed to design RNNs, for example, connecting the output
-of one time step into the next time step (Jordan RNN),
-connecting the hidden state of one time step to the next
-(Elman RNN), and training the network in both directions
-\parencite{schuster1997bidirectional}.
-
-It is also not uncommon to see several of these techniques
-combined in a single architecture, for example, a
-bidirectional LSTM architecture with convolutional layers
-(CBLSTM). For a further discussion on RNNs, see Question
-\ref{chap:chap9}.
-
-In MIR, RNNs and hybrid RNN models with convolutional layers
-have been quite popular in numerous tasks, for example,
-onset detection \parencite{eyben2010universal}, chord
-recognition \parencite{boulangerlewandowski2013audio,
-sigtia2016endend, sears2018evaluating}, voice separation
-\parencite{huang2014singingvoice}, music transcription
-\parencite{sigtia2014rnnbased}, tempo estimation
-\parencite{bock2015accurate}, beat and downbeat tracking
-\parencite{bock2016joint, krebs2016downbeat}, music
-generation \parencite{liu2016predicting, liang2017automatic,
-lim2017chord}, music transcription
-\parencite{rigaud2016singing, sigtia2016endend,
-southall2016automatic, vogl2016recurrent,
-southall2017automatic, vogl2017drum, basaran2018main}, OMR
-\parencite{calvozaragoza2017onestep, wel2017optical,
-calvozaragoza2018cameraprimus}, sequence modelling
-\parencite{ycart2017study}, mood detection
-\parencite{delbouys2018music}, and instrument recognition
-\parencite{gururani2018instrument}.
 
 \guide{U-Net}
 Often, the problems that are expected to be solved by
