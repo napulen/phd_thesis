@@ -1,0 +1,104 @@
+% Copyright 2021 Néstor Nápoles López
+
+% This is \refsubsec{feedforwardnetworks},
+% which introduces the feed forward networks.
+
+
+Artificial Neural Networks (ANNs) are machine learning
+algorithms that learn arbitrary functions by automatically
+learning weights (or parameters) that connect the nodes in
+the neural network architecture. Generally, a non-linear
+activation function is applied to such weights, introducing
+a non-linear behavior in the neural network that allows it
+to learn functions of higher complexity, which a linear
+model could not possibly learn. The training of the weights
+is not achieved by programming task-specific rules but
+instead, by identifying simple characteristics of the
+training examples and extending them into more complex, more
+abstract characteristics. The process of decomposing an
+example into a combination of simpler features is known as
+\emph{representation learning}, and it is one of the main
+ideas that differentiate ANNs from other classes of machine
+learning.
+
+The study of ANNs started around the 1940s, and it has been
+known through different names throughout the years
+\parencite{goodfellow2016deep}.
+
+\guide{A brief history of ANNs}
+
+The research on ANNs can be traced back to the 1940s, when a
+bio-inspired \emph{neuron} model was introduced
+\parencite{mcculloch1943logical}. This neuron allowed to
+model very simple functions by manually setting the weights
+that connected the input into the neuron. This idea was
+later extended to propose the Perceptron
+\parencite{rosenblatt1958perceptron} and Adaline
+\parencite{widrow1960adaptive} models, which were able to
+automatically derivate such weights from the data. Although
+these models showed promise, their popularity decreased
+significantly when it was demonstrated that they could not
+learn relatively simple functions, like the \emph{XOR}
+function \parencite{minsky1972perceptrons}. Due to their
+importance, the achievements carried out during this wave of
+research (1940s-1960s) are acknowledged by the current
+literature \parencite{goodfellow2016deep} and usually
+referred to as the \emph{cybernetics} wave of neural
+networks research.
+
+Following the wave of cybernetics, a new one started around
+the 1980s-1990s, colloquially known as \emph{connectionism}.
+During the work of the \emph{connectionists},\footnote{A
+term typically used to refer to the scientists of this time
+period and research field} the research community benefited
+from the development of the current form of the
+back-propagation algorithm
+\parencite{rumelhart1988learning}. The back-propagation
+algorithm became (and remains) an elemental process in the
+training of neural networks, which allows to propagate the
+error throughout the network by making use of the
+\emph{chain rule}. Finding the derivatives of each parameter
+in the network, the values of such parameters can be updated
+in the ``right direction'' (against the gradient) to improve
+the classification accuracy through the next batch of
+training examples. This facilitates the automatic training
+of large and complicated neural networks, with multiple
+layers, neurons, and non-linear activation functions. Even
+though this and other improvements made neural networks a
+promising area of research, they were still very difficult
+to train in practice (due to the difficulty of finding a
+good initialization of the weights) and were typically
+outperformed by domain-knowledge techniques, losing the
+interest of many scientists as a consequence.
+
+Finally, a third wave of research started around 2006, when
+new methods for training neural networks were introduced
+\parencite{hinton2006fast}. These new methods not only
+facilitated the training of neural networks but the training
+of \textbf{much larger} neural networks. The interest in
+such larger architectures extended, and in a historical
+evaluation of the ImageNet dataset in 2012
+\parencite{krizhevsky2012imagenet}, neural networks
+outperformed the most sophisticated methods of computer
+vision, setting a prominent gap in performance between
+neural networks and every other method. This had an enormous
+implication in the way that neural networks were perceived
+by the research community and motivated their application
+into different problems and fields of study. We know this
+last wave of research as \emph{deep learning}, and it is
+currently an active and growing wave of research across many
+fields. Around this umbrella term of \emph{deep learning},
+many state-of-the-art machine learning techniques have been
+developed and continue to be improved.
+
+\guide{Deep learning and Music Information Retrieval}
+After the growing interest for neural networks in the wave
+of deep learning research, many new models, architectures,
+and applications have been proposed and put into practice in
+recent years.
+%achieving good results and generating subfields of research
+%within the umbrella term of deep learning.
+Among the most important innovations to the original neural
+network architectures, we can consider Convolutional Neural
+Networks (CNNs), AutoEncoders, Recurrent Neural Networks
+(RNNs), and extensions of CNNs, such as the U-Net.
