@@ -1,14 +1,13 @@
 % Copyright 2021 Néstor Nápoles López
 
-% This is \refsubsubsec{pitch-spellingmodels},
-% which introduces the pitch-spelling models.
+% This is \refsubsubsec{pitch-spellingmodels}, which
+% introduces the pitch-spelling models.
 
 % \guide{Longuet-Higgins (1976)}
-In 1976, Longuet-Higgins presented what is arguably the
-first pitch-spelling algorithm
-\parencite{longuethiggins1976perception}. It is limited to
-work on monophonic melodies. Longuet-Higgins considered that
-any note could be assigned a number, $p$, based on
+\textcite{longuethiggins1976perception} presented what is
+arguably the first pitch-spelling algorithm. It is limited
+to work on monophonic melodies. Longuet-Higgins considered
+that any note could be assigned a number, $p$, based on
 3-variables that related the note with respect to
 \emph{middle C}: the distance in perfect fifths, the
 distance in major thirds, and the octave. Using that
@@ -22,34 +21,34 @@ the note.
 % \guide{Cambouropoulos (2003)}
 After a gap of around 25 years, a series of new algorithms
 were developed by different researchers independently,
-almost at the same time. In 2003, Cambouropoulos presents an
-approach that heavily relies in intervals
-\parencite{cambouropoulos2003pitch}. The algorithm uses a
-shifting overlapping window (suggested to be of 9 to 12
-pitches long). The window moves along the sequence of
-pitches, from left to right, until the sequence concludes.
-For each window, the pitch-spelling process optimizes two
-aspects: 1) that notes make the minimum use of accidentals
-(something that Cambouropoulos refers to as \emph{notational
-parsimony}), and 2) the avoidance of 8 classes of augmented
-and diminished intervals (something that Cambouropoulos
-refers as \emph{interval optimization}). The algorithm was
-evaluated on Mozart piano sonatas and Chopin Waltzes.
+almost at the same time. \textcite{cambouropoulos2003pitch}
+presents an approach that heavily relies in intervals. The
+algorithm uses a shifting overlapping window (suggested to
+be of 9 to 12 pitches long). The window moves along the
+sequence of pitches, from left to right, until the sequence
+concludes. For each window, the pitch-spelling process
+optimizes two aspects: 1) that notes make the minimum use of
+accidentals (something that Cambouropoulos refers to as
+\emph{notational parsimony}), and 2) the avoidance of 8
+classes of augmented and diminished intervals (something
+that Cambouropoulos refers as \emph{interval optimization}).
+The algorithm was evaluated on Mozart piano sonatas and
+Chopin Waltzes.
 
 % \guide{Chew and Chen (2003)}
 After its introduction in her dissertation, the Spiral Array
-model by Chew was used for multiple tasks that involved
-tonal analysis, for example, chord labeling, key-finding,
-and pitch-spelling \parencite{chew2000towards}. The Spiral
-Array is a spatial representation of tonality that allows a
+model by \textcite{chew2000towards} was used for multiple
+tasks that involved tonal analysis, for example, chord
+labeling, key-finding, and pitch-spelling. The Spiral Array
+is a spatial representation of tonality that allows a
 sequence of pitches to be \emph{positioned} in
 the---theoretical---tonal space, which facilitates the
 computation of tonal features in different ways. Regarding
 the pitch-spelling problem, three different algorithms were
-proposed by Chew and Chen \parencite{chew2003determining}
-that were built on top of each other. In the paper, their
-evaluation of the algorithms restricted to few movements of
-Beethoven's piano sonatas.
+proposed by \textcite{chew2003determining} that were built
+on top of each other. In the paper, their evaluation of the
+algorithms restricted to few movements of Beethoven's piano
+sonatas.
 
 % \guide{Temperley and Sleator (2004)}
 Throughout the late 1990s and early 2000s, Temperley
@@ -58,67 +57,63 @@ aspects of musical structure (i.e., meter, phrasing,
 counterpoint, harmony, key, and pitch-spelling). These
 models were implemented by Daniel Sleator in the
 \emph{Melisma Music Analyzer} and explained in detail in the
-book by Temperley \parencite{temperley2004cognition}.
-Respecting the pitch-spelling problem, the approach by
-Temperley consists of a rule-based system based on his
-concepts of \emph{Tonal Pitch Class (TPC)} and the
-\emph{line of fifths}. Additionally, the algorithm depends
-on the metrical analysis provided by the Melisma Music
-Analyzer, before extracting the spelling of the notes.
+book by \textcite{temperley2004cognition}. Respecting the
+pitch-spelling problem, the approach by Temperley consists
+of a rule-based system based on his concepts of \emph{Tonal
+Pitch Class (TPC)} and the \emph{line of fifths}.
+Additionally, the algorithm depends on the metrical analysis
+provided by the Melisma Music Analyzer, before extracting
+the spelling of the notes.
 
 % \guide{Meredith (2003)}
-Meredith introduced an algorithm that receives MIDI note
-numbers and onset times as ordered pairs and determines the
-spelling of the notes through 2 stages
-\parencite{meredith2003pitch}. The first stage consists of a
-rule-based system with 8 rules that are carried out in
-sequence. After the first stage, the algorithm has
-determined a spelling for the notes. The second stage,
-consists of the correction of the outputs given by the first
-stage. The corrections performed account for neighbouring
-notes or passing notes which could have been erroneously
-predicted by the first stage. In a subsequent study
-\parencite{meredith2005comparing}, Meredith compared its
-pitch-spelling algorithm against other pitch spelling
+\textcite{meredith2003pitch} introduced an algorithm that
+receives MIDI note numbers and onset times as ordered pairs
+and determines the spelling of the notes through 2 stages.
+The first stage consists of a rule-based system with 8 rules
+that are carried out in sequence. After the first stage, the
+algorithm has determined a spelling for the notes. The
+second stage, consists of the correction of the outputs
+given by the first stage. The corrections performed account
+for neighbouring notes or passing notes which could have
+been erroneously predicted by the first stage. In a
+subsequent study, \textcite{meredith2005comparing} compared
+its pitch-spelling algorithm against other pitch spelling
 algorithms, determining that his algorithm had the highest
 accuracy.
 
-
-
 % \guide{Stoddard et al. (2004)}
-Stoddard et al. proposed a new algorithm for pitch-spelling
-\parencite{stoddard2004welltempered}. Their approach is
-data-driven, which requires ground-truth spelling
-information in order to be trained. Additionally, their
-algorithm runs on top of a probabilistic framework of
-harmonic analysis \parencite{raphael2003harmonic} and it is
-conditioned by the accuracy of that harmonic analysis model.
-The algorithm was evaluated over a total of 22,593 notes,
-scoring 96.87\% accuracy. During their study, they found
-that the detection and resolution of voice-leading
-considerations (i.e., the relationship between a note and
-its immediate neighbours) was the most important feature to
-consider in a pitch-spelling algorithm.
+\textcite{stoddard2004welltempered} proposed a new algorithm
+for pitch-spelling. Their approach is data-driven, which
+requires ground-truth spelling information in order to be
+trained. Additionally, their algorithm runs on top of the
+probabilistic framework for harmonic analysis by
+\textcite{raphael2003harmonic}, and it is conditioned by the
+accuracy of that harmonic analysis model. The algorithm was
+evaluated over a total of 22,593 notes, scoring 96.87\%
+accuracy. During their study, they found that the detection
+and resolution of voice-leading considerations (i.e., the
+relationship between a note and its immediate neighbours)
+was the most important feature to consider in a
+pitch-spelling algorithm.
 
 % \guide{Teodoru and Raphael (2007)}
-Teodoru and Raphael tackled the problem by assuming that the
-spelling of a note depends on voice leading and local
-harmony \parencite{teodoru2007pitch}. They observed
-principles and guidelines for spelling notes from music
-theory textbooks \parencite{aldwell2017harmony,
-rimskykorsakov2005practical} and attempted to build a
-probabilistic model that \emph{captures} these relationships
-through the use of Markov chains. In their evaluation, they
-showed that their model outperformed every other model,
-including Meredith's \parencite{meredith_ps13_2006}.
-Nevertheless, an important drawback from their approach is
-that it assumes that the music will be provided as
-individual voices, which is not a reasonable assumption for
-real-world MIDI inputs and, therefore, limits the
-application of their algorithm in practice. In their study,
-they found that estimating the time-varying key (local key)
-is fundamental for pitch spelling. Additionally, they
-consider that the relationship between local keys and
-spelling is bidirectional. That is, spelling can help
-influence the choice of key as much as the key can influence
-the choice of spelling.
+\textcite{teodoru2007pitch} tackled the problem by assuming
+that the spelling of a note depends on voice leading and
+local harmony. They observed principles and guidelines for
+spelling notes from music theory textbooks
+\parencite{aldwell2017harmony, rimskykorsakov2005practical}
+and attempted to build a probabilistic model that
+\emph{captures} these relationships through the use of
+Markov chains. In their evaluation, they showed that their
+model outperformed every other model, including the one in
+\textcite{meredith_ps13_2006}. Nevertheless, an important
+drawback from their approach is that it assumes that the
+music will be provided as individual voices, which is not a
+reasonable assumption for real-world MIDI inputs and,
+therefore, limits the application of their algorithm in
+practice. In their study, they found that estimating the
+time-varying key (local key) is fundamental for pitch
+spelling. Additionally, they consider that the relationship
+between local keys and spelling is bidirectional. That is,
+spelling can help influence the choice of key as much as the
+key can influence the choice of spelling.
