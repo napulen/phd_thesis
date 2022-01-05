@@ -96,15 +96,17 @@ background = """
         Transformer networks
     Music Information Retrieval
         Key estimation
-            Global-key estimation
+            Global-key estimation models
+                Symbolic inputs
+                Audio inputs
             Local-key estimation
                 Local key
                 Modulation
                 Tonicization
+            Local-key estimation models
             Perception of key
             Ambiguity of key annotations
             Key inter-annotator agreement
-            Key-estimation models
         Automatic chord recognition
             Chord syntax
             Chord vocabulary
