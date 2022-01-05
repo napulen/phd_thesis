@@ -1,0 +1,64 @@
+% Copyright 2021 Néstor Nápoles López
+
+% This is \refsubsec{automaticromannumeralanalysis}, which
+% introduces the automatic roman numeral analysis.
+
+One of the most common ways to analyze a piece of tonal
+music is through Roman numeral analysis. This requires the
+inspection of several attributes related to chords and keys.
+Chords can be inspected in terms of their properties: root,
+quality, inversion, and function. Keys can be inspected in
+terms of their temporal scope as modulations or
+tonicizations~\cite{napoles_lopez_local_2020}. Each of these
+attributes (or tasks) of Roman numeral analysis can be
+modeled in isolation. As a result, many models for automatic
+key and chord analysis exist in the Music Information
+Retrieval (MIR) literature. Recent improvements have been
+achieved by Roman numeral analysis models that predict
+chords and keys simultaneously~\cite{chen_attend_2021,
+micchi_not_2020}. This happens via multitask learning, a
+technique where a machine learning model solves several
+problems at once~\cite{ruder_overview_2017}.
+
+Thus, as a machine learning problem, functional harmony can
+be expressed as the task of correctly predicting enough
+features in order to reconstruct the original Roman numeral
+label.
+
+
+\guide{Roman Numeral Analysis.}
+The analytical process of functional harmony is commonly
+described through Roman numeral annotations. This annotation
+system is particularly popular in Western music theory for
+the analysis of `common-practice' tonal music. Roman numeral
+annotations encode a great deal of information about
+tonality, in a compact syntax. For instance, an annotation
+like  \texttt{C:viio65/V} includes an account of the local
+key (here C), the quality of the chord (diminished seventh),
+the chord inversion (first), and nature of any tonicization
+(optional, here true: of the dominant).
+
+\guide{Problem.}
+From a computational perspective, predicting such
+annotations is challenging given that the model has to
+predict multiple features correctly and asimultaneously. In
+the past, MIR researchers have reconstructed Roman numeral
+annotations by predicting six sub-tasks: chord quality,
+chord root, local key, inversion, primary degree, and
+secondary degree \parencite{chen2018functional,
+micchi2020not}.
+
+Thus, as a machine learning problem, functional harmony can
+be expressed as the task of correctly predicting enough
+features in order to reconstruct the original Roman numeral
+label.
+
+Recent efforts in this area have seen a great
+standardization of the notation and conversion routines,
+\parencite{gotham2019romantext} which in turn has
+facilitated the amassing of a relatively large meta-corpus
+of Roman numeral analyses \parencite{gotham2019romantext}.
+However, despite these developments and the wider resurgence
+of interest in the field, the performance of functional
+harmony models for predicting full Roman numeral labels
+remains relatively low.
