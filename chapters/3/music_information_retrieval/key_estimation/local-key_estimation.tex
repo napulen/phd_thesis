@@ -1,0 +1,41 @@
+% Copyright 2021 Néstor Nápoles López
+
+% This is \refsubsubsec{local-keyestimation}, which
+% introduces the local-key estimation.
+
+Changes of key may belong to different categories. In music
+theory, terms like \emph{modulation} and \emph{tonicization}
+are helpful for interpreting the context of a change of key.
+In MIR, it is common to describe algorithms that model
+\emph{changes of key} as local-key-estimation algorithms.
+The \emph{local keys} being the predictions that these
+models generate. A local key is related to the concepts of
+\emph{modulation} and \emph{tonicization}. However, it is
+difficult to understand the distinction between these three
+terms.
+
+In order to clarify this nomenclature, we recently
+investigated the relationship between the local keys,
+modulations, and tonicizations of the same musical fragment
+\parencite{napoleslopez2020local}. From this work, I
+take the definitions of local keys, modulations, and tonicizations, which might clarify what exactly a local-key-estimation algorithm outputs.
+
+\phdparagraph{local keys}
+Are the predictions of the musical key provided by a
+local-key-estimation algorithm. These predictions are given
+at a finer level of granularity than the entire piece (e.g.,
+notes, onsets, fixed-duration timesteps, audio frames,
+etc.). In principle, no music-theoretical meaning is
+inferred from them. They may coincide with modulations or
+tonicizations.
+
+\phdparagraph{modulation}
+Is the change from one key to another. We refer to the
+initial key as the \emph{departure} key, and the second key
+as the \emph{destination} key.
+
+\phdparagraph{tonicization}
+Is a brief deviation to a different key, usually with the
+intention of emphasizing a certain scale degree or harmony.
+The tonicization often returns to the original key briefly
+after the deviation.
