@@ -1,21 +1,20 @@
 % Copyright 2021 Néstor Nápoles López
 
-% This is \refsubsubsec{global-keyestimationmodels},
-% which introduces the global-key estimation models.
+% This is \refsubsubsec{global-keyestimationmodels}, which
+% introduces the global-key estimation models.
 
 \phdparagraph{symbolic inputs}
 
 \guide{Longuet-Higgins (1971)}
 
 Arguably the first key-finding algorithm ever designed, the
-one by Longuet-Higgins computed the key of a piece through
-an elimination process
-\parencite{longuethiggins1971interpreting}. The notes of the
-piece were read from left to right, one by one, and all the
-keys in which the notes were not contained as diatonic steps
-of the scale were eliminated, until a single key was
-remaining. As this was almost certainly not leading to a
-satisfactory solution in many scenarios, the system
+one by \textcite{longuethiggins1971interpreting} computed
+the key of a piece through an elimination process. The notes
+of the piece were read from left to right, one by one, and
+all the keys in which the notes were not contained as
+diatonic steps of the scale were eliminated, until a single
+key was remaining. As this was almost certainly not leading
+to a satisfactory solution in many scenarios, the system
 contained several rules for deciding the key in difficult
 cases. The algorithm was able to explain all the keys in the
 \emph{Well-Tempered Clavier}, however, it was relatively
@@ -78,8 +77,8 @@ easy to find adversarial examples where it did not work
 % pitch-classes and not by the arrangement of notes in time.
 
 Another algorithm, known as the Krumhansl-Schmuckler
-algorithm, was introduced in 1990
-\parencite{krumhansl1990cognitive}. Although introduced in
+algorithm, was introduced in
+\textcite{krumhansl1990cognitive}. Although introduced in
 1990 as an automatic key finder, the main components of the
 algorithm, the key profiles, were introduced in 1982
 \parencite{krumhansl1982tracing}. This algorithm and its
@@ -91,8 +90,8 @@ Kessler (i.e., the \emph{probe-tone} technique). The
 computation of the key consisted of measuring the
 correlation between the pitch-class distribution of the key
 profile and the histogram of pitches in the musical score.
-During a series of experiments, Sapp
-\parencite{sapp2011computational} found that when mistaken,
+During a series of experiments,
+\textcite{sapp2011computational} found that when mistaken,
 this algorithm tends to skew toward the dominant.
 
 \guide{Vos and van Geenen (1996)}
@@ -103,21 +102,20 @@ this algorithm tends to skew toward the dominant.
 % chosen.
 
 In 1996, a model for single-voiced pieces of music was
-proposed by Vos and van Geenen
-\parencite{vos1996parallelprocessing}. Similarly to the
-Longuet-Higgins model, it was tested in excerpts of the
-\emph{Well-Tempered Clavier}, particularly, the themes of
-the fugues. Although the model seemed to improve the results
-of the Longuet-Higgins model, the model did not become as
-influential as the Krumhansl-Schmuckler in future research
-directions.
+proposed by \textcite{vos1996parallelprocessing}. Similarly
+to the Longuet-Higgins model, it was tested in excerpts of
+the \emph{Well-Tempered Clavier}, particularly, the themes
+of the fugues. Although the model seemed to improve the
+results of the Longuet-Higgins model, the model did not
+become as influential as the Krumhansl-Schmuckler in future
+research directions.
 
 
 \guide{Temperley (1999)}
 
 Responding to some concerns with the Krumhansl-Schmuckler
-algorithm, Temperley proposed two modifications to the
-original algorithm \parencite{temperley1999whats}. The first
+algorithm, Temperley \textcite{temperley1999whats} proposed
+two modifications to the original algorithm. The first
 modification consisted in replacing the correlation
 operation with a dot product. The second modification is a
 change in the probability distributions of the original
@@ -126,7 +124,7 @@ fine-tuned by Temperley heuristically and through a
 trial-and-error process. This algorithm provided better
 results than the original algorithm and it was further
 extended into a probabilistic framework using Bayes' rule in
-2002 \parencite{temperley2002bayesian}.
+\textcite{temperley2002bayesian}.
 
 \guide{Chew (2002)}
 
@@ -148,29 +146,27 @@ extended into a probabilistic framework using Bayes' rule in
 % proximity can be measured to several keys, which allows
 % for tonal ambiguities
 
-Through the \emph{Spiral Array}, Chew
-\parencite{chew2002spiral} facilitated the modelling of
-tonality as a spatial representation. In this
-representation, a sequence of notes could be localized in a
-point of the tonal space, known as the \emph{Center of
-Effect}, and related to a key through a nearest-neighbours
-search. Although the geometric approach for localizing a
-point in space influenced further research on key-finding
-algorithms, the model did not perform better than the
-approaches based on distributions and key profiles.
+Through the \emph{Spiral Array}, \textcite{chew2002spiral}
+facilitated the modelling of tonality as a spatial
+representation. In this representation, a sequence of notes
+could be localized in a point of the tonal space, known as
+the \emph{Center of Effect}, and related to a key through a
+nearest-neighbours search. Although the geometric approach
+for localizing a point in space influenced further research
+on key-finding algorithms, the model did not perform better
+than the approaches based on distributions and key profiles.
 
 \guide{Aarden (2003)}
 
-In 2003, Aarden proposed an alternative, data-driven,
-methodology for obtaining a distribution of scale degrees
-\parencite{aarden2003dynamic}, which could take the place of
-the key profiles by Krumhansl and Kessler
-\parencite{krumhansl1982tracing} in a key-finding algorithm.
-For this purpose, 1000 songs from the Essen Folksong
-Collection and 250 music excerpts from the MuseData database
-were used for comparing the approaches. The distribution of
-scale degrees outperformed the key profiles from Krumhansl
-and Kessler \parencite{krumhansl1982tracing}.
+\textcite{aarden2003dynamic} proposed an alternative,
+data-driven, methodology for obtaining a distribution of
+scale degrees, which could take the place of the key
+profiles by \textcite{krumhansl1982tracing} in a key-finding
+algorithm. For this purpose, 1000 songs from the Essen
+Folksong Collection and 250 music excerpts from the MuseData
+database were used for comparing the approaches. The
+distribution of scale degrees outperformed the key profiles
+from \textcite{krumhansl1982tracing}.
 
 % These results were confirmed by other researchers
 % \parencite{albrecht2013use}. In future experiments, Sapp
@@ -189,16 +185,16 @@ and Kessler \parencite{krumhansl1982tracing}.
 \guide{Bellmann (2005)}
 
 A similar effort for scale-degree probability distributions
-was proposed by Bellmann, who used the chord frequencies
-collected by Budge during her dissertation
-\parencite{budge1943study} to create a new scale degree
-probability distribution \parencite{bellmann2006about}. This
-probability distribution is used to obtain the most likely
-key of a fragment of a score (typically, a measure long) by
-computing the dot product between the notes found in the
-excerpt and the scale degree distribution. The results of
-this algorithm were also favorable, showing that chord
-frequencies can be helpful in estimating the musical key.
+was proposed by \textcite{bellmann2006about}, who used the
+chord frequencies collected in the \thesisdiss by
+\textcite{budge1943study} to create a new scale degree
+probability distribution. This probability distribution is
+used to obtain the most likely key of a fragment of a score
+(typically, a measure long) by computing the dot product
+between the notes found in the excerpt and the scale degree
+distribution. The results of this algorithm were also
+favorable, showing that chord frequencies can be helpful in
+estimating the musical key.
 
 % \guide{Temperley (2007)} Distributional keyfinding model
 % based on probabilistic reasoning. This probabilistic model
@@ -231,28 +227,26 @@ frequencies can be helpful in estimating the musical key.
 
 \guide{Sapp (2011)}
 In order to explore the capabilities of different key
-profiles at different window lengths, Sapp performed a
-series of experiments running every possible window in a
-piece with different key profiles
-\parencite{sapp2011computational}. The results of such
-computations were visualized and rendered into what Sapp
-referred as \emph{keyscapes}. The algorithm used for
-computing the keys was the original Krumhansl-Schmuckler
-correlation algorithm, alternating the different key
-profiles. Additionally, Sapp introduced a new key profile
-named \emph{simple weights}.
+profiles at different window lengths,
+\textcite{sapp2011computational} performed a series of
+experiments running every possible window in a piece with
+different key profiles. The results of such computations
+were visualized and rendered into what Sapp referred as
+\emph{keyscapes}. The algorithm used for computing the keys
+was the original Krumhansl-Schmuckler correlation algorithm,
+alternating the different key profiles. Additionally, Sapp
+introduced a new key profile named \emph{simple weights}.
 
 \guide{Albrecht and Shanahan (2013)}
-In 2013, Albrecht and Shanahan introduced a new key-finding
+\textcite{albrecht2013use} introduced a new key-finding
 algorithm that improves the accuracy for pieces in the minor
-mode \parencite{albrecht2013use}. This algorithm utilizes
-Euclidean distance to measure the similarity between the
-notes in the piece and a new key profile. The key profile
-was obtained by analyzing the first and last measures of a
-training dataset, which consisted of 982 pieces of music
-from the baroque to the romantic period. The model
-outperformed every other symbolic key finding algorithm when
-used in this dataset.
+mode. This algorithm utilizes Euclidean distance to measure
+the similarity between the notes in the piece and a new key
+profile. The key profile was obtained by analyzing the first
+and last measures of a training dataset, which consisted of
+982 pieces of music from the baroque to the romantic period.
+The model outperformed every other symbolic key finding
+algorithm when used in this dataset.
 
 % \guide{Lam and Lee (2014)}
 
@@ -261,15 +255,15 @@ used in this dataset.
 % \guide{White (2018)}
 
 \guide{N\'apoles L\'opez et al. (2019)}
-In 2019, a new key-finding algorithm was introduced that
+In 2019, we introduced a new key-finding algorithm that
 works in the symbolic and audio domains
 \parencite{napoleslopez2019keyfinding}. This algorithm is
 also able to extract local and global keys and it is based
-on a Hidden Markov Model (HMM). The algorithm provides
+on a Hidden Markov Model (HMM). The algorithm provided
 state-of-the-art performance in the symbolic domain,
-however, it underperforms the predictions for pieces in a
-minor mode, unlike the Albrecht and Shanahan algorithm,
-which performs well in the minor mode.
+however, it underperformed for pieces in minor modes,
+unlike the Albrecht and Shanahan algorithm, which performs
+well in the minor mode.
 
 \phdparagraph{audio inputs}
 
