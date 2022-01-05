@@ -96,7 +96,6 @@ background = """
         Transformer networks
     Music Information Retrieval
         Key estimation
-            The key-estimation task
             Global-key estimation
             Local-key estimation
                 Local key
@@ -107,7 +106,6 @@ background = """
             Key inter-annotator agreement
             Key-estimation models
         Automatic chord recognition
-            The chord recognition task
             Chord syntax
             Chord vocabulary
             Perception of chords
@@ -115,13 +113,11 @@ background = """
             Chord inter-annotator agreement
             Chord recognition models
         Automatic pitch spelling
-            The MIDI pitch-spelling task
             Relationship to key and chord estimation
             Relationship to Roman numeral analysis
             Pitch-spelling models
         Automatic Roman numeral analysis
-            The Roman numeral analysis task
-                Beyond chords and keys
+            Beyond chords and keys
             Grammar-based approaches
             Reductionist approaches
             Roman numeral analysis models
