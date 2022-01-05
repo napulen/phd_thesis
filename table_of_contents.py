@@ -100,7 +100,7 @@ background = """
                 Symbolic inputs
                 Audio inputs
             Local-key estimation
-                Local key
+                Local keys
                 Modulation
                 Tonicization
             Local-key estimation models
