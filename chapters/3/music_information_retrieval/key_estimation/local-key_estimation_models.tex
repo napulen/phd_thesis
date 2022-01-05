@@ -1,97 +1,90 @@
 % Copyright 2021 Néstor Nápoles López
 
-% This is \refsubsubsec{local-keyestimationmodels},
-% which introduces the local-key estimation models.
+% This is \refsubsubsec{local-keyestimationmodels}, which
+% introduces the local-key estimation models.
 
 
 Contrary to the global-key estimation approaches, local-key
 estimation models have a relatively recent history.
 
 % Audio
-Purwins et al. introduced a method for tracking changes of
-key in audio signals %using cq-profiles, which are
-calculated with the constant Q filter bank
-\parencite{purwins2000new}. Their goal is to track the tone
-center and its variation during the piece. Their references
-annotate both modulations and tonicizations but consider
-that the ground truth is the one indicated by the
-tonicizations.
+\textcite{purwins2000new} introduced a method for tracking
+changes of key in audio signals using cq-profiles, which are
+calculated with the constant Q filter bank. Their goal is to
+track the tone center and its variation during the piece.
+Their references annotate both modulations and tonicizations
+but consider that the ground truth is the one indicated by
+the tonicizations.
 
 % symbolic
-Chew~\parencite{chew2002key} measured the distance from a
-sequence of pitches to a key using the \emph{spiral array}
-~\parencite{chew2000towardsam}. The succession of keys is then
-modeled as a sequence of \emph{boundaries} dividing the
-score in different key areas.
+\textcite{chew2002spiral} measured the distance from a
+sequence of pitches to a key using the \emph{spiral array}.
+The succession of keys is then modeled as a sequence of
+\emph{boundaries} dividing the score in different key areas.
 
 % Audio
-Chai and Vercoe designed a model based on a Hidden Markov
-Model (HMM) to detect changes of
-key~\parencite{chai2005detection}. They describe the term
-\emph{modulation} as ``the change of key at some point''.
-Their model detects, at first, the tonal center, and then,
-the mode of the key.
+\textcite{chai2005detection} designed a model based on a
+Hidden Markov Model (HMM) to detect changes of key. They
+describe the term \emph{modulation} as ``the change of key
+at some point''. Their model detects, at first, the tonal
+center, and then, the mode of the key.
 
 % Audio
-Catteau et al.~\parencite{catteau07tonalkey} introduced a model
-for scale and chord recognition, assuming that there is a
+\textcite{catteau2007probabilistic} introduced a model for
+scale and chord recognition, assuming that there is a
 correspondence between a major scale and a major key, and
 between a harmonic minor scale and a minor key. Their model
-is based on the key profiles by Temperley
-\parencite{temperley99tonality} and Lerdahl's \emph{tonal pitch
-spaces} \parencite{lerdahl88tps}.
+is based on the key profiles by
+\textcite{temperley1999whats} and Lerdahl's \emph{tonal
+pitch space} \parencite{lerdahl2005tonal}.
 
-Izmirli introduced a model to find local keys from audio
-sources, based on non-negative matrix factorization for
-segmentation~\parencite{izmirli2007localized}. Izmirli also
-attempted to disambiguate modulations and tonicizations in
-the following manner: ``Secondary functions and
-tonicizations are heard as short deviations from the
-well-grounded key in which they appear---although the
-boundary between modulation and tonicization is not clear
-cut. A modulation unambiguously instigates a shift in the
-key center''.
+\textcite{izmirli2007localized} introduced a model to find
+local keys from audio sources, based on non-negative matrix
+factorization for segmentation. Izmirli also attempted to
+disambiguate modulations and tonicizations in the following
+manner: ``Secondary functions and tonicizations are heard as
+short deviations from the well-grounded key in which they
+appear---although the boundary between modulation and
+tonicization is not clear cut. A modulation unambiguously
+instigates a shift in the key center''.
 % This work is also, to our knowledge, the first time that
 % the term \emph{local keys} has been mentioned in an MIR
 % publication.
 
-Papadopoulos and Peeters adopted a similar approach to
-Izmirli for audio local-key estimation
-\parencite{papadopoulos2009local}. Their model attempts to
-segment the score based on the points of modulation. They
-introduced key dependencies on the harmonic and metric
-structures of global-key-finding methods, in order to
-convert them into local-key-finding ones.
+\textcite{papadopoulos2009local} adopted a similar approach
+to Izmirli for audio local-key estimation. Their model
+attempts to segment the score based on the points of
+modulation. They introduced key dependencies on the harmonic
+and metric structures of global-key-finding methods, in
+order to convert them into local-key-finding ones.
 % They also discussed the need for more data in chords and
 % local key.
 
-Rocher et al. introduced a model that provides (chord, key)
-duples for each audio frame of an input excerpt. The model
-is based on a graph and the \emph{best-path} estimation
-method~\parencite{thomas_rocher_2010_1417485}. For evaluating key
+\textcite{rocher2010concurrent} introduced a model that
+provides (chord, key) duples for each audio frame of an
+input excerpt. The model is based on a graph and the
+\emph{best-path} estimation method. For evaluating key
 distances, they used the key profiles by
-Temperley~\parencite{temperley99tonality}. The authors alluded to
-the term modulation when discussing their key predictions.
+\textcite{temperley1999whats}. The authors alluded to the
+term modulation when discussing their key predictions.
 
-Mearns et al. used an HMM to estimate modulations over audio
-transcriptions of Bach
-chorales~\parencite{mearns2011automatically}. The HMM is trained
-with chord progressions. The emission probability
-distributions are obtained from two tables with the
-probabilities of chords existing in a given key. These
+\textcite{mearns2011automatically} used an HMM to estimate
+modulations over audio transcriptions of Bach chorales. The
+HMM is trained with chord progressions. The emission
+probability distributions are obtained from two tables with
+the probabilities of chords existing in a given key. These
 tables are based on the work by Schoenberg and Krumhansl.
 Applied chords (i.e., tonicizations) are not described in
 these charts, therefore, the authors do not deal with
 tonicizations.
 
-In 2014, Pauwels and Martens present a probabilistic
+\textcite{pauwels2014combining} presented a probabilistic
 framework for the simultaneous estimation of chords and keys
-from audio~\parencite{pauwels2014combining}. They mention the
-importance of ``integrating prior musical knowledge'' into a
-local-key-estimation system, however, they do not allude to
-the terms modulation and tonicization. The same year, Weiss
-et al. proposed an audio scale
-estimator~\parencite{weiss2014chroma}. They argue that this
+from audio. They mention the importance of ``integrating
+prior musical knowledge'' into a local-key-estimation
+system, however, they do not allude to the terms modulation
+and tonicization. The same year, \textcite{weiss2014chroma}
+proposed an audio scale estimator. They argue that this
 estimator can help to determine the local tonality based on
 G\'{a}rdonyi's scale analysis method. They did not use the
 term tonicization, however, they discussed ``short-time
@@ -99,23 +92,22 @@ local modulations'', which resemble tonicizations.
 
 Machine learning approaches, especially using neural
 networks, have recently gained popularity in MIR research,
-including key estimation. Independently, Chen et al.
-\parencite{chen18harmony,chen19harmony} and Micchi et
-al.~\parencite{micchi20roman} designed models that estimate local
-keys as well as roman numeral analysis annotations.
+including key estimation. Independently,
+\textcite{chen18harmony, chen19harmony} and \textcite{micchi20roman} designed models that estimate
+local keys as well as roman numeral analysis annotations.
 Tonicization information is implied by the roman numeral
 analysis annotations.
 
 N\'apoles L\'opez et al. introduced a model to find changes
 of key (local-key estimation) as well as the main key of a
 piece (global-key estimation), using an HMM
-\parencite{napoleslopez2019key}. The model is also capable of
+\textcite{napoleslopez2019key}. The model is also capable of
 working with symbolic and audio data. They do not allude to
 the terms modulation or tonicization, always referring to
 their predictions as \emph{local keys}.
 
 One of the most recent models for finding changes of key is
-by Feisthauer et al.~\parencite{feisthauer2020smc}, which has
+by \textcite{feisthauer2020smc}, which has
 been designed to detect modulations in Classical music. It
 uses three proximity measures established from pitch
 compatibility, tonality anchoring, and tonality proximity.
