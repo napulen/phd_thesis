@@ -10,15 +10,15 @@ The key-finding algorithm by
 \textcite{longuethiggins1971interpreting}, arguably the
 first one ever designed, computed the key of a piece through
 an elimination process. The notes of the piece were read
-from left to right, one by one, and all the keys in which
-the notes were not contained as diatonic steps of the scale
-were eliminated, until a single key was remaining. As this
-was almost certainly not leading to a satisfactory solution
-in many scenarios, the system contained several rules for
-deciding the key in difficult cases. The algorithm was able
-to explain all the keys in the \emph{Well-Tempered Clavier},
-however, it was relatively easy to find adversarial examples
-where it did not work \parencite{temperley2008pitchclass}.
+from left to right, one by one, discarding all the keys
+where the notes were not contained as diatonic steps of the
+key, until a single key was remaining. This often lead to no
+solutions, thus, the system contained several rules for
+deciding the key in difficult cases. The algorithm
+successfully explained the keys in Bach's
+\emph{Well-Tempered Clavier}, however, it was relatively
+easy to find adversarial examples where it did not work
+\parencite{temperley2008pitchclass}.
 
 % Krumhansl and Schmuckler (1990)
 
@@ -195,17 +195,17 @@ distribution. The results of this algorithm were also
 favorable, showing that chord frequencies can be helpful in
 estimating the musical key.
 
-% % Temperley (2007) Distributional keyfinding model
-% based on probabilistic reasoning. This probabilistic model
+% % Temperley (2007) Distributional keyfinding model based
+% on probabilistic reasoning. This probabilistic model
 % assumes a generative model in which melodies are generated
 % from keys. A key-profile in this case represents a
 % probability function, indicating the probability of each
 % scale-degree given a key.
 
 
-% % Madsen and Widmer (2007) argue that in addition to
-% the pitch-class distribution, the order of notes appearing
-% in a piece of music may also help determine the key. They
+% % Madsen and Widmer (2007) argue that in addition to the
+% pitch-class distribution, the order of notes appearing in
+% a piece of music may also help determine the key. They
 % propose a key-finding system that incorporates this
 % temporal information by also analyzing the distribution of
 % intervals within a piece of music. Interval Profiles are
@@ -266,15 +266,14 @@ the minor mode.
 
 \phdparagraph{audio inputs}
 
-% Leman (1992)
-% derives key directly from an acoustic signal, rather than
-% from a representation where notes have already been
-% identified. The model is essentially a key-profile model,
-% but in this case the input vector represents the strength
-% of each pitch-class (and its harmonics) in the auditory
-% signal; key-profiles are generated in a similar fashion,
-% based on the frequency content of the primary chords of
-% each key.
+% Leman (1992) derives key directly from an acoustic signal,
+% rather than from a representation where notes have already
+% been identified. The model is essentially a key-profile
+% model, but in this case the input vector represents the
+% strength of each pitch-class (and its harmonics) in the
+% auditory signal; key-profiles are generated in a similar
+% fashion, based on the frequency content of the primary
+% chords of each key.
 
 % the system is based heavily on a model of the human
 % auditory system and consists of two stages. The first step
@@ -293,20 +292,19 @@ pitch-class information of the first stage with a set of
 templates, analogous to a key profile, which were obtained
 through Self-Organizing Maps (SOM) networks.
 
-% Izmirli and Bilgen (1994)
-% proposed a system for audio key finding that implements
-% partial score transcription in combination with a
-% pattern-matching algorithm. In the first stage of the
-% system, the fast Fourier transform (FFT) function is used
-% in order to convert a single-part, melodic audio input
-% into a sequence of note intervals with associated onset
-% times. A second stage then employs a finite-state automata
-% algorithm to compare the note sequences with predetermined
-% scale patterns. The model then outputs a tonal context
-% vector, where each element is known as a tonal component.
-% Each tonal component represents the extent of any given
-% scale usage within the melody for the corresponding
-% location in time.
+% Izmirli and Bilgen (1994) proposed a system for audio key
+% finding that implements partial score transcription in
+% combination with a pattern-matching algorithm. In the
+% first stage of the system, the fast Fourier transform
+% (FFT) function is used in order to convert a single-part,
+% melodic audio input into a sequence of note intervals with
+% associated onset times. A second stage then employs a
+% finite-state automata algorithm to compare the note
+% sequences with predetermined scale patterns. The model
+% then outputs a tonal context vector, where each element is
+% known as a tonal component. Each tonal component
+% represents the extent of any given scale usage within the
+% melody for the corresponding location in time.
 
 \textcite{izmirli1994recognition} propose a model that
 consists of two stages. The first stage converts monophonic
@@ -317,17 +315,16 @@ match patterns of scales. In total, they used three
 pattern-matching automatas: major scale, natural minor
 scale, and harmonic minor scale.
 
-% Purwins et al. (2000)
-% the system employs the CQtransform to extract a
-% pitch-class distribution from the audio signal. A fuzzy
-% distance algorithm is then used to compare the pitch-class
-% distribution with the cognitive-based templates. The
-% system is able to track the key over time and thus is
-% capable of identifying modulations in the music. An
-% evaluation was performed using Chopin’s C minor prelude,
-% Op. 28, No. 20 and was fairly successful at tracking the
-% key, although no quantitative results were explicitly
-% reported.
+% Purwins et al. (2000) the system employs the CQtransform
+% to extract a pitch-class distribution from the audio
+% signal. A fuzzy distance algorithm is then used to compare
+% the pitch-class distribution with the cognitive-based
+% templates. The system is able to track the key over time
+% and thus is capable of identifying modulations in the
+% music. An evaluation was performed using Chopin’s C minor
+% prelude, Op. 28, No. 20 and was fairly successful at
+% tracking the key, although no quantitative results were
+% explicitly reported.
 
 \textcite{purwins2000new} propose a model that is based on
 the constant-Q transform, extracting pitch-class
@@ -343,29 +340,29 @@ similar key segmentations as the ones provided by an expert
 annotator.
 
 
-% Gomez and Herrera (2004)
-% noted that the majority of audio key detection models
-% developed up until 2004 were based on perceptual studies
-% of tonality, which they called cognition-inspired models.
-% They performed an experiment in which they directly
-% compared an implementation of a cognition-inspired model
-% with several machine-learning algorithms for audio key
-% determination. The cognition-inspired model was based on
-% the K-S algorithm but extended to handle polyphonic audio
-% input. Numerous machine learning techniques were
-% implemented, including binary trees, Bayesian estimation,
-% neural networks, and support vector machines. The various
-% algorithms were evaluated on three criteria: estimating
-% the “key note” (i.e., tonic), the mode, and the “tonality”
-% (i.e., tonic and mode). A corpus of 878 excerpts of
-% classical music from various composers was used for
-% training and testing. The excerpts were split into two
-% sets: 661 excerpts for training and 217 excerpts for
-% evaluation. The results, summarized in Figure 2.9, show
-% that for the case of estimating the “tonality,” the best
-% machine learning algorithm (a multilayer perceptron,
-% neural network) outperforms the cognition-inspired model,
-% but a combination of the two approaches produces the best
+% Gomez and Herrera (2004) noted that the majority of audio
+% key detection models developed up until 2004 were based on
+% perceptual studies of tonality, which they called
+% cognition-inspired models. They performed an experiment in
+% which they directly compared an implementation of a
+% cognition-inspired model with several machine-learning
+% algorithms for audio key determination. The
+% cognition-inspired model was based on the K-S algorithm
+% but extended to handle polyphonic audio input. Numerous
+% machine learning techniques were implemented, including
+% binary trees, Bayesian estimation, neural networks, and
+% support vector machines. The various algorithms were
+% evaluated on three criteria: estimating the “key note”
+% (i.e., tonic), the mode, and the “tonality” (i.e., tonic
+% and mode). A corpus of 878 excerpts of classical music
+% from various composers was used for training and testing.
+% The excerpts were split into two sets: 661 excerpts for
+% training and 217 excerpts for evaluation. The results,
+% summarized in Figure 2.9, show that for the case of
+% estimating the “tonality,” the best machine learning
+% algorithm (a multilayer perceptron, neural network)
+% outperforms the cognition-inspired model, but a
+% combination of the two approaches produces the best
 % results.
 
 \textcite{gomez2004estimating} proposed a comparison of what
@@ -383,9 +380,9 @@ better performance than the cognitive-based model, however,
 the best overall performance resulted from the combination
 of both models.
 
-% % Pauws (2004) The system incorporates signal
-% processing techniques designed to improve the salience of
-% the extracted pitch-class distribution. The pitch-class
+% % Pauws (2004) The system incorporates signal processing
+% techniques designed to improve the salience of the
+% extracted pitch-class distribution. The pitch-class
 % distribution is then used as input to the maximum-key
 % profile algorithm in order to identify the key. The model
 % was tested on a corpus of 237 classical piano sonatas,
@@ -444,25 +441,24 @@ their algorithm, they used 10 pieces of piano music from the
 classical and romantic period, which were manually annotated
 by the authors.
 
-% Chuan and Chew (2005)
-% they formulate hypotheses for sources of errors during the
-% pitch class generation stage and propose a modified
-% algorithm that uses fuzzy analysis in order to eliminate
-% some of the errors. The fuzzy analysis method consists of
-% three main components: clarifying low frequencies,
-% adaptive level weighting, and flattening high and low
-% values. They performed a direct comparison of the fuzzy
-% analysis key-finding system with two other models: a peak
-% detection model and a MIDI key-finding model. The
-% evaluation utilized excerpts from a corpus of 410
-% classical music MIDI files, where only the first 15
-% seconds of the first movement was considered. The fuzzy
-% analysis and peak detection algorithms operated on audio
-% files that were synthesized using Winamp, and the MIDI
-% key-finding model operated directly on the MIDI files. The
-% maximum key identification rates for the peak detection,
-% fuzzy analysis, and MIDI key-finding models were 70.17\%,
-% 75.25\%, and 80.34\%, respectively.
+% Chuan and Chew (2005) they formulate hypotheses for
+% sources of errors during the pitch class generation stage
+% and propose a modified algorithm that uses fuzzy analysis
+% in order to eliminate some of the errors. The fuzzy
+% analysis method consists of three main components:
+% clarifying low frequencies, adaptive level weighting, and
+% flattening high and low values. They performed a direct
+% comparison of the fuzzy analysis key-finding system with
+% two other models: a peak detection model and a MIDI
+% key-finding model. The evaluation utilized excerpts from a
+% corpus of 410 classical music MIDI files, where only the
+% first 15 seconds of the first movement was considered. The
+% fuzzy analysis and peak detection algorithms operated on
+% audio files that were synthesized using Winamp, and the
+% MIDI key-finding model operated directly on the MIDI
+% files. The maximum key identification rates for the peak
+% detection, fuzzy analysis, and MIDI key-finding models
+% were 70.17\%, 75.25\%, and 80.34\%, respectively.
 
 % we evaluate the technique by comparing the results of
 % symbolic (MIDI) key finding, audio key finding with peak
@@ -493,8 +489,8 @@ state-of-the-art models.
 
 % TODO: Which year the MIREX eval?
 
-% % Zhu et al. (2005) utilizes the CQ-transform and
-% detects the key in two distinct steps: diatonic scale root
+% % Zhu et al. (2005) utilizes the CQ-transform and detects
+% the key in two distinct steps: diatonic scale root
 % estimation and mode determination. The system is evaluated
 % on a corpus of 60 pop songs and 12 classical music
 % recordings, using only the first 2 minutes of each piece.
@@ -503,23 +499,22 @@ state-of-the-art models.
 % rate of successful mode determination for the pop songs
 % was 90\% and 83.3\% for the classical pieces
 
-% Harte et al. (2006)
-% they then propose an audio key-finding model that is based
-% on projecting collections of pitches onto the interior
-% space contained by the hypertorus. This is essentially
-% mapping to three distinct feature spaces: the circle of
-% fifths, the circle of major thirds, and the circle of
-% minor thirds. This 6-dimensional space is called the tonal
-% centroid. The algorithm first applies the CQ-transform in
-% order to extract the pitch-class distribution. The 12-D
-% pitch-class distribution is then mapped to the 6-D tonal
-% centroid with a mapping matrix. The algorithm was applied
-% in a chord recognition system, however, the authors point
-% out that it could be adapted for other classification
-% tasks such as key detection. Fig. 2.12: If enharmonic and
-% octave equivalence are considered, then the Spiral Array
-% model can be represented as a hypertorus (from Harte et
-% al. 2006).
+% Harte et al. (2006) they then propose an audio key-finding
+% model that is based on projecting collections of pitches
+% onto the interior space contained by the hypertorus. This
+% is essentially mapping to three distinct feature spaces:
+% the circle of fifths, the circle of major thirds, and the
+% circle of minor thirds. This 6-dimensional space is called
+% the tonal centroid. The algorithm first applies the
+% CQ-transform in order to extract the pitch-class
+% distribution. The 12-D pitch-class distribution is then
+% mapped to the 6-D tonal centroid with a mapping matrix.
+% The algorithm was applied in a chord recognition system,
+% however, the authors point out that it could be adapted
+% for other classification tasks such as key detection. Fig.
+% 2.12: If enharmonic and octave equivalence are considered,
+% then the Spiral Array model can be represented as a
+% hypertorus (from Harte et al. 2006).
 
 \textcite{harte2006detecting} propose a new model that
 applies a similar principle to the spatial representation of
@@ -557,10 +552,9 @@ of the songs in 91\% of the cases. A further change on the
 observations of the HMM was necessary to work directly on
 audio inputs.
 
-% Peeters (2006)
-% implements one HMM for each of the 24 possible keys. A
-% front-end algorithm is used to extract a sequence of
-% time-based chroma-vectors (i.e., pitch-class
+% Peeters (2006) implements one HMM for each of the 24
+% possible keys. A front-end algorithm is used to extract a
+% sequence of time-based chroma-vectors (i.e., pitch-class
 % distributions) for each of the songs in a training set of
 % key annotated music. All of the chroma-vectors for songs
 % in the major mode are then mapped to C major and all of
@@ -586,17 +580,17 @@ score.
 
 % TODO: Which year? The MIREX evaluation
 
-% % van der Par et al. (2006) present an extension to
-% the work of Pauws (2004) in which they utilize three
-% different temporal weighting functions in the calculation
-% of the pitchclass templates. This results in three
-% different templates for each key. Similarly, during the
-% actual key detection, three different pitch-class profiles
-% are extracted, one for each temporal weighting function.
-% Each of the three pitch-class profiles is then correlated
-% with the corresponding templates and a final correlation
-% value is calculated from the combined values. The system
-% was evaluated using the same corpus of 237 classical piano
+% % van der Par et al. (2006) present an extension to the
+% work of Pauws (2004) in which they utilize three different
+% temporal weighting functions in the calculation of the
+% pitchclass templates. This results in three different
+% templates for each key. Similarly, during the actual key
+% detection, three different pitch-class profiles are
+% extracted, one for each temporal weighting function. Each
+% of the three pitch-class profiles is then correlated with
+% the corresponding templates and a final correlation value
+% is calculated from the combined values. The system was
+% evaluated using the same corpus of 237 classical piano
 % sonatas as Pauws (2004) and received a maximum key
 % recognition rate of 98.1%.
 
@@ -618,12 +612,11 @@ performance on recorded audio decreased significantly.
 
 % TODO: Which year, MIREX
 
-% Izmirli (2007)
-% a model for localized key finding from audio is proposed.
-% Besides being able to estimate the key in which a piece
-% starts, the model can also identify points of modulation
-% and label multiple sections with their key names
-% throughout a single piece.
+% Izmirli (2007) a model for localized key finding from
+% audio is proposed. Besides being able to estimate the key
+% in which a piece starts, the model can also identify
+% points of modulation and label multiple sections with
+% their key names throughout a single piece.
 
 \textcite{izmirli2007localized} proposes a model to find
 local keys in audio signals. As a pre-processing step, the
@@ -674,32 +667,31 @@ able to distinguish only major and minor triads.
 
 % % Hu and Saul (2009)
 
-% Papadopoulos and Peeters (2009)
-% approach the local audio key estimation problem by
-% considering combinations and extensions of previous
-% methods for global audio key finding. The system consists
-% of three stages: feature extraction, harmonic and metric
-% structure estimation, and local key estimation. The
-% feature extraction algorithm extracts a chromagram from
-% the audio signal, consisting of a sequence of time-based
-% pitch-class distributions (Papadopoulos and Peeters 2008).
-% Metric structure estimation is then achieved by
-% simultaneously detecting chord progressions and downbeats
-% using a previously proposed method (Papadopoulos and
-% Peeters 2008). The final stage of the system performs
-% local key estimation using an HMM with observation
-% probabilities that are derived from pitch-class templates.
-% They create five different versions of the system using
-% different types of pitch-class templates: Krumhansl
-% (1990), Temperley (2001), diatonic, Temperley-diatonic
-% (Peeters 2006b), and an original template where all
-% pitchclasses have an equal value except for the tonic,
-% which has triple the value. The system is then evaluated
-% using five movements of Mozart piano sonatas, with
-% manually annotated ground truth data corresponding to
-% chords and local key. A maximum local key recognition rate
-% of 80.22\% was achieved by using the newly proposed
-% pitch-class template.
+% Papadopoulos and Peeters (2009) approach the local audio
+% key estimation problem by considering combinations and
+% extensions of previous methods for global audio key
+% finding. The system consists of three stages: feature
+% extraction, harmonic and metric structure estimation, and
+% local key estimation. The feature extraction algorithm
+% extracts a chromagram from the audio signal, consisting of
+% a sequence of time-based pitch-class distributions
+% (Papadopoulos and Peeters 2008). Metric structure
+% estimation is then achieved by simultaneously detecting
+% chord progressions and downbeats using a previously
+% proposed method (Papadopoulos and Peeters 2008). The final
+% stage of the system performs local key estimation using an
+% HMM with observation probabilities that are derived from
+% pitch-class templates. They create five different versions
+% of the system using different types of pitch-class
+% templates: Krumhansl (1990), Temperley (2001), diatonic,
+% Temperley-diatonic (Peeters 2006b), and an original
+% template where all pitchclasses have an equal value except
+% for the tonic, which has triple the value. The system is
+% then evaluated using five movements of Mozart piano
+% sonatas, with manually annotated ground truth data
+% corresponding to chords and local key. A maximum local key
+% recognition rate of 80.22\% was achieved by using the
+% newly proposed pitch-class template.
 
 A different local key estimation algorithm was proposed by
 \textcite{papadopoulos2009local}. The method extends on
@@ -759,15 +751,15 @@ improve the results of their main task, chord recognition.
 
 % % Korzeniowski (2018)
 
-% Korzeniowski and Widmer (2018)
-% we show the network only short snippets instead of the
-% whole piece at training time. [...] From our datasets, we
-% found 20 seconds to be sufficient (with the exception of
-% classical music, which we need to treat differently, due
-% to the possibility of extended periods of modulation).
-% Each time the network is presented a song, we cut a random
-% 20 s snippet from the spectrogram. The network thus sees a
-% different variation of each song every epoch.
+% Korzeniowski and Widmer (2018) we show the network only
+% short snippets instead of the whole piece at training
+% time. [...] From our datasets, we found 20 seconds to be
+% sufficient (with the exception of classical music, which
+% we need to treat differently, due to the possibility of
+% extended periods of modulation). Each time the network is
+% presented a song, we cut a random 20 s snippet from the
+% spectrogram. The network thus sees a different variation
+% of each song every epoch.
 
 % we expect this modification to have the following effects.
 % (i) Back-propagation will be faster and require less
