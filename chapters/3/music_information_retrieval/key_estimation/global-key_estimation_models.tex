@@ -277,12 +277,12 @@ well in the minor mode.
 % center data with predetermined templates derived from
 % self-organizing maps
 
-Arguably the first audio key-finding algorithm is the one by
-\textcite{leman1992een}. It consists of two stages. In the
-first stage, the algorithm extracts the strength of each
-pitch-class, including its harmonics, from the audio signal.
-In the second stage, the algorithm tries to match the
-pitch-class information of the first stage with a set of
+Arguably the first audio key-finding algorithm was proposed
+by \textcite{leman1992een}. It consisted of two stages. In
+the first stage, the algorithm extracted the strength of
+each pitch-class, including its harmonics, from the audio
+signal. In the second stage, the algorithm tried to match
+the pitch-class information of the first stage with a set of
 templates, analogous to a key profile, which were obtained
 through Self-Organizing Maps (SOM).
 
@@ -300,11 +300,11 @@ through Self-Organizing Maps (SOM).
 % represents the extent of any given scale usage within the
 % melody for the corresponding location in time.
 
-\textcite{izmirli1994recognition} propose a model that also
-consists of two stages. The first stage converts monophonic
-audio signals into a sequence of note intervals and their
-occurrence times, similar to a \emph{piano-roll}
-representation. The second stage uses a series of finite
+\textcite{izmirli1994recognition} proposed a model that also
+consisted of two stages. The first stage converted
+monophonic audio signals into a sequence of note intervals
+and their occurrence times, similar to a \emph{piano-roll}
+representation. The second stage used a series of finite
 state automatas to match patterns of scales. In total, they
 used three pattern-matching automatas: major scale, natural
 minor scale, and harmonic minor scale.
@@ -320,16 +320,16 @@ minor scale, and harmonic minor scale.
 % tracking the key, although no quantitative results were
 % explicitly reported.
 
-\textcite{purwins2000new} propose a model that is based on
+\textcite{purwins2000new} proposed a model that was based on
 the constant-Q transform, extracting pitch-class
 distributions from the audio signal based on a few basic
-music-theoretical assumptions, for example, the octave
+music-theoretical assumptions. For example, the octave
 equivalence and the division of the octave in the chromatic
-scale. Using these distributions, the system tracks the key
+scale. Using these distributions, the system tracked the key
 over time by comparing the distributions of the signals with
 the \textcite{krumhansl1982tracing} key profiles. The model
-is not quantitatively evaluated but an example of the keys
-tracked in Chopin's Prelude Op. 28 No. 20 is provided,
+was not quantitatively evaluated but an example of the keys
+tracked in Chopin's Prelude Op. 28 No. 20 was provided,
 showing similar key segmentations as the ones provided by an
 expert annotator.
 
@@ -360,12 +360,12 @@ expert annotator.
 % results.
 
 \textcite{gomez2004estimating} proposed a comparison of what
-they denominated ``cognition-inspired'' models, against
-models derived from machine learning techniques. The
-cognition-inspired model is a modification of the
-Krumhansl-Schmuckler algorithm that works with Harmonic
-Pitch Class Profile features (HPCP) as input instead of note
-histograms. The machine learning models tested included
+they named ``cognition-inspired'' models, against models
+derived from machine learning techniques. The
+cognition-inspired model was a modification of the
+Krumhansl-Schmuckler algorithm that worked with Harmonic
+Pitch Class Profile features (HPCP) as input, instead of
+note histograms. The machine learning models tested included
 binary trees, bayesian estimation, neural networks, support
 vector machines, boosting, and bagging. In an experiment
 with 661 audio files used for training and 217 used for
