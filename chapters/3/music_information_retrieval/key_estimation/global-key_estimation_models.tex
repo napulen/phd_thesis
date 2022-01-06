@@ -626,11 +626,11 @@ performance on recorded audio decreased significantly.
 % and label multiple sections with their key names
 % throughout a single piece.
 
-Izmirli proposes a model to find local keys in audio signals
-\textcite{izmirli2007localized}. As a pre-processing step,
-the model adapts the tuning of the signal before computing
-the spectral analysis and the chroma features. In a later
-stage, Non-negative matrix factorization is used to segment
+\textcite{izmirli2007localized} proposes a model to find
+local keys in audio signals. As a pre-processing step, the
+model adapts the tuning of the signal before computing the
+spectral analysis and the chroma features. In a later stage,
+Non-negative matrix factorization is used to segment
 contiguous chroma vectors, identifying potential local keys.
 The model identifies segments that are candidates for unique
 local keys in relation to the neighboring key centers. The
@@ -642,13 +642,13 @@ textbook. In the paper, the results for three different
 evaluation methods are provided for each of the datasets.
 
 \guide{Lee and Slaney (2007)}
-Lee and Slaney present a model for chord and key extraction
-from audio sources \textcite{lee2007unified}. The model was
-trained by creating a separate HMM for each of the 24 keys.
-In order to obtain the training data, they annotated a
-harmonic analysis of several MIDI files. These harmonic
-analyses were performed using the rule-based system from
-Temperley and Sleator, the Melisma Music Analyzer
+\textcite{lee2007unified} present a model for chord and key
+extraction from audio sources. The model was trained by
+creating a separate HMM for each of the 24 keys. In order to
+obtain the training data, they annotated a harmonic analysis
+of several MIDI files. These harmonic analyses were
+performed using the rule-based system from Temperley and
+Sleator, the Melisma Music Analyzer
 \textcite{temperley2004cognition}. The corpus for performing
 the harmonic analysis was obtained from mididb.com, and
 consisted 1046 MIDI files of Rock music. The annotated files
