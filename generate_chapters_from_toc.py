@@ -75,7 +75,7 @@ def getTOC(contents):
 
 def treeheader(name, level):
     fname = name.replace("_", " ")
-    header = "% Copyright 2021 Néstor Nápoles López\n\n"
+    header = "% Copyright 2022 Néstor Nápoles López\n\n"
     if level == CHAPTER:
         header += f"""\
 \\phdchapter{{{fname}}}
