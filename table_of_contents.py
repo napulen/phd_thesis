@@ -115,8 +115,7 @@ background = """
             Chord inter-annotator agreement
             Chord recognition models
         Automatic pitch spelling
-            Relationship to key and chord estimation
-            Relationship to Roman numeral analysis
+            Relevance of pitch spelling to tonal analysis
             Pitch-spelling models
         Automatic Roman numeral analysis
             Beyond chords and keys
