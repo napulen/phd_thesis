@@ -425,9 +425,9 @@ chords and keys simultaneously. The model was tested on a
 single piece, the second movement of Mozart's KV550.
 
 % Chai and Vercoe (2005)
-\textcite{chai2005detection} proposed an HMM to detect keys
-in audio files. Their approach took as input a chromagram
-vector of 24 bins, extracting the best match of a
+\textcite{chai2005detection} proposed an \acrshort{hmm} to
+detect keys in audio files. Their approach took as input a
+chromagram vector of 24 bins, extracting the best match of a
 major-and-relative-minor pair of keys (this could be thought
 as an algorithm that extracted the key signature). A second
 step used heuristics to determine the mode. In order to
@@ -463,15 +463,15 @@ annotated by the authors.
 
 \textcite{chuan2005polyphonic} proposed a real-time
 algorithm based on the extraction of pitches and
-pitch-strengths through the Fast Fourier Transform (FFT).
-The key detection model was based on the \emph{Center of
-Effect Generator} algorithm from \textcite{chew2002spiral}
-and determined the key based on the pitch-strength
-information. In their evaluation, the model achieved a
-recognition rate of 96\% within the first fifteen seconds of
-their test set, which consisted of 61 audio files with
-different performances of 21 Mozart Symphonies. Their system
-outperformed the Krumhansl-Schmuckler algorithm
+pitch-strengths through the \acrfull{fft}. The key detection
+model was based on the \emph{Center of Effect Generator}
+algorithm by \textcite{chew2002spiral} and determined the
+key based on the pitch-strength information. In their
+evaluation, the model achieved a recognition rate of 96\%
+within the first fifteen seconds of their test set, which
+consisted of 61 audio files with different performances of
+21 Mozart Symphonies. Their system outperformed the
+Krumhansl-Schmuckler algorithm
 \parencite{krumhansl1990cognitive} and the modified version
 by \textcite{temperley1999whats} when evaluated within the
 first seconds of the recordings. A further improvement was
