@@ -41,6 +41,7 @@ The custom macros include:
 - `\reftab`: use `hyperref` to reference a table
 - `\refeq`: use `hyperref` to reference an equation
 
+These are all located in the `phdmacros.sty` file.
 
 ## Normalizing reference identifiers in bibtex
 
@@ -87,3 +88,27 @@ The workflow to write the thesis is as follows:
 7. Github actions takes care of compiling the thesis and diffing this version against the previous tag
 8. Repeat 3--7 until thesis is complete
 9. Hopefully graduate.
+
+## Convenience scripts
+
+In order to save some time, I have been using scripts to quickly update my references and generate a pdf.
+
+This is `refs.sh` which just runs the reference normalization script
+
+```bash
+#!/bin/bash
+
+python3 normalize_references.py -v --modify
+```
+
+This is `flush.sh` which deletes old `chapters` and generates a new one.
+
+```bash
+#!/bin/bash
+
+rm -R chapters
+git checkout chapters
+python3 generate_chapters_from_toc.py
+```
+
+> Note that any changes need to be committed before generating the new PDF, otherwise they'll be gone.
