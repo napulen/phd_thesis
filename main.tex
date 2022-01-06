@@ -7,6 +7,7 @@
 \usepackage{csquotes}
 \usepackage[T1]{fontenc}
 \usepackage[margin=1in]{geometry}
+\usepackage[acronym, toc]{glossaries}
 \usepackage{graphicx}
 \usepackage{setspace}\doublespacing
 \usepackage[colorlinks=true, linkcolor=blue, citecolor=teal]{hyperref}
@@ -24,6 +25,8 @@
 
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
+
+\input{frontmatter/glossaries.tex}
 
 % UNCOMMENT TO COMPILE A SINGLE CHAPTER
 % \includeonly{chapters/1/_main}
@@ -44,6 +47,8 @@
 \changecwd{chapters/5}\include{\cwd/_main}
 \changecwd{chapters/6}\include{\cwd/_main}
 \changecwd{chapters/7}\include{\cwd/_main}
+
+\printnoidxglossaries
 
 \addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
