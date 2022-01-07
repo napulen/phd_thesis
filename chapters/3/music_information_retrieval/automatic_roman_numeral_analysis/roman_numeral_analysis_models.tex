@@ -42,11 +42,12 @@ MTL layout outperformed single-task configurations and it
 has continued to prove the best-performing approach in
 subsequent deep learning studies. In subsequent work, the
 same authors have adopted Transformer-based networks to deal
-with functional harmony and ACR \parencite{chen2019harmony,
-chen2021attend}. The work with these networks has explored
-the capability of the attention mechanisms to improve the
-performance of ACR, paying special consideration to chord
-segmentation and its evaluation.
+with functional harmony and \gls{acr}
+\parencite{chen2019harmony, chen2021attend}. The work with
+these networks has explored the capability of the attention
+mechanisms to improve the performance of \gls{acr}, paying
+special consideration to chord segmentation and its
+evaluation.
 
 \guide{Micchi et al (2020).}
 \textcite{micchi2020not}, in turn, proposed a DenseNet-like
@@ -54,13 +55,13 @@ segmentation and its evaluation.
 followed by a recurrent component. The recurrent component
 consists of a bidirectional GRU \parencite{cho2014learning}
 connected to task-specific dense layers, similar to those of
-\textcite{chen2018functional}. In their
-experiments, the DenseNet-like convolutions outperformed
-dilated convolutions and a GRU by itself (i.e., with pooling
-instead of the convolutional blocks). Micchi et al.~also
-demonstrated the positive effect of using pitch
-\textit{spelling} in the inputs and outputs. This confers at
-least two advantages: it provides a more informative output
-(e.g., not only the correct key, but the correct spelling
-between two enharmonic keys), and it increases the possible
-number of transpositions available for data augmentation.
+\textcite{chen2018functional}. In their experiments, the
+DenseNet-like convolutions outperformed dilated convolutions
+and a GRU by itself (i.e., with pooling instead of the
+convolutional blocks). Micchi et al.~also demonstrated the
+positive effect of using pitch \textit{spelling} in the
+inputs and outputs. This confers at least two advantages: it
+provides a more informative output (e.g., not only the
+correct key, but the correct spelling between two enharmonic
+keys), and it increases the possible number of
+transpositions available for data augmentation.
