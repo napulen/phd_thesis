@@ -9,58 +9,63 @@ estimation models have a relatively recent history.
 
 % Audio
 \textcite{purwins2000new} introduced a method for tracking
-changes of key in audio signals using cq-profiles, which are
-calculated with the constant Q filter bank. Their goal is to
-track the tone center and its variation during the piece.
-Their references annotate both modulations and tonicizations
-but consider that the ground truth is the one indicated by
-the tonicizations.
+changes of key in audio signals using cq-profiles, which
+were calculated with the constant-Q filter bank. Their goal
+was to track the tone center and its variation during the
+piece. Their references annotate both modulations and
+tonicizations but considered that the ground truth was the
+one indicated by the tonicizations.
 
 % symbolic
 \textcite{chew2002spiral} measured the distance from a
 sequence of pitches to a key using the \emph{spiral array}.
-The succession of keys is then modeled as a sequence of
+The succession of keys was then modeled as a sequence of
 \emph{boundaries} dividing the score in different key areas.
 
 % Audio
 \textcite{chai2005detection} designed a model based on a
 Hidden Markov Model (\gls{hmm}) to detect changes of key.
-They describe the term \emph{modulation} as ``the change of
-key at some point''. Their model detects, at first, the
-tonal center, and then, the mode of the key.
+They described the term \emph{modulation} as ``the change of
+key at some point''. Their model detected first the tonal
+center and then the mode of the key.
 
 % Audio
 \textcite{catteau2007probabilistic} introduced a model for
-scale and chord recognition, assuming that there is a
-correspondence between a major scale and a major key, and
-between a harmonic minor scale and a minor key. Their model
-is based on the key profiles by
-\textcite{temperley1999whats} and Lerdahl's \emph{tonal
-pitch space} \parencite{lerdahl2005tonal}.
+scale and chord recognition, assuming that a correspondence
+between a major scale and a major key, and between a
+harmonic minor scale and a minor key. Their model was based
+on the key profiles by \textcite{temperley1999whats} and
+Lerdahl's \emph{Tonal Pitch Space}
+\parencite{lerdahl2005tonal}.
 
 \textcite{izmirli2007localized} proposed a model to find
 local keys in audio signals. As a pre-processing step, the
-model adapts the tuning of the signal before computing the
+model adapted the tuning of the signal before computing the
 spectral analysis and the chroma features. In a later stage,
-Non-negative matrix factorization is used to segment
+non-negative matrix factorization was used to segment
 contiguous chroma vectors, identifying potential local keys.
-The model identifies segments that are candidates for unique
-local keys in relation to the neighboring key centers. The
-model was evaluated in three datasets: 17 pop songs with at
-least one modulation, excerpts from the beginning of 152
-classical music pieces from the Naxos website, and the
-examples from the \textcite{kostka1984tonal} harmony
-textbook. In the paper, the results for three different
-evaluation methods are provided for each of the datasets.
-Izmirli also attempted to disambiguate modulations and
-tonicizations in the following manner: ``Secondary functions
-and tonicizations are heard as short deviations from the
-well-grounded key in which they appear---although the
-boundary between modulation and tonicization is not clear
-cut. A modulation unambiguously instigates a shift in the
-key center''. This work is also, to the best of my
-knowledge, the first time that the term \emph{local keys}
-has been mentioned in an \gls{mir} publication.
+The model identified segments that were candidates for
+unique local keys in relation to the neighboring key
+centers. The model was evaluated in three datasets: 17 pop
+songs with at least one modulation, excerpts from the
+beginning of 152 classical music pieces from the Naxos
+website, and the examples from the
+\textcite{kostka1984tonal} harmony textbook. In the paper,
+the results for three different evaluation methods were
+provided for each of the datasets. Izmirli also attempted to
+disambiguate modulations and tonicizations in the following
+manner:
+
+\begin{quote}
+    Secondary functions and tonicizations are heard as short
+    deviations from the well-grounded key in which they
+    appear---although the boundary between modulation and
+    tonicization is not clear cut. A modulation
+    unambiguously instigates a shift in the key center.
+\end{quote}
+
+This work is also, to the best of my knowledge, the first
+one where the term \emph{local key} was mentioned in \gls{mir} research.
 
 \textcite{papadopoulos2009local} adopted a similar approach
 to \textcite{izmirli2007localized} for audio local-key
