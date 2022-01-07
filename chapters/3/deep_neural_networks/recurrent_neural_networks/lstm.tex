@@ -8,8 +8,8 @@ introduced in 1997 by Hochreiter and Schmidhuber
 LSTM has become an increasingly popular architecture, which
 has been used in many tasks and problems. LSTM architectures
 extend the basic structure of \glspl{rnn} and it is relatively safe
-to assume that any problem that involves an RNN can
-substitute the RNN with an LSTM, matching or even improving
+to assume that any problem that involves an \gls{rnn} can
+substitute the \gls{rnn} with an LSTM, matching or even improving
 the results.
 
 The main contribution of LSTMs is to try to provide a
@@ -18,11 +18,11 @@ vanishing gradients are associated with the loss of
 long-term dependencies, mitigating this issue would enable,
 in theory, the capability of the network to learn long-term
 dependencies between the inputs. In order to achieve these
-long-term dependencies, an LSTM substitutes the regular RNN
+long-term dependencies, an LSTM substitutes the regular \gls{rnn}
 unit with a more complex one. This new, more complex unit,
 receives the name of an \emph{LSTM unit}.
 
-The main difference between a regular RNN unit and an LSTM
+The main difference between a regular \gls{rnn} unit and an LSTM
 unit is the addition of a cell and three gates: the forget
 gate, the input gate, and the output gate. In conjunction,
 the cell and the gates allow the network to control the flow
@@ -67,7 +67,7 @@ vanishing/exploding gradients problem, other researchers
 have also contributed with other ideas.
 
 For example, during the same year that the LSTM was
-proposed, another paper proposed a bidirectional RNN that
+proposed, another paper proposed a bidirectional \gls{rnn} that
 could be used in offline systems (as it requires knowledge
 of the future, it can’t be used in real-time and other
 online applications).
