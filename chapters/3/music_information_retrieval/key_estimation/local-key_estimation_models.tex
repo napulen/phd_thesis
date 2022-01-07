@@ -24,10 +24,10 @@ The succession of keys is then modeled as a sequence of
 
 % Audio
 \textcite{chai2005detection} designed a model based on a
-Hidden Markov Model (\gls{hmm}) to detect changes of key. They
-describe the term \emph{modulation} as ``the change of key
-at some point''. Their model detects, at first, the tonal
-center, and then, the mode of the key.
+Hidden Markov Model (\gls{hmm}) to detect changes of key.
+They describe the term \emph{modulation} as ``the change of
+key at some point''. Their model detects, at first, the
+tonal center, and then, the mode of the key.
 
 % Audio
 \textcite{catteau2007probabilistic} introduced a model for
@@ -38,18 +38,29 @@ is based on the key profiles by
 \textcite{temperley1999whats} and Lerdahl's \emph{tonal
 pitch space} \parencite{lerdahl2005tonal}.
 
-\textcite{izmirli2007localized} introduced a model to find
-local keys from audio sources, based on non-negative matrix
-factorization for segmentation. Izmirli also attempted to
-disambiguate modulations and tonicizations in the following
-manner: ``Secondary functions and tonicizations are heard as
-short deviations from the well-grounded key in which they
-appear---although the boundary between modulation and
-tonicization is not clear cut. A modulation unambiguously
-instigates a shift in the key center''.
-% This work is also, to our knowledge, the first time that
-% the term \emph{local keys} has been mentioned in an \gls{mir}
-% publication.
+\textcite{izmirli2007localized} proposed a model to find
+local keys in audio signals. As a pre-processing step, the
+model adapts the tuning of the signal before computing the
+spectral analysis and the chroma features. In a later stage,
+Non-negative matrix factorization is used to segment
+contiguous chroma vectors, identifying potential local keys.
+The model identifies segments that are candidates for unique
+local keys in relation to the neighboring key centers. The
+model was evaluated in three datasets: 17 pop songs with at
+least one modulation, excerpts from the beginning of 152
+classical music pieces from the Naxos website, and the
+examples from the \textcite{kostka1984tonal} harmony
+textbook. In the paper, the results for three different
+evaluation methods are provided for each of the datasets.
+Izmirli also attempted to disambiguate modulations and
+tonicizations in the following manner: ``Secondary functions
+and tonicizations are heard as short deviations from the
+well-grounded key in which they appear---although the
+boundary between modulation and tonicization is not clear
+cut. A modulation unambiguously instigates a shift in the
+key center''. This work is also, to the best of my
+knowledge, the first time that the term \emph{local keys}
+has been mentioned in an \gls{mir} publication.
 
 \textcite{papadopoulos2009local} adopted a similar approach
 to Izmirli for audio local-key estimation. Their model
@@ -68,15 +79,15 @@ distances, they used the key profiles by
 \textcite{temperley1999whats}. The authors alluded to the
 term modulation when discussing their key predictions.
 
-\textcite{mearns2011automatically} used an \gls{hmm} to estimate
-modulations over audio transcriptions of Bach chorales. The
-\gls{hmm} is trained with chord progressions. The emission
-probability distributions are obtained from two tables with
-the probabilities of chords existing in a given key. These
-tables are based on the work by Schoenberg and Krumhansl.
-Applied chords (i.e., tonicizations) are not described in
-these charts, therefore, the authors do not deal with
-tonicizations.
+\textcite{mearns2011automatically} used an \gls{hmm} to
+estimate modulations over audio transcriptions of Bach
+chorales. The \gls{hmm} is trained with chord progressions.
+The emission probability distributions are obtained from two
+tables with the probabilities of chords existing in a given
+key. These tables are based on the work by Schoenberg and
+Krumhansl. Applied chords (i.e., tonicizations) are not
+described in these charts, therefore, the authors do not
+deal with tonicizations.
 
 \textcite{pauwels2014combining} presented a probabilistic
 framework for the simultaneous estimation of chords and keys
@@ -92,8 +103,8 @@ however, they discussed ``short-time local modulations'',
 which resemble tonicizations.
 
 Machine learning approaches, especially using neural
-networks, have recently gained popularity in \gls{mir} research,
-including key estimation. Independently,
+networks, have recently gained popularity in \gls{mir}
+research, including key estimation. Independently,
 \textcite{chen2018functional, chen2019harmony} and
 \textcite{micchi2020not} designed models that estimate local
 keys as well as roman numeral analysis annotations.
