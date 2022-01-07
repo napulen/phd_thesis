@@ -3,18 +3,18 @@
 % This is \refsubsec{recurrentneuralnetworks}, which
 % introduces the recurrent neural networks.
 
-Recurrent Neural Networks (RNNs) are a type of neural
-networks designed for dealing with sequential data. Unlike
-most other neural network architectures, RNNs do not assume
-that inputs are \emph{independent} from each other and,
-therefore, they update their parameters considering not only
-the current input to the network but also the previous
-inputs processed by the network.
+\glspl{rnn} are a type of neural networks designed for
+dealing with sequential data. Unlike most other neural
+network architectures, \glspl{rnn} do not assume that inputs
+are \emph{independent} from each other and, therefore, they
+update their parameters considering not only the current
+input to the network but also the previous inputs processed
+by the network.
 
-RNNs were introduced after the backpropagation algorithm
-\parencite{rumelhart1988learning} was extended into the
-\emph{Backpropagation Through Time} (BPTT) algorithm, around
-1988 \parencite{werbos1988generalization,
+\glspl{rnn} were introduced after the backpropagation
+algorithm \parencite{rumelhart1988learning} was extended
+into the \emph{Backpropagation Through Time} (BPTT)
+algorithm, around 1988 \parencite{werbos1988generalization,
 werbos1990backpropagation}. Nevertheless, the difficulty of
 training such RNN architectures made them unfeasible in
 practical applications before the invention of the Long
@@ -26,22 +26,23 @@ involving sequential data (e.g., speech recognition, natural
 language processing, music).
 
 Throughout the years, different strategies have been
-proposed to design RNNs, for example, connecting the output
-of one time step into the next time step (Jordan RNN),
-connecting the hidden state of one time step to the next
-(Elman RNN), and training the network in both directions
-\parencite{schuster1997bidirectional}.
+proposed to design \glspl{rnn}, for example, connecting the
+output of one time step into the next time step (Jordan
+RNN), connecting the hidden state of one time step to the
+next (Elman RNN), and training the network in both
+directions \parencite{schuster1997bidirectional}.
 
 It is also not uncommon to see several of these techniques
 combined in a single architecture, for example, a
 bidirectional LSTM architecture with convolutional layers
 (CBLSTM).
 
-In \gls{mir}, RNNs and hybrid RNN models with convolutional
-layers have been quite popular in numerous tasks, for
-example, onset detection \parencite{eyben2010universal},
-chord recognition \parencite{boulangerlewandowski2013audio,
-sigtia2016endend, sears2018evaluating}, voice separation
+In \gls{mir}, \glspl{rnn} and hybrid RNN models with
+convolutional layers have been quite popular in numerous
+tasks, for example, onset detection
+\parencite{eyben2010universal}, chord recognition
+\parencite{boulangerlewandowski2013audio, sigtia2016endend,
+sears2018evaluating}, voice separation
 \parencite{huang2014singingvoice}, music transcription
 \parencite{sigtia2014rnnbased}, tempo estimation
 \parencite{bock2015accurate}, beat and downbeat tracking
