@@ -511,20 +511,21 @@ approaches.
 % then the Spiral Array model can be represented as a
 % hypertorus (from Harte et al. 2006).
 
-\textcite{harte2006detecting} propose a new model that
-applies a similar principle to the spatial representation of
-\textcite{chew2000towards}. The model from Harte et al. has
-a 6-dimensional interior space contained by the surface of a
-hypertorus. The 6 dimensions of their model correspond to
-2-axes for localizing a point in the circle of fifths,
-2-axes for localizing a point in the circle of major thirds,
-and 2-axes for localizing a point in the circle of minor
-thirds. Using this spatial representation, a similar
-methodology to Chew's \emph{Center of Effect}
-\parencite{chew2002spiral} can be used for computing the
-key. The authors present an evaluation of the model in the
-detection of chord changes within 16 songs of \emph{The
-Beatles}.
+\textcite{harte2006detecting} proposed a new model that
+applied a similar principle to the spatial representation of
+\textcite{chew2000towards}. It had a 6-dimensional interior
+space contained by the surface of a hypertorus. The 6
+dimensions of their model correspond to 2-axes for
+localizing a point in the circle of fifths, 2-axes for
+localizing a point in the circle of major thirds, and 2-axes
+for localizing a point in the circle of minor thirds. Using
+this spatial representation, a similar methodology to Chew's
+\emph{Center of Effect} \parencite{chew2002spiral} was used
+for computing the key. The authors presented an evaluation
+of the model in the detection of chord changes within 16
+songs of \emph{The Beatles}.
+
+% TODO: Why chord changes if its a GKE algorithm?
 
 % % Izmirli and Bilgen (2006)
 
@@ -532,20 +533,21 @@ Beatles}.
 
 % Noland and Sandler (2006)
 \textcite{noland2006key} proposed a model based on an
-\gls{hmm}. The model is comprised of 24 hidden states, which
-represent each of the major and minor keys. As observations,
-the \gls{hmm} considers a chord transition (a pair of
-consecutive chords). The emission probabilities of the model
-are initialized by assuming a strong correlation between key
-and the key implied in a given chord transition. The
-transition probabilities of the model were obtained using a
-table of correlations between the transposed Krumhansl and
-Kessler key profiles. The model was evaluated in a dataset
-of 110 songs of the Beatles, for which the chord transitions
-were already annotated. The algorithm was able to predict
-the key of the songs in 91\% of the cases. A further change
-on the observations of the \gls{hmm} was necessary to work
-directly on audio inputs.
+\gls{hmm}. The model comprised 24 hidden states, which
+represented each of the major and minor keys. As
+observations, the \gls{hmm} considered a chord transition (a
+pair of consecutive chords). The emission probabilities of
+the model were initialized by assuming a strong correlation
+between the key and the key implied in a given chord
+transition. The transition probabilities of the model were
+obtained using a table of correlations between the
+transposed \textcite{krumhansl1982tracing} key profiles. The
+model was evaluated in a dataset of 110 songs of the
+Beatles, for which the chord transitions were already
+annotated. The algorithm was able to predict the key of the
+songs in 91\% of the cases. A further change on the
+observations of the \gls{hmm} was necessary to work directly
+on audio inputs.
 
 % Peeters (2006) implements one \gls{hmm} for each of the 24
 % possible keys. A front-end algorithm is used to extract a
@@ -556,22 +558,22 @@ directly on audio inputs.
 % the chroma-vectors for songs in the minor mode are mapped
 % to C minor.
 
-\textcite{peeters2006chromabased} proposes a model that
-extracts the information about the periodicity of pitches
-from the audio signals, maps that information into the
-chroma domain, and decides the global key of the music piece
-from a succession of chroma-vectors over time. For the
-initial analysis, Peeters proposes a Harmonic Peak
-Substraction algorithm, which reduces the influence of the
-higher harmonics of each pitch. The pre-processed signal is
-mapped into the chroma domain and used as the observation
-for an \gls{hmm} model that predicts the global key. The
-\gls{hmm} classification consists of one \gls{hmm} for each
-of the 24 possible keys, which were trained using the
-Baum-Welch algorithm. The model was tested in 302 audio
-files containing classical piano, chamber, and orchestral
-music, obtaining a 89.1\% accuracy using the \gls{mirex}
-evaluation score.
+\textcite{peeters2006chromabased} proposed a model that
+extracted information about the periodicity of pitches from
+the audio signals, mapped that information into the chroma
+domain, and decided the global key of the music piece from a
+succession of chroma-vectors over time. For the initial
+analysis, Peeters proposed a Harmonic Peak Substraction
+algorithm, which reduced the influence of the higher
+harmonics of each pitch. The pre-processed signal was mapped
+to the chroma domain and used as the observation for an
+\gls{hmm} model that predicted the global key. The \gls{hmm}
+classification consisted of one \gls{hmm} for each of the 24
+possible keys, which were trained using the Baum-Welch
+algorithm.\footnote{See \textcite{rabiner1989tutorial} for an introduction to the Baum-Welch algorithm in the context of \glspl{hmm}.} The model was tested in 302 audio files
+containing classical piano, chamber, and orchestral music,
+obtaining a 89.1\% accuracy using the \gls{mirex} evaluation
+score.
 
 % TODO: Which year? The \gls{mirex} evaluation
 
