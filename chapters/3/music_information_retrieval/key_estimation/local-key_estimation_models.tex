@@ -24,7 +24,7 @@ The succession of keys is then modeled as a sequence of
 
 % Audio
 \textcite{chai2005detection} designed a model based on a
-Hidden Markov Model (HMM) to detect changes of key. They
+Hidden Markov Model (\gls{hmm}) to detect changes of key. They
 describe the term \emph{modulation} as ``the change of key
 at some point''. Their model detects, at first, the tonal
 center, and then, the mode of the key.
@@ -68,9 +68,9 @@ distances, they used the key profiles by
 \textcite{temperley1999whats}. The authors alluded to the
 term modulation when discussing their key predictions.
 
-\textcite{mearns2011automatically} used an HMM to estimate
+\textcite{mearns2011automatically} used an \gls{hmm} to estimate
 modulations over audio transcriptions of Bach chorales. The
-HMM is trained with chord progressions. The emission
+\gls{hmm} is trained with chord progressions. The emission
 probability distributions are obtained from two tables with
 the probabilities of chords existing in a given key. These
 tables are based on the work by Schoenberg and Krumhansl.
@@ -102,7 +102,7 @@ analysis annotations.
 
 N\'apoles L\'opez et al. introduced a model to find changes
 of key (local-key estimation) as well as the main key of a
-piece (global-key estimation), using an HMM
+piece (global-key estimation), using an \gls{hmm}
 \textcite{napoleslopez2019keyfinding}. The model is also
 capable of working with symbolic and audio data. They do not
 allude to the terms modulation or tonicization, always

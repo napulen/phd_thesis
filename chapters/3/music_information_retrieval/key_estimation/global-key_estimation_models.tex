@@ -249,7 +249,7 @@ In 2019, we introduced a new key-finding algorithm that
 works in the symbolic and audio domains
 \parencite{napoleslopez2019keyfinding}. This algorithm is
 also able to extract local and global keys and it is based
-on a Hidden Markov Model (HMM). The algorithm provided
+on a Hidden Markov Model (\gls{hmm}). The algorithm provided
 state-of-the-art performance in the symbolic domain,
 however, it underperformed for pieces in minor modes, unlike
 the \textcite{albrecht2013use} algorithm, which performs
@@ -530,9 +530,9 @@ Beatles}.
 % % Mardirossian and Chew (2006)
 
 % Noland and Sandler (2006)
-\textcite{noland2006key} proposed a model based on an HMM.
+\textcite{noland2006key} proposed a model based on an \gls{hmm}.
 The model is comprised of 24 hidden states, which represent
-each of the major and minor keys. As observations, the HMM
+each of the major and minor keys. As observations, the \gls{hmm}
 considers a chord transition (a pair of consecutive chords).
 The emission probabilities of the model are initialized by
 assuming a strong correlation between key and the key
@@ -543,10 +543,10 @@ key profiles. The model was evaluated in a dataset of 110
 songs of the Beatles, for which the chord transitions were
 already annotated. The algorithm was able to predict the key
 of the songs in 91\% of the cases. A further change on the
-observations of the HMM was necessary to work directly on
+observations of the \gls{hmm} was necessary to work directly on
 audio inputs.
 
-% Peeters (2006) implements one HMM for each of the 24
+% Peeters (2006) implements one \gls{hmm} for each of the 24
 % possible keys. A front-end algorithm is used to extract a
 % sequence of time-based chroma-vectors (i.e., pitch-class
 % distributions) for each of the songs in a training set of
@@ -564,8 +564,8 @@ initial analysis, Peeters proposes a Harmonic Peak
 Substraction algorithm, which reduces the influence of the
 higher harmonics of each pitch. The pre-processed signal is
 mapped into the chroma domain and used as the observation
-for an HMM model that predicts the global key. The HMM
-classification consists of one HMM for each of the 24
+for an \gls{hmm} model that predicts the global key. The \gls{hmm}
+classification consists of one \gls{hmm} for each of the 24
 possible keys, which were trained using the Baum-Welch
 algorithm. The model was tested in 302 audio files
 containing classical piano, chamber, and orchestral music,
@@ -630,7 +630,7 @@ evaluation methods are provided for each of the datasets.
 % Lee and Slaney (2007)
 \textcite{lee2007unified} present a model for chord and key
 extraction from audio sources. The model was trained by
-creating a separate HMM for each of the 24 keys. In order to
+creating a separate \gls{hmm} for each of the 24 keys. In order to
 obtain the training data, they annotated a harmonic analysis
 of several \gls{midi} files. These harmonic analyses were
 performed using the rule-based system from Temperley and
@@ -674,7 +674,7 @@ able to distinguish only major and minor triads.
 % chord progressions and downbeats using a previously
 % proposed method (Papadopoulos and Peeters 2008). The final
 % stage of the system performs local key estimation using an
-% HMM with observation probabilities that are derived from
+% \gls{hmm} with observation probabilities that are derived from
 % pitch-class templates. They create five different versions
 % of the system using different types of pitch-class
 % templates: Krumhansl (1990), Temperley (2001), diatonic,
@@ -690,7 +690,7 @@ able to distinguish only major and minor triads.
 A different local key estimation algorithm was proposed by
 \textcite{papadopoulos2009local}. The method extends on
 previous work \parencite{papadopoulos2008simultaneous},
-adding a stage of local key estimation using an HMM. The
+adding a stage of local key estimation using an \gls{hmm}. The
 observations of the model are derived from different key
 profiles: \textcite{krumhansl1982tracing},
 \textcite{temperley1999whats}, and a flat diatonic key
@@ -781,7 +781,7 @@ carries the problem of assuming that any arbitrary snippet
 of the audio inputs imply the ground truth key, disallowing
 the model to work with any data that has local keys or
 modulations. The model was trained on three datasets: the
-GiantSteps MTG Key dataset, the McGill Billboard dataset,
+GiantSteps \gls{mtg} Key dataset, the McGill Billboard dataset,
 and an internal dataset with classical music. The model was
 submitted to the \gls{mirex} campaign of 2018 and it was
 very successful at generalizing the key of different genres,
