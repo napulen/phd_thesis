@@ -86,10 +86,9 @@ five Mozart piano sonatas, where the local keys and chords
 were manually annotated. The maximum accuracy achieved was
 80.22\%
 
-
 \textcite{rocher2010concurrent} introduced a model that
-provides (chord, key) duples for each audio frame of an
-input excerpt. The model is based on a graph and the
+provided duples of (chord, key) for each audio frame of an
+input excerpt. The model was based on a graph and the
 \emph{best-path} estimation method. For evaluating key
 distances, they used the key profiles by
 \textcite{temperley1999whats}. The authors alluded to the
@@ -97,13 +96,15 @@ term modulation when discussing their key predictions.
 
 \textcite{mearns2011automatically} used an \gls{hmm} to
 estimate modulations over audio transcriptions of Bach
-chorales. The \gls{hmm} is trained with chord progressions.
-The emission probability distributions are obtained from two
-tables with the probabilities of chords existing in a given
-key. These tables are based on the work by Schoenberg and
-Krumhansl. Applied chords (i.e., tonicizations) are not
-described in these charts, therefore, the authors do not
-deal with tonicizations.
+chorales. The \gls{hmm} was trained with chord progressions.
+The emission probability distributions were obtained from
+two tables with the probabilities of chords existing in a
+given key. These tables were based on the work by Schoenberg
+and Krumhansl. Tonicizations were not described in these
+charts, therefore, the authors did not deal with
+tonicizations.
+
+% TODO: Which Schoenberg and Krumhansl?
 
 \textcite{pauwels2014combining} presented a probabilistic
 framework for the simultaneous estimation of chords and keys
