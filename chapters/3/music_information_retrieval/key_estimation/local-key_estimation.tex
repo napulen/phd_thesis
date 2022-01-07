@@ -7,27 +7,28 @@ Changes of key may belong to different categories. In music
 theory, terms like \emph{modulation} and \emph{tonicization}
 are helpful for interpreting the context of a change of key.
 In \gls{mir}, it is common to describe algorithms that model
-\emph{changes of key} as local-key-estimation algorithms.
-The \emph{local keys} being the predictions that these
-models generate. A local key is related to the concepts of
+\emph{changes of key} as \gls{LKE} algorithms. The
+\emph{local keys} being the predictions that these models
+generate. A local key is related to the concepts of
 \emph{modulation} and \emph{tonicization}. However, it is
 difficult to understand the distinction between these three
 terms.
 
-In order to clarify this nomenclature, we recently
-investigated the relationship between the local keys,
-modulations, and tonicizations of the same musical fragment
-\parencite{napoleslopez2020local}. From this work, I
-take the definitions of local keys, modulations, and tonicizations, which might clarify what exactly a local-key-estimation algorithm outputs.
+In order to clarify this nomenclature, we investigated the
+relationship between the local keys, modulations, and
+tonicizations of the same musical fragment
+\parencite{napoleslopez2020local}. From this work, I take
+the definitions of local keys, modulations, and
+tonicizations, which might clarify what exactly an \gls{lke}
+algorithm predicts.
 
 \phdparagraph{local keys}
 Are the predictions of the musical key provided by a
-local-key-estimation algorithm. These predictions are given
-at a finer level of granularity than the entire piece (e.g.,
-notes, onsets, fixed-duration timesteps, audio frames,
-etc.). In principle, no music-theoretical meaning is
-inferred from them. They may coincide with modulations or
-tonicizations.
+\gls{lke} algorithm. These predictions are given at a finer
+level of granularity than the entire piece (e.g., notes,
+onsets, fixed-duration timesteps, audio frames, etc.). In
+principle, no music-theoretical meaning is inferred from
+them. They may coincide with modulations or tonicizations.
 
 \phdparagraph{modulation}
 Is the change from one key to another. We refer to the
