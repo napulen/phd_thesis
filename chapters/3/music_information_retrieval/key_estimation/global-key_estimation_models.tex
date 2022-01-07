@@ -743,13 +743,12 @@ existing audio \gls{gke} models.
 
 % N\'apoles L\'opez et al. (2019)
 We proposed a key-finding model in 2019
-\parencite{napoleslopez2019keyfinding}. This model performs
-local and global key detection and it is able to work in the
-symbolic and audio domains. The model was originally
-designed for symbolic inputs, however, it is able to work in
-the audio domain by making use of the chroma features by
-\textcite{mauch2010approximate} and discretizing certain
-energy values above a threshold as pitch-class events.
+\parencite{napoleslopez2019keyfinding}. This model performed
+both \gls{gke} and \gls{lke}, and it was able to operate in
+the symbolic and audio domains. The model was originally
+designed for symbolic inputs, however, it was able to work
+in the audio domain by making use of the chroma features by
+\textcite{mauch2010approximate} and turning them into discrete values using a threshold. The model was submitted to the \gls{mirex} Audio Key Estimation in 2018 and 2019. In 2018, the model was submitted with a single key profile, which provided the best generalization in our experiments. In 2019, the model was improved by adding a meta-classifier which predicted the global key based on the predictions of serveral key profiles. The results of the 2018\footnotelink{https://www.music-ir.org/mirex/wiki/2018:Audio_Key_Detection_Results} and 2019\footnotelink{https://www.music-ir.org/mirex/wiki/2019:Audio_Key_Detection_Results} models are available on the \gls{mirex} results website.
 
 % Conclusion
 After the pioneering models, many different alternatives
@@ -770,4 +769,6 @@ key-finding models. Nevertheless, as a general trend, it can
 be seen that the research by \textcite{krumhansl1982tracing}
 that introduced the key profiles, together with the use of
 chroma features, have been very useful in the design of
-newer, more robust \gls{gke} models throughout the years. These techniques are also relevant for \gls{lke} models, which are described next.
+newer, more robust \gls{gke} models throughout the years.
+These techniques are also relevant for \gls{lke} models,
+which are described next.
