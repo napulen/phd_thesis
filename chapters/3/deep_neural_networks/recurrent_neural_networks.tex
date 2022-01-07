@@ -17,18 +17,18 @@ into the \gls{bptt} algorithm, around 1988
 \parencite{werbos1988generalization,
 werbos1990backpropagation}. Nevertheless, the difficulty of
 training such \gls{rnn} architectures made them unfeasible
-in practical applications before the invention of the \gls{lstm} architecture
-\parencite{hochreiter1997long}. They were popularized during
-the \emph{deep learning} wave of research and, since then,
-achieved state-of-the-art performance in many tasks
-involving sequential data (e.g., speech recognition, natural
-language processing, music).
+in practical applications before the invention of the
+\gls{lstm} architecture \parencite{hochreiter1997long}. They
+were popularized during the \emph{deep learning} wave of
+research and, since then, achieved state-of-the-art
+performance in many tasks involving sequential data (e.g.,
+speech recognition, natural language processing, music).
 
 Throughout the years, different strategies have been
 proposed to design \glspl{rnn}, for example, connecting the
 output of one time step into the next time step (Jordan
-\gls{rnn}), connecting the hidden state of one time step to the
-next (Elman \gls{rnn}), and training the network in both
+\gls{rnn}), connecting the hidden state of one time step to
+the next (Elman \gls{rnn}), and training the network in both
 directions \parencite{schuster1997bidirectional}.
 
 It is also not uncommon to see several of these techniques
@@ -57,24 +57,25 @@ modelling \parencite{ycart2017study}, mood detection
 
 
 
-% Recurrent Neural Networks (\glspl{rnn}) are a special type of
-% ANNs where the inputs are not considered to be independent
-% but part of a sequence. This distinction allows the
-% network to model time-varying processes and tasks that
-% require sequence-to-sequence models (e.g., language,
-% music, and weather). An additional benefit of \gls{rnn}
-% archictures is that, unlike other types of deep learning
-% networks such as Convolutional Neural Networks (CNNs),
-% \glspl{rnn} can process inputs of arbitrary length. This has made
-% CNNs the most robust choice for fixed-size grid-like data
-% (e.g., images) and \glspl{rnn} a popular choice for tasks where
-% the length of the input is unknown.
+% Recurrent Neural Networks (\glspl{rnn}) are a special type
+% of ANNs where the inputs are not considered to be
+% independent but part of a sequence. This distinction
+% allows the network to model time-varying processes and
+% tasks that require sequence-to-sequence models (e.g.,
+% language, music, and weather). An additional benefit of
+% \gls{rnn} archictures is that, unlike other types of deep
+% learning networks such as Convolutional Neural Networks
+% (CNNs), \glspl{rnn} can process inputs of arbitrary
+% length. This has made CNNs the most robust choice for
+% fixed-size grid-like data (e.g., images) and \glspl{rnn} a
+% popular choice for tasks where the length of the input is
+% unknown.
 
 % Although modern \glspl{rnn} have achieved state-of-the-art
 % accuracy in many tasks that involve sequential inputs,
 % this was not easily achieved and required many years of
-% innovations. For example, \glspl{rnn} were famously unstable and
-% difficult to train.
+% innovations. For example, \glspl{rnn} were famously
+% unstable and difficult to train.
 
 % \guide{Training \glspl{rnn}}
 
@@ -89,52 +90,53 @@ modelling \parencite{ycart2017study}, mood detection
 % optimizer rapidly reaches 0 for sequences of 10 or 20 time
 % steps \parencite{bengio1994learning}.
 
-% The main difficulty of training an \gls{rnn} is something known
-% as the \emph{vanishing} and \emph{exploding} gradients.
-% When the gradients vanish---something very common---the
-% network is unable to learn long-term dependencies and can
-% only model the dependencies of inputs that were provided a
-% few time steps in the past (rather than modeling the
-% entire sequence, which is usually the goal). When the
-% gradients explode---something less common but more
-% damaging---the convergence of the training is compromised
-% because the large value of the gradient occludes the
-% search of a local minimum by the optimizer algorithm.
+% The main difficulty of training an \gls{rnn} is something
+% known as the \emph{vanishing} and \emph{exploding}
+% gradients. When the gradients vanish---something very
+% common---the network is unable to learn long-term
+% dependencies and can only model the dependencies of inputs
+% that were provided a few time steps in the past (rather
+% than modeling the entire sequence, which is usually the
+% goal). When the gradients explode---something less common
+% but more damaging---the convergence of the training is
+% compromised because the large value of the gradient
+% occludes the search of a local minimum by the optimizer
+% algorithm.
 
-% One of the reasons why \glspl{rnn} are more prone to vanishing
-% and exploding gradients is their heavy reliability on
-% \emph{parameter sharing}. Other architectures (e.g. CNNs)
-% also share parameters between different neurons in order
-% to reduce the number of parameters and, hence, the effort
-% of training the network. \glspl{rnn}, however, make a heavier use
-% of parameter sharing, as their input is usually a
-% fixed-size vector designed to receive the time steps of
-% the input sequence, one at a time. This design decision
-% implies two things: 1) the parameters of the network are
-% shared for every input of the sequence, 2) the parameters
-% need to be updated for every time step of every input
-% sequence.
+% One of the reasons why \glspl{rnn} are more prone to
+% vanishing and exploding gradients is their heavy
+% reliability on \emph{parameter sharing}. Other
+% architectures (e.g. CNNs) also share parameters between
+% different neurons in order to reduce the number of
+% parameters and, hence, the effort of training the network.
+% \glspl{rnn}, however, make a heavier use of parameter
+% sharing, as their input is usually a fixed-size vector
+% designed to receive the time steps of the input sequence,
+% one at a time. This design decision implies two things: 1)
+% the parameters of the network are shared for every input
+% of the sequence, 2) the parameters need to be updated for
+% every time step of every input sequence.
 
 % The second of these design decisions is what mostly
 % contributes to the vanishing and exploding gradients. In
 % other architectures, it is expected that the parameters
-% will be updated once per training example, while in \glspl{rnn}
-% the parameters are updated several times per training
-% example.
+% will be updated once per training example, while in
+% \glspl{rnn} the parameters are updated several times per
+% training example.
 
-% When the \gls{rnn} is updating its shared parameters, it is very
-% easy that these parameters grow out of control (explode)
-% or become close to zero (vanishing), similar to how a
-% scalar number would explode or vanish when raised by a
-% large exponent (e.g., $10^{1000}$ or $0.5^{1000}$).
+% When the \gls{rnn} is updating its shared parameters, it
+% is very easy that these parameters grow out of control
+% (explode) or become close to zero (vanishing), similar to
+% how a scalar number would explode or vanish when raised by
+% a large exponent (e.g., $10^{1000}$ or $0.5^{1000}$).
 
-% By making use of modern solutions, however, \glspl{rnn} have been
-% able to successfully learn long-term dependencies (in the
-% order of hundreds or thousands of time steps
-% \parencite{hochreiter1997long}), making them practical for
-% many tasks. There have been many proposed solutions
-% \parencite{elhihi1995hierarchical, yildiz2012revisiting,
-% jaeger2012long}, however, the most successful ones are the
-% \emph{gated \glspl{rnn}}. Particularly, the Long Short-Term
-% Memory (LSTM) and Gated Recurrent Unit (GRU)
-% architectures.
+% By making use of modern solutions, however, \glspl{rnn}
+% have been able to successfully learn long-term
+% dependencies (in the order of hundreds or thousands of
+% time steps \parencite{hochreiter1997long}), making them
+% practical for many tasks. There have been many proposed
+% solutions \parencite{elhihi1995hierarchical,
+% yildiz2012revisiting, jaeger2012long}, however, the most
+% successful ones are the \emph{gated \glspl{rnn}}.
+% Particularly, the Long Short-Term Memory (\gls{lstm}) and Gated
+% Recurrent Unit (GRU) architectures.
