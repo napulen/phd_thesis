@@ -651,32 +651,6 @@ minor triads.
 
 % % Hu and Saul (2009)
 
-% Papadopoulos and Peeters (2009) approach the local audio
-% key estimation problem by considering combinations and
-% extensions of previous methods for global audio key
-% finding. The system consists of three stages: feature
-% extraction, harmonic and metric structure estimation, and
-% local key estimation. The feature extraction algorithm
-% extracts a chromagram from the audio signal, consisting of
-% a sequence of time-based pitch-class distributions
-% (Papadopoulos and Peeters 2008). Metric structure
-% estimation is then achieved by simultaneously detecting
-% chord progressions and downbeats using a previously
-% proposed method (Papadopoulos and Peeters 2008). The final
-% stage of the system performs local key estimation using an
-% \gls{hmm} with observation probabilities that are derived
-% from pitch-class templates. They create five different
-% versions of the system using different types of
-% pitch-class templates: Krumhansl (1990), Temperley (2001),
-% diatonic, Temperley-diatonic (Peeters 2006b), and an
-% original template where all pitchclasses have an equal
-% value except for the tonic, which has triple the value.
-% The system is then evaluated using five movements of
-% Mozart piano sonatas, with manually annotated ground truth
-% data corresponding to chords and local key. A maximum
-% local key recognition rate of 80.22\% was achieved by
-% using the newly proposed pitch-class template.
-
 % Campbell (2010)
 \textcite{campbell2010automatic} proposed an algorithm based
 on four stages: frequency analysis, pitch-class extraction,
@@ -687,8 +661,7 @@ dataset of classical music, another one of popular music,
 and an audio-synthesized dataset of \gls{midi} files of
 classical music. The best performing model consisted of
 features extracted with the \emph{jAudio} feature extractor
-\parencite{mcennis2005jaudio} and a k-nearest neighbours
-classifier.
+\parencite{mcennis2005jaudio} and a \cls{knn} classifier.
 
 % Mauch and Dixon (2010)
 Mauch and Dixon propose a model that can simultaneously
