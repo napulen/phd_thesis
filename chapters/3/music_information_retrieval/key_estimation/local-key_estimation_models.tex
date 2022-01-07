@@ -65,23 +65,24 @@ manner:
 \end{quote}
 
 This work is also, to the best of my knowledge, the first
-one where the term \emph{local key} was mentioned in \gls{mir} research.
+one where the term \emph{local key} was mentioned in
+\gls{mir} research.
 
 \textcite{papadopoulos2009local} adopted a similar approach
-to \textcite{izmirli2007localized} for audio local-key
-estimation. Their model attempts to segment the score based
-on the points of modulation. They introduced key
-dependencies on the harmonic and metric structures of
-global-key-finding methods, in order to convert them into
-local-key-finding ones. The method extends on previous work
+to \textcite{izmirli2007localized} for audio \gls{lke}.
+Their model attempted to segment the score based on the
+points of modulation. They introduced key dependencies on
+the harmonic and metrical structures of \gls{gke} methods,
+in order to convert them into \gls{lke} ones. The method
+extended previous work
 \parencite{papadopoulos2008simultaneous}, adding a stage of
 local key estimation using an \gls{hmm}. The observations of
-the model are derived from different key profiles:
+the model were derived from different key profiles:
 \textcite{krumhansl1982tracing},
 \textcite{temperley1999whats}, and a flat diatonic key
 profile (a uniform distribution for diatonic pitch-classes
-and \emph{zero} elsewhere). The system was evaluated in five
-piano sonatas by Mozart, where the local keys and chords
+and \emph{zero} elsewhere). The system was evaluated with
+five Mozart piano sonatas, where the local keys and chords
 were manually annotated. The maximum accuracy achieved was
 80.22\%
 
