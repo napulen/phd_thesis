@@ -202,10 +202,10 @@ estimating the musical key.
 % 12x12 matrices representing the transition probability
 % between any two scale degrees. The profiles are then
 % learned from key annotated data for all 24 keys. Using a
-% corpus of 8325 Finnish folk songs in \gls{midi} format, the
-% system was trained using 5550 songs and evaluated with the
-% remainder. A comparison was also performed between the use
-% of Interval Profiles and several types of pitch class
+% corpus of 8325 Finnish folk songs in \gls{midi} format,
+% the system was trained using 5550 songs and evaluated with
+% the remainder. A comparison was also performed between the
+% use of Interval Profiles and several types of pitch class
 % profiles. The maximum key recognition rate using the
 % Interval Profiles was 80.2\%, whereas the maximum
 % recognition rate using pitch class profiles was 71\%.
@@ -445,21 +445,23 @@ annotated by the authors.
 % comparison of the fuzzy analysis key-finding system with
 % two other models: a peak detection model and a \gls{midi}
 % key-finding model. The evaluation utilized excerpts from a
-% corpus of 410 classical music \gls{midi} files, where only the
-% first 15 seconds of the first movement was considered. The
-% fuzzy analysis and peak detection algorithms operated on
-% audio files that were synthesized using Winamp, and the
-% \gls{midi} key-finding model operated directly on the \gls{midi}
-% files. The maximum key identification rates for the peak
-% detection, fuzzy analysis, and \gls{midi} key-finding models
-% were 70.17\%, 75.25\%, and 80.34\%, respectively.
+% corpus of 410 classical music \gls{midi} files, where only
+% the first 15 seconds of the first movement was considered.
+% The fuzzy analysis and peak detection algorithms operated
+% on audio files that were synthesized using Winamp, and the
+% \gls{midi} key-finding model operated directly on the
+% \gls{midi} files. The maximum key identification rates for
+% the peak detection, fuzzy analysis, and \gls{midi}
+% key-finding models were 70.17\%, 75.25\%, and 80.34\%,
+% respectively.
 
 % we evaluate the technique by comparing the results of
-% symbolic (\gls{midi}) key finding, audio key finding with peak
-% detection, and audio key finding with fuzzy analysis. We
-% showed that the fuzzy analysis technique was superior to a
-% simple peak detection policy, increasing the percentage of
-% correct key identifications by 12.18\% on average.
+% symbolic (\gls{midi}) key finding, audio key finding with
+% peak detection, and audio key finding with fuzzy analysis.
+% We showed that the fuzzy analysis technique was superior
+% to a simple peak detection policy, increasing the
+% percentage of correct key identifications by 12.18\% on
+% average.
 
 \textcite{chuan2005polyphonic} proposed a real-time
 algorithm based on the extraction of pitches and
@@ -478,8 +480,8 @@ first seconds of the recordings. A further improvement was
 proposed in \textcite{chuan2005fuzzy}, which incorporated
 fuzzy analysis to improve the pitch-class distributions
 computed from the audio. This model was evaluated during the
-first \emph{Audio Key-Finding} \gls{mirex} evaluation, in 2005.
-The model was outperformed by other approaches.
+first \emph{Audio Key-Finding} \gls{mirex} evaluation, in
+2005. The model was outperformed by other approaches.
 
 % % Zhu et al. (2005) utilizes the CQ-transform and detects
 % the key in two distinct steps: diatonic scale root
@@ -596,9 +598,9 @@ theory, which requires no training. The music theory
 components of the model were borrowed from Lerdahl's Tonal
 Pitch Space. They tested their model with synthesized audio,
 recorded audio, and presented their model for evaluation in
-the Key and Chord detection tasks from \gls{mirex}. For testing
-the local keys, they used short sequences of chords, similar
-as those from \textcite{krumhansl1982tracing}. Their
+the Key and Chord detection tasks from \gls{mirex}. For
+testing the local keys, they used short sequences of chords,
+similar as those from \textcite{krumhansl1982tracing}. Their
 performance on synthesized audio was good, but the
 performance on recorded audio decreased significantly.
 
@@ -635,8 +637,8 @@ performed using the rule-based system from Temperley and
 Sleator, the Melisma Music Analyzer
 \textcite{temperley2004cognition}. The corpus for performing
 the harmonic analysis was obtained from mididb.com, and
-consisted 1046 \gls{midi} files of Rock music. The annotated files
-were synthesized with a sample-based synthesizer
+consisted 1046 \gls{midi} files of Rock music. The annotated
+files were synthesized with a sample-based synthesizer
 (Timidity++, using the FluidR3 soundfont) and perfectly
 aligned to the annotations. Their chord detection model is
 able to distinguish only major and minor triads.
@@ -705,9 +707,9 @@ pitch-class aggregation, and key classification. A thorough
 experiment was performed with different solutions for each
 of the stages. The best performing model was evaluated in a
 dataset of classical music, another one of popular music,
-and an audio-synthesized dataset of \gls{midi} files of classical
-music. The best performing model consisted of features
-extracted with the \emph{jAudio} feature extractor
+and an audio-synthesized dataset of \gls{midi} files of
+classical music. The best performing model consisted of
+features extracted with the \emph{jAudio} feature extractor
 \parencite{mcennis2005jaudio} and a k-nearest neighbours
 classifier.
 
@@ -768,23 +770,22 @@ improve the results of their main task, chord recognition.
 
 \textcite{korzeniowski2018genreagnostic} proposed a
 key-finding model that generalizes across different music
-genres. The model is based on a Convolutional Neural Network
-(CNN) that receives a log-magnitude log-frequency
-spectrogram as its input. Initially, the training procedure
-of the model is to receive the full spectrogram, however,
-the computation is very expensive. Korzeniowski and Widmer
-propose showing the network only \emph{snippets} (20
-seconds) of the spectrogram. This improvement speeds the
-training time but carries the problem of assuming that any
-arbitrary snippet of the audio inputs imply the ground truth
-key, disallowing the model to work with any data that has
-local keys or modulations. The model was trained on three
-datasets: the GiantSteps MTG Key dataset, the McGill
-Billboard dataset, and an internal dataset with classical
-music. The model was submitted to the \gls{mirex} campaign of 2018
-and it was very successful at generalizing the key of
-different genres, outperforming the state-of-the-art in
-global key detection.
+genres. The model is based on a \gls{cnn} that receives a
+log-magnitude log-frequency spectrogram as its input.
+Initially, the training procedure of the model is to receive
+the full spectrogram, however, the computation is very
+expensive. Korzeniowski and Widmer propose showing the
+network only \emph{snippets} (20 seconds) of the
+spectrogram. This improvement speeds the training time but
+carries the problem of assuming that any arbitrary snippet
+of the audio inputs imply the ground truth key, disallowing
+the model to work with any data that has local keys or
+modulations. The model was trained on three datasets: the
+GiantSteps MTG Key dataset, the McGill Billboard dataset,
+and an internal dataset with classical music. The model was
+submitted to the \gls{mirex} campaign of 2018 and it was
+very successful at generalizing the key of different genres,
+outperforming the state-of-the-art in global key detection.
 
 % % Schreiber and Mueller (2019)
 
@@ -807,9 +808,9 @@ cognition and slowly transitioning into data-driven and
 machine learning approaches. As may be observed from the
 evaluation sections of the literature, it is difficult to
 know which models are better than the rest, mostly due to
-little agreement (except for the \gls{mirex} campaigns) in the
-methods used for comparing the capabilities of one model or
-another, or in the use of a similar test dataset.
+little agreement (except for the \gls{mirex} campaigns) in
+the methods used for comparing the capabilities of one model
+or another, or in the use of a similar test dataset.
 Furthermore, some of the models output different results,
 ranging from key signatures, local keys, global keys, and
 chords, which complicates the task of comparing key-finding

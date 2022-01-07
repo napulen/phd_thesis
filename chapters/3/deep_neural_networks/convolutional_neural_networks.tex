@@ -3,27 +3,27 @@
 % This is \refsubsec{convolutionalneuralnetworks}, which
 % introduces the convolutional neural networks.
 
-Convolutional Neural Networks (CNNs) might seem recent,
-however, they were introduced during the
-\emph{connectionist} wave of research on neural networks, in
-\textcite{lecun1989generalization, lecun1989handwritten}.
-The main innovation of CNNs is the idea of \emph{shared
-parameters}. In a traditional feedforward network (e.g.,
-Multi-Layer Perceptron), every neuron of the network is
-typically connected to another neuron of the network in the
-following layer using a \emph{unique} parameter (i.e., used
-exclusively for connecting those two neurons). Although that
-gives the network more expressive power and the capability
-of modelling very complex functions, in practice, it also
+\glspl{cnn} might seem recent, however, they were introduced
+during the \emph{connectionist} wave of research on neural
+networks, in \textcite{lecun1989generalization,
+lecun1989handwritten}. The main innovation of \glspl{cnn} is
+the idea of \emph{shared parameters}. In a traditional
+feedforward network (e.g., Multi-Layer Perceptron), every
+neuron of the network is typically connected to another
+neuron of the network in the following layer using a
+\emph{unique} parameter (i.e., used exclusively for
+connecting those two neurons). Although that gives the
+network more expressive power and the capability of
+modelling very complex functions, in practice, it also
 contributes to a combinatorial explosion of parameters as
 the neural network grows in number of layers and neurons,
 which makes it unfeasible (or even impossible) to train it
 due to the limitations in memory and computing power of
-modern computers. CNNs, on the other hand, consider re-using
-the same parameter for connecting different neurons of the
-network with the neurons of the following layer. By doing
-this, the number of parameters is reduced, typically, in one
-or several orders of magnitude compared to a
+modern computers. \glspl{cnn}, on the other hand, consider
+re-using the same parameter for connecting different neurons
+of the network with the neurons of the following layer. By
+doing this, the number of parameters is reduced, typically,
+in one or several orders of magnitude compared to a
 fully-connected, feedforward network.
 
 The idea of sharing parameters is not only important for
@@ -45,8 +45,8 @@ going to be searched across the entire input vector of the
 network and propagated to deeper (higher-level) kernels of
 the network.
 
-Given the way that convolutional kernels work, CNNs have
-become the standard methodology for dealing with
+Given the way that convolutional kernels work, \glspl{cnn}
+have become the standard methodology for dealing with
 fixed-length, grid-like structures (e.g., images), producing
 state-of-the-art performance in many tasks. For example,
 they have systematically been the state-of-the-art in the
@@ -54,14 +54,14 @@ ImageNet challenge since 2012
 \parencite{krizhevsky2012imagenet}, identifying over 1,000
 classes of objects in an image.
 
-In \gls{mir}, CNNs have been used
-for genre recognition \parencite{dieleman2011audiobased},
-chord recognition \parencite{humphrey2012rethinking},
-structural analysis \parencite{ullrich2014boundary,
-grill2015music}, music tagging
-\parencite{choi2016automatic}, instrument recognition
-\parencite{lostanlen2016deep}, \gls{omr} \parencite{calvozaragoza2017endend, pacha2018optical},
-beat tracking \parencite{gkiokas2017convolutional}, source
+In \gls{mir}, \glspl{cnn} have been used for genre
+recognition \parencite{dieleman2011audiobased}, chord
+recognition \parencite{humphrey2012rethinking}, structural
+analysis \parencite{ullrich2014boundary, grill2015music},
+music tagging \parencite{choi2016automatic}, instrument
+recognition \parencite{lostanlen2016deep}, \gls{omr}
+\parencite{calvozaragoza2017endend, pacha2018optical}, beat
+tracking \parencite{gkiokas2017convolutional}, source
 separation \parencite{miron2017monaural}, syllable
 segmentation \parencite{pons2017scoreinformed}, key
 detection \parencite{korzeniowski2018genreagnostic}, and
