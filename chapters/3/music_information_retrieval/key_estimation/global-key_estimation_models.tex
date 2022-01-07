@@ -728,15 +728,15 @@ spectrogram, however, this computation turned out to be
 expensive. Korzeniowski and Widmer proposed showing the
 network only \emph{snippets} (20 seconds) of the
 spectrogram. This improvement decreased the training time
-but assumed that any arbitrary 20-second fragment of the
-audio input will present the global key, disallowing the
-model to operate with music that features modulations. The
-model was trained on three datasets: the GiantSteps
-\gls{mtg} Key dataset, the McGill Billboard dataset, and an
-internal dataset with classical music. The model was
-submitted to the \gls{mirex} campaign of 2018 and it was
-very successful at generalizing the key of different genres,
-outperforming the state-of-the-art audio \gls{gke} models.
+but assumed that any arbitrary 20-second audio fragment
+would display the global key, disallowing the model to
+operate with music file that feature modulations. The model
+was trained on three datasets: the GiantSteps \gls{mtg} Key
+dataset, the McGill Billboard dataset, and an internal
+dataset with classical music. The model was submitted to the
+\gls{mirex} campaign of 2018 and it was very successful at
+generalizing the key of different genres, outperforming the
+state-of-the-art audio \gls{gke} models.
 
 % % Schreiber and Mueller (2019)
 
