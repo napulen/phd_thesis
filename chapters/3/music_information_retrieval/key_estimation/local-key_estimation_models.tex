@@ -108,39 +108,41 @@ tonicizations.
 
 \textcite{pauwels2014combining} presented a probabilistic
 framework for the simultaneous estimation of chords and keys
-from audio. They mention the importance of ``integrating
-prior musical knowledge'' into a local-key-estimation
-system, however, they do not allude to the terms modulation
-and tonicization. The same year,
-\textcite{weis2014chromabased} proposed an audio scale
-estimator. They argue that this estimator can help to
-determine the local tonality based on G\'{a}rdonyi's scale
-analysis method. They did not use the term tonicization,
-however, they discussed ``short-time local modulations'',
-which resemble tonicizations.
+in audio. They mentioned the importance of ``integrating
+prior musical knowledge'' into a \gls{lke} model, however,
+they did not allude to the terms modulation and
+tonicization. The same year, \textcite{weis2014chromabased}
+proposed an audio scale estimator. They argued that this
+estimator could help to determine the local tonality based
+on G\'{a}rdonyi's scale analysis method. They did not use
+the term tonicization, however, they discussed ``short-time
+local modulations'', which resemble tonicizations.
 
 Machine learning approaches, especially using neural
 networks, have recently gained popularity in \gls{mir}
-research, including key estimation. Independently,
-\textcite{chen2018functional, chen2019harmony} and
-\textcite{micchi2020not} designed models that estimate local
-keys as well as roman numeral analysis annotations.
-Tonicization information is implied by the roman numeral
-analysis annotations.
+research, including \gls{lke}. \textcite{chen2018functional,
+chen2019harmony} and \textcite{micchi2020not} designed
+models that estimate local keys as part of their automatic
+Roman numeral analysis models. Tonicization information was
+implied by the roman numeral analysis annotations.
 
-N\'apoles L\'opez et al. introduced a model to find changes
-of key (local-key estimation) as well as the main key of a
-piece (global-key estimation), using an \gls{hmm}
-\textcite{napoleslopez2019keyfinding}. The model is also
-capable of working with symbolic and audio data. They do not
-allude to the terms modulation or tonicization, always
-referring to their predictions as \emph{local keys}.
+We introduced a \gls{gke} and \gls{lke} model using an
+\gls{hmm} \textcite{napoleslopez2019keyfinding}. The model
+was capable of working with symbolic and audio data. In that
+work, we did not allude to the terms modulation or
+tonicization when describing the nature of local keys,
+however, an experiment on Chopin's Op.~28 No.~20 revealed
+that different key profiles tended to be more or less
+sensitive to smaller fluctuations of key (e.g.,
+tonicizations). This inspired future work on the
+relationship of local keys, modulations, and tonicizations
+\parencite{napoleslopez2020local}.
 
 One of the most recent models for finding changes of key is
-by \textcite{feisthauer2020estimating}, which has been
-designed to detect modulations in Classical music. It uses
-three proximity measures established from pitch
+the one by \textcite{feisthauer2020estimating}, which was
+designed to detect modulations in Mozart piano sonatas. It
+used three proximity measures established from pitch
 compatibility, tonality anchoring, and tonality proximity.
-The model computes the cost of being in a key on a given
-beat, and estimates the succession of keys using dynamic
+The model computed the cost of being in a key on a given
+beat, and estimated the succession of keys using dynamic
 programming techniques.
