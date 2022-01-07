@@ -12,7 +12,7 @@ to assume that any problem that involves an \gls{rnn} can
 substitute the \gls{rnn} with an LSTM, matching or even improving
 the results.
 
-The main contribution of LSTMs is to try to provide a
+The main contribution of \glspl{lstm} is to try to provide a
 solution to the issue of vanishing gradients. Given that
 vanishing gradients are associated with the loss of
 long-term dependencies, mitigating this issue would enable,
@@ -37,7 +37,7 @@ network should enter the cell. The output gate controls how
 much of previous time steps in the network should be used
 for computing the activation of the output of the network.
 
-Given that \glspl{rnn} and more specifically LSTMs are useful
+Given that \glspl{rnn} and more specifically \glspl{lstm} are useful
 architectures for modelling sequence-to-sequence processes,
 they can be useful for musical applications, for example,
 detecting the changes of key in a symbolic music file
@@ -48,7 +48,7 @@ detecting the changes of key in a symbolic music file
 % 1. These gates keep the value of the memory cell under
 %    control.
 
-Further improvements on LSTMs have extended the elements
+Further improvements on \glspl{lstm} have extended the elements
 of the LSTM, for example, adding a forget cell, which
 allows the memory cell to drop information that is no
 longer relevant.
@@ -79,8 +79,7 @@ not mutually exclusive with each other, so they can be
 combined.
 
 Therefore, it is common to see now architectures that
-combine these approaches, for example, BLSTM
-(Bidirectional Long Short-Term Memory) networks.
+combine these approaches, for example, \gls{blstm} networks.
 
 These type of models have been successfully trained and
 provided state-of-the-art in multiple tasks.
