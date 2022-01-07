@@ -202,7 +202,7 @@ estimating the musical key.
 % 12x12 matrices representing the transition probability
 % between any two scale degrees. The profiles are then
 % learned from key annotated data for all 24 keys. Using a
-% corpus of 8325 Finnish folk songs in MIDI format, the
+% corpus of 8325 Finnish folk songs in \gls{midi} format, the
 % system was trained using 5550 songs and evaluated with the
 % remainder. A comparison was also performed between the use
 % of Interval Profiles and several types of pitch class
@@ -443,19 +443,19 @@ annotated by the authors.
 % clarifying low frequencies, adaptive level weighting, and
 % flattening high and low values. They performed a direct
 % comparison of the fuzzy analysis key-finding system with
-% two other models: a peak detection model and a MIDI
+% two other models: a peak detection model and a \gls{midi}
 % key-finding model. The evaluation utilized excerpts from a
-% corpus of 410 classical music MIDI files, where only the
+% corpus of 410 classical music \gls{midi} files, where only the
 % first 15 seconds of the first movement was considered. The
 % fuzzy analysis and peak detection algorithms operated on
 % audio files that were synthesized using Winamp, and the
-% MIDI key-finding model operated directly on the MIDI
+% \gls{midi} key-finding model operated directly on the \gls{midi}
 % files. The maximum key identification rates for the peak
-% detection, fuzzy analysis, and MIDI key-finding models
+% detection, fuzzy analysis, and \gls{midi} key-finding models
 % were 70.17\%, 75.25\%, and 80.34\%, respectively.
 
 % we evaluate the technique by comparing the results of
-% symbolic (MIDI) key finding, audio key finding with peak
+% symbolic (\gls{midi}) key finding, audio key finding with peak
 % detection, and audio key finding with fuzzy analysis. We
 % showed that the fuzzy analysis technique was superior to a
 % simple peak detection policy, increasing the percentage of
@@ -630,12 +630,12 @@ evaluation methods are provided for each of the datasets.
 extraction from audio sources. The model was trained by
 creating a separate HMM for each of the 24 keys. In order to
 obtain the training data, they annotated a harmonic analysis
-of several MIDI files. These harmonic analyses were
+of several \gls{midi} files. These harmonic analyses were
 performed using the rule-based system from Temperley and
 Sleator, the Melisma Music Analyzer
 \textcite{temperley2004cognition}. The corpus for performing
 the harmonic analysis was obtained from mididb.com, and
-consisted 1046 MIDI files of Rock music. The annotated files
+consisted 1046 \gls{midi} files of Rock music. The annotated files
 were synthesized with a sample-based synthesizer
 (Timidity++, using the FluidR3 soundfont) and perfectly
 aligned to the annotations. Their chord detection model is
@@ -705,7 +705,7 @@ pitch-class aggregation, and key classification. A thorough
 experiment was performed with different solutions for each
 of the stages. The best performing model was evaluated in a
 dataset of classical music, another one of popular music,
-and an audio-synthesized dataset of MIDI files of classical
+and an audio-synthesized dataset of \gls{midi} files of classical
 music. The best performing model consisted of features
 extracted with the \emph{jAudio} feature extractor
 \parencite{mcennis2005jaudio} and a k-nearest neighbours
