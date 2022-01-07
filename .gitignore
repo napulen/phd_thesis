@@ -8,6 +8,7 @@
 *.pdf
 *.toc
 *.out
+*.ist
 *.run.xml
 *.synctex.gz
 .ipynb_checkpoints
