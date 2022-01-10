@@ -5,17 +5,17 @@
 % which introduces the relevance of pitch spelling to tonal
 % analysis.
 
-To understand the problems that derive from pitch-spelling,
-the following example could be considered. If during a
+Pitch spelling is likely to be correlated with tonal
+analysis. Consider the following example. If during a
 musical performance, a pianist presses the key corresponding
-to the pitch class number 8 in the piano keyboard (shown in
-Figure  \ref{fig:Q7_1}), how can we know if the note played
-by the performer was an A$\flat$ or a
-G$\sharp$?\footnote{Assume an equal-tempered setting, with
-no special considerations regarding how the piano might be
-tuned. That is, the distinction between the A$\flat$ and
-G$\sharp$ notes that we are looking for is of a semantic
-nature, not tuning nature.}
+to pitch class ``8'' in the piano keyboard (shown in Figure
+\ref{fig:Q7_1}), how can we know if the note played by the
+performer was an A$\flat$ or a G$\sharp$?\footnote{Assume an
+equal-tempered setting, with no special considerations
+regarding how the piano might be tuned. That is, the
+distinction between the A$\flat$ and G$\sharp$ notes that we
+are looking for is of a semantic nature, not of a tuning
+nature.}
 
 % \begin{figure}[h] \centering %
 % \includegraphics[width=0.6\textwidth]{figures/Q7_1.png} %
@@ -23,18 +23,17 @@ nature, not tuning nature.}
 % either G$\sharp$ or A$\flat$.} \label{fig:Q7_1} %
 % \end{figure}
 
-A first impulse that someone might have for guessing whether
-the note is A$\flat$ or G$\sharp$ could be to know the
-musical key of the piece during which the piano key was
-played. Such information can be obtained from a key-finding
-model and there are many approaches that could provide it
-with a reasonable degree of accuracy. Nevertheless, our
-pitch-spelling model now requires information about the key
-in order to make its predictions.
+A first approach could be to determine the spelling of the
+note based on the musical key of the piece where the note
+was played. Such information can be automatically obtained
+using a \gls{gke} model with a reasonable degree of
+accuracy. Nevertheless, our pitch-spelling model now
+requires information about the key in order to make its
+predictions.
 
-A key-finding model could then indicate that the piece is,
-for example, in \emph{A minor}. ``Is it a piece in A minor?
-Then the note is probably a G$\sharp$.''
+The key model could predict that the piece is in, for
+example, \emph{A minor}. ``Is it a piece in A minor? Then
+the note is probably a G$\sharp$.''
 
 % \begin{figure}[h] \centering %
 % \includegraphics[width=0.8\textwidth]{figures/Q7_2.png} %
