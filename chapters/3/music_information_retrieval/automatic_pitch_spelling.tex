@@ -8,11 +8,11 @@ original spelling that a note had in a musical score when
 only the pitch-class, octave, and duration of the note are
 provided as inputs to the model.\footnote{Some researchers
 have also found helpful to know the \emph{voice} (or
-\emph{stream}, psychoacoustics) to which the note belongs
+\emph{stream}, in psychoacoustics) to which the note belongs
 \parencite{teodoru2007pitch}. However, this information is
-generally unavailable in most \gls{midi} files available
-online. Therefore, algorithms of this kind should not rely
-on voice information.}
+unavailable in most \gls{midi} files available online.
+Therefore, algorithms of this kind should preferrably not
+rely on voice information.}
 
 \guide{A brief survey of pitch-spelling algorithms}
 
@@ -32,6 +32,6 @@ feasible for MusicXML and similar input representations, but
 not for \gls{midi} inputs, which arguably account for the
 vast majority of the existing digital symbolic music files
 today. Pitch spelling in parallel (or as a preprocessing
-step) will thus be necessary for \glspl{rna} then.
-This is also true for implementing \glspl{rna}
-models in the audio domain.
+step) will thus be necessary for \glspl{rna} then. This is
+also true for implementing \glspl{rna} models in the audio
+domain.
