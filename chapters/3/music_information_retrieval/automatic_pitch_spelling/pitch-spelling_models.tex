@@ -15,39 +15,39 @@ methodology, Longuet-Higgins extended the notation to add a
 ``sharpness'' feature, $q$, which was defined based on the
 distance in fifths and thirds to \emph{middle C}, irrelevant
 of the octave. This ``sharpness'' value, in conjunction with
-the \gls{midi} note number, was used to indicate the spelling of
-the note.
+the \gls{midi} note number, was used to indicate the
+spelling of the note.
 
 % \guide{Cambouropoulos (2003)}
 After a gap of around 25 years, a series of new algorithms
 were developed by different researchers independently,
 almost at the same time. \textcite{cambouropoulos2003pitch}
-presents an approach that heavily relies in intervals. The
-algorithm uses a shifting overlapping window (suggested to
-be of 9 to 12 pitches long). The window moves along the
+presented an approach that relied on intervals. The
+algorithm used a shifting overlapping window (suggested to
+be of 9 to 12 pitches long). The window moved along the
 sequence of pitches, from left to right, until the sequence
-concludes. For each window, the pitch-spelling process
-optimizes two aspects: 1) that notes make the minimum use of
-accidentals (something that Cambouropoulos refers to as
+concluded. For each window, the pitch-spelling process
+optimized two aspects: 1) that notes make the minimum use of
+accidentals (something that Cambouropoulos referred to as
 \emph{notational parsimony}), and 2) the avoidance of 8
 classes of augmented and diminished intervals (something
-that Cambouropoulos refers as \emph{interval optimization}).
-The algorithm was evaluated on Mozart piano sonatas and
-Chopin Waltzes.
+that Cambouropoulos referred to as \emph{interval
+optimization}). The algorithm was evaluated on Mozart piano
+sonatas and Chopin Waltzes.
 
 % \guide{Chew and Chen (2003)}
-After its introduction in her dissertation, the Spiral Array
-model by \textcite{chew2000towards} was used for multiple
-tasks that involved tonal analysis, for example, chord
-labeling, key-finding, and pitch-spelling. The Spiral Array
-is a spatial representation of tonality that allows a
+The \emph{Spiral Array} introduced by
+\textcite{chew2000towards} in her dissertation this was used
+for multiple tasks that involved tonal analysis. Namely,
+chord labeling, key-finding, and pitch-spelling. The Spiral
+Array is a spatial representation of tonality that allows a
 sequence of pitches to be \emph{positioned} in
-the---theoretical---tonal space, which facilitates the
+a---theoretical---tonal space, which facilitates the
 computation of tonal features in different ways. Regarding
-the pitch-spelling problem, three different algorithms were
-proposed by \textcite{chew2003determining} that were built
-on top of each other. In the paper, their evaluation of the
-algorithms restricted to few movements of Beethoven's piano
+pitch-spelling, three different algorithms were proposed by
+\textcite{chew2003determining} that were built on top of
+each other. In the paper, their evaluation of the algorithms
+was restricted to few movements of Beethoven's piano
 sonatas.
 
 % \guide{Temperley and Sleator (2004)}
@@ -57,24 +57,24 @@ aspects of musical structure (i.e., meter, phrasing,
 counterpoint, harmony, key, and pitch-spelling). These
 models were implemented by Daniel Sleator in the
 \emph{Melisma Music Analyzer} and explained in detail in the
-book by \textcite{temperley2004cognition}. Respecting the
-pitch-spelling problem, the approach by Temperley consists
-of a rule-based system based on his concepts of \gls{tpc} and the \emph{line of fifths}.
-Additionally, the algorithm depends on the metrical analysis
-provided by the Melisma Music Analyzer, before extracting
-the spelling of the notes.
+book by \textcite{temperley2004cognition}. Regarding
+pitch-spelling, the approach by Temperley consists of a
+rule-based system based on his concepts of \gls{tpc} and the
+\emph{line of fifths}. Additionally, the algorithm depended
+on the metrical analysis provided by the Melisma Music
+Analyzer before extracting the spelling of the notes.
 
 % \guide{Meredith (2003)}
 \textcite{meredith2003pitch} introduced an algorithm that
-receives \gls{midi} note numbers and onset times as ordered pairs
-and determines the spelling of the notes through 2 stages.
-The first stage consists of a rule-based system with 8 rules
-that are carried out in sequence. After the first stage, the
-algorithm has determined a spelling for the notes. The
-second stage, consists of the correction of the outputs
-given by the first stage. The corrections performed account
-for neighbouring notes or passing notes which could have
-been erroneously predicted by the first stage. In a
+receives \gls{midi} note numbers and onset times as ordered
+pairs and determines the spelling of the notes through 2
+stages. The first stage consists of a rule-based system with
+8 rules that are carried out in sequence. After the first
+stage, the algorithm has determined a spelling for the
+notes. The second stage, consists of the correction of the
+outputs given by the first stage. The corrections performed
+account for neighbouring notes or passing notes which could
+have been erroneously predicted by the first stage. In a
 subsequent study, \textcite{meredith2005comparing} compared
 its pitch-spelling algorithm against other pitch spelling
 algorithms, determining that his algorithm had the highest
