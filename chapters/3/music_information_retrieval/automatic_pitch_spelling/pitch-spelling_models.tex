@@ -66,34 +66,30 @@ Analyzer before extracting the spelling of the notes.
 
 % \guide{Meredith (2003)}
 \textcite{meredith2003pitch} introduced an algorithm that
-receives \gls{midi} note numbers and onset times as ordered
-pairs and determines the spelling of the notes through 2
-stages. The first stage consists of a rule-based system with
-8 rules that are carried out in sequence. After the first
-stage, the algorithm has determined a spelling for the
-notes. The second stage, consists of the correction of the
-outputs given by the first stage. The corrections performed
-account for neighbouring notes or passing notes which could
-have been erroneously predicted by the first stage. In a
-subsequent study, \textcite{meredith2005comparing} compared
-its pitch-spelling algorithm against other pitch spelling
-algorithms, determining that his algorithm had the highest
-accuracy.
+received \gls{midi} note numbers and onset times as ordered
+pairs and determined the spelling of the notes through two
+stages. The first stage consisted of a rule-based system
+with eight sequential rules. After this stage, a spelling
+was already determined. The second stage corrected the
+outputs of the first stage, taking neighboring and passing
+notes into account, which could have been erroneously
+spelled in the first stage. In a subsequent study,
+\textcite{meredith2005comparing} compared its pitch-spelling
+algorithm against other pitch spelling algorithms.
 
 % \guide{Stoddard et al. (2004)}
-\textcite{stoddard2004welltempered} proposed a new algorithm
-for pitch-spelling. Their approach is data-driven, which
-requires ground-truth spelling information in order to be
-trained. Additionally, their algorithm runs on top of the
-probabilistic framework for harmonic analysis by
-\textcite{raphael2003harmonic}, and it is conditioned by the
-accuracy of that harmonic analysis model. The algorithm was
-evaluated over a total of 22,593 notes, scoring 96.87\%
-accuracy. During their study, they found that the detection
-and resolution of voice-leading considerations (i.e., the
-relationship between a note and its immediate neighbours)
-was the most important feature to consider in a
-pitch-spelling algorithm.
+\textcite{stoddard2004welltempered} proposed a data-driven
+algorithm for pitch-spelling. It required ground-truth
+spelling information in order to be trained. Additionally,
+the algorithm ran on top of the probabilistic framework for
+harmonic analysis by \textcite{raphael2003harmonic},
+conditioned by the accuracy of that harmonic analysis model.
+The algorithm was evaluated over a total of 22,593 notes,
+scoring 96.87\% accuracy. During their study, they found
+that the detection and resolution of voice-leading
+considerations (i.e., the relationship between a note and
+its immediate neighbors) was the most important feature to
+consider in a pitch-spelling algorithm.
 
 % \guide{Teodoru and Raphael (2007)}
 \textcite{teodoru2007pitch} tackled the problem by assuming
