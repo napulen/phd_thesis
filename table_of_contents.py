@@ -107,9 +107,6 @@ background = """
                 Modulation
                 Tonicization
             Local-key estimation models
-            Perception of key
-            Ambiguity of key annotations
-            Key inter-annotator agreement
         Automatic chord recognition
             Chord syntax
             Chord vocabulary
