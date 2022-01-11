@@ -86,60 +86,43 @@ analysis can be attributed to the independent contributions
 of Temperley and Sleator \parencite{temperley2004cognition},
 and Sapp \parencite{sapp2009tsroot}. Temperley's preference
 rules were implemented by Sleator as part of a suite of
-programs called \emph{Melisma (version
-1)}.\footnote{Although Melisma (version 2) exists, it does
-not provide \gls{rna} output.} The contributions of Sapp to
-the Humdrum toolkit \parencite{huron2002music} made it
-possible to process any encoded musical score with Roman
-numeral annotations using \emph{Melisma}. A more thorough
-review of the Melisma system can be found in
+programs called \emph{Melisma Music Analyzer (version
+1)}.\footnotelink{https://www.link.cs.cmu.edu/music-analysis/}\footnote{Although
+Melisma (version 2) exists, it does not provide \gls{rna}
+output.} The contributions of Sapp to the Humdrum toolkit
+\parencite{huron2002music} made it possible to process any
+encoded musical score with Roman numeral annotations using
+\emph{Melisma}. A more thorough review of the Melisma Music
+analyzer is provided in
 \textcite{napoleslopez2017automatic}.
 
-Probably the most relevant approach in automatic harmonic
-analysis for this work, is the approach from David Temperley
-described in 1997 \cite{temperley1997algorithm}, as it was
-extended afterwards by his work in key estimation algorithms
-and which culminated in the implementation of the Melisma
-Music Analyzer, in conjunction with Daniel Sleator. Inspired
-by the cognitive experiments by Carol Krumhansl
-\cite{krumhansl2001cognitive}, the aim of Temperley is to
-produce an algorithm that models the human process of
-harmonic analysis done by a trained expert, and to take it
-as indicative of the analysis produced subconsciously by
-listeners in general.
+% Temperley steps forward in the definition of the problem
+% of harmonic analysis, decomposing the task into two
+% subtasks: \emph{root finding} and \emph{key finding}.
+% Temperley claims then that functional harmonic analysis
+% could be broken down into these subtasks, focusing at
+% first in root finding, assuming that this task can be done
+% independently to key finding. Root finding basically
+% consists of dividing a piece into segments and label each
+% of them with a root.
 
-    The traiditional functional harmonic analysis done in
-    music theory courses uses the \emph{roman numerals}
-    notation to segment a piece of music, labeling it with
-    symbols indicating the relationship between each root to
-    the current key. Temperley steps forward in the
-    definition of the problem of harmonic analysis,
-    decomposing the task into two subtasks: \emph{root
-    finding} and \emph{key finding}. Temperley claims then
-    that functional harmonic analysis could be broken down
-    into these subtasks, focusing at first in root finding,
-    assuming that this task can be done independently to key
-    finding. Root finding basically consists of dividing a
-    piece into segments and label each of them with a root.
+% Once in the task of root-finding, Temperley approaches the
+% task defining certain rules: \emph{Pitch variance rule,
+% compatibility rule, strong-beat rule, harmonic variance
+% rule and ornamental dissonance rule}. Together with these
+% rules, he introduces important definitions that aid in the
+% process of root analysis: The concepts of \emph{Tonal
+% Pitch Class} (TPC), \emph{Center of Gravity} (COG) and the
+% \emph{line of fifths}.
 
-Once in the task of root-finding, Temperley approaches the
-task defining certain rules: \emph{Pitch variance rule,
-compatibility rule, strong-beat rule, harmonic variance rule
-and ornamental dissonance rule}. Together with these rules,
-he introduces important definitions that aid in the process
-of root analysis: The concepts of \emph{Tonal Pitch Class}
-(TPC), \emph{Center of Gravity} (COG) and the \emph{line of
-fifths}.
-
-It is difficult to follow the chronology of this approach,
-as the implementation of this model comes mainly in the form
-of the Melisma Music Analyzer, which was released in 2001,
-and included the key estimation algorithm and a combined
-mode that eventually performed the complete functional
-harmonic analysis. The latest mode being the core
-implementation of what will be used to compute automatic
-harmonic analysis during this work.
-
+% It is difficult to follow the chronology of this approach,
+% as the implementation of this model comes mainly in the
+% form of the Melisma Music Analyzer, which was released in
+% 2001, and included the key estimation algorithm and a
+% combined mode that eventually performed the complete
+% functional harmonic analysis. The latest mode being the
+% core implementation of what will be used to compute
+% automatic harmonic analysis during this work.
 
 \phdparagraph{probabilistic and grammar-based models}
 
