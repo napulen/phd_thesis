@@ -126,54 +126,54 @@ analyzer is provided in
 
 \phdparagraph{probabilistic and grammar-based models}
 
-\subsection{Probabilistic and statistical approaches}
-Temperley himself, after the release of the Melisma Music
-Analyzer, moved into the direction of probabilistic models.
-In his case, using a Bayesian approach that aims to provide
-a unified modeling of harmonic analysis, meter induction and
-melodic seggregation, challenging the individualization of
-these problems without considering the connections among
-them \cite{temperley2009unified}.
+After the implementation of the first Melisma Music
+Analyzer, which is based on preference rules, Temperley
+favored probabilistic models in subsequent works. A Bayesian
+approach aimed to provide a unified modeling of harmonic
+analysis, meter induction and melodic seggregation,
+challenging the individualization of these problems without
+considering the connections among them
+\cite{temperley2009unified}.
 
-Another important probabilistic approach that emerged to
-solve the problem of functional harmonic analysis was that
-of Christopher Raphael \cite{raphael2003harmonic}. This
-model from Raphael is one of the few pure-functional
-harmonic analysis approaches, oriented towards the analysis
-of common-practice music. The idea is simple and some of his
-assumptions simplify the parameters of the model. Some
-constant that remains as in previous models is the fact that
-it gets rid of all the pitch-spelling information and
-replaced for solely pitch information. This model, unlike
-Temperley, does not try to reconstruct the pitch spelling
-information back by any algorithmic means, and in the words
-of Raphael, it is an obvious extension to the model.
+% Another important probabilistic approach that emerged to
+% solve the problem of functional harmonic analysis was that
+% of Christopher Raphael \cite{raphael2003harmonic}. This
+% model from Raphael is one of the few pure-functional
+% harmonic analysis approaches, oriented towards the analysis
+% of common-practice music. The idea is simple and some of his
+% assumptions simplify the parameters of the model. Some
+% constant that remains as in previous models is the fact that
+% it gets rid of all the pitch-spelling information and
+% replaced for solely pitch information. This model, unlike
+% Temperley, does not try to reconstruct the pitch spelling
+% information back by any algorithmic means, and in the words
+% of Raphael, it is an obvious extension to the model.
 
-Another quite important effort in the statistical domain
-includes the work from Martin Rohrmeier
-\cite{rohrmeier2008statistical}, who uses a heuristic method
-of segmentation. Analyzes distributions of single
-pitch-class-sets, chord classes and pitch-class-sets
-transitions. One of the goals of Rohrmeier was the research
-of \emph{syntacticality} in harmony. The final goal is to
-produce descriptive analyses of harmonic structure based on
-an empirical approach. The choice of the corpus is,
-similarly to others, music from Joahann Sebastian Bach. In
-his case, chorales, because they constitute a large and
-coherent set of pieces regarding style and composition
-technique. Rohrmeier claims that this work is pioneer in the
-statistical analysis of a corpus for the purpose of finding
-features of tonal harmony. According to the results of
-Rohrmeier, the most frequent occurrences of pitch-class-sets
-in this music are those of tonic, dominant and subdominant
-chords. This would be expected and helps to reinforce those
-scale-degree theories that describe harmonic movement with
-transition tables of scale degrees. The results from this
-research, apart from being interesting in confirming
-music-theory beliefs regarding common chords and transitions
-in tonal music, could also be replicated in a different
-corpus to target its particular common chords and
-transitions.
+% Another quite important effort in the statistical domain
+% includes the work from Martin Rohrmeier
+% \cite{rohrmeier2008statistical}, who uses a heuristic method
+% of segmentation. Analyzes distributions of single
+% pitch-class-sets, chord classes and pitch-class-sets
+% transitions. One of the goals of Rohrmeier was the research
+% of \emph{syntacticality} in harmony. The final goal is to
+% produce descriptive analyses of harmonic structure based on
+% an empirical approach. The choice of the corpus is,
+% similarly to others, music from Joahann Sebastian Bach. In
+% his case, chorales, because they constitute a large and
+% coherent set of pieces regarding style and composition
+% technique. Rohrmeier claims that this work is pioneer in the
+% statistical analysis of a corpus for the purpose of finding
+% features of tonal harmony. According to the results of
+% Rohrmeier, the most frequent occurrences of pitch-class-sets
+% in this music are those of tonic, dominant and subdominant
+% chords. This would be expected and helps to reinforce those
+% scale-degree theories that describe harmonic movement with
+% transition tables of scale degrees. The results from this
+% research, apart from being interesting in confirming
+% music-theory beliefs regarding common chords and transitions
+% in tonal music, could also be replicated in a different
+% corpus to target its particular common chords and
+% transitions.
 
 \subsection{Grammar-based} Three years after his statistical
 work in Bach Chorales, Martin Rohrmeier brought back the use
@@ -242,9 +242,6 @@ The most important reason for this selection is because this
 is the approach with the most mature implementation, and the
 effort for getting humdrum scores to be analyzed using it is
 the minimum of all the other attemtps.
-
-
-\phdparagraph{deep learning models}
 
 % taken verbatim from my MSc thesis, chapter 4
 
@@ -395,7 +392,6 @@ the minimum of all the other attemtps.
 %     appended to it.
 
 
-\guide{Before deep learning.}
 Notable subsequent studies include
 \textcite{raphael2004functional},
 \textcite{illescas2007harmonic}, and
@@ -403,7 +399,8 @@ Notable subsequent studies include
 \glspl{hmm}, dynamic programming, and grammar-based
 approaches, respectively.
 
-\guide{Chen and Su (2018).}
+\phdparagraph{deep learning models}
+
 More recently, deep neural networks have become the
 preferred tool for approaching this problem.
 \textcite{chen2018functional} were the first to introduce
@@ -426,7 +423,6 @@ mechanisms to improve the performance of \gls{acr}, paying
 special consideration to chord segmentation and its
 evaluation.
 
-\guide{Micchi et al (2020).}
 \textcite{micchi2020not}, in turn, proposed a DenseNet-like
 \parencite{huang2017densely} convolutional neural network,
 followed by a recurrent component. The recurrent component
@@ -443,11 +439,3 @@ informative output (e.g., not only the correct key, but the
 correct spelling between two enharmonic keys), and it
 increases the possible number of transpositions available
 for data augmentation.
-
-
-%     \autoref{fig:software_stack3} could be seen as the
-%     process that happens each time the \emph{tsroot}
-%     program is run over a humdrum score. This is a
-%     truthful realization of the target system for
-%     automatic harmonic analysis explained in the first
-%     chapters of this document.
