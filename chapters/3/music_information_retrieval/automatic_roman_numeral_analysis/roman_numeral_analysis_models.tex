@@ -34,7 +34,6 @@ short and concise:
     consonant interval. Every other is a dissonant interval.
 \end{italicquotes}
 
-
 However, as new rules are introduced, they become
 increasingly more complex and cryptic:
 
@@ -68,21 +67,34 @@ it is unlikely that the system would generalize to other
 compositions. \textcite{temperley1997algorithm} listed the
 limitations of Winograd and Maxwell's approaches,
 summarizing them in the following:
-\begin{itemize} \item Sequences of notes that are not
-displayed simultaneously (vertically), as arpeggiations of
-chords. \item Missing pitches in the spelling of a full
-chord, which can be deduced from the context. \item
-Ornamental notes. Maxwell proposes specific rules to deal
-with these notes, but according to Temperley, neither
-Maxwell's or Winograd's are good enough to correctly detect
-ornamental notes. \end{itemize} Maxwell's approach, in
-general, represents the powerful and sophisticated machinery
-of rule-based approaches, as well as their complexity.
 
+\begin{itemize}
+    \item Sequences of notes that are not displayed
+    simultaneously (vertically), as arpeggiations of chords.
+    \item Missing pitches in the spelling of a full chord
+    which can be deduced from the context.
+    \item Ornamental notes. Maxwell proposes specific rules
+    to deal with these notes, but according to Temperley,
+    neither Maxwell's or Winograd's are good enough to
+    correctly detect ornamental notes.
+\end{itemize}
 
 \phdparagraph{the melisma music analyzer}
 
-\subsection{Temperley and the Melisma Music Analyzer}
+The first end-to-end system of automatic Roman numeral
+analysis can be attributed to the independent contributions
+of Temperley and Sleator \parencite{temperley2004cognition},
+and Sapp \parencite{sapp2009tsroot}. Temperley's preference
+rules were implemented by Sleator as part of a suite of
+programs called \emph{Melisma (version
+1)}.\footnote{Although Melisma (version 2) exists, it does
+not provide \gls{rna} output.} The contributions of Sapp to
+the Humdrum toolkit \parencite{huron2002music} made it
+possible to process any encoded musical score with Roman
+numeral annotations using \emph{Melisma}. A more thorough
+review of the Melisma system can be found in
+\textcite{napoleslopez2017automatic}.
+
 Probably the most relevant approach in automatic harmonic
 analysis for this work, is the approach from David Temperley
 described in 1997 \cite{temperley1997algorithm}, as it was
@@ -399,20 +411,6 @@ the minimum of all the other attemtps.
 %     a final humdrum score with the analysis information
 %     appended to it.
 
-\guide{First end-to-end system.}
-The first end-to-end system of automatic Roman numeral
-analysis can be attributed to the independent contributions
-of Temperley and Sleator \parencite{temperley2004cognition},
-and Sapp \parencite{sapp2009tsroot}. Temperley's preference
-rules were implemented by Sleator as part of a suite of
-programs called \emph{Melisma (version
-1)}.\footnote{Although Melisma (version 2) exists, it does
-not provide \gls{rna} output.} The contributions of Sapp to
-the Humdrum toolkit \parencite{huron2002music} made it
-possible to process any encoded musical score with Roman
-numeral annotations using \emph{Melisma}. A more thorough
-review of the Melisma system can be found in
-\textcite{napoleslopez2017automatic}.
 
 \guide{Before deep learning.}
 Notable subsequent studies include
