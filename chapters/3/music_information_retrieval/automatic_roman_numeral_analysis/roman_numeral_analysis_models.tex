@@ -23,32 +23,36 @@ After Winograd, an \emph{expert system} model was introduced
 by Maxwell in his PhD dissertation (1984), and subsequently
 published in \textcite{maxwell1992expert}. This model is one
 of the best examples of rule-based systems for \glspl{mir}.
-The model consisted of fifty five rules that reduced the
-vertical sonorities into a chord sequence and decided
-the key changes. Some of the rules are intuitive and basic,
-e.g.:
+The model consisted of fifty five rules that reduced
+vertical sonorities into chord sequences, and decided the
+location of changes of key. Initially, the rules of the
+system were short and concise:
 
-\begin{quote} \centering \emph{"Perfect and imperfect
-consonant intervals constitute a consonant interval. Every
-other is a dissonant interval."}, \end{quote}
+\begin{italicquotes}
+    Perfect and imperfect consonant intervals constitute a
+    consonant interval. Every other is a dissonant interval.
+\end{italicquotes}
 
-    while others appear cryptic and difficult to understand,
-    e.g.:
 
-    \begin{quote} \centering \emph{"If the goal chord falls
-    on a strong beat and it is a major triad or major-minor
-    seventh, and the root movement from the pre-cadence is
-    an ascending or descending perfect fifth or major second
-    or a descending minor second, and when the root motion
-    is a descending fifth, the pre-cadence is not a
-    potential dominant, and when the root motion is an
-    ascending fifth the pre-cadence is triadic, then the
-    pseudo-cadence is a half cadence, and its strength
-    increases by 10."}. \end{quote}
+However, as new rules are introduced, they become
+increasingly more complex and cryptic:
 
-The later rule also reveals a problem that was pointed out
-by future researchers, the use of arbitrary, fixed values
-while determining the strength of a cadence.
+\begin{italicquotes}
+    If the goal chord falls on a strong beat and it is a
+    major triad or major-minor seventh, and the root
+    movement from the pre-cadence is an ascending or
+    descending perfect fifth or major second or a descending
+    minor second, and when the root motion is a descending
+    fifth, the pre-cadence is not a potential dominant, and
+    when the root motion is an ascending fifth the
+    pre-cadence is triadic, then the pseudo-cadence is a
+    half cadence, and its strength increases by 10.
+\end{italicquotes}
+
+The system was also cricized for its use of arbitrary,
+\emph{hardcoded} values to determine the strength of a
+cadence. An example shown in the last sentence of the
+previous rule.
 
 Even so, the results of Maxwell's approach get really close
     to the outcome expected by a music theorist analyzing a
