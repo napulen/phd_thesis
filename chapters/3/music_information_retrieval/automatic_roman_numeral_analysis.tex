@@ -6,30 +6,19 @@
 \gls{rna} refers to the syntax used to annotate chords,
 which evolved roughly from the early nineteenth century to
 the present day (see
-\refchap{introductiontoromannumeralanalysis}). As an
-\gls{mir} problem, \glspl{rna} has been defined,
-historically, as a ``chord-finding plus key-finding''
-problem. It was originally thought in this way by
-\textcite{temperley1997algorithm}. In recent years,
-\textcite{chen2018functional} subdivided the chord and key
-aspects further: chord are broken down in terms of their:
-root, quality, and inversion; keys are broken down in terms
-of their temporal scope as modulations or
-tonicizations\footnote{An explanation of these concepts in
-the context of \gls{mir} is presented in
-\textcite{napoleslopez2020local}}. Thus, as an \gls{mir}
-problem, functional harmony can be expressed as the task of
-correctly predicting enough features in order to reconstruct
-the correct Roman numeral labels. From a computational
-perspective, predicting such labels is challenging given
-that the model has to predict multiple features correctly
-and simultaneously. In the past, \gls{mir} researchers have
-reconstructed Roman numeral annotations by predicting six
-sub-tasks: chord quality, chord root, local key, inversion,
-primary degree, and secondary degree
-\parencite{chen2018functional, micchi2020not}.
-
-
+\refchap{introductiontoromannumeralanalysis}). In
+computational contexts, \glspl{rna} has been thought by
+\textcite{temperley1997algorithm} as a ``chord-finding plus
+key-finding'' problem. In recent years,
+\textcite{chen2018functional} subdivided the problem further
+into six sub-tasks: chord quality, chord root, local key,
+inversion, primary degree, and secondary degree. As an
+\gls{mir} problem, \glspl{rna} can be expressed as the task
+of correctly predicting enough features in order to
+reconstruct the correct Roman numeral labels. This problem
+is challenging for various reasons (see
+\refsec{challenges}). In the next section, I present a
+survey of the approaches to solve this problem.
 
 % Taken verbatim from my MSc thesis, chapter 3
 
