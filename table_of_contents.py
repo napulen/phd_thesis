@@ -122,7 +122,10 @@ background = """
             Pitch-spelling models
         Automatic Roman numeral analysis
             Roman numeral analysis models
-            Other forms of Roman numeral analysis
+                Pioneering works
+                The Melisma Music Analyzer
+                Probabilistic and grammar-based models
+                Deep learning models
 """
 
 data_acquisition = """
