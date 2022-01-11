@@ -49,6 +49,10 @@ roman_numerals = """
             The beginnings
             The Weber syntax
             Adoption of the Weber syntax
+            Chord inversions
+            Special chords
+            Applied chords and tonicization
+            Examples of modern syntax
     Digitization of roman numeral annotations
         The standard syntax of Roman numeral analysis
             The lack of a standard
