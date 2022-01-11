@@ -3,21 +3,540 @@
 % This is \refsubsec{automaticromannumeralanalysis}, which
 % introduces the \glspl{rna}.
 
-One of the most common ways to analyze a piece of tonal
-music is through \gls{rna}. This requires the
-inspection of several attributes related to chords and keys.
-Chords can be inspected in terms of their properties: root,
-quality, inversion, and function. Keys can be inspected in
-terms of their temporal scope as modulations or
-tonicizations\footnote{An explanation of these concepts is
-presented in \textcite{napoleslopez2020local}}. As an \gls{mir}
+\gls{rna} refers to the syntax used to annotate chords,
+which evolved roughly from the early nineteenth century to
+the present day (see
+\refchap{introductiontoromannumeralanalysis}). As an
+\gls{mir} problem, \glspl{rna} has been defined,
+historically, as a ``chord-finding plus key-finding''
+problem. It was originally thought in this way by
+\textcite{temperley1997algorithm}. In recent years,
+\textcite{chen2018functional} subdivided the chord and key
+aspects further: chord are broken down in terms of their:
+root, quality, and inversion; keys are broken down in terms
+of their temporal scope as modulations or
+tonicizations\footnote{An explanation of these concepts in
+the context of \gls{mir} is presented in
+\textcite{napoleslopez2020local}}. Thus, as an \gls{mir}
 problem, functional harmony can be expressed as the task of
 correctly predicting enough features in order to reconstruct
 the correct Roman numeral labels. From a computational
-perspective, predicting such labels is challenging
-given that the model has to predict multiple features
-correctly and simultaneously. In the past, \gls{mir} researchers
-have reconstructed Roman numeral annotations by predicting
-six sub-tasks: chord quality, chord root, local key,
-inversion, primary degree, and secondary degree
+perspective, predicting such labels is challenging given
+that the model has to predict multiple features correctly
+and simultaneously. In the past, \gls{mir} researchers have
+reconstructed Roman numeral annotations by predicting six
+sub-tasks: chord quality, chord root, local key, inversion,
+primary degree, and secondary degree
 \parencite{chen2018functional, micchi2020not}.
+
+
+
+% Taken verbatim from my MSc thesis, chapter 3
+
+% During \autoref{chap:introduction}, I defined what a
+% system for automatic harmonic analysis consists of, i.e.,
+% \emph{A piece of software that given a fragment of music
+% as input, will output the same piece of music, with roman
+% numeral labels appended to it}. At least for this
+% particular work.
+
+% I also established during \autoref{chap:dataset} that the
+% musical scores used for this work are encoded using the
+% \emph{Humdrum} \cite{humdrum} grammar and the roman
+% numerals labeled using the \emph{**harm} \cite{harm}
+% syntax. In  this chapter, I will go through a
+% chronological list of attempts in conceiving a system of
+% automatic harmonic analysis.
+
+% Aftwards, I will narrow the list of attemtps, favoring the
+% ones that could work with a musical score encoded in the
+% humdrum grammar as input, and which can output a similar
+% encoding with an appended **harm spine for the roman
+% numeral labels.
+
+% Finally, I will discuss the selected attempt and the
+% reason of its preference over other similarly suitable
+% attempts.
+
+% % \section{Roman numerals} % The most important argument
+% for defending roman numerals as the chosen way to label
+% harmonic structures, is probably the theory that one of
+% the most verbose ways of labeling harmonic structures
+% %
+% % Harmonic analysis could be seen from different
+% perspectives, the first one I would like to address is how
+% it was conceived and modeled by music theorists. Starting
+% with the french composer Jean-Philippe Rameau (1683-1764),
+% until the theory from the german theorist Hugo Riemann
+% (1849-1919) in the late nineteenth century. %
+% \subsection{Fundamental bass} %   The original idea by
+% Rameau was based on the movement of the bass note, the so
+% called \emph{Fundamental Bass}, which constructed rules
+% and principles of how the movement of a bass note
+% determined also the movement of the harmony. Rameau's
+% theory limited the dictionary of chords to triads and some
+% special cases of seventh chords, and considered chord
+% inversions for the first time, from which the core concept
+% of harmonic root arises and suggests that the bass note
+% could be serving a harmonic root located in the superior
+% voices. This theory is pioneer in separating the melodic
+% movement and coincidence in time from counterpoint
+% \cite{beach1974origins}, and looking at the music from a
+% vertical perspective, a vision that spread in the
+% following periods of western art music. % \subsection{Root
+% succession tables} %   These set of theories, denomined by
+% Tymoczko as \emph{scale-degree} theories
+% \cite{tymoczko2001root}, assign a number to each of the
+% degrees in a scale, which represents its triad, and then
+% trying to infer the most common succession of that
+% particular scale degree to another. This theories have
+% been used commonly in Harmony text books, and in
+% principle, the scale-degree transitions have not been
+% obtained scientifically. However, due to the probabilistic
+% nature of these theories, there have been recent efforts
+% in validating their statements and accuracy using
+% computational resources, such as first-order Markov
+% models. %   \subsection{Functional harmony} %   In 1893,
+% Hugo Riemann presented his \emph{Vereinfachte
+% Harmonielehre}, which placed together ideas and theories
+% from himself and earlier theorists, and gave birth to what
+% is called \emph{Functional Harmony}. The most notable, and
+% allegedly controversial, characterization that comes from
+% the functions theory, is the idea of categorization of
+% chords. Functional harmony considers that chords belong to
+% one of three tonal functions: %   \begin{itemize} % \item
+% Tonic %     \item Subdominant %     \item Dominant %
+% \end{itemize} %   These functions contain all individual
+% chords, but are essentially represented by the primary
+% triads: I, IV and V. %   Due to this categorization of
+% chords, functional harmony contains more information about
+% tonal contexts and semantics, and therefore, as an
+% analysis output becomes more interesting than fundamental
+% bass or root succession theories.
+
+
+% \section{Overview of Automatic Harmonic Analysis}
+%     \subsection{The pioneer work by Terry Winograd}
+%     Researchers in the field mostly mention the approach
+%     from Terry Winograd \cite{winograd1968linguistics}, in
+%     1968, as the pioneer work in the task of automatic
+%     harmonic analysis. This work is not only important
+%     because it is the first and pioneering work in
+%     computing a harmonic analysis, but also because it
+%     linked the computational techniques used in natural
+%     language processing to music. The model from Winograd
+%     was evaluated over music from Johann Sebastian Bach,
+%     and pretends to output a functional harmonic analysis
+%     of such pieces of music. To provide an output, it
+%     requires a preliminary hand-made conversion of the
+%     original score and turn it into a sequence of
+%     four-part perfect chords. This allowed him to process
+%     a score using his implementation in the LISP
+%     programming language, but it also means that during
+%     this pre-processing stage the non-harmonic tones are
+%     eliminated before solving the problem. In his 1997
+%     harmonic analysis algorithm
+%     \cite{temperley1997algorithm}, David Temperley
+%     provided insight about the flaws of Winograd's model,
+%     among them he mentions the issues concercing melodic
+%     seggregation and arpeggiations.
+
+%     \subsection{Expert system from Maxwell} A direct
+%     successor of Winograd's approach, the model from John
+%     Maxwell, which was part of his PhD dissertation in
+%     1984, and successively published in 1992
+%     \cite{maxwell1992expert}, is probably the best example
+%     of the rule-based approaches towards harmonic
+%     analysis. Same as Winograd, Maxwell's target was to
+%     output a functional harmonic analysis from a music
+%     score. The model from Maxwell has fifty five rules
+%     that pretend to reduce the vertical sonorities into a
+%     chord sequence, and then deciding for key changes.
+%     Some of the rules are intuitive and basic, e.g.:
+
+%     \begin{quote} \centering \emph{"Perfect and imperfect
+%     consonant intervals constitute a consonant interval.
+%     Every other is a dissonant interval."}, \end{quote}
+
+%      while others appear cryptic and difficult to
+%      understand, e.g.:
+
+%      \begin{quote} \centering \emph{"If the goal chord
+%      falls on a strong beat and it is a major triad or
+%      major-minor seventh, and the root movement from the
+%      pre-cadence is an ascending or descending perfect
+%      fifth or major second or a descending minor second,
+%      and when the root motion is a descending fifth, the
+%      pre-cadence is not a potential dominant, and when the
+%      root motion is an ascending fifth the pre-cadence is
+%      triadic, then the pseudo-cadence is a half cadence,
+%      and its strength increases by 10."}. \end{quote}
+
+%     The later rule also reveals a problem that was pointed
+%     out by future researchers, the use of arbitrary, fixed
+%     values while determining the strength of a cadence.
+
+%     Even so, the results of Maxwell's approach get really
+% 	    close to the outcome expected by a music theorist
+% 	    analyzing a music score and determining its
+% 	    functional harmony. This work was tested over three
+% 	    different movements of Johann Sebastian Bach's Six
+% 	    French Suites: The sarabande from Suite No.1, the
+% 	    menuet from Suite No.2 and the gavotte from Suite
+% 	    No.5. The pieces selected comprehend different
+% 	    problems and levels of complexity to be addressed:
+% 	    Four-part harmony with several non-harmonic tones,
+% 	    2-voice continuous contrapuntual movement, and a
+% 	    varying contrapuntual texture, respectively. David
+% 	    Temperley listed the limitations of Winograd and
+% 	    Maxwell's approaches similarly, summarizing them in
+% 	    the following: \begin{itemize} \item Sequences of
+% 	    notes that are not displayed simultaneously
+% 	    (vertically), as arpeggiations of chords. \item
+% 	    Missing pitches in the spelling of a full chord,
+% 	    which can be deduced from the context. \item
+% 	    Ornamental notes. Maxwell proposes specific rules to
+% 	    deal with these notes, but according to Temperley,
+% 	    neither Maxwell's or Winograd's are good enough to
+% 	    correctly detect ornamental notes. \end{itemize}
+% 	    Maxwell's approach, in general, represents the
+% 	    powerful and sophisticated machinery of rule-based
+% 	    approaches, as well as their complexity.
+
+%     \subsection{Temperley and the Melisma Music Analyzer}
+%     Probably the most relevant approach in automatic
+%     harmonic analysis for this work, is the approach from
+%     David Temperley described in 1997
+%     \cite{temperley1997algorithm}, as it was extended
+%     afterwards by his work in key estimation algorithms
+%     and which culminated in the implementation of the
+%     Melisma Music Analyzer, in conjunction with Daniel
+%     Sleator. Inspired by the cognitive experiments by
+%     Carol Krumhansl \cite{krumhansl2001cognitive}, the aim
+%     of Temperley is to produce an algorithm that models
+%     the human process of harmonic analysis done by a
+%     trained expert, and to take it as indicative of the
+%     analysis produced subconsciously by listeners in
+%     general.
+
+% 		The traiditional functional harmonic analysis done
+% 		in music theory courses uses the \emph{roman
+% 		numerals} notation to segment a piece of music,
+% 		labeling it with symbols indicating the relationship
+% 		between each root to the current key. Temperley
+% 		steps forward in the definition of the problem of
+% 		harmonic analysis, decomposing the task into two
+% 		subtasks: \emph{root finding} and \emph{key
+% 		finding}. Temperley claims then that functional
+% 		harmonic analysis could be broken down into these
+% 		subtasks, focusing at first in root finding,
+% 		assuming that this task can be done independently to
+% 		key finding. Root finding basically consists of
+% 		dividing a piece into segments and label each of
+% 		them with a root.
+
+%     Once in the task of root-finding, Temperley approaches
+%     the task defining certain rules: \emph{Pitch variance
+%     rule, compatibility rule, strong-beat rule, harmonic
+%     variance rule and ornamental dissonance rule}.
+%     Together with these rules, he introduces important
+%     definitions that aid in the process of root analysis:
+%     The concepts of \emph{Tonal Pitch Class} (TPC),
+%     \emph{Center of Gravity} (COG) and the \emph{line of
+%     fifths}.
+
+%     It is difficult to follow the chronology of this
+%     approach, as the implementation of this model comes
+%     mainly in the form of the Melisma Music Analyzer,
+%     which was released in 2001, and included the key
+%     estimation algorithm and a combined mode that
+%     eventually performed the complete functional harmonic
+%     analysis. The latest mode being the core
+%     implementation of what will be used to compute
+%     automatic harmonic analysis during this work.
+
+%     \subsection{Probabilistic and statistical approaches}
+%     Temperley himself, after the release of the Melisma
+%     Music Analyzer, moved into the direction of
+%     probabilistic models. In his case, using a Bayesian
+%     approach that aims to provide a unified modeling of
+%     harmonic analysis, meter induction and melodic
+%     seggregation, challenging the individualization of
+%     these problems without considering the connections
+%     among them \cite{temperley2009unified}.
+
+%     Another important probabilistic approach that emerged
+%     to solve the problem of functional harmonic analysis
+%     was that of Christopher Raphael
+%     \cite{raphael2003harmonic}. This model from Raphael is
+%     one of the few pure-functional harmonic analysis
+%     approaches, oriented towards the analysis of
+%     common-practice music. The idea is simple and some of
+%     his assumptions simplify the parameters of the model.
+%     Some constant that remains as in previous models is
+%     the fact that it gets rid of all the pitch-spelling
+%     information and replaced for solely pitch information.
+%     This model, unlike Temperley, does not try to
+%     reconstruct the pitch spelling information back by any
+%     algorithmic means, and in the words of Raphael, it is
+%     an obvious extension to the model.
+
+%     Another quite important effort in the statistical
+%     domain includes the work from Martin Rohrmeier
+%     \cite{rohrmeier2008statistical}, who uses a heuristic
+%     method of segmentation. Analyzes distributions of
+%     single pitch-class-sets, chord classes and
+%     pitch-class-sets transitions. One of the goals of
+%     Rohrmeier was the research of \emph{syntacticality} in
+%     harmony. The final goal is to produce descriptive
+%     analyses of harmonic structure based on an empirical
+%     approach. The choice of the corpus is, similarly to
+%     others, music from Joahann Sebastian Bach. In his
+%     case, chorales, because they constitute a large and
+%     coherent set of pieces regarding style and composition
+%     technique. Rohrmeier claims that this work is pioneer
+%     in the statistical analysis of a corpus for the
+%     purpose of finding features of tonal harmony.
+%     According to the results of Rohrmeier, the most
+%     frequent occurrences of pitch-class-sets in this music
+%     are those of tonic, dominant and subdominant chords.
+%     This would be expected and helps to reinforce those
+%     scale-degree theories that describe harmonic movement
+%     with transition tables of scale degrees. The results
+%     from this research, apart from being interesting in
+%     confirming music-theory beliefs regarding common
+%     chords and transitions in tonal music, could also be
+%     replicated in a different corpus to target its
+%     particular common chords and transitions.
+
+%     \subsection{Grammar-based} Three years after his
+%     statistical work in Bach Chorales, Martin Rohrmeier
+%     brought back the use of grammars to study the
+%     underlying structure of musical harmony
+%     \cite{rohrmeier2011towards}, which inspired future
+%     works by other researchers in the field, specially
+%     towards analyzing jazz music. In this work, Rohrmeier
+%     claims that the structure of harmonic progressions
+%     exceeds the simplicity of a markovian transition
+%     table, and he proposes a set of phrase-structure
+%     grammar rules. For this purpose, the hierarchical
+%     analysis from the music-theory approach done by
+%     \cite{kostka1995tonal} is presented, with the belief
+%     that it can be brought to a closer formalization.
+%     Rohrmeier presents a tree representation of a chord
+%     sequence, using two principles: \begin{itemize} \item
+%     Chords have dependencies and the existence of one
+%     sometimes requires the existence of another \item
+%     Chords have functions, these functions can be realized
+%     by a set of chords. \end{itemize} The system comprises
+%     27 rules for the generation of a grammar, this helps
+%     to model common-practice music as well as jazz music.
+%     The output of this algorithm is a hierarchical tree of
+%     the functions and dependencies of the chords. The
+%     level of detail from this work to model every special
+%     case of the harmonic language is remarkable, as
+%     careful attention has been put trying to comprehend
+%     distinct kinds of cadences, chords and modulations in
+%     the model.
+
+%     This work was eventually retaken and implemented by
+%     Bas de Haas \cite{de2013automatic} using chord labels
+%     as input for the system.
+
+%     As discussed previously, after I have overviewed the
+%     works in harmonic analysis, I will now narrow down the
+%     list of attempts that are most relevant to the
+%     expectations of this work. Among the most important
+%     factors that lead to separate the \emph{favorite}
+%     attempts from the rest, I could list two: The first
+%     one, being the capability of the system to deal with
+%     full scores as input, instead of a list of chord
+%     labels. The second, being the capability of the system
+%     to exploit, infer or reconstruct the pitch-spelling
+%     information from the original score in the output of
+%     the analyzed score.
+
+%   \section{Narrowing down the approaches} From the
+%   previously mentioned efforts of harmonic analysis, those
+%   that fit the best with the expected inputs and outputs
+%   of this work, are the following: \begin{table}[tbp]
+%   \centering \begin{tabular}{llll} Approach & Year &
+%   Implementation & Availability \\
+%       Winograd & 1968 & LISP & No \\
+%       Maxwell & 1992 & LISP & No \\
+%       Temperley & 1997\footnote{The span of time between
+%       this approach was presented as a paper and the
+%       current implentation used for this work, is much
+%       wider, reaching changes in code done during 2017} &
+%       C & Yes \\
+%       Raphael & 2003 & C & Partial \\
+%       Illescas & 2008 & Java & Partial \end{tabular}
+%     \caption{Automatic functional harmonic analysis
+%     approaches} \label{table:shortlist_models} \end{table}
+
+%   From the approaches shown in
+%   \autoref{table:shortlist_models}, I decided to choose
+%   the model and implementation from David Temperley's
+%   algorithm to be run over the dataset of String Quartets
+%   Op.20.
+
+%   The most important reason for this selection is because
+%   this is the approach with the most mature
+%   implementation, and the effort for getting humdrum
+%   scores to be analyzed using it is the minimum of all the
+%   other attemtps.
+
+% taken verbatim from my MSc thesis, chapter 4
+
+% As I described during \autoref{chap:literature-review},
+% the original model from David Temperley divided a system
+% of automatic harmonic analysis in two subsystems: One that
+% performs root detection and another one that performs key
+% detection. \autoref{fig:software_stack1} shows how the
+% core harmonic analysis of David Temperley comprises these
+% two tasks.
+
+% \begin{figure}[ht] \centering
+%   \includegraphics[width=0.5\textwidth]{04-methodology/figures/1}
+%   \caption{Harmonic analysis as divided by David
+%   Temperley} \label{fig:software_stack1} \end{figure}
+
+% However, thanks to the implementation work that has been
+% already done by David Temperley, Daniel Sleator and Craig
+% Sapp, the idea of using an implementation of this
+% automatic harmonic analysis system over the dataset
+% described in this work, which consists of musical scores
+% encoded in humdrum files, is already feasible. During this
+% chapter I will introduce the software stack, programs and
+% scripts that allow for running an automatic harmonic
+% analysis of a humdrum music score.
+
+% I will start from the analysis programs of the Melisma
+% Music Analyzer, which are the core of the analysis, to the
+% scripts and programs of the Humdrum Extras software tools
+% that allow for the use of real humdrum music scores.
+
+% \section{The Melisma Music Analyzer} The Melisma Music
+%   Analyzer was implemented by Daniel Sleator over the work
+%   of David Temperley. It takes as input a \emph{Notefile},
+%   which could be said to be a plain-text representation of
+%   midi files. The Melisma Music Analyzer consists of
+%   several standalone programs, therefore, the output
+%   depends on the program that is being run over the
+%   \emph{Notefile} input file. However, generally speaking,
+%   they all output a plain-text analysis of some sort.
+
+%   In order to obtain a harmonic analysis, a Notefile needs
+%   to go through 3 stand-alone programs, one after another:
+%   Meter, Harmony and Key.
+
+%   \begin{figure}[ht] \centering
+%     \includegraphics[width=1.0\textwidth]{04-methodology/figures/2}
+%     \caption{Melisma Music Analyzer, from a Notefile to a
+%     plain-text analysis} \label{fig:software_stack2}
+%     \end{figure}
+
+%   \subsection{Meter} This program extracts metrical
+%     information about the musical piece, using the
+%     theories of the Generative Theory of Tonal Music as a
+%     basis. The output of this program is the same notefile
+%     with beat information appended at the end.
+%     \subsection{Harmony} This program takes as input the
+%     notefile with beat information (the output from the
+%     meter program), and outputs information about harmonic
+%     roots for each beat. The name is somehow misleading,
+%     as this program's output is not harmony, but a
+%     harmonic root. Temperley divided the task of harmonic
+%     analysis in root estimation and key estimation, this
+%     program computing the first of these subtasks.
+%     \subsection{Key} This program takes as input the
+%     notefile with beat and harmonic-root information (the
+%     ouput from the harmony program). Something to remark
+%     about this program is that it might work with or
+%     without the information of the harmony program. In the
+%     first case, it performs a complete harmonic analysis.
+%     In the second case, it will only perform a key
+%     estimation.
+
+%     \autoref{fig:software_stack2} shows the flow from an
+%     input Notefile to the plain-text analysis that is
+%     being output by the key estimation program of the
+%     Melisma Music Analyzer.
+
+%   \subsection{Problems with processing Notefile files} The
+%     input format from the Melisma Music Analyzer, yet it
+%     resembles a midi file, it is not a midi file. It is
+%     also not a standard type of file that could be
+%     encountered typically in other software. More
+%     important, it is incompatible with the humdrum
+%     encoding of the dataset used for this work, so at this
+%     point, we are unable to run an analysis over these
+%     musical scores.
+
+%     However, there is one way around this problem. Using
+%     one of the programs found in the \emph{Humdrum extras}
+%     collection.
+
+% \section{Humdrum extras} The humdrum extras are a set of
+%   tools developed by Craig Sapp, mainly in the C++
+%   programming language \cite{humextra}. These tools are
+%   useful for additional processing of musical scores
+%   encoded in humdrum. For this work, I am particularly
+%   interested in a few of these utilities that help to pass
+%   a humdrum file to the melisma music analyzer, and then
+%   bring the output from melisma back to a humdrum
+%   representation.
+
+%   \begin{figure}[ht] \centering
+%     \includegraphics[width=1.0\textwidth]{04-methodology/figures/3}
+%     \caption{Automatic harmonic analysis of a humdrum
+%     musical score} \label{fig:software_stack3}
+%     \end{figure}
+
+%   The first step is mitigating the problem around the
+%   Notefile format, for this, the \emph{kern2melisma}
+%   program from the Humdrum Extras collection results quite
+%   useful.
+
+%   \subsection{kern2melisma} This program provides a parser
+%     to convert a humdrum file into the \emph{Notefile}
+%     format used by Melisma. It is the first step in the
+%     workflow of a functional harmonic analysis from a
+%     humdrum score.
+
+%   Once the input file is able to be processed over the
+%   programs of the Melisma Music Analyzer, it will be
+%   possible to obtain the plain-text analysis of the
+%   \emph{Key} program. However, this analysis is difficult
+%   to parse as it is. Luckily, there is already a tool from
+%   the Humdrum Extras that provides help parsing this
+%   analysis, this tool is the \emph{key2humdrum} script,
+%   written in PERL.
+
+%   \subsection{key2humdrum} This program takes the output
+%     from the \emph{Key} program and outputs a
+%     pseudo-humdrum representation.
+
+%   \subsection{Appending to a humdrum file} The last step
+%     in getting the information back into a humdrum file is
+%     parsing the output of the key2humdrum program and
+%     appending this information to a humdrum spine. This
+%     process is not done by a standalone program, but
+%     rather a program that comprehends all the process
+%     described during this chapter. This program is called
+%     \emph{tsroot}.
+
+%   \subsection{tsroot} The tsroot programs performs all the
+%     steps described before, starting from calling the
+%     \emph{kern2melisma} to calling the Melisma programs
+%     and \emph{key2humdrum}. Additionally, this program
+%     also interprets the output of key2humdrum and produces
+%     a final humdrum score with the analysis information
+%     appended to it.
+
+%     \autoref{fig:software_stack3} could be seen as the
+%     process that happens each time the \emph{tsroot}
+%     program is run over a humdrum score. This is a
+%     truthful realization of the target system for
+%     automatic harmonic analysis explained in the first
+%     chapters of this document.
