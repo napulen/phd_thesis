@@ -46,6 +46,9 @@ roman_numerals = """
     Roman numeral analysis and chord labels
     A brief history of roman numeral analysis
         The Roman numeral timeline
+            The beginnings
+            The Weber syntax
+            Adoption of the Weber syntax
     Digitization of roman numeral annotations
         The standard syntax of Roman numeral analysis
             The lack of a standard
@@ -118,10 +121,8 @@ background = """
             Relevance of pitch spelling to tonal analysis
             Pitch-spelling models
         Automatic Roman numeral analysis
-            Beyond chords and keys
-            Grammar-based approaches
-            Reductionist approaches
             Roman numeral analysis models
+            Other forms of Roman numeral analysis
 """
 
 data_acquisition = """
