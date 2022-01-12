@@ -90,7 +90,7 @@ background = """
                 Lilypond
                 MNX
                 Plaine-and-Easy
-        Symbolic vs audio representations
+        Symbolic vs. audio representations
             Chroma-based features
             Pitch spelling
     Deep neural networks
