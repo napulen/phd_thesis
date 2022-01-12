@@ -10,18 +10,19 @@ important innovation of \glspl{cnn} is the idea of
 \emph{shared parameters}. In a traditional feedforward
 network, for example, a \gls{mlp}, every neuron of the
 network is typically connected to another neuron of the
-following layer using a unique parameter (i.e., used
-exclusively for connecting these two neurons). This
+following layer using a unique parameter (i.e., a parameter
+used exclusively for connecting these two neurons). This
 gives the network more expressive power and the capability
 of modelling very complex functions. However, it also
-produces a combinatorial explosion of parameters as
-the neural network grows in number of layers and neurons. Thus, making unfeasible (or even impossible) to train it
-due to the limitations in memory and computing power of
-modern computers. \glspl{cnn}, on the other hand, consider
-re-using the same parameter for connecting different neurons
-of the network with the neurons of the following layer. By
-doing this, the number of parameters is reduced, typically,
-in one or several orders of magnitude compared to a
+produces a combinatorial explosion of parameters as the
+neural network grows in number of layers and neurons. Thus,
+making unfeasible (or even impossible) to train it due to
+the limitations in memory and computing power of modern
+computers. \glspl{cnn}, on the other hand, consider re-using
+the same parameter for connecting different neurons of the
+network with the neurons of the following layer. By doing
+this, the number of parameters is reduced, typically, in one
+or several orders of magnitude compared to a
 fully-connected, feedforward network.
 
 The idea of sharing parameters is not only important for
