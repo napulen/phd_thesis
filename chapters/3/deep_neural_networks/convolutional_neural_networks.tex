@@ -3,27 +3,27 @@
 % This is \refsubsec{convolutionalneuralnetworks}, which
 % introduces the convolutional neural networks.
 
-\glspl{cnn} might seem recent, however, they were introduced
-during the \emph{connectionist} wave of research on neural
-networks, in \textcite{lecun1989generalization,
-lecun1989handwritten}. The main innovation of \glspl{cnn} is
-the idea of \emph{shared parameters}. In a traditional
-feedforward network (e.g., Multi-Layer Perceptron), every
-neuron of the network is typically connected to another
-neuron of the network in the following layer using a
-\emph{unique} parameter (i.e., used exclusively for
-connecting those two neurons). Although that gives the
-network more expressive power and the capability of
-modelling very complex functions, in practice, it also
-contributes to a combinatorial explosion of parameters as
-the neural network grows in number of layers and neurons,
-which makes it unfeasible (or even impossible) to train it
-due to the limitations in memory and computing power of
-modern computers. \glspl{cnn}, on the other hand, consider
-re-using the same parameter for connecting different neurons
-of the network with the neurons of the following layer. By
-doing this, the number of parameters is reduced, typically,
-in one or several orders of magnitude compared to a
+\glspl{cnn} were introduced during the \emph{connectionist}
+wave of research on neural networks, in
+\textcite{lecun1989generalization, lecun1989handwritten}.
+The main innovation of \glspl{cnn} is the idea of
+\emph{shared parameters}. In a traditional feedforward
+network (e.g., Multi-Layer Perceptron), every neuron of the
+network is typically connected to another neuron of the
+network in the following layer using a \emph{unique}
+parameter (i.e., used exclusively for connecting those two
+neurons). Although that gives the network more expressive
+power and the capability of modelling very complex
+functions, in practice, it also contributes to a
+combinatorial explosion of parameters as the neural network
+grows in number of layers and neurons, which makes it
+unfeasible (or even impossible) to train it due to the
+limitations in memory and computing power of modern
+computers. \glspl{cnn}, on the other hand, consider re-using
+the same parameter for connecting different neurons of the
+network with the neurons of the following layer. By doing
+this, the number of parameters is reduced, typically, in one
+or several orders of magnitude compared to a
 fully-connected, feedforward network.
 
 The idea of sharing parameters is not only important for
