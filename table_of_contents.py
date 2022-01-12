@@ -115,11 +115,6 @@ background = """
                 Tonicization
             Local-key estimation models
         Automatic chord recognition
-            Chord syntax
-            Chord vocabulary
-            Perception of chords
-            Ambiguity of chord annotations
-            Chord inter-annotator agreement
             Chord recognition models
         Automatic pitch spelling
             Relevance of pitch spelling to tonal analysis
