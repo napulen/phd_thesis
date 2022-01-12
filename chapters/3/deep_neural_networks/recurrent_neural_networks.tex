@@ -3,13 +3,14 @@
 % This is \refsubsec{recurrentneuralnetworks}, which
 % introduces the recurrent neural networks.
 
-\glspl{rnn} are a type of neural networks designed for
-dealing with sequential data. Unlike most other neural
-network architectures, \glspl{rnn} do not assume that inputs
-are \emph{independent} from each other and, therefore, they
-update their parameters considering not only the current
-input to the network but also the previous inputs processed
-by the network.
+\glspl{rnn} are a type of neural networks designed to deal
+with sequential data. Unlike most other neural network
+architectures, \glspl{rnn} do not assume that inputs are
+``independent'' from each other. Instead, they update their
+parameters considering not only the current input to the
+network but also the previous inputs processed by the
+network. Inputs are thus arranged as \emph{sequences} of
+inputs.
 
 \glspl{rnn} were introduced after the backpropagation
 algorithm \parencite{rumelhart1988learning} was extended
@@ -138,5 +139,5 @@ modelling \parencite{ycart2017study}, mood detection
 % solutions \parencite{elhihi1995hierarchical,
 % yildiz2012revisiting, jaeger2012long}, however, the most
 % successful ones are the \emph{gated \glspl{rnn}}.
-% Particularly, the Long Short-Term Memory (\gls{lstm}) and Gated
-% \gls{gru} architectures.
+% Particularly, the Long Short-Term Memory (\gls{lstm}) and
+% Gated \gls{gru} architectures.
