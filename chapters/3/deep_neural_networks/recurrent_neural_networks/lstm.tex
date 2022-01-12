@@ -21,21 +21,21 @@ long-term dependencies, an \gls{lstm} substitutes the
 regular \gls{rnn} unit with a more complex one. This new,
 more complex unit, receives the name of an \emph{LSTM unit}.
 
-The main difference between an \gls{rnn} \gls{lstm} units is
-that the \gls{lstm} adds a cell and three gates: the forget
-gate, the input gate, and the output gate. In conjunction,
-the cell and the gates allow the network to control the flow
-of the information, selecting what information should the
-network store and what information should it forget. The
-gates of the \gls{lstm} unit act as ``regulators'' and each
-of them is responsible of a different part of the network.
-The forget gate controls what information of previous time
-steps in the network should be kept and what should be
-forgotten. The input gate regulates how much of the new
-inputs to the network should enter the cell. The output gate
-controls how much of previous time steps in the network
-should be used for computing the activation of the output of
-the network.
+The main difference between an \gls{rnn} and \gls{lstm}
+units is that the \gls{lstm} adds a cell and three gates:
+the forget gate, the input gate, and the output gate. In
+conjunction, the cell and the gates allow the network to
+control the flow of the information, selecting what
+information should the network store and what information
+should it forget. The gates of the \gls{lstm} unit act as
+``regulators'' and each of them is responsible of a
+different part of the network. The forget gate controls what
+information of previous time steps in the network should be
+kept and what should be forgotten. The input gate regulates
+how much of the new inputs to the network should enter the
+cell. The output gate controls how much of previous time
+steps in the network should be used for computing the
+activation of the output of the network.
 
 Given that \glspl{rnn} and more specifically \glspl{lstm}
 are useful architectures for modelling sequence-to-sequence
