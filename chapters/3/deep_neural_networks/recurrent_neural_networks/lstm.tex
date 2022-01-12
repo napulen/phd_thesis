@@ -23,9 +23,9 @@ more complex unit, receives the name of an \emph{LSTM unit}.
 
 The main difference between an \gls{rnn} and \gls{lstm}
 units is that the \gls{lstm} adds a cell and three gates:
-the forget gate, the input gate, and the output gate. In
-conjunction, the cell and the gates allow the network to
-control the flow of the information, selecting what
+the ``forget'' gate, the ``input'' gate, and the ``output''
+gate. In conjunction, the cell and gates allow the network
+to control the flow of the information, selecting what
 information should the network store and what information
 should it forget. The gates of the \gls{lstm} unit act as
 ``regulators'' and each of them is responsible of a
@@ -37,49 +37,18 @@ cell. The output gate controls how much of previous time
 steps in the network should be used for computing the
 activation of the output of the network.
 
-Given that \glspl{rnn} and more specifically \glspl{lstm}
-are useful architectures for modelling sequence-to-sequence
-processes, they can be useful for musical applications, for
-example, detecting the changes of key in a symbolic music
-file (modulation).
-
-% memory cell is that the memory cell has gates that allow
-% the gradient of the unit to be controlled and always norm
-% 1. These gates keep the value of the memory cell under
-%    control.
-
-Further improvements on \glspl{lstm} have extended the
-elements of the \gls{lstm}, for example, adding a forget
-cell, which allows the memory cell to drop information that
-is no longer relevant.
-
-\guide{Clipping} One of the most successful techniques for
-controlling the vanishing/exploding gradients problem.
-
-The gradient is computed as usual, whenever that gradient
-exceeds a threshold value, it is clipped.
-
-There is a mathematical proof of why this works, developed
-by Tenescu.
-
-\guide{Modern \glspl{rnn}} Together with the improvements on
-the vanishing/exploding gradients problem, other researchers
-have also contributed with other ideas.
-
-For example, during the same year that the \gls{lstm} was
-proposed, another paper proposed a bidirectional \gls{rnn}
-that could be used in offline systems (as it requires
-knowledge of the future, it can’t be used in real-time and
-other online applications).
-
-These advances in different fronts have made not only
-addressed problems related with training but also improved
-the capabilities and performance of \glspl{rnn}, many of
-them are not mutually exclusive with each other, so they can
-be combined.
-
-Therefore, it is common to see now architectures that
+Beside the \glspl{lstm}, further improvements have also been
+proposed to \glspl{rnn}. For example, during the same year
+that the \gls{lstm} was proposed, another paper proposed a
+bidirectional \gls{rnn} that could be used in offline
+systems (as it requires knowledge of the future, it can’t be
+used in \emph{realtime} applications). These advances have
+improved the capabilities of \glspl{rnn}, as they are often
+not mutually exclusive and can be used in combination.
+Therefore, it is common to see nowadays architectures that
 combine these approaches, for example, \gls{blstm} networks.
-
-These type of models have been successfully trained and
-provided state-of-the-art in multiple tasks.
+These type of models have been successful and provided
+state-of-the-art in multiple tasks. Given that \glspl{rnn}
+and more specifically \glspl{lstm} are useful architectures
+for modelling sequence-to-sequence processes, they can be
+useful for musical applications.
