@@ -36,19 +36,3 @@ how much of the new inputs to the network should enter the
 cell. The output gate controls how much of previous time
 steps in the network should be used for computing the
 activation of the output of the network.
-
-Beside the \glspl{lstm}, further improvements have also been
-proposed to \glspl{rnn}. For example, during the same year
-that the \gls{lstm} was proposed, another paper proposed a
-bidirectional \gls{rnn} that could be used in offline
-systems (as it requires knowledge of the future, it can’t be
-used in \emph{realtime} applications). These advances have
-improved the capabilities of \glspl{rnn}, as they are often
-not mutually exclusive and can be used in combination.
-Therefore, it is common to see nowadays architectures that
-combine these approaches, for example, \gls{blstm} networks.
-These type of models have been successful and provided
-state-of-the-art in multiple tasks. Given that \glspl{rnn}
-and more specifically \glspl{lstm} are useful architectures
-for modelling sequence-to-sequence processes, they can be
-useful for \gls{mir} applications.

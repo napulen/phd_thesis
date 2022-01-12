@@ -7,3 +7,20 @@ introduced by \textcite{cho2014learning}. It is simpler than
 the \gls{lstm} and, similarly, can generally be used as a
 substitute of \gls{rnn} or \gls{lstm} layers with similar
 (or better) results.
+
+Beside the \glspl{lstm} and \glspl{gru}, further
+improvements have also been proposed to \glspl{rnn}. For
+example, during the same year that the \gls{lstm} was
+proposed, another paper proposed a bidirectional \gls{rnn}
+that could be used in \emph{offline} systems (as it requires
+knowledge of future timesteps, it cannot be used in
+\emph{realtime} applications). These advances have improved
+the capabilities of \glspl{rnn}, as they are often not
+mutually exclusive and can be used in combination.
+Therefore, it is common to see nowadays architectures that
+combine these approaches, for example, \gls{blstm} networks.
+These type of models have been successful and provided
+state-of-the-art in multiple tasks. Given that \glspl{rnn}
+and more specifically \glspl{lstm} and \glspl{gru} are
+useful architectures for modelling sequence-to-sequence
+processes, they can be useful for \gls{mir} applications.
