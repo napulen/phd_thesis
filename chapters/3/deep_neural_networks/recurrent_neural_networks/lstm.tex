@@ -3,18 +3,19 @@
 % This is \refsubsubsec{lstm}, which introduces the lstm.
 
 The \gls{lstm} architecture was introduced by
-\textcite{hochreiter1997long}. Since its introduction, the
-\gls{lstm} has become increasingly popular and used for
-several tasks and problems. \gls{lstm} architectures extend
-the basic structure of \glspl{rnn} and it is relatively safe
-to assume that any problem that involves an \gls{rnn} can
-substitute the \gls{rnn} with an \gls{lstm}, matching or, often, improving the results.
+\textcite{hochreiter1997long}. Since its introduction, it
+has been increasingly used to solve several tasks.
+\gls{lstm} architectures extend the basic structure of
+\glspl{rnn} and it is relatively safe to assume that any
+problem that involves an \gls{rnn} can substitute the
+\gls{rnn} with an \gls{lstm}, matching or, often, improving
+the results.
 
-The main contribution of \glspl{lstm} is to try to provide a
-solution to the issue of vanishing gradients. Given that
-vanishing gradients are associated with the loss of
-long-term dependencies, mitigating this issue would enable,
-in theory, the capability of the network to learn long-term
+The main contribution of \glspl{lstm} is to provide a
+solution to \emph{vanishing gradients}. Given that vanishing
+gradients are associated with the loss of long-term
+dependencies, mitigating this issue would enable, in theory,
+the capability of the network to learn long-term
 dependencies between the inputs. In order to achieve these
 long-term dependencies, an \gls{lstm} substitutes the
 regular \gls{rnn} unit with a more complex one. This new,
