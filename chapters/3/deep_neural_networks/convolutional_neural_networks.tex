@@ -15,15 +15,16 @@ used exclusively for connecting these two neurons). This
 gives the network more expressive power and the capability
 of modelling very complex functions. However, it also
 produces a combinatorial explosion of parameters as the
-neural network grows in number of layers and neurons. Thus,
-making unfeasible (or even impossible) to train it due to
-the limitations in memory and computing power of modern
-computers. \glspl{cnn}, on the other hand, consider re-using
-the same parameter for connecting different neurons of the
-network with the neurons of the following layer. By doing
-this, the number of parameters is reduced, typically, in one
-or several orders of magnitude compared to a
-fully-connected, feedforward network.
+neural network grows in number of layers and neurons.
+Training large networks with many unique parameters may be
+unfeasible (or even impossible) due to the limitations in
+memory and computing power of modern technology.
+\glspl{cnn}, on the other hand, consider re-using the same
+parameter for connecting different neurons of the network
+with the neurons of the following layer. By doing this, the
+number of parameters is reduced, typically, in one or
+several orders of magnitude compared to a fully-connected,
+feedforward network.
 
 The idea of sharing parameters is not only important for
 reducing the effort of training the network, it is also a
