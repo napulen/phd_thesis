@@ -42,30 +42,31 @@ research (1940--1960) is often referred as the
 \emph{cybernetics} wave of neural networks research
 \parencite{goodfellow2016deep}.
 
-Following the wave of cybernetics, another wave started
-around the 1980s-1990s, colloquially known as
+Following the wave of cybernetics, another wave extended
+around 1980--1990, colloquially known as
 \emph{connectionism}. During the work of the
-\emph{connectionists},\footnote{A term typically used to
-refer to the scientists of this time period and research
-field} the research community benefited from the development
-of the current form of the back-propagation algorithm
-\parencite{rumelhart1988learning}. The back-propagation
+\emph{connectionists},\footnote{Scientists of this time
+period and research field} the research community benefited
+from the development of the current form of the
+\emph{backpropagation} algorithm
+\parencite{rumelhart1988learning}. The backpropagation
 algorithm became (and remains) an elemental process in the
 training of neural networks, which allows to propagate the
 error throughout the network by making use of the
 \emph{chain rule}. Finding the derivatives of each parameter
 in the network, the values of such parameters can be updated
-in the ``right direction'' (against the gradient) to improve
-the classification accuracy through the next batch of
-training examples. This facilitates the automatic training
-of large and complicated neural networks, with multiple
-layers, neurons, and non-linear activation functions. Even
-though this and other improvements made neural networks a
-promising area of research, they were still very difficult
-to train in practice (due to the difficulty of finding a
-good initialization of the weights) and were typically
-outperformed by domain-knowledge techniques, losing the
-interest of many scientists as a consequence.
+in the ``right direction'' (against the gradient) to
+decrease the error in the next batch of training examples.
+This facilitates the automatic training of large and
+complicated neural networks, with a variety of layers,
+neurons, and nonlinear activation functions. Even though
+this and other improvements made neural networks a promising
+area of research, they were still very difficult to train in
+practice (partly due to the difficulty of finding a good
+initialization of the weights) and were typically
+outperformed by domain-knowledge techniques. This resulted
+in many scientists losing interest in the technology for a
+while.
 
 Finally, a third wave of research started around 2006, when
 new methods for training neural networks were introduced
@@ -73,19 +74,18 @@ new methods for training neural networks were introduced
 facilitated the training of neural networks but the training
 of \textbf{much larger} neural networks. The interest in
 such larger architectures extended, and in a historical
-evaluation of the ImageNet dataset in 2012
-\parencite{krizhevsky2012imagenet}, neural networks
-outperformed the most sophisticated methods of computer
-vision, setting a prominent gap in performance between
-neural networks and every other method. This had an enormous
-implication in the way that neural networks were perceived
-by the research community and motivated their application
-into different problems and fields of study. We know this
-last wave of research as \emph{deep learning}, and it is
-currently an active and growing wave of research across many
-fields. Around this umbrella term of \emph{deep learning},
-many state-of-the-art machine learning techniques have been
-developed and continue to be improved.
+evaluation of the \emph{ImageNet} dataset
+\parencite{deng2009imagenet}, in 2012, a neural network
+widely outperformed the most sophisticated methods of
+computer vision \parencite{krizhevsky2012imagenet}. This had
+an important effect in the way that neural networks were
+perceived by the research community and motivated their
+application into different problems and fields of study. We
+know this last wave of research as \emph{deep learning}, and
+it is currently an active and growing wave of research
+across many fields. Around this umbrella term of \emph{deep
+learning}, many state-of-the-art machine learning techniques
+have been developed and continue to be improved.
 
 \guide{Deep learning and \gls{mir}} After the growing
 interest for neural networks in the wave of deep learning
