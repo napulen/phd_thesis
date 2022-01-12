@@ -2,15 +2,13 @@
 
 % This is \refsubsubsec{lstm}, which introduces the lstm.
 
-The \gls{lstm} architecture was introduced in 1997 by
-Hochreiter and Schmidhuber \parencite{hochreiter1997long}.
-Since its introduction, the \gls{lstm} has become an increasingly
-popular architecture, which has been used in many tasks and
-problems. \gls{lstm} architectures extend the basic structure of
-\glspl{rnn} and it is relatively safe to assume that any
-problem that involves an \gls{rnn} can substitute the
-\gls{rnn} with an \gls{lstm}, matching or even improving the
-results.
+The \gls{lstm} architecture was introduced by
+\textcite{hochreiter1997long}. Since its introduction, the
+\gls{lstm} has become increasingly popular and used for
+several tasks and problems. \gls{lstm} architectures extend
+the basic structure of \glspl{rnn} and it is relatively safe
+to assume that any problem that involves an \gls{rnn} can
+substitute the \gls{rnn} with an \gls{lstm}, matching or, often, improving the results.
 
 The main contribution of \glspl{lstm} is to try to provide a
 solution to the issue of vanishing gradients. Given that
@@ -18,13 +16,14 @@ vanishing gradients are associated with the loss of
 long-term dependencies, mitigating this issue would enable,
 in theory, the capability of the network to learn long-term
 dependencies between the inputs. In order to achieve these
-long-term dependencies, an \gls{lstm} substitutes the regular
-\gls{rnn} unit with a more complex one. This new, more
-complex unit, receives the name of an \emph{\gls{lstm} unit}.
+long-term dependencies, an \gls{lstm} substitutes the
+regular \gls{rnn} unit with a more complex one. This new,
+more complex unit, receives the name of an \emph{\gls{lstm}
+unit}.
 
 The main difference between a regular \gls{rnn} unit and an
-\gls{lstm} unit is the addition of a cell and three gates: the
-forget gate, the input gate, and the output gate. In
+\gls{lstm} unit is the addition of a cell and three gates:
+the forget gate, the input gate, and the output gate. In
 conjunction, the cell and the gates allow the network to
 control the flow of the information, selecting what
 information should the network store and what information
@@ -50,9 +49,9 @@ file (modulation).
 %    control.
 
 Further improvements on \glspl{lstm} have extended the
-elements of the \gls{lstm}, for example, adding a forget cell,
-which allows the memory cell to drop information that is no
-longer relevant.
+elements of the \gls{lstm}, for example, adding a forget
+cell, which allows the memory cell to drop information that
+is no longer relevant.
 
 \guide{Clipping} One of the most successful techniques for
 controlling the vanishing/exploding gradients problem.
