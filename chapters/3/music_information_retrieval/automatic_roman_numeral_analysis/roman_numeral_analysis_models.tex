@@ -91,18 +91,25 @@ The collective algorithms were published by
 \textcite{temperley2004cognition} and implemented in
 collaboration with Sleator as a suite of programs called the
 \emph{Melisma Music Analyzer (version
-1)}.\footnotelink{https://www.link.cs.cmu.edu/music-analysis/}\footnote{Although
-Melisma (version 2) exists, it does not provide \gls{rna}
-output.} The system operated with intermediate
-representations for both inputs and outputs. Sapp filled in
-the remaining gap with additional stages that allowed
-\emph{Melisma} to digest Humdrum(\texttt{**kern}) inputs and
-generate Humdrum(\texttt{**harm}) \gls{rna} annotations,
-aligning them with the original score. The full end-to-end
-workflow was facilitated by a program called \emph{tsroot}
+1)}.\footnotelink{https://www.link.cs.cmu.edu/music-analysis/}
+The system operated with intermediate representations for
+both inputs and outputs. Sapp filled in the remaining gap
+with additional stages that allowed \emph{Melisma} to digest
+Humdrum(\texttt{**kern}) inputs and generate
+Humdrum(\texttt{**harm}) \gls{rna} annotations, aligning
+them with the original score. The full end-to-end workflow
+was facilitated by a program called \emph{tsroot}
 \parencite{sapp2009tsroot} and used to generate fully
-automatic \gls{rna} labels of the music scores in
-the \emph{KernScores} database \parencite{sapp2005online}.
+automatic \gls{rna} labels of the music scores in the
+\emph{KernScores} database \parencite{sapp2005online}.
+
+After the first version of \emph{Melisma}, which is based on
+preference rules, Temperley favored probabilistic models in
+subsequent work. Notably, \textcite{temperley2009unified}
+proposed a Bayesian approach to simultaneously model
+harmonic analysis, meter induction, and melodic
+seggregation. This motivated the \emph{Melisma Music
+Analyzer (version 2)}, however, this program was not extended to provide \gls{rna} annotations.
 
 % Temperley steps forward in the definition of the problem
 % of harmonic analysis, decomposing the task into two
@@ -134,14 +141,6 @@ the \emph{KernScores} database \parencite{sapp2005online}.
 
 \phdparagraph{probabilistic and grammar-based models}
 
-After the implementation of the first Melisma Music
-Analyzer, which is based on preference rules, Temperley
-favored probabilistic models in subsequent works. A Bayesian
-approach aimed to provide a unified modeling of harmonic
-analysis, meter induction and melodic seggregation,
-challenging the individualization of these problems without
-considering the connections among them
-\cite{temperley2009unified}.
 
 % Another important probabilistic approach that emerged to
 % solve the problem of functional harmonic analysis was that
