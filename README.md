@@ -46,7 +46,7 @@ These are all located in the `phdmacros.sty` file.
 ## Normalizing reference identifiers in bibtex
 
 Often it'll be necessary to move into different formats of references.
-I like the convention adoped by Google scholar for publication identifiers: `<firstauthor><year><firstword>`
+I like the convention adopted by Google scholar for publication identifiers: `<firstauthor><year><firstword>`
 
 The script `normalize_references.py` will automatically navigate through the `.tex` and `.bib` files to standardize
 every reference with this convention.
