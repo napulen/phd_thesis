@@ -7,6 +7,8 @@ from="% \\\\includeonly{chapters\/1"
 to="\\\\includeonly{chapters\/"
 chmod +x latexdiff-so
 git checkout $prevtag
+rm -r chapters
+git checkout chapters
 python3 generate_chapters_from_toc.py
 for c in $chapters; do
     sed "s/$from/$to$c/" main.tex > "chapter${c}prev.tex";
