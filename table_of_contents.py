@@ -52,7 +52,7 @@ roman_numerals = """
             Chord inversions
             Special chords
             Applied chords and tonicization
-            Examples of modern syntax
+            Examples of the modern syntax
     Digitization of roman numeral annotations
         The standard syntax of Roman numeral analysis
             The lack of a standard
