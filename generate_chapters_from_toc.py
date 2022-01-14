@@ -95,7 +95,7 @@ which introduces the {fname}.\n
 def chapterintroheader(name):
     fname = name.replace("_", "")
     header = f"""\
-% Copyright 2021 Néstor Nápoles López
+% Copyright 2022 Néstor Nápoles López
 
 This is the introduction to \\refchap{{{fname}}},
 which goes before any of its sections.
