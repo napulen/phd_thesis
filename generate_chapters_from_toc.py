@@ -19,7 +19,10 @@ def rreplace(s, old, new, count):
 class AllegedFile(object):
     """Maybe a file. It may be copied from an existing file instead."""
 
+    _allfiles = []
+
     def __init__(self, path, mode):
+        self._allfiles.append(path)
         self.realpath = rreplace(path, "/_", "/", 1)
         self.fd = open(path, mode)
         if os.path.exists(self.realpath):
@@ -142,6 +145,20 @@ def chaptertree(root, rootfd, treename, children, level):
         treefd.close()
 
 
+def getUnusedFiles(root):
+    usedfiles = AllegedFile._allfiles
+    unusedfiles = []
+    for root, _, files in os.walk(os.path.join(root, "chapters")):
+        if "figures" in root or "tables" in root:
+            continue
+        for f in files:
+            if not f.startswith("_") and f.endswith(".tex"):
+                path = os.path.join(root, f)
+                if os.path.join(root, f"_{f}") not in usedfiles:
+                    unusedfiles.append(path)
+    return unusedfiles
+
+
 if __name__ == "__main__":
     root = "."
     contents = (
@@ -169,3 +186,10 @@ if __name__ == "__main__":
             chaptertree(chapterdir, chapterfd, section, subsections, SECTION)
         chapterfd.write(treefooter(chaptername, CHAPTER))
         chapterfd.close()
+    unused = getUnusedFiles(root)
+    if unused:
+        warning = """\
+Warning: The following files exist in the chapters directory, \
+but do not seem to exist in the table of contents"""
+        print(warning)
+        print("\n".join(unused))
