@@ -1,17 +1,6 @@
 introduction = """
 1-Introduction
-    Motivation
-        Musical analysis
-            Why Analyze Music
-                Highlights ``important'' information
-                Lossy compression of the music around that information
-            Why Analyzing Chords
-                Intelligibility of simultaneous sounds
-            Why Analyzing Key Changes
-                Because they often occur in common-practice music
-                And those changes are important
-            Why Roman numeral analysis
-                Because it summarizes several analytical dimensions
+    Motivation for Roman numeral analysis
     Challenges
         Main challenges
             Tonal tasks overlap
