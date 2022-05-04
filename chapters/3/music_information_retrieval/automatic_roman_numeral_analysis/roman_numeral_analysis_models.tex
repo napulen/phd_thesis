@@ -221,22 +221,34 @@ performance of \gls{acr}, paying special consideration to
 chord segmentation and its evaluation.
 
 \textcite{micchi2020not} proposed a DenseNet-like
-\parencite{huang2017densely} \gls{cnn},
-followed by a recurrent component. The recurrent component
-consists of a bidirectional \gls{gru}
-\parencite{cho2014learning} connected to task-specific dense
-layers, similar to those of \textcite{chen2018functional}.
-In their experiments, the DenseNet-like convolutions
-outperformed dilated convolutions and a \gls{gru} by itself
-(i.e., with pooling instead of the convolutional blocks).
-Micchi et al.~also demonstrated the positive effect of using
-pitch \textit{spelling} in the inputs and outputs. This
-confers at least two advantages: it provides a more
-informative output (e.g., not only the correct key, but the
-correct spelling between two enharmonic keys), and it
-increases the possible number of transpositions available
-for data augmentation.
+\parencite{huang2017densely} \gls{cnn}, followed by a
+recurrent component. The recurrent component consists of a
+bidirectional \gls{gru} \parencite{cho2014learning}
+connected to task-specific dense layers, similar to those of
+\textcite{chen2018functional}. In their experiments, the
+DenseNet-like convolutions outperformed dilated convolutions
+and a \gls{gru} by itself (i.e., with pooling instead of the
+convolutional blocks). Micchi et al.~also demonstrated the
+positive effect of using pitch \textit{spelling} in the
+inputs and outputs. This confers at least two advantages: it
+provides a more informative output (e.g., not only the
+correct key, but the correct spelling between two enharmonic
+keys), and it increases the possible number of
+transpositions available for data augmentation. In
+\textcite{micchi2021deep}, the same architecture was
+extended to include a \gls{nade} layer, which models a
+dependency between the multitask learning layers, improving
+the overall performance of the network.
 
-Recent models include those of \textcite{micchi2021deep},
-\textcite{mcleod2021modular}, and
-\textcite{napoleslopez2021augmentednet}.
+\textcite{mcleod2021modular} have also proposed a new Roman
+numeral network architecture. In their work, they depart
+from the multitask learning approach of previous
+researchers, substituting it with a modular workflow where
+the different tonal attributes are computed throughout
+different stages of the model.
+
+Around the same time that \textcite{micchi2021deep} and
+\textcite{mcleod2021modular} have proposed their models, we
+have also introduced an initial version of the neural
+network presented in this dissertation
+(\parencite{napoleslopez2021augmentednet}).
