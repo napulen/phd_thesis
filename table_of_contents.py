@@ -80,7 +80,6 @@ background = """
         Convolutional neural networks
             1D and 2D convolutions
             Residual connections
-            Pointwise convolution
         Recurrent neural networks
             LSTM
             GRU
