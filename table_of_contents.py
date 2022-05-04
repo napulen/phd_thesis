@@ -97,7 +97,6 @@ background = """
         Automatic chord recognition
             Chord recognition models
         Automatic pitch spelling
-            Relevance of pitch spelling to tonal analysis
             Pitch-spelling models
         Automatic Roman numeral analysis
             Roman numeral analysis models
