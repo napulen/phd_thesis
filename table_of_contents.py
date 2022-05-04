@@ -74,14 +74,6 @@ background = """
                 Origin of MusicXML
                 Applications of MusicXML
                 MusicXML in Roman numeral analysis
-            Others
-                ABC
-                Lilypond
-                MNX
-                Plaine-and-Easy
-        Symbolic vs. audio representations
-            Chroma-based features
-            Pitch spelling
     Deep neural networks
         Supervised learning
         Feed forward networks
