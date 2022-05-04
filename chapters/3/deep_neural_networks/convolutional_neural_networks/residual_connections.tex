@@ -5,7 +5,9 @@ noticed that it was increasingly difficult to train the
 larger models effectively. One strategy that helped to
 mitigate this problem was the use of \emph{residual}
 connections. A residual connection consists of a connection
-between a given layer of the network and a latter one,
-``skipping'' some of the intermediate layers in between the
-two. This pattern of connections has allowed researchers to
-design much deeper networks more effectively.
+between a layer of the network and a deeper one,
+``skipping'' some layers in between (i.e., the two layers
+are not contiguous). This pattern of connections has allowed
+researchers to design much deeper networks more effectively,
+as the residual connections strengthen the signal of earlier
+representations in deeper layers of the network.

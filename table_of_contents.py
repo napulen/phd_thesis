@@ -78,7 +78,7 @@ background = """
         Supervised learning
         Feed forward networks
         Convolutional neural networks
-            1D and 2D convolutions
+            1D, 2D, and 3D convolutions
             Residual connections
         Recurrent neural networks
             LSTM
