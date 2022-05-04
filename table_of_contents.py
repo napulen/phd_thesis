@@ -95,7 +95,6 @@ background = """
                 Tonicization
             Local-key estimation models
         Automatic chord recognition
-            Chord recognition models
         Automatic pitch spelling
             Pitch-spelling models
         Automatic Roman numeral analysis
