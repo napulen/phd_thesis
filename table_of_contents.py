@@ -34,14 +34,12 @@ roman_numerals = """
 2-Introduction to Roman numeral analysis
     Roman numeral analysis and chord labels
     A brief history of roman numeral analysis
-        The Roman numeral timeline
-            The beginnings
-            The Weber syntax
-            Adoption of the Weber syntax
-            Chord inversions
-            Special chords
-            Applied chords and tonicization
-            Examples of the modern syntax
+        Early precedents and the Weber syntax
+        Adoption of the Weber syntax
+        Chord inversions and figured bass
+        Neapolitans, augmented sixths, and other special chords
+        Applied chords and tonicization
+        Examples of the modern syntax
     Digitization of roman numeral annotations
         The standard syntax of Roman numeral analysis
             The lack of a standard
