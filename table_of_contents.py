@@ -39,17 +39,12 @@ roman_numerals = """
         Chord inversions and figured bass
         Neapolitans, augmented sixths, and other special chords
         Applied chords and tonicization
-        Examples of the modern syntax
     Digitization of roman numeral annotations
-        The standard syntax of Roman numeral analysis
-            The lack of a standard
-            The need for a standard in digital representations
         Digital standards
             Humdrum(**harm)
             RomanText
             The DCML standard
             Harmalysis
-        Current challenges
 """
 
 background = """
