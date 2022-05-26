@@ -296,7 +296,7 @@ experimental_evaluation = """
     Choosing the best configuration
         Average accuracy across individual datasets
         AugmentedNet11+
-    Comparison against state-of-the-art
+    Comparison against previous models
         Models considered
             Chen and Su (2018, 2019, 2021)
             Micchi et al.
