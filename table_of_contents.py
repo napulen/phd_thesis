@@ -101,19 +101,8 @@ background = """
 data_acquisition = """
 4-Data acquisition and preparation
     Roman numeral analysis datasets
-        Definition
-        Other types of datasets
-            Chord label datasets
-                McGill Billboard
-            Figured bass datasets
-                Ju 2020
-            Key estimation datasets
-                Giantsteps Key
-                Giantsteps MTG Key
     Available datasets
         Annotated Beethoven Corpus (ABC)
-            Description of ABC
-                Neuwirth et al. (2018)
             Format of ABC
                 DCML standard in ABC
             Revisions
@@ -126,8 +115,6 @@ data_acquisition = """
                 Modulation distribution in ABC
                 Tonicization distribution in ABC
         Beethoven Piano Sonatas (BPS)
-            Description of BPS
-                Chen and Su (2018)
             Format of BPS
                 Tabular format of BPS
                 Limitations of format
@@ -141,8 +128,6 @@ data_acquisition = """
                 Modulation distribution in BPS
                 Tonicization distribution in BPS
         Haydn ``Sun'' String Quartets (HaydnSun)
-            Description of HaydnSun
-                Napoles Lopez (2017)
             Format of HaydnSun
                 Humdrum(**harm) in HaydnSun
             Statistical analysis of HaydnSun
@@ -152,8 +137,6 @@ data_acquisition = """
                 Modulation distribution in HaydnSun
                 Tonicization distribution in HaydnSun
         Mozart Piano Sonatas (MPS)
-            Description of MPS
-                Hentschel et al. (2021)
             Format of MPS
                 DCML standard in MPS
             Statistical analysis of MPS
@@ -163,8 +146,6 @@ data_acquisition = """
                 Modulation distribution in MPS
                 Tonicization distribution in MPS
         Theme and Variation Encodings with Roman numerals (TAVERN)
-            Description of TAVERN
-                Devaney et al. (2015)
             Format of TAVERN
                 Humdrum(**harm) in TAVERN
             Statistical analysis of TAVERN
@@ -173,22 +154,7 @@ data_acquisition = """
                 Global key distribution in TAVERN
                 Modulation distribution in TAVERN
                 Tonicization distribution in TAVERN
-        Schubert Winterreise (SW)
-            Description of SW
-                Weiss et al. (2021)
-            Format of SW
-                Borderline not Roman numeral analysis
-                Tabular format of SW
-            Statistical analysis of SW
-                Number of annotations in SW
-                Chord distribution in SW
-                Global key distribution in SW
-                Modulation distribution in SW
-                Tonicization distribution in SW
         When-in-Rome (WiR)
-            Description of WiR
-                Tymoczko et al. (2019)
-                Gotham et al. (2021)
             Format of WiR
                 RomanText
             Converted corpora
@@ -330,7 +296,7 @@ experimental_evaluation = """
     Choosing the best configuration
         Average accuracy across individual datasets
         AugmentedNet11+
-    Comparison against SOTA
+    Comparison against state-of-the-art
         Models considered
             Chen and Su (2018, 2019, 2021)
             Micchi et al.
