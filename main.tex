@@ -35,10 +35,12 @@
 
 \begin{document}
 
-\pagenumbering{roman}
+\pagenumbering{gobble}
 \include{frontmatter/title}
 \include{frontmatter/abstract-en}
 \tableofcontents{}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\pagenumbering{gobble}
 % \include{frontmatter/abstract-fr}
 \include{frontmatter/acknowledgements}
 \include{frontmatter/contributions_to_knowledge}
@@ -46,7 +48,7 @@
 \include{frontmatter/list_of_figures}
 \include{frontmatter/list_of_tables}
 \printnoidxglossaries
-\pagenumbering{arabic}
+% \pagenumbering{arabic}
 \changecwd{chapters/1}\include{\cwd/_main}
 \changecwd{chapters/2}\include{\cwd/_main}
 \changecwd{chapters/3}\include{\cwd/_main}
