@@ -94,13 +94,23 @@ def cli():
         action="store_true",
         help="update the changes in the files (CAREFUL!)",
     )
-    parser.add_argument("-v", action="store_true", help="verbose output")
+    parser.add_argument(
+        "-v", "--verbose", action="store_true", help="verbose output"
+    )
     return parser.parse_args()
 
 
-if __name__ == "__main__":
-    args = cli()
-    loglevel = logging.INFO if args.v else logging.WARNING
+def sort(data):
+    entries = data.strip().split("},\n}\n")
+    ids = [x.split("{", 1)[1].split(",", 1)[0] for x in entries]
+    sortbyid = sorted(zip(entries, ids), key=lambda x: x[1])
+    sortedentries = [x[0] for x in sortbyid]
+    sorteddata = "},\n}\n".join(sortedentries) + "},\n}\n"
+    return sorteddata
+
+
+def run(modify=False, verbose=True):
+    loglevel = logging.INFO if verbose else logging.WARNING
     logging.basicConfig(stream=sys.stdout, level=loglevel)
     for root, _, filenames in os.walk("."):
         for f in filenames:
@@ -112,17 +122,25 @@ if __name__ == "__main__":
             with open(path) as fd:
                 contents = fd.read()
             # homogenize non-English names and words
-            # logging.info("\tHomogenizing non-English characters")
-            # contentsEN = replace_nonenglish_letters(contents)
-            # turn all zotero-like identifiers into google-scholar-like ones
+            # logging.info("\tHomogenizing non-English characters") contentsEN =
+            # replace_nonenglish_letters(contents) turn all zotero-like
+            # identifiers into google-scholar-like ones
             logging.info("\tTurning zotero-like ids into google-scholar-like")
             google = re.sub(ZOTEROLIKE, zotero_to_google_id, contents)
             # normalize everything else (dashes, colons, compound names, etc.)
             logging.info("\tNormalizing dashes, colons, etc. in identifiers")
             subs = re.sub(GOOGLELIKE, remove_separators, google)
-            if args.modify:
+            if f.endswith(".bib"):
+                logging.info("\tSorting the bibtex file")
+                subs = sort(subs)
+            if modify:
                 with open(path, "w") as fd:
                     fd.write(subs)
-    if not args.modify:
+    if not modify:
         logging.warning("Dry-run mode. All suggestions were ignored.")
         logging.warning("Add --modify to make changes permanent.")
+
+
+if __name__ == "__main__":
+    args = cli()
+    run(**vars(args))
