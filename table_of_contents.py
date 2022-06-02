@@ -100,7 +100,7 @@ background = """
 
 data_acquisition = """
 4-data acquisition and preparation
-    roman numeral analysis datasets
+    roman numeral analysis data
     available datasets
         annotated beethoven corpus
             format of ABC
@@ -108,9 +108,7 @@ data_acquisition = """
                 version 2
         beethoven piano sonatas
             format of BPS
-            accompanying scores
-                no scores provided
-                aligning scores is not trivial
+            acquiring matching symbolic scores
         haydn ``sun'' string quartets
             format of HaydnSun
         mozart piano sonatas
@@ -119,35 +117,37 @@ data_acquisition = """
             format of TAVERN
         when in rome
             format of WiR
-                romantext
             converted corpora
                 TAVERN
                 HaydnSun
-                converted ABC
+                ABC
             original corpora
                 OpenScore lieder
                 well-tempered clavier
                 bach chorales
                 monteverdi madrigals
                 miscellaneous pieces
-    data preparation
-        problems of diverse datasets
+    aggregating all available datasets
+        standardizing the notation between datasets
             examples of misalignment in BPS
             mislabeled annotations
             different spellings
             diverging chord vocabularies
-        data-curation tools
-            alignment of scores
-            verifying pitch content
-        aligning a score and an annotation file
-        standardizing the notation between datasets
+        data-curation metrics
+            alignment between scores and annotations
+            pitch correspondence between chord annotations and scores
+            bass correspondence between chord annotations and scores
+        generating training, validation, and test splits
+        aggregated dataset summarized
+            training
+            validation
+            test
     data augmentation
         synthesis of artificial examples
             texturization patterns
                 alberti bass
                 bass split
                 syncopation
-            data-driven texturization
 """
 
 model_design = """
