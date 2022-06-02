@@ -44,7 +44,7 @@ class AllegedFile(object):
 
 
 def formatname(s):
-    return "_".join([c.lower() for c in s.split(" ")])
+    return "_".join([c for c in s.split(" ")])
 
 
 def formattext(s):
