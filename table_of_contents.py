@@ -104,7 +104,6 @@ data_acquisition = """
     Available datasets
         Annotated Beethoven Corpus
             Format of ABC
-            Revisions
                 Version 1
                 Version 2
         Beethoven Piano Sonatas
