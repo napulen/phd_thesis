@@ -117,7 +117,7 @@ data_acquisition = """
             format of MPS
         theme and variation encodings with roman numerals
             format of TAVERN
-        when-in-rome
+        when in rome
             format of WiR
                 romantext
             converted corpora
