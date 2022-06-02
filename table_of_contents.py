@@ -23,7 +23,7 @@ introduction = """
     outline of thesis contributions
         additional tonal tasks
         artificial training examples
-        improved data operations (mlops) and data hygiene
+        improved data operations (MLOps) and data hygiene
         alternative ways to reconstruct roman numeral labels
         original input representation of pitch spelling
         original layout of neural network
