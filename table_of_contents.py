@@ -55,27 +55,27 @@ background = """
                 origin of **kern
                 applications of **kern
                 humdrum in roman numeral analysis
-            mei
-                origin of mei
-                applications of mei
-                mei in roman numeral analysis
-            midi
-                origin of midi
-                applications of midi
-                midi in roman numeral analysis
-            musicxml
-                origin of musicxml
-                applications of musicxml
-                musicxml in roman numeral analysis
+            MEI
+                origin of MEI
+                applications of MEI
+                MEI in roman numeral analysis
+            MIDI
+                origin of MIDI
+                applications of MIDI
+                MIDI in roman numeral analysis
+            MusicXML
+                origin of MusicXML
+                applications of MusicXML
+                MusicXML in roman numeral analysis
     deep neural networks
         supervised learning
         feed forward networks
         convolutional neural networks
-            1d, 2d, and 3d convolutions
+            1D, 2D, and 3D convolutions
             residual connections
         recurrent neural networks
-            lstm
-            gru
+            LSTM
+            GRU
         transformer networks
     music information retrieval
         key estimation
