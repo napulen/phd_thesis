@@ -42,8 +42,8 @@ roman_numerals = """
     digitization of roman numeral annotations
         digital standards
             humdrum(**harm)
-            romantext
-            the dcml standard
+            RomanText
+            the DCML standard
             harmalysis
 """
 
