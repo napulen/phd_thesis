@@ -109,7 +109,7 @@ data_acquisition = """
         beethoven piano sonatas (BPS)
             format of BPS
             acquiring matching symbolic scores
-        haydn ``sun'' string quartets
+        haydn ``sun'' string quartets (HaydnSun)
             format of HaydnSun
         mozart piano sonatas (MPS)
             format of MPS
