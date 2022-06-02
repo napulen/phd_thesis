@@ -104,56 +104,21 @@ data_acquisition = """
     Available datasets
         Annotated Beethoven Corpus
             Format of ABC
-                DCML standard in ABC
             Revisions
                 Version 1
                 Version 2
-            Statistical analysis of ABC
-                Number of annotations in ABC
-                Chord distributions in ABC
-                Global key distribution in ABC
-                Modulation distribution in ABC
-                Tonicization distribution in ABC
         Beethoven Piano Sonatas
             Format of BPS
-                Tabular format of BPS
-                Limitations of format
             Accompanying scores
                 No scores provided
                 Aligning scores is not trivial
-            Statistical analysis of BPS
-                Number of annotations in BPS
-                Chord distribution in BPS
-                Global key distribution in BPS
-                Modulation distribution in BPS
-                Tonicization distribution in BPS
         Haydn ``Sun'' String Quartets
-            Format of Haydn-Sun
-                Humdrum(**harm) in HaydnSun
-            Statistical analysis of HaydnSun
-                Number of annotations in HaydnSun
-                Chord distribution in HaydnSun
-                Global key distribution in HaydnSun
-                Modulation distribution in HaydnSun
-                Tonicization distribution in HaydnSun
+            Format of HaydnSun
         Mozart Piano Sonatas
             Format of MPS
                 DCML standard in MPS
-            Statistical analysis of MPS
-                Number of annotations in MPS
-                Chord distribution in MPS
-                Global key distribution in MPS
-                Modulation distribution in MPS
-                Tonicization distribution in MPS
         Theme and Variation Encodings with Roman numerals
             Format of TAVERN
-                Humdrum(**harm) in TAVERN
-            Statistical analysis of TAVERN
-                Number of annotations in TAVERN
-                Chord distribution in TAVERN
-                Global key distribution in TAVERN
-                Modulation distribution in TAVERN
-                Tonicization distribution in TAVERN
         When-in-Rome
             Format of WiR
                 RomanText
@@ -167,12 +132,6 @@ data_acquisition = """
                 Bach Chorales
                 Monteverdi Madrigals
                 Miscellaneous pieces
-            Statistical analysis of WiR
-                Number of annotations of WiR
-                Chord distribution of WiR
-                Global key distribution of WiR
-                Modulation distribution of WiR
-                Tonicization distribution of WiR
     Data preparation
         Problems of diverse datasets
             Examples of misalignment in BPS
@@ -191,7 +150,6 @@ data_acquisition = """
                 Bass split
                 Syncopation
             Data-driven texturization
-        Retrieving tonal tasks from Roman numeral annotations
 """
 
 model_design = """
