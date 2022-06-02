@@ -102,20 +102,20 @@ data_acquisition = """
 4-data acquisition and preparation
     roman numeral analysis data
     available datasets
-        annotated beethoven corpus
+        annotated beethoven corpus (ABC)
             format of ABC
                 version 1
                 version 2
-        beethoven piano sonatas
+        beethoven piano sonatas (BPS)
             format of BPS
             acquiring matching symbolic scores
         haydn ``sun'' string quartets
             format of HaydnSun
-        mozart piano sonatas
+        mozart piano sonatas (MPS)
             format of MPS
-        theme and variation encodings with roman numerals
+        theme and variation encodings with roman numerals (TAVERN)
             format of TAVERN
-        when in rome
+        when in rome (WiR)
             format of WiR
             converted corpora
                 TAVERN
