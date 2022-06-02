@@ -103,36 +103,36 @@ data_acquisition = """
     roman numeral analysis datasets
     available datasets
         annotated beethoven corpus
-            format of abc
+            format of ABC
                 version 1
                 version 2
         beethoven piano sonatas
-            format of bps
+            format of BPS
             accompanying scores
                 no scores provided
                 aligning scores is not trivial
         haydn ``sun'' string quartets
-            format of haydnsun
+            format of HaydnSun
         mozart piano sonatas
-            format of mps
+            format of MPS
         theme and variation encodings with roman numerals
-            format of tavern
+            format of TAVERN
         when-in-rome
-            format of wir
+            format of WiR
                 romantext
             converted corpora
-                tavern
-                haydnsun
-                converted abc
+                TAVERN
+                HaydnSun
+                converted ABC
             original corpora
-                openscore lieder
+                OpenScore lieder
                 well-tempered clavier
                 bach chorales
                 monteverdi madrigals
                 miscellaneous pieces
     data preparation
         problems of diverse datasets
-            examples of misalignment in bps
+            examples of misalignment in BPS
             mislabeled annotations
             different spellings
             diverging chord vocabularies
