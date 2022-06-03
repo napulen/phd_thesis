@@ -13,7 +13,7 @@ ZOTEROLIKE = re.compile(
     + r"(?P<firstauthor>[A-Za-z_:"
     + NONENGLISH
     + r"-]+)_"
-    + r"(?P<firstword>[A-Za-z:"
+    + r"(?P<firstword>[A-Za-z0-9:"
     + NONENGLISH
     + r"-]+)_"
     + r"(?P<year>\d{2}|\d{4})"
