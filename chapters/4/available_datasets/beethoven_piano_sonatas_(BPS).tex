@@ -6,9 +6,17 @@
 The \gls{bps} dataset was introduced by
 \textcite{chen2018functional}. It consists of annotations
 for all the first movements of piano sonatas by Beethoven.
-The annotations are provided in a tabular \gls{csv} file
-format. The annotations are provided with lists of midi
-notes, but not a full symbolic score (e.g., in MusicXML
-format). Thus, an external collection of musical scores in
-MusicXML format was collected to accompany the annotations
-in this research.
+The annotations were provided by an expert musicologist,
+according to the authors. The process for encoding the
+annotations was divided in four steps: 1) identify the local
+key, 2) decide the segmentation of the chords (i.e., one
+chord ends and the next begins), 3) labeling the chord,
+taking into account the the absence of chord tones and/or
+presence presence of nonchord tones, and 4) specifying the
+chord inversion. Out of these steps, the authors mention
+that step 3 was particularly complicated, because of the
+factors that need to be taken into account. 
+
+The \gls{bps} dataset contains 32 files (i.e., piano sonata
+movements), 86,950 notes, 7,394 Roman numeral labels, and
+531 key modulations.
