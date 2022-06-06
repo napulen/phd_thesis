@@ -112,7 +112,6 @@ data_acquisition = """
         haydn ``sun'' string quartets (HaydnSun)
             format of HaydnSun
         mozart piano sonatas (MPS)
-            format of MPS
         theme and variation encodings with roman numerals (TAVERN)
             format of TAVERN
         when in rome (WiR)
