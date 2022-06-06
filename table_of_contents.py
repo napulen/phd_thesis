@@ -129,19 +129,12 @@ data_acquisition = """
                 miscellaneous pieces
     aggregating all available datasets
         standardizing the notation between datasets
-            examples of misalignment in BPS
-            mislabeled annotations
-            different spellings
-            diverging chord vocabularies
         data-curation metrics
             alignment between scores and annotations
             pitch correspondence between chord annotations and scores
             bass correspondence between chord annotations and scores
         generating training, validation, and test splits
         aggregated dataset summarized
-            training
-            validation
-            test
     data augmentation
         synthesis of artificial examples
             texturization patterns
