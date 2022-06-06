@@ -1,0 +1,13 @@
+% Copyright 2022 Néstor Nápoles López
+
+When the annotations and scores are not perfectly aligned,
+this results in a very negative effect, where a model learns
+the wrong chord associations for a musical context. I found
+this one of the most pressing problems to be addressed when
+aggregating the available datasets. However, it is also very
+difficult to detect.
+
+An initial approach is to verify that the duration and
+numbering of a measure matches between the annotation and
+score files. If a measure number changes inconsistently
+between the two, this might indicate a misalignment.
