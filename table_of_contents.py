@@ -146,89 +146,58 @@ model_design = """
 5-model design
     input
         symbolic score
-            MusicXML inputs
-            humdrum inputs
-        frames
+            required information in file
+                spelling of the notes
+                measure information
+        sampling of the score
             32nd note frames
             640 frames
         encoding pitch spelling
             19 two-hot encoding
-                advantages of 19
-                example plot with 19 two-hot
             35 one-hot encoding
-                advantages of 35
-                example plot with 35 one-hot
     the bass and chroma convolutional blocks
         convolutional layers
+            kernel size
+            number of filters
             6-layer configuration
-            power-of-two shapes
-                increasing convolution window
-                decreasing filters
         bass convolutional block
-            encoding of the bass
-                example plot of a bass input
+            encoding the bass
         chroma convolutional block
-            encoding of the chroma
-                example plot of a chroma input
+            encoding the spelled chroma
         merging the blocks
             concatenation of the blocks
             adding the blocks
     dense and recurrent layers
-        dense layer 1
-        dense layer 2
+        dense layers
         recurrent layers
-            GRU layers
-            LSTM layers
-            bidirectional
     multitask learning configurations
         six conventional tasks
             local key
-                number of classes
-                encoding
-                examples
             primary degree
             secondary degree
             quality
             inversion
             root
-        five additional tasks
+        additional tasks
             common roman numerals
             harmonic rhythm
             bass
             tonicization
             pitch class set
     implementation
-        dataset repositories
-            when in rome repo
-            TAVERN repo
-            ABC repo
-            HaydnSun repo
-            BPS repo
-        recursive submodules
-            map of score-annotation pairs
-            listing of all data used
-        MLOps
-            data quality metrics
-                alignment
-                pitch content
-                wrong inversion
-            unit tests
-                standard modules
-        texturization patterns
-            source code of texturization pattern
-            examples of texturization patterns
-        dataframe of score
-            columns
-        code
-            diagram
-                diagram blocks and modules
-            github repository
-                readme
-                releases
-                zenodo archive
-                API documentation
-                github pages
-            demos
+        dataset source repositories
+        aggregated dataset
+            score-annotation pairs
+            splits
+        data quality metrics
+            alignment
+            pitch content
+            wrong inversion
+        unit tests
+            standard modules
+        dataframe of a score
+        dataframe of an annotation
+        code diagram
 """
 
 experimental_evaluation = """
@@ -282,5 +251,12 @@ conclusions = """
         chapter 4
         chapter 5
         chapter 6
+    github repository
+        readme
+        releases
+        zenodo archive
+        API documentation
+        github pages
+    demos
     future work
 """
