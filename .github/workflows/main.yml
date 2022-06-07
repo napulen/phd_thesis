@@ -22,6 +22,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
         with:
+            # Gets all version history
             fetch-depth: "0"
       - name: Generate diff files for all chapters
         run: |
