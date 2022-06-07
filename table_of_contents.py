@@ -146,7 +146,7 @@ model_design = """
 5-model design
     input
         symbolic score
-            musicxml inputs
+            MusicXML inputs
             humdrum inputs
         frames
             32nd note frames
@@ -177,8 +177,8 @@ model_design = """
         dense layer 1
         dense layer 2
         recurrent layers
-            gru layers
-            lstm layers
+            GRU layers
+            LSTM layers
             bidirectional
     multitask learning configurations
         six conventional tasks
@@ -199,15 +199,15 @@ model_design = """
             pitch class set
     implementation
         dataset repositories
-            when-in-rome repo
-            tavern repo
-            abc repo
-            haydnsun repo
-            bps repo
+            when in rome repo
+            TAVERN repo
+            ABC repo
+            HaydnSun repo
+            BPS repo
         recursive submodules
             map of score-annotation pairs
             listing of all data used
-        mlops
+        MLOps
             data quality metrics
                 alignment
                 pitch content
@@ -226,7 +226,7 @@ model_design = """
                 readme
                 releases
                 zenodo archive
-                api documentation
+                API documentation
                 github pages
             demos
 """
