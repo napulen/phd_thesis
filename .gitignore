@@ -11,6 +11,8 @@
 *.ist
 *.run.xml
 *.synctex.gz
+*.lof
+*.lot
 .ipynb_checkpoints
 
 __pycache__/
