@@ -3,15 +3,20 @@
 % This is the introduction to \refchap{modeldesign}, which
 % goes before any of its sections.
 
-This chapter introduces the \emph{AugmentedNet} model, a
-\gls{crnn} architecture designed to provide \glspl{rna}
-annotations from symbolic music inputs. \refsec{input}
-describes the input to the model.
+This chapter introduces the end-to-end workflow for
+processing a symbolic music input into an annotated score
+with \gls{rna} labels. The main component of this workflow,
+a neural network dubbed \emph{AugmentedNet}, is a \gls{crnn}
+architecture designed to provide predictions used to produce
+\glspl{rna} annotations in the output layer. \refsec{input}
+describes the input to the system.
 \refsec{thebassandchromaconvolutionalblocks} describes the
-convolutional layers of the model.
+convolutional layers of the neural network model.
 \refsec{denseandrecurrentlayers} describes the dense and
-recurrent layers of the model.
+recurrent layers of the neural network model.
 \refsec{multitasklearningconfigurations} describes the
-multitask learning configurations. Lastly,
-\refsec{implementation} discusses the implementation details
-of the model.
+multitask learning configurations in the output layer of the
+neural network model. \refsec{reconstructromannumerallabels}
+describes the methods to reconstruct Roman numeral labels.
+Lastly, \refsec{implementation} discusses the implementation
+details of end-to-end system.
