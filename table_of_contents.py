@@ -156,34 +156,40 @@ model_design = """
             19 two-hot encoding
             35 one-hot encoding
     the bass and chroma convolutional blocks
+        bass input
+            encoding the bass
+        chroma input
+            encoding the spelled chroma
         convolutional layers
             kernel size
             number of filters
             6-layer configuration
-        bass convolutional block
-            encoding the bass
-        chroma convolutional block
-            encoding the spelled chroma
         merging the blocks
-            concatenation of the blocks
-            adding the blocks
     dense and recurrent layers
         dense layers
         recurrent layers
     multitask learning configurations
-        six conventional tasks
+        conventional tasks
             local key
             primary degree
             secondary degree
-            quality
             inversion
+            quality
             root
-        additional tasks
-            common roman numerals
-            harmonic rhythm
+        proposed tasks
+            local key
+            tonicization key
             bass
-            tonicization
+            tenor
+            alto
+            soprano
+            harmonic rhythm
+            roman numeral numerator
             pitch class set
+    reconstruct roman numeral labels
+        conventional method
+        common roman numerals
+        SATB, PcSet, and roman numeral numerator
     implementation
         dataset source repositories
         aggregated dataset
