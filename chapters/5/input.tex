@@ -1,6 +1,17 @@
 % Copyright 2022 Néstor Nápoles López
 
-% This is \refsec{input},
-% which introduces the input.
+% This is \refsec{input}, which introduces the input.
 
-This section describes the process of transforming digital symbolic music scores into the input representations of the neural network. \refsubsec{symbolicscore} introduces examples symbolic music scores to be analyzed by the model. \refsubsec{frames} introduces the \emph{salami-slicing} of the score into \emph{frames}. \refsubsec{encodingpitchspelling} introduces the encoding of each \emph{salami slice} into a \gls{pitchspelling} representation.
+The goal of this system is to process any symbolic music
+files provided as input, annotating them with Roman numeral
+labels. In practice, there are a few limitations and
+constrains regarding the input files, which are described in
+\refsubsec{symbolicscore}. After a score has been imported
+into the system, the score is divided in sequences of a
+fixed number of timesteps, with each of those timesteps
+sampled at fixed-duration note events. This step is
+described in \refsubsec{samlpingofthescore}. The sampled
+scores of fixed number of timesteps are encoded into a
+vector form, described in \refsubsec{encodingpitchspelling}.
+This vector-form encoding becomes the input to the neural
+network model.
