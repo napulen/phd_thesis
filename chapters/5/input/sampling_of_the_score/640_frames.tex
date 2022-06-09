@@ -1,0 +1,16 @@
+% Copyright 2022 Néstor Nápoles López
+
+Neural network models, particularly \glspl{rnn} or
+Transformer-based models are often used to process
+sequential information (e.g., timeseries). Symbolic music
+files are naturally sequential data. Although it is possible
+to deal with sequences of arbitrary length, it is common to
+set a fixed number of timesteps in a given sequence. In the
+architecture proposed, this is the case, where the fixed
+length is set to 640 timesteps (32nd notes). That is, the
+longest musical encoding that the system can process is 80
+quarter notes long. For scores that are longer, the input is
+divided in nonoverlapping sequences of 640 timesteps. For
+scores that are shorter, the input is padded with a special
+symbol after the entire musical content is encoded, in order
+to meet the exact length of 640 timesteps.
