@@ -18,3 +18,4 @@
 __pycache__/
 _*.tex
 chapters/*/main.tex
+chapters/*/figures/placeholder.png
