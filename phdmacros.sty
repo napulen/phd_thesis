@@ -50,6 +50,18 @@ too very can will just don should now vs in}
 % \newcommand{\guide}[1]{{\color{gray}\textbf{#1}}}
 \newcommand{\guide}[1]{}
 
+
+\NewDocumentCommand{\phdfigureproxy}{ O{Caption placeholder} O{h!} m}{
+    \begin{figure}[#2]
+        \centering
+        \includegraphics[width=\textwidth]{\cwd/figures/placeholder}
+        \caption{#1.}
+        \label{fig:#3}
+    \end{figure}
+    \relax
+}
+
+
 \NewDocumentCommand{\phdfigure}{ O{Caption placeholder}
 O{1.0} O{h!} m}{
     \begin{figure}[#3]
