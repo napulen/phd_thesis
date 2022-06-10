@@ -146,20 +146,17 @@ model_design = """
 5-model design
     input
         symbolic score
+            format support
             required information in file
-                spelling of the notes
-                measure information
         sampling of the score
             32nd note frames
             640 frames
         encoding pitch spelling
-            19 two-hot encoding
             35 one-hot encoding
+            19 two-hot encoding
     the bass and chroma convolutional blocks
         bass input
-            encoding the bass
         chroma input
-            encoding the spelled chroma
         convolutional layers
             kernel size
             number of filters
