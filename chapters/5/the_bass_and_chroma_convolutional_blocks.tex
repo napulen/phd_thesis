@@ -1,7 +1,15 @@
 % Copyright 2022 Néstor Nápoles López
 
-% This is \refsec{thebassandchromaconvolutionalblocks},
-% which introduces the the bass and chroma convolutional
-% blocks.
-
-This section introduces the initial, convolutional, layers of the \gls{augmentednet} network. The network begins by separating the input into two convolutional blocks, one that processes the lowest-sounding note\footnote{Note that I do not use the term ``bass'' here, because I consider the bass to be a perceptual phenomenon. A person may hear a note as the bass, and that may not necessarily be the lowest-sounding note in the score at a given moment. Thus, I refer to this input as the ``lowest-sounding note''.} of each \gls{frame}, and one that processes all the notes that sound simultaneously at each frame.
+After the music has been encoded as a fixed-length sequence
+of pitch-spelling vectors, it is processed by the trainable
+neural network layers. The first of these layers are
+convolutional layers. The network begins by separating the
+input into two convolutional blocks, one that processes the
+lowest-sounding note\footnote{Note that the term ``bass'' is
+problematic. A person may hear a note as the ``bass'', and
+that may be or not the lowest-sounding note in the score at
+a given moment. When referring to the encoding of the input,
+I am always talking about the ``lowest-sounding note in the
+score'', even if the word ``bass'' is used.} of each
+\gls{frame}, and one that processes all the notes that sound
+simultaneously at each frame.
