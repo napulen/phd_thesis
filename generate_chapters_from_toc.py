@@ -1,4 +1,5 @@
 import os
+import shutil
 import table_of_contents as toc
 
 CHAPTER = 0
@@ -175,6 +176,9 @@ if __name__ == "__main__":
         chapternumber, chaptername = chapter.split("-", 1)
         chapterdir = os.path.join(root, "chapters", chapternumber)
         os.makedirs(chapterdir, exist_ok=True)
+        chapterfigures = os.path.join(chapterdir, "figures")
+        os.makedirs(chapterfigures, exist_ok=True)
+        shutil.copy("placeholder.png", chapterfigures)
         chapterintro = os.path.join(chapterdir, "_chapter_intro.tex")
         introfd = AllegedFile(chapterintro, "w")
         introfd.write(chapterintroheader(chaptername))
