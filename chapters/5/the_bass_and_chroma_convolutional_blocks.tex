@@ -5,16 +5,12 @@ of pitch-spelling vectors, it is processed by the trainable
 layers of the neural network. The first of these layers are
 convolutional layers. The network begins by separating the
 input into two convolutional blocks, one that processes the
-lowest-sounding note\footnote{Note that the term ``bass'' is
-problematic. A person may hear a note as the ``bass'', and
-that may be or not the lowest-sounding note in the score at
-a given moment. When referring to the encoding of the input,
-I am always talking about the ``lowest-sounding note in the
-score'', even if the word ``bass'' is used.} of each
-timestep, and one that processes all the notes that sound
-simultaneously at each timestep.
+lowest-sounding note of each timestep, and one that
+processes all the notes that sound simultaneously at each
+timestep. The corresponding encodings are shown in
+\reffig{bass_chroma_separation}.
 
-\phdfigure[Two encodings of the same input. The first
+\phdfigureproxy[Two encodings of the same input. The first
 encoding highlights the lowest-sounding note and the second
 one highlights all the notes (i.e., spelled pitch classes)
-sounding at a given time]{placeholder}
+sounding at a given time]{bass_chroma_separation}

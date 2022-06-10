@@ -1,0 +1,17 @@
+% Copyright 2022 Néstor Nápoles López
+
+The first convolutional block processes the lowest-sounding
+note of each timestep. Colloquially, I refer to this input
+as the ``bass'' input.\footnote{Note that the term ``bass''
+is problematic. A person may hear a note as the ``bass'',
+and that may be or not the lowest-sounding note in the score
+at a given moment. When referring to the encoding of the
+input, I am always talking about the ``lowest-sounding note
+in the score'', but ``bass'' is used for brevity.} The
+encoding of the bass input is done using the pitch spelling
+representation discussed in
+\refsubsubsec{19two-hotencoding}. When this encoding
+strategy is applied, it results in a one-hot encoded vector
+like the one shown in \reffig{bass_encoding}.
+
+\phdfigureproxy[An encoding of the bass input]{bass_encoding}
