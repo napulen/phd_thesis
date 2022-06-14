@@ -1,0 +1,11 @@
+% Copyright 2022 Néstor Nápoles López
+
+After merging the convolutional blocks, the representation
+has as many features per timestep as the sum of number of
+features of each convolutional block.
+
+Two dense layers are introduced to reduce the dimensionality
+of each timestep before the \gls{gru} layers.
+
+The first dense layer has 64 neurons. The second dense layer
+has 32 neurons.
