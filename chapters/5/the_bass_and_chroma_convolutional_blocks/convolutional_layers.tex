@@ -1,0 +1,16 @@
+% Copyright 2022 Néstor Nápoles López
+
+
+Each of the previous input representations, \gls{bass19},
+\gls{chroma19}, and \gls{duration14} are processed by a
+block of convolutional layers. These convolutional layers
+feature the same configuration, shown in
+\reffig{convolutional_block}.
+
+\phdfigureproxy[The architecture of each convolutional
+block]{convolutional_block}
+
+In this configuration of the layers, the size of the kernel
+grows with each layer, whereas the number of filters is
+reduced.
+
