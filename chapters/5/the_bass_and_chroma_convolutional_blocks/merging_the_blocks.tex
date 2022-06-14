@@ -1,0 +1,14 @@
+% Copyright 2022 Néstor Nápoles López
+
+The size of each convolutional block depends on the number
+of features of each input tensor. The resulting
+convolutional block of the \gls{bass19} and \gls{chroma19}
+inputs contains 82 features per timestep each, whereas the
+one in the \gls{duration14} input contains 77 features per
+timestep. Before proceeding to the next layers of the neural
+network, the tensors of all these convolutional blocks are
+concatenated, resulting in a tensor of 640 timesteps with
+241 features each. \reffig{concatenated_blocks} shows an
+example of this process.
+
+\phdfigureproxy[Concatenation of the convolutional blocks]{concatenated_blocks}
