@@ -1,0 +1,16 @@
+% Copyright 2022 Néstor Nápoles López
+
+The encoding process of pitch in the \gls{bass19} and
+\gls{chroma19} inputs destroys any information related to
+note onsets, measures, and metrical structure. In order to
+compensate for that, a third convolutional block is
+introduced to process measure and note onsets. This
+representation is denominated \gls{duration14}. The
+\gls{duration14} encoding consists of two sets of features:
+a multi-hot encoding of measure onsets and a multi-hot
+encoding of note onsets. \reffig{duration_encoding} shows an
+example of the representation.
+
+\phdfigureproxy[An encoding of the \gls{duration14}
+representation]{duration_encoding}
+
