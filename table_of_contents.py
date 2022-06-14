@@ -176,15 +176,15 @@ model_design = """
             quality
             root
         proposed tasks
-            bass
-            tenor
-            alto
-            soprano
-            pitch class set
-            roman numeral numerator
-            local key
-            tonicization key
-            harmonic rhythm
+            Bass35
+            Tenor35
+            Alto35
+            Soprano35
+            PitchClassSet121
+            RomanNumeralNumerator31
+            LocalKey38
+            TonicizationKey38
+            HarmonicRhythm7
     reconstruct roman numeral labels
         conventional method
         common roman numerals
