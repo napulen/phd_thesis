@@ -154,9 +154,11 @@ model_design = """
         encoding pitch spelling
             35 one-hot encoding
             19 two-hot encoding
+        encoding duration
     the bass and chroma convolutional blocks
         bass input
-        chroma input
+        spelled chroma input
+        duration input
         convolutional layers
             kernel size
             number of filters
@@ -174,15 +176,15 @@ model_design = """
             quality
             root
         proposed tasks
-            local key
-            tonicization key
             bass
             tenor
             alto
             soprano
-            harmonic rhythm
-            roman numeral numerator
             pitch class set
+            roman numeral numerator
+            local key
+            tonicization key
+            harmonic rhythm
     reconstruct roman numeral labels
         conventional method
         common roman numerals
