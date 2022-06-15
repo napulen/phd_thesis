@@ -188,7 +188,7 @@ model_design = """
     reconstruct roman numeral labels
         conventional method
         common roman numerals
-        SATB, PcSet, and roman numeral numerator
+        proposed method
     implementation
         dataset source repositories
         aggregated dataset
