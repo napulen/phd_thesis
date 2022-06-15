@@ -9,3 +9,30 @@ musical scores in MusicXML format, as well as annotations of
 the harmony and cadence information. The format of the
 annotations is similar to the one in the revised (i.e.,
 version 2) \gls{abc} dataset.
+
+\phdparagraph{MPS preprocessing}
+
+The scores were preprocessed before aggregated to the
+dataset.
+
+The first step was to detect collisions in the position of
+two annotations. Collisions happen because the ``Chord''
+objects in MuseScore do not encode a position when they are
+exported to MusicXML. The location of the annotations is
+inferred from the surrounding note. However, in instances
+where an annotation is added to a longer note (e.g., half
+way of a whole note), the position is impossible to retrieve
+from the MusicXML file. One way to solve this problem is to
+create an additional part in MuseScore with a sufficient
+note/rest onsets to accomodate the annotation's location. I
+processed all the scores that required this modification
+(all but 8 scores in the dataset). This process would remove
+the majority of the collisions, however, a few of them
+persist. Additional collisions happen when a measure is
+divided by a repetition bar (e.g., in anacrusic music). In
+these instances, the offset of the annotation resets for the
+portion of the measure beyond the repetition bar and it
+collides with the annotations before the repetition bar.
+These second round of collisions can be removed by removing
+repetition bars, effectively avoiding to reset the offset of
+the annotations within a single measure.
