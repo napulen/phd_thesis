@@ -180,10 +180,10 @@ model_design = """
             Tenor35
             Alto35
             Soprano35
-            PitchClassSet121
-            RomanNumeralNumerator31
             LocalKey38
             TonicizationKey38
+            PitchClassSet121
+            RomanNumeralNumerator31
             HarmonicRhythm7
     reconstruct roman numeral labels
         conventional method
