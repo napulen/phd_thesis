@@ -193,13 +193,6 @@ model_design = """
         dataset source repositories
         aggregated dataset
             score-annotation pairs
-            splits
-        data quality metrics
-            alignment
-            pitch content
-            wrong inversion
-        unit tests
-            standard modules
         dataframe of a score
         dataframe of an annotation
         code diagram
