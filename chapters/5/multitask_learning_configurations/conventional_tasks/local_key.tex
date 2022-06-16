@@ -1,0 +1,17 @@
+% Copyright 2022 Néstor Nápoles López
+
+The (local) key describes the reference key used to
+disambiguate the Roman numeral scale degrees. It is arguably
+one of the most important features because if it is
+mislabeled, then all \gls{rna} labels will be mislabeled.
+
+In the initial multitask learning model by
+\textcite{chen2018functional}, this task had 24 output
+classes. Each of the classes represented the pitch class of
+the tonic, which were encoded twice to account for major
+mode keys and minor mode keys.
+
+In a subsequent model by \textcite{micchi2020not}, the
+number of classes was extended to 30, as the spelling of the
+tonic pitch was taken into account (i.e., $C\sharp$ $\neq$
+$D\flat$ major).
