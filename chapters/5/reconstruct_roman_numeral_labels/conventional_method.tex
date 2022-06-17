@@ -1,34 +1,32 @@
 % Copyright 2022 Néstor Nápoles López
 
 The method by \textcite{chen2018functional} to reconstruct
-the \gls{rna} labels relied on the five conventional tasks
-described in \refsubsec{conventionaltasks}.
+the \gls{rna} labels relied on five of the six conventional
+tasks described in \refsubsec{conventionaltasks}. In their
+paper, \textcite{chen2018functional} did not discuss how
+these predictions were processed to obtain Roman numeral
+labels all the way to the output, however, it is possible to
+use them in the following way.
 
-\begin{enumerate}
-    \item Retrieve the local key $lk$
-    \item If secondary degree; resolve $k$ based $d^2$ and $k$
-    \item 
-    \item Verify the pitch of primary scale degree $d^1$ in key $k$
-    \item Rectify the inversion of chord $c$
-    \item Output Roman numeral 
-\end{enumerate}
+Let $t$ be each timestep of the sequence and
 
-If $d^2$ is not null, then
+$$
+K[t] = local_key(t)
+D^p[t] = primary_degree(t)
+D^s[t] = secondary_degree(t)
+Q[t] = chord_quality(t)
+I[t] = inversion(t)
+$$
 
-$$k = p(k_l, d^2)$$
+if $D^s[t] \neq null$ then
+
+$$
+Rn^den[t] = D^s[t]
+k = pitch_of(D^s[t], K[t])
+$$
 
 else
-
-$$k = k_l$$
-
-Using the disambiguated key
-
-$$r = p(k, d^1)$$
-
-Then
-
-$$c = r + q$$
-
-Then
-
-$$i$$
+$$
+k = K[t]
+Rn^num[t] = pitch_of(D^p[t], k) + Q[t] + I[t] 
+$$
