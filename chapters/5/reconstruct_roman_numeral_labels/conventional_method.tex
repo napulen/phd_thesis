@@ -16,19 +16,23 @@ K[t] = localKey(t) \\
 D^p[t] = primaryDegree e(t) \\
 D^s[t] = secondaryDegree(t)  \\
 Q[t] = chordQuality(t) \\
-I[t] = inversion(t) \\
+I[t] = inversion(t)
 \end{split}
 \end{equation}
 
 if $D^s[t] \neq null$ then
 
 \begin{equation}
-Rn^den[t] = D^s[t]
+\begin{split}
+Rn^den[t] = D^s[t] \\
 k = pitchOf(D^s[t], K[t])
+\end{split}
 \end{equation}
 
 else
 \begin{equation}
-k = K[t]
+\begin{split}
+k = K[t] \\
 Rn^num[t] = pitchOf(D^p[t], k) + Q[t] + I[t] 
+\end{split}
 \end{equation}
