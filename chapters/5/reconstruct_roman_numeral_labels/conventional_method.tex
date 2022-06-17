@@ -11,28 +11,22 @@ use them in the following way.
 Let $t$ be each timestep of the sequence and
 
 \begin{equation}
-K[t] = local_key(t)
-
-D^p[t] = primary_degree(t)
-
-D^s[t] = secondary_degree(t)
-
-Q[t] = chord_quality(t)
-
-I[t] = inversion(t)
+K[t] = local_key(t) \\
+D^p[t] = primary_degre e(t) \\
+D^s[t] = secondary_degree(t)  \\
+Q[t] = chord_quality(t) \\
+I[t] = inversion(t) \\
 \end{equation}
 
 if $D^s[t] \neq null$ then
 
 \begin{equation}
 Rn^den[t] = D^s[t]
-
 k = pitch_of(D^s[t], K[t])
 \end{equation}
 
 else
 \begin{equation}
 k = K[t]
-
 Rn^num[t] = pitch_of(D^p[t], k) + Q[t] + I[t] 
 \end{equation}
