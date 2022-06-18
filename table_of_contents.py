@@ -190,12 +190,12 @@ model_design = """
         common roman numerals
         proposed method
     implementation
-        dataset source repositories
-        aggregated dataset
-            score-annotation pairs
-        dataframe of a score
-        dataframe of an annotation
         code diagram
+        dataset source repositories
+        dataframe structures
+            annotation
+            score
+            joint
 """
 
 experimental_evaluation = """
