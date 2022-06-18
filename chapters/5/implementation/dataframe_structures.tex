@@ -1,0 +1,21 @@
+% Copyright 2022 Néstor Nápoles López
+
+In order to aggregate the datasets into a unified set, these
+are converted into a tabular representation in a \gls{csv}
+file. One \gls{csv} file is generated per training example,
+organized by source dataset. The annotations
+(\gls{romantext} files) and scores (\gls{musicxml} files)
+are processed indepedently, by their own parser. The
+dedicated parsers output a \gls{csv} file. These files are
+later merged together into what is called a \emph{joint}
+dataframe. The index of the annotation and score \gls{csv}
+files have a common index of offset in quarter notes from
+the beginning of the score. The common index is used to
+align the two \gls{csv} files into a joint \gls{csv}. In the
+joining stage, automatic metrics are computed for the score
+and annotation. These metrics are helpful to find
+misalignments, mismatches, wrong keys, and other problems
+that would be detrimental to the training process of the
+neural network. This workflow was used to iteratively curate
+the data, until the values output by the objective metrics
+were reduced as much as possible in outlier files.
