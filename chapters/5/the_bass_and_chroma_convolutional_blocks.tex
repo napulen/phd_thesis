@@ -1,16 +1,22 @@
 % Copyright 2022 Néstor Nápoles López
 
-After the music has been encoded as a fixed-length sequence
-of pitch-spelling vectors, it is processed by the trainable
-layers of the neural network. The first of these layers are
-convolutional layers. The network begins by separating the
-input into two convolutional blocks, one that processes the
-lowest-sounding note of each timestep, and one that
-processes all the notes that sound simultaneously at each
-timestep. The corresponding encodings are shown in
-\reffig{bass_chroma_separation}.
+After a symbolic music file has been deconstructed as a
+fixed-length sequence of pitch-spelling and duration
+information, it is processed by the trainable layers of the
+neural network. The first of these layers are convolutional
+layers. The network begins by separating the input into
+three convolutional blocks, one that processes the
+lowest-sounding note of each timestep, one that processes
+all the notes that sound simultaneously at each timestep,
+and one that processes the measure and note onsets at each
+timestep. These are referred as the \emph{input
+representations} of the network \gls{bass19},
+\gls{chroma19}, and \gls{duration14}, which are explained below.
 
-\phdfigureproxy[Two encodings of the same input. The first
-encoding highlights the lowest-sounding note and the second
-one highlights all the notes (i.e., spelled pitch classes)
-sounding at a given time]{bass_chroma_separation}
+% The corresponding encodings are shown in
+% \reffig{bass_chroma_separation}.
+
+% \phdfigureproxy[Two encodings of the same input. The first
+% encoding highlights the lowest-sounding note and the
+% second one highlights all the notes (i.e., spelled pitch
+% classes) sounding at a given time]{bass_chroma_separation}
