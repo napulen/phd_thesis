@@ -1,16 +1,18 @@
 % Copyright 2022 Néstor Nápoles López
 
 In a \gls{cnn} layer, the number of filters represents the
-number of ``patterns'' that the network will detect in the
-signal. In the visual domain, these patterns could result
-in, for example, an edge-detection filter. In the musical
-domain, the possible patterns are related with combinations
-of pitch classes, pitch names, or durations.
+number of ``patterns'' that the network will learn from the
+input. In the visual domain, these patterns could result in,
+for example, edge-detection filters. In the musical domain,
+the possible patterns are related with combinations of pitch
+classes, pitch names, or onsets.
 
-In this architecture, the number of filters is halfed for
+In this architecture, the number of filters is halved for
 each consecutive \gls{cnn} layer. That is, the network is
 allowed to capture more short-term patterns (i.e., with a
-lower kernel size) and less long-term patterns (i.e., with a
-higher kernel size). In preliminary experiments, I found
-that this helped to model certain features, such as the
-\gls{harmonicrhythm7} more effectively.
+lower kernel size) and fewer long-term patterns (i.e., with
+a higher kernel size). Preliminary experiments showed that
+prioritizing short-term patterns in the \gls{cnn} layers
+facilitated the network to learn certain features, such as
+the ones related with chord segmentation, whereas
+longer-term patterns benefitted key-finding tasks.
