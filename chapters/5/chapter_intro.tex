@@ -3,17 +3,17 @@
 % This is the introduction to \refchap{modeldesign}, which
 % goes before any of its sections.
 
-This chapter introduces the end-to-end workflow for
-processing a symbolic music input to annotate it with
-\gls{rna} labels. The main component of this workflow, a
-neural network dubbed \emph{AugmentedNet}, is a \gls{crnn}
-architecture designed to provide predictions of different
-tonal attributes. These predictions are used to produce
-\glspl{rna} annotations. \refsec{input} describes the input
-to the system. \refsec{thebassandchromaconvolutionalblocks}
-describes the convolutional layers of the neural network
-model. \refsec{denseandrecurrentlayers} describes the dense
-and recurrent layers of the neural network model.
+This chapter introduces the design and implementation of the
+end-to-end system for \glspl{rna} proposed in this
+\thesisdiss{}. The main component of this system is a
+\gls{crnn} dubbed \emph{AugmentedNet}, which is designed to
+provide predictions of different tonal attributes. These
+predictions are used to produce \glspl{rna} annotations.
+\refsec{input} describes the input of the system.
+\refsec{thebassandchromaconvolutionalblocks} describes the
+convolutional layers of the neural network model.
+\refsec{denseandrecurrentlayers} describes the dense and
+recurrent layers of the neural network model.
 \refsec{multitasklearningconfigurations} describes the
 multitask learning configurations in the output layer of the
 neural network model. \refsec{reconstructromannumerallabels}
