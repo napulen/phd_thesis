@@ -1,11 +1,14 @@
 % Copyright 2022 Néstor Nápoles López
 
-One of the problems of the 35 one-hot encoding of spelled
-pitch classes is that the representation cannot encode any
-notes beyond two flats or two sharps. Additionally, the
-resulting vector is almost three times larger than a similar
-vector encoding pitch classes without spelling (12
-features).
+One of the problems with the previous representation of 35
+features is that the it cannot encode any notes beyond two
+flats or two sharps. Additionally, the resulting vector is
+almost three times larger than a similar vector encoding
+pitch classes without spelling:
+
+\begin{equation}
+    pitchClasses = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+\end{equation}
 
 The representation proposed here reduces some of these
 problems. When an enharmonic equivalence is assumed, there
