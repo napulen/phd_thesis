@@ -156,9 +156,9 @@ model_design = """
             19 two-hot encoding
         encoding duration
         input representations
-            Bass19
-            Chromagram19
-            Duration14
+            lowest sounding note
+            all sounding notes
+            measure and note onsets
     the bass and chroma convolutional blocks
         convolutional layers
             kernel size
