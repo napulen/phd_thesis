@@ -1,20 +1,21 @@
 % Copyright 2022 Néstor Nápoles López
 
-The second convolutional block processes all the sounding
-note classes of each timestep. Colloquially, I refer to this
-input as the ``spelled chroma'' input. This is because of
-the similarity between this representation and the commonly
-used ``chromagram'' representation in audio. The main
-difference being, beyond being used in the symbolic domain,
-that chromagram features often collapse enharmonic spellings
-of the same pitch class, whereas in this case spelling is
-taking into account. The encoding of the spelled chroma
-input is done using the pitch spelling representation
-discussed in \refsubsubsec{19two-hotencoding}. However, in
-this case, the representation results in a multi-hot
-encoding, as each spelled pitch class will result in a
-two-hot encoding timestep (but several pitch classes will be
-encoded in the same timestep). An example of this encoding
-is shown in \reffig{chroma_encoding}.
+The second input representation, \gls{chroma19}, encodes all
+the sounding note classes at each timestep. In
+\textcite{napoleslopez2021augmentednet}, we colloquially
+referred to it as the ``spelled chroma'' input
+representation. This is because of the similarity between
+this representation and the commonly used ``chromagram''
+representation in audio. The main difference being, beyond
+being used in the symbolic domain, that chromagram features
+often ignore note spelling, whereas in this case spelling is
+taken into account. The encoding of \gls{chroma19} is also
+done using the pitch spelling duples discussed in
+\refsubsubsec{19two-hotencoding}. However, in this case, the
+representation results in a ``multi'' two-hot encoding, as
+each note will result in a two-hot encoding (i.e., several
+spelled notes will be encoded in the same timestep). An
+example of this encoding is shown in
+\reffig{chroma_encoding}.
 
 \phdfigureproxy[An encoding of the spelled chroma input]{chroma_encoding}
