@@ -1,0 +1,23 @@
+% Copyright 2022 Néstor Nápoles López
+
+The steps in the previous sections describe the methods to
+reduce a symbolic music file into a fixed-length sequence of
+pitch values, which are sampled at regularly-spaced
+intervals of \musThirtySecond note values. Using these
+sequences and the vector representations described in
+\refsubsec{encodingpitchspelling} and
+\refsubsec{encodingduration}, the score can be encoded into
+a set of \emph{input representations}, which are dispatched
+to the trainable layers of the neural network. 
+
+The system currently considers three input representations,
+\gls{bass19}, \gls{chroma19}, and \gls{duration14},
+described below.
+
+% The corresponding encodings are shown in
+% \reffig{bass_chroma_separation}.
+
+% \phdfigureproxy[Two encodings of the same input. The first
+% encoding highlights the lowest-sounding note and the
+% second one highlights all the notes (i.e., spelled pitch
+% classes) sounding at a given time]{bass_chroma_separation}
