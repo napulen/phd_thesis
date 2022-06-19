@@ -1,12 +1,12 @@
 % Copyright 2022 Néstor Nápoles López
 
-As mentioned in \refsubsec{samplingofthescore}, the original
-score in the symbolic music file is reduced in order to be
-encoded for the neural network model. Furthermore, the score
-is sampled en regular note intervals of 32nd notes, encoding
-the pitch content at each of those timesteps. This section
-describes the method for encoding the pitch content of each
-of those timesteps. 
+As mentioned in \refsubsec{samplingofthescore}, the score in
+the symbolic music file is stripped from some of its
+original information when it is encoded for the neural
+network model. Furthermore, the score is sampled at regular
+note intervals of 32nd notes, encoding the pitch content at
+each of those timesteps. This section describes the method
+for encoding the pitch content of each of those timesteps. 
 
 Most symbolic music analysis models collapse different
 spellings of the same note, such that 
