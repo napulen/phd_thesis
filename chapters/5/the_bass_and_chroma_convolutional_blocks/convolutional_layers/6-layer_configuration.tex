@@ -2,9 +2,10 @@
 
 The \gls{cnn} blocks of the neural network are implemented
 with a configurable number of layers in mind, which is
-provided as a hyperparameter. In practice, I found six
-layers to be a good number of layers. With this number, each
-\gls{cnn} block is able to process inputs with a context of
-four quarter notes into the future of the current timestep,
-prioritzing the patterns learned at the level of
-thirty-second notes (i.e., individual timesteps).
+provided as a hyperparameter. Initially, this number was set
+to six convolutional layers per block. With this number,
+each \gls{cnn} block is able to process inputs with a
+context of four $\: \musQuarter{} \:$ into the future of the
+current timestep, prioritzing the patterns learned at the
+level of $\: \musThirtySecond{} \:$ notes (i.e., individual
+timesteps).
