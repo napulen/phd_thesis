@@ -4,7 +4,7 @@ One of the problems with the previous representation of 35
 features is that the it cannot encode any notes beyond two
 flats or two sharps. Additionally, the resulting vector is
 almost three times larger than the common representation
-based on pitch classes, which has 12 features:
+based on pitch classes,\footnote{} which has 12 features:
 
 \begin{equation}
     \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11\}
@@ -20,10 +20,10 @@ note letter name:
     \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11\} \cup \{C, D, E, F, G, A, B\}
 \end{equation}
 
-When an enharmonic equivalence is assumed, there is usually
-a set of 12 pitch classes used to represent all the
-chromatic notes of a Western scale. In addition to this set,
-known as ``pitch classes'', notes with a spelling have a
+When enharmonic equivalence is assumed in a \gls{12tet}
+system, a set of 12 pitch classes spans all the notes of the
+Western chromatic scale. In addition to this set, known as
+``pitch classes'', notes with a spelling have a
 corresponding letter (e.g., $C\sharp$ is pitch class 1, with
 the name $C$). Using this information, a pitch class vector
 can be complemented with the note letter representation of a
