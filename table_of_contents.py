@@ -155,10 +155,11 @@ model_design = """
             35 one-hot encoding
             19 two-hot encoding
         encoding duration
+        input representations
+            Bass19
+            Chromagram19
+            Duration14
     the bass and chroma convolutional blocks
-        Bass19
-        Chromagram19
-        Duration14
         convolutional layers
             kernel size
             number of filters
