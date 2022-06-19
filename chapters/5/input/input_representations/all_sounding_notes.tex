@@ -3,19 +3,18 @@
 The second input representation, \gls{chroma19}, encodes all
 the sounding note classes at each timestep. In
 \textcite{napoleslopez2021augmentednet}, we colloquially
-referred to it as the ``spelled chroma'' input
-representation. This is because of the similarity between
-this representation and the commonly used ``chromagram''
-representation in audio. The main difference being, beyond
-being used in the symbolic domain, that chromagram features
-often ignore note spelling, whereas in this case spelling is
-taken into account. The encoding of \gls{chroma19} is also
-done using the pitch spelling duples discussed in
+referred to this one as the ``spelled chroma'' input
+representation. This is due to its similarity with the
+commonly used ``chromagram'' representation in the audio
+domain. The main difference being, beyond operating in the
+symbolic domain, that chromagram features often ignore note
+spellings, whereas here they are taken into account. The
+encoding of \gls{chroma19} is also done using the
+pitch-spelling duples discussed in
 \refsubsubsec{19two-hotencoding}. However, in this case, the
 representation results in a ``multi'' two-hot encoding, as
-each note will result in a two-hot encoding (i.e., several
-spelled notes will be encoded in the same timestep). An
-example of this encoding is shown in
-\reffig{chroma_encoding}.
+each note will result in a two-hot encoding, but several
+spelled notes may be encoded per timestep. An example of
+this encoding is shown in \reffig{chroma_encoding}.
 
 \phdfigureproxy[An encoding of the spelled chroma input]{chroma_encoding}
