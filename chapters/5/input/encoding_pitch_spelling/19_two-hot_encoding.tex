@@ -23,9 +23,13 @@ note letter name:
     \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11\} \cup \{C, D, E, F, G, A, B\}
 \end{equation}
 
-In addition to belonging to one of these pitch classes, a
-spelled note has a corresponding letter (e.g., $C\sharp$ is
-pitch class 1, with the name $C$). Using this information, a
-pitch class vector can be complemented with the generic note
-letter representation of a particular note. This results in
-19 features (12 pitch classes, plus 7 note letter names).
+Note that in this representation, in addition to the pitch
+class, a spelled note has a corresponding letter. For
+example, C\musSharp{} is represented by the duple $(1, C)$,
+where as D\musFlat{} is represented by the same pitch class
+but a different generic note letter, $(1, D)$. A
+$\musNatural$ has the same generic note letter but a
+different pitch class, $(2, D)$, and so on. Using this
+representation, a spelled note, beyond two flats and two
+sharps can be encoded with a 19-feature vector. Notice,
+however, that this vector is a two-hot encoding representation.
