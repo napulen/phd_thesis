@@ -6,29 +6,35 @@ possible output classes. Notice that throughout this
 \thesisdiss{}, the ``bass'' is considered a perceptual
 phenomenon, which might not correspond with the lowest
 sounding note encoded as input representation \gls{bass19}.
-\reffig{bass_adversarial_example} shows an example of why
-the annotated/perceived bass might differ from the
-lowest-sounding note at a given timestep.
-
-\phdfigureproxy[Example of a ``bass'', which differs from
-the lowest-sounding note]{bass_adversarial_example}
+\reffig{bass_encoding} is a good example of this situation.
+In the original score, the two-voice pattern of the bass in
+the measures 1 and 2 could easily persuade the listener to
+think that the lower G note is the bass throughout measure
+3, however, it is only the lowest-sounding note during the
+first eighth note. Thus, the \emph{bass} always refers to
+the lowest note of the annotated chord.
 
 The first four output representations, \gls{bass35},
 \gls{tenor35}, \gls{alto35}, and \gls{soprano35}, are all
 related to the realization of the annotated chord in a
-\gls{closed-position}. \reffig{closed_position_bass} shows
-an example of the \gls{bass35} target label for a fragment
+\gls{closed-position}. \reffig{satb_all} shows the
+realization of the annotated chords that defines the target
+class of each classifier. \reffig{satb_bass} shows an
+example of the \gls{bass35} target label for this fragment
 of music.
 
-\phdfigureproxy[Example of the ``bass'' target pitch in a
-\gls{closed-position} realization of a chord
-annotation]{closed_position_bass}
+\phdfigureproxy[Example of the ``SATB'' classifiers, where
+each classifier learns to predict one of the four notes in
+the \gls{closed-position} realization of the
+chord]{satb_all}
+
+\phdfigureproxy[Example of the \gls{bass35} encoding for the
+chords in \reffig{satb_all}]{satb_bass}
 
 
-% \footnote{Note that the
-% term ``bass'' is problematic. A person may hear a note as
-% the ``bass'', and that may be or not the lowest-sounding
-% note in the score at a given moment. When referring to the
-% encoding of the input, I am always talking about the
-% ``lowest-sounding note in the score'', but ``bass'' is used
-% for brevity.}
+% \footnote{Note that the term ``bass'' is problematic. A
+% person may hear a note as the ``bass'', and that may be or
+% not the lowest-sounding note in the score at a given
+% moment. When referring to the encoding of the input, I am
+% always talking about the ``lowest-sounding note in the
+% score'', but ``bass'' is used for brevity.}
