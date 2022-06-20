@@ -31,7 +31,7 @@ jobs:
       - name: Rename main.tex to current version of the thesis
         run: mv "main.tex" "napoleslopez22phdthesis${{ github.ref_name }}.tex"
       - name: Compile main LaTeX document and chapter diffs
-        uses: xu-cheng/latex-action@v2
+        uses: xu-cheng/latex-action@v2.4.0
         with:
           root_file: |
             napoleslopez22phdthesis${{github.ref_name}}.tex
