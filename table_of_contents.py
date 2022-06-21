@@ -201,55 +201,49 @@ model_design = """
 
 experimental_evaluation = """
 6-experimental evaluation
-    artificial texturization of augmented data
-        heuristic texturization
-        data-driven texturization
-    model configurations
-        with additional tasks
-        without additional tasks
-        with artificial examples
-        without artificial examples
-    choosing the best configuration
-        average accuracy across individual datasets
-        augmentednet11+
-    comparison against state-of-the-art
-        models considered
-            chen and su (2018, 2019, 2021)
-            micchi et al.
-        datasets considered
-            bps test set
-            wtc test set
-            all other test sets
-        training procedure
+    ablation studies
+        input representations
+            enharmonic equivalence
+            pitch spelling encoding method
+            onset information
+        convolutional layers
+            single convolutional block
+            filters/kernel ratio
+            number of convolutional layers
+        dense layers
+            number of layers
+            linear and nonlinear layers
+        recurrent layers
+            LSTM vs GRU
+            unidirectional and bidirectional
+        output representations
+            remove redundant tasks
+        data augmentation
+            texturization per file
+            texturization per transposition
+    best performing model configuration
+    evaluation against previous methods
+        experimental set up
+            hyperparameters
+                number of epochs
+                optimizer
+                learning schedule and learning rate
             data splits
-            epochs
             computing time
-        hyperparameters
-            training epochs and weight selection
-            learning schedule and learning rate
-    evaluation procedure
-        baselines
-            chen and su 2018
-            chen and su 2019
-            chen and su 2021
-            micchi et al. 2020
-        accuracy of individual tasks
-            conventional tasks
-            additional tasks
-        roman numeral accuracy
-            conventional
-            alternative method
+        baseline models
+            chen and su (2018, 2019, 2021)
+            micchi et al. (2020, 2021)
+            mcleod and rohrmeier (2021)
     results
+        accuracy on individual tasks
+        roman numeral accuracy
+        performance on difficult chords
     discussion
 """
 
 conclusions = """
 7-conclusions
-    summary
-        chapters 1--3
-        chapter 4
-        chapter 5
-        chapter 6
+    summary of contributions
     github repository
         readme
         releases
