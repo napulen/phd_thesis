@@ -231,8 +231,9 @@ experimental_evaluation = """
             number of layers
                 one GRU layer
                 three GRU layers
-            unidirectional or bidirectional
+            layer type
                 unidirectional
+                LSTM-based
         output
             resolution of roman numerals
                 PitchClassSet121 only
