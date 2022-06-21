@@ -204,25 +204,49 @@ experimental_evaluation = """
     ablation studies
         input representations
             enharmonic equivalence
+                pitch class only
             pitch spelling encoding method
+                35-one-hot encoding
+                19-two-hot encoding
             onset information
+                no onset information
+                measure onset only
+                note onset only
         convolutional layers
-            single convolutional block
+            number of convolutional blocks
+                one block
+                four blocks
             filters/kernel ratio
+                same filters, growing kernel
             number of convolutional layers
+                five layers
+                seven layers
         dense layers
             number of layers
+                one dense layer
+                three dense layers
             linear and nonlinear layers
+                linear layers
         recurrent layers
-            LSTM vs GRU
-            unidirectional and bidirectional
-        output representations
-            remove redundant tasks
+            number of layers
+                one GRU layer
+                three GRU layers
+            unidirectional or bidirectional
+                unidirectional
+        output
+            resolution of roman numerals
+                PitchClassSet121 only
+                CommonRomanNumerals31 only
+                SATB only
         data augmentation
-            texturization per file
-            texturization per transposition
+            transposition
+                no transposition
+            synthesis
+                no texturization
+                texturization per file
+                texturization per transposition
     best performing model configuration
-    evaluation against previous methods
+    evaluation against previous models
         experimental set up
             hyperparameters
                 number of epochs
