@@ -203,11 +203,8 @@ experimental_evaluation = """
 6-experimental evaluation
     ablation studies
         input representations
-            enharmonic equivalence
-                pitch class only
             pitch spelling encoding method
                 35-one-hot encoding
-                19-two-hot encoding
             onset information
                 no onset information
                 measure onset only
@@ -219,6 +216,7 @@ experimental_evaluation = """
             filters/kernel ratio
                 same filters, growing kernel
             number of convolutional layers
+                no convolutional layers
                 five layers
                 seven layers
         dense layers
@@ -229,16 +227,11 @@ experimental_evaluation = """
                 linear layers
         recurrent layers
             number of layers
+                no GRU layers
                 one GRU layer
                 three GRU layers
             layer type
                 unidirectional
-                LSTM-based
-        output
-            resolution of roman numerals
-                PitchClassSet121 only
-                CommonRomanNumerals31 only
-                SATB only
         data augmentation
             transposition
                 no transposition
@@ -247,6 +240,10 @@ experimental_evaluation = """
                 texturization per file
                 texturization per transposition
     best performing model configuration
+    best strategy for final roman numeral reconstruction
+        PitchClassSet121 only
+        CommonRomanNumerals31 only
+        SATB only
     evaluation against previous models
         experimental set up
             hyperparameters
