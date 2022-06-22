@@ -202,14 +202,14 @@ model_design = """
 experimental_evaluation = """
 6-experimental evaluation
     ablation studies
-        input representations
+        changing the input
             pitch spelling encoding method
                 35-one-hot encoding
             onset information
                 no onset information
                 measure onset only
                 note onset only
-        convolutional layers
+        changing the convolutional layers
             number of convolutional blocks
                 one block
                 four blocks
@@ -219,20 +219,20 @@ experimental_evaluation = """
                 no convolutional layers
                 five layers
                 seven layers
-        dense layers
+        changing the dense layers
             number of layers
                 one dense layer
                 three dense layers
             linear and nonlinear layers
                 linear layers
-        recurrent layers
+        changing the recurrent layers
             number of layers
                 no GRU layers
                 one GRU layer
                 three GRU layers
             layer type
                 unidirectional
-        data augmentation
+        effects of data augmentation
             transposition
                 no transposition
             synthesis
