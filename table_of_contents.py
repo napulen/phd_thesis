@@ -226,7 +226,7 @@ experimental_evaluation = """
             linear and nonlinear layers
                 linear layers
         changing the recurrent layers
-            number of layers
+            number of recurrent layers
                 no GRU layers
                 one GRU layer
                 three GRU layers
