@@ -213,7 +213,7 @@ experimental_evaluation = """
             number of convolutional blocks
                 one block
                 four blocks
-            filters/kernel ratio
+            filters-kernel ratio
                 same filters, growing kernel
             number of convolutional layers
                 no convolutional layers
