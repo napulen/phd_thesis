@@ -1,0 +1,19 @@
+% Copyright 2022 Néstor Nápoles López
+
+Some of the predictions from the neural network provide
+redundant information. For example, the \gls{pcset121} can
+be derived from the \gls{bass35}, \gls{tenor35},
+\gls{alto35}, and \gls{soprano35} or from the \gls{rn31} and
+\gls{tonicization35}. There are advantages and disadvantages
+of each of those classifiers. For instance, the
+\gls{pcset121} is bounded to the chord vocabulary. That is,
+the prediction from the highest probability at each timestep
+will always result in a ``valid'' chord, whereas \gls{rn31}
+and \gls{tonicization35} might provide a nonsensical
+interpretation.
+
+Another possibility, which is the one proposed here, is in
+fact to use information from all the classifiers to
+reconstruct the \gls{rna} label. In this section, the
+results of using individual predictors is compared against
+the combination of predictions.
