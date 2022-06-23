@@ -220,26 +220,21 @@ experimental_evaluation = """
                 five layers
                 seven layers
         changing the dense layers
-            number of layers
-                one dense layer
-                three dense layers
             linear and nonlinear layers
                 linear layers
         changing the recurrent layers
             number of recurrent layers
                 no GRU layers
-                one GRU layer
-                three GRU layers
             layer type
                 unidirectional
-        effects of data augmentation
-            transposition
-                no transposition
-            synthesis
-                no texturization
-                texturization per file
-                texturization per transposition
     best performing model configuration
+    effects of data augmentation
+        transposition only
+        synthesis only
+        synthesis and transposition
+            no texturization
+            texturization per file
+            texturization per transposition
     best strategy for final roman numeral reconstruction
         PitchClassSet121 only
         CommonRomanNumerals31 only
