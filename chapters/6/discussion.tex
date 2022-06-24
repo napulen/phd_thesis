@@ -1,4 +1,19 @@
 % Copyright 2022 Néstor Nápoles López
 
-The results presented in the previous section indicate that
-\missing{insightful takeaways}.
+A \glspl{rna} system is more than a neural network
+architecture. It should be seen as an end-to-end system that
+consists both machine learning components and rule-based
+systems. When I started this project, I started it under the
+assumption that the goal was to create a ``machine learning
+system'' that would solve the problem. However, from the
+beginning, parsing different datasets in different
+annotation formats soon made me realize that domain
+knowledge was necessary to clean the datasets, standardize
+their musical assumptions, define the chord vocabulary, and
+so on. This is true for the exit of the system as well. The
+way classification outputs are defined, the number of key
+layers in the musical analysis, the spelling of certain
+Roman numerals (e.g., that infamous $\rn{I}\rnsixfour$ vs
+$rn\{V}\rnsixfour$, for which I have a standing). A
+\glspl{rna} system is a unified model that spans both
+technical and musical decisions. It should arguably be evaluated as such.
