@@ -1,0 +1,19 @@
+% Copyright 2022 Néstor Nápoles López
+
+In the baseline model, the convolutional blocks process each
+of the inputs independently, which are later concatenated.
+The architecture of the convolutional blocks is identical,
+using the same number of layers and the same strategy to
+adjust the number of filters and kernel size in each layer.
+The experiments in this section explore modifications to
+those components of the model design.
+\refsubsubsec{numberofconvolutionalblocks} explores the
+performance of neural networks with a single convolutional
+block and an extreme case of separate blocks where even note
+letters and pitch class are processed independently.
+\refsubsubsec{filters-kernelratio} explores the performance
+of the neural network with a constant number of filters in
+each layer, testing the hypothesis that capturing short-term
+patterns is preferred.
+\refsubsubsec{numberofconvolutionallayers} explores changes
+to the number of convolutional layers in each block. 
