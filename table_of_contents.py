@@ -202,6 +202,7 @@ model_design = """
 experimental_evaluation = """
 6-experimental evaluation
     ablation studies
+        baseline model
         changing the input
             pitch spelling encoding method
                 35-one-hot encoding
