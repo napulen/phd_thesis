@@ -207,26 +207,26 @@ experimental_evaluation = """
                 35-one-hot encoding
             onset information
                 no onset information
-                measure onset only
-                note onset only
+                no bottom note information
+                no chroma information
         changing the convolutional layers
             number of convolutional blocks
                 one block
-                four blocks
+                six blocks
             filters-kernel ratio
-                same filters, growing kernel
+                constant number of filters
             number of convolutional layers
                 no convolutional layers
-                five layers
-                seven layers
+                five convolutional layers
+                seven convolutional layers
         changing the dense layers
             linear and nonlinear layers
-                linear layers
+                one linear layer
         changing the recurrent layers
             number of recurrent layers
-                no GRU layers
+                no recurrent layers
             layer type
-                unidirectional
+                unidirectional recurrent layers
     best performing model configuration
     effects of data augmentation
         transposition only
