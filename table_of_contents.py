@@ -250,7 +250,6 @@ experimental_evaluation = """
             hyperparameters
                 number of epochs
                 optimizer
-                learning schedule and learning rate
             data splits
             computing time
     results
