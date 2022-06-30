@@ -241,6 +241,11 @@ experimental_evaluation = """
         CommonRomanNumerals31 only
         SATB only
     evaluation against previous models
+        baseline models
+            melisma (2001)
+            chen and su (2021)
+            micchi et al. (2021)
+            mcleod and rohrmeier (2021)
         experimental set up
             hyperparameters
                 number of epochs
@@ -248,10 +253,6 @@ experimental_evaluation = """
                 learning schedule and learning rate
             data splits
             computing time
-        baseline models
-            chen and su (2018, 2019, 2021)
-            micchi et al. (2020, 2021)
-            mcleod and rohrmeier (2021)
     results
         accuracy on individual tasks
         roman numeral accuracy
