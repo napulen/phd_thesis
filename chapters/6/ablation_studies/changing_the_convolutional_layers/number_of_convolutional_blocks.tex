@@ -1,10 +1,15 @@
 % Copyright 2022 Néstor Nápoles López
 
-Here, two experiments are proposed. The first experiment
-explores the effects of concatenating all the inputs in a
-single convolutional block. The second experiment explores a
-more extreme case of independent inputs, where the pitch
-note letter and pitch class are predicted independently.
+The number of convolutional blocks is defined by the number
+of input representations send to the neural network. In the
+baseline model, there are three convolutional blocks, one
+for each of the \gls{bass19}, \gls{chroma19}, and
+\gls{duration14} representations. Here, two experiments are
+proposed. The first experiment explores the effects of
+concatenating all the input tensors and processing the
+resulting tensor with a single convolutional block. The
+second experiment explores a more extreme case of
+independent inputs, where the \gls{bass19} and \gls{chroma19} are divided into pitch class and note letter representations, for a total of six input representations, which are processed by an independent convolutional block.
 
 \phdparagraph{one block}
 \phdparagraph{six blocks}
