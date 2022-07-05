@@ -93,11 +93,10 @@ O{Caption2 placeholder} O{0.5} O{0.5} m m}{
     \relax
 }
 
-
 \NewDocumentCommand{\phdthreefigures}{ O{Caption1
 placeholder} O{Caption2 placeholder} O{Caption3 placeholder}
 O{0.33} O{0.33} O{0.33} m m m}{
-\begin{figure}[h!]
+  \begin{figure}[h!]
     \centering
     \begin{minipage}{#4\textwidth}
       \centering
@@ -117,9 +116,19 @@ O{0.33} O{0.33} O{0.33} m m m}{
       \captionof{figure}{#3.}
       \label{fig:#9}
     \end{minipage}
-    \end{figure}
-    \relax
-}
+  \end{figure}
+  \relax
+  }
+  
+  \NewDocumentCommand{\phdtable}{ O{Caption placeholder} m}{
+  \begin{table}[]
+    \resizebox{\linewidth}{!}{
+      \input{\cwd/tables/#2}
+    }
+    \caption{#1.}
+    \label{tab:#2}
+  \end{table}
+  }
 
 \newcommand{\rnformat}[1]{\textbf{#1}\relax}
 \newcommand{\rn}[1]{\rnformat{#1}\relax}
