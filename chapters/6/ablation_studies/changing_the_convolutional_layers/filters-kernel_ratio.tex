@@ -1,8 +1,15 @@
 % Copyright 2022 Néstor Nápoles López
 
-One experiment is proposed, maintaining the number of
-trainable parameters as close as possible to the baseline,
-but deprioritizing short-term patterns. Instead, the number
-of filters across all convolutional layers remains constant.
+In the baseline model, the number of filters decreases in
+each layer, while the kernel size increases. An experiment
+is proposed here, where the number of filters across all
+convolutional layers remains constant, keeping the number of
+trainable parameters as close as possible to the baseline.
+Using this configuration, the network will learn a similar
+number of patterns at the level of $\musSixtyFour$ as it
+does for $\musWhole$. In the baseline configuration, I
+hypothesize that more patterns in the short-term kernel
+sizes ($\musSixtyFour$) are beneficial to the performance of
+the model.
 
 \phdparagraph{constant number of filters}
