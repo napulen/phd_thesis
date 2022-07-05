@@ -4,19 +4,30 @@
 compared to the baseline configuration of the
 network]{ablation}
 
-According to the previous experiments, the best
-configuration of the model consists of \missing{parameters
-of the best-performing configuration}.
+\reftab{ablation} shows a summary of the performance of the
+different configurations in the ablation experiments. Some
+of these results confirm the expected results. For example,
+removing the onset information affects the
+\gls{harmonicrhythm7} more than any other change in the
+network, indicating that measure onsets are important for a
+better chord segmentation. Removing the \gls{chroma19} input
+representation has drastic effects on the prediction of
+chords (e.g., \gls{pcset121}, \gls{rn31}), but surprisingly
+also in the \gls{soprano35} task. Removing the bottom note
+affects the performance of the \gls{bass35} task, as
+expected, but also surprisingly the \gls{tenor35} and
+\gls{alto35} as well.
 
-The pitch and onset representations from the input
-contribute differently to the tonal problems at hand.
+Overall, the biggest drop in performance happens when the
+recurrent layers of the network are removed. This has a
+notable effect on the \gls{localkey35} and
+\gls{tonicization35} tasks, which are generally the tasks
+with the longer-term dependencies. 
 
-In the convolutional layers, \missing{important points about
-convolution}.
-
-The dense layers, beyond reducing the dimensionality of each
-timestep in the tensor, \missing{important points about
-dense layers}.
-
-Finally, the lack of recurrent layers results in
-\missing{important points about rnn}.
+All of the modifications in the ablation study have a
+negative performance compared to the baseline model, except
+for the dense linear layer. This was a surprising result,
+because that did not seem to be the case in preliminary
+experiments. It could be that data augmentation has an
+effect in the performance of the baseline model against the
+linear dense variation. This will be explored further.
