@@ -216,8 +216,7 @@ experimental_evaluation = """
             five convolutional layers
             seven convolutional layers
         changing the dense layers
-            linear and nonlinear layers
-                one linear layer
+            one linear layer
         changing the recurrent layers
             number of recurrent layers
                 no recurrent layers
