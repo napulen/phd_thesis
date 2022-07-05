@@ -209,15 +209,12 @@ experimental_evaluation = """
             no bottom note information
             no chroma information
         changing the convolutional layers
-            number of convolutional blocks
-                one block
-                six blocks
-            filters-kernel ratio
-                constant number of filters
-            number of convolutional layers
-                no convolutional layers
-                five convolutional layers
-                seven convolutional layers
+            single convolutional block
+            increased number of convolutional blocks
+            constant number of filters
+            no convolutional layers
+            five convolutional layers
+            seven convolutional layers
         changing the dense layers
             linear and nonlinear layers
                 one linear layer
