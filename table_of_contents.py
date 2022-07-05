@@ -218,10 +218,8 @@ experimental_evaluation = """
         changing the dense layers
             one linear layer
         changing the recurrent layers
-            number of recurrent layers
-                no recurrent layers
-            layer type
-                unidirectional recurrent layers
+            no recurrent layers
+            unidirectional recurrent layers
     best performing model configuration
     effects of data augmentation
         transposition only
