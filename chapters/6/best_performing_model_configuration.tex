@@ -1,25 +1,8 @@
 % Copyright 2022 Néstor Nápoles López
 
-
-\begin{table}[]
-    \begin{tabular}{lcccccccccr}
-                        & Alto35         & Bass35         & HR7             & KeyM38          & PcSet121        & RN31            & Soprano35       & Tenor35         & KeyT38          & \multicolumn{1}{l}{} \\
-    baseline            & 0.673          & 0.752          & 0.782           & 0.747           & 0.732           & 0.57            & 0.714           & 0.715           & 0.768           & \multicolumn{1}{l}{} \\
-    35-one-hot          & -0.002         & -0.005         & -0.02           & -0.003          & -0.001          & 0.015           & 0.003           & -0.002          & 0.004           & -0.011               \\
-    no onset            & -0.014         & -0.029         & \textbf{-0.227} & 0.01            & -0.011          & 0.018           & -0.002          & -0.022          & 0.006           & -0.271               \\
-    no bottom note      & \textbf{-0.14} & \textbf{-0.19} & -0.02           & -0.003          & -0.002          & 0.014           & -0.054          & \textbf{-0.177} & 0.003           & -0.569               \\
-    no chroma           & -0.114         & -0.018         & -0.052          & -0.068          & \textbf{-0.244} & \textbf{-0.183} & \textbf{-0.176} & -0.11           & -0.111          & \textbf{-1.076}      \\
-    one block           & 0              & -0.009         & 0.01            & -0.015          & -0.003          & 0.005           & 0.009           & 0               & -0.01           & -0.013               \\
-    six blocks          & -0.003         & -0.005         & -0.018          & -0.004          & -0.004          & -0.004          & -0.006          & 0.002           & 0.001           & -0.041               \\
-    constant filters    & -0.004         & -0.006         & -0.014          & -0.009          & -0.006          & -0.016          & 0               & -0.003          & 0               & -0.058               \\
-    no conv layers      & -0.006         & -0.005         & 0               & -0.002          & -0.003          & 0               & 0.002           & -0.008          & 0.008           & -0.014               \\
-    five conv layers    & -0.001         & -0.005         & 0.006           & -0.017          & 0.003           & 0.005           & 0.005           & -0.003          & -0.001          & -0.008               \\
-    seven conv layers   & 0.001          & -0.004         & -0.006          & -0.018          & 0.005           & 0.007           & 0.008           & -0.003          & -0.005          & -0.015               \\
-    one linear layer    & 0.005          & 0.008          & -0.001          & -0.015          & 0.004           & 0.016           & 0.008           & 0.007           & 0.007           & 0.039                \\
-    no recurrent layers & -0.046         & -0.054         & -0.068          & \textbf{-0.205} & -0.056          & -0.078          & -0.039          & -0.061          & \textbf{-0.127} & \textbf{-0.734}      \\
-    unidirectional GRU  & -0.013         & -0.016         & -0.005          & -0.095          & -0.024          & -0.025          & -0.017          & -0.018          & -0.057          & -0.27               
-    \end{tabular}
-    \end{table}
+\phdtable[Performance obtained in the ablation studies,
+compared to the baseline configuration of the
+network]{ablation}
 
 According to the previous experiments, the best
 configuration of the model consists of \missing{parameters
