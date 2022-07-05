@@ -3,7 +3,10 @@
 The purpose of the dense layers between the \gls{cnn} and
 \gls{rnn} parts of the network is to reduce the
 dimensionality of the representation after the convolutional
-layers. \refsubsubsec{changingthedenselayers} explores the
-effects of replacing the two dense layers with nonlinear
-activations with one linear layer (i.e., dimensionality
-reduction with a linear behavior). 
+layers. Nevertheless, two dense layers with ReLU nonlinear
+activation functions provided the best performance in
+preliminary experiments.
+\refsubsubsec{linearandnonlinearlayers} explores the effects
+of replacing the two nonlinear dense layers with a linear
+layer that exclusively reduces the dimensionality of each
+timestep.
