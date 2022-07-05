@@ -204,12 +204,10 @@ experimental_evaluation = """
     ablation studies
         baseline model
         changing the input
-            pitch spelling encoding method
-                35-one-hot encoding
-            onset information
-                no onset information
-                no bottom note information
-                no chroma information
+            alternative pitch spelling encoding 
+            no onset information
+            no bottom note information
+            no chroma information
         changing the convolutional layers
             number of convolutional blocks
                 one block
@@ -236,10 +234,6 @@ experimental_evaluation = """
             no texturization
             texturization per file
             texturization per transposition
-    best strategy for final roman numeral reconstruction
-        PitchClassSet121 only
-        CommonRomanNumerals31 only
-        SATB only
     evaluation against previous models
         baseline models
             melisma (2001)
