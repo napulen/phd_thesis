@@ -7,12 +7,14 @@ using the same number of layers and the same strategy to
 adjust the number of filters and kernel size in each layer.
 The experiments in this section explore modifications to
 those components of the model design.
-\refsubsubsec{numberofconvolutionalblocks} explores the
+\refsubsubsec{singleconvolutionalblock} explores the
 performance of the neural network with a single
-convolutional block or an extreme case of six convolutional
-blocks. \refsubsubsec{filters-kernelratio} explores the
+convolutional block. In contrast,
+\refsubsubsec{increasednumberofconvolutionalblocks} explores
+an extreme case of six convolutional blocks.
+\refsubsubsec{constantnumberoffilters} explores the
 performance of the neural network with a constant number of
 filters in each layer, testing the hypothesis that capturing
-short-term patterns is preferred.
-\refsubsubsec{numberofconvolutionallayers} explores changes
-to the number of convolutional layers in each block. 
+short-term patterns is preferred. The remaining experiments
+explore changes to the number of convolutional layers in
+each block. 
