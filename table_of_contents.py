@@ -225,9 +225,6 @@ experimental_evaluation = """
         transposition only
         synthesis only
         synthesis and transposition
-            no texturization
-            texturization per file
-            texturization per transposition
     evaluation against previous models
         baseline models
             melisma (2001)
