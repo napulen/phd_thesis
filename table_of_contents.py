@@ -210,11 +210,8 @@ experimental_evaluation = """
             no chroma information
         changing the convolutional layers
             single convolutional block
-            increased number of convolutional blocks
             constant number of filters
             no convolutional layers
-            five convolutional layers
-            seven convolutional layers
         changing the dense layers
             one linear layer
         changing the recurrent layers
