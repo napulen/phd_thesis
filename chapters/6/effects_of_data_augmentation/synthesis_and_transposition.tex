@@ -1,7 +1,25 @@
 % Copyright 2022 Néstor Nápoles López
 
 The techniques of transposition and synthesis of new
-training examples are not mutually exclusive. In the
-following experiments, the impact of different
-configurations of the texturized synthetic examples is
+training examples are not mutually exclusive. In the last
+experiment, the impact of both techniques in conjunction is
 evaluated.
+
+Because the individual datasets used in this \thesisdiss{}
+vary significantly from each other, the experiments with
+data augmentation techniques were performed over each
+individual dataset. The results in Figures
+\ref{fig:da_val_loss} and \ref{fig:da_val_accuracy} show the
+performance of the model with and without data augmentation
+for 200 epochs on each dataset. \reftab{augmentation}
+summarizes the performance obtained after selecting the best
+weights for each experiment.
+
+\phdfigure[Validation loss of the different data
+augmentation strategies]{da_val_loss}
+
+\phdfigure[Validation accuracy of the different data
+ augmentation strategies]{da_val_accuracy}
+
+\phdtable[Contribution of the data augmentation
+ techniques]{augmentation}
