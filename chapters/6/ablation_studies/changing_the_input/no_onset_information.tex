@@ -1,4 +1,11 @@
 % Copyright 2022 Néstor Nápoles López
 
-This experiments showcases the effects of removing the
-\gls{duration14} input representation.
+The measure and note onset provided by the \gls{duration14}
+representation provides the network with structural
+information about the score. Namely, the location of
+beginnings of notes and beginnings of measures. An ablation
+study is proposed where this input representation is
+omitted. The hypothesis is that this will be detrimental to
+the performance of the neural network, particularly,
+affecting the chord segmentation characterized by the
+\gls{harmonicrhythm7} task.
