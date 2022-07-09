@@ -1,0 +1,149 @@
+\phdparagraph{v1.8.0 - june 25, 2022}
+Several minor changes introduced.
+Texturization patterns can now handle durations of a \code{dotted half} and \code{dotted quarter} notes.
+Renaming \code{Duration14} as \code{MeasureNoteOnset14}. It was also separated into \code{MeasureOnset7} and \code{NoteOnset7}
+\code{haydnop20} renamed to \code{haydnsun} all throughout
+\code{TonicizedKey35} and \code{LocalKey35} renamed to \code{TonicizedKey38} and \code{LocalKey38}
+Removed padded timesteps from evaluation
+Other minor corrections
+
+Adding Duration14 as a default input representation.
+Renaming LocalKey38 and TonicizedKey38.
+Renaming MeasureNoteOnset14 and introducing intermediate representations.
+Adding more options for experiment names.
+Reverse logic of transposition arg.
+Adding the fix to the existing texturization patterns for 3/4 and 6/8….
+V180.
+
+\phdparagraph{v1.7.1 - june 20, 2022}
+Patches an issue where percussion tracks would introduce nonsensical pitch information.
+Patches the RomanText output files, which were sometimes invalid.
+
+Pointing README to latest dataset automatically.
+Removing drum parts from music21.stream before processing.
+Improve the rntxt output writer.
+Updating version to 1.7.1.
+
+\phdparagraph{v1.7.0 - june 17, 2022}
+The main contribution of this version is that it introduces the [mozart_piano_sonatas](https://github.com/DCMLab/mozart_piano_sonatas) (mps) dataset.
+
+Reorganizing data collections.
+Fixing trailing newlines.
+Adding mozart_piano_sonatas as submodule.
+Aggregating the MPS dataset.
+Release v1.7.0.
+
+\phdparagraph{v1.6.0 - june 13, 2022}
+This version introduces a new input representation, \code{Duration14}.
+
+This input encodes the \code{measure}-and \code{note}-onset information. That is, it indicates when a new measure begins and the duration elapsed since the last measure. Additionally, it indicates when a new onset begins, and the duration elapsed since the last note onset.
+
+It dramatically improves the performance of the \code{HarmonicRhythm7} task.
+
+
+Adding Duration14 input representation.
+Duration14 fixes.
+Updating pretrained model of v1.6.0.
+
+\phdparagraph{v1.5.1 - march 26, 2022}
+Same as \code{v1.5.0}. However, the pretrained model was changed for a version without \code{Dropout} at the end. It turns out that the \code{HarmonicRhythm} classifier is more stable this way.
+
+\phdparagraph{v1.5.0 - march 13, 2022}
+Improved padding of sequences #56 
+Added an additional option for texturizing the synthetic examples at each transposition (as opposed to one texturization per training file) #58 
+Improved parsing/resolution of Roman numeral labels at training and inference
+
+\phdparagraph{v1.4.4 - february 21, 2022}
+The main change in \code{v1.4.X} is that the key vocabulary was extended to 38 keys \code{[Bbb/gb, D#/b#]}.
+
+Some other fixes include:
+
+Better handling of Roman numeral translation before training
+More transpositions in data augmentation (byproduct of extending the key vocabulary)
+
+Known issues:
+
+The key-related tasks are still called \code{LocalKey35} and \code{TonicizedKey35}, although they should now be named \code{LocalKey38} and \code{TonicizedKey38}.
+ Left with old name for compatibility, but changing in future releases of \code{v1.4.X}.
+
+\phdparagraph{v1.4.3 - february 20, 2022}
+Turning correction (i.e., collapsing vocabulary before training) back as the default.
+
+\phdparagraph{v1.4.2 - february 20, 2022}
+Adding a way to mimic RomanText's parsing.
+
+\phdparagraph{v1.4.1 - february 19, 2022}
+A round of changes in the way Roman numerals are processed. Work in progress.
+
+\phdparagraph{v1.3.6 - february 16, 2022}
+Correcting a one-line but crucial fix in \code{inference.py}
+
+\phdparagraph{v1.3.5 - february 15, 2022}
+Correcting the Roman numeral reconstruction algorithm.
+
+\phdparagraph{v1.3.4 - february 15, 2022}
+Removing obsolete module evaluate.py.
+Modularizing duplicated code.
+Adding pretrained model v1.3.3+.
+
+\phdparagraph{v1.3.3 - february 14, 2022}
+Making transposition based on tonicizations rather than modulations.
+String-replacing iio7 to half-diminished and turning I54,i54 into ton….
+
+\phdparagraph{v1.3.2 - february 14, 2022}
+ChordQuality11.
+Updating requirements.txt.
+
+\phdparagraph{v1.3.1 - february 14, 2022}
+Fixing unit tests to work with \code{v1.3.0} model
+Fine-tuning the chord vocabulary and \code{forceTonicization} algorithm
+
+\phdparagraph{v1.3.0 - february 10, 2022}
+
+\phdparagraph{v1.2.2 - february 5, 2022}
+The paper originally described the **six conventional*tasks, and the alternative method based on the **75-most common Roman numerals**.
+
+A Roman numeral can also be reconstructed by predicting the notes conforming the chord. This has become the main approach in this version.
+
+Some other additions include:
+
+An updated \code{README} with instructions for inference and training
+A notebook to run an inference demo
+An updated version of the dataset with the new output representations
+
+\phdparagraph{v1.2.0 - february 5, 2022}
+Redefining default output tasks to the eight SATB ones.
+
+\phdparagraph{v1.1.0 - february 3, 2022}
+This is generally the same version of the \code{AugmentedNet} network presented in the 2021} paper, with some minor improvements.
+
+The \code{HarmonicRhythm} representation was improved to account for imbalanced classes. This provides better chord segmentation.
+A new representation based on *Closed-Positionchord outputs is added to the outputs. The number went from 11 tonal tasks to 14. These new representations are used to predict the final Roman numeral label, instead of all previous methods
+Some minor bugfixes
+
+\phdparagraph{v1.0.0 - august 5, 2021}
+This is the version of the code used for all the revised experiments in the camera-ready paper.
+
+Accompanying this release will be the experiment logs, pre-processed data, and data splits of the paper.
+
+One (and maybe the only) substantial difference between the architecture submitted for the initial submission and this one, is the use of \code{rmsprop} as the optimizer, instead of \code{adam}.
+
+I found that \code{rmsprop} was generally better and decided to use it as the default.
+
+Every revised experiment in the camera-ready paper uses \code{rmsprop}. As observed before, the results went slightly above just because of that.
+
+\phdparagraph{v0.1.0 - may 14, 2021}
+This is the commit version accompanying the paper submission.
+
+The code is not "production ready", but it is the code used to produce the final results in the paper submitted to ISMIR 2021}.
+
+The plan is to clean this code (without making changes to the architecture/output of the model) before releasing to the public.
+
+\phdparagraph{0.0.1 - april 12, 2021}
+This version is the result of experiments that have been going for a while.
+
+It is not stable yet, but I am planning on removing several of the experimental scripts I wrote, mostly when I was validating the data from different collections such as ABC, TAVERN, Haydn Op. 20, and When-in-Rome.
+
+I have a pretty standard workflow for pairing scores and annotations nowadays, so most of these scripts (e.g., measure_alignment.py) just clutter the repository.
+
+Nothing major should have been omitted from this release.
