@@ -18,10 +18,11 @@ network, indicating that measure onsets are important for a
 better chord segmentation. Removing the \gls{chroma19} input
 representation has drastic effects on the prediction of
 chords (e.g., \gls{pcset121}, \gls{rn31}), but surprisingly
-also in the \gls{soprano35} task. Removing the bottom note
-affects the performance of the \gls{bass35} task, as
-expected, but also surprisingly the \gls{tenor35} and
-\gls{alto35} as well.
+only in the \gls{soprano35} task, out of all the ``SATB''
+tasks. On the contrary, removing the bottom note affects the
+performance of the \gls{bass35} task, as expected, but also
+surprisingly affects the \gls{tenor35} and \gls{alto35}
+``SATB'' tasks.
 
 Overall, the biggest drop in performance happens when the
 recurrent layers of the network are removed. This has a
