@@ -17,7 +17,23 @@ or the spelling of certain Roman numerals (e.g., that
 infamous $\rn{I}\rnsixfour$ vs $\rn{V}\rnsixfour$). All of
 these aspects shape the design of a \glspl{rna} system. Such
 a system is a unified model that spans both technical and
-musical decisions. It should arguably be evaluated as such.
+musical decisions.
+
+\reffig{haydn_comparison} shows an example analysis by
+various models compared. As expected by the results
+presented in the table of rare chords, the proposed model is
+the only one able to detect the \gls{augsix} chord in the
+excerpt. There, the model by \textcite{mcleod2021modular}
+proposes a label of g:$\rn{VI}\rnsix$, which is a reasonable
+guess when ignoring the C$\musSharp$ in the first violin.
+However, this intervallic relationship between E$\musFlat$4
+and C$\musSharp$5 is precisely the indication that would
+lead an analyst to label the chord as an augmented sixth.
+Those situations are rare, but also important. They separate
+an automatic model from ``naive'' and ``musically aware''.
+The results in \reftab{rare_chords} indicate that we are far
+from musical awareness, but there is some progress towards
+it.
 
 \phdfigure[Comparison of recent \glspl{rna}
  systems]{haydn_comparison}
