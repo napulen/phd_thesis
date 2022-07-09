@@ -227,7 +227,7 @@ experimental_evaluation = """
             melisma (2001)
             chen and su (2021)
             micchi et al. (2021)
-            mcleod and rohrmeier (2021)
+            McLeod and rohrmeier (2021)
         experimental set up
             hyperparameters
                 number of epochs
