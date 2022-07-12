@@ -255,9 +255,6 @@ conclusions = """
             data-driven texturization
             synthesizing non-chord tones
         extending the chord vocabulary
-            common-tone diminished seventh
-            minor major seventh chords
-            suspensions
         standardization
             consistency in modulations and tonicizations
             consistency in inversions
