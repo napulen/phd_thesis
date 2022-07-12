@@ -243,13 +243,21 @@ experimental_evaluation = """
 
 conclusions = """
 7-conclusions
-    summary of contributions
-    github repository
+    summary of the dissertation
+    summary of the contributions
+    source code and reproducibility
         readme
         releases
-        zenodo archive
+        preprocessed data
+        experiment logs
         API documentation
-        github pages
-    demos
     future work
+        automatic roman numeral analysis
+        music encoding
+        applications
+            analyzed corpora
+            harmonic reduction
+            melody harmonization
+        music theory and education
+    conclusion
 """
