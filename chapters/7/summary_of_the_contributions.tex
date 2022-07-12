@@ -14,6 +14,7 @@ the syntax of the annotation. The review presented in this
 dissertation focuses solely in the use of symbols,
 conventions, and specificities of the \gls{rna} notation
 that are relevant for its digitization and standardization.
+
 \refchap{dataacquisitionandpreparation} documents the
 aggregation process of the, to the best of my knowledge,
 largest publicly available dataset of \glspl{rna} labels.
@@ -23,5 +24,34 @@ metrics and other resources that facilitate the aggregation
 of the data. Furthermore, in \refsubsec{preprocesseddata} of
 the present chapter, the preprocessed data is made publicly
 available for other researchers who may be interested in
-using it, including the splits of the training, validation,
-and test splits used for the experiments.
+using it. The distributed dataset includes the explicit
+splits into training, validation, and test portions used for
+the experiments conducted in this dissertation.
+
+\refchap{modeldesign} describes a novel neural network
+architecture for \glspl{rna}. The architecture is based on a
+previous version presented in
+\textcite{napoleslopez2021augmentednet}, however, the
+structure of the multitask learning configuration presented
+here shows several improvements. Unlike other models, a set
+of tasks that have a more balanced distribution of target
+classes is proposed for different components. For example,
+rather than predicting chord qualities, which are heavily
+skewed towards major and dominant seventh examples in the
+dataset, chords are modeled by predicting four note
+classifiers in the ``SATB'' form of a closed position chord.
+This is an equivalent task to predict chords with a more
+balanced distribution of classes. Other contributions of the
+model include the use of a \gls{pcset121} task, which
+summarizes the chord vocabulary of the system, a
+\gls{harmonicrhythm7} task based on 7 classes of outputs,
+and a vocabulary of 31 Roman numeral numerators \gls{rn31}.
+The input representations sent to the neural network also
+present contributions. For example, the \gls{duration14}
+encoding of note and measure onsets was shown to improve the
+segmentation of the chords in the ablation studies shown in
+\refsec{bestperformingmodelconfiguration}. The alternative
+representation of pitch spelling described in
+\refsubsubsec{19two-hot-encoding} was also shown to be an
+adequate subtitute for the more common representation in
+\refsubsubsec{35one-hotencoding}, without losing performance.
