@@ -251,17 +251,18 @@ conclusions = """
         experiment logs
         API documentation
     future work
-        improvements on automatic roman numeral analysis
-            texturization
-                data-driven texturization
-                synthesizing non-chord tones
-            tonicizations and modulations
-                addressing inconsistencies in datasets
+        texturization
+            data-driven texturization
+            synthesizing non-chord tones
+        extending the chord vocabulary
             common-tone diminished seventh
-        music encoding
-        ambiguity
+            minor major seventh chords
+            suspensions
+        tonicizations and modulations
+            addressing inconsistencies in datasets
+        audio representations
         applications
-            analyzed corpora
+            batch corpus analysis
             harmonic reduction
             melody harmonization
         music theory and machine learning
