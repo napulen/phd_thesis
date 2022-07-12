@@ -259,7 +259,6 @@ conclusions = """
             consistency in modulations and tonicizations
             consistency in inversions
                 french augmented sixth
-                german augmented sixth
                 cadential six-four
         audio support
         applications
