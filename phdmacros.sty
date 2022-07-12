@@ -44,7 +44,8 @@ too very can will just don should now vs in et al}
 
 \newcommand{\footnotelink}[1]{\footnote{\href{#1}{#1}}}
 
-\newcommand{\code}[1]{\texttt{#1}}
+\definecolor{light-gray}{gray}{0.90}
+\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
 
 \newcommand{\missing}[1]{{\color{red} A #1 will be inserted here}}
 % \newcommand{\guide}[1]{{\color{gray}\textbf{#1}}}
@@ -147,3 +148,4 @@ O{0.33} O{0.33} O{0.33} m m m}{
 \newenvironment{italicquotes}
 {\begin{quote}\itshape}
 {\end{quote}}
+
