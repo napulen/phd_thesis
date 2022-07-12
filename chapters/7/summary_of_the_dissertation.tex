@@ -16,11 +16,47 @@ analysis models, and unified datasets to train and evaluate
 such models.
 
 \refchap{introductiontoromannumeralanalysis} discussed the
-gls{rna} notation from the music theory perspective. In this
-chapter, a timeline of the evolution of the syntax was
-presented. This timeline is possibly an useful contribution
-to music theory, as often researchers spend more time
-utilizing the syntax than inspecting its evolution over
-time. This study linked tightly into digitization, where the
-conventions and specificities of the notation are crucial
-for a successful encoding. Several formats were discussed.
+\gls{rna} notation from the music theory perspective. In
+particular, a timeline of the evolution of the syntax was
+presented. This timeline is an useful contribution to music
+theory, as often researchers spend more time utilizing the
+syntax than scrutinizing it. This study linked tightly into
+digitization, where the conventions and specificities of the
+notation are crucial. Several digital formats were discussed
+here.
+
+\refchap{background} introduced a literature review on
+various relevant topics, such as music representation, deep
+neural networks, music information retrieval, and
+computational music theory.
+
+\refchap{dataacquisitionandpreparation} discussed the
+datasets used for training and testing the proposed system.
+The datasets are provided by different researchers and come
+in various formats. Thus, this chapter also discusses the
+challenges in aggregating the datasets, and the process of
+preparing the data.
+
+\refchap{modeldesign} discussed, mainly, the characteristics
+of the proposed neural network model. The different layers
+and components of the model, from inputs to outputs, are
+described in the chapter. Additionally, the methods to turn
+the predictions of the neural network into \gls{rna}
+annotations are also described. Those postprocessing methods
+are based mostly on music theory domain knowledge.
+
+\refchap{experimentalevaluation} introduced the experiments
+to evaluate the proposed system. First, a number of ablation
+studies were proposed to demonstrate the role of different
+components of the neural network in the tasks of the
+\gls{mtl} layout. The model was later compared and evaluated
+against existing approaches for \glspl{rna}. The comparison
+considered common representations of the predicted features
+across algorithms, as well as the performance on difficult
+chords of the \gls{rna} vocabulary. Based on those
+experiments, I conclude that the proposed model generally
+provides a better performance than previous approaches on
+rare chords of the vocabulary, which makes it more useful
+for real applications. The last section of this chapter
+discusses a real musical example annotated by existing
+\glspl{rna} systems, and the implications of those analyses.
