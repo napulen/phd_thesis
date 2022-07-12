@@ -251,8 +251,8 @@ conclusions = """
         experiment logs
         API documentation
     future work
-        automatic roman numeral analysis
-            texturization patterns
+        improvements on automatic roman numeral analysis
+            texturization
                 data-driven texturization
                 synthesizing non-chord tones
             tonicizations and modulations
