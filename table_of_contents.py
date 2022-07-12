@@ -258,13 +258,17 @@ conclusions = """
             common-tone diminished seventh
             minor major seventh chords
             suspensions
-        tonicizations and modulations
-            addressing inconsistencies in datasets
-        audio representations
+        standardization
+            consistency in modulations and tonicizations
+            consistency in inversions
+                french augmented sixth
+                german augmented sixth
+                cadential six-four
+        audio support
         applications
             batch corpus analysis
             harmonic reduction
             melody harmonization
         music theory and machine learning
-    conclusion
+    closing remarks
 """
