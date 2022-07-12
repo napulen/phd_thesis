@@ -253,11 +253,15 @@ conclusions = """
         API documentation
     future work
         automatic roman numeral analysis
+            texturization patterns
+            tonicizations and modulations
+            common-tone diminished seventh
         music encoding
+        ambiguity
         applications
             analyzed corpora
             harmonic reduction
             melody harmonization
-        music theory and education
+        music theory and machine learning
     conclusion
 """
