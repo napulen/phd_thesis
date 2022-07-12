@@ -246,7 +246,6 @@ conclusions = """
     summary of the dissertation
     summary of the contributions
     source code and reproducibility
-        readme
         releases
         preprocessed data
         experiment logs
@@ -254,7 +253,10 @@ conclusions = """
     future work
         automatic roman numeral analysis
             texturization patterns
+                data-driven texturization
+                synthesizing non-chord tones
             tonicizations and modulations
+                addressing inconsistencies in datasets
             common-tone diminished seventh
         music encoding
         ambiguity
