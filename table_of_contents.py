@@ -263,6 +263,5 @@ conclusions = """
             batch corpus analysis
             harmonic reduction
             melody harmonization
-        music theory and machine learning
     closing remarks
 """
