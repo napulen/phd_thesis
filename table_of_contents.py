@@ -257,9 +257,7 @@ conclusions = """
         extending the chord vocabulary
         standardization
             consistency in modulations and tonicizations
-            consistency in inversions
-                french augmented sixth
-                cadential six-four
+            consistency in chords and inversions
         audio support
         applications
             batch corpus analysis
