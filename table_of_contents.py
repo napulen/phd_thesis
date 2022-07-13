@@ -247,6 +247,7 @@ conclusions = """
     summary of the contributions
     source code and reproducibility
         releases
+        pretrained model
         preprocessed data
         experiment logs
         API documentation
