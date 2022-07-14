@@ -49,17 +49,19 @@ classes is proposed for different components. For example,
 rather than predicting chord qualities, which are heavily
 skewed towards major and dominant seventh examples in the
 dataset, chords are modeled by predicting four note
-classifiers in the ``SATB'' form of a closed position chord.
-This is an equivalent task to predict chords with a more
-balanced distribution of classes. Other contributions of the
-model include the use of a \gls{pcset121} task, which
-summarizes the chord vocabulary of the system, a
-\gls{harmonicrhythm7} task based on 7 classes of outputs,
-and a vocabulary of 31 Roman numeral numerators \gls{rn31}.
-The input representations sent to the neural network also
-present contributions. For example, the \gls{duration14}
-encoding of note and measure onsets was shown to improve the
-segmentation of the chords in the ablation studies shown in
+classifiers in the \gls{satb35} tasks. Each of these tasks
+represent a note in a \gls{closed-position} form of the
+annotated chord. This is an equivalent task to predict
+chords with a more balanced distribution of classes. Other
+contributions of the model include the use of a
+\gls{pcset121} task, which summarizes the chord vocabulary
+of the system, a \gls{harmonicrhythm7} task based on 7
+classes of outputs, and a vocabulary of 31 Roman numeral
+numerators \gls{rn31}. The input representations sent to the
+neural network also present contributions. For example, the
+\gls{duration14} encoding of note and measure onsets was
+shown to improve the segmentation of the chords in the
+ablation studies shown in
 \refsec{bestperformingmodelconfiguration}. The alternative
 representation of pitch spelling described in
 \refsubsubsec{19two-hot-encoding} was also shown to be an
