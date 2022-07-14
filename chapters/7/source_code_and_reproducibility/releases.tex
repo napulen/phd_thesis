@@ -121,19 +121,12 @@ Fine-tuning the chord vocabulary and
 \phdparagraph{v1.3.0 - february 10, 2022}
 
 \phdparagraph{v1.2.2 - february 5, 2022}
-The paper originally described the **six conventional*tasks,
-and the alternative method based on the **75-most common
-Roman numerals**.
-
-A Roman numeral can also be reconstructed by predicting the
-notes conforming the chord. This has become the main
-approach in this version.
-
-Some other additions include:
-
-An updated \code{README} with instructions for inference and
-training A notebook to run an inference demo An updated
-version of the dataset with the new output representations
+The output \gls{rna} annotations output by the system are
+reconstructed from the \gls{satb35} tasks by default. The
+\code{README} file was updated with instructions for
+inference and training. A Jupyter notebook to run an inference demo
+An updated version of the dataset with the new output
+representations
 
 \phdparagraph{v1.2.0 - february 5, 2022}
 Turned the \gls{satb35} tasks into the default ones computed
@@ -180,14 +173,6 @@ and scores into a tabular format.
 
 This is the date of the initial commit of the project, with
 the commit identifier \code{f721860}.
-
-% v1.1.0 - Adding four-note output representation to
-%     multitask learning - Now the network is capable of
-%     predicting 14 tonal tasks 
-    
-% v1.2.0 - Making the four-note output the default method
-%     for reconstructing Roman numerals - By default, 8
-%     tasks will be computed 
     
 % v1.2.1 - Providing pre-trained model (14 outputs) 
     
