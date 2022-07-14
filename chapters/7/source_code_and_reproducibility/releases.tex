@@ -55,56 +55,23 @@ for texturizing the synthetic examples at each transposition
 (as opposed to one texturization per training file).
 
 \phdparagraph{v1.4.4 - february 21, 2022}
-The main change in \code{v1.4.X} is that the key vocabulary
-was extended to 38 keys \code{Bbb/gb, D\#/b\#}.
-
-Some other fixes include:
-
-Better handling of Roman numeral translation before training
-More transpositions in data augmentation (byproduct of
-extending the key vocabulary)
-
-Known issues:
-
-The key-related tasks are still called \code{LocalKey35} and
- \code{TonicizedKey35}, although they should now be named
- \code{LocalKey38} and \code{TonicizedKey38}. Left with old
- name for compatibility, but changing in future releases of
- \code{v1.4.X}.
-
-\phdparagraph{v1.4.3 - february 20, 2022}
-Turning correction (i.e., collapsing vocabulary before
-training) back as the default.
-
-\phdparagraph{v1.4.2 - february 20, 2022}
-Adding a way to mimic RomanText's parsing.
-
-\phdparagraph{v1.4.1 - february 19, 2022}
-A round of changes in the way Roman numerals are processed.
-Work in progress.
-
-\phdparagraph{v1.3.6 - february 16, 2022}
-Correcting a one-line but crucial fix in \code{inference.py}
-
-\phdparagraph{v1.3.5 - february 15, 2022}
-Correcting the Roman numeral reconstruction algorithm.
-
-\phdparagraph{v1.3.4 - february 15, 2022}
-Removing obsolete module evaluate.py. Modularizing
-duplicated code. Adding pretrained model v1.3.3+.
+Extending the vocabulary of keys from 35 to 38 clases. The
+new vocabulary spans the keys B$\musDoubleFlat$/g$\musFlat$
+to D$\musSharp$/b$\musSharp$. Additionally, the translation
+of Roman numeral labels before training was improved.
 
 \phdparagraph{v1.3.3 - february 14, 2022}
-Making transposition based on tonicizations rather than
-modulations. String-replacing iio7 to half-diminished and
-turning I54,i54 into ton….
-
-\phdparagraph{v1.3.2 - february 14, 2022}
-ChordQuality11. Updating requirements.txt.
+The transposition algorithm for data augmentation is now
+based on tonicizations rather than modulations. Forcing all
+$\rn{ii}\rndim{}\rnseven$ annotations to be interpreted as
+$\rn{ii}\rnhdim{}\rnseven$. Collapsing other annotations,
+such as \code{i54} into the closest chord in the vocabulary
+using cosine similarity.
 
 \phdparagraph{v1.3.1 - february 14, 2022}
-Fixing unit tests to work with \code{v1.3.0} model
-Fine-tuning the chord vocabulary and
-\code{forceTonicization} algorithm
+Fixing unit tests to work with the pretrained model of
+\code{v1.3.0}. Fine-tuning the chord vocabulary and
+improving the \code{forceTonicization} algorithm.
 
 \phdparagraph{v1.3.0 - february 14, 2022}
 Replacing the use of the \code{romanNumeralFromChord()}
