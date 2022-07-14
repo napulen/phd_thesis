@@ -119,6 +119,28 @@ Fine-tuning the chord vocabulary and
 \code{forceTonicization} algorithm
 
 \phdparagraph{v1.3.0 - february 10, 2022}
+Replacing the use of the \code{romanNumeralFromChord()}
+function of the \emph{music21}
+\parencite{cuthbert2010music21} library with Roman numerals
+from the custom chord vocabulary. Using the chord vocabulary
+facilitates the standardization of the chord names. The
+vocabulary is implemented to standardize both the training
+annotations that enter the system, and the output
+annotations generated in inference mode.
+
+\phdparagraph{v1.2.4 - february 14, 2022} 
+Extended the vocabulary of PitchClassSets to 121. The
+resulting task \gls{pcset121} has a more robust vocabulary
+than the previous version based on 94 classes. This means
+that \code{v1.2.4} is backwards-incompatible with models
+trained on previous versions.
+
+
+\phdparagraph{v1.2.3 - february 14, 2022}
+Introduced the keydistance algorithm. This algorithm is used
+to find the closest key to a given key, which is useful to
+force tonicizations when a chord does not exist in the
+vocabulary.
 
 \phdparagraph{v1.2.2 - february 5, 2022}
 The output \gls{rna} annotations produced by the system are
@@ -175,20 +197,5 @@ and scores into a tabular format.
 This is the date of the initial commit of the project, with
 the commit identifier \code{f721860}.
     
-% v1.2.1 - Providing pre-trained model (14 outputs) 
-    
-% v1.2.2 - Updating pre-processed dataset that works with
-%     v1.2.1 network
 
-% v1.2.3 - Introducing the keydistance metric for forcing
-%     tonicizations 
-
-% v1.2.4 - Extending the vocabulary of PitchClassSets to 121
-%     classes, a more robust vocabulary than
-%     PitchClassSets94 - This means that v1.2.4 is
-%     backwards-incompatible with models trained on previous
-%     versions v1.3.0 - Replacing romanNumeralFromChord with
-%     custom chord vocabulary - Using this chord vocabulary
-%     not only at inference, but for standardizing the input
-%     training data
 
