@@ -26,28 +26,20 @@ automatically. Removing drum parts from
 
 \phdparagraph{v1.7.0 - june 17, 2022}
 The main contribution of this version is that it introduces
-the mozart\_piano\_sonatas (mps) dataset.
-
-Reorganizing data collections. Fixing trailing newlines.
-Adding mozart\_piano\_sonatas as submodule. Aggregating the
-MPS dataset. Release v1.7.0.
+the \gls{mps} dataset into the aggregated dataset. The code
+that organizes all the individual datasets was restructured
+as well. 
 
 \phdparagraph{v1.6.0 - june 13, 2022}
-This version introduces a new input representation,
-\code{Duration14}.
-
-This input encodes the \code{measure}-and \code{note}-onset
-information. That is, it indicates when a new measure begins
-and the duration elapsed since the last measure.
-Additionally, it indicates when a new onset begins, and the
-duration elapsed since the last note onset.
-
+This version introduced the new input representation
+\gls{duration14}. This input representation encodes the
+measure-and note-onset information. That is, it indicates
+when a new measure begins and the duration elapsed since the
+last measure. Additionally, it indicates when a new onset
+begins, and the duration elapsed since the last note onset.
 It dramatically improves the performance of the
-\code{HarmonicRhythm7} task.
-
-
-Adding Duration14 input representation. Duration14 fixes.
-Updating pretrained model of v1.6.0.
+\code{HarmonicRhythm7} task (around 30\% of accuracy
+improvement).
 
 \phdparagraph{v1.5.1 - march 26, 2022}
 Same as \code{v1.5.0}. However, the pretrained model was
