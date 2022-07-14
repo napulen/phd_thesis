@@ -140,9 +140,9 @@ Redefining default output tasks to the eight SATB ones.
 
 \phdparagraph{v1.1.0 - february 3, 2022}
 This version introduced the \gls{harmonicrhythm7} output
-task as a substitue of a previous binary classifier, which
-addresses the class imbalance in chord segmentation. This
-representation leads to a better chord segmentation. The
+task as a substitute of a previous binary classifier. This
+addresses the class imbalance in the previous version of the
+task, which leads into a better chord segmentation. The
 \gls{satb35} tasks were also added to the architecture. 
 
 \phdparagraph{v1.0.0 - august 5, 2021}
@@ -178,13 +178,13 @@ and scores into a tabular format.
 This is the date of the initial commit of the project, with
 the commit identifier \code{f721860}.
 
-% v1.1.0 - Adding four-note output representation to multitask
-%     learning - Now the network is capable of predicting 14
-%     tonal tasks 
+% v1.1.0 - Adding four-note output representation to
+%     multitask learning - Now the network is capable of
+%     predicting 14 tonal tasks 
     
-% v1.2.0 - Making the four-note output the default method for
-%     reconstructing Roman numerals - By default, 8 tasks will
-%     be computed 
+% v1.2.0 - Making the four-note output the default method
+%     for reconstructing Roman numerals - By default, 8
+%     tasks will be computed 
     
 % v1.2.1 - Providing pre-trained model (14 outputs) 
     
@@ -195,10 +195,11 @@ the commit identifier \code{f721860}.
 %     tonicizations 
 
 % v1.2.4 - Extending the vocabulary of PitchClassSets to 121
-%     classes, a more robust vocabulary than PitchClassSets94
-%     - This means that v1.2.4 is backwards-incompatible with
-%     models trained on previous versions v1.3.0 - Replacing
-%     romanNumeralFromChord with custom chord vocabulary -
-%     Using this chord vocabulary not only at inference, but
-%     for standardizing the input training data
+%     classes, a more robust vocabulary than
+%     PitchClassSets94 - This means that v1.2.4 is
+%     backwards-incompatible with models trained on previous
+%     versions v1.3.0 - Replacing romanNumeralFromChord with
+%     custom chord vocabulary - Using this chord vocabulary
+%     not only at inference, but for standardizing the input
+%     training data
 
