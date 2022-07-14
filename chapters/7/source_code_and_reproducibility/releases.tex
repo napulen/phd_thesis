@@ -42,9 +42,10 @@ It dramatically improves the performance of the
 improvement).
 
 \phdparagraph{v1.5.1 - march 26, 2022}
-This version removed the \emph{dropout} layers that were
-originally part of the architecture . It turns out that the
-\code{HarmonicRhythm} classifier is more stable this way.
+This version removed the \emph{dropout} layers
+\parencite{dahl2013improving} that were originally part of
+the architecture. It was discovered that these layers were
+detrimental for the \gls{harmonicrhythm7} task.
 
 \phdparagraph{v1.5.0 - march 13, 2022}
 Improved padding of sequences \#56 Added an additional
