@@ -155,19 +155,16 @@ label, instead of all previous methods Some minor bugfixes
 The published version of the \gls{augmentednet} network in
 \textcite{napoleslopez2021augmentednet}. This is the version
 of the code used for all the revised experiments in the
-camera-ready paper.
-
-Accompanying this release are the experiment logs,
-pre-processed data, and data splits of the paper.
-
-One (and maybe the only) substantial difference between the
-architecture submitted in the initial submission and this
-one, is the use of \code{rmsprop} as the optimizer, instead
-of \code{adam}. I found that \code{rmsprop} was generally
-better and decided to use it as the default. Every revised
-experiment in the camera-ready paper uses \code{rmsprop}. As
-observed before, the results went slightly above just
-because of that.
+camera-ready paper. Accompanying this release are the
+experiment logs, pre-processed data, and data splits of the
+paper. One (and maybe the only) substantial difference
+between the architecture submitted in the initial submission
+and this one, is the use of \code{rmsprop} as the optimizer,
+instead of \code{adam}. I found that \code{rmsprop} was
+generally better and decided to use it as the default. Every
+revised experiment in the camera-ready paper uses
+\code{rmsprop}. As observed before, the results went
+slightly above just because of that.
 
 \phdparagraph{v0.1.0 - may 14, 2021}
 This is the commit version accompanying the paper submission
@@ -187,9 +184,6 @@ and scores into a tabular format.
 This is the date of the initial commit of the project, with
 the commit identifier \code{f721860}.
 
-
-v1.0.0
-    - Version published in ISMIR paper
 v1.1.0
     - Adding four-note output representation to multitask learning
     - Now the network is capable of predicting 14 tonal tasks
