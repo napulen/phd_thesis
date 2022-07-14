@@ -139,17 +139,11 @@ version of the dataset with the new output representations
 Redefining default output tasks to the eight SATB ones.
 
 \phdparagraph{v1.1.0 - february 3, 2022}
-This is generally the same version of the
-\code{AugmentedNet} network presented in the 2021 paper,
-with some minor improvements.
-
-The \code{HarmonicRhythm} representation was improved to
-account for imbalanced classes. This provides better chord
-segmentation. A new representation based on
-*Closed-Positionchord outputs is added to the outputs. The
-number went from 11 tonal tasks to 14. These new
-representations are used to predict the final Roman numeral
-label, instead of all previous methods Some minor bugfixes
+This version introduced the \gls{harmonicrhythm7} output
+task as a substitue of a previous binary classifier, which
+addresses the class imbalance in chord segmentation. This
+representation leads to a better chord segmentation. The
+\gls{satb35} tasks were also added to the architecture. 
 
 \phdparagraph{v1.0.0 - august 5, 2021}
 The published version of the \gls{augmentednet} network in
