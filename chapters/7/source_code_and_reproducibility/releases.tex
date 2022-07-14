@@ -2,22 +2,17 @@ The complete listing of releases of the proposed system is
 presented below, ordered from most recent to oldest.
 
 \phdparagraph{v1.8.0 - june 25, 2022}
-Several minor changes introduced. Texturization patterns can
-now handle durations of a \code{dotted half} and
-\code{dotted quarter} notes. Renaming \code{Duration14} as
-\code{MeasureNoteOnset14}. It was also separated into
-\code{MeasureOnset7} and \code{NoteOnset7} \code{haydnop20}
-renamed to \code{haydnsun} all throughout
-\code{TonicizedKey35} and \code{LocalKey35} renamed to
-\code{TonicizedKey38} and \code{LocalKey38} Removed padded
-timesteps from evaluation Other minor corrections
-
-Adding Duration14 as a default input representation.
-Renaming LocalKey38 and TonicizedKey38. Renaming
-MeasureNoteOnset14 and introducing intermediate
-representations. Adding more options for experiment names.
-Reverse logic of transposition arg. Adding the fix to the
-existing texturization patterns for 3/4 and 6/8…. V180.
+Texturization patterns can handle durations of a dotted half
+(\musHalfDotted) and dotted quarter (\musQuarterDotted)
+notes. Renaming the \gls{duration14} task in the code. The
+\gls{duration14} was also divided into \code{MeasureOnset7}
+and \code{NoteOnset7}, for easier experimentation with note
+onsets and measure onsets. The \gls{haydnsun} dataset was
+renamed internally, and so were the \gls{tonicization38} and
+\gls{localkey38} tasks to correspond with the new vocabulary
+of 38 keys. Improving the evaluation of the model by
+removing any padding from the input test sequences, which
+were considered before.
 
 \phdparagraph{v1.7.1 - june 20, 2022}
 Patches an issue where percussion tracks would introduce
@@ -118,7 +113,7 @@ Fixing unit tests to work with \code{v1.3.0} model
 Fine-tuning the chord vocabulary and
 \code{forceTonicization} algorithm
 
-\phdparagraph{v1.3.0 - february 10, 2022}
+\phdparagraph{v1.3.0 - february 14, 2022}
 Replacing the use of the \code{romanNumeralFromChord()}
 function of the \emph{music21}
 \parencite{cuthbert2010music21} library with Roman numerals
