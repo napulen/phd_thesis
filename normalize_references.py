@@ -74,7 +74,7 @@ def replace_nonenglish_letters(old):
     new = re.sub(r"[Æ]", "AE", new)
     new = re.sub(r"[ÇĊ]", "C", new)
     new = re.sub(r"[Ð]", "D", new)
-    new = re.sub(r"[Ł]", "l", new)
+    new = re.sub(r"[Ł]", "L", new)
     new = re.sub(r"[Ñ]", "N", new)
     new = re.sub(r"[æ]", "ae", new)
     new = re.sub(r"[çċ]", "c", new)
@@ -85,46 +85,33 @@ def replace_nonenglish_letters(old):
     return new
 
 
-def cli():
-    parser = argparse.ArgumentParser(
-        description="Normalize the format of the references."
-    )
-    parser.add_argument(
-        "--modify",
-        action="store_true",
-        help="update the changes in the files (CAREFUL!)",
-    )
-    parser.add_argument(
-        "-v", "--verbose", action="store_true", help="verbose output"
-    )
-    return parser.parse_args()
-
-
 def sort(data):
-    entries = data.strip().split("},\n}\n")
-    ids = [x.split("{", 1)[1].split(",", 1)[0] for x in entries]
+    # end the file with exactly one trailing newline
+    data = data.strip() + "\n"
+    entries = data.split("},\n}\n")
+    ids = [x.split("{", 1)[1].split(",", 1)[0] for x in entries if x]
     sortbyid = sorted(zip(entries, ids), key=lambda x: x[1])
     sortedentries = [x[0] for x in sortbyid]
     sorteddata = "},\n}\n".join(sortedentries) + "},\n}\n"
     return sorteddata
 
 
-def run(modify=False, verbose=True):
+def run(modify=False, tex=False, bib=True, verbose=True):
     loglevel = logging.INFO if verbose else logging.WARNING
     logging.basicConfig(stream=sys.stdout, level=loglevel)
     for root, _, filenames in os.walk("."):
         for f in filenames:
-            if not f.endswith(".tex") and not f.endswith(".bib"):
-                # logging.info(f"Ignoring file {f}")
+            _, ext = os.path.splitext(f)
+            if ext not in [".tex", ".bib"]:
+                continue
+            if ext == ".tex" and not tex:
+                continue
+            if ext == ".bib" and not bib:
                 continue
             path = os.path.join(root, f)
             logging.info(path)
             with open(path) as fd:
                 contents = fd.read()
-            # homogenize non-English names and words
-            # logging.info("\tHomogenizing non-English characters") contentsEN =
-            # replace_nonenglish_letters(contents) turn all zotero-like
-            # identifiers into google-scholar-like ones
             logging.info("\tTurning zotero-like ids into google-scholar-like")
             google = re.sub(ZOTEROLIKE, zotero_to_google_id, contents)
             # normalize everything else (dashes, colons, compound names, etc.)
@@ -141,6 +128,28 @@ def run(modify=False, verbose=True):
         logging.warning("Add --modify to make changes permanent.")
 
 
+def cli():
+    parser = argparse.ArgumentParser(
+        description="Normalize the format of the references."
+    )
+    parser.add_argument(
+        "--modify",
+        action="store_true",
+        help="update the changes in the files (CAREFUL!)",
+    )
+    parser.add_argument(
+        "-v", "--verbose", action="store_true", help="verbose output"
+    )
+    parser.add_argument(
+        "-t", "--tex", action="store_true", help="Process .tex files"
+    )
+    parser.add_argument(
+        "-b", "--bib", action="store_true", help="Process .bib files"
+    )
+    return parser
+
+
 if __name__ == "__main__":
-    args = cli()
+    parser = cli()
+    args = parser.parse_args()
     run(**vars(args))
