@@ -21,19 +21,18 @@ training such \gls{rnn} architectures made them unfeasible
 in practical applications before the invention of the
 \gls{lstm} architecture \parencite{hochreiter1997long}. They
 were popularized during the \emph{deep learning} wave of
-research and, since then, achieved state-of-the-art
-performance in many tasks involving sequential data (e.g.,
-speech recognition, natural language processing, music).
+research and, since then, applied to many tasks involving
+sequential data.
 
 Throughout the years, different strategies have been
 proposed to design \glspl{rnn}, for example, connecting the
 output of one time step into the next time step (Jordan
 \gls{rnn}), connecting the hidden state of one time step to
 the next (Elman \gls{rnn}), and training the network in both
-directions \parencite{schuster1997bidirectional}.
-
-It is common to see several of these techniques combined in
-a single architecture, for example, a \gls{cblstm}.
+directions \parencite{schuster1997bidirectional}. It is
+common to see several of these techniques combined in a
+single architecture, for example, a \gls{cblstm}, such as
+the one by \textcite{vogl2017drum}.
 
 In \gls{mir}, \glspl{rnn} and hybrid \glspl{crnn} have been
 applied in numerous tasks. For example, onset detection
