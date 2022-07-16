@@ -121,15 +121,24 @@ O{0.33} O{0.33} O{0.33} m m m}{
   \relax
   }
   
-  \NewDocumentCommand{\phdtable}{ O{Caption placeholder} m}{
+\NewDocumentCommand{\phdtablefit}{ O{Caption placeholder} m}{
+\begin{table}[h!]
+  \resizebox{\linewidth}{!}{
+    \input{\cwd/tables/#2}
+  }
+  \caption{#1.}
+  \label{tab:#2}
+\end{table}
+}
+
+\NewDocumentCommand{\phdtable}{ O{Caption placeholder} m}{
   \begin{table}[h!]
-    \resizebox{\linewidth}{!}{
-      \input{\cwd/tables/#2}
-    }
+    \centering
+    \input{\cwd/tables/#2}
     \caption{#1.}
     \label{tab:#2}
   \end{table}
-  }
+}
 
 \newcommand{\rnformat}[1]{\textbf{#1}\relax}
 \newcommand{\rn}[1]{\rnformat{#1}\relax}
