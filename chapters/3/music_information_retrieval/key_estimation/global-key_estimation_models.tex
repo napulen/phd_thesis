@@ -730,19 +730,19 @@ of music. The model was based on a \gls{cnn} that received a
 log-magnitude log-frequency spectrogram as its input.
 Initially, during training, the model received the full
 spectrogram, however, this computation turned out to be
-expensive. Korzeniowski and Widmer proposed showing the
-network only \emph{snippets} (20 seconds) of the
-spectrogram. This improvement decreased the training time
-but assumed that any arbitrary 20-second audio fragment
-would display the global key, disallowing the model to
-operate with music files featuring modulations. The model
-was trained on three datasets: the GiantSteps \gls{mtg} Key
-dataset by \textcite{faraldo2016key}, the McGill Billboard
-dataset by \textcite{burgoyne2011expert}, and an internal
-dataset with classical music. The model was submitted to the
-\gls{mirex} campaign of 2018 and it was successful at
-generalizing the key of different genres, outperforming
-existing audio \gls{gke} models.
+expensive. Thus, they proposed showing the network only
+\emph{snippets} (20 seconds) of the spectrogram. This
+improvement decreased the training time but assumed that any
+arbitrary 20-second audio fragment would display the global
+key, disallowing the model to operate with music files
+featuring modulations. The model was trained on three
+datasets: the GiantSteps \gls{mtg} Key dataset by
+\textcite{faraldo2016key}, the McGill Billboard dataset by
+\textcite{burgoyne2011expert}, and an internal dataset with
+classical music. The model was submitted to the \gls{mirex}
+campaign of 2018 and it was successful at generalizing the
+key of different genres, outperforming existing audio
+\gls{gke} models.
 
 % % Schreiber and Mueller (2019)
 
