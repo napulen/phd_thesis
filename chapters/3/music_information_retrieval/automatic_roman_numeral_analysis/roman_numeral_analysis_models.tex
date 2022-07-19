@@ -220,21 +220,21 @@ mechanisms to improve the performance of \gls{acr}, paying
 special consideration to chord segmentation and its
 evaluation.
 
-\textcite{micchi2020not} proposed a DenseNet-like
+\textcite{micchi2020not} proposed a \emph{DenseNet}-like
 \parencite{huang2017densely} \gls{cnn}, followed by a
 recurrent component. The recurrent component consists of a
 bidirectional \gls{gru} \parencite{cho2014learning}
 connected to task-specific dense layers, similar to those of
 \textcite{chen2018functional}. In their experiments, the
-DenseNet-like convolutions outperformed dilated convolutions
-and a \gls{gru} by itself (i.e., with pooling instead of the
-convolutional blocks). Micchi et al.~also demonstrated the
-positive effect of using pitch \textit{spelling} in the
-inputs and outputs. This confers at least two advantages: it
-provides a more informative output (e.g., not only the
-correct key, but the correct spelling between two enharmonic
-keys), and it increases the possible number of
-transpositions available for data augmentation. In
+\emph{DenseNet}-like convolutions outperformed dilated
+convolutions and a \gls{gru} by itself (i.e., with pooling
+instead of the convolutional blocks). Micchi et al.~also
+demonstrated the positive effect of using \emph{pitch
+spelling} in the inputs and outputs. This confers at least
+two advantages: it provides a more informative output (e.g.,
+not only the correct key, but the correct spelling between
+two enharmonic keys), and it increases the possible number
+of transpositions available for data augmentation. In
 \textcite{micchi2021deep}, the same architecture was
 extended to include a \gls{nade} layer, which models a
 dependency between the multitask learning layers, improving
