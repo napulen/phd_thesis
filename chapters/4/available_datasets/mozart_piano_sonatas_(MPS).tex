@@ -5,7 +5,7 @@
 
 The \gls{mps} dataset was introduced by
 \textcite{hentschel2021annotated}. The dataset consists of
-musical scores in MusicXML format, as well as annotations of
+musical scores in \gls{musicxml} format, as well as annotations of
 the harmony and cadence information. The format of the
 annotations is similar to the one in the revised (i.e.,
 version 2) \gls{abc} dataset.
@@ -18,11 +18,11 @@ dataset.
 The first step was to detect collisions in the position of
 two annotations. Collisions happen because the ``Chord''
 objects in MuseScore do not encode a position when they are
-exported to MusicXML. The location of the annotations is
+exported to \gls{musicxml}. The location of the annotations is
 inferred from the surrounding note. However, in instances
 where an annotation is added to a longer note (e.g., half
 way of a whole note), the position is impossible to retrieve
-from the MusicXML file. One way to solve this problem is to
+from the \gls{musicxml} file. One way to solve this problem is to
 create an additional part in MuseScore with a sufficient
 note/rest onsets to accomodate the annotation's location. I
 processed all the scores that required this modification
