@@ -101,20 +101,20 @@ O{0.33} O{0.33} O{0.33} m m m}{
     \centering
     \begin{minipage}{#4\textwidth}
       \centering
-      \includegraphics[width=0.9\linewidth]{\cwd/figures/#7}
       \captionof{figure}{#1.}
+      \includegraphics[width=0.9\linewidth]{\cwd/figures/#7}
       \label{fig:#7}
     \end{minipage}%
     \begin{minipage}{#5\textwidth}
       \centering
-      \includegraphics[width=0.9\linewidth]{\cwd/figures/#8}
       \captionof{figure}{#2.}
+      \includegraphics[width=0.9\linewidth]{\cwd/figures/#8}
       \label{fig:#8}
     \end{minipage}%
     \begin{minipage}{#6\textwidth}
       \centering
-      \includegraphics[width=0.9\linewidth]{\cwd/figures/#9}
       \captionof{figure}{#3.}
+      \includegraphics[width=0.9\linewidth]{\cwd/figures/#9}
       \label{fig:#9}
     \end{minipage}
   \end{figure}
@@ -123,10 +123,10 @@ O{0.33} O{0.33} O{0.33} m m m}{
   
 \NewDocumentCommand{\phdtablefit}{ O{Caption placeholder} m}{
 \begin{table}[h!]
+  \caption{#1.}
   \resizebox{\linewidth}{!}{
     \input{\cwd/tables/#2}
   }
-  \caption{#1.}
   \label{tab:#2}
 \end{table}
 }
@@ -134,8 +134,8 @@ O{0.33} O{0.33} O{0.33} m m m}{
 \NewDocumentCommand{\phdtable}{ O{Caption placeholder} m}{
   \begin{table}[h!]
     \centering
-    \input{\cwd/tables/#2}
     \caption{#1.}
+    \input{\cwd/tables/#2}
     \label{tab:#2}
   \end{table}
 }
