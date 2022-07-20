@@ -39,6 +39,7 @@ roman_numerals = """
         chord inversions and figured bass
         neapolitans, augmented sixths, and other special chords
         applied chords and tonicization
+        summary of the findings
     digitization of roman numeral annotations
         digital standards
             humdrum(**harm)
