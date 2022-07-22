@@ -123,20 +123,20 @@ O{0.33} O{0.33} O{0.33} m m m}{
   
 \NewDocumentCommand{\phdtablefit}{ O{Caption placeholder} m}{
 \begin{table}[h!]
-  \label{tab:#2}
-  \caption{#1.}
   \resizebox{\linewidth}{!}{
     \input{\cwd/tables/#2}
   }
+  \caption{#1.}
+  \label{tab:#2}
 \end{table}
 }
 
 \NewDocumentCommand{\phdtable}{ O{Caption placeholder} m}{
   \begin{table}[h!]
     \centering
+    \input{\cwd/tables/#2}
     \caption{#1.}
     \label{tab:#2}
-    \input{\cwd/tables/#2}
   \end{table}
 }
 
