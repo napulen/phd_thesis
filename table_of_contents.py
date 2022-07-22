@@ -40,8 +40,8 @@ roman_numerals = """
         neapolitans, augmented sixths, and other special chords
         applied chords and tonicization
         summary of the findings
-    digitization of roman numeral annotations
-        digital standards
+    standardization of roman numeral annotations
+        digital representation of roman numerals
             humdrum(**harm)
             RomanText
             the DCML standard
