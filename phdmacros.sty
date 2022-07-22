@@ -51,12 +51,13 @@ too very can will just don should now vs in et al v v1}
 % \newcommand{\guide}[1]{{\color{gray}\textbf{#1}}}
 \newcommand{\guide}[1]{}
 
+\newcommand{\phdcaption}[1]{\caption{\textsl{#1}}}
 
 \NewDocumentCommand{\phdfigureproxy}{ O{Caption placeholder} O{h!} m}{
     \begin{figure}[#2]
         \centering
         \includegraphics[width=\textwidth]{\cwd/figures/placeholder}
-        \caption{#1.}
+        \phdcaption{#1.}
         \label{fig:#3}
     \end{figure}
     \relax
@@ -68,7 +69,7 @@ O{1.0} O{h!} m}{
     \begin{figure}[#3]
         \centering
         \includegraphics[width=#2\textwidth]{\cwd/figures/#4}
-        \caption{#1.}
+        \phdcaption{#1.}
         \label{fig:#4}
     \end{figure}
     \relax
@@ -124,7 +125,7 @@ O{0.33} O{0.33} O{0.33} m m m}{
 \NewDocumentCommand{\phdtablefit}{ O{Caption placeholder} O{\linewidth} m}{
 \begin{table}[h!]
   \centering
-  \caption{#1.}
+  \phdcaption{#1.}
   \label{tab:#3}
   \resizebox{#2}{!}{%
     \input{\cwd/tables/#3}%
@@ -135,7 +136,7 @@ O{0.33} O{0.33} O{0.33} m m m}{
 \NewDocumentCommand{\phdtable}{ O{Caption placeholder} m}{
   \begin{table}[h!]
     \centering
-    \caption{#1.}
+    \phdcaption{#1.}
     \label{tab:#2}
     \input{\cwd/tables/#2}
   \end{table}
