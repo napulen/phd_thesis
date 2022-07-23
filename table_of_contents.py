@@ -132,7 +132,7 @@ data_acquisition = """
         data-curation metrics
             alignment between scores and annotations
             pitch correspondence between chord annotations and scores
-            bass correspondence between chord annotations and scores
+            correspondence between lowest-sounding note and bass of the chord
         generating training, validation, and test splits
         aggregated dataset summarized
     data augmentation
