@@ -112,6 +112,8 @@ data_acquisition = """
             acquiring matching symbolic scores
         haydn ``sun'' string quartets (HaydnSun)
             format of HaydnSun
+        key modulations and tonicizations (KeyModT)
+            format of KeyModT
         mozart piano sonatas (MPS)
         theme and variation encodings with roman numerals (TAVERN)
             format of TAVERN
