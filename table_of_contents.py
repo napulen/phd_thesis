@@ -276,3 +276,12 @@ conclusions = """
             melody harmonization
     closing remarks
 """
+
+appendix = """
+8-a method for systematic roman numeral analysis
+    the vocabulary of roman numerals
+    the vocabulary of musical keys
+    the vocabulary of pitch-class sets
+    an algorithm to resolve roman numerals from a pitch-class set and key
+    an algorithm to resolve tonicizations
+"""
