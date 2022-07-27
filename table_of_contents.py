@@ -102,21 +102,32 @@ background = """
 data_acquisition = """
 4-data acquisition and preparation
     roman numeral analysis data
+    standardizing the notation between datasets
+    data-curation metrics
+        alignment between scores and annotations
+        pitch correspondence between chord annotations and scores
+        correspondence between lowest-sounding note and bass of the chord
     available datasets
         annotated beethoven corpus (ABC)
             format of ABC
                 version 1
                 version 2
+            summary of the ABC dataset
         beethoven piano sonatas (BPS)
             format of BPS
             acquiring matching symbolic scores
+            summary of the BPS dataset
         haydn ``sun'' string quartets (HaydnSun)
             format of HaydnSun
+            summary of the HaydnSun dataset
         key modulations and tonicizations (KMT)
             format of KMT
+            summary of the KMT dataset
         mozart piano sonatas (MPS)
+            summary of the MPS dataset
         theme and variation encodings with roman numerals (TAVERN)
             format of TAVERN
+            summary of the TAVERN dataset
         when in rome (WiR)
             format of WiR
             converted corpora
@@ -129,12 +140,8 @@ data_acquisition = """
                 bach chorales
                 monteverdi madrigals
                 miscellaneous pieces
+            summary of the WiR dataset
     aggregating all available datasets
-        standardizing the notation between datasets
-        data-curation metrics
-            alignment between scores and annotations
-            pitch correspondence between chord annotations and scores
-            correspondence between lowest-sounding note and bass of the chord
         generating training, validation, and test splits
         aggregated dataset summarized
     data augmentation
