@@ -281,16 +281,15 @@ appendix = """
 8-a method for systematic roman numeral analysis
     the vocabulary of roman numerals
         chords of the major mode
-            triad chords
-            seventh chords
-            augmented dominant
+            major-mode triads
+            major-mode seventh chords
+            major-mode augmented dominant
         chords of the minor mode
-            triads
-            sevenths
+            minor-mode triads
+            minor-mode seventh chords
         chords shared in both modes
             special chords
                 augmented dominant
-                cadential six-four
                 neapolitan chord
                 augmented sixth chords
     the vocabulary of musical keys
