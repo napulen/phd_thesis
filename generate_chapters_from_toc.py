@@ -170,6 +170,7 @@ if __name__ == "__main__":
         + toc.model_design
         + toc.experimental_evaluation
         + toc.conclusions
+        + toc.appendix
     )
     toclist = getTOC(contents)
     for chapter, sections in toclist:
