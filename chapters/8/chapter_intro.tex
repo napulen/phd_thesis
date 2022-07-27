@@ -1,0 +1,32 @@
+% Copyright 2022 Néstor Nápoles López
+
+This annex chapter presents the method followed throughout
+this dissertation for performing \gls{rna}. I decided to
+make this chapter an annex chapter because it comprises a
+few very technical ideas that are relevant all throughout
+the dissertation, and it made sense to make it a
+self-contained section that could be referenced throughout
+the dissertation.
+
+The first sections of the appendix describe the vocabularies
+used throughout the project.
+\refsec{thevocabularyofromannumerals} commences the
+discussion of the method by first defining the vocabulary of
+valid Roman numeral labels.\footnote{This vocabulary refers
+to the Roman numeral ``numerators'' of an annotation. For
+example, the $V$ in $\rn{V}/\rn{ii}$.}
+\refsec{thevocabularyofmusicalkeys} introduces the musical
+keys can be theoretically recognized by \glspl{rna} system.
+This vocabulary of keys also has the purpose of constraining
+the vocabulary of chords (\gls{pcset}s).
+\refsec{thevocabularyofpitch-classsets} introduces the
+vocabulary of \gls{pcset}s that exist within the system.
+\refsec{analgorithmtoresolveromannumeralsfromapitch-classsetandkey}
+introduces an algorithm to resolve a Roman numeral label
+from the vocabulary, given a valid \gls{pcset} and key from
+the vocabulary. \refsec{analgorithmtoresolvetonicizations}
+introduces an algorithm to handle the situations where the
+Roman numeral does not exist for a given \gls{pcset} and
+key. In that case, a tonicization is forced, which will
+result in a valid Roman numeral label tonicizing a scale
+degree of the given key.
