@@ -280,8 +280,22 @@ conclusions = """
 appendix = """
 8-a method for systematic roman numeral analysis
     the vocabulary of roman numerals
+        chords of the major mode
+            triad chords
+            seventh chords
+            augmented dominant
+        chords of the minor mode
+            triads
+            sevenths
+        chords shared in both modes
+            special chords
+                augmented dominant
+                cadential six-four
+                neapolitan chord
+                augmented sixth chords
     the vocabulary of musical keys
     the vocabulary of pitch-class sets
     an algorithm to resolve roman numerals from a pitch-class set and key
     an algorithm to resolve tonicizations
+    example analyses
 """
