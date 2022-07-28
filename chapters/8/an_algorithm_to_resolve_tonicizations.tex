@@ -5,4 +5,16 @@ Consider the case of $\Gamma(\rho, \kappa)$ when $\rho =
 corresponds to the pitches that would conform to a
 $F\musSharp:\rnGer$, $G:\rnVsev$, $G\musFlat:\rnGer$,
 $f\musSharp:\rnGer$, $g\musFlat:\rnGer$, or $g:\rnVsev$
-chords, but it does not have a relationship with the $C$.
+chords, but it does not have a relationship with the key of
+$C$. An experienced analyst would perhaps assume that the
+chord is referring to a \emph{dominant of the dominant}
+chord, $C:\rnVsev/V$. Thus, related to the interpretation
+$G:\rnVsev$ but in a tonicized $G$ major key. Most of the
+times that interpretation would be correct, however, it is
+not trivial to disambiguate the tonicization context
+programmatically.
+
+One way to find a reasonable tonicization given the key
+context is to use a key distance algorithm to find the
+tonicization that would result in the best \gls{rna}
+possible.
