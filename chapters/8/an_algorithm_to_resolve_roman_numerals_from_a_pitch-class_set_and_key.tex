@@ -5,5 +5,9 @@ vocabulary of 121 pitch class sets and a key $\kappa$ that
 is part of the finite vocabulary of 38 keys, the function
 $\Gamma(\rho, \kappa) = \eta$ where $\eta$ is a Roman
 numeral numerator from the bounded vocabulary of 31 Roman
-numerals or the special symbol $chi$ if there is no Roman
+numerals or the special symbol $\chi$ if there is no Roman
 numeral associated with that ($\rho$, $\kappa$) pair.
+
+The function $\Gamma$ can be implemented as a lookup table
+that returns $\chi$ when the duple ($\rho$, $\kappa$) is not
+found, and the Roman numeral $\eta$ otherwise.
