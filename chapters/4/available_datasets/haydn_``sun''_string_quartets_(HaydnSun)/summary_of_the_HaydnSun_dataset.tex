@@ -1,16 +1,31 @@
 % Copyright 2022 Néstor Nápoles López
 
 According to the count performed in this \thesisdiss{}, the
-\gls{haydnsun} dataset has a total duration in quarter notes of
-9,095, across 2,921 measures. After preprocessing and
+\gls{haydnsun} dataset has a total duration in quarter notes
+of 9,095, across 2,921 measures. After preprocessing and
 preparation, the \gls{abc} dataset contributed 5,357
 \gls{rna} chord annotations, which have an average harmonic
 rhythm of 1.7 quarter notes ($\musQuarter$).
 
+The distribution of the \gls{rna} annotations and their
+inversions are shown in \reffig{haydnsun_rn_inversion}.
+Something surprising among the \gls{rna} distribution of
+this dataset is that all of the $\rnIt$ and $\rnGer$
+annotations have been encoded as in ``root position'', which
+is unusual for these types of chords. Most likely, this
+could be a mistranslation of the annotations for this
+particular dataset. Due to the time-consuming nature of such
+translations, an exploration of the translation workflow is
+left for future work. If the annotations are correctly
+labeling a $\rnIt$ or $\rnGer$ chord, they will remain
+useful for classifying the appropriate \gls{pcset} and key
+context.
 
-\phdfigure[All the \gls{rna} labels taken from the \gls{haydnsun}
-dataset. Each bar indicates the counts of the Roman numeral
-class in different inversions]{haydnsun_rn_inversion}
+
+\phdfigure[All the \gls{rna} labels taken from the
+\gls{haydnsun} dataset. Each bar indicates the counts of the
+Roman numeral class in different
+inversions]{haydnsun_rn_inversion}
 
 
 
@@ -21,6 +36,6 @@ datasets][0.5]{haydnsun_pcset_venn}
 
 
 \phdfigure[All the keys spanned by the \gls{rna} annotations
-of the \gls{haydnsun} dataset. For each key, the counts indicate
-which ones correspond to modulations (local key regions) and
-tonicizations ]{haydnsun_key_mod_ton}
+of the \gls{haydnsun} dataset. For each key, the counts
+indicate which ones correspond to modulations (local key
+regions) and tonicizations ]{haydnsun_key_mod_ton}
