@@ -1,0 +1,27 @@
+% Copyright 2022 Néstor Nápoles López
+
+% In supervised learning machine learning methods, it is
+% customary to evaluate the generalization of a model on an
+% unseen portion of data. This is necessary as models tend to
+% \gls{overfit} on the data they are trained with.
+
+% Furthermore, there are several ways to designate that
+% portion of unseen data, such as k-fold cross validation, a
+% validation set, or a training, validation, and test sets. 
+
+% In this research, I opted for training, validation, and test
+% splits. The training split is the data used for training the
+% model. The validation split is to verify the generalization
+% of the model while tuning hyper-parameters, designing the
+% neural network architecture, or making other decisions
+% affecting the model. The test set is an unseen portion of
+% data that remains unused throughout the entire process of
+% designing model, and it is used once (and only once) to
+% evaluate the generalization of the final model.
+
+% In some datasets, such as \gls{bps}, these splits were
+% already provided by other researchers. In those instances,
+% the splits were respected for direct comparison with their
+% models. When not specified, the splits were generated
+% randomly, providing around 70\% of the data for training,
+% 15\% for validation, and 15\% for testing.
