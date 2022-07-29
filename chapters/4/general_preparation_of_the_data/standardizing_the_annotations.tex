@@ -9,11 +9,15 @@ in \refsec{thevocabularyofromannumerals}, which consists of
 supervised learning workflow in a more controlled manner
 during training and evaluation.
 
-Regarding \gls{romantext}, there are two motivations for
+Regarding \gls{romantext}, there are a few motivations for
 choosing it as the container format for all annotation
 files:
 
 \begin{enumerate} 
+    \item It is a stand-alone format, which does not require
+    access to the musical score; this is useful for datasets
+    where the scores are not provided, then the annotations
+    can be aligned with a third-party score
     \item An existing effort has been already done in the
     \gls{wir} dataset
     \parencite{gotham2019romantext, gotham2022openscore}
