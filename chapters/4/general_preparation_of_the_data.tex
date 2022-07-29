@@ -1,6 +1,5 @@
 % Copyright 2022 Néstor Nápoles López
 
-
 The \gls{arna} system developed for this dissertation was
 trained and evaluated with publicly available digital
 \gls{rna} annotations. 
@@ -9,8 +8,8 @@ trained and evaluated with publicly available digital
 musical genre. One of the main characteristics that
 distinguishes them from, for example, chord labeling
 datasets, is that \gls{rna} annotations require a clear
-indication of the local key (see \refsubsec{keyestimation}).
-Thus, knowing the key is a necessity for any dataset to be
+indication of the key (see \refsubsec{keyestimation}). Thus,
+knowing the key is a necessity for any dataset to be
 considered a \gls{rna} dataset. Preferrably, a full Roman
 numeral annotation in string form, such as the ones
 described in the digital standards (see
@@ -24,3 +23,23 @@ key(s) provided, and the \gls{pcset} representation of the
 chord annotation. This is achieved through the method
 described in
 \refappendix{amethodforsystematicromannumeralanalysis}.
+
+% As noted throughout \refsec{availabledatasets}, the
+% available datasets for \gls{arna} are encoded in different
+% digital formats, which are sometimes very different to
+% each other. Because \gls{rna} is not a standardized
+% practice across music schools, countries, or languages,
+% the distinctions between formats may be beyond technical,
+% they might also be musically distinct and encode chords
+% using different musical conventions.
+
+% This introduces some problems, both musical and technical,
+% which need to be addressed to aggregate all the datasets
+% into a unified set.
+% \refsubsec{standardizingthenotationbetweendatasets}
+% describes in more detail some of the issues to overcome in
+% order to aggregate the datasets. Then,
+% \refsubsec{data-curationmetrics} describes a solution to
+% some of these problems, namely, a set of objective metrics
+% that semi-automate the detection, correction, and quality
+% assurance of the data.
