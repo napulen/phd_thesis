@@ -1,33 +1,32 @@
 % Copyright 2022 Néstor Nápoles López
 
-% In order to facilitate the aggregation of all datasets,
-% \gls{romantext} was chosen as the ``container'' digital
-% format for all \gls{rna} annotations. However, the
-% underlying tokens accepted in each of those \gls{romantext}
-% files was reduced to a smaller vocabulary of chords, so that
-% the process of training a model resulted in a more
-% controllable vocabulary of chord classes.
+In order to facilitate the aggregation of all datasets,
+\gls{romantext} was chosen as the ``container'' digital
+format for all \gls{rna} annotations. However, the
+underlying vocabulary of Roman numerals is the one described
+in \refsec{thevocabularyofromannumerals}, which consists of
+31 classes of Roman numerals. This helps to perform the
+supervised learning workflow in a more controlled way for
+training and evaluation.
 
 % There are two motivations for choosing \gls{romantext} as
 % the container format for all annotation files:
 
-% \begin{enumerate}
-%     \item An existing effort has been already done in the
-%     \gls{wir} dataset \parencite{gotham2019romantext,
-%     gotham2022openscore} to convert other datasets into
-%     \gls{romantext}. Thus, taking advantage of that effort
-%     is desirable
-%     \item The \gls{romantext} has been closely integrated to
-%     the music21 Python library
+% \begin{enumerate} \item An existing effort has been
+%     already done in the \gls{wir} dataset
+%     \parencite{gotham2019romantext, gotham2022openscore}
+%     to convert other datasets into \gls{romantext}. Thus,
+%     taking advantage of that effort is desirable \item The
+%     \gls{romantext} has been closely integrated to the
+%     music21 Python library
 %     \parencite{cuthbert2010music21}, which is one of the
 %     most advanced software tools for processing musical
 %     scores, and facilitates the integration of annotations
-%     and \gls{musicxml} files
-% \end{enumerate}
+%     and \gls{musicxml} files \end{enumerate}
 
 % Some of the problems observed when translating existing
 % datasets into this new representation were that: 1) the
 % annotations and scores were misaligned, 2) several chords
-% end up being mislabeled (due to errors in the conversion or
-% errors in the annotation process), and 3) the inversions of
-% the chords were incorrectly indicated.
+% end up being mislabeled (due to errors in the conversion
+% or errors in the annotation process), and 3) the
+% inversions of the chords were incorrectly indicated.
