@@ -141,9 +141,8 @@ data_acquisition = """
                 monteverdi madrigals
                 miscellaneous pieces
             summary of the WiR dataset
-    aggregating all available datasets
-        generating training, validation, and test splits
-        aggregated dataset summarized
+    the aggregated dataset
+    generating training, validation, and test splits   
     data augmentation
         synthesis of artificial examples
             texturization patterns
