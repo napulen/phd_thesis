@@ -1,17 +1,30 @@
 % Copyright 2022 Néstor Nápoles López
 
-Some of the problems observed when standardizing existing
-datasets were that: 1) the annotations and scores were
-misaligned, 2) several chords were mislabeled (due to errors
-in the conversion or errors in the annotations themselves),
-and 3) the inversions of the chords were incorrectly
-annotated.
+% Some of the problems observed when standardizing existing
+% datasets were that: 1) the annotations and scores were
+% misaligned, 2) several chords were mislabeled (due to errors
+% in the conversion or errors in the annotations themselves),
+% and 3) the inversions of the chords were incorrectly
+% annotated.
 
-Reviewing these issues manually requires the inspection of
-the musical scores and annotations, which is extremely time
-consuming. A semi-automatic workflow facilitated the manual
-inspection by pinpointing scores and portions of the score
-that were potentially containing errors. This semi-automatic
-workflow is based on three objective metrics that I designed
-based on the errors that I observed in the data during the
-first days of manual inspection.
+% Reviewing these issues manually requires the inspection of
+% the musical scores and annotations, which is extremely time
+% consuming. A semi-automatic workflow facilitated the manual
+% inspection by pinpointing scores and portions of the score
+% that were potentially containing errors. This semi-automatic
+% workflow is based on three objective metrics that I designed
+% based on the errors that I observed in the data during the
+% first days of manual inspection.
+
+The process of inspecting each dataset to ensure that they
+can be aggregated is very time consuming, and generally
+leads to several corrections of errors. Performing this work
+manually is unrealistic, as each of these datasets involves,
+presumably, hundreds of hours of work by experts in tonal
+harmony, which can doubtly be reviewed by a single person.
+
+In order to lessen this effort, I developed a set of
+objective metrics that were useful in identifying common
+patterns of issues with the quality of an annotation file in
+a dataset. The metrics are based on common corrections that
+I needed to perform in datasets that I aggregated manually.
