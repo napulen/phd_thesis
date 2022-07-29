@@ -1,15 +1,25 @@
 % Copyright 2022 Néstor Nápoles López
 
-% \glspl{rna} datasets often  differ in their size, format,
-% and musical genre. One of the main characteristics that
-% distinguishes them from, for example, chord labeling
-% datasets, is that \gls{rna} annotations require a clear
-% indication of the local key (see \refsubsec{keyestimation}),
-% preferrably with the full Roman numeral annotation in string
-% form as described by one of the digital standards (described
-% in \refsubsec{symbolicmusicformats}). The string form of the
-% Roman numeral is not always provided, and the format of the
-% string form in one digital standard is not always comparable
-% to the one in another digital standard. However, as long as
-% clear indications of local key and chord labels are
-% provided, I would consider it a \gls{rna} dataset.
+
+The \gls{arna} system developed for this dissertation was
+trained from publicly available \gls{rna} annotations in a
+digital format. 
+
+\gls{arna} datasets often  differ in their size, format, and
+musical genre. One of the main characteristics that
+distinguishes them from, for example, chord labeling
+datasets, is that \gls{rna} annotations require a clear
+indication of the local key (see \refsubsec{keyestimation}).
+Thus, knowing the key is a necessity for any dataset to be
+considered a \gls{rna} dataset. Preferrably, a full Roman
+numeral annotation in string form as described by one of the
+digital standards (described in
+\refsubsec{symbolicmusicformats}). However, this is not
+always provided, or the format of the \gls{rna} string
+notation in one digital standard is not compatible with
+another digital standard. For this reason, the approach
+taken in this dissertation is to standardize all the
+annotations based on two pieces of information: the key(s)
+provided, and the \gls{pcset} representation of the chord
+annotation. This is achieved through the method described in
+\refappendix{amethodforsystematicromannumeralanalysis}.
