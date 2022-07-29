@@ -1,0 +1,62 @@
+% Copyright 2022 Néstor Nápoles López
+
+% The process of inspecting each dataset to ensure that they
+% can be aggregated is very time consuming, and generally
+% leads to several corrections of errors. Performing this work
+% manually is unrealistic, as each of these datasets involves,
+% presumably, hundreds of hours of work by experts in tonal
+% harmony, which can doubtly be reviewed by a single person.
+
+% In order to lessen this effort, I developed a set of
+% objective metrics that were useful in identifying common
+% patterns of issues with the quality of an annotation file in
+% a dataset. The metrics are based on common corrections that
+% I needed to perform in datasets that I aggregated manually.
+
+
+\phdparagraph{alignment between scores and annotations}
+
+
+When the annotations and scores are not perfectly aligned,
+this results in a very negative effect, where a model learns
+the wrong chord associations for a musical context. I found
+this one of the most pressing problems to be addressed when
+aggregating the available datasets. However, it is also very
+difficult to detect.
+
+An initial approach is to verify that the duration and
+numbering of a measure matches between the annotation and
+score files. If a measure number changes inconsistently
+between the two, this might indicate a misalignment.
+
+\phdparagraph{pitch correspondence between chord annotations and scores}
+
+Although the presence of nonchord tones and absence of chord
+tones can make it difficult to automatically detect whether
+a chord has been mislabeled, there is usually some shared
+pitch content between the annotation and the score.
+
+Whenever the correspondence of the pitch content and the
+chord annotation is unusually low, this might be an
+indication that the chord has been mislabeled. This
+objective metric has been designed to detect such instances
+(e.g., a $C$ chord has been mislabeled as a $C\sharp$ chord,
+which is unambiguosly incorrect).
+
+\phdparagraph{correspondence between lowest-sounding note and bass of the chord}
+
+
+One of the most common errors done by harmonic analysis
+annotators (even if they are experts) is to mislabel the
+inversion of the chord. This happens likely because the
+annotators pay less attention to this property of the chord
+than, for example, the root. In certain genres, such as
+chorales or string quartets, a higher voice may cross the
+bass momentarily, confusing the annotator into thinking that
+the lowest sounding note of the chord is in the bass voice,
+when it is in fact not the case.
+
+These inconsistencies can be verified in a similar way to
+the pitch correspondence. An unusually low match between the
+annotated bass and the one in the score may indicate that
+the annotator mislabeled the inversion of the chord.
