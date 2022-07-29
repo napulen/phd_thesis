@@ -9,24 +9,27 @@ in \refsec{thevocabularyofromannumerals}, which consists of
 supervised learning workflow in a more controlled manner
 during training and evaluation.
 
-% There are two motivations for choosing \gls{romantext} as
-% the container format for all annotation files:
+Regarding \gls{romantext}, there are two motivations for
+choosing it as the container format for all annotation
+files:
 
-% \begin{enumerate} \item An existing effort has been
-%     already done in the \gls{wir} dataset
-%     \parencite{gotham2019romantext, gotham2022openscore}
-%     to convert other datasets into \gls{romantext}. Thus,
-%     taking advantage of that effort is desirable \item The
-%     \gls{romantext} has been closely integrated to the
-%     music21 Python library
-%     \parencite{cuthbert2010music21}, which is one of the
-%     most advanced software tools for processing musical
-%     scores, and facilitates the integration of annotations
-%     and \gls{musicxml} files \end{enumerate}
+\begin{enumerate} 
+    \item An existing effort has been already done in the
+    \gls{wir} dataset
+    \parencite{gotham2019romantext, gotham2022openscore}
+    to convert other datasets into \gls{romantext}. Thus,
+    taking advantage of that effort is desirable 
+    \item The \gls{romantext} has been closely integrated to
+    the music21 Python library
+    \parencite{cuthbert2010music21}, which is one of the
+    most advanced software tools for processing musical
+    scores, and facilitates the integration of annotations
+    and \gls{musicxml} files 
+\end{enumerate}
 
-% Some of the problems observed when translating existing
-% datasets into this new representation were that: 1) the
-% annotations and scores were misaligned, 2) several chords
-% end up being mislabeled (due to errors in the conversion
-% or errors in the annotation process), and 3) the
-% inversions of the chords were incorrectly indicated.
+Some of the problems observed when translating existing
+datasets into this new representation were that: 1) the
+annotations and scores were misaligned, 2) several chords
+end up being mislabeled (due to errors in the conversion or
+errors in the annotation process), and 3) the inversions of
+the chords were incorrectly indicated.
