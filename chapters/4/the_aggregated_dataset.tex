@@ -1,15 +1,28 @@
 % Copyright 2022 Néstor Nápoles López
 
+The distribution of the \gls{rna} annotations and their
+inversions are shown in \reffig{aggregated_rn_inversion}.
 
+\phdfigure[All the \gls{rna} labels in the aggregated
+dataset. Each bar indicates the counts of the Roman numeral
+class in different inversions]{aggregated_rn_inversion}
+
+\phdfigure[All the keys spanned in the aggregated dataset.
+For each key, the counts indicate which ones correspond to
+modulations (local key regions) and tonicizations
+]{aggregated_key_mod_ton}
+
+\reffig{aggregated_key_mod_ton} shows the distribution of
+the keys in the aggregated dataset. 
 
 % As noted throughout \refsec{availabledatasets}, the
-% available datasets for \glspl{rna} are encoded in different
-% digital formats, which are sometimes very different to each
-% other. Because \gls{rna} is not a standardized practice
-% across music schools, countries, or languages, the
-% distinctions between formats may be beyond technical, they
-% might also be musically distinct and encode chords using
-% different musical conventions.
+% available datasets for \glspl{rna} are encoded in
+% different digital formats, which are sometimes very
+% different to each other. Because \gls{rna} is not a
+% standardized practice across music schools, countries, or
+% languages, the distinctions between formats may be beyond
+% technical, they might also be musically distinct and
+% encode chords using different musical conventions.
 
 % This introduces some problems, both musical and technical,
 % which need to be addressed to aggregate all the datasets
@@ -28,22 +41,23 @@
 % \refsubsec{generatingtraining,validation,andtestsplits}.
 
 % Once all datasets have been aggregated, standardized, and
-% split into three sets, the dataset is ready for training the
-% model and running the experiments.
+% split into three sets, the dataset is ready for training
+% the model and running the experiments.
 
-% The last step, described in \refsec{dataaugmentation}, is to
-% perform data augmentation on the training set.
+% The last step, described in \refsec{dataaugmentation}, is
+% to perform data augmentation on the training set.
 
-% Before that, in this section, I describe the characteristics
-% of the aggregated training, validation, and test splits of
-% the dataset.
+% Before that, in this section, I describe the
+% characteristics of the aggregated training, validation,
+% and test splits of the dataset.
 
 % \phdfigure[All the \gls{rna} labels taken from the
 % aggregated dataset. Each bar indicates the counts of the
 % Roman numeral class in different
 % inversions]{aggregated_rn_inversion}
 
-% \phdfigure[All the keys spanned by the \gls{rna} annotations
-% of the aggregated dataset. For each key, the counts indicate
-% which ones correspond to modulations (local key regions) and
-% tonicizations ]{aggregated_key_mod_ton}
+% \phdfigure[All the keys spanned by the \gls{rna}
+% annotations of the aggregated dataset. For each key, the
+% counts indicate which ones correspond to modulations
+% (local key regions) and tonicizations
+% ]{aggregated_key_mod_ton}
