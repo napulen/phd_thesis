@@ -101,13 +101,14 @@ background = """
 
 data_acquisition = """
 4-data acquisition and preparation
-    roman numeral analysis data
-    standardizing the notation between datasets
-    data-curation metrics
-        alignment between scores and annotations
-        pitch correspondence between chord annotations and scores
-        correspondence between lowest-sounding note and bass of the chord
-    available datasets
+    general preparation of the data
+        standardizing the annotations
+        detecting errors in the annotations
+            objective metrics
+                alignment between scores and annotations
+                pitch correspondence between chord annotations and scores
+                correspondence between lowest-sounding note and bass of the chord
+    publicly available datasets
         annotated beethoven corpus (ABC)
             format of ABC
                 version 1
