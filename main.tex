@@ -13,15 +13,16 @@
 \usepackage[colorlinks=true, linkcolor=blue, citecolor=teal]{hyperref}
 \usepackage{stix2}
 \usepackage{titlecaps}
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{xparse}
 
 \usepackage[authordate,backend=biber,sorting=nty]{biblatex-chicago}
 \bibliography{references}
 
 \usepackage[acronym, toc]{glossaries}
-\defglsentryfmt[acronym]{\textcolor{darkgray}{\textbf{\glsgenacfmt}}}
-\defglsentryfmt[main]{\textcolor{gray}{\textit{\glsgenentryfmt}}}
+\renewcommand*{\glstextformat}[1]{\textbf{\textcolor{CadetBlue}{#1}}}
+% \defglsentryfmt[acronym]{\textcolor{darkgray}{\textbf{\glsgenacfmt}}}
+% \defglsentryfmt[main]{\textcolor{gray}{\textit{\glsgenentryfmt}}}
 
 % Penalize widows
 \widowpenalty10000
