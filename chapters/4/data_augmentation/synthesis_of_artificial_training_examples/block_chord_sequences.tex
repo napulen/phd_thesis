@@ -4,11 +4,11 @@ In harmony exercises like the one shown in
 \reffig{hindemith_exercise}, the goal is often to
 \gls{realize} the chords in a four-part harmonization that
 respects the voice-leading rules explained in the textbook,
-as shown in \reffig{voice_leading_sequence}. 
+as shown in \reffig{synthesis_voiceleading}. 
 
 \phdfigureproxy[A possible solution to the first harmony
 exercise proposed
-\reffig{hindemith1943concentrated}]{voice_leading_sequence}
+\reffig{hindemith1943concentrated}]{synthesis_voiceleading}
 
 Although it is possible to algorithmically generate such
 harmonizations with awareness of voice-leading rules, this
@@ -21,7 +21,7 @@ information is not taken into account, because the octave of
 the notes is not encoded. For that reason, an alternative
 approach is to synthesize training examples as simple block
 chords, such as the ones shown in
-\reffig{block_chord_sequence}. These block chords are useful
+\reffig{synthesis_blockchord}. These block chords are useful
 because they indicate the notes of the chord and which of
 those notes is at the bottom (i.e., lowest-sounding note). 
 
@@ -37,7 +37,7 @@ in piano sonatas or string quartets.
 
 \phdfigureproxy[Another version of
 \reffig{voice_leading_sequence}, without any consideration
-for voice leading rules]{block_chord_sequence}
+for voice leading rules]{synthesis_blockchord}
 
 A solution to this problem, originally proposed by co-author
 Mark Gotham in \textcite{napoleslopez2021augmentednet} was
