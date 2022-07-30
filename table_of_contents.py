@@ -161,8 +161,8 @@ model_design = """
             format support
             required information in file
         sampling of the score
-            32nd note frames
-            640 frames
+            note duration of each timestep
+            number of timesteps
         encoding pitch spelling
             35 one-hot encoding
             19 two-hot encoding
