@@ -3,8 +3,25 @@
 In harmony exercises like the one shown in
 \reffig{hindemith_exercise}, the goal is often to
 \gls{realize} the chords in a four-part harmonization that
-respects the voice-leading rules explained in the textbook.
+respects the voice-leading rules explained in the textbook,
+as shown in \reffig{voice_leading_sequence}. 
+
+\phdfigureproxy[A possible solution to the first harmony
+exercise proposed
+\reffig{hindemith1943concentrated}]{voice_leading_sequence}
+
 Although it is technically possible to generate such
-harmonizations with awareness of  voice-leading rules, this
+harmonizations with awareness of voice-leading rules, this
 is expensive to compute using a rule-based voice-leading
-algorithm\footnotelink{https://github.com/napulen/romanyh} 
+algorithm.\footnotelink{https://github.com/napulen/romanyh}
+Moreover, in the neural network architecture of this
+dissertation (see \refchap{modeldesign}), the voice-leading
+information is removed, because the octave information of
+the notes is removed. For that reason, an alternative
+approach is to start the synthesized training examples with
+block chord sequences of chords, such as the ones shown in
+\reffig{block_chord_sequence}.
+
+\phdfigureproxy[Another version of
+\reffig{voice_leading_sequence}, without any consideration
+for voice leading rules]{block_chord_sequence}
