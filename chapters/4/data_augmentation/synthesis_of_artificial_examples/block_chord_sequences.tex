@@ -23,7 +23,16 @@ approach is to generated synthesized training examples with
 block chord sequences of chords, such as the ones shown in
 \reffig{block_chord_sequence}. These block chords are useful
 to indicate what are the notes of the chord and which of
-those notes is the lowest-sounding note.
+those notes is the lowest-sounding note. 
+
+We introduced a data-augmentation approach of this kind in
+\textcite{napoleslopez2020harmonic}, where it showed an
+improved accuracy when predicting the chords in a dataset of
+Bach chorales. Nevertheless, in preliminary experiments with
+the datasets presented in
+\refsec{publiclyavailabledatasets}, this approach was not
+sufficient to work with the more complicated textures found
+in piano sonatas or string quartets.
 
 \phdfigureproxy[Another version of
 \reffig{voice_leading_sequence}, without any consideration
