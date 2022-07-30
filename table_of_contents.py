@@ -108,6 +108,7 @@ data_acquisition = """
                 alignment between scores and annotations
                 pitch correspondence between chord annotations and scores
                 correspondence between lowest-sounding note and bass of the chord
+        summary of the preparation
     publicly available datasets
         annotated beethoven corpus (ABC)
             format of ABC
