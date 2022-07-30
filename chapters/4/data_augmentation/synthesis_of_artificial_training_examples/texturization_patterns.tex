@@ -28,9 +28,9 @@ pitch contour of
 to turn block chords into melodic lines. The goal is to
 occasionally play chords using a monophonic texture.
 
-\phdfigure[A random texturization of some block chords in
-\reffig{synthesis_blockchord} with an \emph{Alberti bass}
-pattern]{synthesis_alberti}
+\phdfigure[A random texturization of some of the block
+chords in \reffig{synthesis_blockchord} with an
+\emph{Alberti bass} pattern]{synthesis_alberti}
 
 \phdparagraph{bass split}
 
@@ -39,9 +39,9 @@ by half, playing the bass in the first half, and the
 remaining notes in the second. The goal is to occasionally
 separate the bass from all other notes.
 
-\phdfigure[A random texturization of some block chords in
-\reffig{synthesis_blockchord} with a \emph{Bass split}
-pattern]{synthesis_basssplit}
+\phdfigure[A random texturization of some of the block
+chords in \reffig{synthesis_blockchord} with a \emph{Bass
+split} pattern]{synthesis_basssplit}
 
 \phdparagraph{syncopation}
 
@@ -52,11 +52,18 @@ the onset of the chord. It is intended to provide the
 trainable system with examples where the location of the
 bass is different from the location of the chord onset.
 
-\phdfigure[A random texturization of some block chords in
-\reffig{synthesis_blockchord} with a \emph{Syncopation}
-pattern]{synthesis_syncopation}
+\phdfigure[A random texturization of some of the block
+chords in \reffig{synthesis_blockchord} with a
+\emph{Syncopation} pattern]{synthesis_syncopation}
 
-In practice
+In the experiments performed in this dissertation, these
+patterns were applied randomly and recursively to the
+annotations. A hypothetical training example synthesized
+from the Hindemith annotations is shown in
+\reffig{synthesis_recursive}. This example combines the
+three patterns.\footnote{One of the possibilities is also to
+leave the block chord unmodified, as depicted in
+\reffig{synthesis_recursive}.}
 
 The results of this data-augmentation technique, with and
 without the use of key transpositions is discussed in
