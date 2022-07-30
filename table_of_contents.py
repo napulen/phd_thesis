@@ -147,6 +147,7 @@ data_acquisition = """
     generating training, validation, and test splits   
     data augmentation
         synthesis of artificial examples
+            block chord sequences
             texturization patterns
                 alberti bass
                 bass split
