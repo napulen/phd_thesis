@@ -1,17 +1,16 @@
 % Copyright 2022 Néstor Nápoles López
 
-% This is \refsec{dataaugmentation}, which introduces the
-% data augmentation.
+The annotations in the aggregated dataset account for nearly
+105,000 chords. However, the chord classes are imbalanced
+and there may not be examples of a chord class across all
+the keys in the vocabulary. One way to compensate for this
+is transposition, which is a popular data-augmentation
+method in \gls{arna}, \gls{acr}, and \gls{gke} research.
+This method is applied to the aggregated dataset to increase
+the number of examples and balance the distribution of
+chords across all keys.
 
-The annotations in the aggregated dataset account for close
-to 100,000 chords. However, these chords are distributed
-unevenly, and distributed across different keys. One way to
-compensate for the available amount of training data is data
-augmentation. One of the most common data-augmentation
-approaches for \gls{acr} and \gls{lke} is the use of
-transposition. This method is applied to this dataset.
-
-Moreover, an additional method for data augmentation is
-described in \refsubsec{synthesisofartificialexamples},
-which consists of generating artificial examples from the
-chord annotations presented in the dataset.
+In addition to transposition,an additional method for data
+augmentation is proposed, which consists of generating
+artificial examples from the chord annotations presented in
+the dataset.
