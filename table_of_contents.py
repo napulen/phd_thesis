@@ -146,7 +146,7 @@ data_acquisition = """
     the aggregated dataset
     generating training, validation, and test splits   
     data augmentation
-        synthesis of artificial examples
+        synthesis of artificial training examples
             block chord sequences
             texturization patterns
                 alberti bass
