@@ -22,21 +22,27 @@ pattern.
 
 \phdparagraph{alberti bass}
 
-An \emph{Alberti bass} pattern was used to turn block chords
-into melodic lines.
+This pattern consists of a 4-note melodic pattern with a
+pitch contour of
+\emph{low}-\emph{high}-\emph{middle}-\emph{high}. It is used
+to turn block chords into melodic lines. The goal is to
+occasionally play chords using a monophonic texture. 
 
 \phdparagraph{bass split}
 
-A pattern where the bass was separated from the upper notes
-served to inform the network of the bass and/or inversion of
-the chord.
+This is pattern where the original chord duration is divided
+by half, playing the bass in the first half, and the
+remaining notes in the second. The goal is to occasionally
+separate the bass from all other notes.
 
 \phdparagraph{syncopation}
 
-A pattern where the bass was played in syncopation, after
-the chord onset served to inform the network that the
-location of the bass could be different from the location of
-the chord onset.
+This is a pattern where the highest note is played first,
+followed by the rest of the notes, played in syncopation.
+The goal is to occasionally shift the onset of the bass from
+the onset of the chord. It is intended to provide the
+trainable system with examples where the location of the
+bass is different from the location of the chord onset.
 
 The results of this data-augmentation technique, with and
 without the use of key transpositions is discussed in
