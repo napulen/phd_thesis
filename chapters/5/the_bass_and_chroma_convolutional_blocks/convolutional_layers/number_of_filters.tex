@@ -18,9 +18,9 @@ each consecutive \gls{cnn} layer, as shown in
 
 where $N$ is the number of 1D convolutional layers and $n$
 is the n\textsuperscript{th} layer. The network is allowed
-to capture more short-term patterns (i.e., with a lower
-kernel size) and fewer long-term patterns (i.e., with a
-higher kernel size). Preliminary experiments showed that
+to store more filters (higher $f$) for short-term patterns
+(low $k$) and fewer filters (lower $f$) for long-term
+patterns (higher $k$). Preliminary experiments showed that
 prioritizing short-term patterns in the \gls{cnn} layers
 facilitated the network to learn certain features, such as
 the ones related with chord segmentation, whereas
