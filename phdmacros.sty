@@ -141,14 +141,7 @@ O{0.33} O{0.33} O{0.33} m m m}{
     \input{\cwd/tables/#2}
   \end{table}
 }
-      
-\NewDocumentCommand{\phdequation}{ m}{
-  \begin{equation}
-    \label{eq:#1}
-    \input{\cwd/equations/#1}
-  \end{equation}
-}
-
+ 
 \newcommand{\rnformat}[1]{\textbf{#1}\relax}
 \newcommand{\rn}[1]{\rnformat{#1}\relax}
 \newcommand{\rndim}{{\footnotesize {}^\rnformat{o}{}\relax}}

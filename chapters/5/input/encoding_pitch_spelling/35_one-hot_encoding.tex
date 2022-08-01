@@ -11,7 +11,13 @@ Thus, a reasonable representation for spelled pitch
 classes\footnote{Note that the octave is ignored.} is a
 representation with 35 features:
 
-\phdequation{pitch_spelling_35}
+\begin{equation}
+    \label{eq:pitch_spelling_35}
+    \{\musDoubleFlat{}, \musFlat{}, \musNatural{}, \musSharp{},
+    \musDoubleSharp{} \}
+    \times 
+    \{C, D, E, F, G, A, B \}    
+\end{equation}
 
 This is the input representation used in
 \textcite{micchi2020not, micchi2021deep}. In their
