@@ -8,7 +8,15 @@ the possible patterns are related with combinations of pitch
 classes, pitch names, or onsets.
 
 In this architecture, the number of filters is halved for
-each consecutive \gls{cnn} layer. That is, the network is
+each consecutive \gls{cnn} layer. 
+
+\begin{equation}
+    \label{eq:filters_kernel}
+    f_l = 2^{L - 1 - l}
+    k_l = 2^{l}
+\end{equation}
+
+That is, the network is
 allowed to capture more short-term patterns (i.e., with a
 lower kernel size) and fewer long-term patterns (i.e., with
 a higher kernel size). Preliminary experiments showed that
