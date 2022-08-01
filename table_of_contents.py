@@ -171,8 +171,8 @@ model_design = """
             lowest sounding note
             all sounding notes
             measure and note onsets
-    the bass and chroma convolutional blocks
-        convolutional layers
+    the convolutional blocks
+        1D convolutional layers inside a block
             kernel size
             number of filters
             number of convolutional layers
