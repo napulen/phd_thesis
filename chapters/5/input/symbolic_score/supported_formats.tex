@@ -12,6 +12,14 @@ the \emph{music21} Python library
 \parencite{cuthbert2010music21} was used to process incoming
 symbolic music files. The support for some formats (e.g.,
 \gls{mei}) is currently inadequate for guaranteeing that the
-score representation will be properly imported. Thus, the
-allowed inputs are restricted to \gls{musicxml} and
-\gls{humkern} symbolic music formats.
+score representation will be properly imported. Furthermore,
+\textcite{micchi2020not} found that the spelling of the
+notes was meaningful in their proposed \gls{arna} machine
+learning model. We followed a similar approach in
+\textcite{napoleslopez2021augmentednet}. Thus, in the
+proposed system here, pitch spelling is also an expected
+property of the inputs. For that reason, \gls{midi} files
+are not acceptable inputs.
+
+Thus, the allowed inputs are restricted to \gls{musicxml}
+and \gls{humkern} symbolic music formats.
