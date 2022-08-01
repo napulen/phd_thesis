@@ -26,12 +26,12 @@ note letter name:
 
 Note that in this representation, in addition to the pitch
 class, a spelled note has a corresponding letter. For
-example, C\musSharp{} is represented by the duple $(1, C)$,
-where as D\musFlat{} is represented by the same pitch class
-but a different generic note letter, $(1, D)$.
-D$\musNatural{}$ has the same generic note letter but a
-different pitch class, $(2, D)$, and so on. Using this
-representation, a spelled note, beyond two flats and two
-sharps can be encoded with a 19-feature vector. Notice,
-however, that this vector is a two-hot encoding
-representation.
+example, C\musSharp{} is represented by the duple $(1,
+\text{C})$, where as D\musFlat{} is represented by the same
+pitch class but a different generic note letter, $(1,
+\text{D})$. D$\musNatural{}$ has the same generic note
+letter but a different pitch class, $(2, \text{D})$, and so
+on. Using this representation, a spelled note, beyond two
+flats and two sharps can be encoded with a 19-feature
+vector. Notice, however, that this vector is a two-hot
+encoding representation.
