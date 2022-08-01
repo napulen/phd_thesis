@@ -11,9 +11,8 @@ In this architecture, the number of filters is halved for
 each consecutive \gls{cnn} layer. 
 
 \begin{equation}
-    \label{eq:filters_kernel}
+    \label{eq:number_of_filters}
     f_l = 2^{L - 1 - l}
-    k_l = 2^{l}
 \end{equation}
 
 That is, the network is allowed to capture more short-term

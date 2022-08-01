@@ -6,6 +6,13 @@ filter will multiply at a time. That is, a kernel $k=3$ will
 multiply the signal at the timesteps $t$, $t+1$, and $t+2$.
 
 In the proposed architecture, $k$ is doubled for each
-convolutional layer. The resulting filters of each layer are
-concatenated with the ones from the previous layer. Thus,
-the musical context of the signal is gradually increased.
+convolutional layer, as shown in \refeq
+
+\begin{equation}
+    \label{eq:kernel_size}
+    k_l = 2^{l}
+\end{equation}
+
+The resulting filters of each layer are concatenated with
+the ones from the previous layer. Thus, the musical context
+of the signal is gradually increased.
