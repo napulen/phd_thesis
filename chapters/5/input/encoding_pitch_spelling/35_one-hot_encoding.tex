@@ -2,14 +2,13 @@
 
 When two spellings of the same \gls{midi} note number are
 distinguished, they can be encoded as different dimensions
-in a vector. The use of sharp (\musSharp{}) and flat
-(\musFlat{}) accidentals is very common. The use of double
-sharp (\musDoubleSharp{}) and double flat (\musDoubleFlat{})
-accidentals is less common. Any accidental sharper than
-\musDoubleSharp{} or flatter than \musDoubleFlat{} is rare.
-Thus, a reasonable representation for spelled pitch
-classes\footnote{Note that the octave is ignored.} is a
-representation with 35 features:
+in a vector. The use of \gls{sharp} and \gls{flat}
+accidentals is very common. The use of \gls{doublesharp} and
+\gls{doubleflat} accidentals is less common. Any accidental
+sharper than \gls{doublesharp} or flatter than
+\gls{doubleflat} is rare. Thus, a reasonable representation
+for spelled pitch classes\footnote{Note that the octave is
+ignored.} is a representation with 35 features:
 
 \begin{equation}
     \label{eq:pitch_spelling_35}
