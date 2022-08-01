@@ -55,30 +55,30 @@ too very can will just don should now vs in et al v v1}
 \newcommand{\phdcaption}[1]{\caption{\textsl{#1}}}
 
 \NewDocumentCommand{\phdfigureproxy}{ O{Caption placeholder} O{h!} m}{
-    \begin{figure}[#2]
-        \centering
-        \includegraphics[width=\textwidth]{\cwd/figures/placeholder}
-        \phdcaption{#1.}
-        \label{fig:#3}
-    \end{figure}
-    \relax
+  \begin{figure}[#2]
+    \centering
+    \includegraphics[width=\textwidth]{\cwd/figures/placeholder}
+    \phdcaption{#1.}
+    \label{fig:#3}
+  \end{figure}
+  \relax
 }
-
-
+  
+  
 \NewDocumentCommand{\phdfigure}{ O{Caption placeholder}
 O{1.0} O{h!} m}{
-    \begin{figure}[#3]
-        \centering
-        \includegraphics[width=#2\textwidth]{\cwd/figures/#4}
-        \phdcaption{#1.}
-        \label{fig:#4}
-    \end{figure}
-    \relax
+  \begin{figure}[#3]
+    \centering
+    \includegraphics[width=#2\textwidth]{\cwd/figures/#4}
+    \phdcaption{#1.}
+    \label{fig:#4}
+  \end{figure}
+  \relax
 }
-
+    
 \NewDocumentCommand{\phdtwofigures}{ O{Caption1 placeholder}
 O{Caption2 placeholder} O{0.5} O{0.5} m m}{
-\begin{figure}[h!]
+  \begin{figure}[h!]
     \centering
     \begin{minipage}{#3\textwidth}
       \centering
@@ -92,8 +92,8 @@ O{Caption2 placeholder} O{0.5} O{0.5} m m}{
       \captionof{figure}{#2.}
       \label{fig:#6}
     \end{minipage}
-    \end{figure}
-    \relax
+  \end{figure}
+  \relax
 }
 
 \NewDocumentCommand{\phdthreefigures}{ O{Caption1
@@ -121,19 +121,19 @@ O{0.33} O{0.33} O{0.33} m m m}{
     \end{minipage}
   \end{figure}
   \relax
-  }
+}
   
 \NewDocumentCommand{\phdtablefit}{ O{Caption placeholder} O{\linewidth} m}{
-\begin{table}[h!]
-  \centering
-  \phdcaption{#1.}
-  \label{tab:#3}
-  \resizebox{#2}{!}{%
+  \begin{table}[h!]
+    \centering
+    \phdcaption{#1.}
+    \label{tab:#3}
+    \resizebox{#2}{!}{%
     \input{\cwd/tables/#3}%
   }
 \end{table}
 }
-
+    
 \NewDocumentCommand{\phdtable}{ O{Caption placeholder} m}{
   \begin{table}[h!]
     \centering
@@ -142,7 +142,14 @@ O{0.33} O{0.33} O{0.33} m m m}{
     \input{\cwd/tables/#2}
   \end{table}
 }
-
+      
+\newcommand{\phdequation}[1]{%
+  \begin{equation}%
+    \label{eq:#1}%
+    \input{\cwd/equations/#1}%
+  \end{equation}%
+}
+    
 \newcommand{\rnformat}[1]{\textbf{#1}\relax}
 \newcommand{\rn}[1]{\rnformat{#1}\relax}
 \newcommand{\rndim}{{\footnotesize {}^\rnformat{o}{}\relax}}
