@@ -3,9 +3,13 @@
 
 Each of the previous input representations, \gls{bass19},
 \gls{chroma19}, and \gls{duration14} are processed by a
-block of convolutional layers. These convolutional layers
-feature the same configuration, shown in
-\reffig{convolutional_blocks}.
+block of convolutional layers, which are concatenated
+afterwards, as shown in \reffig{concatenated_blocks}. These
+convolutional blocks feature the same configuration, shown
+in \reffig{convolutional_blocks}.
+
+\phdfigure[Concatenation of the convolutional
+blocks][0.5]{concatenated_blocks}
 
 \phdfigure[The architecture of each convolutional block. The
 blocks of the \gls{bass19} and \gls{chroma19}, because they
