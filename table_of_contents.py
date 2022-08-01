@@ -175,7 +175,7 @@ model_design = """
         convolutional layers
             kernel size
             number of filters
-            6-layer configuration
+            number of convolutional layers
         merging the blocks
     dense and recurrent layers
         dense layers
