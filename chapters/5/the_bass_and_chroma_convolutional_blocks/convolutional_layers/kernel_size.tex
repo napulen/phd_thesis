@@ -3,9 +3,9 @@
 In a 1D convolutional layer, the kernel size, $k$, generally
 represents the number of timesteps in the signal that each
 filter will multiply at a time. That is, a kernel $k=3$ will
-multiply the signal at the timesteps $t, t+1, t+2$.
+multiply the signal at the timesteps $t$, $t+1$, and $t+2$.
 
-In the proposed architecture, the $k$ is doubled for each
+In the proposed architecture, $k$ is doubled for each
 convolutional layer. The resulting filters of each layer are
 concatenated with the ones from the previous layer. Thus,
 the musical context of the signal is gradually increased.
