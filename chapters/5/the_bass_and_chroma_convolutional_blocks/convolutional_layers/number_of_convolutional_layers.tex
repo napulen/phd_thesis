@@ -1,0 +1,10 @@
+% Copyright 2022 Néstor Nápoles López
+
+The \gls{cnn} blocks of the neural network are implemented
+with a configurable number of layers, $N$, which is provided
+as a hyperparameter. Initially, this number was set to
+$N=6$. With this number, each \gls{cnn} block is able to
+process inputs with a context of $[t$, $t + \musWhole{}]$
+for each timestep $t$, prioritzing the patterns learned at
+the level of $\: \musThirtySecond{} \:$ notes (i.e.,
+individual timesteps).
