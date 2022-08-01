@@ -2,4 +2,11 @@
 
 The first trainable layers of the \gls{crnn} are
 convolutional layers. The network begins by processing each
-input representation in its own convolutional block.
+input representation in its own convolutional block, and
+concatenating the resulting outputs, as shown in
+\reffig{concatenated_blocks}.
+
+\phdfigure[The ``convolutional'' part of the network,
+consisting of three convolutional blocks that process each
+of the input representations
+independently][0.7]{concatenated_blocks}
