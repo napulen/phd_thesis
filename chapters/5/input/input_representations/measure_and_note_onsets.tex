@@ -1,16 +1,15 @@
 % Copyright 2022 Néstor Nápoles López
 
 The encoding process of pitch in the \gls{bass19} and
-\gls{chroma19} input representations will not take into
+\gls{chroma19} input representations does not take into
 account any information about note onsets, measures, or
 metrical structure. In order to compensate for that, a third
 input representation, \gls{duration14}, is introduced to
 process measure and note onsets. The process for encoding
-the onsets utilizes a stack of two multi-hot duration
-vectors (see \refsubsec{encodingduration}), one for the
-onset of measures, and one for the onset of notes.
-\reffig{duration_encoding} shows an example of the
-representation.
+the onsets utilizes two 7-dimensional vectors, one for the
+onset of measures, and one for the onset of notes (see
+\refsubsec{encodingduration}). \reffig{duration_encoding}
+shows an example of the representation.
 
 \phdfigure[An encoding of the \gls{duration14}
 representation in Clara Schumann's Op. 13 No. 2, mm.
