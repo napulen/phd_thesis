@@ -64,7 +64,6 @@ too very can will just don should now vs in et al v v1}
   \relax
 }
   
-  
 \NewDocumentCommand{\phdfigure}{ O{Caption placeholder}
 O{1.0} O{h!} m}{
   \begin{figure}[#3]
@@ -143,13 +142,13 @@ O{0.33} O{0.33} O{0.33} m m m}{
   \end{table}
 }
       
-\newcommand{\phdequation}[1]{%
-  \begin{equation}%
-    \label{eq:#1}%
-    \input{\cwd/equations/#1}%
-  \end{equation}%
+\NewDocumentCommand{\phdequation}{ m}{
+  \begin{equation}
+    \label{eq:#1}
+    \input{\cwd/equations/#1}
+  \end{equation}
 }
-    
+
 \newcommand{\rnformat}[1]{\textbf{#1}\relax}
 \newcommand{\rn}[1]{\rnformat{#1}\relax}
 \newcommand{\rndim}{{\footnotesize {}^\rnformat{o}{}\relax}}
