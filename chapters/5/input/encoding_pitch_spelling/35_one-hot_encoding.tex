@@ -9,10 +9,17 @@ accidentals is less common. Any accidental sharper than
 \musDoubleSharp{} or flatter than \musDoubleFlat{} is rare.
 Thus, a reasonable representation for spelled pitch
 classes\footnote{Note that the octave is ignored.} is a
-representation with 35 features: $\{\musDoubleFlat{},
-\musFlat{}, \musNatural{}, \musSharp{}, \musDoubleSharp{}\}
-\times \{C, D, E, F, G, A, B\}$. This is the input
-representation used in \textcite{micchi2020not,
-micchi2021deep}. In their representation, a 35-dimensional
-pitch spelling vector was encoded per timestep, with one
-spelling class (one-hot encoding) per timestep.
+representation with 35 features:
+
+\begin{equation}
+\{\musDoubleFlat{}, \musFlat{}, \musNatural{},
+\musSharp{}, \musDoubleSharp{} \}
+\times 
+\{C, D, E, F, G, A, B \}
+\end{equation}
+
+This is the input representation used in
+\textcite{micchi2020not, micchi2021deep}. In their
+representation, a 35-dimensional pitch spelling vector was
+encoded per timestep, with one spelling class (one-hot
+encoding) per timestep.
