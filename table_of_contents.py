@@ -287,6 +287,7 @@ appendix = """
                 neapolitan chord
                 augmented sixth chords
     the vocabulary of roman numeral denominators
+    the vocabulary of arabic numeral inversions
     the vocabulary of notes with spelling
         35 one-hot encoding
         19 two-hot encoding
