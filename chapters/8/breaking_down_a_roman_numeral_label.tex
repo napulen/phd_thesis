@@ -1,26 +1,29 @@
 % Copyright 2022 Néstor Nápoles López
 
 If we consider a Roman numeral label to be a
-``fraction-like'' expression of the form
+``fraction-like'' expression, as the one shown in
+\refeq{rn_expression} then the symbol $\elkey$ preceding the
+colon represents a key, the numerator $\elnum$ represents a
+chord, and the denominator $\elden$ represents a tonicized
+key.
 
 \begin{equation}
+    \label{eq:rn_expression}
     \elkey : \elnum \: / \: \elden
 \end{equation}
 
-then the symbol $\elkey$ preceding the colon represents a
-key, the numerator $\elnum$ represents a chord, and the
-denominator $\elden$ represents a tonicized key. For
-instance, in the annotation 
-
-\begin{equation}
-    \rn{C}:\rnviihosev{}/\rnV
-\end{equation}
-
+For instance, in the annotation shown in \refeq{rn_example1}
 the preceding symbol $\elkey=\rn{C}$ indicates the key of
 $\keyC$; the denominator $\elden = \rnV$ indicates a
 tonicization of the dominant of key $\elkey$, $\keyG$; and
 $\elnum=\rnviihosev$ indicates a chord of the tonicized key
 $\elden$, an F$\musSharp$ half-diminished seventh chord.
+
+\begin{equation}
+    \label{eq:rn_example1}
+    \rn{C}:\rnviihosev{}/\rnV
+\end{equation}
+
 
 The mode (major or minor) of the keys implied by $\elkey$
 and $\elden$ is indicated by a case-sensitive notation. For
