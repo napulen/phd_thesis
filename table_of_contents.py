@@ -193,7 +193,7 @@ model_design = """
             PitchClassSet121
             RomanNumeralNumerator31
             HarmonicRhythm7
-    reconstruct roman numeral labels
+    from predictions to roman numeral labels
         conventional method
         common roman numerals
         proposed method
