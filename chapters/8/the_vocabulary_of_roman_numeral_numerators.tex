@@ -3,26 +3,36 @@
 A Roman numeral numerator $\elnum$ is the only compulsory
 symbol in any \gls{rna} label. The
 other---optional---symbols being a key $\elkey$ and a
-tonicization $\elden$.
+tonicization $\elden$. This section describes the vocabulary
+$\setnum$ of Roman numeral numerators where $\forall \elnum
+\in \setnum$.
 
 A Roman numeral numerator always indicates a chord relative
 to a key. When a tonicized key $\elden$ is provided, the
 numerator $\elnum$ is relative to this key. However, when
 $\elden$ is omitted, the numerator $\elnum$ is relative to
 the key $\elkey$, which should have been indicated in at
-least the first \gls{rna} label of a piece.
+least the first \gls{rna} label of a piece. One additional
+simplification is to assume that if a tonicization $\elden$
+is not indicated for a particular \gls{rna} label, then
+$\elden = \elkey$. Following this assumption, then the chord
+indicated by $\elnum$ is always relative to $\elden$. The
+vocabulary of chords allowed for $\elnum$ depends on the
+mode of the key $\elden$.
 
-There are 31 valid Roman numeral labels. These are indicated
-in \reftab{rn_vocabulary}.
+Some of the numerators are common to both major and minor
+modes. These are shown in \refeq{common_numerators}.
+
+\begin{equation}
+    \label{eq:common_numerators}
+    \setnum_{C} = \{ \rnCad, \: \rnV, \: \rnviio,
+    \rnVsev, \rnN, \: \rnIt, \: \rnFr, \: \rnGer \: \}
+\end{equation}
 
 \phdtable[Vocabulary of valid Roman numeral labels for this
 \gls{rna} method]{rn_vocabulary}
 
 
-\begin{equation}
-    \setnum_{C} = \{ \rnCad, \: \rnV, \: \rnviio,
-    \rnVsev, \rnN, \: \rnIt, \: \rnFr, \: \rnGer \: \}
-\end{equation}
 
 \begin{equation}
     \setnum_{M} = \setnum_{C} \cup \{ \: \rnI, \: \rnii, \: 
