@@ -162,7 +162,7 @@ model_design = """
         sampling of the score
             note duration of each timestep
             number of timesteps
-        input representations
+        encoding the score
             lowest sounding note
             all sounding notes
             measure and note onsets
