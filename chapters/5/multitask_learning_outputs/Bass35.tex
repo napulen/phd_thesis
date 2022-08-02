@@ -17,16 +17,24 @@ the lowest note of the annotated chord.
 The first four output representations, \gls{bass35},
 \gls{tenor35}, \gls{alto35}, and \gls{soprano35}, are all
 related to the realization of the annotated chord in a
-\gls{closed-position}. \reffig{satb_all} shows the
-realization of the annotated chords that defines the target
-class of each classifier. \reffig{satb_bass} shows an
-example of the \gls{bass35} target label for this fragment
-of music.
+\gls{closed-position}. Collectively, I refer to these four
+classifiers as the \gls{satb35} tasks. Note that these four
+tasks encode as the target class a spelled note. However,
+unlike the \gls{bass19} and \gls{chroma19} input
+representations, all the pitches in the \gls{satb35}
+classifiers have been encoded using the $\vocabps_35$
+vocabulary. This was done in order to use the same loss
+function (sparse categorical cross entropy) across all the
+multitask learning tasks.
 
-\phdfigure[Example of the ``SATB'' classifiers, where
-each classifier learns to predict one of the four notes in
-the \gls{closed-position} realization of the
-chord]{satb_all}
+\reffig{satb_all} shows the realization of the annotated
+chords that defines the target class of each classifier.
+\reffig{satb_bass} shows an example of the \gls{bass35}
+target label for this fragment of music.
+
+\phdfigure[Example of the ``SATB'' classifiers, where each
+classifier learns to predict one of the four notes in the
+\gls{closed-position} realization of the chord]{satb_all}
 
 \phdfigure[Example of the \gls{bass35} encoding for the
 chords in \reffig{satb_all}]{satb_bass}
