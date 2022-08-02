@@ -182,21 +182,17 @@ model_design = """
     dense and recurrent layers
         dense layers
         recurrent layers
-    multitask learning configurations
-        proposed tasks
-            Bass35
-            Tenor35
-            Alto35
-            Soprano35
-            LocalKey38
-            TonicizationKey38
-            PitchClassSet121
-            RomanNumeralNumerator31
-            HarmonicRhythm7
-    from predictions to roman numeral labels
-        conventional method
-        common roman numerals
-        proposed method
+    multitask learning outputs
+        Bass35
+        Tenor35
+        Alto35
+        Soprano35
+        LocalKey38
+        TonicizationKey38
+        PitchClassSet121
+        RomanNumeralNumerator31
+        HarmonicRhythm7
+    from output predictions to roman numeral labels
     implementation
         code diagram
         dataset source repositories
