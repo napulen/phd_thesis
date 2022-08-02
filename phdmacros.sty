@@ -145,7 +145,7 @@ O{0.33} O{0.33} O{0.33} m m m}{
 \newcommand{\rnformat}[1]{\textbf{#1}\relax}
 \newcommand{\rn}[1]{\rnformat{#1}\relax}
 \newcommand{\rnwkey}[2]{\rnformat{#1}\text{:}#2\relax}
-\newcommand{\rnwton}[2]{\rnformat{#1}\text{/}#2\relax}
+\newcommand{\rnwton}[2]{#1\text{/}\rnformat{#2}\relax}
 \newcommand{\rnwkeyton}[3]{\rnformat{#1}\text{:}#2\text{/}\rnformat{#3}\relax}
 \newcommand{\rndim}{{\footnotesize {}^\rnformat{o}{}\relax}}
 \newcommand{\rnaug}{{\footnotesize {}^\rnformat{+}{}\relax}}
