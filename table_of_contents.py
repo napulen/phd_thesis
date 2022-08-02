@@ -272,7 +272,8 @@ conclusions = """
 
 appendix = """
 8-a method for systematic roman numeral analysis
-    the vocabulary of roman numerals
+    breaking down a roman numeral label
+    the vocabulary of roman numeral numerators
         chords of the major mode
             major-mode triads
             major-mode seventh chords
@@ -285,6 +286,7 @@ appendix = """
                 augmented dominant
                 neapolitan chord
                 augmented sixth chords
+    the vocabulary of roman numeral denominators
     the vocabulary of notes with spelling
         35 one-hot encoding
         19 two-hot encoding
