@@ -1,0 +1,93 @@
+% Copyright 2022 Néstor Nápoles López
+
+\textcite{chen2018functional} proposed breaking a \gls{rna}
+label into a set of multitask classification configuration
+based on the following tonal features: local key, primary
+degree, secondary degree, inversion, chord quality, and
+chord root. This approach has been adopted in other research
+\parencite{chen2019harmony, micchi2020not,micchi2021deep}.
+
+\phdparagraph{local key}
+
+The (local) key describes the reference key used to
+disambiguate the Roman numeral scale degrees. It is arguably
+one of the most important features because if it is
+mislabeled, then all \gls{rna} labels will be mislabeled.
+
+In the initial multitask learning model by
+\textcite{chen2018functional}, this task had 24 output
+classes. Each of the classes represented the pitch class of
+the tonic, which were encoded twice to account for major
+mode keys and minor mode keys.
+
+In a subsequent model by \textcite{micchi2020not}, the
+number of classes was extended to 30, as the spelling of the
+tonic pitch was taken into account (i.e., $C\sharp$ $\neq$
+$D\flat$ major).
+
+
+\phdparagraph{primary degree}
+
+The primary degree of the chord represents the ``numerator''
+part of a Roman numeral. For example, in the annotation
+$\rn{V}\rnseven{}/\rn{v}$, the primary degree is
+$\rn{V}\rnseven{}$. In the multitask learning model by
+\textcite{chen2018functional}, this task had 21 classes.
+
+\phdparagraph{secondary degree}
+
+The secondary degree represents the ``denominator'' part of
+a Roman numeral label. For example, in the annotation
+$\rn{V}\rnseven{}/\rn{v}$, the secondary degree is $\rn{V}$.
+In the multitask learning model by
+\textcite{chen2018functional}, this task had 21 classes.
+Secondary degrees only appear in the context of a
+tonicization. Thus, the majority of the \gls{rna}
+annotations will have an empty secondary degree, and a
+special class to denote this empty secondary degree needs to
+be included. The scarcity of secondary degrees also results
+in a highly imbalanced distribution of examples, which is
+problematic for training.
+
+\phdparagraph{inversion}
+
+The inversion of the chord indicates the note acting as the
+bass of the chord. In the \gls{rna} system, the arrangement
+of the notes above the bass is irrelevant for the
+annotation. For example, the first two chord realizations
+shown in \reffig{inversion} have an equivalent Roman numeral
+label, despite the different arrangement of the upper
+voices. However, modifying the bass modifies the inversion,
+regardless of the arrangement of the upper voices remaining
+unchanged.
+
+\phdfigure[Example of chord inversions in the \gls{rna}
+syntax. The inversion changes when the bass changes,
+regardless of the arrangement of the upper
+voices]{inversion}
+
+The inversion task generally requires 4 output classes: root
+position (no inversion), 1st inversion, 2nd inversion, and
+3rd inversion (only for seventh chords).
+
+\phdparagraph{quality}
+
+The chord quality task depends greatly on the chord
+vocabulary. The vocabulary introduced in
+\textcite{chen2018functional} considered 10 classes. The one
+by \textcite{micchi2020not} considered a similar number.
+This classification also suffers from a large class
+imbalance, because the vast majority of chords found in
+tonal music are major triads.
+
+\phdparagraph{root}
+
+The chord root task, as the name implies, predicts the pitch
+of the chord's root. In the multiclass classification
+problem introduced by \textcite{chen2018functional}, there
+are 12 possible chord roots (i.e., as many as pitch
+classes). In the work by \textcite{micchi2020not}, this was
+extended to 35 classes (see
+\refsubsubsec{35one-hotencoding}), as spelling was taken
+into account. The system was trained to predict any root
+within two flats and two sharps. 
