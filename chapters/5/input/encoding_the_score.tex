@@ -2,13 +2,20 @@
 
 The steps in the previous sections describe the methods to
 reduce a symbolic music file into a fixed-length sequence of
-pitch values, which are sampled at regularly-spaced
-intervals of \gls{32nd} notes. Using these sequences and the
-vector representations described in
-\refsubsec{encodingpitchspelling} and
-\refsubsec{encodingduration}, the score can be encoded into
-a set of \emph{input representations}, which are dispatched
-to the trainable layers of the neural network. 
+pitch values As mentioned in \refsubsec{samplingofthescore},
+the score in the symbolic music file is stripped from some
+of its original information when it is encoded for the
+neural network model. Furthermore, the score is sampled at
+regular note intervals of \gls{32nd} notes, encoding the
+musical information at each of those timesteps. This section
+describes this encoding process.
+
+Using these sequences and the vocabularies described in
+\refsec{thevocabularyofnoteswithspelling} and
+\refsec{thevocabularyofmeasure,note,andchordonsets}, the
+score can be encoded into a set of \emph{input
+representations}, which are dispatched to the trainable
+layers of the neural network.
 
 The system currently considers three input representations,
 \gls{bass19}, \gls{chroma19}, and \gls{duration14},
