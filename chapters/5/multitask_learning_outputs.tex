@@ -10,7 +10,11 @@ a multitask learning configuration.
 The specific multitask learning configuration is perhaps one
 of the main contributions of this dissertation, as it
 defines the tonal attributes of chords and keys that will be
-predicted by the network.
+predicted by the network. In previous work
+\parencite{napoleslopez2021augmentednet}, we showed that
+having additional tasks is sometimes beneficial, especially
+in combination with the synthesized training examples
+described in \refsubsec{synthesisofartificialexamples}.
 
 The proposed multitask layer configuration consists of nine
 multiclass classification problems: \gls{bass35},
@@ -27,12 +31,5 @@ and experiments. The names, definitions, and number of
 classes presented in this dissertation represent the latest
 definition of these problems.}
 
-Each of these tasks is subsequently used to address
-different aspects of the \gls{rna} label reconstruction.
-
-
- In previous work \parencite{napoleslopez2021augmentednet},
-we showed that having additional tasks is sometimes
-beneficial, especially in combination with the synthesized
-training examples described in
-\refsubsec{synthesisofartificialexamples}.
+Each of these tasks is subsequently used to generate the
+final \gls{rna} annotations in string form.
