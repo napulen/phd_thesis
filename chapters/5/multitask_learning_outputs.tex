@@ -1,35 +1,38 @@
 % Copyright 2022 Néstor Nápoles López
 
-One of the main contributions of this \thesisdiss{} is the
-output representation of chords and tonal features. In
-previous work \parencite{napoleslopez2021augmentednet}, we
-showed that having additional tasks is sometimes beneficial,
-especially in combination with the synthesized training
-examples described in
+The neural network described so far contains trainable
+layers that learn parameters based on the error (loss)
+propagated by the evaluation of the annotated examples
+against the predictions of the network. The predictions of
+the network are manifold (9, to be precise) and arranged in
+a multitask learning configuration.
+
+The specific multitask learning configuration is perhaps one
+of the main contributions of this dissertation, as it
+defines the tonal attributes of chords and keys that will be
+predicted by the network.
+
+The proposed multitask layer configuration consists of nine
+multiclass classification problems: \gls{bass35},
+\gls{tenor35}, \gls{alto35}, \gls{soprano35},
+\gls{pcset121}, \gls{rn31}, \gls{localkey38},
+\gls{tonicization38}, and \gls{harmonicrhythm7}. The tasks
+have codenamed with their number of output classes
+appended.\footnote{I opted for this naming convetion to more
+easily track the evolution of the multiclass classification
+problems. Some of them, such as the \gls{pcset121} or
+\gls{rn31} went through various revisions, as the chord
+vocabulary was adjusted during data exploration and
+experiments. The names, definitions, and number of classes
+presented in this \thesisdiss{} represent the latest
+definition of these problems.}
+
+Each of these tasks is subsequently used to address
+different aspects of the \gls{rna} label reconstruction.
+
+
+ In previous work \parencite{napoleslopez2021augmentednet},
+we showed that having additional tasks is sometimes
+beneficial, especially in combination with the synthesized
+training examples described in
 \refsubsec{synthesisofartificialexamples}.
-
-In this section, the ``conventional'' method of arranging
-the multitask classification layers is compared against the
-proposed method in this \thesisdiss{}.
-
-The next section describes the final step for annotating
-\gls{rna} labels, which involves processing the labels
-predicted by the multitask classifiers.
-
-% The proposed multitask layer configuration consists of nine
-% multiclass classification problems: \gls{bass35},
-% \gls{tenor35}, \gls{alto35}, \gls{soprano35},
-% \gls{pcset121}, \gls{rn31}, \gls{localkey38},
-% \gls{tonicization38}, and \gls{harmonicrhythm7}. The tasks
-% have codenamed with their number of output classes
-% appended.\footnote{I opted for this naming convetion to more
-% easily track the evolution of the multiclass classification
-% problems. Some of them, such as the \gls{pcset121} or
-% \gls{rn31} went through various revisions, as the chord
-% vocabulary was adjusted during data exploration and
-% experiments. The names, definitions, and number of classes
-% presented in this \thesisdiss{} represent the latest
-% definition of these problems.}
-
-% Each of these tasks is subsequently used to address
-% different aspects of the \gls{rna} label reconstruction.
