@@ -97,6 +97,13 @@ background = """
                 the melisma music analyzer
                 probabilistic and grammar-based models
                 deep learning models
+            conventional tasks
+                local key
+                primary degree
+                secondary degree
+                inversion
+                quality
+                root
 """
 
 data_acquisition = """
@@ -176,13 +183,6 @@ model_design = """
         dense layers
         recurrent layers
     multitask learning configurations
-        conventional tasks
-            local key
-            primary degree
-            secondary degree
-            inversion
-            quality
-            root
         proposed tasks
             Bass35
             Tenor35
