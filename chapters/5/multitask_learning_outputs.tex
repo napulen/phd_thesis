@@ -15,3 +15,21 @@ proposed method in this \thesisdiss{}.
 The next section describes the final step for annotating
 \gls{rna} labels, which involves processing the labels
 predicted by the multitask classifiers.
+
+% The proposed multitask layer configuration consists of nine
+% multiclass classification problems: \gls{bass35},
+% \gls{tenor35}, \gls{alto35}, \gls{soprano35},
+% \gls{pcset121}, \gls{rn31}, \gls{localkey38},
+% \gls{tonicization38}, and \gls{harmonicrhythm7}. The tasks
+% have codenamed with their number of output classes
+% appended.\footnote{I opted for this naming convetion to more
+% easily track the evolution of the multiclass classification
+% problems. Some of them, such as the \gls{pcset121} or
+% \gls{rn31} went through various revisions, as the chord
+% vocabulary was adjusted during data exploration and
+% experiments. The names, definitions, and number of classes
+% presented in this \thesisdiss{} represent the latest
+% definition of these problems.}
+
+% Each of these tasks is subsequently used to address
+% different aspects of the \gls{rna} label reconstruction.
