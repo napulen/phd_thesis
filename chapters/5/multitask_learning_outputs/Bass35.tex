@@ -22,12 +22,12 @@ classifiers as the \gls{satb35} tasks. Note that these four
 tasks encode as the target class a spelled note. However,
 unlike the \gls{bass19} and \gls{chroma19} input
 representations, the spelled notes in the \gls{satb35}
-classifiers have been encoded using the $\vocabps_{35}$
-vocabulary, instead of $\vocabps_{19}$. This was done in
+classifiers have been encoded using the $\setps_{35}$
+vocabulary, instead of $\setps_{19}$. This was done in
 order to use the same loss function (sparse categorical
 cross entropy) across all the multitask learning tasks,
 which would not be possible for the two-hot encoding
-required in $\vocabps_{19}$.
+required in $\setps_{19}$.
 
 \reffig{satb_all} shows the realization of the annotated
 chords that defines the target class of each classifier.

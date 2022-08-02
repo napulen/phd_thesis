@@ -1,26 +1,26 @@
 % Copyright 2022 Néstor Nápoles López
 
 A \gls{pcset} $\rho$ has an interpretation as one of the
-Roman numeral numerators $\eta \in \vocabnum$ in a subset of
-keys $\vocabkey_{\rho} \subset \vocabkey$. Such that:
+Roman numeral numerators $\eta \in \setnum$ in a subset of
+keys $\setkey_{\rho} \subset \setkey$. Such that:
 
 \begin{equation}
-    \vocabkey_{\rho} = \{\kappa \mid \kappa \in \vocabkey,
+    \setkey_{\rho} = \{\kappa \mid \kappa \in \setkey,
      \: \text{and $\rho$ has an interpretation in key $\kappa$}\}
 \end{equation}
 
 For example, given the 
 
-Given a pitch class set $\rho \in \vocabpcset$ and a key
-$\kappa \in \vocabkey$, the function $\Gamma(\rho, \kappa) =
-\eta$ where $\eta \in \vocabnum \cup \: \{ \emptyset \}$ is
+Given a pitch class set $\rho \in \setpcset$ and a key
+$\kappa \in \setkey$, the function $\Gamma(\rho, \kappa) =
+\eta$ where $\eta \in \setnum \cup \: \{ \emptyset \}$ is
 either a Roman numeral numerator from the bounded vocabulary
 or the special symbol $\chi$ if there is no Roman numeral
 associated with the ($\rho$, $\kappa$) pair.
 
 The function $\Gamma$ can be implemented as a lookup table
 that returns $\chi$ when the duple ($\rho$, $\kappa$) is not
-found, and the Roman numeral numerator $\eta \in \vocabnum$
+found, and the Roman numeral numerator $\eta \in \setnum$
 otherwise.
 
 When $\Gamma(\rho, \kappa) = \chi$, the Roman numeral
