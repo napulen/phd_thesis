@@ -157,16 +157,11 @@ data_acquisition = """
 model_design = """
 5-model design
     input
-        symbolic score
-            format support
-            required information in file
+        importing a digital music score
+            supported formats
         sampling of the score
             note duration of each timestep
             number of timesteps
-        encoding pitch spelling
-            35 one-hot encoding
-            19 two-hot encoding
-        encoding duration
         input representations
             lowest sounding note
             all sounding notes
@@ -294,6 +289,10 @@ appendix = """
                 augmented dominant
                 neapolitan chord
                 augmented sixth chords
+    the vocabulary of notes with spelling
+        35 one-hot encoding
+        19 two-hot encoding
+    the vocabulary of measure, note, and chord onsets
     the vocabulary of musical keys
     the vocabulary of pitch-class sets
     an algorithm to resolve roman numerals from a pitch-class set and key
