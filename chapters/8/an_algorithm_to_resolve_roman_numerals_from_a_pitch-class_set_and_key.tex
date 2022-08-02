@@ -1,20 +1,21 @@
 % Copyright 2022 Néstor Nápoles López
 
-Given a pitch class set $\rho$ that is part of the finite
-vocabulary of 121 pitch class sets and a key $\kappa$ that
-is part of the finite vocabulary of 38 keys, the function
-$\Gamma(\rho, \kappa) = \eta$ where $\eta$ is a Roman
-numeral numerator from the bounded vocabulary of 31 Roman
-numerals or the special symbol $\chi$ if there is no Roman
-numeral associated with that ($\rho$, $\kappa$) pair.
+Given a pitch class set $\rho \in \vocabpcset$ and a key
+$\kappa \in \vocabkey$, the function $\Gamma(\rho, \kappa) =
+\eta$ where $\eta \in \vocabnum \cup \: \{ \: \chi \: \}$ is
+either a Roman numeral numerator from the bounded vocabulary
+or the special symbol $\chi$ if there is no Roman numeral
+associated with the ($\rho$, $\kappa$) pair.
 
 The function $\Gamma$ can be implemented as a lookup table
 that returns $\chi$ when the duple ($\rho$, $\kappa$) is not
-found, and the Roman numeral $\eta$ otherwise.
+found, and the Roman numeral numerator $\eta \in \vocabnum$
+otherwise.
 
-When the value returned by $\Gamma = \chi$, the resolution
-of the Roman numeral label can be done if a tonicization is
-forced (i.e., change of key for that particular chord).
+When $\Gamma(\rho, \kappa) = \chi$, the Roman numeral
+numerator cannot be retrieved directly. However, it can be
+retrieved if a tonicization is forced in the system (i.e.,
+the key changes for that particular chord).
 
 % Let $\Gamma(\rho, \kappa)$ be a lookup table that returns
 % a Roman numeral $\eta \in \chi$ for all pairs of ($\rho$,
