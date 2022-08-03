@@ -1,22 +1,14 @@
 % Copyright 2022 Néstor Nápoles López
 
-\begin{equation}
-    \setkey = \{ \keyBbb, \keygb, \keyFb, \keydb, \dotsc,
-    \keyGs, \keyes, \keyDs, \keybs \}
-\end{equation}
-
-\begin{equation}
-    | \setkey | = 38
-\end{equation}
-
-If all enharmonic keys are collapsed into the same key
-class, then there is a set of 24 major-and-minor keys.
-However, when two enharmonic keys are considered different
-keys, there are an infinite number of keys. For the first
-case, the keys can be arranged in a circular structure, such
-as the circle of fifths, because eventually the classes will
-repeat. For the second case, the keys can be arranged in a
-line \parencite{temperley2000line}.
+If all enharmonic major-and-minor keys were collapsed into
+the same key class, then there would be a set of 24 keys.
+However, if two enharmonic keys are considered different
+keys, then the set of keys becomes an infinite set. For the
+first case, the keys can be arranged in a circular
+structure, such as the circle of fifths, because eventually
+the classes will repeat. For the second case, the keys can
+be arranged in a \emph{line-of-fifths}
+\parencite{temperley2000line}.
 
 For a computational system, distinguishing between
 enharmonics is easier if the vocabulary of keys is bounded.
@@ -34,3 +26,12 @@ $B\musDoubleFlat$ and $D\musSharp$ for the major keys, and
 $g\musFlat$ and $b\musSharp$ for the minor keys. Thus, the
 vocabulary of keys considered in this \thesisdiss{} spans
 all the keys in that range. This results in 38 keys.
+
+\begin{equation}
+    \setkey = \{ \keyBbb, \keygb, \keyFb, \keydb, \dotsc,
+    \keyGs, \keyes, \keyDs, \keybs \}
+\end{equation}
+
+\begin{equation}
+    | \setkey | = 38
+\end{equation}
