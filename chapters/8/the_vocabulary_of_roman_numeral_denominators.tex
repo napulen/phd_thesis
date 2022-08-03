@@ -1,0 +1,22 @@
+% Copyright 2022 Néstor Nápoles López
+
+A denominator $\elden$ in a \gls{rna} label indicates a
+tonicized key. The tonicized key is always relative to the
+current key $\elkey$, which should be known at any given
+moment of the piece.
+
+The tonicized key $\elden$ is indicated with case-sensitive
+Roman numerals, where the Roman numeral indicates the scale
+degree, and the case of the Roman numeral indicates the
+mode. When the scale degree is not a diatonic scale degree
+of the key $\elkey$, an accidental can be used to alter the
+scale degree. Thus, the vocabulary $\setden$ that satisfies
+$\forall \; \elden \in \setden$ comprises all case-sensitive
+scale degrees relative to key $\elkey$. This vocabulary is
+shown in \refeq{all_denominators}.
+
+\begin{equation}
+    \setden = \{ \musDoubleFlat, \musFlat, \musNatural, 
+    \musSharp, \musDoubleSharp \} \cup \{ I, II, III, IV, V, VI, VII, 
+    i, ii, iii, iv, v, vi, vii \}
+\end{equation}
