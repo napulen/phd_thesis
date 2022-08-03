@@ -14,11 +14,12 @@ in \refeq{keys_for_pcset}.
 For example, given the \gls{pcset} $\elpcset =
 \pcsetcega{}$, there is an interpretation for that
 \gls{pcset} in several keys $\elkey \in \setkey$, as shown
-in \refeq{pcset_ceg}. This set of keys represents the subset
-$\setkey_\elpcset$.
+in \refeq{pcset_cega}. This set of keys represents the
+subset $\setkey_\elpcset$ for this $\elpcset$, as shown in
+\refeq{keys_for_pcset}. 
 
 \begin{equation}
-    \label{eq:pcset_ceg}
+    \label{eq:pcset_cega}
     \text{The } \gls{pcset} \text{ } \elpcset = \pcsetcega \text{ in key } \elkey =
     \begin{cases}
         \keyC & \text{ has a numerator } \elnum = \rnvisev \\
@@ -27,6 +28,11 @@ $\setkey_\elpcset$.
         \keyG & \text{ has a numerator } \elnum = \rniisev \\
         \keya & \text{ has a numerator } \elnum = \rnisev \\
     \end{cases}
+\end{equation}
+
+\begin{equation}
+    \label{eq:keys_for_pcset}
+    \elpcset = \pcsetaega \implies \setkey_{\elpcset} = \{ \keyC, \keye, \keyF, \keyG, \keya \}
 \end{equation}
 
 Given a pitch class set $\elpcset \in \setpcset$ and a key
