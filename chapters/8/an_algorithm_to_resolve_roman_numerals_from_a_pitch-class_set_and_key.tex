@@ -67,5 +67,21 @@ $\elden \in \setkey_\elpcset$.
 
 In the more complicated case where $\elkey \not\in
 \setkey_\elpcset$, for a given $\elpcset$, the numerator
-$\elnum$ will be retrieved with $\Gamma(\elpcset, \elden) =
-\elnum$. 
+$\elnum$ will be retrieved with an estimated $\elden \in
+\setkey_\elpcset$ as $\Gamma(\elpcset, \elden) = \elnum$.
+This will return a \gls{rna} of the form shown in
+\refeq{numerator_from_pcset_den}.
+
+\begin{equation}
+    \label{eq:numerator_from_pcset_den}
+    \elkey \; \text{:} \; \elnum \; \text{/} \; \elden
+\end{equation}
+
+In the \gls{rna} of \refeq{numerator_from_pcset_den}, the
+key $\elkey$ and $\elpcset$ are given inputs, the
+tonicization $\elden$ is a forced tonicization computed by
+this method, and the numerator $\elnum$ is a chord relative
+to the tonicized key $\elden$.
+
+The next section describes the process of obtaining
+$\elden$.
