@@ -33,35 +33,42 @@ vocabulary of chords, based on \gls{pcsets} $\elpcset \in
 the \gls{pcset} $\elpcset$ and key $\elkey$ can be
 predicted.
 
+The vocabulary of \gls{pcset}s is constructed by combining
+all keys $\elkey \in \setkey$ with the Roman numeral
+numerators $\elnum \in \setnum$ and extracting the
+\gls{pcset} of the resulting chord. However, because there
+are Roman numeral numerators that are exclusive of the major
+or minor mode, the approach shown in \refeq{pcsets} is
+preferred. This results in a set of 121 pitch class sets.
 
-In a \gls{12tet} system, the same collection of pitch
-classes may have different chord labels and/or \gls{rna}
-labels. For example, the set of pitch classes $\{0$, $4$,
-$7\}$ may be called a ``C major'' chord, or a ``B$\musSharp$
-major'' chord; in \gls{rna}, it is called $\rnV$ if it
-appears in the context of the $F$ major key, or $\rnN$ if it
-appears in the context of the $b$ minor key. However, in all
-of those instances, the collection of pitch classes is the
-same. The attribute that disambiguates the different names
-of that pitch class set is the key context.
+% In a \gls{12tet} system, the same collection of pitch
+% classes may have different chord labels and/or \gls{rna}
+% labels. For example, the set of pitch classes $\{0$, $4$,
+% $7\}$ may be called a ``C major'' chord, or a ``B$\musSharp$
+% major'' chord; in \gls{rna}, it is called $\rnV$ if it
+% appears in the context of the $F$ major key, or $\rnN$ if it
+% appears in the context of the $b$ minor key. However, in all
+% of those instances, the collection of pitch classes is the
+% same. The attribute that disambiguates the different names
+% of that pitch class set is the key context.
 
-The proposed method assumes that a \gls{rna} label can
-always be disambiguated from a \gls{pcset} and a key. For
-each pair of \gls{pcset} and key attributes, there is at
-most one associated \gls{rna} label.\footnote{There could be
-pairs of \gls{pcset} and key for which there is no \gls{rna}
-label associated.}
+% The proposed method assumes that a \gls{rna} label can
+% always be disambiguated from a \gls{pcset} and a key. For
+% each pair of \gls{pcset} and key attributes, there is at
+% most one associated \gls{rna} label.\footnote{There could be
+% pairs of \gls{pcset} and key for which there is no \gls{rna}
+% label associated.}
 
-When the bounded vocabulary of keys (see
-\refsec{thevocabularyofmusicalkeys}) and bounded vocabulary
-of Roman numerals (see
-\refsec{thevocabularyofromannumerals}) are combined, the
-resulting vocabulary is a bounded vocabulary of \gls{pcset}
-classes.
+% When the bounded vocabulary of keys (see
+% \refsec{thevocabularyofmusicalkeys}) and bounded vocabulary
+% of Roman numerals (see
+% \refsec{thevocabularyofromannumerals}) are combined, the
+% resulting vocabulary is a bounded vocabulary of \gls{pcset}
+% classes.
 
-This results in a set of 121 pitch class sets.
 
 \begin{equation}
+    \label{eq:pcsets}
     \begin{split}
     \setpcset_M &= \{ \elpcset \mid \elpcset \text{ is the \gls{pcset} of }
     \elkey\text{:}\elnum, \text{ and }
