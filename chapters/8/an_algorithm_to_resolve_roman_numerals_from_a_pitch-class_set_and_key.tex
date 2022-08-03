@@ -40,13 +40,15 @@ Given a pitch class set $\elpcset \in \setpcset$ and a key
 $\elkey \in \setkey_\elpcset$, the function
 $\Gamma(\elpcset, \elkey) = \elnum$ returns the
 corresponding numerator $\elnum$ such that
-$\text{pcset}(\elkey$:$\elnum) = \elpcset$. 
-
-
-\gls{pcset} $\elpcset$ in key $\elkey$. Thus,
+$\text{pcset}(\elkey$:$\elnum) = \elpcset$. Thus,
 $\Gamma(\pcsetcega, \keyC) = \rnvisev$, $\Gamma(\pcsetcega,
 \keye) = \rnivsev$, and so on.
 
+A limitation of the function $\Gamma$ is that $\forall \;
+\elkey \not\in \setkey_\elpcset \; \Gamma(\elpcset, \elkey)
+= \varnothing$. possible problem with this method to
+retrieve $\elnum$ from the prediction of a machine learning
+system is that the system could predict a pair $
 
 $\elnum \in \setnum \cup \: \{ \emptyset \}$ is either a
 Roman numeral numerator from the bounded vocabulary or the
