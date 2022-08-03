@@ -58,24 +58,8 @@ A limitation of the function $\Gamma$ is that $\forall \;
 this method to retreive $\elnum$ from the predictions of a
 machine learning system, because the pair of $\elpcset$ and
 $\elkey$ could be such that $\elkey \not\in
-\setkey_\elpcset$.
-
-$\elnum \in \setnum \cup \: \{ \emptyset \}$ is either a
-Roman numeral numerator from the bounded vocabulary or the
-special symbol $\chi$ if there is no Roman numeral
-associated with the ($\elpcset$, $\elkey$) pair.
-
-The function $\Gamma$ can be implemented as a lookup table
-that returns $\chi$ when the duple ($\elpcset$, $\elkey$) is
-not found, and the Roman numeral numerator $\elnum \in
-\setnum$ otherwise.
-
-When $\Gamma(\elpcset, \elkey) = \chi$, the Roman numeral
-numerator cannot be retrieved directly. However, it can be
-retrieved if a tonicization is forced in the system (i.e.,
-the key changes for that particular chord).
-
-% Let $\Gamma(\elpcset, \elkey)$ be a lookup table that
-% returns a Roman numeral $\elnum \in \chi$ for all pairs of
-% ($\elpcset$, $\elkey$) for which there is a Roman numeral
-% association. 
+\setkey_\elpcset$. In that case, the Roman numeral numerator
+cannot be retrieved directly. However, it can be retrieved
+if a tonicization $\elden$ is imposed into the annotation
+(i.e., the key changes for that particular chord), such that
+$\elden \in \setkey_\elpcset$.
