@@ -272,7 +272,7 @@ conclusions = """
 
 appendix = """
 8-a method for systematic roman numeral analysis
-    breaking down a roman numeral label
+    the structure of a roman numeral analysis label
     the vocabulary of roman numeral numerators
         chords of the major mode
             major-mode triads
