@@ -296,5 +296,4 @@ appendix = """
     the vocabulary of pitch-class sets
     an algorithm to resolve roman numerals from a pitch-class set and key
         forcing a tonicization
-    an algorithm to resolve tonicizations
 """
