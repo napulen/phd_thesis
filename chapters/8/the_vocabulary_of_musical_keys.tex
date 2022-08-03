@@ -10,24 +10,25 @@ the classes will repeat. For the second case, the keys can
 be arranged in a \emph{line-of-fifths}
 \parencite{temperley2000line}.
 
-For a computational system, distinguishing between
-enharmonics is easier if the vocabulary of keys is bounded.
-Furthermore, many of those keys exist in theory, but would
-rarely (or never) occur in practice. For example, the key of
-$C\musDoubleSharp$ major.
+Designing a computational system that distinguishes between
+enharmonic keys is easier if the vocabulary of keys is
+bounded. Furthermore, many of the keys in the infinite exist
+in theory, but would rarely (or never) occur in practice.
+For example, the key of $C\musDoubleSharp$ major.
 
-In the proposed system, the vocabulary of keys was bounded.
-The number of available keys was determined in a data-driven
-way. By inspecting the examples provided in the aggregated
-dataset of \gls{rna} annotations (see
-\refsec{aggregatingallavailabledatasets}), it was determined
-that most annotations lie within the range of keys between
-$B\musDoubleFlat$ and $D\musSharp$ for the major keys, and
-$g\musFlat$ and $b\musSharp$ for the minor keys. Thus, the
-vocabulary of keys considered in this \thesisdiss{} spans
-all the keys in that range. This results in 38 keys.
+In this dissertation, I bounded the vocabulary of
+major-and-minor keys to be finite. The set of available keys
+was determined in a data-driven way. By inspecting the
+examples provided in the aggregated dataset of \gls{rna}
+annotations (see \refsec{aggregatingallavailabledatasets}),
+it was determined that most annotations lie within the range
+of keys between $\keyBbb$ and $\keyDs$ for the major keys,
+and $\keygb$ and $\keybs$ for the minor keys. Thus, the
+vocabulary of keys considered in this dissertation spans
+all the keys in that range, as shown in \refeq{keys}. This results in 38 keys.
 
 \begin{equation}
+    \label{eq:keys}
     \setkey = \{ \keyBbb, \keygb, \keyFb, \keydb, \dotsc,
     \keyGs, \keyes, \keyDs, \keybs \}
 \end{equation}
