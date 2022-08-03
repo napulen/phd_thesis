@@ -55,9 +55,10 @@ $\text{pcset}(\elkey$:$\elnum) = \elpcset$, as shown in
 A limitation of the function $\Gamma$ is that $\forall \;
 \elkey \not\in \setkey_\elpcset \; \Gamma(\elpcset, \elkey)
 = \varnothing$. This is a foreseeable problem when using
-this method to retreive $\elnum$ from the predictions of a
-machine learning system, because the pair of $\elpcset$ and
-$\elkey$ could be such that $\elkey \not\in
+this method to retreive numerators $\elnum$ from the
+predicted $\elpcset$ and $\elkey$ of a machine learning
+system. This is because the machine learning system could
+predict a $\elkey$ such that $\elkey \not\in
 \setkey_\elpcset$. In that case, the Roman numeral numerator
 cannot be retrieved directly. However, it can be retrieved
 if a tonicization $\elden$ is imposed into the annotation
