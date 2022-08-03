@@ -34,18 +34,27 @@ the tonicization to be reasonable.
 
 One way to compute a ``closely related'' key is to use a
 metric of key distance between $\elkey$ and all keys
-$\elden$ that satisfy $\elden \in \setkey_\elpcset$.
+$\elden$ that satisfy $\elden \in \setkey_\elpcset$. The
+tonicization $\elden$ with the minimal distance to $\elkey$
+is a good candidate for a tonicization.
 
+The key distance metric used is the euclidean distance
+between $\elkey$ and $\elden$ in the Weber tonal chart of
+keys \parencite{weber1818versuch}. The chart is arranged in
+the layout shown in \reftab{weber_tonal_chart}.
 
-An experienced analyst would perhaps assume that the chord
-is referring to a \emph{dominant of the dominant} chord,
-$C:\rnVsev/V$. Thus, related to the interpretation
-$G:\rnVsev$ but in a tonicized $G$ major key. Most of the
-times that interpretation would be correct, however, it is
-not trivial to disambiguate the tonicization context
-programmatically.
+\phdtable[Configuration of the Weber tonal chart for a given
+key $\elkey$]{weber_tonal_chart}
 
-One way to find a reasonable tonicization given the key
-context is to use a key distance algorithm to find the
-tonicization that would minimize the distance between the
-key provided and the tonicization.
+% An experienced analyst would perhaps assume that the chord
+% is referring to a \emph{dominant of the dominant} chord,
+% $C:\rnVsev/V$. Thus, related to the interpretation
+% $G:\rnVsev$ but in a tonicized $G$ major key. Most of the
+% times that interpretation would be correct, however, it is
+% not trivial to disambiguate the tonicization context
+% programmatically.
+
+% One way to find a reasonable tonicization given the key
+% context is to use a key distance algorithm to find the
+% tonicization that would minimize the distance between the
+% key provided and the tonicization.
