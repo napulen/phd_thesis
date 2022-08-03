@@ -54,9 +54,11 @@ $\text{pcset}(\elkey$:$\elnum) = \elpcset$, as shown in
 
 A limitation of the function $\Gamma$ is that $\forall \;
 \elkey \not\in \setkey_\elpcset \; \Gamma(\elpcset, \elkey)
-= \varnothing$. possible problem with this method to
-retrieve $\elnum$ from the prediction of a machine learning
-system is that the system could predict a pair.
+= \varnothing$. This is a foreseeable problem when using
+this method to retreive $\elnum$ from the predictions of a
+machine learning system, because the pair of $\elpcset$ and
+$\elkey$ could be such that $\elkey \not\in
+\setkey_\elpcset$.
 
 $\elnum \in \setnum \cup \: \{ \emptyset \}$ is either a
 Roman numeral numerator from the bounded vocabulary or the
