@@ -1,9 +1,26 @@
 % Copyright 2022 Néstor Nápoles López
 
 Consider the case of $\Gamma(\elpcset, \elkey)$ when
-$\elpcset = \pcsetcdFa$ and $\elkey = \keyC$. The
-\gls{pcset} corresponds to the pitches that would conform to
-a $F\musSharp:\rnGer$, $G:\rnVsev$, $G\musFlat:\rnGer$,
+$\elpcset = \pcsetcdFa$ and $\elkey = \keyC$. In that case,
+$\elpcset$ has an associated numerator $\elnum \in \setnum$
+with the subset of keys shown in \refeq{key_not_found}. 
+
+\begin{equation}
+    \label{eq:key_not_found}
+    \elpcset = \pcsetcdFa \text{ in key } \elkey =
+    \begin{cases}
+        \keyfs & \quad \elnum = \rnGer \\
+        \keyFs & \quad \elnum = \rnGer \\
+        \keygb & \quad \elnum = \rnGer \\
+        \keyg  & \quad \elnum = \rnVsev \\
+        \keyGb & \quad \elnum = \rnGer \\
+        \keyG  & \quad \elnum = \rnVsev \\
+    \end{cases}
+\end{equation}
+
+
+corresponds to the pitches that would conform to a
+$F\musSharp:\rnGer$, $G:\rnVsev$, $G\musFlat:\rnGer$,
 $f\musSharp:\rnGer$, $g\musFlat:\rnGer$, or $g:\rnVsev$
 chords, but it does not have a relationship with the key of
 $C$. An experienced analyst would perhaps assume that the
