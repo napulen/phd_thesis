@@ -50,15 +50,15 @@ Column-wise, the keys follow a line of fifths. Row-wise,
 each key is surrounded by its relative and parallel major
 (or minor) keys]{weber_tonal_chart}
 
-Thus, the estimation of tonicization $\elden$ is shown in
-\refeq{tonicization_estimation}. For the example above with
-$\elkey = \keyC$, this results in the key-distance
-estimations shown in
+Thus, the estimation of tonicization $\elden_{\min}$ is
+shown in \refeq{tonicization_estimation}. For the example
+above with $\elkey = \keyC$, this results in the
+key-distance estimations shown in
 \reftab{tonicization_estimation_example}.
 
 \begin{equation}
     \label{eq:tonicization_estimation}
-    \elden = \elden \mid \min_{\forall \elden \in \setkey_\elpcset} d(\elkey, \elden)
+    \elden_{\min} = \min_{\forall \elden \in \setkey_\elpcset} d(\elkey, \elden)
 \end{equation}
 
 \phdtable[Distance between given key $\elkey$ and
