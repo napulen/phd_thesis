@@ -239,6 +239,7 @@ experimental_evaluation = """
             computing time
     results
         accuracy on individual tasks
+        time performance on inference
         roman numeral accuracy
             performance on difficult chords
     discussion
@@ -288,10 +289,6 @@ appendix = """
                 augmented sixth chords
     the vocabulary of roman numeral denominators
     the vocabulary of arabic numeral inversions
-    the vocabulary of notes with spelling
-        35 one-hot encoding
-        19 two-hot encoding
-    the vocabulary of measure, note, and chord onsets
     the vocabulary of musical keys
     the vocabulary of pitch-class sets
     an algorithm to resolve roman numerals from a pitch-class set and key
