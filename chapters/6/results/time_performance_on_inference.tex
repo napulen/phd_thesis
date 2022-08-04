@@ -1,0 +1,17 @@
+% Copyright 2022 Néstor Nápoles López
+
+The time that each of the models took to compute the Roman
+numeral labels of each file in the test set was measured.
+Each of the files was processed as an independent process in
+the operating system. This is important because it might
+introduce a slight overhead on all the deep learning models,
+as the \gls{gpu} driver required to load for each file,
+instead of processing in batches. However, this overhead
+should result in a fair comparison for all the deep learning
+models. All of the deep learning models used \gls{gpu} when
+possible. \reftab{time_performance} shows the performance of
+the models.
+
+\phdtable[Inference time in seconds for each of the models
+compared]{time_performance}
+
