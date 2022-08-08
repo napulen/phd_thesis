@@ -209,7 +209,7 @@ experimental_evaluation = """
         changing the input representations
             encoding pitch spelling with an alternative method
             no lowest-sounding note information
-            no chroma information
+            no upper notes information
             no onset information
         changing the convolutional layers
             single convolutional block
