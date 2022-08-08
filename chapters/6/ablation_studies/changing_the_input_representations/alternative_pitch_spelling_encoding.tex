@@ -3,17 +3,16 @@
 In \refsubsubsec{19two-hotencoding}, a new method to encode
 pitch spelling was proposed using a 19-dimensional vector.
 This method was used in the baseline model of the ablation
-studies. The pitch-spelling method is a replacement of a
-35-dimensional vector encoding used by a previous model
-\parencite{micchi2021deep}. The new encoding method, among
-other things, reduces the number of trainable parameters.
-The current ablation study proposes to use the
-35-dimensional representation in \textcite{micchi2021deep}
-with pitch spelling classes within the range
-[C$\musDoubleFlat$, B$\musDoubleSharp$]. The hypothesis of
-the experiment is that no significant performance gains will
-be obtained if the 35-dimensional representation is used,
-and that the 19-dimensional one is an adequate replacement.
-Both input representations, \gls{bass19} and \gls{chroma19}
-use spelling information. Thus, this experiment affects how
-both of those representations encode spelling information.
+studies to encode the pitch spelling of the \gls{bass19} and
+\gls{chroma19} input representations. The pitch-spelling
+method is a replacement of a 35-dimensional vector encoding
+used by a previous model \parencite{micchi2021deep}. The new
+encoding method, among other things, reduces the number of
+trainable parameters. The current ablation study proposes to
+use the 35-dimensional representation in
+\textcite{micchi2021deep} with pitch spelling classes within
+the range [C$\musDoubleFlat$, B$\musDoubleSharp$] instead of
+the method chosen in the baseline. The hypothesis of the
+experiment is that no significant performance gains will be
+obtained if the 35-dimensional representation is used, and
+that the 19-dimensional one is an adequate replacement.
