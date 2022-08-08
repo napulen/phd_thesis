@@ -207,7 +207,7 @@ experimental_evaluation = """
     ablation studies
         baseline model
         changing the input representations
-            alternative pitch spelling encoding 
+            encoding pitch spelling with an alternative method
             no onset information
             no bottom note information
             no chroma information
