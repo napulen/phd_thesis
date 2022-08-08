@@ -208,7 +208,7 @@ experimental_evaluation = """
         baseline model
         changing the input representations
             encoding pitch spelling with an alternative method
-            no bottom note information
+            no lowest-sounding note information
             no chroma information
             no onset information
         changing the convolutional layers
