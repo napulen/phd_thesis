@@ -3,12 +3,20 @@
 It is difficult to understand what kind of representations a
 deep learning model learns during training. Ablation studies
 are an useful way to inspect the contribution of its
-different components. This section introduces a series of
-experiments to evaluate the performance of the model after
-modifying or removing some of the components of the neural
-network. The experiments are divided by sections of the
-neural network: input representations, convolutional layers,
-dense layers, and recurrent layers.
+different components. Ablation studies refer to a concept
+borrowed from neuroscience \parencite{meyes2019ablation},
+which applied to deep learning models, generally refers to
+experiments where components of the network are removed or
+modified. The purpose of the modifications is to observe the
+effects in the performance, as well as understanding the
+contributions of the different parts of the model in solving
+the classification problem in question. This section
+introduces a series of experiments to evaluate the
+performance of the model after modifying or removing some of
+the components of the neural network. The experiments are
+divided by sections of the neural network: input
+representations, convolutional layers, dense layers, and
+recurrent layers.
 
 The ablation studies were run over the aggregated training
 dataset using 5-fold cross-validation. There was no use of
