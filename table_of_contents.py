@@ -206,7 +206,7 @@ experimental_evaluation = """
 6-experimental evaluation
     ablation studies
         baseline model
-        changing the input
+        changing the input representations
             alternative pitch spelling encoding 
             no onset information
             no bottom note information
