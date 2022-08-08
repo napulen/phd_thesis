@@ -7,14 +7,14 @@ timesteps where a new measure starts, and the timesteps
 where a new note onset starts. This information complements
 the pitch-related information provided by the other tasks,
 \gls{bass19} and \gls{chroma19}. An ablation study is
-proposed where \gls{duration14} is removed. The hypothesis
-is that this will be detrimental to the performance of the
-neural network, particularly, the chord segmentation. The
-position of the chords is determined from the predictions of
-the \gls{harmonicrhythm7} task. Thus, losing performance in
-this task results in worse chord segmentation. The
-modifications proposed in the ablation study are shown in
-\reffig{ablation4}.
+proposed here, where \gls{duration14} input representation
+is removed. The hypothesis is that this will be detrimental
+to the performance of the \gls{crnn}, particularly, the
+chord segmentation. The position of the chords is determined
+from the predictions of the \gls{harmonicrhythm7} task.
+Thus, losing performance in this task results in worse chord
+segmentation. The modifications proposed in the ablation
+study are shown in \reffig{ablation4}.
 
 \phdfigure[Modifications proposed in the fourth ablation
 study]{ablation4}
