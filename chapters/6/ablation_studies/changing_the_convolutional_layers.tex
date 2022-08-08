@@ -2,11 +2,14 @@
 
 In the baseline model, the convolutional blocks process the
 three inputs independently, which are later concatenated.
-The architecture of the convolutional blocks is identical,
-using the same number of layers and the same strategy to
-adjust the number of filters and kernel size in each layer.
-The experiments in this section explore modifications to
-those components of the model design.
+The convolutional blocks for all three inputs are similar,
+using the same number of layers ($n=6$; see
+\refsubsubsec{numberofconvolutionalfilters}) and the same
+strategy to adjust the kernel size (see
+\refsubsubsec{kernelsize}) and number of filters (see
+\refsubsubsec{numberoffilters}) in each layer. The
+experiments in this section explore modifications to those
+components of the model design.
 \refsubsubsec{singleconvolutionalblock} explores the
 performance of the neural network with a single
 convolutional block. \refsubsubsec{constantnumberoffilters}
