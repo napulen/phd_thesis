@@ -6,7 +6,9 @@ the chord. If a human analyst was required to indicate the
 inversion of a chord knowing which notes are sounding in the
 staff, but not knowing which of them is sounding the lowest,
 it would make the task very difficult, if not impossible.
-This ablation study proposes that experiment, a missing
-\gls{bass19} input representation, which should clearly be
-detrimental to the \gls{bass35} task of the network, which
-is the task used to retrieve the inversion of the chord.
+The lowest-sounding note is provided to the network in the
+\gls{bass19} input representation. This ablation study
+proposes removing that representaiton, which should be
+detrimental to the \gls{bass35} task (i.e., predicting the
+bass of the chord) of the network, which is the task used to
+retrieve the inversion of the chord.
