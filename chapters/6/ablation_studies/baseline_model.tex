@@ -2,4 +2,13 @@
 
 All the ablation studies are compared against a baseline
 model. The baseline model consists of the \gls{crnn}
-described in \refchap{modeldesign}.
+described in \refchap{modeldesign}, which comprises three
+input representations (\gls{bass19}, \gls{chroma19}, and
+\gls{duration14}) described in \refsubsec{encodingthescore},
+a block of $n=6$ convolutional layers described in
+\refsec{theconvolutionalblocks}, two dense layers, and two
+\gls{rnn} layers with \gls{gru} units (see
+\refsec{denseandrecurrentlayers}). The baseline model has 9
+classification outputs in the \gls{mtl} layout described in
+\refsec{multitasklearningoutputs}, however, these remain
+constant in the ablation studies.
