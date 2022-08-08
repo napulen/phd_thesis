@@ -238,8 +238,8 @@ experimental_evaluation = """
             data splits
             computing time
     results
-        accuracy on individual tasks
         time performance on inference
+        accuracy on individual tasks
         roman numeral accuracy
             performance on difficult chords
     discussion
