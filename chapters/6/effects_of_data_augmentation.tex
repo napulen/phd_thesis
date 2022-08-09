@@ -5,12 +5,18 @@ explored: \emph{transposition} and \emph{synthesis}.
 Transposition refers to the transposition of training
 examples to a different key. Synthesis refers to a new
 data-augmentation technique where artificial training
-examples are generated from the \gls{rna} annotations.
-Both data-augmentation techniques are described in
-\refsec{dataaugmentation}. The baseline model refers to the
-same baseline model used in the ablation studies (see
-\refsubsec{baselinemodel}). First, the effect of
-transposition and synthetic files individually. As these two
-methods are not mutually exclusive and generally benefit
-from each other, the next experiments measure the effects of
-both combined. 
+examples are generated from the \gls{rna} annotations. Both
+data-augmentation techniques are described in
+\refsec{dataaugmentation}. These techniques were applied on
+the same baseline model described in the ablation studies
+(see \refsubsec{baselinemodel}). In the experiments
+performed, each of the seven individual datasets was used to
+train the baseline model four times. The first time, with
+only the original data. The second time, with the original
+data and additional data via \emph{transposition}. The third
+time, with the original data and additional data via
+\emph{synthesis}. The fourth time, with the original data
+and additional data via \emph{transposition} and
+\emph{synthesis}. As these two methods are not mutually
+exclusive, the last experiment verifies whether they benefit
+from each other.
