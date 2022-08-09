@@ -7,11 +7,11 @@ layers. The two dense layers have a \gls{relu} nonlinear
 activation function. An experiment is proposed to explore
 the effects of reducing the dimensionality without the
 addition of nonlinearities. This is achived by replacing the
-two \gls{relu}-activated dense layers with a single linear
-layer without activation function. The latter exclusively
-reduces the dimensionality of each timestep before the
-recurrent layers. \reffig{ablation8} shows the changes
-proposed in the experiment. 
+two \gls{relu}-activated dense layers with a single dense
+linear layer without activation function. The latter
+exclusively reduces the dimensionality of each timestep
+before the recurrent layers. \reffig{ablation8} shows the
+changes proposed in the experiment. 
 
 \phdfigure[Replacement of two dense layers with a \gls{relu}
 activation function for a single linear dense layer
