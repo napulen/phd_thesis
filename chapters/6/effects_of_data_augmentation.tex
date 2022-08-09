@@ -1,11 +1,19 @@
 % Copyright 2022 Néstor Nápoles López
 
-The effects of the data augmentation techniques was
-evaluated on the best-performing configuration of the model.
-First, the effect of transposition and synthetic files
-individually. As these two methods are not mutually
-exclusive and generally benefit from each other, the next
-experiments measure the effects of both combined. 
+The effects of two data augmentation techniques were
+explored on the baseline model: \emph{transposition} and
+\emph{synthesis}. Transposition refers to the transposition
+of musical examples to a different key. Synthesis refers to
+a new data-augmentation technique where artificial training
+examples are synthesized from the \gls{rna} annotations.
+Both data-augmentation techniques are described in
+\refsec{dataaugmentation}. The baseline model refers to the
+same baseline model used in the ablation studies (see
+\refsubsec{baselinemodel}). First, the effect of
+transposition and synthetic files individually. As these two
+methods are not mutually exclusive and generally benefit
+from each other, the next experiments measure the effects of
+both combined. 
 % In the combined data augmentation experiments, the
 % parameters of texturization for the synthetic data
 % examples were modified.
