@@ -215,8 +215,7 @@ experimental_evaluation = """
             single convolutional block
             constant number of filters
             no convolutional layers
-        changing the dense layers
-            one linear layer
+        single dense linear layer
         changing the recurrent layers
             no recurrent layers
             unidirectional recurrent layers
