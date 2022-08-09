@@ -10,9 +10,12 @@ with the longest time window (i.e., kernel size) learns
 patterns across 32 timesteps (i.e., a \gls{whole} note). Any
 musical patterns that occur beyond a \gls{whole} note
 benefit from the recurrent layers. An ablation experiment is
-proposed to confirm this, where the two recurrent layers in
-the baseline model are removed. The modifications proposed
-are shown in \reffig{ablation9}.
+proposed where the two recurrent layers in the baseline
+model are removed. This should confirm the effects of losing
+longer-term dependencies in the network, potentially
+affecting key estimation tasks, \gls{localkey38} and
+\gls{tonicization38}. The modifications proposed are shown
+in \reffig{ablation9}.
 
 \phdfigure[Modifications proposed in the ninth ablation
 study]{ablation9}
