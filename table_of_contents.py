@@ -217,7 +217,7 @@ experimental_evaluation = """
             no convolutional layers
         single dense linear layer
         changing the recurrent layers
-            no recurrent layers
+            removing the recurrent layers
             unidirectional recurrent layers
     best performing model configuration
     effects of data augmentation
