@@ -3,12 +3,13 @@
 In the baseline model, two dense layers are positioned
 between the convolutional and recurrent layers to reduce the
 dimensionality of the representation after the convolutional
-layers. Nevertheless, two dense layers with ReLU nonlinear
-activation functions provided the best performance in
-preliminary experiments. \refsubsubsec{onelinearlayer}
-explores the effects of replacing the two nonlinear dense
-layers with a linear layer that exclusively reduces the
-dimensionality of each timestep.
+layers. The two dense layers have a \gls{relu} Nevertheless,
+two dense layers with ReLU nonlinear activation functions
+provided the best performance in preliminary experiments.
+\refsubsubsec{onelinearlayer} explores the effects of
+replacing the two nonlinear dense layers with a linear layer
+that exclusively reduces the dimensionality of each
+timestep.
 
 The purpose of this experiment is to verify the performance
 of the network without nonlinear layers between the
