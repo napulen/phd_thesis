@@ -224,6 +224,7 @@ experimental_evaluation = """
         transposition only
         synthesis only
         synthesis and transposition
+    results on the test set
     evaluation against previous models
         baseline models
             melisma (2001)
