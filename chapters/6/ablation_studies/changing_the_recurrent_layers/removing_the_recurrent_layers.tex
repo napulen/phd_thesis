@@ -1,10 +1,17 @@
 % Copyright 2022 Néstor Nápoles López
 
 The recurrent layers in the baseline model process the full
-sequence of timesteps (i.e., 640 \gls{32nd} notes). purpose
-of this experiment is to verify the performance of the
-network without any recurrent layers. The modifications
-proposed are shown in \reffig{ablation9}.
+sequence of timesteps (i.e., 640 \gls{32nd} notes). Except
+for some of the convolutional layers, all other components
+learn parameters at the level of an individual timestep.
+Furthermore, the convolutional layer with the longest time
+window (i.e., kernel size) learns patterns across 32
+timesteps (i.e., a \gls{whole} note). Any musical patterns
+that occur beyond a \gls{whole} note benefit from the
+recurrent layers. An ablation experiment is proposed to
+confirm this, where the two recurrent layers in the baseline
+model are removed. The modifications proposed are shown in
+\reffig{ablation9}.
 
 \phdfigure[Modifications proposed in the ninth ablation
 study]{ablation9}
