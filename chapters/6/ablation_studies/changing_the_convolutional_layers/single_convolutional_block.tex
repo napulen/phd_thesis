@@ -5,13 +5,13 @@ of input representations sent to the neural network. In the
 baseline model, there are three convolutional blocks, one
 for each of the \gls{bass19}, \gls{chroma19}, and
 \gls{duration14} input representations. An experiment is
-proposed to explore the effects of concatenating (i.e.,
-stacking) all the inputs into a single vector per timestep.
-The resulting sequence is processed by a single
-convolutional block, as shown in \reffig{ablation5}. This
-experiment should indicate whether the performance of the
-network is affected by processing the inputs by their own
-convolutional block or not.
+proposed to explore the effects of using a unique
+convolutional block. That is, learning convolutional filters
+from all the inputs at once, instead of independently. This
+is achieved by concatenating (i.e., stacking) all the inputs
+into a single vector per timestep, and processing the
+resulting sequence with a single convolutional block, as
+shown in \reffig{ablation5}.
 
 \phdfigure[Modification proposed in the ablation study,
 where all the input representations are concatenated and
