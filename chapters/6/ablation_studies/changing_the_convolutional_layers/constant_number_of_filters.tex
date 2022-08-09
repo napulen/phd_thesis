@@ -4,15 +4,19 @@ In the baseline model, the number of filters decreases in
 each layer, while the kernel size increases. An experiment
 is proposed here, where the number of filters across all
 convolutional layers remains constant, keeping the number of
-trainable parameters as close as possible to the baseline.
+trainable parameters as close as possible to the baseline. A
+constant of $f=5$ was chosen for the number of filters in
+the ablation experiment, as this results in a similar number
+of trainable parameters as in the variable $f$ approach of
+the baseline.
+
 Using this configuration, the network will learn a similar
-number of patterns at the level of thirty-second notes
-($\musThirtySecond$) as it does for whole notes
-($\musWhole$). In the baseline configuration, I hypothesize
-that more patterns in the short-term kernel sizes
-($\musThirtySecond$) are beneficial to the performance of
-the model. The modifications proposed are shown in
-\reffig{ablation6}.
+number of patterns at the level of \gls{32nd} notes as it
+does for \gls{whole} notes. In the baseline configuration, I
+hypothesize that more patterns in the short-term kernel
+sizes (e.g., \gls{32nd} notes) are beneficial to the
+performance of the model. The modifications proposed are
+shown in \reffig{ablation6}.
 
 \phdfigure[Modifications proposed in the sixth ablation
 study]{ablation6}
