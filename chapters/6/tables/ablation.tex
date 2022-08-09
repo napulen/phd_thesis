@@ -1,23 +1,23 @@
-\begin{tabular}{llllllllll}
-                                & Alto35         & Bass35         & HR7             & LocalKey38      & PcSet121        & RN31            & Soprano35       & Tenor35         & TonicizedKey38  \\
-\hline
-Baseline                        & 0.673          & 0.752          & 0.782           & 0.747           & 0.732           & 0.57            & 0.714           & 0.715           & 0.768           \\
-\hline
-\textsc{Input}                  &                &                &                 &                 &                 &                 &                 &                 &                 \\
-35-one-hot                      & -0.002         & -0.005         & -0.02           & -0.003          & -0.001          & 0.015           & 0.003           & -0.002          & 0.004           \\
-no onset                        & -0.014         & -0.029         & \textbf{-0.227} & 0.01            & -0.011          & 0.018           & -0.002          & -0.022          & 0.006           \\
-no bottom note                  & \textbf{-0.14} & \textbf{-0.19} & -0.02           & -0.003          & -0.002          & 0.014           & -0.054          & \textbf{-0.177} & 0.003           \\
-no chroma                       & -0.114         & -0.018         & -0.052          & -0.068          & \textbf{-0.244} & \textbf{-0.183} & \textbf{-0.176} & -0.11           & -0.111          \\
-\hline
-\textsc{Convolutional}                    &                &                &                 &                 &                 &                 &                 &                 &                 \\
-one block                       & 0              & -0.009         & 0.01            & -0.015          & -0.003          & 0.005           & 0.009           & 0               & -0.01           \\
-constant filters                & -0.004         & -0.006         & -0.014          & -0.009          & -0.006          & -0.016          & 0               & -0.003          & 0               \\
-no conv layers                  & -0.006         & -0.005         & 0               & -0.002          & -0.003          & 0               & 0.002           & -0.008          & 0.008           \\
-\hline
-\textsc{Dense}            &                &                &                 &                 &                 &                 &                 &                 &                 \\
-one linear layer                & 0.005          & 0.008          & -0.001          & -0.015          & 0.004           & 0.016           & 0.008           & 0.007           & 0.007           \\
-\hline
-\textsc{Recurrent}                    &                &                &                 & \textbf{}       &                 &                 &                 &                 & \textbf{}       \\
-no recurrent layers             & -0.046         & -0.054         & -0.068          & \textbf{-0.205} & -0.056          & -0.078          & -0.039          & -0.061          & \textbf{-0.127} \\
-unidirectional recurrent layers & -0.013         & -0.016         & -0.005          & -0.095          & -0.024          & -0.025          & -0.017          & -0.018          & -0.057         
+\begin{tabular}{l|rrrrrrrrr}
+                                & & & & & & & & & \\
+\hline                          & & & & & & & & & \\
+Baseline                        & & & & & & & & & \\
+\hline                          & & & & & & & & & \\
+\textsc{\textbf{Input}}         & & & & & & & & & \\
+Pitch spelling                  & & & & & & & & & \\
+No \gls{bass19}                 & & & & & & & & & \\
+No \gls{chroma19}               & & & & & & & & & \\
+No \gls{duration14}             & & & & & & & & & \\
+\hline                          & & & & & & & & & \\
+\textsc{\textbf{Convolutional}} & & & & & & & & & \\
+Single block                    & & & & & & & & & \\
+Constant filters                & & & & & & & & & \\
+No convolutional layers         & & & & & & & & & \\
+\hline                          & & & & & & & & & \\
+\textsc{\textbf{Dense}}         & & & & & & & & & \\
+Linear dense layer              & & & & & & & & & \\
+\hline                          & & & & & & & & & \\
+\textsc{\textbf{Recurrent}}     & & & & & & & & & \\
+No recurrent layers             & & & & & & & & & \\
+Unidirectional                  & & & & & & & & & \\
 \end{tabular}
