@@ -7,12 +7,15 @@ they have the same number of layers ($n=6$, see
 \refsubsubsec{numberofconvolutionalfilters}) and use the
 same strategy to adjust the kernel size (see
 \refsubsubsec{kernelsize}) and number of filters (see
-\refsubsubsec{numberoffilters}) of each layer. These are
-shown in \reffig{ablation_baseline_convolutional}. 
+\refsubsubsec{numberoffilters}) of each layer. The structure
+of these blocks are shown in
+\reffig{ablation_baseline_convolutional}. 
 
 \phdfigure[The configuration of the convolutional blocks in
-the baseline \gls{crnn} used for the ablation
-studies]{ablation_baseline_convolutional}
+the baseline \gls{crnn} used for the ablation studies. Note
+that the block processing \gls{bass19} and \gls{chroma19}
+are identical. Thus, two blocks are
+shown]{ablation_baseline_convolutional}
 
 The experiments in this section explore modifications to the
 convolutional blocks or the convolutional layers within.
