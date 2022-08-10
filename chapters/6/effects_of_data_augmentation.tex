@@ -9,30 +9,24 @@ examples are generated from the \gls{rna} annotations. Both
 data-augmentation techniques are described in
 \refsec{dataaugmentation}. These techniques were applied on
 the same baseline model described in the ablation studies
-(see \refsubsec{baselinemodel}). In the experiments
-performed, each of the seven individual datasets (see
+(see \refsubsec{baselinemodel}). In the four experiments
+conducted, each of the seven individual datasets (see
 \refsec{publiclyavailabledatasets}) was used to train the
-baseline model four times, as shown in
-\reftab{augmentation_experiments}. The first time, with only
-the original data. The second time, with the original data
-and additional data via \emph{transposition}. The third
-time, with the original data and additional data via
-\emph{synthesis}. The fourth time, with the original data
-and additional data via \emph{transposition} and
+baseline model, as shown in
+\reftab{augmentation_experiments}. The first time, with the
+original training data. The second time, with the original
+training data augmented by \emph{transposition}. The third
+time, with the original training data augmented by
+\emph{synthesis}. The fourth time, with the original
+training data augmented by both \emph{transposition} and
 \emph{synthesis}. As these two methods are not mutually
 exclusive, the last experiment verifies whether they benefit
-from each other. Figures
-\ref{fig:ablation_augmentation_loss} and
-\ref{fig:ablation_augmentation_accuracy} show the average
-validation loss and average validation accuracy across the
-seven datasets with each data-augmentation strategy.
-
+from each other.
 
 % Because the individual datasets used in this dissertation
 % vary significantly from each other, the experiments with
 % data augmentation techniques were performed over each
 % individual dataset.
-
 
 \phdtable[Experiments performed on the baseline regarding
 data augmentation]{augmentation_experiments}
