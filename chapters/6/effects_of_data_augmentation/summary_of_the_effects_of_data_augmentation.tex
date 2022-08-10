@@ -26,15 +26,16 @@ publicly available datasets]{augmentation_results}
 
 Both data augmentation techniques have a positive effect in
 the performance of the model compared to only using the
-original data. The performance of the transposition
-continues to be the most effective data-augmentation
-technique, however, it also substantially increases the
-training time compared to the synthesis itself. The most
-effective technique is to use both, transposition and
-synthetic examples, although the improvement is not
-extensive. However, considering the difficulty of obtaining
-expert-curated data for \gls{arna}, it seems to provide a
-consistent improvement at the expense of more computation.
+original data. Transposition continues to be the most
+effective data-augmentation technique on its own, however,
+the experiments show that both techniques do not interfere
+with each other. In fact, the most effective technique is to
+use both, transposition and synthetic examples, although the
+improvement is not extensive and the training time
+increases. However, considering the difficulty of obtaining
+expert-curated data for \gls{arna}, using both techniques
+seems to provide a consistent improvement at the expense of
+more computation.
 
 In future experiments, the proposed model is trained with
 both data augmentation techniques simultaneously.
