@@ -35,7 +35,7 @@ and this one, is the use of \emph{rmsprop} as the optimizer,
 instead of \emph{Adam} \parencite{kingma2014adam}. I found
 that \emph{rmsprop} was generally better and decided to use
 it as the default. Every revised experiment in the
-camera-ready paper uses \code{rmsprop}. As observed before,
+camera-ready paper uses \emph{rmsprop}. As observed before,
 the results went slightly above just because of that.
 
 \paragraph{v1.1.0 - February 3, 2022}
@@ -87,7 +87,8 @@ annotations generated in inference mode.
 \paragraph{v1.3.1 - February 14, 2022}
 Fixing unit tests to work with the pretrained model of
 \code{v1.3.0}. Fine-tuning the chord vocabulary and
-improving the \code{forceTonicization} algorithm.
+improving the implementation of the algorithm to force
+tonicizations (see \refsubsec{forcingatonicization}).
 
 \paragraph{v1.3.3 - February 14, 2022}
 The transposition algorithm for data augmentation is now
