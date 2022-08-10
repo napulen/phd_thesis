@@ -5,9 +5,20 @@ used as a data augmentation technique to overcome the
 scarcity of data. When pitch spelling is taken into account,
 it requires the additional consideration that transpositions
 into two enharmonic keys are distinct from each other. This
-was explored by \textcite{micchi2020not} and also here. The
-first experiment here measures the effect of transposition
-in the performance of the model.
+was first investigated in \textcite{micchi2020not}, where
+the transposition takes into account the spelling of the
+notes and the vocabulary of the key modulations within the
+piece. The approach here is to make sure that all
+transpositions done over a piece result in key modulations
+and tonicizations that fit within the vocabulary of keys
+$\setkey$ (see \refsec{thevocabularyofmusicalkeys}).
+\reftab{augmentation_transposition} shows the parameters and
+training time of this experiment. Note that in two datasets
+with the same number of files, \gls{tavern} and \gls{mps},
+the augmentation results in a different number of
+transpositions. This is related to the possible number of
+transpositions where the modulations lie within the
+vocabulary $\setkey$.
 
 \phdtable[Parameters of the experiment with
 data-augmentation by
