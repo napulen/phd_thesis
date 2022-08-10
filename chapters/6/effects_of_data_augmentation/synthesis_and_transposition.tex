@@ -5,40 +5,6 @@ training examples are not mutually exclusive. In the last
 experiment, the impact of both techniques in conjunction is
 evaluated.
 
-Because the individual datasets used in this \thesisdiss{}
-vary significantly from each other, the experiments with
-data augmentation techniques were performed over each
-individual dataset. The results in Figures
-\ref{fig:da_val_loss} and \ref{fig:da_val_accuracy} show the
-performance of the model with and without data augmentation
-for 200 epochs on each dataset. 
-% \reftab{augmentation}
-% summarizes the performance obtained after selecting the best
-% weights for each experiment.
-
-\phdfigure[Validation loss of the different data
-augmentation strategies]{ablation_augmentation_loss}
-
-\phdfigure[Validation accuracy of the different data
- augmentation strategies]{ablation_augmentation_accuracy}
-
-% \phdtable[Contribution of the data augmentation techniques.
-%  At the top, the average performance obtained without data
-%  augmentation is reported. Below, the difference in accuracy
-%  for each task with different data augmentation
-%  combinations]{augmentation}
-
- Both data augmentation techniques have a positive effect in
- the performance of the model compared to only using the
- original data. The performance of the transposition
- continues to be the most effective data-augmentation
- technique, however, it also substantially increases the
- training time compared to the synthesis itself. The most
- effective technique is to use both, transposition and
- synthetic examples, although the improvement is not
- extensive. However, considering the difficulty of obtaining
- expert-curated data for \gls{arna}, it seems to provide a
- consistent improvement at the expense of more computation.
-
- In future experiments, the proposed model is trained with
- both data augmentation techniques simultaneously.
+\phdtable[Parameters of the experiment with
+data-augmentation by
+\emph{synthesis}]{augmentation_synthesis}
