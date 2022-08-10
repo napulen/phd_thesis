@@ -1,11 +1,24 @@
 % Copyright 2022 Néstor Nápoles López
 
 A pretrained model of the system is distributed to the
-public. This model is the one trained for the comparison
-experiments against previous methods. That is, the
-best-performing version of the model. It can be used to
-annotate unseen \gls{musicxml} scores, or to compare the
+public. This model is the one trained for the experiment on
+the aggregated dataset, discussed in
+\refsec{trainingontheaggregateddataset}. More specifically,
+the baseline model described in
+\refsubsubsec{baselinemodel}, trained with the aggregated
+dataset discussed in \refsec{theaggregateddataset}, and
+applying the \emph{transposition} and \emph{synthesis}
+data-augmentation techniques as discussed in
+\refsubsec{synthesisandtransposition}. The model can be used
+to annotate unseen \gls{musicxml} scores, or to compare the
 predictions of a newer model against the one presented here.
+The training session lasted for 16 hours, and it consisted
+of 200 epochs, where the metric of average validation
+accuracy across the 9 multitask classification tasks was
+used to choose the best checkpoint out of the 200 epochs of
+training. The model was trained on August 1, 2022 in the
+cluster allocations of the Digital Research Alliance of
+Canada (formerly known as Compute Canada).
 
 The pretrained model was written using the \emph{Tensorflow}
 and \emph{Keras} libraries \parencite{abadi2016tensorflow,
