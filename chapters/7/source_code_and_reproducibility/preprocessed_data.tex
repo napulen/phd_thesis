@@ -25,10 +25,12 @@ The generation of the initial \gls{tsv} file is generally
 slower\footnote{Nearly 50 minutes to compute on an Intel i7
 10750 processor.} and does not change often. The generation
 of the tensor sequences is generally faster\footnote{Nearly
-3 minutes to compute on an Intel i7 10750 processor.} and
-changes frequently for experimentation. Thus, a preprocessed
-collection of \gls{tsv} files is distributed with each of
-the releases of the system. This can be used to reproduce
-the results of the experiments presented here or to
-facilitate the exploration of new tonal tasks or
+3 minutes to compute on an Intel i7 10750 processor,
+considering the aggregated dataset (see
+\refsec{theaggregateddataset}) without data augmentation.}
+and changes frequently for experimentation. Thus, a
+preprocessed collection of \gls{tsv} files is distributed
+with each of the releases of the system. This can be used to
+reproduce the results of the experiments presented here or
+to facilitate the exploration of new tonal tasks or
 input/output representations.
