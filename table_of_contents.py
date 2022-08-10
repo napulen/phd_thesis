@@ -260,7 +260,7 @@ conclusions = """
     future work
         texturization
             data-driven texturization
-            synthesizing non-chord tones
+            synthesizing nonchord tones
         extending the chord vocabulary
         standardization
             consistency in modulations and tonicizations
