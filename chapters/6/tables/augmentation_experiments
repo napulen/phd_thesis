@@ -1,4 +1,4 @@
-\begin{tabular}{l|lll}
+\begin{tabular}{c|lll}
     Experiment & Data Augmentation Strategy \\ \hline
     1 & No data augmentation (baseline) \\
     2 & Synthesis \\
