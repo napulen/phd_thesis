@@ -6,7 +6,10 @@ enharmonic spellings of the same note, as shown in
 
 \begin{equation}
     \label{eq:enharmonicity}
-    F\musSharp = G\musFlat
+    \begin{split}
+    F\musSharp = G\musFlat \textit{(assuming enharmonic equivalence)} \\
+    F\musSharp \neq G\musFlat \textit{(assuming enharmonic equivalence)} \\
+    \end{split}
 \end{equation}
 
 In the \gls{arna} model proposed here, however, the spelling
@@ -22,9 +25,7 @@ methods are described next.
 
 \phdparagraph{35 one-hot encoding}
 
-When two spellings of the same \gls{midi} note number are
-distinguished, they can be encoded as different dimensions
-in a vector. The use of \gls{sharp} and \gls{flat}
+The use of \gls{sharp} and \gls{flat}
 accidentals is very common. The use of \gls{doublesharp} and
 \gls{doubleflat} accidentals is less common. Any accidental
 sharper than \gls{doublesharp} or flatter than
