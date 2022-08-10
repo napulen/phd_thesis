@@ -1,0 +1,7 @@
+\begin{tabular}{llll}
+    Experiment & Data Augmentation Strategy \\ \hline
+    1 & No data augmentation (baseline) \\
+    2 & Synthesis \\
+    3 & Transposition \\
+    4 & Transposition and Synthesis \\
+\end{tabular}
