@@ -162,3 +162,13 @@ aggregated dataset. This is the last dataset to be
 integrated into the set of seven publicly available datasets
 described in
 \refchap{dataacquisitionandpreparation}
+
+\paragraph{v1.9.1 - August 7, 2022}
+This is a minor path release. It fixed a bug where the
+annotations would not generate properly on \gls{musicxml}
+files with multiple voices. It also fixed another issue
+where $\rnCad$ chords would be labeled properly although the
+predictions were correct. Lastly, it removed the caching of
+\gls{musicxml} files from the \emph{music21} library, as
+these lead to unpredictable behaviour during the final
+evaluation of the model.
