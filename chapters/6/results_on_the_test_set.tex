@@ -1,9 +1,24 @@
 % Copyright 2022 Néstor Nápoles López
 
-The baseline model described in \refsubsec{baselinemodel}
-was trained on the aggregated training dataset and evaluated
-on the test portion of each individual dataset. The results
-are reported in \reftab{final_results_dataset}.
+\refsec{ablationstudies} introduced a baseline \gls{crnn}
+model and a series of experiments to explore the its
+underlying components. This baseline model was subsequently
+used in \refsec{effectsofdataaugmentation} to explore the
+effects of data-augmentation techniques when training the
+model on seven publicly available datasets. In the
+experiments of \refsec{effectsofdataaugmentation}, the model
+was trained on each dataset individually. However, the best
+performance is achieved when more data is used to train the
+model.
+
+This section reports the results of training the model with
+the aggregated dataset, consisting of all the training data
+across the seven publicly available datasets. Furthermore,
+the model was evaluated on the test portion of each
+individual dataset. The results are reported in
+\reftab{final_results_dataset}. In this experiment, both
+data-augmentation techniques, \emph{transposition} and
+\emph{synthesis}, were used in combination. 
 
 \phdtable[Results obtained in the test set of each
 individual dataset]{final_results_dataset}
