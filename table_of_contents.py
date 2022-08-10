@@ -226,7 +226,7 @@ experimental_evaluation = """
         transposition
         synthesis and transposition
         summary of the effects of data augmentation
-    results on the test set
+    training on the aggregated dataset
     evaluation against previous models
         baseline models
             melisma (2001)
