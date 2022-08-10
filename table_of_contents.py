@@ -221,9 +221,11 @@ experimental_evaluation = """
             unidirectional recurrent layers
         summary of the ablation studies
     effects of data augmentation
+        no data augmentation (baseline)
         transposition only
         synthesis only
         synthesis and transposition
+        summary of the effects of data augmentation
     results on the test set
     evaluation against previous models
         baseline models
