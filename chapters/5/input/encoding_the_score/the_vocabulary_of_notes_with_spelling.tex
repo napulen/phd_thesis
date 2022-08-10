@@ -7,8 +7,8 @@ enharmonic spellings of the same note, as shown in
 \begin{equation}
     \label{eq:enharmonicity}
     \begin{split}
-    F\musSharp = G\musFlat \textit{(assuming enharmonic equivalence)} \\
-    F\musSharp \neq G\musFlat \textit{(assuming enharmonic equivalence)} \\
+    F\musSharp = G\musFlat & \textit{enharmonic equivalence} \\
+    F\musSharp \neq G\musFlat & \textit{enharmonic nonequivalence} \\
     \end{split}
 \end{equation}
 
@@ -25,13 +25,13 @@ methods are described next.
 
 \phdparagraph{35 one-hot encoding}
 
-The use of \gls{sharp} and \gls{flat}
-accidentals is very common. The use of \gls{doublesharp} and
-\gls{doubleflat} accidentals is less common. Any accidental
-sharper than \gls{doublesharp} or flatter than
-\gls{doubleflat} is rare. Thus, a reasonable representation
-for spelled pitch classes\footnote{Note that the octave is
-ignored.} is a representation with 35 features:
+The use of \gls{sharp} and \gls{flat} accidentals is very
+common. The use of \gls{doublesharp} and \gls{doubleflat}
+accidentals is less common. Any accidental sharper than
+\gls{doublesharp} or flatter than \gls{doubleflat} is rare.
+Thus, a reasonable representation for spelled pitch
+classes\footnote{Note that the octave is ignored.} is a
+representation with 35 features:
 
 \begin{equation}
     \label{eq:pitch_spelling_35}
