@@ -8,8 +8,14 @@ music file is stripped from some of its original information
 when it is encoded for the neural network model.
 Furthermore, the score is sampled at regular note intervals
 of \gls{32nd} notes, encoding the musical information at
-each of those timesteps. This section describes this
-encoding process.
+each of those timesteps. The encoding of the score occurs in
+what I refer to \emph{input representations}, which are
+described in \refsubsec{inputrepresentations}. However,
+these representations require a numerical representation of
+pitch spellings and onsets. Thus, the vocabularies to describe pitch spellings and onsets are introduced here.
+
+
+This section describes this encoding process.
 
 Using these sequences and the vocabularies described in
 \refsec{thevocabularyofnoteswithspelling} and
