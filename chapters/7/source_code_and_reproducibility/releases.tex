@@ -6,16 +6,16 @@ are ordered chronologically, with a brief description of the
 changes it introduces. Some of the tagged releases were left
 out for brevity.
 
-\phdparagraph{first commit - february 12, 2021}
+\paragraph{First Commit - February 12, 2021}
 This is the date of the initial commit of the project, with
 the commit identifier \code{f721860}.
 
-\phdparagraph{0.0.1 - april 12, 2021}
+\paragraph{0.0.1 - April 12, 2021}
 Initial tagged version of the software. Unstable. Closed
 source. Introduced the basic workflow for pairing annotation
 and scores into a tabular format.
 
-\phdparagraph{v0.1.0 - may 14, 2021}
+\paragraph{v0.1.0 - May 14, 2021}
 This is the commit version accompanying the paper submission
 to the \gls{ismir} 2021 conference. The code is not
 considered to be in a state of ``production'', but it
@@ -23,7 +23,7 @@ produces the final results in the submitted paper. The code
 continues to be closed source for double-blind review
 purposes.
 
-\phdparagraph{v1.0.0 - august 5, 2021}
+\paragraph{v1.0.0 - August 5, 2021}
 The published version of the \gls{augmentednet} network in
 \textcite{napoleslopez2021augmentednet}. This is the version
 of the code used for all the revised experiments in the
@@ -38,7 +38,7 @@ it as the default. Every revised experiment in the
 camera-ready paper uses \code{rmsprop}. As observed before,
 the results went slightly above just because of that.
 
-\phdparagraph{v1.1.0 - february 3, 2022}
+\paragraph{v1.1.0 - February 3, 2022}
 This version introduced the \gls{harmonicrhythm7} output
 task as a substitute of a previous binary classifier. This
 addresses the class imbalance in the previous version of the
@@ -46,12 +46,12 @@ task, which leads into a better chord segmentation. The four
 \gls{satb35} tasks were also added to the architecture in
 this version.
 
-\phdparagraph{v1.2.0 - february 5, 2022}
+\paragraph{v1.2.0 - February 5, 2022}
 Turned the \gls{satb35} tasks into the default ones computed
 by the network. These tasks are also used to compute the
 chords in the final \gls{rna} outputs of the model.
 
-\phdparagraph{v1.2.2 - february 5, 2022}
+\paragraph{v1.2.2 - February 5, 2022}
 The output \gls{rna} annotations produced by the system are
 reconstructed from the \gls{satb35} tasks by default. The
 \code{README} file was updated with instructions for
@@ -61,20 +61,20 @@ updated version of the dataset with the new output
 representations.
 
 
-\phdparagraph{v1.2.3 - february 14, 2022}
+\paragraph{v1.2.3 - February 14, 2022}
 Introduced the keydistance algorithm. This algorithm is used
 to find the closest key to a given key, which is useful to
 force tonicizations when a chord does not exist in the
 vocabulary.
 
-\phdparagraph{v1.2.4 - february 14, 2022}
+\paragraph{v1.2.4 - February 14, 2022}
 Extended the vocabulary of PitchClassSets to 121. The
 resulting task \gls{pcset121} has a more robust vocabulary
 than the previous version based on 94 classes. This means
 that \code{v1.2.4} is backwards-incompatible with models
 trained on previous versions.
 
-\phdparagraph{v1.3.0 - february 14, 2022}
+\paragraph{v1.3.0 - February 14, 2022}
 Replacing the use of the \code{romanNumeralFromChord()}
 function of the \emph{music21}
 \parencite{cuthbert2010music21} library with Roman numerals
@@ -84,12 +84,12 @@ vocabulary is implemented to standardize both the training
 annotations that enter the system, and the output
 annotations generated in inference mode.
 
-\phdparagraph{v1.3.1 - february 14, 2022}
+\paragraph{v1.3.1 - February 14, 2022}
 Fixing unit tests to work with the pretrained model of
 \code{v1.3.0}. Fine-tuning the chord vocabulary and
 improving the \code{forceTonicization} algorithm.
 
-\phdparagraph{v1.3.3 - february 14, 2022}
+\paragraph{v1.3.3 - February 14, 2022}
 The transposition algorithm for data augmentation is now
 based on tonicizations rather than modulations. Forcing all
 $\rn{ii}\rndim{}\rnseven$ annotations to be interpreted as
@@ -97,26 +97,26 @@ $\rn{ii}\rnhdim{}\rnseven$. Collapsing other annotations,
 such as \code{i54} into the closest chord in the vocabulary
 using cosine similarity.
 
-\phdparagraph{v1.4.4 - february 21, 2022}
+\paragraph{v1.4.4 - February 21, 2022}
 Extending the vocabulary of keys from 35 to 38 clases. The
 new vocabulary spans the keys B$\musDoubleFlat$/g$\musFlat$
 to D$\musSharp$/b$\musSharp$. Additionally, the translation
 of Roman numeral labels before training was improved.
 
-\phdparagraph{v1.5.0 - march 13, 2022}
+\paragraph{v1.5.0 - March 13, 2022}
 Padding the fixed-length inputs with a special token rather
 than a value of zero. This makes it possible to distinguish
 between ``rest'' and ``padding''. Added an additional option
 for texturizing the synthetic examples at each transposition
 (as opposed to one texturization per training file).
 
-\phdparagraph{v1.5.1 - march 26, 2022}
+\paragraph{v1.5.1 - March 26, 2022}
 This version removed the \emph{dropout} layers
 \parencite{dahl2013improving} that were originally part of
 the architecture. It was discovered that these layers were
 detrimental for the \gls{harmonicrhythm7} task.
 
-\phdparagraph{v1.6.0 - june 13, 2022}
+\paragraph{v1.6.0 - June 13, 2022}
 This version introduced the new input representation
 \gls{duration14}. This input representation encodes the
 measure-and note-onset information. That is, it indicates
@@ -127,13 +127,13 @@ It dramatically improves the performance of the
 \code{HarmonicRhythm7} task (around 30\% of accuracy
 improvement).
 
-\phdparagraph{v1.7.0 - june 17, 2022}
+\paragraph{v1.7.0 - June 17, 2022}
 The main contribution of this version is that it introduces
 the \gls{mps} dataset into the aggregated dataset. The code
 that organizes all the individual datasets was restructured
 as well.
 
-\phdparagraph{v1.7.1 - june 20, 2022}
+\paragraph{v1.7.1 - June 20, 2022}
 Patching an issue where percussion tracks would introduce
 nonsensical pitch information. Patching the \gls{romantext}
 output files, which were sometimes invalid. The
@@ -143,7 +143,7 @@ automatically. Removing drum parts from
 \gls{musicxml} file. Improve the quality of the
 \gls{romantext} outputs generated by the system.
 
-\phdparagraph{v1.8.0 - june 25, 2022}
+\paragraph{v1.8.0 - June 25, 2022}
 Texturization patterns can handle durations of a dotted half
 (\musHalfDotted) and dotted quarter (\musQuarterDotted)
 notes. Renaming the \gls{duration14} task in the code. The
