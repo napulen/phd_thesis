@@ -26,10 +26,13 @@ and \gls{alto35} tasks, in addition to the \gls{bass35},
 which was the expected outcome.
 
 Overall, the biggest drop in performance happens when the
-recurrent layers of the network are removed. This has a
-notable effect on the \gls{localkey38} and
-\gls{tonicization38} tasks, which are generally the tasks
-with the longer-term dependencies. 
+recurrent layers of the network are removed. The recurrent
+layers have a notable effect on the ``key'' tasks:
+\gls{localkey38} and \gls{tonicization38}. This supports the
+hypothesis that estimating musical keys requires longer-term
+musical context than estimating chords, which is coherent
+musically. indicate which are generally the tasks with the
+longer-term dependencies.
 
 All of the modifications in the ablation study have a
 negative performance compared to the baseline model, except
