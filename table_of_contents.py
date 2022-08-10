@@ -219,7 +219,7 @@ experimental_evaluation = """
         changing the recurrent layers
             removing the recurrent layers
             unidirectional recurrent layers
-    best performing model configuration
+        summary of the ablation studies
     effects of data augmentation
         transposition only
         synthesis only
