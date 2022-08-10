@@ -30,9 +30,11 @@ recurrent layers of the network are removed. The recurrent
 layers have a notable effect on the ``key'' tasks:
 \gls{localkey38} and \gls{tonicization38}. This supports the
 hypothesis that estimating musical keys requires longer-term
-musical context than estimating chords, which is coherent
-musically. indicate which are generally the tasks with the
-longer-term dependencies.
+musical context than estimating chords. It is interesting
+that among the chord tasks, \gls{rn31} is the one affected
+the most by the removal of the recurrent layers. This might
+be because Roman numeral numerators are relative to the key,
+and thus sensitive to the key context.
 
 All of the modifications in the ablation study have a
 negative performance compared to the baseline model, except
