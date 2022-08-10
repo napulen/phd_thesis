@@ -222,8 +222,8 @@ experimental_evaluation = """
         summary of the ablation studies
     effects of data augmentation
         no data augmentation (baseline)
-        transposition only
-        synthesis only
+        synthesis
+        transposition
         synthesis and transposition
         summary of the effects of data augmentation
     results on the test set
