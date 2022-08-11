@@ -198,6 +198,11 @@ model_design = """
         RomanNumeralNumerator31
         HarmonicRhythm7
     from output predictions to roman numeral labels
+        chord segmentation
+        key
+        tonicization
+        numerator
+        inversion
     implementation
         code diagram
         dataset source repositories
