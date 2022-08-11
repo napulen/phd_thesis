@@ -41,11 +41,12 @@ prediction of the \gls{rn31} classifier, $\eldenpred \in
 \setden$ is the tonicization prediction of the
 \gls{tonicization38} classifier, $\elinvpred \in \setinv$ is
 an inversion extracted from the prediction of the
-\gls{bass35} classifier.
+\gls{bass35} classifier, and $\elrnapred \in \setrna$ is the
+final \gls{rna} label prediction.
 
 \begin{equation}
     \label{eq:rna_pred}
-    \hat{\elrna} = \hat{\elkey} : \hat{\elnum}^{\elinv} \; / \; \hat{\elden}
+    \elrnapred = \elkeypred : \elnumpred^{\elinvpred} \; / \; \eldenpred
 \end{equation}
 
 The different components of the \gls{rna} string have a
