@@ -11,20 +11,22 @@ which is to turn those predictions into \gls{rna} labels.
 
 As mentioned in
 \refsec{thestructureofaromannumeralanalysislabel}, a Roman
-numeral label $\elrna \in \setrna$ could be defined as a
-string with four components: a key $\elkey \in \setkey$, a
-numerator $\elnum \in \setnum$, a tonicization (denominator)
-$\elden \in \setden$, and an inversion $\elinv \in \setinv$,
-as shown in \refeq{rna}. Thus, if those four pieces of
-information are known, a \gls{rna} label that conforms to
-this structure can be generated.
+numeral label $\elrna \in \setrna$ located at onset
+$\elonset \in \setonset$ could be defined as a string with
+four components: a key $\elkey \in \setkey$, a numerator
+$\elnum \in \setnum$, a tonicization (denominator) $\elden
+\in \setden$, and an inversion $\elinv \in \setinv$, as
+shown in \refeq{rna}. Thus, if those four pieces of
+information are known (five if including the onset), a
+\gls{rna} label that conforms to this structure can be
+generated.
 
 \begin{equation}
     \label{eq:rna}
-    \elrna = \elkey : \elnum^{\elinv} \; / \; \elden
+    \elrna_{\elonset} = \elkey : \elnum^{\elinv} \; / \; \elden
 \end{equation}
 
-\phdtable[Predictions from the \gls{crnn}]{predictions}
+\phdtable[Predictions from the \gls{crnn}]{crnn_predictions}
 
 The \gls{mtl} configuration of the model is highly coupled
 with the vocabularies defined for $\setkey$ (see
@@ -34,7 +36,9 @@ with the vocabularies defined for $\setkey$ (see
 $\setinv$ (see
 \refsec{thevocabularyofarabicromannumeralinversions}). Thus,
 the output labels of the \gls{arna} model can be generated
-as shown in \refeq{rna_pred}, where $\elkeypred \in \setkey$
+as shown in \refeq{rna_pred}, where $\elonsetpred \in
+\setonset$ is the onset prediction of the
+\gls{harmonicrhythm7} classifier, $\elkeypred \in \setkey$
 is the key prediction of the \gls{localkey38} classifier,
 $\elnumpred \in \setnum$ is the Roman numeral numerator
 prediction of the \gls{rn31} classifier, $\eldenpred \in
@@ -46,7 +50,7 @@ final \gls{rna} label prediction.
 
 \begin{equation}
     \label{eq:rna_pred}
-    \elrnapred = \elkeypred : \elnumpred^{\elinvpred} \; / \; \eldenpred
+    \elrnapred_{\enonsetpred} = \elkeypred : \elnumpred^{\elinvpred} \; / \; \eldenpred
 \end{equation}
 
 The different components of the \gls{rna} string have a
@@ -56,8 +60,8 @@ relative to the tonicized key $\elden$. The inversion
 $\elinv$ depends on the numerator $\elnum$, as the syntax of
 the inversion is different for triads than for seventh
 chords. Taking the hierarchical structure into account, the
-components of the \gls{rna} label would need to be estimated
-in the following order:
+components of the \gls{rna} label need to be resolved in the
+following order:
 
 \begin{enumerate}
     \item Key $\elkey$
@@ -66,7 +70,13 @@ in the following order:
     \item Inversion $\elinv$
 \end{enumerate}
 
-A preliminary step starting from the predictions of the
+Consider the predictions in \reftab{crnn_predictions}. A
+preliminary step that has not been considered so far is that
+the \gls{crnn} will provide predictions every \gls{32nd}
+note, however, most of these timesteps should not be
+considered \gls{rna} labels. This requires an approach for
+chord segmentation, where the onset predictions $\elonset
+\in \setonset$ starting from the predictions of the
 \gls{crnn} is to decide the chord segmentation. That is,
 which of the 640 timesteps should be considered the location
 of a \gls{rna} label. This is the first problem to be
