@@ -1,12 +1,14 @@
 % Copyright 2022 Néstor Nápoles López
 
-A representation for note duration is often needed in inputs
-and output representations of the neural network. For
-example, in the \gls{duration14} input representation (see
-\refsubsec{Duration14}) or the \gls{harmonicrhythm7} output
-representation (see \refsubsubsec{HarmonicRhythm7}). In
-order to encode this kind of information, the following
-representation is proposed, with 7 features.
+A way to encode onsets is often needed in inputs and outputs
+of an \gls{arna} model. For example, to indicate where a
+measure, note, or chord begins. In the \gls{duration14}
+input representation (see
+\refsubsubsec{measureandnoteonsets}) or the
+\gls{harmonicrhythm7} output representation (see
+\refsubsubsec{HarmonicRhythm7}). In order to encode this
+kind of information, the following representation is
+proposed, with 7 features.
 
 \begin{equation}
     \label{eq:onset_7}
