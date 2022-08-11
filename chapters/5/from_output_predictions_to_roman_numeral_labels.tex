@@ -27,10 +27,10 @@ this structure can be generated.
 The different components of the \gls{rna} string have a
 hierarchical structure. For example, the tonicization
 $\elden$ and numerator $\elnum$ are relative to the key
-$\elkey$, so they depend on knowing this key value first.
-The inversion $\elinv$ depends on the numerator $\elnum$, as
-the syntax of the inversion is different for triads and
-seventh chords. Knowing the numerator $\elnum$ provides the
+$\elkey$, so they depend on knowing this value first. The
+inversion $\elinv$ depends on the numerator $\elnum$, as the
+syntax of the inversion is different for triads and seventh
+chords. Knowing the numerator $\elnum$ provides the
 information about the quality of the chord, as long as the
 key is also known, and so on. Taking the hierarchical
 structure into account, the components of the \gls{rna}
@@ -43,23 +43,29 @@ label are resolved in the following order:
     \item Inversion
 \end{enumerate}
 
-Consider the following predictions coming from the
-\gls{crnn} for the same musical fragment shown in
-\reffig{schumann}.
+A preliminary step starting from the predictions of the
+\gls{crnn} is to decide the chord segmentation. That is,
+which of the 640 timesteps should be considered the location
+of a gls{rna} label. This is the first problem to be solved.
+
+
+% Consider the following predictions coming from the
+% \gls{crnn} for the same musical fragment shown in
+% \reffig{schumann}.
 
 
 
-The key $\elkey$ corresponds to the prediction of the
-\gls{localkey38} classification task. The numerator $\elnum$
-corresponds to the prediction of the \gls{rn31}
-classification task. The tonicization $\elden$ corresponds
-to the prediction of the \gls{tonicization38} classification
-task. The inversion $\elinv$ corresponds to the prediction
-of the \gls{bass35} note in the context of the numerator
-$\elnum$. An initial approach could be to use the
-predictions of the \gls{localkey38}, \gls{rn31}, and
-\gls{tonicization38} tasks to generate the chord, and then
-\gls{bass35} to retrieve the inversion.
+% The key $\elkey$ corresponds to the prediction of the
+% \gls{localkey38} classification task. The numerator $\elnum$
+% corresponds to the prediction of the \gls{rn31}
+% classification task. The tonicization $\elden$ corresponds
+% to the prediction of the \gls{tonicization38} classification
+% task. The inversion $\elinv$ corresponds to the prediction
+% of the \gls{bass35} note in the context of the numerator
+% $\elnum$. An initial approach could be to use the
+% predictions of the \gls{localkey38}, \gls{rn31}, and
+% \gls{tonicization38} tasks to generate the chord, and then
+% \gls{bass35} to retrieve the inversion.
 
 % In order to generate the final \gls{rna} labels, an
 % algorithm was designed to resolve them based on three
