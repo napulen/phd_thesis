@@ -19,8 +19,8 @@ of a pitch is encoded and taken into account, as shown in
 \refeq{enharmonic_nonequivalence}. Two methods are described
 to encode pitch spellings in this way.
 
-%  and encode each of those spelling classes as one dimension
-% in a vector. This method has been used in
+%  and encode each of those spelling classes as one
+% dimension in a vector. This method has been used in
 % \textcite{micchi2020not, micchi2021deep}. An alternative
 % method, proposed here, is to encode the pitch class and
 % spelling of the pitch class. Both methods are described
@@ -35,9 +35,10 @@ a generic note letter (e.g., from \gls{doubleflat} to
 accidentals is very common. The use of \gls{doublesharp} and
 \gls{doubleflat} accidentals is less common. Any accidental
 sharper than \gls{doublesharp} or flatter than
-\gls{doubleflat} is rare. Thus, a reasonable representation
-for spelled pitch classes\footnote{Note that the octave is
-ignored.} is a representation with 35 classes of pitch spelling:
+\gls{doubleflat} is rare. Thus, a reasonable vocabulary for
+spelled pitch classes\footnote{Note that the octave is
+ignored.} is the one in \refeq{pitch_spelling_35}, with 35
+classes.
 
 \begin{equation}
     \label{eq:pitch_spelling_35}
