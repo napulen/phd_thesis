@@ -170,10 +170,10 @@ model_design = """
             note duration of each timestep
             number of timesteps
         encoding the score
-            the vocabulary of notes with spelling
+            encoding notes with spelling
                 35 one-hot encoding
                 19 two-hot encoding
-            the vocabulary of measure, note, and chord onsets
+            encoding measure, note, and chord onsets
         input representations
             lowest sounding note
             all sounding notes
