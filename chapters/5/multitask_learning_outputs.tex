@@ -1,16 +1,13 @@
 % Copyright 2022 Néstor Nápoles López
 
-The neural network described so far contains trainable
-layers that learn parameters based on the error (loss)
-propagated by the evaluation of the annotated examples
-against the predictions of the network. The predictions of
-the network are manifold (9, to be precise) and arranged in
-a multitask learning configuration.
+After the recurrent layers, the last component of the
+\gls{crnn} is a set of classification tasks, which are
+arranged in a \gls{mtl} configuration. 
 
-The specific multitask learning configuration is perhaps one
-of the main contributions of this dissertation, as it
-defines the tonal attributes of chords and keys that will be
-predicted by the network. In previous work
+The \gls{mtl} configuration is perhaps one of the main
+contributions of this dissertation, as it defines the tonal
+attributes of chords and keys that will be predicted by the
+network. In previous work
 \parencite{napoleslopez2021augmentednet}, we showed that
 having additional tasks is sometimes beneficial, especially
 in combination with the synthesized training examples
