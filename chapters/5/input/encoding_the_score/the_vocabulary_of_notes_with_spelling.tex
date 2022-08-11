@@ -74,9 +74,9 @@ scale.}
 
 
 Another encoding method, first proposed in
-\textcite{napoleslopez2021augmentednet}, addresses some
-limitations with the representation of 35 features. Instead
-of encoding \gls{sharp} and \gls{flat} notes explicitly, it
+\textcite{napoleslopez2021augmentednet}, proposes an
+alternative to the encoding based on 35 classes. Instead of
+encoding \gls{sharp} and \gls{flat} notes explicitly, it
 extends the pitch class vector representation, by
 concurrently encoding a generic note letter class, as shown
 in \refeq{pitch_spelling_19}.
@@ -87,11 +87,8 @@ in \refeq{pitch_spelling_19}.
     \times \{ \pitchC, \pitchD, \pitchE, \pitchF, \pitchG, \pitchA, \pitchB \}
 \end{equation}
 
-
-\begin{equation}
-    \label{eq:pitch_spelling_19_magnitude}
-    | \setps_{19} | = 19
-\end{equation}
+% \begin{equation} \label{eq:pitch_spelling_19_magnitude} |
+%     \setps_{19} | = 19 \end{equation}
 
 This encoding method results in duples of the form $(p, n)$,
 where $p \in \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11\}$ and
