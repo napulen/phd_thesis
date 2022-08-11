@@ -27,16 +27,21 @@ this structure can be generated.
 \phdtable[Predictions from the \gls{crnn}]{predictions}
 
 The \gls{mtl} configuration of the model is highly coupled
-with the vocabularies defined for $\setkey$, $\setnum$,
-$\setden$, and $\setinv$. Thus, the output labels of the
-\gls{arna} model can be generated as shown in
-\refeq{rna_pred}, where $\hat{\elkey} \in \setkey$ is the
-key prediction of the \gls{localkey38} classifier,
-$\hat{\elnum}$ is the Roman numeral numerator prediction of
-the \gls{rn31} classifier, $\hat{\elden} \in \setden$ is the
-tonicization prediction of the \gls{tonicization38}
-classifier, and $\hat{\elinv} \in \setinv$ is the inversion
-prediction of the \gls{bass35} classifier.
+with the vocabularies defined for $\setkey$ (see
+\refsec{thevocabularyofmusicalkeys}), $\setnum$ (see
+\refsec{thevocabularyofromannumeralnumerators}), $\setden$
+(see \refsec{thevocabularyofromannumeraldenominators}), and
+$\setinv$ (see
+\refsec{thevocabularyofarabicromannumeralinversions}). Thus,
+the output labels of the \gls{arna} model can be generated
+as shown in \refeq{rna_pred}, where $\elkeypred \in \setkey$
+is the key prediction of the \gls{localkey38} classifier,
+$\elnumpred \in \setnum$ is the Roman numeral numerator
+prediction of the \gls{rn31} classifier, $\eldenpred \in
+\setden$ is the tonicization prediction of the
+\gls{tonicization38} classifier, $\elinvpred \in \setinv$ is
+an inversion extracted from the prediction of the
+\gls{bass35} classifier.
 
 \begin{equation}
     \label{eq:rna_pred}
