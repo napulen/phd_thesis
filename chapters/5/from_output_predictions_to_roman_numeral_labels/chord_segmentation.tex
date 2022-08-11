@@ -2,22 +2,22 @@
 
 As expected, the \gls{crnn} provides predictions every
 \gls{32nd} note, however, most of these timesteps should not
-be considered \gls{rna} labels. Therefore, the chord
-segmentation of the chords should be determined, in order to
-decide which rows of predictions should be considered the
-location of a \gls{rna} label. This is done by interpreting
-the onset predictions $\elonsetpred \in \setonset$ retrieved
-from the \gls{harmonicrhythm7} classifier.
-
-After filtering out all rows that are not \gls{rna} onsets,
-the table shrinks to the one shown in
-\reftab{crnn_predictions_onsets}.
+have a \gls{rna} label generated. Therefore, the location of
+the chords should be determined (i.e., the chord
+segmentation). In order to determine which rows of
+predictions should be considered \gls{rna} labels, the onset
+predictions $\elonsetpred \in \setonset$ retrieved from the
+\gls{harmonicrhythm7} classifier are used to filter the
+predictions of the \gls{crnn}. After filtering out all rows
+that are not \gls{rna} onsets, the number of rows in the
+table of predictions has a reduced number of rows, as shown
+in \reftab{crnn_predictions_onsets}.
 
 \phdtable[Predictions from the \gls{crnn} that were considered the onset of a \gls{rna} label by the \gls{harmonicrhythm7} classifier]{crnn_predictions_onsets}
 
-% This requires an approach for chord segmentation, where the
-% onset predictions $\elonset \in \setonset$ starting from the
-% predictions of the \gls{crnn} is to decide the chord
-% segmentation. That is, which of the 640 timesteps should be
-% considered the location of a \gls{rna} label. This is the
-% first problem to be solved.
+% This requires an approach for chord segmentation, where
+% the onset predictions $\elonset \in \setonset$ starting
+% from the predictions of the \gls{crnn} is to decide the
+% chord segmentation. That is, which of the 640 timesteps
+% should be considered the location of a \gls{rna} label.
+% This is the first problem to be solved.
