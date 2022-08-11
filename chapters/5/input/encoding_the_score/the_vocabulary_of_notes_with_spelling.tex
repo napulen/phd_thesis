@@ -73,17 +73,18 @@ scale.}
     \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11\}
 \end{equation}
 
-The representation, first proposed in
+Another encoding method, first proposed in
 \textcite{napoleslopez2021augmentednet}, reduces some of the
 problems with the representation of 35 features. Instead of
 encoding \gls{sharp} and \gls{flat} notes explicitly, it
-extends the pitch class vector representation, by also
-encoding the generic note letter name:
+extends the pitch class vector representation, by
+concurrently encoding a generic note letter class, as shown
+in \refeq{pitch_spelling_19}.
 
 \begin{equation}
     \label{eq:pitch_spelling_19}
     \setps_{19} = \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11\} 
-    \cup \{C, D, E, F, G, A, B\}
+    \times \{C, D, E, F, G, A, B\}
 \end{equation}
 
 
