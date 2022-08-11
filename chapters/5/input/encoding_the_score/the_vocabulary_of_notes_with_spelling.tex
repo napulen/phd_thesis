@@ -6,12 +6,12 @@ enharmonic spellings of the same note, as shown in
 
 \begin{equation}
     \label{eq:enharmonic_equivalence}
-    \text{F}\musSharp = \text{G}\musFlat \quad \text{enharmonic equivalence}
+    \pitchFs = \pitchGb \quad \text{enharmonic equivalence}
 \end{equation}
 
 \begin{equation}
     \label{eq:enharmonic_nonequivalence}
-    \text{F}\musSharp \neq \text{G}\musFlat \quad \text{enharmonic nonequivalence}
+    \pitchFs \neq \pitchGb \quad \text{enharmonic nonequivalence}
 \end{equation}
 
 In the \gls{arna} model proposed here, however, the spelling
@@ -37,14 +37,16 @@ accidentals is very common. The use of \gls{doublesharp} and
 sharper than \gls{doublesharp} or flatter than
 \gls{doubleflat} is rare. Thus, a reasonable representation
 for spelled pitch classes\footnote{Note that the octave is
-ignored.} is a representation with 35 features:
+ignored.} is a representation with 35 classes of pitch spelling:
 
 \begin{equation}
     \label{eq:pitch_spelling_35}
-    \setps{}_{35} = \{\musDoubleFlat{}, \musFlat{}, 
+    \begin{split}
+    \setps{}_{35} &= \{\musDoubleFlat{}, \musFlat{}, 
     \musNatural{}, \musSharp{}, \musDoubleSharp{} \}
     \times 
-    \{C, D, E, F, G, A, B \}
+    \{ \}
+    \end{split}
 \end{equation}
 
 \begin{equation}
