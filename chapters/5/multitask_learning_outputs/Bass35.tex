@@ -4,10 +4,16 @@ The \gls{bass35} class represents the chord tone acting as
 the bass. Pitches with up to \gls{doubleflat} and
 \gls{doublesharp} accidentals are possible output classes,
 because the $\setps_{35}$ method is used here, unlike the
-$\setps_{19}$ in the input representations. Notice that
-throughout this \thesisdiss{}, the ``bass'' is considered a
-perceptual phenomenon, which may or may not correspond with
-the lowest-sounding note encoded in the input representation
+$\setps_{19}$ in the input representations. The motivation
+for this dual use of pitch spelling representations is to
+use the same loss function for all multiclass classification
+problems in the \gls{mtl} configuration. The duple encoding
+required by the $\setps_{19}$ method requires a different
+loss function, which was avoided as an implementation
+practicality. Notice also that throughout this
+\thesisdiss{}, the ``bass'' is considered a perceptual
+phenomenon, which may or may not correspond with the
+lowest-sounding note encoded in the input representation
 \gls{bass19}. \reffig{bass_encoding} is a good example of
 this situation. In the original score, the two-voice pattern
 of the bass in measures 1 and 2 could easily persuade the
