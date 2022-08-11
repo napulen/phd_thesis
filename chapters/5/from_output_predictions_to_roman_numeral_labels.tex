@@ -26,6 +26,17 @@ this structure can be generated.
 
 \phdtable[Predictions from the \gls{crnn}]{predictions}
 
+The \gls{mtl} configuration of the model is highly coupled
+with the vocabularies defined for $\setkey$, $\setnum$,
+$\setden$, and $\setinv$. Thus, output labels of the
+\gls{arna} model can be generated as shown in
+\refeq{rna_pred}.
+
+\begin{equation}
+    \label{eq:rna_pred}
+    \hat{\elrna} = \hat{\elkey} : \hat{\elnum}^{\elinv} \; / \; \hat{\elden}
+\end{equation}
+
 The different components of the \gls{rna} string have a
 hierarchical structure. The tonicization $\elden$ is
 relative to the key $\elkey$. The numerator $\elnum$ is
