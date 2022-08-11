@@ -1,8 +1,9 @@
 % Copyright 2022 Néstor Nápoles López
 
 Following the two dense layers, the representation of the
-music has a shape of 640x32. This is the input shape leading
-to the first of two \gls{gru} layers. Both \gls{gru} layers
-are bidirectional, introducing 30 features from beginning to
-end of the sequence and 30 features from the end-to-begining
-of the sequence.
+music has a shape of 640x32. That is, 640 \gls{32nd} note
+timesteps, and 32 features in each timestep. This is the
+input shape leading to the first of two \gls{gru} layers.
+Both \gls{gru} layers are bidirectional, introducing 30
+features from beginning to end of the sequence and 30
+features from the end-to-begining of the sequence.
