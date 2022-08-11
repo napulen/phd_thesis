@@ -64,20 +64,20 @@ components of the \gls{rna} label need to be resolved in the
 following order:
 
 \begin{enumerate}
+    \item Onset $\elonset$
     \item Key $\elkey$
     \item Tonicization $\elden$
     \item Numerator $\elnum$
     \item Inversion $\elinv$
 \end{enumerate}
 
-Consider the predictions in \reftab{crnn_predictions}. A
-preliminary step that has not been considered so far is that
-the \gls{crnn} will provide predictions every \gls{32nd}
-note, however, most of these timesteps should not be
-considered \gls{rna} labels. This requires an approach for
-chord segmentation, where the onset predictions $\elonset
-\in \setonset$ starting from the predictions of the
-\gls{crnn} is to decide the chord segmentation. That is,
+Consider the predictions in \reftab{crnn_predictions}. As
+expected, the \gls{crnn} will provide predictions every
+\gls{32nd} note, however, most of these timesteps should not
+be considered \gls{rna} labels. Therefore, the chord segmentation of the chords should be This requires an approach
+for chord segmentation, where the onset predictions
+$\elonset \in \setonset$ starting from the predictions of
+the \gls{crnn} is to decide the chord segmentation. That is,
 which of the 640 timesteps should be considered the location
 of a \gls{rna} label. This is the first problem to be
 solved.
