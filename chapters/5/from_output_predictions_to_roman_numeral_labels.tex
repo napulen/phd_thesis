@@ -30,7 +30,13 @@ The \gls{mtl} configuration of the model is highly coupled
 with the vocabularies defined for $\setkey$, $\setnum$,
 $\setden$, and $\setinv$. Thus, output labels of the
 \gls{arna} model can be generated as shown in
-\refeq{rna_pred}.
+\refeq{rna_pred}, where $\hat{\elkey} \in \setkey$ is the
+key prediction of the \gls{localkey38} classifier,
+$\hat{\elnum}$ is the Roman numeral numerator prediction of
+the \gls{rn31} classifier, $\hat{\elden} \in \setden$ is the
+tonicization prediction of the \gls{tonicization38}
+classifier, and $\hat{\inv} \in \setinv$ is the inversion
+prediction of the \gls{inversion38} classifier.
 
 \begin{equation}
     \label{eq:rna_pred}
