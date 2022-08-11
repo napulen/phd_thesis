@@ -91,13 +91,14 @@ in \refeq{pitch_spelling_19}.
 %     \setps_{19} | = 19 \end{equation}
 
 This encoding method results in duples of the form $(p, n)$,
-where $c \in C$ and $n \in \{C, D, E, F, G, A, B\}$. For
-example, C\musSharp{} is represented by the duple $(1,
-\text{C})$, where as D\musFlat{} is represented by the same
-pitch class but a different generic note letter, $(1,
-\text{D})$. D$\musNatural{}$ has the same generic note
-letter but a different pitch class, $(2, \text{D})$, and so
-on. Using this representation, a spelled note, beyond two
-flats and two sharps can be encoded with a 19-feature
-vector. Notice, however, that this vector is a two-hot
-encoding representation.
+where $c \in C$ and $n \in \{\pitchC, \pitchD, \pitchE,
+\pitchF, \pitchG, \pitchA, \pitchB\}$. For example,
+C\musSharp{} is represented by the duple $(1, \text{C})$,
+where as D\musFlat{} is represented by the same pitch class
+but a different generic note letter, $(1, \text{D})$.
+D$\musNatural{}$ has the same generic note letter but a
+different pitch class, $(2, \text{D})$, and so on. Using
+this representation, a spelled note, beyond two flats and
+two sharps can be encoded with a 19-feature vector. Notice,
+however, that this vector is a two-hot encoding
+representation.
