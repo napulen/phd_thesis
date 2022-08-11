@@ -24,6 +24,25 @@ this structure can be generated.
     \elrna = \elkey : \elnum^{\elinv} \; / \; \elden
 \end{equation}
 
+The different components of the \gls{rna} string have a
+hierarchical structure. For example, the tonicization
+$\elden$ and numerator $\elnum$ are relative to the key
+$\elkey$, so they depend on knowing this key value first.
+The inversion $\elinv$ depends on the numerator $\elnum$, as
+the syntax of the inversion is different for triads and
+seventh chords. Knowing the numerator $\elnum$ provides the
+information about the quality of the chord, as long as the
+key is also known, and so on. Taking the hierarchical
+structure into account, the components of the \gls{rna}
+label are resolved in the following order:
+
+\begin{enumerate}
+    \item Key 
+    \item Tonicization
+    \item Numerator
+    \item Inversion
+\end{enumerate}
+
 Consider the following predictions coming from the
 \gls{crnn} for the same musical fragment shown in
 \reffig{schumann}.
