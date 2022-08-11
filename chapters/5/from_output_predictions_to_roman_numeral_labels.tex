@@ -9,6 +9,18 @@ a preference rule and an approach based on cosine similarity
 and the algorithm in
 \refsec{analgorithmtoresolveromannumeralsfromapitch-classsetandkey}.
 
+As mentioned in
+\refsec{thestructureofaromannumeralanalysislabel}, a Roman
+numeral label $\elrna \in \setrna$ has three components: a
+key $\elkey \in \setkey$, a numerator $\elnum \in \setnum$,
+and a tonicization (denominator) $\elden \in \setden$, as
+shown in \refeq{rna}. 
+
+\begin{equation}
+    \label{eq:rna}
+    \elrna = \elkey : \elnum / \elden
+\end{equation}
+
 % In order to generate the final \gls{rna} labels, an
 % algorithm was designed to resolve them based on three
 % pieces of information: \begin{enumerate} \item a
