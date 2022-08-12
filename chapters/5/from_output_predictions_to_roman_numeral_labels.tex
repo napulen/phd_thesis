@@ -39,28 +39,6 @@ given the predictions in \reftab{crnn_predictions}.
 
 \phdtable[Predictions from the \gls{crnn}]{crnn_predictions}
 
-The \gls{mtl} configuration of the model is highly coupled
-with the vocabularies defined for $\setkey$ (see
-\refsec{thevocabularyofmusicalkeys}), $\setnum$ (see
-\refsec{thevocabularyofromannumeralnumerators}), $\setden$
-(see \refsec{thevocabularyofromannumeraldenominators}), and
-$\setinv$ (see
-\refsec{thevocabularyofarabicnumeralinversions}). Thus, the
-output labels of the \gls{arna} model can be generated as
-shown in \refeq{rna_pred}, where $\elkeypred \in \setkey$ is
-the key prediction of the \gls{localkey38} classifier,
-$\elnumpred \in \setnum$ is the Roman numeral numerator
-prediction of the \gls{rn31} classifier, $\eldenpred \in
-\setden$ is the tonicization prediction of the
-\gls{tonicization38} classifier, $\elinvpred \in \setinv$ is
-an inversion extracted from the prediction of the
-\gls{bass35} classifier, and $\elrnapred \in \setrna$ is the
-final \gls{rna} label prediction.
-
-\begin{equation}
-    \label{eq:rna_pred}
-    \elrnapred_{\elonsetpred} = \elkeypred : \elnumpred^{\elinvpred} \; / \; \eldenpred
-\end{equation}
 
 % The different components of the \gls{rna} string have a
 % hierarchical structure. The tonicization $\elden$ is
