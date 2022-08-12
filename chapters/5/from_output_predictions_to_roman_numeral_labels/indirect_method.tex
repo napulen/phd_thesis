@@ -1,0 +1,18 @@
+% Copyright 2022 Néstor Nápoles López
+
+In addition to the direct method that can be used with the
+\gls{mtl} predictions of this model, it might be useful to
+generate Roman numeral labels when only a chord label and
+key are provided. Some methods, for example, the one in
+\textcite{mcleod2021modular} produce chord labels and keys,
+thus a numerator $\elnum$ and a tonicization $\elden$ need
+to be estimated from the chord label and key. In that
+situation, an alternative method is provided, based on the
+\algorithmrn{} algorithm, described in
+\refsec{analgorithmtoresolveromannumeralsfromapitch-classsetandkey}.
+This was the method used to estimate full \gls{rna} labels
+from the predictions of the model in
+\textcite{mcleod2021modular, chen2021attend} during the
+evaluation (which is explained in
+\refsec{evaluationagainstpreviousmodels})
+
