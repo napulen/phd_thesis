@@ -24,17 +24,18 @@ this structure can be generated.
     \elrna = \elkey : \elnum^{\elinv} \; / \; \elden
 \end{equation}
 
-Two methods are proposed to retrieve these predictions, one
-method that is tightly coupled with the configuration of the
-\gls{crnn} proposed here (particularly, the \gls{mtl}
-configuration of the outputs) and a more generic method that
-can be used in other \gls{arna} approaches that only provide
-a chord label and a key. In the first method, all the
-variables can be mapped from the predictons. I refer to this
-method as the \emph{direct} method. In the second method,
-the numerator $\elnum$ and tonicization $\elden$ need to be
-estimated.
-
+Two methods are proposed to retrieve these predictions. The
+first one, which I refer to as the \emph{direct} method, is
+tightly coupled with the configuration of the \gls{crnn}
+proposed here, particularly, the \gls{mtl} configuration of
+the outputs. The second method is more generic and can be
+used in other \gls{arna} approaches that only provide a
+chord label and a key. In the second method, the numerator
+$\elnum$ and tonicization $\elden$ need to be estimated.
+Thus, I refer to the second method as the \emph{indirect}
+method. The following sections describe the process describe
+the process of generating a sequence of \gls{rna} labels
+given the predictions in \reftab{crnn_predictions}.
 
 \phdtable[Predictions from the \gls{crnn}]{crnn_predictions}
 
@@ -75,9 +76,7 @@ final \gls{rna} label prediction.
 %     $\elden$ \item Numerator $\elnum$ \item Inversion
 %     $\elinv$ \end{enumerate}
 
-The following section describes the process of generating a
-sequence of \gls{rna} labels given the predictions shown in
-\reftab{crnn_predictions}. 
+ 
 
 In addition to the direct method that can be used with the
 \gls{mtl} predictions of this model, it might be useful to
