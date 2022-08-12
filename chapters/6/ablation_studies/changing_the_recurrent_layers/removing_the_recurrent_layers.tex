@@ -1,14 +1,14 @@
 % Copyright 2022 Néstor Nápoles López
 
 The recurrent layers in the baseline model process the full
-sequence of timesteps (i.e., 640 \gls{32nd}~notes). Except
+sequence of timesteps (i.e., 640 \glspl{32nd}~notes). Except
 for the convolutional layers 2--6 (shown in
 \reffig{ablation_baseline_convolutional}), all other layers
 in the network learn parameters at the level of an
 individual timestep. Furthermore, the convolutional layer
 with the longest time window (i.e., kernel size) learns
-patterns across 32 timesteps (i.e., a \gls{whole} note). Any
-musical patterns that occur beyond a \gls{whole} note
+patterns across 32 timesteps (i.e., a \glspl{whole} note). Any
+musical patterns that occur beyond a \glspl{whole} note
 benefit from the recurrent layers. An ablation experiment is
 proposed where the two recurrent layers in the baseline
 model are removed. This should confirm the effects of losing

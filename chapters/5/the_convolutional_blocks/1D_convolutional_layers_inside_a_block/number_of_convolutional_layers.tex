@@ -5,7 +5,7 @@ with a configurable number of layers, $N$, which is provided
 as a hyperparameter. Initially, this number is set to $N=6$.
 With that configuration, each \gls{cnn} block is able to
 process inputs with a context of $[t$, $t + 32]$ for each
-timestep $t$. That is, at each \gls{32nd} note timestep, the
-\gls{cnn} will capture information up to a \gls{whole} note
+timestep $t$. That is, at each \glspl{32nd} note timestep, the
+\gls{cnn} will capture information up to a \glspl{whole} note
 in the future, prioritzing the patterns learned at the level
-of the individual \gls{32nd} note timestep.
+of the individual \glspl{32nd} note timestep.

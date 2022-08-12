@@ -30,11 +30,11 @@ to encode pitch spellings in this way.
 
 Perhaps the easiest method to encode a pitch spelling is to
 assume that only a number of accidentals are allowed next to
-a generic note letter. The use of \gls{sharp} and \gls{flat}
-accidentals is very common. The use of \gls{doublesharp} and
-\gls{doubleflat} accidentals is less common. Any accidental
-sharper than \gls{doublesharp} or flatter than
-\gls{doubleflat} is rare. Thus, a reasonable vocabulary for
+a generic note letter. The use of \gls{sharp} and \glspl{flat}
+accidentals is very common. The use of \glspl{doublesharp} and
+\glspl{doubleflat} accidentals is less common. Any accidental
+sharper than \glspl{doublesharp} or flatter than
+\glspl{doubleflat} is rare. Thus, a reasonable vocabulary for
 spelled pitch classes\footnote{Note that the octave is
 ignored.} is one with 35 classes, from $\pitchCbb$ to
 $\pitchBx$, as shown in \refeq{pitch_spelling_35}.
@@ -56,8 +56,8 @@ models. Using this approach, a 35-dimensional pitch-spelling
 vector is encoded every timestep, indicating the active
 pitch (or pitches, if several) among the 35 available
 classes. One of the limitations of this method is that it
-cannot encode any notes sharper than a \gls{doublesharp} or
-flatter than a \gls{doubleflat}. Additionally, the resulting
+cannot encode any notes sharper than a \glspl{doublesharp} or
+flatter than a \glspl{doubleflat}. Additionally, the resulting
 vector is almost three times larger than an encoding based
 on pitch classes, which only requires 12 classes, as shown
 in \refeq{pitch_classes}.\footnote{When enharmonic
@@ -76,7 +76,7 @@ chromatic scale.}
 Another encoding method, first proposed in
 \textcite{napoleslopez2021augmentednet}, proposes an
 alternative way to encode pitch spellings. Instead of
-encoding \gls{sharp} and \gls{flat} notes explicitly, it
+encoding \gls{sharp} and \glspl{flat} notes explicitly, it
 extends the pitch class vector representation, by
 concurrently encoding a generic note letter class, as shown
 in \refeq{pitch_spelling_19}.
