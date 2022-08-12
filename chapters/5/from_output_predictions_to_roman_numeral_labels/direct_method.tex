@@ -21,10 +21,12 @@ prediction of the \gls{localkey38} classifier, $\elnumpred
 the \gls{rn31} classifier, $\eldenpred \in \setden$ is the
 tonicization prediction of the \gls{tonicization38}
 classifier, $\elinvpred \in \setinv$ is an inversion
-extracted from the prediction of the \gls{bass35}
+indirectly obtained from the prediction of the \gls{bass35}
 classifier, and $\elrnapred \in \setrna$ is the final
-\gls{rna} label prediction.
-
+\gls{rna} label prediction. Out of all the predictions
+required to generate the \gls{rna} label $\elrna$, only the
+inversion requires some additional computations. The rest
+are direct predictions from the \gls{crnn}. One issue that needs to be addressed before retrieving the predictions, however, is the chord segmentation. 
 
 The \gls{crnn} provides predictions every \gls{32nd} note.
 Yet, most of these timesteps should not have a \gls{rna}

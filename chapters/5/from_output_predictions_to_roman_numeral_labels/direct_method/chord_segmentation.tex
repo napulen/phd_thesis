@@ -1,0 +1,19 @@
+% Copyright 2022 Néstor Nápoles López
+
+The \gls{crnn} provides predictions every \gls{32nd} note.
+Yet, most of these timesteps should not have a \gls{rna}
+label generated. Therefore, the location of the chords
+should be determined (i.e., the chord segmentation). In
+order to determine which rows of predictions should be
+considered \gls{rna} labels, the onset predictions
+$\elonsetpred \in \setonset$ retrieved from the
+\gls{harmonicrhythm7} classifier are used to filter the
+predictions of the \gls{crnn}. After filtering out all rows
+that are not \gls{rna} onsets, the number of rows in the
+table of predictions is reduced, as shown in
+\reftab{crnn_predictions_onsets}. One \gls{rna} label will
+be generated for each of these rows.
+
+\phdtable[Predictions from the \gls{crnn} that were
+considered the onset of a \gls{rna} label by the
+\gls{harmonicrhythm7} classifier]{crnn_predictions_onsets}
