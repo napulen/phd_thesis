@@ -28,13 +28,13 @@ classifier, and $\elrnapred \in \setrna$ is the final
 encoded as a relative scale degree of the key $\elkeypred$.
 Furthermore, the inversion $\elinvpred$ needs to be
 determined from the prediction of the \gls{bass35}
-classifier in the context of the $\elnumpred$ chord. Thus,
-the inversion is going to be the last step of the method.
-The rest of the variables are direct predictions from the
-\gls{crnn}. However, one issue that is yet to be addressed
-before processing the predictions is the chord segmentation.
-That is, which of the 640 timesteps should be considered the
-location of a \gls{rna} label. 
+classifier in the context of the chord implied by
+$\elnumpred$. Thus, the inversion is going to be the last
+step of the method. The rest of the variables are direct
+predictions from the \gls{crnn}. However, one issue that is
+yet to be addressed before processing the predictions is the
+chord segmentation. That is, which of the 640 timesteps
+should be considered the location of a \gls{rna} label. 
 
 % This requires an approach for chord segmentation, where
 % the onset predictions $\elonset \in \setonset$ starting
