@@ -4,17 +4,23 @@ The different components of the \gls{rna} string have a
 hierarchical structure. The tonicization $\eldenpred$ is
 relative to the key $\elkeypred$. The numerator $\elnumpred$
 is relative to the tonicized key $\eldenpred$. The inversion
-$\elinvpred$ depends on the numerator $\elnumpred$, because
-the syntax of the inversion is different for triads and for
-seventh chords. Taking the hierarchical structure into
-account, the components of the \gls{rna} label need to be
-resolved in the following order:
+$\elinvpred$ relies on the bass note (\gls{bass35}) in the
+context of the chord of the numerator $\elnumpred$. Taking
+the hierarchical structure into account, the components of
+the \gls{rna} label need to be resolved in the following
+way:
 
 \begin{enumerate} 
-    \item Key $\elkeypred$ 
-    \item Tonicization $\eldenpred$ 
-    \item Numerator $\elnumpred$ 
-    \item Inversion $\elinvpred$ 
+    \item The key $\elkeypred$ is taken directly from the
+    \gls{localkey38} classifier 
+    \item The tonicization $\eldenpred$ is a relative scale
+    degree of the key $\elkeypred$
+    \item The numerator $\elnumpred$ is a chord resolved
+    from the key of the tonization $\eldenpred$ 
+    \item The inversion $\elinvpred$ is a stack of Arabic
+    numerals determined from the position of the bass note
+    \gls{bass35} in the chord implied by $\elnum$ and
+    whether $\elnum$ is a triad or seventh chord
 \end{enumerate}
 
 \phdparagraph{encoding the tonicization}
