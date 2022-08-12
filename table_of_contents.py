@@ -195,7 +195,7 @@ model_design = """
         LocalKey38
         TonicizationKey38
         PitchClassSet121
-        RomanNumeralNumerator31
+        Numerator31
         HarmonicRhythm7
     from output predictions to roman numeral labels
         direct method
@@ -206,13 +206,14 @@ model_design = """
                 encoding the inversion
         indirect method
             example
+                resolving the numerator and tonicization
     implementation
         code diagram
         dataset source repositories
         dataframe structures
-            annotation
-            score
-            joint
+            annotation dataframe
+            score dataframe
+            joint dataframe
 """
 
 experimental_evaluation = """
