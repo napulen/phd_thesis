@@ -16,7 +16,16 @@ will be generated for each of these rows. In addition to the
 reduced number of rows, all other classification tasks
 except for \gls{harmonicrhythm7}, \gls{localkey38},
 \gls{tonicization38}, \gls{bass35}, and \gls{rn31} have been
-removed for brevity in the table.
+removed for brevity in the table.\footnote{In
+\textcite{napoleslopez2021augmentednet}, we have discussed
+that having additional tasks might still be useful for the
+learned representations of the neural network, even if some
+of those tasks are not used for predicting the final output
+annotations. This is because the neural network learns
+representations that need to solve all the problems at once,
+which leads to more robust representations in some cases.
+See \textcite{ruder2017overview} for more details on the
+effects of \gls{mtl}.}
 
 \phdtable[Predictions from the \gls{crnn} that were
 considered the onset of a \gls{rna} label by the
