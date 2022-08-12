@@ -200,6 +200,9 @@ model_design = """
     from output predictions to roman numeral labels
         direct method
             chord segmentation
+            generating the labels
+                encoding the tonicization
+                encoding the inversion
         indirect method
     implementation
         code diagram
