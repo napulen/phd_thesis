@@ -89,45 +89,57 @@ context of the Humdrum format, a spine is a column of data}}
 
 %%% Neural network representations
 
-\newglossaryentry{bass19}{name=LowestNote19, description={An
-input representation of the proposed neural network
-described in \refsubsec{bassinput} }}
+\newglossaryentry{bass19}{name=LowestNote19,
+description={One of the three input representations in the
+neural network proposed in this dissertation. It is
+described in \refsubsec{lowestsoundingnote} }}
 
-\newglossaryentry{chroma19}{name=Notes19, description={An
-input representation of the proposed neural network
-described in \refsubsec{spelledchromainput} }}
+\newglossaryentry{chroma19}{name=Notes19, description={One
+of the three input representations in the neural network
+proposed in this dissertation. It is described in
+\refsubsec{allsoundingnotes} }}
 
-\newglossaryentry{duration14}{name=Onsets14, description={An
-input representation of \emph{Measure and Note Onsets},
-described in \refsubsec{durationinput} }}
+\newglossaryentry{duration14}{name=Onsets14,
+description={One of the three input representations in the
+neural network proposed in this dissertation. It is
+described in \refsubsec{measureandnoteonsets} }}
 
-\newglossaryentry{bass35}{name=Bass35, description={An
-output representation of the proposed neural network
-described in \refsubsubsec{bass} }}
+\newglossaryentry{bass35}{name=Bass35, description={One of
+the nine classification tasks in the neural network proposed
+in this dissertation. It is described in \refsubsec{Bass35}
+}}
 
-\newglossaryentry{tenor35}{name=Tenor35, description={An
-output representation of the proposed neural network
-described in \refsubsubsec{tenor} }}
+\newglossaryentry{tenor35}{name=Tenor35, description={One of
+the nine classification tasks in the neural network proposed
+in this dissertation. It is described in \refsubsec{Tenor35}
+}}
 
-\newglossaryentry{alto35}{name=Alto35, description={An
-output representation of the proposed neural network
-described in \refsubsubsec{alto} }}
+\newglossaryentry{alto35}{name=Alto35, description={One of
+the nine classification tasks in the neural network proposed
+in this dissertation. It is described in \refsubsec{Alto35}
+}}
 
 \newglossaryentry{satb35}{name=SATB35, description={A short
-name for the four representations \gls{soprano35},
+name for the four classification tasks: \gls{soprano35},
 \gls{alto35}, \gls{tenor35}, and \gls{bass35} }}
 
-\newglossaryentry{soprano35}{name=Soprano35, description={An
-output representation of the proposed neural network
-described in \refsubsubsec{soprano} }}
+\newglossaryentry{soprano35}{name=Soprano35,
+description={One of the nine classification tasks in the
+neural network proposed in this dissertation. It is
+described in \refsubsec{Soprano35} }}
 
-\newglossaryentry{pcset}{name=pcset, description={A
-pitch-class set. In this \thesisdiss{}, chords are
-represented by pitch-class sets in a certain key context }}
+\newglossaryentry{pcset}{name=pcset, description={A subset
+$\elpcset$ of the 12 ``pitch classes'' in the Western
+chromatic scale $\elpcset \subset \{0, 1, 2, 3, 4, 5, 6, 7,
+8, 9, 10,11 \}$. In the context of this dissertation, a
+pitch-class set always refers to a set $|\elpcset| = 3$ or
+$|\elpcset| = 4$ that contains the pitch classes of a triad
+or seventh chord. See
+\refsec{thevocabularyofpitch-classsets} }}
 
 \newglossaryentry{pcset121}{name=PitchClassSet121,
 description={An output representation of the proposed neural
-network described in \refsubsubsec{pitchclassset} }}
+network described in \refsubsubsec{PitchClassSet121} }}
 
 \newglossaryentry{rn31}{name=Numerator31, description={An
 output representation of the proposed neural network
