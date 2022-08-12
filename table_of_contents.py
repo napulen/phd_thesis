@@ -199,6 +199,7 @@ model_design = """
         HarmonicRhythm7
     from output predictions to roman numeral labels
         direct method
+            chord segmentation
         indirect method
     implementation
         code diagram
