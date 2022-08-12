@@ -34,10 +34,8 @@ with the vocabularies defined for $\setkey$ (see
 $\setinv$ (see
 \refsec{thevocabularyofarabicnumeralinversions}). Thus, the
 output labels of the \gls{arna} model can be generated as
-shown in \refeq{rna_pred}, where $\elonsetpred \in
-\setonset$ is the onset prediction of the
-\gls{harmonicrhythm7} classifier, $\elkeypred \in \setkey$
-is the key prediction of the \gls{localkey38} classifier,
+shown in \refeq{rna_pred}, where $\elkeypred \in \setkey$ is
+the key prediction of the \gls{localkey38} classifier,
 $\elnumpred \in \setnum$ is the Roman numeral numerator
 prediction of the \gls{rn31} classifier, $\eldenpred \in
 \setden$ is the tonicization prediction of the
@@ -55,14 +53,13 @@ The different components of the \gls{rna} string have a
 hierarchical structure. The tonicization $\elden$ is
 relative to the key $\elkey$. The numerator $\elnum$ is
 relative to the tonicized key $\elden$. The inversion
-$\elinv$ depends on the numerator $\elnum$, as the syntax of
-the inversion is different for triads than for seventh
-chords. Taking the hierarchical structure into account, the
-components of the \gls{rna} label need to be resolved in the
-following order:
+$\elinv$ depends on the numerator $\elnum$, because the
+syntax of the inversion is different for triads and for
+seventh chords. Taking the hierarchical structure into
+account, the components of the \gls{rna} label need to be
+resolved in the following order:
 
 \begin{enumerate}
-    \item Onset $\elonset$
     \item Key $\elkey$
     \item Tonicization $\elden$
     \item Numerator $\elnum$
@@ -70,8 +67,8 @@ following order:
 \end{enumerate}
 
 The following sections describe the process of generating a
-sequence of \gls{rna} labels considering the predictions
-shown in \reftab{crnn_predictions}.
+sequence of \gls{rna} labels given the predictions shown in
+\reftab{crnn_predictions}.
 
 
 % Consider the following predictions coming from the
