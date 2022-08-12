@@ -205,6 +205,7 @@ model_design = """
                 resolving the chord
                 encoding the inversion
         indirect method
+            example
     implementation
         code diagram
         dataset source repositories
