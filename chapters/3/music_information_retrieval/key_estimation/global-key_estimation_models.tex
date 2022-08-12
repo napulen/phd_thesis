@@ -79,20 +79,20 @@ Another algorithm, known as the \emph{Krumhansl-Schmuckler}
 algorithm, was introduced in
 \textcite{krumhansl1990cognitive}. Although introduced in
 1990 as an automatic key finder, the main components of the
-algorithm, the \emph{key profiles}, were introduced in 1982
+algorithm, the \gls{keyprofile}s, were introduced in 1982
 \parencite{krumhansl1982tracing}. This algorithm and its
-method based on key profiles influenced many other
+method based on \gls{keyprofile}s influenced many other
 algorithms in the symbolic and audio domains.\footnote{See
 \textcite{napoleslopez2019keyfinding} for a discussion of
-several key profile methods.} It also motivated the research
-of new key profiles using alternative methods to the
-\emph{probe-tone} technique used by Krumhansl and Kessler.
-The key was computed by correlating the pitch histogram of
-the musical score with the pitch-class distribution of the
-key profile. During a series of experiments,
-\textcite{sapp2011computational} found that when mistaken,
-this algorithm tends to predict the dominant instead of the
-tonic.
+several \gls{keyprofile} methods.} It also motivated the
+research of new \gls{keyprofile}s using alternative methods
+to the \emph{probe-tone} technique used by Krumhansl and
+Kessler. The key was computed by correlating the pitch
+histogram of the musical score with the pitch-class
+distribution of the \gls{keyprofile}. During a series of
+experiments, \textcite{sapp2011computational} found that
+when mistaken, this algorithm tends to predict the dominant
+instead of the tonic.
 
 % Vos and van Geenen (1996)
 In 1996, a model for single-voiced pieces of music was
@@ -112,7 +112,7 @@ Krumhansl-Schmuckler algorithm,
 replacing the \emph{Pearson correlation} function with a dot
 product. The second modification was a change in the
 probability distributions of the original Krumhansl-Kessler
-key profiles. The new distribution was fine-tuned by
+\gls{keyprofile}s. The new distribution was fine-tuned by
 Temperley heuristically and through a trial-and-error
 process. This algorithm provided better results than the
 original algorithm and it was further extended into a
@@ -147,7 +147,8 @@ the \emph{Center of Effect}, and related to a key through a
 nearest-neighbours search. Although the geometric approach
 for localizing a point in space influenced further research
 on key-finding algorithms, the model did not perform better
-than the approaches based on distributions and key profiles.
+than the approaches based on distributions and
+\gls{keyprofile}s.
 
 % Aarden (2003)
 \textcite{aarden2003dynamic} proposed an alternative,
@@ -158,7 +159,7 @@ profiles that could substitute the ones by
 For this purpose, 1,000 songs from the Essen Folksong
 Collection and 250 music excerpts from the MuseData database
 were used for comparing the approaches. The distribution of
-scale degrees outperformed the key profiles from
+scale degrees outperformed the \gls{keyprofile}s from
 \textcite{krumhansl1982tracing}.
 
 % These results were confirmed by other researchers
@@ -222,24 +223,25 @@ In order to explore the capabilities of different key
 profiles at different window lengths,
 \textcite{sapp2011computational} performed a series of
 experiments running every possible window in a piece with
-different key profiles. The results of such computations
-were visualized and rendered into what Sapp referred to as
-\emph{keyscapes} \parencite{sapp2001harmonic}. The algorithm
-used for computing the keys was the original
-Krumhansl-Schmuckler correlation algorithm, alternating the
-different key profiles. Additionally, Sapp introduced a new
-key profile named \emph{simple weights}.
+different \gls{keyprofile}s. The results of such
+computations were visualized and rendered into what Sapp
+referred to as \emph{keyscapes}
+\parencite{sapp2001harmonic}. The algorithm used for
+computing the keys was the original Krumhansl-Schmuckler
+correlation algorithm, alternating the different
+\gls{keyprofile}s. Additionally, Sapp introduced a new
+\gls{keyprofile} named \emph{simple weights}.
 
 % Albrecht and Shanahan (2013)
 \textcite{albrecht2013use} introduced a new key-finding
 algorithm that improves the accuracy for pieces in the minor
 mode. This algorithm utilizes Euclidean distance to measure
 the similarity between the notes in the piece and a new key
-profile. The key profile was obtained by analyzing the first
-and last measures of a training dataset, which consisted of
-982 pieces of music from the Baroque to the Romantic period.
-The model outperformed every other symbolic key-finding
-algorithm when used in this dataset.
+profile. The \gls{keyprofile} was obtained by analyzing the
+first and last measures of a training dataset, which
+consisted of 982 pieces of music from the Baroque to the
+Romantic period. The model outperformed every other symbolic
+key-finding algorithm when used in this dataset.
 
 % % Lam and Lee (2014)
 
@@ -286,8 +288,8 @@ first stage, the algorithm extracted the strength of each
 pitch-class, including its harmonics, from the audio signal.
 In the second stage, the algorithm tried to match the
 pitch-class information of the first stage with a set of
-templates, analogous to a key profile, which were obtained
-through \acrfull{som}.
+templates, analogous to a \gls{keyprofile}, which were
+obtained through \acrfull{som}.
 
 % Izmirli and Bilgen (1994) proposed a system for audio key
 % finding that implements partial score transcription in
@@ -330,8 +332,8 @@ music-theoretical assumptions (i.e., octave equivalence and
 the division of the octave in the chromatic scale). Using
 these distributions, the system tracked the key over time by
 comparing the distributions of the signals with the
-\textcite{krumhansl1982tracing} key profiles. The model was
-not quantitatively evaluated but an example of the keys
+\textcite{krumhansl1982tracing} \gls{keyprofile}s. The model
+was not quantitatively evaluated but an example of the keys
 tracked in Chopin's Prelude Op.~28 No.~20 was provided,
 showing similar key segmentations as the ones provided by an
 expert annotator.
@@ -544,13 +546,13 @@ the model were initialized by assuming a strong correlation
 between the key and the key implied in a given chord
 transition. The transition probabilities of the model were
 obtained using a table of correlations between the
-transposed \textcite{krumhansl1982tracing} key profiles. The
-model was evaluated in a dataset of 110 songs of the
-Beatles, for which the chord transitions were already
-annotated. The algorithm was able to predict the key of the
-songs in 91\% of the cases. A further change on the
-observations of the \gls{hmm} was necessary to work directly
-on audio inputs.
+transposed \textcite{krumhansl1982tracing}
+\gls{keyprofile}s. The model was evaluated in a dataset of
+110 songs of the Beatles, for which the chord transitions
+were already annotated. The algorithm was able to predict
+the key of the songs in 91\% of the cases. A further change
+on the observations of the \gls{hmm} was necessary to work
+directly on audio inputs.
 
 % Peeters (2006) implements one \gls{hmm} for each of the 24
 % possible keys. A front-end algorithm is used to extract a
@@ -761,11 +763,11 @@ in the audio domain by making use of the chroma features by
 \textcite{mauch2010approximate} and turning them into
 discrete values using a threshold. The model was submitted
 to the \gls{mirex} Audio Key Estimation in 2018 and 2019. In
-2018, the model was submitted with a single key profile,
-which provided the best generalization in our experiments.
-In 2019, the model was improved by adding a meta-classifier
-which predicted the global key based on the predictions of
-several key profiles. The results of the
+2018, the model was submitted with a single
+\gls{keyprofile}, which provided the best generalization in
+our experiments. In 2019, the model was improved by adding a
+meta-classifier which predicted the global key based on the
+predictions of several \gls{keyprofile}. The results of the
 2018\footnotelink{https://www.music-ir.org/mirex/wiki/2018:Audio\_Key\_Detection\_Results}
 and
 2019\footnotelink{https://www.music-ir.org/mirex/wiki/2019:Audio\_Key\_Detection\_Results}
@@ -788,7 +790,7 @@ ranging from key signatures, local keys, global keys, and
 chords, which further complicates the comparison of
 key-finding models. Nevertheless, as a general trend, it can
 be seen that the research by \textcite{krumhansl1982tracing}
-that introduced the key profiles, together with the use of
+that introduced the \gls{keyprofile}s, together with the use of
 chroma features, have been common approaches for designing
 newer \gls{gke} models throughout the years. These
 techniques are also relevant for \gls{lke} models, which are

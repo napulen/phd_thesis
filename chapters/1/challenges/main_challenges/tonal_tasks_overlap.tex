@@ -17,14 +17,14 @@ between key analysis and chord analysis can be inferred. In
 our work designing a local-key-estimation algorithm
 \parencite{napoleslopez2019keyfinding}, we found something
 similar with key-profiles and sequences of pitch classes
-analyzed with a \gls{hmm}. A key profile that heavily
+analyzed with a \gls{hmm}. A \gls{keyprofile} that heavily
 penalizes non-diatonic degrees finds a ``change of key'' in
-Chopin's Op.28 No.20, which corresponds to a \gls{neapolitan}
-chord. It is unclear whether this type of chromatic chord
-could be considered a deviation of the musical key.
-Arguments can be made for both positions on this topic.
-Thus, the line between \emph{key analysis} and \emph{chord
-analysis} can be blurry.
+Chopin's Op.28 No.20, which corresponds to a
+\gls{neapolitan} chord. It is unclear whether this type of
+chromatic chord could be considered a deviation of the
+musical key. Arguments can be made for both positions on
+this topic. Thus, the line between \emph{key analysis} and
+\emph{chord analysis} can be blurry.
 
 \phdparagraph{pitch spelling}
 
@@ -33,9 +33,9 @@ In their work on a pitch spelling algorithm,
 task to local-key estimation and chord recognition, noting
 that ``[some tonal] situations require a deeper notion of
 the harmonic state than provided by the local key, as in the
-German \gls{augsix} chord, which seems nearly impossible
-to spell correctly without recognizing it as such.'' This
-poses the question of whether it is possible to design an
+German \gls{augsix} chord, which seems nearly impossible to
+spell correctly without recognizing it as such.'' This poses
+the question of whether it is possible to design an
 algorithm to spell the pitches in a \gls{midi} file, without
 also developing a key estimation and chord recognition
 algorithms. Similar ``chicken and egg'' problems can be
