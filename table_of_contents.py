@@ -202,6 +202,7 @@ model_design = """
             chord segmentation
             generating the labels
                 encoding the tonicization
+                resolving the chord
                 encoding the inversion
         indirect method
     implementation
