@@ -54,45 +54,11 @@ predictions in \reftab{crnn_predictions}.
 %     $\elden$ \item Numerator $\elnum$ \item Inversion
 %     $\elinv$ \end{enumerate}
 
-
-The \gls{crnn} provides predictions every \gls{32nd} note.
-Yet, most of these timesteps should not have a \gls{rna}
-label generated. Therefore, the location of the chords
-should be determined (i.e., the chord segmentation). In
-order to determine which rows of predictions should be
-considered \gls{rna} labels, the onset predictions
-$\elonsetpred \in \setonset$ retrieved from the
-\gls{harmonicrhythm7} classifier are used to filter the
-predictions of the \gls{crnn}. After filtering out all rows
-that are not \gls{rna} onsets, the number of rows in the
-table of predictions is reduced, as shown in
-\reftab{crnn_predictions_onsets}. One \gls{rna} label will
-be generated for each of these rows.
-
-\phdtable[Predictions from the \gls{crnn} that were
-considered the onset of a \gls{rna} label by the
-\gls{harmonicrhythm7} classifier]{crnn_predictions_onsets}
-
-% This requires an approach for chord segmentation, where
-% the onset predictions $\elonset \in \setonset$ starting
-% from the predictions of the \gls{crnn} is to decide the
-% chord segmentation. That is, which of the 640 timesteps
-% should be considered the location of a \gls{rna} label.
-% This is the first problem to be solved.
-
-
-% Consider the following predictions coming from the
-% \gls{crnn} for the same musical fragment shown in
-% \reffig{schumann}.
-
-
 % The design of the algorithm served two purposes: to
 % standardize the resolution of tonicizations in \gls{rna}
 % labels, and to guarantee that a \gls{rna} label would be
 % generated even when the predictions of the network
 % resulted nonsensical.
-
-
 
 % There is not a unique way to do this, because multiple
 % tasks provide overlapping information. For example, the
@@ -110,8 +76,3 @@ considered the onset of a \gls{rna} label by the
 % The \gls{satb35}, \gls{pcset121}, and \gls{rn31} tasks can
 % all be used to retrieve the \gls{pcset}.
 
-% The rule-based system works as a series of conditions.
-
-% The \gls{satb35} tasks are preferred as the source of the
-% chord. That is, if the pitches form a valid chord in the
-% vocabulary, that chord is assumed to be the 
