@@ -11,8 +11,8 @@ over music by Bach. It required a preliminary, hand-made,
 representation of the score as a sequence of four-part
 perfect chords. This representation was processed by a model
 implemented in the \gls{lisp} programming language. The
-hand-made representation required \emph{nonchord} tones to
-be removed before processing the input with the model, a
+hand-made representation required \emph{nonchord}s to be
+removed before processing the input with the model, a
 crucial limitation, because this process was complex and
 could not be automated. In addition to this limitation,
 \textcite{temperley1997algorithm} provided insight about
@@ -59,14 +59,14 @@ convincing music-theoretical outputs when analyzing three
 movements of the Bach Six French Suites: the sarabande from
 Suite No.~1, the minuet from Suite No.~2 and the gavotte
 from Suite No.~5. The pieces featured distinct types of
-complexities: four-part harmony with several nonchord tones,
-2-voice contrapuntual textures, and a varying contrapuntual
-texture, respectively. Unfortunately, because these are only
-three musical examples by the same composer, it is unlikely
-that the system would generalize to other compositions.
-\textcite{temperley1997algorithm} listed the limitations of
-Winograd and Maxwell's approaches, summarizing them in the
-following:
+complexities: four-part harmony with several
+\gls{nonchord}s, 2-voice contrapuntual textures, and a
+varying contrapuntual texture, respectively. Unfortunately,
+because these are only three musical examples by the same
+composer, it is unlikely that the system would generalize to
+other compositions. \textcite{temperley1997algorithm} listed
+the limitations of Winograd and Maxwell's approaches,
+summarizing them in the following:
 
 \begin{itemize}
     \item Sequences of notes that are not displayed
