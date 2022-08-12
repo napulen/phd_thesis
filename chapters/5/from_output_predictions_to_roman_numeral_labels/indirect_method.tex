@@ -16,3 +16,28 @@ from the predictions of the model in
 evaluation (which is explained in
 \refsec{evaluationagainstpreviousmodels})
 
+The method follows the same principles described in the
+direct method, with the following differences: the numerator
+$\elnumpred$ and tonicization $\eldenpred$ are not directly
+available from the predictions of the neural network.
+Instead, they are retrieved from the chord label and key
+using the \algorithm{} algorithm, as shown in
+\refeq{calling_natem}.
+
+\begin{equation}
+    \label{eq:calling_natem}
+    (\elnumpred, \eldenpred) = \algorithm{}(\elpcset, \elkey) 
+\end{equation}
+
+In \refeq{calling_natem}, the \gls{pcset} $\elpcset \in
+\setpcset$ is the representation of the chord label as a set
+of pitch classes. It is easy to obtain this set by first
+resolving the notes that comprise the chord label, and then
+listing their pitch classes, as shown
+\refeq{indirect_method_pcset}.
+
+
+\begin{equation}
+    \label{eq:indirect_method_pcset}
+    Gmin = \{\pitchG, \pitchBb, \pitchD\} \implies (7, 10, 2)
+\end{equation} 
