@@ -66,47 +66,27 @@ resolved in the following order:
     \item Inversion $\elinv$
 \end{enumerate}
 
-The following sections describe the process of generating a
+The following section describes the process of generating a
 sequence of \gls{rna} labels given the predictions shown in
-\reftab{crnn_predictions}.
+\reftab{crnn_predictions}. 
+
+In addition to the direct method that can be used with the
+\gls{mtl} predictions of this model, it might be useful to
+generate Roman numeral labels when only a chord label and
+key are provided. Some methods, for example, the one in
+\textcite{mcleod2021modular} produce chord labels and keys,
+thus a numerator $\elnum$ and a tonicization $\elden$ need
+to be estimated from the chord label and key. In that
+situation, an alternative method is provided, based on the
+\algorithm{} algorithm, described in
+\refsec{analgorithmtoresolveromannumeralsfromapitch-classsetandkey}.
+
 
 
 % Consider the following predictions coming from the
 % \gls{crnn} for the same musical fragment shown in
 % \reffig{schumann}.
 
-
-
-% The key $\elkey$ corresponds to the prediction of the
-% \gls{localkey38} classification task. The numerator
-% $\elnum$ corresponds to the prediction of the \gls{rn31}
-% classification task. The tonicization $\elden$ corresponds
-% to the prediction of the \gls{tonicization38}
-% classification task. The inversion $\elinv$ corresponds to
-% the prediction of the \gls{bass35} note in the context of
-% the numerator $\elnum$. An initial approach could be to
-% use the predictions of the \gls{localkey38}, \gls{rn31},
-% and \gls{tonicization38} tasks to generate the chord, and
-% then \gls{bass35} to retrieve the inversion.
-
-% In order to generate the final \gls{rna} labels, an
-% algorithm was designed to resolve them based on three
-% pieces of information: \begin{enumerate} \item a
-% \gls{pcset} $\rho \in \setpcset$ \item a key $k \in
-% \setkey$ \item an inversion $i \in$ $\{$ $0$, $1$, $2$,
-% $3$ $\}$ \end{enumerate}
-
-% With these three pieces of information, the algorithm
-% described in
-% \refsec{analgorithmtoresolveromannumeralsfromapitch-classsetandkey}
-% will produce a Roman numeral numerator $\elnum \in
-% \setnum$.
-
-% The purpose of the algorithm is to retrieve a numerator
-% $\elnum$, however, this information is already present in
-% the \gls{rn31} task, which is one of the classification
-% outputs of the \gls{mtl} configuration. Why do we need an
-% algorithm, then?
 
 % The design of the algorithm served two purposes: to
 % standardize the resolution of tonicizations in \gls{rna}
