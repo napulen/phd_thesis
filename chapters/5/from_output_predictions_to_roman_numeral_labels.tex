@@ -31,13 +31,14 @@ coupled with the configuration of the \gls{crnn} proposed
 here. Particularly, it benefits from the \gls{mtl}
 configuration and the chosen output tasks. The second method
 is more generic. It can be used when only a ``chord label''
-and a key are available, for example, in the predictions of
-other \gls{arna} methods. In the second method, the
-numerator $\elnum$ and tonicization $\elden$ need to be
-estimated. Thus, I refer to the second method as the
-\emph{indirect} method. The following sections describe the
-process of generating a sequence of \gls{rna} labels using both
-methods, given the predictions shown in
+and key are available. For example, it can be used to
+generate a \gls{rna} from the predictions of other
+\gls{arna} methods \parencite{mcleod2021modular}. In the
+second method, the numerator $\elnum$ and tonicization
+$\elden$ need to be estimated. Thus, I refer to the second
+method as the \emph{indirect} method. The following sections
+describe the process of generating a sequence of \gls{rna}
+labels using both methods, given the predictions shown in
 \reftab{crnn_predictions}.
 
 \phdtable[Predictions from the \gls{crnn} for the Clara
