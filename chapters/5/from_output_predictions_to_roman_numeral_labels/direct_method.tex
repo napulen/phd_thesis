@@ -1,0 +1,26 @@
+% Copyright 2022 Néstor Nápoles López
+
+The \gls{mtl} configuration of the model is tightly coupled
+with the vocabularies defined for $\setkey$ (see
+\refsec{thevocabularyofmusicalkeys}), $\setnum$ (see
+\refsec{thevocabularyofromannumeralnumerators}), $\setden$
+(see \refsec{thevocabularyofromannumeraldenominators}), and
+$\setinv$ (see
+\refsec{thevocabularyofarabicnumeralinversions}). Thus, the
+output labels of the \gls{arna} model can be generated as
+shown in \refeq{rna_pred}. 
+
+\begin{equation}
+    \label{eq:rna_pred}
+    \elrnapred_{\elonsetpred} = \elkeypred : \elnumpred^{\elinvpred} \; / \; \eldenpred
+\end{equation}
+
+In \refeq{rna_pred}, the $\elkeypred \in \setkey$ is the key
+prediction of the \gls{localkey38} classifier, $\elnumpred
+\in \setnum$ is the Roman numeral numerator prediction of
+the \gls{rn31} classifier, $\eldenpred \in \setden$ is the
+tonicization prediction of the \gls{tonicization38}
+classifier, $\elinvpred \in \setinv$ is an inversion
+extracted from the prediction of the \gls{bass35}
+classifier, and $\elrnapred \in \setrna$ is the final
+\gls{rna} label prediction.
