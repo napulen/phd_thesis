@@ -27,9 +27,10 @@ classifier, and $\elrnapred \in \setrna$ is the final
 required to generate the \gls{rna} label $\elrnapred$, only
 the inversion requires some additional computations. The
 rest are direct predictions from the \gls{crnn}. However,
-one issue that needs to be addressed before retrieving the
-predictions is the chord segmentation. 
-
+one issue that is yet to be addressed before processing the
+predictions is the chord segmentation. That is, which of the
+640 timesteps should be considered the location of a
+\gls{rna} label. 
 
 % This requires an approach for chord segmentation, where
 % the onset predictions $\elonset \in \setonset$ starting
