@@ -44,4 +44,11 @@ syntax of the chord labels.
     Gmin \implies \{\pitchG, \pitchBb, \pitchD\} \implies (7, 10, 2)
 \end{equation} 
 
-After the \gls{pcset} is obtained, the tonicization is
+After the \gls{pcset} $\elpcsetpred$ is obtained from the
+machine learning model, the numerator $\elnumpred$ and
+tonicization $\eldenpred$ can be retrieved with the
+\algorithmrn{} algorithm. Afterwards, the process to
+generate the \gls{rna} label is the same as in the direct
+method. In order to illustrate the indirect method, an
+example will be computed from the predictions of the
+\gls{pcset121} of the \gls{crnn} proposed here.
