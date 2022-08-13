@@ -122,23 +122,23 @@ O{0.33} O{0.33} O{0.33} m m m}{
   \relax
 }
   
-\NewDocumentCommand{\phdtablefith}{ O{Caption placeholder} O{\linewidth} m}{
+\NewDocumentCommand{\phdtablefith}{ O{Caption placeholder} O{1.0} m}{
   \begin{table}[h!]
     \centering
     \phdcaption{#1.}
     \label{tab:#3}
-    \resizebox{#2}{!}{%
+    \resizebox{#2\textwidth}{!}{%
     \input{\cwd/tables/#3}%
   }
 \end{table}
 }
 
-\NewDocumentCommand{\phdtablefitv}{ O{Caption placeholder} O{\linewidth} m}{
+\NewDocumentCommand{\phdtablefitv}{ O{Caption placeholder} O{1.0} m}{
   \begin{table}[h!]
     \centering
     \phdcaption{#1.}
     \label{tab:#3}
-    \resizebox{!}{#2}{%
+    \resizebox*{!}{#2\textheight}{%
     \input{\cwd/tables/#3}%
   }
 \end{table}
