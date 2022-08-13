@@ -35,22 +35,8 @@ jobs:
         with:
           root_file: |
             napoleslopez22phdthesis${{github.ref_name}}.tex
-            chapter1diff.tex
-            chapter2diff.tex
-            chapter3diff.tex
-            chapter4diff.tex
-            chapter5diff.tex
-            chapter6diff.tex
-            chapter7diff.tex
       - name: Create release
         uses: softprops/action-gh-release@v1
         with:
           files: |
             napoleslopez22phdthesis${{ github.ref_name }}.pdf
-            chapter1diff.pdf
-            chapter2diff.pdf
-            chapter3diff.pdf
-            chapter4diff.pdf
-            chapter5diff.pdf
-            chapter6diff.pdf
-            chapter7diff.pdf
