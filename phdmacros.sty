@@ -122,7 +122,18 @@ O{0.33} O{0.33} O{0.33} m m m}{
   \relax
 }
   
-\NewDocumentCommand{\phdtablefit}{ O{Caption placeholder} O{\linewidth} m}{
+\NewDocumentCommand{\phdtablefith}{ O{Caption placeholder} O{\linewidth} m}{
+  \begin{table}[h!]
+    \centering
+    \phdcaption{#1.}
+    \label{tab:#3}
+    \resizebox{#2}{!}{%
+    \input{\cwd/tables/#3}%
+  }
+\end{table}
+}
+
+\NewDocumentCommand{\phdtablefitv}{ O{Caption placeholder} O{\linewidth} m}{
   \begin{table}[h!]
     \centering
     \phdcaption{#1.}
