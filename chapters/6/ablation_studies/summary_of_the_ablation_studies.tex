@@ -25,17 +25,17 @@ representation affects the performance of the \gls{tenor35}
 and \gls{alto35} tasks, in addition to the \gls{bass35},
 which was the expected outcome.
 
-Overall, the biggest drop in performance happens when the
-recurrent layers of the network are removed. The recurrent
-layers have a notable effect on the ``key'' tasks:
-\gls{localkey38} and \gls{tonicization38}. This supports the
-hypothesis that a longer musical context is needed to
-estimate musical keys, in comparison to estimating chords.
-It is interesting that among the chord tasks, however,
-\gls{rn31} is the one affected the most by the removal of
-the recurrent layers. This might be because Roman numeral
-numerators are relative to the key, and thus sensitive to
-the key context.
+Overall, as predicted, the biggest drop in performance
+happens when the recurrent layers of the network are
+removed. The recurrent layers have a notable effect on the
+``key'' tasks: \gls{localkey38} and \gls{tonicization38}.
+This supports the hypothesis that a longer musical context
+is needed to estimate musical keys, in comparison to
+estimating chords. It is interesting that among the chord
+tasks, however, \gls{rn31} is the one affected the most by
+the removal of the recurrent layers. This might be because
+Roman numeral numerators are relative to the key, and thus
+sensitive to the key context.
 
 In the row of the baseline model, the standard deviation
 ($\sigma$) across the 5-fold cross validation is provided
