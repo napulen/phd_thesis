@@ -38,14 +38,19 @@ this part of the piece as a \gls{neapolitan} chord: measure
 In their work on a pitch spelling algorithm,
 \textcite{teodoru2007pitch} described the dependency of
 ``pitch spelling'' task to \gls{lke} and \gls{acr}, noting
-that ``[some tonal] situations require a deeper notion of
-the harmonic state than provided by the local key, as in the
+that 
+
+\begin{italicsquote}
+[some tonal] situations require a deeper notion of the
+harmonic state than provided by the local key, as in the
 German \gls{augsix} chord, which seems nearly impossible to
-spell correctly without recognizing it as such.'' This poses
-the question of whether it is possible to design an
-algorithm to spell the pitches in a \gls{midi} file, without
-also developing a key estimation and chord recognition
-algorithms. \gls{arna}, naturally sitting at the
+spell correctly without recognizing it as such.
+\end{italicsquote}
+
+This poses the question of whether it is possible to design
+an algorithm to spell the pitches in a \gls{midi} file,
+without also developing a key estimation and chord
+recognition algorithms. \gls{arna}, naturally sitting at the
 intersection of various tonal tasks, is constantly involved
 in similar ``chicken and egg'' problems. This may be also
 one of the motivations for \gls{mtl} approaches, trying to
