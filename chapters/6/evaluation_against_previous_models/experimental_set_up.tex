@@ -2,3 +2,37 @@
 
 This section presents the parameters of the evaluation
 experiment.
+
+The hyperparameters for training the model are summarized
+here.
+
+\phdparagraph{number of epochs}
+
+The model was trained for 100 epochs using a fixed learning
+rate of $10^{-3}$ on the full training set plus both methods
+of data augmentation. Afterwards, the model was fine-tuned
+for an additional 100 epochs with a lower learning rate of
+$10^{-5}$.
+
+\phdparagraph{optimizer}
+
+The optimizer used was Adam without any learning rate
+schedule.
+
+
+% % Copyright 2022 Néstor Nápoles López
+
+% The dataset was divided into training, validation, and test
+% splits. Some of the datasets, such as \gls{bps}, included a
+% test split by previous researchers, but most datasets did
+% not. When one was included, the split here is identical,
+% when one was not included, a test split is provided.
+
+
+% Copyright 2022 Néstor Nápoles López
+
+The proposed model can be trained on a personal
+laptop.\footnote{ Intel i7 10750h, Nvidia RTX 2070, 32 GB
+DDR4} The average time to train in these settings is
+approximately 10 hours.
+
