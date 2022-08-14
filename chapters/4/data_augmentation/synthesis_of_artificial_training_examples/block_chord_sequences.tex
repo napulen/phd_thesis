@@ -16,15 +16,15 @@ is computationally expensive using a rule-based
 voice-leading
 algorithm.\footnotelink{https://github.com/napulen/romanyh}
 Moreover, in the neural network architecture of this
-dissertation (see \refchap{modeldesign}), the voice-leading
-information is not taken into account, because the octave of
-the notes is not encoded. For that reason, an alternative
-approach is to synthesize training examples as simple block
-chords, such as the ones shown in
-\reffig{synthesis_blockchord}. These block chords are useful
-because they indicate the notes of the chord and which of
-those notes is at the bottom (i.e., the lowest-sounding
-one). 
+dissertation, \gls{augmentednet} (see
+\refchap{modeldesign}), the voice-leading information is not
+taken into account, because the octave of the notes is not
+encoded. For that reason, an alternative approach is to
+synthesize training examples as simple block chords, such as
+the ones shown in \reffig{synthesis_blockchord}. These block
+chords are useful because they indicate the notes of the
+chord and which of those notes is at the bottom (i.e., the
+lowest-sounding one). 
 
 We introduced a data-augmentation approach of this kind in
 \textcite{napoleslopez2020harmonic}, where it showed an
