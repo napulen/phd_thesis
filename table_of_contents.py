@@ -111,7 +111,7 @@ data_acquisition = """
     general preparation of the data
         standardizing the annotations
         detecting errors in the annotations
-            objective metrics
+            common error patterns
                 alignment between scores and annotations
                 pitch correspondence between chord annotations and scores
                 correspondence between lowest-sounding note and bass of the chord
