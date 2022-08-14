@@ -4,15 +4,15 @@ This section describes the \gls{natem} algorithm, which is
 useful to retrieve a Roman numeral numerator $\elnum$ and
 tonicization $\elden$ from a \gls{pcset} $\elpcset$ and key
 $\elkey$, as shown in \refeq{natem}. This is useful when a
-machine learning system generates chord labels and keys,
-which is often the case. 
+machine learning system only generates chord labels and
+keys, which is often the case. 
 
 \begin{equation}
     \label{eq:natem}
     \gls{natem}(\elpcset, \elkey) = \elnum\text{/}\elden
 \end{equation}
 
-The retrieval process consists of two steps: if possible,
+The retrieval process comprises two steps: if possible,
 acquire the numerator $\elnum$ from the \gls{pcset}
 $\elpcset$ and key $\elkey$; if this is not possible
 directly, force a tonicization to retrieve a tonicization
