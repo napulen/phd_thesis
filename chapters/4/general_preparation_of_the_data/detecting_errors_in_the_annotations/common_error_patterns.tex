@@ -18,17 +18,17 @@ between the two, this might indicate a misalignment.
 
 \phdparagraph{pitch correspondence between chord annotations and scores}
 
-Although the presence of \gls{nonchord}s and absence of chord
-tones can make it difficult to automatically detect whether
-a chord has been mislabeled, there is usually some shared
-pitch content between the annotation and the score.
+Although the presence of \gls{nonchord}s and absence of
+chord tones can make it difficult to automatically detect
+whether a chord has been mislabeled, there is usually some
+shared pitch content between the annotation and the score.
 
 Whenever the correspondence of the pitch content and the
 chord annotation is unusually low, this might be an
-indication that the chord has been mislabeled. This
-objective metric has been designed to detect such instances
-(e.g., a $C$ chord has been mislabeled as a $C\sharp$ chord,
-which is unambiguosly incorrect).
+indication that the chord has been mislabeled. Designing a
+routine to compare helps detecting such instances (e.g., a
+$C$ chord has been mislabeled as a $C\sharp$ chord, which is
+unambiguosly incorrect).
 
 \phdparagraph{correspondence between lowest-sounding note and bass of the chord}
 
