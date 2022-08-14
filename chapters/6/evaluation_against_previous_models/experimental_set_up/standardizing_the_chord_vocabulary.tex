@@ -1,13 +1,20 @@
 % Copyright 2022 Néstor Nápoles López
 
 The vocabulary of each model is different, as shown in
-\reftab{chord_vocabularies}. This makes it difficult to
-propose a fair comparison. For example, the \gls{melisma}
-and \textcite{mcleod2021modular} models do not explicitly
-recognize \gls{augsix} chords. However, a label of $\rnVsev$
-in the right key context could be interpreted as an
-\gls{augsix} chord and recognized implicitly. This was a
-motivation
+\reftab{chord_vocabularies}. In addition to the different
+qualities of chords supported by each model, the notation is
+also often distinct. This makes it difficult for a fair
+comparison across all of them. Furthermore, the models might
+be in fact able to recognize chords that are not explicitly
+mentioned. For example, neither the \gls{melisma} nor the
+\textcite{mcleod2021modular} models explicitly recognize
+\gls{augsix} chords. However, a label of $\rnVsev$ in the
+correct key context may be interpreted as an \gls{augsix}
+chord and recognized regardless of how it is annotated. This
+is true for other types of chords too, such as
+\gls{neapolitan}. This was a motivation to propose the
+\algorithmrn{} algorithm for the retrieval of \gls{rna}
+numerators from \gls{pcset} and keys. 
 
 \phdtable[The chord vocabularies of the compared
 models]{chord_vocabularies}
