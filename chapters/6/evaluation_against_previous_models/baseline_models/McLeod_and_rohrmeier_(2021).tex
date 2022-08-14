@@ -1,7 +1,7 @@
 % Copyright 2022 Néstor Nápoles López
 
 \textcite{mcleod2021modular} proposed an \gls{arna} model
-that differs in methodology to the ones presented by
+that differs in methodology to the ones presented in
 \textcite{chen2021attend}, \textcite{micchi2021deep}, and
 the approach presented here. For example, it substituted the
 \gls{mtl} configuration with a modular approach based on
@@ -9,4 +9,15 @@ dedicated models per task. The published model was trained
 twice with different datasets: a public dataset similar to
 the one in \textcite{micchi2021deep}, and a larger private
 dataset of their own. The authors provided source code and
-pretrained models for both versions of the model.
+pretrained models for both versions of the model. The output
+annotations of the model are provided in a tabular \gls{tsv}
+format, which provides chord label and key annotations.
+Another format of output based on the \gls{dcml} standard
+for \gls{rna} annotations (see \refsubsec{thedcmlstandard})
+was made available, but the tabular \gls{tsv} format was
+used. The pretrained model used in this comparison was the
+one with the best results according to the publication,
+using the private dataset.
+% When translating the annotations of this model, it was
+% particularly difficult to align the notions of ``measure''
+% and time signature between representations.
