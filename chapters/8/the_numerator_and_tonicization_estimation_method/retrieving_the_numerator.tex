@@ -43,9 +43,9 @@ corresponding numerator $\elnum$ such that
 $\text{pcset}(\elkey$:$\elnum) = \elpcset$, as shown in
 \refeq{numerator_from_pcset_key}. This is the simple case of
 the \gls{natem} algorithm, as shown in \refeq{natem_simple}. 
-% If the condition $\elkey \in
-% \setkey_\elpcset$ is met, then the return value is $\elnum =
-% \Gamma(\elpcset, \elkey), \elden = \rnI$ or $\elden = \rni$.
+% If the condition $\elkey \in \setkey_\elpcset$ is met,
+% then the return value is $\elnum = \Gamma(\elpcset,
+% \elkey), \elden = \rnI$ or $\elden = \rni$.
 
 \begin{equation}
     \label{eq:numerator_from_pcset_key}
@@ -87,7 +87,7 @@ will return a \gls{rna} of the form shown in
 
 \begin{equation}
     \label{eq:numerator_from_pcset_den}
-    \elkey \; \text{:} \; \Gamma(\elpcset, \elden_{\elkey}) \; \text{/} \; \elden
+    \gls{natem}(\elpcset, \elkey) = \elkey\text{:}\Gamma(\elpcset, \elden_{\elkey}) \; \text{/} \; \elden
 \end{equation}
 
 In the \gls{rna} of \refeq{numerator_from_pcset_den}, the
