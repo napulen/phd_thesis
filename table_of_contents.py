@@ -242,17 +242,13 @@ experimental_evaluation = """
         summary of the effects of data augmentation
     training on the aggregated dataset
     evaluation against previous models
+        experimental set up
+            standardizing the chord vocabulary
         baseline models
             melisma (2003)
             chen and su (2021)
             micchi et al. (2021)
             McLeod and rohrmeier (2021)
-        experimental set up
-            hyperparameters
-                number of epochs
-                optimizer
-            data splits
-            computing time
     results
         time performance on inference
         accuracy on individual tasks
