@@ -21,4 +21,12 @@ shown in \refeq{all_denominators}.
     \musSharp, \musDoubleSharp, \dotsc \} \times \{ \rni, \rnI, \rnii, \rn{II}, \rniii, \rn{III}, \rniv, \rnIV, \rn{v}, \rnV, \rnvi, \rnVI, \rn{vii}, \rn{VII} \}
 \end{equation}
 
+In the design of the \gls{augmentednet} model proposed in
+this dissertation, this vocabulary is never used, because it
+results inconvenient for multiclass classification. Instead,
+tonicizations are encoded as keys $\elden_{\elkey}$, which
+can always be reversed to their scale degree representation
+when writing the output \gls{rna} labels. See
+\refsubsec{TonicizationKey38} for further details on the
+implementation of tonicizations.
 
