@@ -300,9 +300,10 @@ appendix = """
                 neapolitan chord
                 augmented sixth chords
     the vocabulary of roman numeral denominators
-    the vocabulary of arabic numeral inversions
     the vocabulary of musical keys
+    the vocabulary of arabic numeral inversions
     the vocabulary of pitch-class sets
-    an algorithm to resolve roman numerals from a pitch-class set and key
+    the numerator and tonicization estimation method
+        retrieving the numerator
         forcing a tonicization
 """
