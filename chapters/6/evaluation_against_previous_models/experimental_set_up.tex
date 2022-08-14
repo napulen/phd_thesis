@@ -5,18 +5,17 @@ the experiment of \refsec{trainingontheaggregateddataset}.
 There are a total of 94 files in the test set, which are
 sampled from the seven publicly available datasets (see
 \refsec{publiclyavailabledatasets}). All of the input files
-were provided in the \gls{musicxml} format and the
-ground-truth annotations in \gls{romantext}. One model did
-not support \gls{musicxml} inputs, \gls{melisma}, in this
-case, all the \gls{musicxml} were translated to
-\gls{humkern}, the supported input format. Similarly,
-several models, \gls{melisma}, \textcite{chen2021attend,
+in the test set were provided in the \gls{musicxml} format,
+and their ground-truth annotations in \gls{romantext}. One
+model did not support \gls{musicxml} inputs, \gls{melisma},
+in this case, all the \gls{musicxml} files were translated
+to \gls{humkern}, the supported input format. Similarly,
+three models, \gls{melisma}, \textcite{chen2021attend,
 mcleod2021modular}, did not provide output annotations in
-\gls{romatext}, in this case, the original outputs were
-translated to \gls{romantext}. All the comparisons were
-performed by parsing the ground-truth \gls{romantext} in the
-test set, and each of the annotations provided by the
-models. 
+\gls{romatext}, thus, the original outputs were translated
+to \gls{romantext}. All the comparisons were performed
+between the ground-truth \gls{romantext} in the test set,
+and each of the annotations provided by the models. 
 
 Regarding the training of the model proposed in this
 dissertation, it was trained for 200 epochs using a fixed
