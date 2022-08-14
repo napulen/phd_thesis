@@ -41,8 +41,8 @@ minimal distance to $\elkey$ is a good candidate for a
 tonicization.
 
 The key distance metric used is the Euclidean distance $d$
-between $\elkey$ and all $\elden_\elkey \in \setkey_\elpcset$
-in the Weber tonal chart of keys
+between $\elkey$ and all $\elden_\elkey \in
+\setkey_\elpcset$ in the Weber tonal chart of keys
 \parencite{weber1818versuch}. The chart is arranged in the
 layout shown in \reftab{weber_tonal_chart}.
 
@@ -59,11 +59,11 @@ key-distance estimations shown in
 
 \begin{equation}
     \label{eq:tonicization_estimation}
-    \elden_{\min} = \elden \mid \min_{\forall \elden \in \setkey_\elpcset} d(\elkey, \elden)
+    \elden_{\min} = \elden \mid \text{arg min}_{\forall \elden \in \setkey_\elpcset} d(\elkey, \elden)
 \end{equation}
 
-\phdtable[Distance between given key $\elkey$ and
-tonicizations $\elden \in \setkey_\elpcset$. The
+\phdtable[Distance between the given key $\elkey$ and
+tonicizations $\elden_\elkey \in \setkey_\elpcset$. The
 $\elden_{\min}$ tonicization with the smallest distance,
 $d(\elkey, \elden) = 1.0$, is
 highlighted]{tonicization_estimation_example}
