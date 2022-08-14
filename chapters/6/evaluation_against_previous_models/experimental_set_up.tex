@@ -1,38 +1,26 @@
 % Copyright 2022 Néstor Nápoles López
 
-This section presents the parameters of the evaluation
-experiment.
+The test used for the comparison was the same test set used
+for the experiment on the aggregated training set described
+in \refsec{trainingontheaggregateddataset}. There are a
+total of 94 files in the test set, which are sampled from
+the seven publicly available datasets. All of the input
+files are provided in \gls{musicxml} format and the output
+files in \gls{romantext}. Some of the models compared do not
+output their annotations in the \gls{romantext}. Therefore,
+the output annotations were translated into the format for a
+common representation among all models.
 
-The hyperparameters for training the model are summarized
-here.
+Regarding the training of the model proposed in this
+dissertation, it was trained for 200 epochs using a fixed
+learning rate of $10^{-3}$ on the full training set plus
+both methods of data augmentation. Afterwards, the model was
+fine-tuned for an additional 100 epochs with a lower
+learning rate of $10^{-5}$ on only the ``real'' training
+data (i.e., removing transpositions and synthesized files).
 
-\phdparagraph{number of epochs}
-
-The model was trained for 100 epochs using a fixed learning
-rate of $10^{-3}$ on the full training set plus both methods
-of data augmentation. Afterwards, the model was fine-tuned
-for an additional 100 epochs with a lower learning rate of
-$10^{-5}$.
-
-\phdparagraph{optimizer}
-
-The optimizer used was Adam without any learning rate
-schedule.
-
-
-% % Copyright 2022 Néstor Nápoles López
-
-% The dataset was divided into training, validation, and test
-% splits. Some of the datasets, such as \gls{bps}, included a
-% test split by previous researchers, but most datasets did
-% not. When one was included, the split here is identical,
-% when one was not included, a test split is provided.
-
-
-% Copyright 2022 Néstor Nápoles López
-
-The proposed model can be trained on a personal
-laptop.\footnote{ Intel i7 10750h, Nvidia RTX 2070, 32 GB
-DDR4} The average time to train in these settings is
-approximately 10 hours.
+% The proposed model can be trained on a personal
+% laptop.\footnote{ Intel i7 10750h, Nvidia RTX 2070, 32 GB
+% DDR4} The average time to train in these settings is
+% approximately 10 hours.
 
