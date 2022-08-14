@@ -16,14 +16,6 @@ output annotations in other formats. For these models, the
 original outputs were translated to \gls{romantext}. All the
 comparisons were performed between the ground-truth
 \gls{romantext} in the test set, and each of the annotations
-provided by the models (or the translations). 
-
-Regarding the training of the model proposed in this
-dissertation, it was trained for 200 epochs using a fixed
-learning rate of $10^{-3}$ on the full training set plus
-both methods of data augmentation. Afterwards, the model was
-fine-tuned for an additional 20 epochs with a lower learning
-rate of $10^{-5}$ on only the ``real'' training data (i.e.,
-removing transpositions and synthesized files). The
-optimizer used was \emph{Adam} \parencite{kingma2014adam}.
-
+provided by the models (or the translations). All the models
+were evaluated with the same \gls{rna} vocabulary, which
+required standardization. This is explained below.
