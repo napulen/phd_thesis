@@ -12,13 +12,14 @@ In his work with \emph{keyscapes},
 \textcite{sapp2011computational} presented examples of key
 analyses with different window lengths. In some of these
 analyses, with sufficiently short windows, an overlap
-between key analysis and chord analysis can be inferred. In
-our work designing a local-key-estimation algorithm
-\parencite{napoleslopez2019keyfinding}, we found something
-similar with key-profiles and sequences of pitch classes
-analyzed with a \gls{hmm}. A \gls{keyprofile} that heavily
-penalizes non-diatonic degrees finds a ``change of key'' in
-Chopin's Op.28 No.20, which corresponds to a
+between key analysis and chord analysis occurred. For
+example, a short window captured a change in harmony instead
+of a change of key. In our work designing a \gls{lke}
+algorithm \parencite{napoleslopez2019keyfinding}, we found
+something similar with key-profiles and sequences of pitch
+classes analyzed with a \gls{hmm}. A \gls{keyprofile} that
+heavily penalizes non-diatonic degrees finds a ``change of
+key'' in Chopin's Op.28 No.20, which corresponds to a
 \gls{neapolitan} chord. It is unclear whether this type of
 chromatic chord could be considered a deviation of the
 musical key. Arguments can be made for both positions on
