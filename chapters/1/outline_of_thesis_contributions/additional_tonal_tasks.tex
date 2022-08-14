@@ -1,16 +1,15 @@
 % Copyright 2021 Néstor Nápoles López
 
-% This is \refsubsec{additionaltonaltasks}, which introduces
-% the additional tonal tasks.
-
-An important aspect of \gls{rna} is that it is
-more closely related to a grammar than it is related to a
-vocabulary of classes. Because of this, they are difficult
-to understand. However, they implicitly encode an extensive
-amount of information about the tonal context. An idea
-proposed in this \thesisdiss{} is to create different tonal
-classification problems from a single \gls{rna}
-label. Although this has been done already, for example, by
-\textcite{chen2018functional}, we propose an additional
-number of these classification problems to be included in
-the neural network architecture.
+An important aspect of \gls{rna} is that it may span an
+incredibly large vocabulary of chords, with special symbols
+(e.g., $\rnN$ or $\rnGer$) and special tonal contexts, such
+as modulations. Because of this, chords in \gls{rna} are
+difficult to understand. However, they implicitly encode an
+extensive amount of information about the tonal context. An
+idea proposed in this \thesisdiss{} is to create different
+tonal classification problems from a single \gls{rna} label.
+Although this has been done already, for example, by
+\textcite{chen2018functional}, we propose a different set of
+these classification problems to be included in the neural
+network architecture. These are discussed in
+\refsec{multitasklearningoutputs}.
