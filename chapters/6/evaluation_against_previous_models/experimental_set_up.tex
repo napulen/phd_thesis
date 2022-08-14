@@ -6,16 +6,17 @@ There are a total of 94 files in the test set, which were
 sampled from the seven publicly available datasets (see
 \refsec{publiclyavailabledatasets}). All of the input files
 in the test set were provided in the \gls{musicxml} format,
-and their ground-truth annotations in \gls{romantext}. One
-model did not support \gls{musicxml} inputs, \gls{melisma},
+and their ground-truth annotations in \gls{romantext}. The
+\gls{melisma} model did not support \gls{musicxml} inputs,
 in this case, all the \gls{musicxml} files were translated
-to \gls{humkern}, the supported input format. Similarly,
-three models, \gls{melisma}, \textcite{chen2021attend,
-mcleod2021modular}, did not provide output annotations in
-\gls{romantext}, thus, the original outputs were translated
-to \gls{romantext}. All the comparisons were performed
-between the ground-truth \gls{romantext} in the test set,
-and each of the annotations provided by the models. 
+to \gls{humkern}, the format that \gls{melisma} supports.
+Similarly, three models, \gls{melisma},
+\textcite{chen2021attend, mcleod2021modular}, did not
+provide output annotations in \gls{romantext}, thus, the
+original outputs were translated to \gls{romantext}. All the
+comparisons were performed between the ground-truth
+\gls{romantext} in the test set, and each of the annotations
+provided by the models. 
 
 Regarding the training of the model proposed in this
 dissertation, it was trained for 200 epochs using a fixed
