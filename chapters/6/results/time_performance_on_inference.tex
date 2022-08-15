@@ -1,17 +1,17 @@
 % Copyright 2022 Néstor Nápoles López
 
-The time that each of the models took to compute the Roman
-numeral labels of each file in the test set was measured.
-Each of the files was processed as an independent process in
-the operating system. This is important because it might
-introduce a slight overhead on all the deep learning models,
-as the \gls{gpu} driver required to load for each file,
-instead of processing in batches. However, this overhead
-should result in a fair comparison for all the deep learning
-models. All of the deep learning models used \gls{gpu} when
-possible. \reftab{time_performance} shows the performance of
-the models.
+The time that each model took to compute its predictions on
+the test set of 94 \gls{musicxml} files was measured. In
+order to run the measurement, each of the files was
+processed as an independent process in the operating system,
+running the model with the input and output arguments for
+the file in turn. For the models based on deep learning
+approaches, no \gls{gpu} was used to compute the
+predictions, nor they were processed in batch.
+\reftab{time_performance} shows the performance of the
+models.
 
-\phdtable[Inference time measured for each of the models
-compared]{time_performance}
+\phdtable[Time elapsed in each model to run inference on
+each of the \gls{musicxml} files in the test
+set]{time_performance}
 
