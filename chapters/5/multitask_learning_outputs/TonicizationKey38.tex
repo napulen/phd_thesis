@@ -27,13 +27,13 @@ performance of the model, because the model may learn to
 predict that tonicizations never happen. By predicting
 $\elden_{\elkey}$ instead, the \gls{tonicization38} learns
 key fluctuations that are generally shorter than the ones in
-\gls{localkey38} task. When generating a \gls{rna} label
-from the model $\elden_{\elkey}$ can be easily reverted to
-$\elden$, by encoding the key $\elden_{\elkey}$ as a scale
-degree that is relative to $\elkey$. Finally, because
-\gls{tonicization38} is a classification task for keys, it
-uses the $\setkey$, with 38 classes available for the
-tonicized keys.
+\gls{localkey38} task. When generating the \gls{rna} label
+from the model predictions, $\elden_{\elkey}$ can be easily
+reverted to $\elden$, by encoding the key $\elden_{\elkey}$
+as a scale degree that is relative to $\elkey$. Finally,
+because \gls{tonicization38} is a classification task for
+keys, it uses the $\setkey$, with 38 classes available for
+the tonicized keys.
 
 The \gls{tonicization38} task used in this \gls{mtl}
 configuration is equivalent to the ``secondary degree''
