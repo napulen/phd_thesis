@@ -3,5 +3,23 @@
 \phdtable[Comparison of individual tasks among different
 models]{comparison}
 
+Regarding the performance on the individual tasks of
+\gls{pcset} $\elpcset$, key $\elkey$, and inversion
+$\elinv$, the \gls{melisma} model seems to be the worst.
+Surprisingly, the performance of two deep learning
+approaches is not too far ahead of \gls{melisma}. Given the
+nature of \gls{romantext} files, which have discrete chord
+annotations located at measure and beat positions, it is
+possible that the lower performance shown in the
+\textcite{mcleod2021modular} and \textcite{chen2021attend}
+models is heavily penalizing the chord segmentation of the
+models. If the predictions are correct but misaligned with
+the annotations of the ground truth, it is possible that the
+performance of the models appears to be worse than it would
+be perceived in a different evaluation workflow. The
+\textcite{micchi2021deep} and \gls{augmentednet} models have
+a similar performance, with \gls{augmentednet} slightly
+ahead on the $\elpcset$ and $\elkey$ tasks.
+
 The comparison of accuracy among comparable tasks is shown
 in \reftab{comparison}.
