@@ -1,12 +1,10 @@
 % Copyright 2022 Néstor Nápoles López
 
 
-In the indirect method, instead of using the direct
-predictions of the corresponding classifiers, a \gls{pcset}
-$\elpcset$ and key $\elkey$ are used to retrieve the
-numerator $\elnum$ and tonicization $\elden$ of the
-\gls{rna} label. This method is useful in several
-situations: 
+In the indirect method, instead of retrieving predictions
+for $\elnum$ and $\elden$ directly, these are estimated from
+a \gls{pcset} $\elpcset$ and key $\elkey$. This method is
+useful in several situations: 
 \begin{enumerate}
     \item When running an evaluation of several \gls{arna}
     models that have a distinct set of classification tasks,
