@@ -17,13 +17,13 @@ models.
 predictions on the 94 files of the test
 set]{time_performance}
 
-By far, the fastest model to run is \gls{melisma}. This
-model is a compiled program written in the \emph{C
-programming language}. Thus, as a compiled program, it is
-intrinsically faster than all other approaches, which are
-based on Python. Out of the deep learning models, the one in
-\textcite{micchi2021deep} seems to be the fastest one,
-followed by \gls{augmentednet} and
+By far, the fastest model is \gls{melisma}. This model is a
+compiled program written in the \emph{C programming
+language}. Thus, as a compiled program, it is intrinsically
+faster than all other approaches, which are based on the
+Python programming language. Out of the deep learning
+models, the one in \textcite{micchi2021deep} seems to be the
+fastest, followed by \gls{augmentednet} and
 \textcite{chen2021attend}. The model in
 \textcite{mcleod2021modular} is the slowest one to run on
 raw \gls{musicxml} inputs, averaging nearly 2 minutes to
@@ -32,4 +32,4 @@ of the modular approach is that the computations are not run
 in an end-to-end fashion as in \gls{mtl} approaches.
 However, considering the time it takes for a human annotator
 to annotate a long musical score (e.g., piano sonata), all
-of these models could be very useful.
+of these models are fairly good.
