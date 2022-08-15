@@ -3,13 +3,17 @@
 The \gls{bass35} class represents the chord tone acting as
 the bass. In the chord realizations shown in
 \reffig{satb_all}, it encodes the pitch spelling of the
-lowest note of each chord. When the model is running unseen
-music inputs, the \gls{bass35} classifier will try to
+lowest note of each chord. When the \gls{crnn} is processing
+new music inputs, the \gls{bass35} classifier will try to
 predict the lowest note of that chord realization. The goal
 is that all of the four \gls{satb35} classifiers predict
-their corresponding note correctly. \reffig{satb_bass} shows
-the encoding of the bass according to the realization shown
-in \reffig{satb_all}.
+their corresponding note correctly. An additional role of
+the \gls{bass35} classifier is that it determines the
+inversion predicted by the \gls{arna} model. If the
+\gls{bass35} prediction is incorrect, then the inversion
+will necessarily be incorrect. \reffig{satb_bass} shows the
+encoding of the bass according to the realization shown in
+\reffig{satb_all}.
 
 % Pitches with up to \glspl{doubleflat} and
 % \glspl{doublesharp} accidentals are possible output
@@ -21,11 +25,10 @@ in \reffig{satb_all}.
 % configuration. The duple encoding in the $\setps_{19}$
 % method requires a different loss function, which was
 % avoided as an implementation practicality. 
-Notice also that throughout this dissertation, the ``bass''
-is considered a perceptual phenomenon, which may or may not
-correspond with the lowest-sounding note encoded in the
-input representation \gls{bass19}. \reffig{bass_encoding} is
-a good example of this situation. In the original score, the
+Notice also that the bass does not necessarily correspond
+with the \gls{bass19} representation encoded in the input.
+\reffig{bass_encoding} is a good example of a situation
+where they do not coincide. In the original score, the
 two-voice pattern of the bass in measures 1 and 2 could
 easily persuade the listener to think (or hear) the lower G
 note as the bass throughout measure 3, however, it is only
