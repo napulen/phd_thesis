@@ -1,7 +1,16 @@
 % Copyright 2022 Néstor Nápoles López
 
 The \gls{bass35} class represents the chord tone acting as
-the bass. 
+the bass. In the chord realizations shown in
+\reffig{satb_all}, it encodes the pitch spelling of the
+lowest note of the chord. When the model is running unseen
+music inputs, the \gls{bass35} classifier will try to
+predict the lowest note of that chord realization. The goal
+is that all of the four \gls{satb35} classifiers predict
+their corresponding note correctly. \reffig{satb_bass} shows
+the encoding of the bass according to the realization shown
+in \reffig{satb_all}.
+
 % Pitches with up to \glspl{doubleflat} and
 % \glspl{doublesharp} accidentals are possible output
 % classes, because the $\setps_{35}$ method is used here,
@@ -23,8 +32,6 @@ note as the bass throughout measure 3, however, it is only
 the lowest-sounding note during the first eighth note. Thus,
 it can simultaneously be the \emph{bass} of the chord
 throughout measure 3, but not the lowest-sounding note.
-\reffig{satb_bass} shows the encoding of the bass according
-to the realization shown in \reffig{satb_all}.
 
 \phdfigure[Example of the \gls{bass35} encoding for the
 chords in \reffig{satb_all}]{satb_bass}
