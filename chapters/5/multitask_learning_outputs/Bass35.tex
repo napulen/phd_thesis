@@ -1,41 +1,43 @@
 % Copyright 2022 Néstor Nápoles López
 
 The \gls{bass35} class represents the chord tone acting as
-the bass. Pitches with up to \glspl{doubleflat} and
-\glspl{doublesharp} accidentals are possible output classes,
-because the $\setps_{35}$ method is used here, unlike the
-$\setps_{19}$ in the input representations. The motivation
-for this dual use of pitch spelling representations is to
-use the same loss function for all multiclass classification
-problems in the \gls{mtl} configuration. The duple encoding
-in the $\setps_{19}$ method requires a different loss
-function, which was avoided as an implementation
-practicality. Notice also that throughout this
-\thesisdiss{}, the ``bass'' is considered a perceptual
-phenomenon, which may or may not correspond with the
-lowest-sounding note encoded in the input representation
-\gls{bass19}. \reffig{bass_encoding} is a good example of
-this situation. In the original score, the two-voice pattern
-of the bass in measures 1 and 2 could easily persuade the
-listener to think (or hear) the lower G note as the bass
-throughout measure 3, however, it is only the
-lowest-sounding note during the first eighth note. Thus, it
-can simultaneously be the \emph{bass} of the chord
+the bass. 
+% Pitches with up to \glspl{doubleflat} and
+% \glspl{doublesharp} accidentals are possible output
+% classes, because the $\setps_{35}$ method is used here,
+% unlike the $\setps_{19}$ in the input representations. The
+% motivation for this dual use of pitch spelling
+% representations is to use the same loss function for all
+% multiclass classification problems in the \gls{mtl}
+% configuration. The duple encoding in the $\setps_{19}$
+% method requires a different loss function, which was
+% avoided as an implementation practicality. 
+Notice also that throughout this \thesisdiss{}, the ``bass''
+is considered a perceptual phenomenon, which may or may not
+correspond with the lowest-sounding note encoded in the
+input representation \gls{bass19}. \reffig{bass_encoding} is
+a good example of this situation. In the original score, the
+two-voice pattern of the bass in measures 1 and 2 could
+easily persuade the listener to think (or hear) the lower G
+note as the bass throughout measure 3, however, it is only
+the lowest-sounding note during the first eighth note. Thus,
+it can simultaneously be the \emph{bass} of the chord
 throughout measure 3, but not the lowest-sounding note.
 
-The first four output representations, \gls{bass35},
-\gls{tenor35}, \gls{alto35}, and \gls{soprano35}, are all
-related to the realization of the annotated chord in a
-\gls{closed-position}. Collectively, I refer to these four
-classifiers as the \gls{satb35} tasks. Note that these four
-tasks encode as the target class a spelled note. However,
-unlike the \gls{bass19} and \gls{chroma19} input
-representations, the spelled notes in the \gls{satb35}
-classifiers have been encoded using the $\setps_{35}$
-vocabulary, instead of $\setps_{19}$. This was done in order
-to use the same loss function (sparse categorical cross
-entropy) across all the \gls{mtl} tasks, which would not be
-possible for the two-hot encoding required in $\setps_{19}$.
+% The first four output representations, \gls{bass35},
+% \gls{tenor35}, \gls{alto35}, and \gls{soprano35}, are all
+% related to the realization of the annotated chord in a
+% \gls{closed-position}. Collectively, I refer to these four
+% classifiers as the \gls{satb35} tasks. Note that these
+% four tasks encode as the target class a spelled note.
+% However, unlike the \gls{bass19} and \gls{chroma19} input
+% representations, the spelled notes in the \gls{satb35}
+% classifiers have been encoded using the $\setps_{35}$
+% vocabulary, instead of $\setps_{19}$. This was done in
+% order to use the same loss function (sparse categorical
+% cross entropy) across all the \gls{mtl} tasks, which would
+% not be possible for the two-hot encoding required in
+% $\setps_{19}$.
 
 \reffig{satb_all} shows the realization of the annotated
 chords that defines the target class of each classifier.
