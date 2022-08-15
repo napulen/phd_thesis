@@ -97,7 +97,7 @@ background = """
                 the melisma music analyzer
                 probabilistic and grammar-based models
                 deep learning models
-            conventional tasks
+            multitask learning approaches
                 local key
                 primary degree
                 secondary degree
