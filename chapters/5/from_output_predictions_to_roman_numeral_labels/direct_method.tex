@@ -22,8 +22,8 @@ classifiers.
     is relative to key $\elkey$ 
 \end{enumerate}
 
-The inversion requires a slightly more involved process.
-First, using the other components of the \gls{rna}
+The inversion $\elinv$ requires a slightly more involved
+process. First, using the other components of the \gls{rna}
 annotation, the chord implied by the numerator $\elnum$
 needs to be converted into a sequence of notes, ordered from
 the root. Then, retrieving the prediction $\elbass \in
@@ -31,7 +31,16 @@ the root. Then, retrieving the prediction $\elbass \in
 $\elbass$ is searched within the sequence of notes of the
 chord. If the note is found, then the index of the bass
 $\elbass$ in the sequence of notes is the inversion
-$\elinv$. This process is repeated for every chord onset.
+$\elinv$. With these features, a \gls{rna} label can be
+generated, as shown in \refeq{rna_direct}, where
+$\elrnapred$ indicates that the generated \gls{rna} label is
+an automatic prediction from the \gls{arna} model. This
+process is repeated for every chord onset.
+
+\begin{equation}
+    \label{eq:rna_direct}
+    \elrnapred = \elkey : \elnum^{\elinv} \; / \; \elden
+\end{equation}
 
 
 % The \gls{mtl} configuration of the model is tightly
