@@ -249,7 +249,7 @@ experimental_evaluation = """
             McLeod and rohrmeier (2021)
         experimental set up
             standardizing the chord vocabulary
-            evaluation metrics
+            evaluation procedure
     results
         time performance on inference
         accuracy on individual tasks
