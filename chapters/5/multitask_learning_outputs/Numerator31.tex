@@ -1,19 +1,26 @@
 % Copyright 2022 Néstor Nápoles López
 
-In a similar way than \gls{pcset121}, the \gls{rn31} task is
-also a generated vocabulary of chords. This task is
-equivalent to the \emph{primary degree} (see
-\refsubsubsec{conventionaltasks}). However, as there is no
-``secondary degree'' (which has been replaced by the
-\gls{tonicization38} task), the name ``Roman numeral
-numerator'' was chosen, alluding also to the fact that
-secondary degrees are related to the ``fraction'' notation
-employed in \gls{rna} to indicate tonicizations.
+The \gls{rn31} is a classification task that predicts the
+numerator $\elnum$ of a \gls{rna} annotation. In a similar
+way than the \gls{localkey38}, the \gls{localkey38} can be
+used directly to generate the $\elnum$ component of a
+\gls{rna} annotation from the predictions of the \gls{crnn}.
+This will be discussed further in \refsubsec{directmethod}.
 
-The task is constrained to only 31 classes. In
-\parencite{napoleslopez2021augmentednet}, the number of
-Roman numeral numerators was left unbounded during data
-preprocessing. The same paper also discussed that a subset
-of 75 classes spanned ~98\% of the annotations found in the
-training set. Here, that number has been constrained
-further, to allow only 31 possible Roman numeral classes.
+% In a similar way than \gls{pcset121}, the \gls{rn31} task
+% is also a generated vocabulary of chords. This task is
+% equivalent to the \emph{primary degree} (see
+% \refsubsubsec{conventionaltasks}). However, as there is no
+% ``secondary degree'' (which has been replaced by the
+% \gls{tonicization38} task), the name ``Roman numeral
+% numerator'' was chosen, alluding also to the fact that
+% secondary degrees are related to the ``fraction'' notation
+% employed in \gls{rna} to indicate tonicizations.
+
+% The task is constrained to only 31 classes. In
+% \parencite{napoleslopez2021augmentednet}, the number of
+% Roman numeral numerators was left unbounded during data
+% preprocessing. The same paper also discussed that a subset
+% of 75 classes spanned ~98\% of the annotations found in
+% the training set. Here, that number has been constrained
+% further, to allow only 31 possible Roman numeral classes.
