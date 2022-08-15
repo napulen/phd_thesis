@@ -1,0 +1,24 @@
+% Copyright 2022 Néstor Nápoles López
+
+In order to perform the evaluation, all the annotations in
+the \gls{romantext} files, including the ground truth, are
+decomposed into $\elpcset$, $\elkey$, and $\elinv$
+components. The components $\elpcset$ and $\elkey$ are sent
+to the \gls{natem} algorithm to retrieve a numerator
+$\elnum$ and tonicization $\elden$.
+
+In the evaluation of the models for accuracy on individual
+tasks, the components $\elpcset$, $\elkey$, and $\elinv$ are
+compared to the ground truth. In the Roman numeral accuracy,
+the $\elnum$ numerator of the ground truth is compared
+against the $\elnum$ of the models. This second evaluation
+is helpful to find how well the models are able to retrieve
+the different tonal contexts of the chords in the ground
+truth. These results are shown in the form of confusion
+matrices of the target numerator $\elnum$ against the
+predicted numerator $\elnum$.
+
+\phdtable[Translation process of the ground-truth
+annotations in one of the test files from the \gls{kmt}
+dataset]{natem_translation}
+
