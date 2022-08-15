@@ -199,21 +199,8 @@ model_design = """
         HarmonicRhythm7
     from output predictions to roman numeral labels
         direct method
-            chord segmentation
-            generating the labels
-                encoding the tonicization
-                resolving the chord
-                encoding the inversion
         indirect method
-            example
                 resolving the numerator and tonicization
-    implementation
-        code diagram
-        dataset source repositories
-        dataframe structures
-            annotation dataframe
-            score dataframe
-            joint dataframe
 """
 
 experimental_evaluation = """
