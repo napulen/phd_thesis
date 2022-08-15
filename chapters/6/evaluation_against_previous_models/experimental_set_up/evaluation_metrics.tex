@@ -1,14 +1,28 @@
 % Copyright 2022 Néstor Nápoles López
 
 In order to perform the evaluation, all the annotations in
-the \gls{romantext} files, including the ground truth, are
+the \gls{romantext} files, including the ground truth, were
 decomposed into their \gls{pcset} $\elpcset$, key $\elkey$,
 and inversion $\elinv$ components. The components $\elpcset$
-and $\elkey$ are sent to the \gls{natem} algorithm to
+and $\elkey$ were sent to the \gls{natem} algorithm to
 retrieve a numerator $\elnum$ and optional tonicization
 $\elden$. This process is illustrated for an example of the
 test set in \reftab{natem_translation}. The process
 performed on the predictions of each model is identical.
+
+Three evaluation experiments were performed with this
+workflow:
+\begin{enumerate}
+    \item First, the models were evaluated in their
+    inference time obtaining the predictions from the test
+    set \gls{musicxml} (or \gls{humkern}) files.
+    \item Second, the models were evaluated in the accuracy
+    of their $\elpcset$, $\elkey$ and $\elinv$ components
+    \item Third, using the $\elnum$ retrieved from
+    \gls{natem}, the accuracy of the $\elnum$ numerators was
+    evaluated, compared to the $\elnum$ obtained for the
+    ground truth
+\end{enumerate}
 
 \phdtable[Translation process of the ground-truth
 annotations in one of the test files in the \gls{kmt}
@@ -20,15 +34,15 @@ from \gls{natem} (fifth column). In some cases, \gls{natem}
 will also return a tonicization, corresponding to the
 rightmost column]{natem_translation}
 
-In the evaluation of the models for accuracy on individual
-tasks, the components $\elpcset$, $\elkey$, and $\elinv$ are
-compared to the ground truth. In the Roman numeral accuracy,
-the $\elnum$ numerator of the ground truth is compared
-against the $\elnum$ of the models. This second evaluation
-is helpful to find how well the models are able to retrieve
-the different tonal contexts of the chords in the ground
-truth. These results are shown in the form of confusion
-matrices of the target numerator $\elnum$ against the
-predicted numerator $\elnum$.
+% In the evaluation of the models for accuracy on individual
+% tasks, the components $\elpcset$, $\elkey$, and $\elinv$
+% are compared to the ground truth. In the Roman numeral
+% accuracy, the $\elnum$ numerator of the ground truth is
+% compared against the $\elnum$ of the models. This second
+% evaluation is helpful to find how well the models are able
+% to retrieve the different tonal contexts of the chords in
+% the ground truth. These results are shown in the form of
+% confusion matrices of the target numerator $\elnum$
+% against the predicted numerator $\elnum$.
 
 
