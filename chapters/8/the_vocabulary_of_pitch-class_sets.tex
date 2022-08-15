@@ -17,22 +17,24 @@ same \gls{pcset}, as shown in \refeq{pcset_collision}.
 \end{equation}
 
 One of the advantages of formulating a vocabulary of chords
-$\setpcset$ based on \gls{pcset}s, instead of a vocabulary
-of chords $\setrna$ based on \gls{rna} labels is that,
-because of the collisions of many chords in terms of their
-\gls{pcset}, $| \setpcset | \ll | \setrna |$. The main
+$\setpcset$ based on \gls{pcset}s,\footnote{See
+\textcite{rohrmeier2008statistical} for another example of
+\gls{pcset}s applied to a vocabulary of chords.} instead of a
+vocabulary of chords $\setrna$ based on \gls{rna} labels is
+that, because of the collisions of many chords in terms of
+their \gls{pcset}, $| \setpcset | \ll | \setrna |$. The main
 disadvantage of this is that, because several \gls{rna}
 labels will result in the same \gls{pcset}, it is difficult
 to retrieve the original \gls{rna} back from the
 \gls{pcset}. Nevertheless, using the musical key and the
 algorithm described in
-\refsec{thenumeratorandtonicizationestimationmethod},
-it is possible to retrieve the original numerator of the
-\gls{rna} annotation. Thus, I assume that a smaller
-vocabulary of chords $\setpcset$, which is based on
-\gls{pcset}s, will be useful to generate \gls{rna} labels if
-the \gls{pcset} $\elpcset$ and key $\elkey$ can be predicted
-by a machine learning model.
+\refsec{thenumeratorandtonicizationestimationmethod}, it is
+possible to retrieve the original numerator of the \gls{rna}
+annotation. Thus, I assume that a smaller vocabulary of
+chords $\setpcset$, which is based on \gls{pcset}s, will be
+useful to generate \gls{rna} labels if the \gls{pcset}
+$\elpcset$ and key $\elkey$ can be predicted by a machine
+learning model.
 
 The vocabulary of \gls{pcset}s is constructed by combining
 all keys $\elkey \in \setkey$ with the Roman numeral
