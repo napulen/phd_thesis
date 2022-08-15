@@ -1,12 +1,16 @@
 % Copyright 2022 Néstor Nápoles López
 
-The \gls{localkey38} represents the key segmentations of the
-piece, such that a given timestep is interpreted in terms of
-the \gls{localkey38} in turn. 
-% This is equivalent to the local key (see
-% \refsubsubsec{localkey}) in other approaches.
-The vocabulary of keys, $\setkey$ (see
-\refsec{thevocabularyofmusicalkeys}), comprises 38 classes.
-The 38 classes are the result of inspecting all the
-modulations and tonicizations across the aggregated training
-set.
+The \gls{localkey38} is a classification task that predicts
+the $\elkey$ component of a \gls{rna} annotation. It uses
+the $\setkey$ vocabulary.
+
+
+% represents the key segmentations of the piece, such that a
+% given timestep is interpreted in terms of the
+% \gls{localkey38} in turn. % This is equivalent to the
+% local key (see % \refsubsubsec{localkey}) in other
+% approaches. The vocabulary of keys, $\setkey$ (see
+% \refsec{thevocabularyofmusicalkeys}), comprises 38
+% classes. The 38 classes are the result of inspecting all
+% the modulations and tonicizations across the aggregated
+% training set.
