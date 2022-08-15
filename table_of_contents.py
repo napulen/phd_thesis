@@ -254,11 +254,11 @@ experimental_evaluation = """
         time performance on inference
         accuracy on individual tasks
         roman numeral accuracy
-            confusion matrix in melisma (2003)
-            confusion matrix in chen and su (2021)
-            confusion matrix in micchi et al. (2021)
-            confusion matrix in McLeod and rohrmeier (2021)
-            confusion matrix in AugmentedNet
+            confusion matrix for melisma (2003)
+            confusion matrix for chen and su (2021)
+            confusion matrix for micchi et al. (2021)
+            confusion matrix for McLeod and rohrmeier (2021)
+            confusion matrix for AugmentedNet
             summary of performance on difficult chords
     discussion
 """
