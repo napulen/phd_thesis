@@ -20,13 +20,13 @@ mistranslations were found among the files of the test set,
 which lead to \gls{melisma} being unable to process them. In
 order to mitigate this problem, the \gls{musicxml} files
 were preprocessed. The preprocessing consisted in removing
-all voice information, by collapsing all the staffs and
-voices in the score into a single staff with chord blocks
-and tied notes. This process seemed useful for all other
-models as well, thus, the preprocessing step of the
-\gls{musicxml} files was applied to the entire test set in
-all experiments. The preprocessing was facilitated by the
-\code{chordify()} function of the \emph{music21} Python
+all the \emph{voice} information of the score, by collapsing
+all the staffs and voices in the score into a single staff
+with chord blocks and tied notes. This process seemed useful
+for all other models as well, thus, the preprocessing step
+of the \gls{musicxml} files was applied to the entire test
+set in all experiments. The preprocessing was facilitated by
+the \code{chordify()} function of the \emph{music21} Python
 library.
 
 % \reftab{haydnsample_melisma} shows the representation of
