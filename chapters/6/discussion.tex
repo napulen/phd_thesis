@@ -1,22 +1,22 @@
 % Copyright 2022 Néstor Nápoles López
 
-An \gls{arna} system is more than a neural network
-architecture. It should be seen as an end-to-end system that
+An \gls{arna} model is more than a neural network
+architecture. It should be seen as an end-to-end model that
 consists both of machine learning components and musical
 decisions. When I started this project, I assumed that the
-goal was to create a ``machine learning system'' that would
+goal was to create a ``machine learning model'' that would
 solve the problem. However, from the beginning, parsing
 different datasets in different annotation formats soon made
 me realize that domain knowledge was necessary to clean the
 datasets, standardize their musical assumptions, define the
 chord vocabulary, and guide the design of the network. This
-is true for the output of the system as well. For example,
+is true for the output of the model as well. For example,
 determining the number of classification outputs and how
 these are defined, the number of key layers in the musical
 analysis, or the spelling of certain Roman numerals (e.g.,
 that infamous $\rn{I}\rnsixfour$ vs $\rn{V}\rnsixfour$). All
-of these aspects shape the design of a \gls{arna} system.
-Such a system is a unified model that spans both technical
+of these aspects shape the design of a \gls{arna} model.
+Such a model is a unified model that spans both technical
 and musical decisions.
 
 The idea of the \gls{natem} algorithm seems particularly
@@ -25,7 +25,7 @@ music analysis models is open to the interpretation of the
 researchers implementing them. This makes it very difficult
 to compare them. Perhaps the distribution of
 \reftab{rare_chords} summarizes my current thoughts on the
-design of the \gls{arna} systems. Even if a model is not
+design of the \gls{arna} models. Even if a model is not
 competitive in most metrics, it may be useful in certain
 situations, or adopt certain design patterns that result
 beneficial for certain types of music. Thus, it is worth the
@@ -50,10 +50,10 @@ performance and perfect performance on a chord that happens
 % C$\musSharp$5 is precisely the indication that would lead
 % an analyst to label the chord as an \gls{augsix}. Those
 % situations are rare, but also important. They separate a
-% ``naive'' \gls{arna} system from a ``useful'' one. The
+% ``naive'' \gls{arna} model from a ``useful'' one. The
 % results in \reftab{rare_chords} indicate that we are far
 % from useful musical awareness, but there is some progress
 % towards it.
 
 % \phdfigure[Comparison of recent \gls{arna}
-%  systems]{haydn_comparison}
+%  models]{haydn_comparison}
