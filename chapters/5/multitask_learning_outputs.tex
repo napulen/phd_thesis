@@ -38,14 +38,30 @@ dissertation. More specifically, the following ones:
     \item[] $\setps_{35}$ - The encoding method for spelled
     pitches with 35 classes, described in
     \refsubsubsec{encodingnoteswithspelling}.
-    \item[] $\setonset$ - The encoding method for onsets with 7
-    classes, described in
+    \item[] $\setonset$ - The encoding method for onsets
+    with 7 classes, described in
     \refsubsubsec{encodingmeasure,note,andchordonsets}.
-    \item[] $\setpcset$ - The vocabulary of 121 \gls{pcset}s,
-    described in \refsec{thevocabularyofpitch-classsets}.
+    \item[] $\setpcset$ - The vocabulary of 121
+    \gls{pcset}s, described in
+    \refsec{thevocabularyofpitch-classsets}.
     \item[] $\setnum$ - The vocabulary of 31 Roman numeral
     numerators, described in
     \refsec{thevocabularyofromannumeralnumerators}.
-    \item[] $\setkey$ - The vocabulary of 38 keys, described in
+    \item[] $\setkey$ - The vocabulary of 38 keys, described
+    in
     \refsec{thevocabularyofmusicalkeys}
 \end{enumerate}
+
+The first four output representations, \gls{bass35},
+\gls{tenor35}, \gls{alto35}, and \gls{soprano35}, are all
+related to the realization of the annotated chord in a
+\gls{closed-position}. Collectively, I refer to these four
+classifiers as the \gls{satb35} tasks. Note that these four
+tasks encode as the target class a spelled note. However,
+unlike the \gls{bass19} and \gls{chroma19} input
+representations, the spelled notes in the \gls{satb35}
+classifiers have been encoded using the $\setps_{35}$
+vocabulary, instead of $\setps_{19}$. This was done in order
+to use the same loss function (sparse categorical cross
+entropy) across all the \gls{mtl} tasks, which would not be
+possible for the two-hot encoding required in $\setps_{19}$.
