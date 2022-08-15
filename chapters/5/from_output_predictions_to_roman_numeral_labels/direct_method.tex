@@ -1,40 +1,74 @@
 % Copyright 2022 Néstor Nápoles López
 
-The \gls{mtl} configuration of the model is tightly coupled
-with the vocabularies defined for $\setkey$ (see
-\refsec{thevocabularyofmusicalkeys}), $\setnum$ (see
-\refsec{thevocabularyofromannumeralnumerators}), $\setden$
-(see \refsec{thevocabularyofromannumeraldenominators}), and
-$\setinv$ (see
-\refsec{thevocabularyofarabicnumeralinversions}). Thus, the
-output labels of the \gls{arna} model can be generated as
-shown in \refeq{rna_pred}. 
 
-\begin{equation}
-    \label{eq:rna_pred}
-    \elrnapred_{\elonsetpred} = \elkeypred : \elnumpred^{\elinvpred} \; / \; \eldenpred
-\end{equation}
+The direct method consists of using the multiclass
+classification tasks of the \gls{augmentednet} to generate
+the \gls{rna} label. The first step is to use the
+predictions of the \gls{harmonicrhythm7} task to decide the
+location of the chord onsets. Once the location of timesteps
+that represent \gls{rna} annotation are known, the next step
+is to use the predictions of the relevant multitask
+classifiers.
 
-In \refeq{rna_pred}, $\elkeypred \in \setkey$ is the key
-prediction of the \gls{localkey38} classifier, $\elnumpred
-\in \setnum$ is the Roman numeral numerator prediction of
-the \gls{rn31} classifier, $\eldenpred \in \setden$ is the
-tonicization prediction of the \gls{tonicization38}
-classifier, $\elinvpred \in \setinv$ is an inversion
-indirectly obtained from the prediction of the \gls{bass35}
-classifier, and $\elrnapred \in \setrna$ is the final
-\gls{rna} label prediction. In the string form of the
-\gls{rna} label, the tonicization $\eldenpred$ needs to be
-encoded as a relative scale degree of the key $\elkeypred$.
-Furthermore, the inversion $\elinvpred$ needs to be
-determined from the prediction of the \gls{bass35}
-classifier in the context of the chord implied by
-$\elnumpred$. Thus, the inversion is going to be the last
-step of the method. The rest of the variables are direct
-predictions from the \gls{crnn}. However, one issue that is
-yet to be addressed before generating the labels is which of
-the 640 timesteps should be considered the location of a
-\gls{rna} label. 
+\begin{enumerate}
+    \item[] The prediction of the \gls{localkey38} task
+    becomes the key $\elkey$
+    \item[] The prediction of the \gls{rn31} task becomes
+    the Roman numeral numerator $\elnum$
+    \item[] The prediction of the \gls{tonicization38}
+    becomes the key implied by the tonicization
+    $\elden_\elkey$; if $\elden_\elkey \neq \elkey$, then it
+    needs to be converted into a scale degree $\elden$ that
+    is relative to key $\elkey$ 
+\end{enumerate}
+
+The inversion requires a slightly more involved process.
+First, using the other components of the \gls{rna}
+annotation, the chord implied by the numerator $\elnum$
+needs to be converted into a sequence of notes, ordered from
+the root. Then, retrieving the prediction $\elbass \in
+\setps_{35}$ of the \gls{bass35} classifier, the location of
+$\elbass$ is searched within the sequence of notes of the
+chord. If the note is found, then the index of the bass
+$\elbass$ in the sequence of notes is the inversion
+$\elinv$. This process is repeated for every chord onset.
+
+
+% The \gls{mtl} configuration of the model is tightly
+% coupled with the vocabularies defined for $\setkey$ (see
+% \refsec{thevocabularyofmusicalkeys}), $\setnum$ (see
+% \refsec{thevocabularyofromannumeralnumerators}), $\setden$
+% (see \refsec{thevocabularyofromannumeraldenominators}),
+% and $\setinv$ (see
+% \refsec{thevocabularyofarabicnumeralinversions}). Thus,
+% the output labels of the \gls{arna} model can be generated
+% as shown in \refeq{rna_pred}. 
+
+% \begin{equation} \label{eq:rna_pred}
+%     \elrnapred_{\elonsetpred} = \elkeypred :
+%     \elnumpred^{\elinvpred} \; / \; \eldenpred
+%     \end{equation}
+
+% In \refeq{rna_pred}, $\elkeypred \in \setkey$ is the key
+% prediction of the \gls{localkey38} classifier, $\elnumpred
+% \in \setnum$ is the Roman numeral numerator prediction of
+% the \gls{rn31} classifier, $\eldenpred \in \setden$ is the
+% tonicization prediction of the \gls{tonicization38}
+% classifier, $\elinvpred \in \setinv$ is an inversion
+% indirectly obtained from the prediction of the
+% \gls{bass35} classifier, and $\elrnapred \in \setrna$ is
+% the final \gls{rna} label prediction. In the string form
+% of the \gls{rna} label, the tonicization $\eldenpred$
+% needs to be encoded as a relative scale degree of the key
+% $\elkeypred$. Furthermore, the inversion $\elinvpred$
+% needs to be determined from the prediction of the
+% \gls{bass35} classifier in the context of the chord
+% implied by $\elnumpred$. Thus, the inversion is going to
+% be the last step of the method. The rest of the variables
+% are direct predictions from the \gls{crnn}. However, one
+% issue that is yet to be addressed before generating the
+% labels is which of the 640 timesteps should be considered
+% the location of a \gls{rna} label. 
 
 % This requires an approach for chord segmentation, where
 % the onset predictions $\elonset \in \setonset$ starting
