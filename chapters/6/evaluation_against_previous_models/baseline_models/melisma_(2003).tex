@@ -13,19 +13,20 @@ knowledge, has never been evaluated against other methods.
 Thus, an evaluation is presented here. Because the
 \gls{melisma} model only supports \gls{humkern} inputs, all
 of the \gls{musicxml} examples in the test set of this
-evaluation were converted to \gls{humkern}. During the first
-attempt to make such conversion, many mistranslations were
-found among the files of the test set, which lead to the
-system being unable to process them. In order to mitigate
-this problem, the \gls{musicxml} files were preprocessed,
-removing all voice information, by collapsing all the staffs
-and voices in the score into a single staff with chord
-blocks and tied notes. This process seemed useful for all
-other models as well, thus, the preprocessing step of the
-\gls{musicxml} files was applied to the entire test set in
-all experiments. The preprocessing was facilitated by the
-\code{chordify()} function of the \emph{music21} Python
-library.
+evaluation were converted to \gls{humkern}. 
+
+During the first attempt to make such conversion, many
+mistranslations were found among the files of the test set,
+which lead to the system being unable to process them. In
+order to mitigate this problem, the \gls{musicxml} files
+were preprocessed, removing all voice information, by
+collapsing all the staffs and voices in the score into a
+single staff with chord blocks and tied notes. This process
+seemed useful for all other models as well, thus, the
+preprocessing step of the \gls{musicxml} files was applied
+to the entire test set in all experiments. The preprocessing
+was facilitated by the \code{chordify()} function of the
+\emph{music21} Python library.
 
 % \reftab{haydnsample_melisma} shows the representation of
 % the input (left) and output annotations (right) provided
