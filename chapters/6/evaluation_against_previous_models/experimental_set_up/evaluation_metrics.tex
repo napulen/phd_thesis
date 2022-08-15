@@ -2,10 +2,22 @@
 
 In order to perform the evaluation, all the annotations in
 the \gls{romantext} files, including the ground truth, are
-decomposed into \gls{pcset} $\elpcset$, key $\elkey$, and
-inversion $\elinv$ components. The components $\elpcset$ and
-$\elkey$ are sent to the \gls{natem} algorithm to retrieve a
-numerator $\elnum$ and optional tonicization $\elden$.
+decomposed into their \gls{pcset} $\elpcset$, key $\elkey$,
+and inversion $\elinv$ components. The components $\elpcset$
+and $\elkey$ are sent to the \gls{natem} algorithm to
+retrieve a numerator $\elnum$ and optional tonicization
+$\elden$. This process is illustrated in
+\reftab{natem_translation}.
+
+\phdtable[Translation process of the ground-truth
+annotations in one of the test files in the \gls{kmt}
+dataset. The original annotations (leftmost column) are
+parsed from a \gls{romantext} file, and decomposed into a
+\gls{pcset} $\elpcset$, key $\elkey$, and inversion $\elinv$
+components. Furthermore, a numerator $\elnum$ is retrieved
+from \gls{natem} (fifth column). In some cases, \gls{natem}
+will also return a tonicization, corresponding to the
+rightmost column]{natem_translation}
 
 In the evaluation of the models for accuracy on individual
 tasks, the components $\elpcset$, $\elkey$, and $\elinv$ are
@@ -18,7 +30,4 @@ truth. These results are shown in the form of confusion
 matrices of the target numerator $\elnum$ against the
 predicted numerator $\elnum$.
 
-\phdtable[Translation process of the ground-truth
-annotations in one of the test files from the \gls{kmt}
-dataset]{natem_translation}
 
