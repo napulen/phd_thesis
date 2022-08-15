@@ -1,9 +1,13 @@
 % Copyright 2022 Néstor Nápoles López
 
-Additionally to the accuracy across individual tasks, the
-accuracy of \gls{rna} labels is shown in
-Figures~\ref{fig:confusion_matrix_micchi2021},
-\ref{fig:confusion_matrix_mcleod2021},
-\ref{fig:confusion_matrix_melisma},
-\ref{fig:confusion_matrix_chensu2021} and
-\ref{fig:confusion_matrix_napoleslopez2022}.
+In the third experiement, the accuracy of the models on the
+numerator $\elnum$ was evaluated. One of the purposes of the
+\gls{natem} algorithm was to standardize when a tonicization
+would be invoked. As long as the key context and \gls{pcset}
+are the same between the ground-truth and the prediction,
+the Roman numeral numerator will be the same. This might
+also be useful to help the models recognize chords that do
+not exist in the vocabulary of their annotations, such as
+\gls{neapolitan} and \gls{augsix} chords. For each model, a
+confusion matrix is shown with the target chord classes in
+each row, and the predicted chord classes in each column.
