@@ -5,7 +5,15 @@ matrix for the numerators ($\elnum$) obtained by the
 predictions of the \textcite{chen2021attend} model, compared
 against the ones in the ground truth \gls{romantext} file.
 The \textcite{chen2021attend} model seems to have a
-noticeably larger vocabulary than \gls{melisma}. 
+noticeably larger vocabulary than \gls{melisma}. Although
+the model does not explicitly recognize \gls{neapolitan}
+chords, the confusion matrix shows that 43\% of the time it
+is able to provide the correct tonal context to decode a
+triad acting as a \gls{neapolitan}. This is one of the
+strengths of the standardization provided by \gls{natem}.
+The \textcite{chen2021attend} also seems to have the highest
+recognition of some chords, for example, $\rnivsev$, where
+the accuracy is higher than any other model.
 
 
 \phdfigure[Confusion matrix of the Roman numeral numerators
