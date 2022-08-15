@@ -3,38 +3,51 @@
 An \gls{arna} system is more than a neural network
 architecture. It should be seen as an end-to-end system that
 consists both of machine learning components and musical
-decisions. When I started this project, I started it under
-the assumption that the goal was to create a ``machine
-learning system'' that would solve the problem. However,
-from the beginning, parsing different datasets in different
-annotation formats soon made me realize that domain
-knowledge was necessary to clean the datasets, standardize
-their musical assumptions, define the chord vocabulary, and
-guide the design of the network. This is true for the output
-of the system as well. For example, determining the number
-of classification outputs and how these are defined, the
-number of key layers in the musical analysis, or the
-spelling of certain Roman numerals (e.g., that infamous
-$\rn{I}\rnsixfour$ vs $\rn{V}\rnsixfour$). All of these
-aspects shape the design of a \gls{arna} system. Such a
-system is a unified model that spans both technical and
-musical decisions.
+decisions. When I started this project, I assumed that the
+goal was to create a ``machine learning system'' that would
+solve the problem. However, from the beginning, parsing
+different datasets in different annotation formats soon made
+me realize that domain knowledge was necessary to clean the
+datasets, standardize their musical assumptions, define the
+chord vocabulary, and guide the design of the network. This
+is true for the output of the system as well. For example,
+determining the number of classification outputs and how
+these are defined, the number of key layers in the musical
+analysis, or the spelling of certain Roman numerals (e.g.,
+that infamous $\rn{I}\rnsixfour$ vs $\rn{V}\rnsixfour$). All
+of these aspects shape the design of a \gls{arna} system.
+Such a system is a unified model that spans both technical
+and musical decisions.
 
-\reffig{haydn_comparison} shows an example analysis by
-various models compared. As expected by the results
-presented in the table of rare chords, the proposed model is
-the only one able to detect the \gls{augsix} chord in the
-excerpt. There, the model by \textcite{mcleod2021modular}
-proposes a label of g:$\rn{VI}\rnsix$, which is a reasonable
-guess when ignoring the C$\musSharp$ in the first violin.
-However, this intervallic relationship between E$\musFlat$4
-and C$\musSharp$5 is precisely the indication that would
-lead an analyst to label the chord as an \gls{augsix}. Those
-situations are rare, but also important. They separate a
-``naive'' \gls{arna} system from a ``useful'' one. The
-results in \reftab{rare_chords} indicate that we are far
-from useful musical awareness, but there is some progress
-towards it.
+The idea of the \gls{natem} algorithm seems particularly
+promising for future experiments. The design of tonal music
+analysis models is open to the interpretation of the
+researchers implementing them. This makes it very difficult
+to compare models. Perhaps the distribution of
+\reftab{rare_chords} summarizes my current thoughts on the
+design of the \gls{arna} systems. Even if a model is not
+competitive in most metrics, it may be useful in certain
+situations, or adopt certain design patterns that result
+beneficial for certain types of music, or certain input
+representations.
 
-\phdfigure[Comparison of recent \gls{arna}
- systems]{haydn_comparison}
+
+% \reffig{haydn_comparison} shows an example analysis by
+% various models compared. As expected by the results
+% presented in the table of rare chords, the proposed model
+% is the only one able to detect the \gls{augsix} chord in
+% the excerpt. There, the model by
+% \textcite{mcleod2021modular} proposes a label of
+% g:$\rn{VI}\rnsix$, which is a reasonable guess when
+% ignoring the C$\musSharp$ in the first violin. However,
+% this intervallic relationship between E$\musFlat$4 and
+% C$\musSharp$5 is precisely the indication that would lead
+% an analyst to label the chord as an \gls{augsix}. Those
+% situations are rare, but also important. They separate a
+% ``naive'' \gls{arna} system from a ``useful'' one. The
+% results in \reftab{rare_chords} indicate that we are far
+% from useful musical awareness, but there is some progress
+% towards it.
+
+% \phdfigure[Comparison of recent \gls{arna}
+%  systems]{haydn_comparison}
