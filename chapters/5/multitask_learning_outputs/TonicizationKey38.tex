@@ -9,6 +9,27 @@
 % \parencite{chen2021attend, micchi2021deep} or not modeled
 % explicitly \parencite{mcleod2021modular}.
 
+The \gls{localkey38} is a classification task that predicts
+the $\elden$ component of a \gls{rna} annotation. In other
+approaches \parencite{chen2021attend,micchi2021deep}, this
+is addressed as a ``secondary degree'' task. However, here
+the tonicization is modeled as a key, rather than a relative
+scale degree. Using the notation of the
+\refappendix{amethodforsystematicromannumeralanalysis, what
+the \gls{tonicization38} task predicts is the key implied by
+the tonicization, $\elden_{\elkey}$. The motivation for this
+departure is the high class imbalance that exists in
+predicting secondary degrees. Tonicizations are scarce,
+thus, most of the times there will be no tonicization in a
+given timestep, which tends to be detrimental for the
+performance of the model. By predicting $\elden_{\elkey}$,
+the \gls{tonicization38} learns key fluctuations that are
+generally faster than the ones in \gls{localkey38} task.
+When generating a \gls{rna} label from the model
+$\elden_{\elkey}$ can be easily reverted to $\elden$, by
+encoding the key $\elden_{\elkey}$ as a scale degree that is
+relative to $\elkey$. 
+
 The \gls{tonicization38} task used in this \gls{mtl}
 configuration is equivalent to the ``secondary degree''
 tasks in other approaches
