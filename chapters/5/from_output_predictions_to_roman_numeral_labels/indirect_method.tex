@@ -1,55 +1,116 @@
 % Copyright 2022 Néstor Nápoles López
 
-In addition to the direct method that can be used with the
-\gls{mtl} predictions of this model, it might be useful to
-generate Roman numeral labels when only a chord label and
-key are provided. Some methods, such as the one in
-\textcite{mcleod2021modular}, produce chord labels and keys.
-Thus, a numerator $\elnum$ and a tonicization $\elden$ need
-to be estimated from the chord label and key. In that
-situation, an alternative method is provided, based on the
-\algorithmrn{} algorithm, described in
-\refsec{thenumeratorandtonicizationestimationmethod}.
-This was the method used to estimate full \gls{rna} labels
-from the predictions of the model in
-\textcite{mcleod2021modular, chen2021attend} during the
-evaluation (which is explained in
-\refsec{evaluationagainstpreviousmodels})
 
-The method follows the same principles described in the
-direct method, with the following differences: the numerator
-$\elnumpred$ and tonicization $\eldenpred$ are not directly
-available from the predictions of the neural network.
-Instead, they are retrieved from the chord label and key
-using the \algorithmrn{} algorithm, as shown in
-\refeq{calling_natem}.
+In the indirect method, instead of using the direct
+predictions of the corresponding classifiers, a \gls{pcset}
+$\elpcset$ and $\elkey$ are used instead. This method is
+useful in several situations: 
+\begin{enumerate}
+    \item When running an evaluation of several \gls{arna}
+    models that have a distinct set of classification tasks,
+    as in \refsec{evaluationagainstpreviousmodels}
+    \item When several classification tasks need to be
+    combined to retrieve the chord (e.g., the $\elpcset$
+    implied by combining the \gls{satb35} classifiers)
+    \item When there is no information available other than
+    a chord label and a key, which occurs in some methods
+\end{enumerate}
+
+
+
+
+
+
+multiclass classification tasks of the \gls{augmentednet} to
+generate the \gls{rna} label. The first step is to use the
+predictions of the \gls{harmonicrhythm7} task to decide the
+location of the chord onsets. Once the location of timesteps
+that represent \gls{rna} annotation are known, the next step
+is to use the predictions of the relevant multitask
+classifiers.
+
+\begin{enumerate}
+    \item[] The prediction of the \gls{localkey38} task
+    becomes the key $\elkey$
+    \item[] The prediction of the \gls{rn31} task becomes
+    the Roman numeral numerator $\elnum$
+    \item[] The prediction of the \gls{tonicization38}
+    becomes the key implied by the tonicization
+    $\elden_\elkey$; if $\elden_\elkey \neq \elkey$, then it
+    needs to be converted into a scale degree $\elden$ that
+    is relative to key $\elkey$ 
+\end{enumerate}
+
+The inversion $\elinv$ requires a slightly more involved
+process. First, using the other components of the \gls{rna}
+annotation, the chord implied by the numerator $\elnum$
+needs to be converted into a sequence of notes, ordered from
+the root. Then, retrieving the prediction $\elbass \in
+\setps_{35}$ of the \gls{bass35} classifier, the location of
+$\elbass$ is searched within the sequence of notes of the
+chord. If the note is found, then the index of the bass
+$\elbass$ in the sequence of notes is the inversion
+$\elinv$. With these features, a \gls{rna} label can be
+generated, as shown in \refeq{rna_direct}, where
+$\elrnapred$ indicates that the generated \gls{rna} label is
+an automatic prediction from the \gls{arna} model. This
+process is repeated for every chord onset.
 
 \begin{equation}
-    \label{eq:calling_natem}
-    (\elnumpred, \eldenpred) = \algorithmrn{}(\elpcset, \elkey) 
+    \label{eq:rna_direct}
+    \elrnapred = \elkey : \elnum^{\elinv} \; / \; \elden
 \end{equation}
 
-In \refeq{calling_natem}, the \gls{pcset} $\elpcset \in
-\setpcset$ is the representation of the chord label as a set
-of pitch classes. It is easy to obtain this set by first
-deriving the notes that comprise the chord label, and then
-listing their pitch classes, as shown
-\refeq{indirect_method_pcset}. This information is generally
-available in any \gls{acr} approach, regardless of the
-syntax of the chord labels.
 
 
-\begin{equation}
-    \label{eq:indirect_method_pcset}
-    Gmin \implies \{\pitchG, \pitchBb, \pitchD\} \implies (7, 10, 2)
-\end{equation} 
+% In addition to the direct method that can be used with the
+% \gls{mtl} predictions of this model, it might be useful to
+% generate Roman numeral labels when only a chord label and
+% key are provided. Some methods, such as the one in
+% \textcite{mcleod2021modular}, produce chord labels and
+% keys. Thus, a numerator $\elnum$ and a tonicization
+% $\elden$ need to be estimated from the chord label and
+% key. In that situation, an alternative method is provided,
+% based on the \algorithmrn{} algorithm, described in
+% \refsec{thenumeratorandtonicizationestimationmethod}. This
+% was the method used to estimate full \gls{rna} labels from
+% the predictions of the model in
+% \textcite{mcleod2021modular, chen2021attend} during the
+% evaluation (which is explained in
+% \refsec{evaluationagainstpreviousmodels})
 
-After the \gls{pcset} $\elpcsetpred$ is obtained from the
-machine learning model, the numerator $\elnumpred$ and
-tonicization $\eldenpred$ can be retrieved with the
-\algorithmrn{} algorithm. Afterwards, the process to
-generate the \gls{rna} label is the same as in the direct
-method. In order to illustrate the indirect method, an
-example will be computed from the predictions of the
-\gls{pcset121} of the \gls{crnn} proposed here.
+% The method follows the same principles described in the
+% direct method, with the following differences: the
+% numerator $\elnumpred$ and tonicization $\eldenpred$ are
+% not directly available from the predictions of the neural
+% network. Instead, they are retrieved from the chord label
+% and key using the \algorithmrn{} algorithm, as shown in
+% \refeq{calling_natem}.
+
+% \begin{equation} \label{eq:calling_natem} (\elnumpred,
+%     \eldenpred) = \algorithmrn{}(\elpcset, \elkey)
+%     \end{equation}
+
+% In \refeq{calling_natem}, the \gls{pcset} $\elpcset \in
+% \setpcset$ is the representation of the chord label as a
+% set of pitch classes. It is easy to obtain this set by
+% first deriving the notes that comprise the chord label,
+% and then listing their pitch classes, as shown
+% \refeq{indirect_method_pcset}. This information is
+% generally available in any \gls{acr} approach, regardless
+% of the syntax of the chord labels.
+
+
+% \begin{equation} \label{eq:indirect_method_pcset} Gmin
+%     \implies \{\pitchG, \pitchBb, \pitchD\} \implies (7,
+%     10, 2) \end{equation} 
+
+% After the \gls{pcset} $\elpcsetpred$ is obtained from the
+% machine learning model, the numerator $\elnumpred$ and
+% tonicization $\eldenpred$ can be retrieved with the
+% \algorithmrn{} algorithm. Afterwards, the process to
+% generate the \gls{rna} label is the same as in the direct
+% method. In order to illustrate the indirect method, an
+% example will be computed from the predictions of the
+% \gls{pcset121} of the \gls{crnn} proposed here.
 
