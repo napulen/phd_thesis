@@ -3,7 +3,7 @@
 
 In the indirect method, instead of using the direct
 predictions of the corresponding classifiers, a \gls{pcset}
-$\elpcset$ and $\elkey$ are used instead. This method is
+$\elpcset$ and key $\elkey$ are used instead. This method is
 useful in several situations: 
 \begin{enumerate}
     \item When running an evaluation of several \gls{arna}
@@ -36,45 +36,41 @@ interest, there needs to be a classifier for it. The
 numeral numerator and tonicization.
 
 
-% multiclass classification tasks of the \gls{augmentednet} to
-% generate the \gls{rna} label. The first step is to use the
-% predictions of the \gls{harmonicrhythm7} task to decide the
-% location of the chord onsets. Once the location of timesteps
-% that represent \gls{rna} annotation are known, the next step
-% is to use the predictions of the relevant multitask
-% classifiers.
+% multiclass classification tasks of the \gls{augmentednet}
+% to generate the \gls{rna} label. The first step is to use
+% the predictions of the \gls{harmonicrhythm7} task to
+% decide the location of the chord onsets. Once the location
+% of timesteps that represent \gls{rna} annotation are
+% known, the next step is to use the predictions of the
+% relevant multitask classifiers.
 
-% \begin{enumerate}
-%     \item[] The prediction of the \gls{localkey38} task
-%     becomes the key $\elkey$
-%     \item[] The prediction of the \gls{rn31} task becomes
-%     the Roman numeral numerator $\elnum$
-%     \item[] The prediction of the \gls{tonicization38}
-%     becomes the key implied by the tonicization
-%     $\elden_\elkey$; if $\elden_\elkey \neq \elkey$, then it
-%     needs to be converted into a scale degree $\elden$ that
-%     is relative to key $\elkey$ 
-% \end{enumerate}
+% \begin{enumerate} \item[] The prediction of the
+%     \gls{localkey38} task becomes the key $\elkey$ \item[]
+%     The prediction of the \gls{rn31} task becomes the
+%     Roman numeral numerator $\elnum$ \item[] The
+%     prediction of the \gls{tonicization38} becomes the key
+%     implied by the tonicization $\elden_\elkey$; if
+%     $\elden_\elkey \neq \elkey$, then it needs to be
+%     converted into a scale degree $\elden$ that is
+%     relative to key $\elkey$ \end{enumerate}
 
 % The inversion $\elinv$ requires a slightly more involved
-% process. First, using the other components of the \gls{rna}
-% annotation, the chord implied by the numerator $\elnum$
-% needs to be converted into a sequence of notes, ordered from
-% the root. Then, retrieving the prediction $\elbass \in
-% \setps_{35}$ of the \gls{bass35} classifier, the location of
-% $\elbass$ is searched within the sequence of notes of the
-% chord. If the note is found, then the index of the bass
-% $\elbass$ in the sequence of notes is the inversion
-% $\elinv$. With these features, a \gls{rna} label can be
-% generated, as shown in \refeq{rna_direct}, where
-% $\elrnapred$ indicates that the generated \gls{rna} label is
-% an automatic prediction from the \gls{arna} model. This
-% process is repeated for every chord onset.
+% process. First, using the other components of the
+% \gls{rna} annotation, the chord implied by the numerator
+% $\elnum$ needs to be converted into a sequence of notes,
+% ordered from the root. Then, retrieving the prediction
+% $\elbass \in \setps_{35}$ of the \gls{bass35} classifier,
+% the location of $\elbass$ is searched within the sequence
+% of notes of the chord. If the note is found, then the
+% index of the bass $\elbass$ in the sequence of notes is
+% the inversion $\elinv$. With these features, a \gls{rna}
+% label can be generated, as shown in \refeq{rna_direct},
+% where $\elrnapred$ indicates that the generated \gls{rna}
+% label is an automatic prediction from the \gls{arna}
+% model. This process is repeated for every chord onset.
 
-% \begin{equation}
-%     \label{eq:rna_direct}
-%     \elrnapred = \elkey : \elnum^{\elinv} \; / \; \elden
-% \end{equation}
+% \begin{equation} \label{eq:rna_direct} \elrnapred = \elkey
+%     : \elnum^{\elinv} \; / \; \elden \end{equation}
 
 
 
