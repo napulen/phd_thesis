@@ -19,30 +19,35 @@ and  \textcite{wu2021melody} tackled the problem of chord
 segmentation (harmonic rhythm) by implementing dedicated
 models. 
 
-Here, another multitask classifcation problem is proposed
+Here, another multiclass classifcation problem is proposed
 instead. This has the advantage that its implementation is
 much simpler than a dedicated model, and the training can be
 done jointly with the other tasks in an end-to-end fashion.
-The overhead in the time it takes to train the network is
-negligible and, more importantly, it does not seem to be
-detrimental to the other classifcation problems. On the
-contrary, it seems to improve the overall segmentation of
-the other tasks, possibly because the network learns
-representations that minimize the loss across all the tasks,
-including the chord segmentation (harmonic rhythm).
 
-Initially, this problem was addressed in
-\textcite{napoleslopez2021augmentednet} as a binary
-classification problem, where timesteps that coincided with
-a chord onset were marked as 1s and the remaining timesteps
-as 0s.
+The encoding of the \gls{harmonicrhythm7} is based on the
+method for encoding onsets described in
+\refsubsubsec{encodingmeasure,note,andchordonsets}.
 
-However, this approach lead to a highly imbalanced
-distribution of classes, a recurring problem that has been
-important in other tasks. In order to compensate for the
-imbalanced distribution of classes, an alternative method is
-proposed, based on 7 classes. The task of harmonic rhythm is
-now phrased as ``annotate the duration elapsed since the
-last chord''. This encoding makes use of the duration
-encoding mentioned in
+% The overhead in the time it takes to train the network is
+% negligible and, more importantly, it does not seem to be
+% detrimental to the other classifcation problems. On the
+% contrary, it seems to improve the overall segmentation of
+% the other tasks, possibly because the network learns
+% representations that minimize the loss across all the
+% tasks, including the chord segmentation (harmonic rhythm).
+
+% Initially, this problem was addressed in
+% \textcite{napoleslopez2021augmentednet} as a binary
+% classification problem, where timesteps that coincided
+% with a chord onset were marked as 1s and the remaining
+% timesteps as 0s.
+
+% However, this approach lead to a highly imbalanced
+% distribution of classes, a recurring problem that has been
+% important in other tasks. In order to compensate for the
+% imbalanced distribution of classes, an alternative method
+% is proposed, based on 7 classes. The task of harmonic
+% rhythm is now phrased as ``annotate the duration elapsed
+% since the last chord''. This encoding makes use of the
+% duration encoding mentioned in
 \refsubsubsec{encodingmeasure,note,andchordonsets}.
