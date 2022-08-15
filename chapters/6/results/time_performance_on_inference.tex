@@ -1,13 +1,15 @@
 % Copyright 2022 Néstor Nápoles López
 
 The time that each model took to compute its predictions on
-the test set of 94 \gls{musicxml} files was measured. In
-order to run the measurement, each of the files was
-processed as an independent process in the operating system,
-running the model with the input and output arguments for
-the file in turn. For the models based on deep learning
-approaches, no \gls{gpu} was used to compute the
-predictions, nor they were processed in batch.
+the test set of 94 \gls{musicxml} files was
+measured.\footnote{In the case of \gls{melisma} the time it
+took to compute its predictions over the set of 94
+\gls{humkern files}.} In order to run the measurement, each
+of the files was processed as an independent process in the
+operating system, running the model with the input and
+output arguments for the file in turn. For the models based
+on deep learning approaches, no \gls{gpu} was used to
+compute the predictions, nor they were processed in batch.
 \reftab{time_performance} shows the performance of the
 models.
 
