@@ -11,21 +11,6 @@ is illustrated for a ground-truth example of the test set in
 predictions of each model was identical, using their
 \gls{romantext} files.
 
-Three evaluation experiments were performed with this
-workflow:
-\begin{enumerate}
-    \item First, an initial experiment evaluating the
-    inference time of each of the models, that is, the it
-    took them to process each \gls{musicxml} (or
-    \gls{humkern}) file.
-    \item Second, the models were evaluated in the accuracy
-    of their $\elpcset$, $\elkey$ and $\elinv$ components
-    \item Third, using the $\elnum$ retrieved from
-    \gls{natem}, the accuracy of the $\elnum$ numerators was
-    evaluated, compared to the $\elnum$ obtained for the
-    ground truth
-\end{enumerate}
-
 \phdtable[Translation process of the ground-truth
 annotations in one of the test files of the \gls{kmt}
 dataset. The original annotations (leftmost column) are
@@ -34,6 +19,22 @@ parsed from a \gls{romantext} file, and decomposed into a
 components (middle columns). Then, a numerator $\elnum$ and
 tonicization $\elden$ were  retrieved from \gls{natem}
 (rightmost columns)]{natem_translation}
+
+Three evaluation experiments were performed. The first one,
+measuring the time it took for the models to generate their
+chord predictions. Two subsequent experiments evaluated the
+performance of the models on their \gls{rna} predictions:
+
+\begin{enumerate}
+    \item The models were evaluated in the accuracy of their
+    $\elpcset$, $\elkey$ and $\elinv$ components, compared
+    to the $\elpcset$, $\elkey$ and $\elinv$ of the
+    ground-truth
+    \item The models were also evaluated using the $\elnum$
+    retrieved from \gls{natem}, which was compared against
+    the $\elnum$ obtained for the ground truth
+\end{enumerate}
+
 
 % In the evaluation of the models for accuracy on individual
 % tasks, the components $\elpcset$, $\elkey$, and $\elinv$
