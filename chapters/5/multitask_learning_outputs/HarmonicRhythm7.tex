@@ -26,28 +26,12 @@ done jointly with the other tasks in an end-to-end fashion.
 
 The encoding of the \gls{harmonicrhythm7} is based on the
 method for encoding onsets described in
-\refsubsubsec{encodingmeasure,note,andchordonsets}.
-
-% The overhead in the time it takes to train the network is
-% negligible and, more importantly, it does not seem to be
-% detrimental to the other classifcation problems. On the
-% contrary, it seems to improve the overall segmentation of
-% the other tasks, possibly because the network learns
-% representations that minimize the loss across all the
-% tasks, including the chord segmentation (harmonic rhythm).
-
-% Initially, this problem was addressed in
-% \textcite{napoleslopez2021augmentednet} as a binary
-% classification problem, where timesteps that coincided
-% with a chord onset were marked as 1s and the remaining
-% timesteps as 0s.
-
-% However, this approach lead to a highly imbalanced
-% distribution of classes, a recurring problem that has been
-% important in other tasks. In order to compensate for the
-% imbalanced distribution of classes, an alternative method
-% is proposed, based on 7 classes. The task of harmonic
-% rhythm is now phrased as ``annotate the duration elapsed
-% since the last chord''. This encoding makes use of the
-% duration encoding mentioned in
-\refsubsubsec{encodingmeasure,note,andchordonsets}.
+\refsubsubsec{encodingmeasure,note,andchordonsets}, with a
+vocabulary of 7 classes. The way that chord onsets are
+encoded is by assigning one of those classes as a chord
+onset and all others as the ``time elapsed since the last
+chord'', in a similar way to how it is done in the
+\gls{duration14} input representation. When the
+\gls{harmonicrhythm7} predicts a chord change at timestep
+$t$, the predictions of all other classifiers at timestep
+$t$ are used to generate the \gls{rna} output label.
