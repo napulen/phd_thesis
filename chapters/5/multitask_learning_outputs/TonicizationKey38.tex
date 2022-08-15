@@ -1,13 +1,13 @@
 % Copyright 2022 Néstor Nápoles López
 
-In previous methods, such as \textcite{chen2018functional,
-chen2019harmony, micchi2020not, micchi2021deep,
-mcleod2021modular} there is generally only one task related
-to the ``key'' to solve by the machine learning model.
-Applied chords and other fluctuations of key are handled
-either by a ``secondary degree'' task
-\parencite{chen2021attend, micchi2021deep} or not modeled
-explicitly \parencite{mcleod2021modular}.
+% In previous methods, such as \textcite{chen2018functional,
+% chen2019harmony, micchi2020not, micchi2021deep,
+% mcleod2021modular} there is generally only one task
+% related to the ``key'' to solve by the machine learning
+% model. Applied chords and other fluctuations of key are
+% handled either by a ``secondary degree'' task
+% \parencite{chen2021attend, micchi2021deep} or not modeled
+% explicitly \parencite{mcleod2021modular}.
 
 The \gls{tonicization38} task used in this \gls{mtl}
 configuration is equivalent to the ``secondary degree''
@@ -19,12 +19,13 @@ $\elden_\elkey \in \setkey$.
 
 % In the proposed tasks of this dissertation, an alternative
 % approach is proposed based on two layers of key analysis.
-% The \gls{localkey38} task represents the key of a region of
-% music. By default, any Roman numeral label is interpreted in
-% reference to the \gls{localkey38}. However, for cases of
-% tonicization, a different key is encoded. The scope of a
-% tonicization key is always the current timestep, and it is
-% considered an instantaneous fluctuation of key (i.e., it
-% does not affect future timesteps). This other task is
-% referred as the \gls{tonicization38}. The vocabulary of keys
-% is the same one used for \gls{localkey38}, $\setkey$.
+% The \gls{localkey38} task represents the key of a region
+% of music. By default, any Roman numeral label is
+% interpreted in reference to the \gls{localkey38}. However,
+% for cases of tonicization, a different key is encoded. The
+% scope of a tonicization key is always the current
+% timestep, and it is considered an instantaneous
+% fluctuation of key (i.e., it does not affect future
+% timesteps). This other task is referred as the
+% \gls{tonicization38}. The vocabulary of keys is the same
+% one used for \gls{localkey38}, $\setkey$.
