@@ -6,19 +6,16 @@ unseen portion of data. This is necessary as models tend to
 \gls{overfit} on the data they are trained with.
 
 Furthermore, there are several ways to designate that
-portion of unseen data, such as: \emph{k-fold} cross
-validation; a training and validation sets; or a training,
-validation, and test sets. 
-
-In this research, I opted for training, validation, and test
-sets. The training set is the data used for training the
-model. The validation set is to verify the generalization of
-the model while tuning hyper-parameters, designing the
-neural network architecture, or making other decisions
-affecting the model. The test set is an unseen portion of
-data that remains unused throughout the entire process of
-designing model, and it is used once (and only once) to
-evaluate the generalization of the final model.
+portion of unseen data. In this research, I opted for
+training, validation, and test sets. The training set is the
+data used for training the model. The validation set is to
+verify the generalization of the model while tuning
+hyper-parameters, designing the neural network architecture,
+or making other decisions affecting the model. The test set
+is an unseen portion of data that remains unused throughout
+the entire process of designing model, and it is used once
+(and only once) to evaluate the generalization of the final
+model.
 
 In some datasets, such as \gls{bps}, these splits were
 already provided by other researchers. In those instances,
