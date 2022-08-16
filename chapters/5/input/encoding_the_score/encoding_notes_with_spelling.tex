@@ -87,7 +87,7 @@ in \refeq{pitch_spelling_19}.
     \begin{split}
         \setletters &= \{ \pitchC, \pitchD, \pitchE, \pitchF, \pitchG, \pitchA, \pitchB \} \\ 
         \setps_{19} &= \mathcal{C}
-        \times \{ \pitchC, \pitchD, \pitchE, \pitchF, \pitchG, \pitchA, \pitchB \}
+        \times \setletters
     \end{split}
 \end{equation}
 
@@ -95,21 +95,20 @@ in \refeq{pitch_spelling_19}.
 %     \setps_{19} | = 19 \end{equation}
 
 This encoding method results in duples of the form $(c, n)$,
-where $c \in \mathcal{C}$ and $n \in \{\pitchC, \pitchD,
-\pitchE, \pitchF, \pitchG, \pitchA, \pitchB\}$. For example,
-C\musSharp{} is represented by the duple $(1, \text{C})$,
-whereas D\musFlat{} is represented by the same pitch class
-but a different generic note letter, $(1, \text{D})$.
-D$\musNatural{}$ has the same generic note letter but a
-different pitch class, $(2, \text{D})$, and so on. Using
-this representation, a spelled note, beyond two flats and
-two sharps can be encoded with a 19-feature vector. Notice,
-however, that this vector is a two-hot encoding
-representation. This means that at any given timestep, each
-pitch spelling will be encoded as two active classes: one
-for the pitch class and one for the generic note letter. The
-output representations in the \gls{mtl} configuration (see
-\refsec{multitasklearningoutputs}) use the first encoding
-method. The input representations described in
-\refsubsec{inputrepresentations} employ the second encoding
-method. 
+where $c \in \mathcal{C}$ and $n \in \setletters$. For
+example, C\musSharp{} is represented by the duple $(1,
+\text{C})$, whereas D\musFlat{} is represented by the same
+pitch class but a different generic note letter, $(1,
+\text{D})$. D$\musNatural{}$ has the same generic note
+letter but a different pitch class, $(2, \text{D})$, and so
+on. Using this representation, a spelled note, beyond two
+flats and two sharps can be encoded with a 19-feature
+vector. Notice, however, that this vector is a two-hot
+encoding representation. This means that at any given
+timestep, each pitch spelling will be encoded as two active
+classes: one for the pitch class and one for the generic
+note letter. The output representations in the \gls{mtl}
+configuration (see \refsec{multitasklearningoutputs}) use
+the first encoding method. The input representations
+described in \refsubsec{inputrepresentations} employ the
+second encoding method. 
