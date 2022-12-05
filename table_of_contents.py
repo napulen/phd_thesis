@@ -7,10 +7,7 @@ introduction = """
                 the boundary between chords and keys
                 pitch spelling
             ambiguous annotations
-            scarcity of data
-                comparison against mnist annotations
-                expert-annotated data
-                more time consuming
+            time-consuming annotations
         progress
             predict tasks simultaneously
             provide better representations
