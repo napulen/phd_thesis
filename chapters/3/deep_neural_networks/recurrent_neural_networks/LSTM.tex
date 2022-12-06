@@ -12,23 +12,14 @@ problem that involves an \gls{rnn} can substitute the
 the results obtained by the \gls{rnn}.
 
 The main contribution of \glspl{lstm} is to provide a
-solution to \emph{vanishing gradients}.\footnote{Vanishing
-and exploding gradients are undesirable effects during the
-training of a neural network. They consist of either
-negligible (vanishing) or very large (exploding) updates to
-the trainable parameters. In the first instance, it leads to
-no learning, in the second instance, it leads to numerical
-instability. This effect was prominent particularly among
-Recurrent Neural Networks, and it made them difficult to
-train. See \textcite{bengio1994learning} for further
-information on this topic.} Given that vanishing gradients
-are associated with the loss of long-term dependencies,
-mitigating this issue would enable, in theory, the
-capability of the network to learn long-term dependencies
-between the inputs. In order to achieve these long-term
-dependencies, an \gls{lstm} substitutes the regular
-\gls{rnn} unit with a more complex one. This new, more
-complex unit, receives the name of an \emph{LSTM unit}.
+solution to \gls{vanishingexploding}. Given that vanishing
+gradients are associated with the loss of long-term
+dependencies, mitigating this issue would enable, in theory,
+the capability of the network to learn long-term
+dependencies between the inputs. In order to achieve these
+long-term dependencies, an \gls{lstm} substitutes the
+regular \gls{rnn} unit with a more complex one. This new,
+more complex unit, receives the name of an \emph{LSTM unit}.
 
 The main difference between an \gls{rnn} and \gls{lstm}
 units is that the \gls{lstm} adds a cell and three gates:
