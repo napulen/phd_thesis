@@ -4,7 +4,7 @@
 % which introduces the long-term goal: better music
 % theories.
 
-A more interesting question is, what do we do when the
+Perhaps a more interesting question is, what do we do if the
 models become extremely accurate? I think this is the point
 where the value of this research will become evident. In my
 experience teaching computers to analyze musical
@@ -17,7 +17,7 @@ fine-tuned for a computer within hours.
 \reffig{rimsky_voiceleading} shows an example of a
 rule-based voice-leading algorithm, which I implemented
 based on the rules in
-\textcite{huron2016voice}.\footnotelink{https://github.com/napulen/romanyh}
+\textcite[p.~10]{huron2016voice}.\footnotelink{https://github.com/napulen/romanyh}
 The model arranges each chord based on the input \gls{rna}
 annotations provided, respecting voice-leading rules while
 connecting each pair of chords. 
@@ -26,6 +26,28 @@ connecting each pair of chords.
 generated from the \gls{rna} annotations in a modulation
 example from Rimsky-Korsakov's Practical Manual of
 Harmony]{rimsky_voiceleading}
+
+One challenge in the implementation of this algorithm was
+that some rules seemed to be detrimental to good voice
+leading when they were implemented textually. For example,
+the rule about augmented intervals:
+
+\begin{italicquotes}
+    Rule 16. Augmented intervals rule: Avoid augmented
+    melodic intervals.
+\end{italicquotes}
+
+Implementing this rule unchanged results in a model avoiding
+at all costs augmented unisons. One could argue that
+computational models provide a rigorous empirical platform
+to ``test'' the robustness of a music theory, a platform
+that is difficult to provide in traditional human analysis.
+Although the ``rules'' and assumptions in a deep learning
+model are not as easy to retrieve as in this voice-leading
+example, it is still possible to review the features learned
+by the model in its internal representations. This process
+has been studied in computer vision.
+
 
 What I imagine a successful model can do is capture notions
 of tonality that we have neither yet understood nor
