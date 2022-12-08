@@ -5,22 +5,19 @@
 % theories.
 
 Perhaps a more interesting question is, what do we do if the
-models become extremely accurate? I think this is the point
-where the value of this research will become evident. In my
-experience teaching computers to analyze musical
-information, I have noticed that once set with the proper
-methodologies, computers achieve results that would take a
-long time for a human to develop from scratch. A simple
-example would be voice-leading rules, which take many hours
-for a human to internalize, but can be implemented and
-fine-tuned for a computer within hours.
-\reffig{rimsky_voiceleading} shows an example of a
+models become extremely accurate? One important aspect that
+may be useful in music theory is that computers evaluate
+rules that would take a long time for a human being to
+internalize. A simple example would be voice-leading rules,
+which take many hours for humans to develop expertise in,
+but can be implemented and fine-tuned for a computer within
+hours. \reffig{rimsky_voiceleading} shows an example of a
 rule-based voice-leading algorithm, which I implemented
 based on the rules in
 \textcite[p.~10]{huron2016voice}.\footnotelink{https://github.com/napulen/romanyh}
 The model arranges each chord based on the input \gls{rna}
-annotations provided, respecting voice-leading rules while
-connecting each pair of chords. 
+annotations provided, respecting the encoded voice-leading
+rules while connecting each pair of chords. 
 
 \phdfigure[A voice-leading exercise that was automatically
 generated from the \gls{rna} annotations in a modulation
@@ -40,21 +37,14 @@ the rule about augmented intervals:
 Implementing this rule unchanged results in a model avoiding
 at all costs augmented unisons. One could argue that
 computational models provide a rigorous empirical platform
-to ``test'' the robustness of a music theory, a platform
-that is difficult to provide in traditional human analysis.
-Although the ``rules'' and assumptions in a deep learning
-model are not as easy to retrieve as in this voice-leading
-example, it is still possible to review the features learned
-by the model in its internal representations. This process
-has been studied in computer vision.
-
-
-What I imagine a successful model can do is capture notions
-of tonality that we have neither yet understood nor
-materialized into a music theory. I imagine that
-investigating the learned representations of such
-hypothetical model could potentially accelerate the way we
-create theories that explain the crafts of musical
-composition, both in the \gls{commonpractice} as in modern
-musical practice. I consider this should be a long-term goal
-of these systems.
+to ``test'' the robustness of a music theory, a rigorous
+platform that is difficult to come by in traditional human
+analysis. Although the ``rules'' and assumptions in a deep
+learning model are not as easy to interpret as the ones in
+this voice-leading example, it is still possible to review
+the features learned by a deep learning model in its
+internal representations. This process has been studied in
+computer vision, and it would be worth to be studied in
+music as models keep getting increasingly accurate. I
+consider this goal, interpretability, should be a long-term
+goal of researchers developing these systems.
