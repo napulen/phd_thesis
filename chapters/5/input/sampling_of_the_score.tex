@@ -10,6 +10,11 @@ music file often includes characteristics of the music
 notation, such as articulations, dynamics, tempo, beaming,
 and stem directions. However, this information is frequently
 removed from the encoded representation sent to a neural
-network model. In the proposed system, the encoding of the
-score is limited to fragments of music of fixed length and
-sampled at regularly-spaced note durations.
+network model.\footnote{Notice that this does not
+necessarily mean that such information is detrimental to the
+model. Most likely, the omission of this information is
+related with lowering the trainable parameters of the
+network, as well as decreasing the effort of data curation.}
+In the proposed system, the encoding of the score is limited
+to fragments of music of fixed length and sampled at
+regularly-spaced note durations.
