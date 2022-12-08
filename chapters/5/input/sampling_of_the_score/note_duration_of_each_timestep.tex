@@ -4,9 +4,14 @@ Following the practice of \textcite{micchi2020not}, the
 \glspl{32nd} note was taken as the reference value used to
 sample the input score. Looking at a distribution of note
 durations across the dataset, duration values shorter than a
-\glspl{32nd} note are rare. The majority of the note durations
-being \glspl{16th} notes, as shown in
-\reffig{duration_distribution}.
+\glspl{32nd} note are rare. The majority of the note
+durations being \glspl{16th} notes, as shown in
+\reffig{duration_distribution}. Using this sampling method
+and reference value, notice that most tuplets and notes
+shorter than a \glspl{32nd} cannot be fully encoded. Notes
+with these duration values are approximated. This
+approximation is similar to the way a waveform is
+approximated when it is digitized.
 
 \phdfigure[Distribution of duration values across the
 training portion of the aggregated dataset. The durations
