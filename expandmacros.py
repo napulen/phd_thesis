@@ -7,13 +7,13 @@ regex = {
     "includeonly": re.compile(r"\\includeonly\{(?P<includeonly>[\w/\.-]+)\}"),
     "changecwd": re.compile(r"\\changecwd\{(?P<changecwd>[\w/]+)\}.*"),
     "cwd": re.compile(r".*(?P<cwd>\\cwd).*"),
-    "include": re.compile(r".*\\include\{(?P<include>[\\\w/\.-]+)\}"),
-    "input": re.compile(r".*\\input\{(?P<input>[\\\w/\.-]+)\}"),
+    "include": re.compile(r".*\\include\{(?P<include>[\\\w/\.\*:,()`'-]+)\}"),
+    "input": re.compile(r".*\\input\{(?P<input>[\\\w/\.\*:,()`'-]+)\}"),
     # substitution strings
-    "includesub": re.compile(r"\\include\{[\\\w/\.-]+\}"),
+    "includesub": re.compile(r"\\include\{[\\\w/\.\*:,()`'-]+\}"),
     "changecwdsub": re.compile(r"\\changecwd\{[\w/]+\}"),
     "cwdsub": re.compile(r"\\cwd"),
-    "inputsub": re.compile(r"\\input\{[\\\w/\.-]+\}"),
+    "inputsub": re.compile(r"\\input\{[\\\w/\.\*:,()`'-]+\}"),
 }
 
 
