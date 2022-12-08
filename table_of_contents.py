@@ -16,7 +16,7 @@ introduction = """
             segmentation
             data scarcity
         short-term goal: better models
-        long-term goal: better music theories
+        long-term goal: interpretability
     outline of thesis contributions
         additional tonal tasks
         artificial training examples
