@@ -5,15 +5,15 @@
 % theories.
 
 Perhaps a more interesting question is, what do we do if the
-models become extremely accurate? One important aspect that
-may be useful in music theory is that computers evaluate
-rules that would take a long time for a human being to
-internalize. A simple example would be voice-leading rules,
-which take many hours for humans to develop expertise in,
-but can be implemented and fine-tuned for a computer within
-hours. \reffig{rimsky_voiceleading} shows an example of a
-rule-based voice-leading algorithm, which I implemented
-based on the rules in
+models become sufficiently accurate? One important aspect
+that may be useful in music theory is that computers quickly
+evaluate algorithms that would take a long time for a human
+being to internalize. A simple example would be
+voice-leading rules, which take many hours of practice for a
+human to learn, but can be implemented and fine-tuned for a
+computer within hours. \reffig{rimsky_voiceleading} shows an
+example of a rule-based voice-leading algorithm, which I
+implemented based on the rules in
 \textcite[p.~10]{huron2016voice}.\footnotelink{https://github.com/napulen/romanyh}
 The model arranges each chord based on the input \gls{rna}
 annotations provided, respecting the encoded voice-leading
@@ -39,12 +39,13 @@ at all costs augmented unisons. One could argue that
 computational models provide a rigorous empirical platform
 to ``test'' the robustness of a music theory, a rigorous
 platform that is difficult to come by in traditional human
-analysis. Although the ``rules'' and assumptions in a deep
-learning model are not as easy to interpret as the ones in
+analysis. Although the internal ``algorithm'' in a deep
+learning model is not as easy to interpret as the one in
 this voice-leading example, it is still possible to review
 the features learned by a deep learning model in its
 internal representations. This process has been studied in
 computer vision, and it would be worth to be studied in
-music as models keep getting increasingly accurate. I
-consider this goal, interpretability, should be a long-term
-goal of researchers developing these systems.
+music as models keep getting increasingly accurate. Perhaps
+this goal, interpretability, should be a long-term goal that
+researchers working on computational models should take into
+consideration.
