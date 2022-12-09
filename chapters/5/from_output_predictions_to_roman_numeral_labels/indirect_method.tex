@@ -3,8 +3,19 @@
 
 In the indirect method, instead of retrieving predictions
 for $\elnum$ and $\elden$ directly, these are estimated from
-a \gls{pcset} $\elpcset$ and key $\elkey$. This method is
-useful in several situations: 
+a \gls{pcset} $\elpcset$ and key $\elkey$ using a custom
+algorithm called Numerator and Tonicization Estimation
+Method (\gls{natem}). This algorithm determines which Roman
+numeral numerator to assign given the key. In instances
+where no Roman numeral numerator is suitable for the
+\gls{pcset} and key provided, the algorithm searches for an
+appropriate tonicization and returns a Roman numeral label
+with a tonicized key. The algorithm is described in detail
+in \refsec{thenumeratorandtonicizationestimationmethod}. The
+indirect method is facilitated by the computations of the
+\gls{natem} algorithm. This method is useful in several
+situations: 
+
 \begin{enumerate}
     \item When running an evaluation with several \gls{arna}
     models that have a distinct set of classification tasks,
