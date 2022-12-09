@@ -3,15 +3,16 @@
 
 In the indirect method, instead of retrieving predictions
 for $\elnum$ and $\elden$ directly, these are estimated from
-a \gls{pcset} $\elpcset$ and key $\elkey$ using a custom
-algorithm called Numerator and Tonicization Estimation
-Method (\gls{natem}). This algorithm determines which Roman
-numeral numerator to assign given the key. In instances
-where no Roman numeral numerator is suitable for the
-\gls{pcset} and key provided, the algorithm searches for an
-appropriate tonicization and returns a Roman numeral label
-with a tonicized key. The algorithm is described in detail
-in \refsec{thenumeratorandtonicizationestimationmethod}. The
+a \gls{pcset} $\elpcset$ and key $\elkey$. The estimation is
+done using a custom algorithm called Numerator and
+Tonicization Estimation Method (\gls{natem}). This algorithm
+determines which Roman numeral numerator to assign given the
+key. In instances where no Roman numeral numerator is
+suitable for the \gls{pcset} and key provided, the algorithm
+searches for an appropriate tonicization and returns a Roman
+numeral label with a tonicized key. The algorithm is
+described in detail in
+\refsec{thenumeratorandtonicizationestimationmethod}. The
 indirect method is facilitated by the computations of the
 \gls{natem} algorithm. This method is useful in several
 situations: 
@@ -27,11 +28,10 @@ situations:
     a chord label and a key, which occurs in some methods.
 \end{enumerate}
 
-In this case, the \gls{natem} algorithm, described in
-\refsec{thenumeratorandtonicizationestimationmethod}, is
-used to retrieve the numerator $\elnum$ and tonicization
-$\elden$. The generation of the \gls{rna} label is done as
-shown in \refeq{rna_indirect}.
+In this case, the \gls{natem} algorithm, is used to retrieve
+the numerator $\elnum$ and tonicization $\elden$. The
+generation of the \gls{rna} label is done as shown in
+\refeq{rna_indirect}.
 
 \begin{equation}
     \label{eq:rna_indirect}
