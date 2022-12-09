@@ -4,16 +4,15 @@
 In the indirect method, instead of retrieving predictions
 for $\elnum$ and $\elden$ directly, these are estimated from
 a \gls{pcset} $\elpcset$ and key $\elkey$. The estimation is
-done using a custom algorithm called Numerator and
-Tonicization Estimation Method (\gls{natem}). This algorithm
-provides a Roman numeral numerator given the \gls{pcset} and
-key. In instances where no Roman numeral numerator is
-suitable for the \gls{pcset} and key provided, the algorithm
-searches for an appropriate tonicization, and returns a
-Roman numeral label with a tonicized key. For example, given
-the \gls{pcset} $\elpcset = \pcsetdFa$ and key $\elkey =
-\keyC$, the algorithm would return a ``dominant of the
-dominant'' Roman numeral annotation of the form
+done using a new algorithm called Numerator and Tonicization
+Estimation Method (\gls{natem}). This algorithm provides a
+Roman numeral numerator given the \gls{pcset} and key. In
+instances where no Roman numeral numerator is suitable for
+the \gls{pcset} and key provided, the algorithm searches for
+an appropriate tonicization that fits the given tonal
+context. For example, given the \gls{pcset} $\elpcset =
+\pcsetdFa$ and key $\elkey = \keyC$, the algorithm would
+return a ``dominant of the dominant'' annotation of the form
 $\rnwton{\rnV}{V}$. The technical details of the \gls{natem}
 algorithm are described in
 \refsec{thenumeratorandtonicizationestimationmethod}.
