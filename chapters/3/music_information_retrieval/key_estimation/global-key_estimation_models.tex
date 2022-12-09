@@ -178,18 +178,21 @@ scale degrees outperformed the \gls{keyprofile}s from
 
 % Bellmann (2005)
 Similar effort for scale-degree probability distributions
-were proposed by
-\textcite{rohrmeier2005towards,rohrmeier2007modelling} and
-\textcite{bellmann2006about}. Bellman used the chord
-frequencies collected in the PhD \thesisdiss{} by
-\textcite{budge1943study} to create a new scale degree
-probability distribution. This probability distribution was
-used to obtain the most likely key of a fragment of a score
-(typically, a measure long) by computing the
-\gls{dotproduct} between the notes found in the excerpt and
-the scale degree distribution. The results of this algorithm
-were also favourable, showing that chord frequencies can be
-helpful in estimating the musical key.
+were proposed by \textcite{rohrmeier2007modelling} and
+\textcite{bellmann2006about}. Rohrmeier's model focused on
+the repertoire of Bach chorales, where a model to induce key
+profiles using a sliding window was proposed. This
+sliding-window recognized modulations in fragments of music
+where neither the dominant nor leading tone were involved.
+Bellman used the chord frequencies collected in the PhD
+\thesisdiss{} by \textcite{budge1943study} to create a new
+scale degree probability distribution. This probability
+distribution was used to obtain the most likely key of a
+fragment of a score (typically, a measure long) by computing
+the \gls{dotproduct} between the notes found in the excerpt
+and the scale degree distribution. The results of this
+algorithm were also favourable, showing that chord
+frequencies can be helpful in estimating the musical key.
 
 % % Temperley (2007) Distributional keyfinding model based
 % on probabilistic reasoning. This probabilistic model
