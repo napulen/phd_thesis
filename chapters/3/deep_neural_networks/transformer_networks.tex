@@ -4,24 +4,24 @@
 % the transformer networks.
 
 The Transformer network is a sequential model introduced by
-\textcite{vaswani2017attention}. The Transformer differs
-from other sequential architectures (e.g., \gls{rnn})
-because it ``relies entirely on an attention mechanism to
-draw global dependencies between input and output.'' The
-attention mechanism is a method designed to mitigate the
-limitations of previous sequence-to-sequence models. In a
-sequence-to-sequence model, the performance degrades as the
-length of the sequences increases, because the entire
-sequence is represented with a single vector in the encoder.
-Using attention, information from all timesteps in the
-sequence is available to the decoder. This allows the model
-to ``attend'' or give a higher weight to certain timesteps
-of the sequence. Allowing the model to decide which parts of
-the sequence are important has been an important advancement
-in recent deep learning models. The Transformer architecture
-became a fundamental methodology in natural language
-processing after it reached state-of-the-art performance in
-comparison to \glspl{rnn}. Nowadays, this architecture has
-been widely adopted for different problems, including
-\gls{rna}.\footnote{See, for example,
-\textcite{chen2021attend}.}
+\textcite[p.~2]{vaswani2017attention}. The Transformer
+differs from other sequential architectures (e.g.,
+\gls{rnn}) because it ``relies entirely on an attention
+mechanism to draw global dependencies between input and
+output.'' The attention mechanism is a method designed to
+mitigate the limitations of previous sequence-to-sequence
+models. In a sequence-to-sequence model, the performance
+degrades as the length of the sequences increases, because
+the entire sequence is represented with a single vector in
+the encoder. Using attention, information from all timesteps
+in the sequence is available to the decoder. This allows the
+model to ``attend'' or give a higher weight to certain
+timesteps of the sequence. Allowing the model to decide
+which parts of the sequence are important has been an
+important advancement in recent deep learning models. The
+Transformer architecture became a fundamental methodology in
+natural language processing after it reached
+state-of-the-art performance in comparison to \glspl{rnn}.
+Nowadays, this architecture has been widely adopted for
+different problems, including \gls{rna}.\footnote{See, for
+example, \textcite{chen2021attend}.}
