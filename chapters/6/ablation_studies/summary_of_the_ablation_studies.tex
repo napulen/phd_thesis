@@ -41,22 +41,23 @@ In the row of the baseline model, the standard deviation
 ($\sigma$) across the 5-fold cross validation is provided
 for reference. All the differences in performance
 highlighted in \reftab{ablation} are at least 2 standard
-deviations below the performance of the baseline. 
-% A less prominent change is the one related the use of a
-% constant number of filters. Although the performance is
-% lower than the baseline, it lies within a standard
-% deviation for all tasks, a detrimental effect that seemed
-% more impactful during preliminary experiments.
+deviations below the performance of the baseline.
 Furthermore, most modifications in the ablation studies have
 a negative effect compared to the baseline model, which is
 consistent with the observations during preliminary
-experiments designing the network. 
-% One exception here is linear dense layer, which seems to
-% provide a slightly better performance than the baseline. 
-Thus, the baseline model presented in this section was used
-in all subsequent experiments.
-% This was an unexpected result, because that did not seem
-% to be the case in preliminary experiments. It could be
-% that the nonlinear activation in the dense layers of the
-% baseline model work better when data augmentation is
-% introduced.
+experiments designing the network. One exception is the use
+of a linear dense layer, which appears to be slightly above
+the baseline in most tasks. However, the advantage of the
+linear dense variation fades away after introducing data
+augmentation, with an average drop of $-2.7\%$ across all
+tasks compared to the baseline. This brings an important
+point about the ablation studies presented here, which is
+that they are useful to provide hints about the
+contributions of the different components of the model, but
+do not provide information about how the modified models
+scale with more data. That is, the design of a neural
+network architecture is importantly an empirical process,
+which requires continuous experimentation. For this reason,
+the baseline model presented in this section was used in
+subsequent experiments, as it is the version of the network
+that went through more experiments.
