@@ -8,9 +8,21 @@ The Transformer network is a sequential model introduced by
 from other sequential architectures (e.g., \gls{rnn})
 because it ``relies entirely on an attention mechanism to
 draw global dependencies between input and output.'' The
-Transformer architecture became a fundamental methodology in
-natural language processing after it reached
-state-of-the-art performance in comparison to \glspl{rnn}.
-Nowadays, this architecture has been widely adopted for
-different problems, including \gls{rna}.\footnote{See, for
-example, \textcite{chen2021attend}.}
+attention mechanism is a method designed to mitigate the
+limitations of previous sequence-to-sequence models. In a
+sequence-to-sequence model, the performance degrades as the
+length of the sequences increases. Using attention, each
+timestep has access to all the hidden states of all
+timesteps. This allows the model to ``attend'' or give a
+higher weight to certain timesteps. This is important in
+tasks like machine translation, because often natural
+languages present their corresponding words in a sentence in
+different orders. Allowing the model to decide which
+timesteps are important has been an important advancement in
+this kind of sequential data. The Transformer architecture
+became a fundamental methodology in natural language
+processing after it reached state-of-the-art performance in
+comparison to \glspl{rnn}. Nowadays, this architecture has
+been widely adopted for different problems, including
+\gls{rna}.\footnote{See, for example,
+\textcite{chen2021attend}.}
