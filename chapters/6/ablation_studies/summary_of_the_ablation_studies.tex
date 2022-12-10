@@ -47,21 +47,19 @@ a negative effect compared to the baseline model, which is
 consistent with the observations during preliminary
 experiments designing the network. One exception is the use
 of a linear dense layer, which appears to be slightly above
-the baseline in most tasks. However, the advantage of the
-linear dense variation fades away after introducing data
-augmentation, with an average drop of $-2.7\%$ across all
-tasks compared to the baseline. This brings an important
-point about the ablation studies presented here, which is
-that they are useful to provide hints about the
-contributions of the different components of the network,
-but do not provide information about how the modifications
-scale with more data. That is, the design of a neural
-network architecture is importantly an empirical process,
-which requires continuous experimentation in different
-scenarios. For this reason, the baseline model presented in
-this section was used in subsequent experiments, as it is
-the version of the network that went through more
-experiments and datasets of different sizes. The ablation
-studies nevertheless confirm certain contributions in a
-controlled experiment where every modification (including
-the baseline) received the same amount of data.
+the baseline in most tasks. In a subsequent experiment to
+explore this further, the advantage of the linear dense
+variation faded away after introducing data augmentation,
+with an average drop of $-2.7\%$ across all tasks compared
+to the baseline. This brings an important point about the
+ablation studies presented here, which is that they do not
+provide information about how the modifications scale with
+more (or less) data. Thus, they provide hints about the
+contributions of the different components of the network
+using a fixed amount of data. The design of a neural network
+architecture is importantly an empirical process, which
+requires continuous experimentation in different scenarios.
+For this reason, the baseline model presented in this
+section was used in subsequent experiments, as it is the
+version of the network that went through more experiments
+and datasets of different sizes.
