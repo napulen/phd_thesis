@@ -63,13 +63,12 @@ too very can will just don should now vs in et al v v1}
   \relax
 }
 
-\NewDocumentCommand{\phdfigurefullpage}{ O{Caption placeholder}
-O{1.0} m}{
+\NewDocumentCommand{\phdfigurefullpage}{ O{Caption placeholder} m}{
   \begin{figure}[hbtp]
     \centering
-    \includegraphics[width=#2\textwidth]{\cwd/figures/#3}
+    \includegraphics[width=\linewidth]{\cwd/figures/#2}
     \phdcaption{#1.}
-    \label{fig:#3}
+    \label{fig:#2}
   \end{figure}
   \relax
 }
