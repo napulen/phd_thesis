@@ -109,27 +109,28 @@ better than others, in the eyes of a human analyst.
 \paragraph{Analysis of the AugmentedNet.}
 
 The proposed model in this dissertation, \gls{augmentednet},
-is the only model that seems to be able to recognize the
-chord discussed above, the $\rnGer$ \gls{augsix} in measure
-8. Other models provide either an $\rnIt$ label, or in the
-case of The prediction of $\rnIt$ here is expected in
-\textcite{chen2021attend} and \textcite{micchi2021deep}, as
-these models collapse the various flavours of \gls{augsix}
-chords into one category, which makes it difficult (maybe
-impossible) to distinguish between a $\rnIt$ and $\rnGer$.
-Notice also that there are two errors in the human analysis.
-In measure 2, beat 1, the analyst indicated a $\rni\rnsix$
-label, however, because the viola crosses the violoncello at
-that point, the chord is in fact in root position. All
-\gls{arna} models unequivocally get this annotation right.
-The second error in the annotation lies in the inversion of
-the $\rnGer$ chord, indicated by the annotator as ``root
-position.'' The \gls{augmentednet} model gets the annotation
-in the proper inversion, according to the convention for
-chord inversions used in the \gls{romantext}
-format.\footnote{This particular set of chords,
-\gls{augsix}, often have differing regarding their
-inversions.}
+is the only model that seems to recognize the chord
+discussed above, the $\rnGer$ \gls{augsix} in measure 8. The
+$\rnIt$ in \textcite{chen2021attend} is expected, because
+this model collapses all flavours of \gls{augsix} chords
+into one category.\footnote{This can also be confirmed in
+the confusion matrix of
+\reffig{confusion_matrix_chensu2021}, where $\rnGer$ and
+$\rnFr$ instances are often predicted as $\rnIt$.} which
+makes it difficult (maybe impossible) to distinguish between
+a $\rnIt$ and $\rnGer$. Notice also that there are two
+errors in the human analysis. In measure 2, beat 1, the
+analyst indicated a $\rni\rnsix$ label, however, because the
+viola crosses the violoncello at that point, the chord is in
+fact in root position. All \gls{arna} models unequivocally
+get this annotation right. The second error in the
+annotation lies in the inversion of the $\rnGer$ chord,
+indicated by the annotator as ``root position.'' The
+\gls{augmentednet} model gets the annotation in the proper
+inversion, according to the convention for chord inversions
+used in the \gls{romantext} format.\footnote{This particular
+set of chords, \gls{augsix}, often have differing regarding
+their inversions.}
 
 % The string quartet example features a polyphonic texture,
 % which would be difficult to analyze by a simple model
