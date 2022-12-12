@@ -44,21 +44,30 @@ models that differ from the human analyst's are marked in
 red]{haydn_comparison}
 
 In order to complement the quantitative results presented in
-this section, \reffig{haydn_comparison} shows a real musical
-excerpt analyzed by the various \gls{arna} systems. The
-example includes the original human annotations as well, for
-reference. The key of the excerpt is $\keyg{}$, which all of
-the models except \gls{melisma} predict correctly. In
-general, the \gls{melisma} model presents several other
-flaws. For example, it misses the initial annotation of the
-$\pitchG{}$ minor triad at the beginning of measure 1, and
-it shows a long stream of chord annotations in measure 3,
-which greatly differs from the harmonic rhythm implied by
-the human annotator, or the other \gls{arna} models. After
-the \gls{melisma} model, the \textcite{chen2021attend} model
-provides better predictions. Importantly, all but one of the
-annotations (the $\rnIt$ chord on measure 8, beat 2) in
-\textcite{chen2021attend} are either tonic or dominant
+this section, \reffig{haydn_comparison} shows a musical
+excerpt analyzed by the various \gls{arna} systems. For
+reference, the example also shows the human annotations
+(``ground truth'') in the dataset. The key of the excerpt is
+$\keyg{}$, which all of the models except \gls{melisma}
+predict correctly. 
+
+\paragraph{Analysis of the \gls{melisma} model}
+
+In general, the \gls{melisma} model presents several flaws.
+The most important one, perhaps, is mislabelling the key.
+After that, it misses the initial annotation of the minor
+tonic triad (m.1, beat 1). The model also has a tendency for
+long streams of chord annotations (e.g., m. 3), which
+greatly differs from the harmonic rhythm described by the
+human annotator and the other \gls{arna} models. 
+
+\phdparagraph{Analysis of the \textcite{chen2021attend}
+model}
+
+After the \gls{melisma} model, the \textcite{chen2021attend}
+model provides better predictions. Importantly, all but one
+of the annotations (the $\rnIt$ chord on measure 8, beat 2)
+in \textcite{chen2021attend} are either tonic or dominant
 chords. This speaks of the bias that exists for the Roman
 numeral classes that appear more often in the dataset, as
 shown in \reftab{rare_chords}. The \textcite{micchi2021deep}
