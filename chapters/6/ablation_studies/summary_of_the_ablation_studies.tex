@@ -47,22 +47,23 @@ a negative effect compared to the baseline model, which is
 consistent with the observations during preliminary
 experiments designing the network. One exception is the use
 of a linear dense layer, which appears to be slightly above
-the baseline in most tasks. In a subsequent experiment that
-explored this further, the advantage of the linear dense
-variation faded away after introducing data augmentation,
-with an average drop of $-2.7\%$ across all tasks compared
-to the baseline. This brings an important point about the
-ablation studies presented here, which is that they do not
-provide information about how the modifications scale with
-more (or less) data. Thus, they provide hints about the
-contributions of the different components of the network
-using a fixed amount of data. The design of a neural network
-architecture is importantly an empirical process, which
-requires continuous experimentation in different scenarios.
-For this reason, the baseline model presented in this
-section was used in subsequent experiments, as it is the
-version of the network that went through more experiments
-and datasets of different sizes. Nevertheless, I still
-consider the ablation studies interesting, as they permit to
-confront musical intuitions with the behavior of the neural
-network. 
+the baseline in most tasks. In order to explore this
+further, a subsequent experiment was performed between the
+baseline and linear dense variations, adding data
+augmentation. In that experiment, the advantage of the
+linear dense variation faded away, with an average drop of
+$-2.7\%$ across all tasks compared to the baseline. This
+brings an important point about the ablation studies
+presented here, which is that they do not provide
+information about how the modifications scale with more (or
+less) data. Thus, they provide hints about the contributions
+of the different components of the network using a fixed
+amount of data. The design of a neural network architecture
+is importantly an empirical process, which requires
+continuous experimentation in different scenarios. For this
+reason, the baseline model presented in this section was
+used in subsequent experiments, as it is the version of the
+network that went through more experiments and datasets of
+different sizes. Nevertheless, I still consider the ablation
+studies interesting, as they permit to confront musical
+intuitions with the components of the neural network. 
