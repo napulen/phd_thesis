@@ -64,38 +64,40 @@ model predicts the same chord as the human annotator in
 various instances, however, it seems to struggle with the
 segmentation of the chords, as these are often in odd
 locations. For example, the quick chord changes in measure
-9. The \textcite{mcleod2021modular} model is fairly similar
-to the human annotator. Two drawbacks of this model is that
-it often predicts the wrong inversion (e.g., measure 1, beat
-3; or measure 6, beat 3). In addition to this, it is unable
-to recognize the $\rnGer$ chord in measure 8, beat 2. The
-proposed model in this dissertation, \gls{augmentednet} is
-the only model that seems to be able to recognize that
-chord, the $\rnGer$ \gls{augsix} in measure 8. Other models
-seem to provide either an $\rnIt$ label, or in the case of
-\textcite{mcleod2021modular}, a label of g:$\rn{VI}\rnsix$,
-which is a reasonable prediction when ignoring the
-C$\musSharp$ in the first violin. However, this intervallic
-relationship between E$\musFlat$4 and C$\musSharp$5 is
-precisely what characterizes the \gls{augsix} chord. The
-prediction of $\rnIt$ here is expected in
-\textcite{chen2021attend} and \textcite{micchi2021deep}, as
-these models collapse the various flavours of \gls{augsix}
-chords into one category, which makes it difficult (perhaps
-impossible) to distinguish between $\rnIt$ and $\rnGer$.
-Notice also that there are two errors in the human analysis.
-In measure 2, beat 1, the analyst indicated a $\rni\rnsix$
-label, however, because the viola crosses the violoncello at
-that point, the chord is really in root position. All
-\gls{arna} models unequivocally get this annotation right.
-The second error in the annotation lies in the inversion of
-the $\rnGer$ chord, indicated by the annotator as ``root
-position''. The \gls{augmentednet} model gets the annotation
-in the proper inversion, according to the convention for
-chord inversions used in the \gls{romantext}
-format.\footnote{This particular set of chords,
-\gls{augsix}, often have differing conventions when it comes
-to annotating their inversions. }
+9. This is perhaps because the musical excerpt is anacrusic,
+and it complicates the alignment between score and
+annotations. The \textcite{mcleod2021modular} model is
+fairly similar to the human annotator. Two drawbacks of this
+model is that it often predicts the wrong inversion (e.g.,
+measure 1, beat 3; or measure 6, beat 3). In addition to
+this, it is unable to recognize the $\rnGer$ chord in
+measure 8, beat 2. The proposed model in this dissertation,
+\gls{augmentednet} is the only model that seems to be able
+to recognize that chord, the $\rnGer$ \gls{augsix} in
+measure 8. Other models provide either an $\rnIt$ label, or
+in the case of \textcite{mcleod2021modular}, a label of
+$\rn{VI}\rnsix$, which is a reasonable prediction when
+ignoring the $\pitchC{}\musSharp$ in the first violin.
+However, this intervallic relationship between
+$\pitchE{}\musFlat$4 and $\pitchC{}\musSharp$5 is precisely
+what characterizes the \gls{augsix} chord. The prediction of
+$\rnIt$ here is expected in \textcite{chen2021attend} and
+\textcite{micchi2021deep}, as these models collapse the
+various flavours of \gls{augsix} chords into one category,
+which makes it difficult (maybe impossible) to distinguish
+between a $\rnIt$ and $\rnGer$. Notice also that there are
+two errors in the human analysis. In measure 2, beat 1, the
+analyst indicated a $\rni\rnsix$ label, however, because the
+viola crosses the violoncello at that point, the chord is in
+fact in root position. All \gls{arna} models unequivocally
+get this annotation right. The second error in the
+annotation lies in the inversion of the $\rnGer$ chord,
+indicated by the annotator as ``root position.'' The
+\gls{augmentednet} model gets the annotation in the proper
+inversion, according to the convention for chord inversions
+used in the \gls{romantext} format.\footnote{This particular
+set of chords, \gls{augsix}, often have differing regarding
+their inversions.}
 
 % The string quartet example features a polyphonic texture,
 % which would be difficult to analyze by a simple model
