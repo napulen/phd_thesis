@@ -73,15 +73,21 @@ dataset, as shown in \reftab{rare_chords}.
 
 \paragraph{Analysis of the Micchi et al. model}
 
-The \textcite{micchi2021deep} model predicts the same chord
-as the human annotator in various instances, however, it
-seems to struggle with the segmentation of the chords, as
-these are often in odd locations. For example, the quick
-chord changes in measure 9. This is perhaps because the
-musical excerpt is anacrusic, and it complicates the
-alignment between score and annotations. The
-\textcite{mcleod2021modular} model is fairly similar to the
-human annotator. Two drawbacks of this model is that it
+The \textcite{micchi2021deep} model is less biased towards
+tonic and dominant classes. For example, it recognizes
+instances of diminished chords (e.g., m.~2, beat 3). The
+model seems to struggle with the chord segmentation, as
+chords are often in odd locations. For example, the
+precipitated \gls{neapolitan} (m. 9, beat 3), or the tonic
+triad at the beginning of the second system (m.6, beat 2.5).
+This is perhaps because the musical excerpt is anacrusic,
+and it makes it more complicated to align the score and
+annotations. 
+
+\paragraph{Analysis of the McLeod and Rohrmeier model}
+
+The \textcite{mcleod2021modular} model is fairly similar to
+the human annotator. Two drawbacks of this model is that it
 often predicts the wrong inversion (e.g., measure 1, beat 3;
 or measure 6, beat 3). In addition to this, it is unable to
 recognize the $\rnGer$ chord in measure 8, beat 2. The
