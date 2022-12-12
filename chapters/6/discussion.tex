@@ -45,58 +45,57 @@ In order to complement the quantitative results presented in
 this section, \reffig{haydn_comparison} shows a real musical
 excerpt analyzed by the various \gls{arna} systems. The
 example includes the original human annotations as well, for
-reference.
-
-The key of the excerpt is $\keyg{}$, which all of the models
-except \gls{melisma} predict correctly. In general, the
-\gls{melisma} model presents several flaws. For example, it
-misses the initial annotation of the $\pitchG{}$ minor triad
-at the beginning of measure 1, and it shows a long stream of
-chord annotations in measure 3, which greatly differs from
-the harmonic rhythm implied by the human annotator, or the
-other \gls{arna} models. After the \gls{melisma} model, the
-\textcite{chen2021attend} model provides better performance.
-Importantly, all but one of the annotations (the $\rnIt$
-chord on measure 8, beat 2) in \textcite{chen2021attend} are
-either tonic or dominant chords. This speaks of the bias
-that exists for the Roman numeral classes that appear more
-often in the dataset, as shown in \reftab{rare_chords}. The
-\textcite{micchi2021deep} model predicts the same chord as
-the human annotator in various instances, however, it seems
-to struggle with the segmentation of the chords, as these
-are often in odd locations. For example, the quick chord
-changes in measure 9. The \textcite{mcleod2021modular} model
-is fairly similar to the human annotator. Two drawbacks of
-this model is that it often predicts the wrong inversion
-(e.g., measure 1, beat 3; or measure 6, beat 3). In addition
-to this, it is unable to recognize the $\rnGer$ chord in
-measure 8, beat 2. The proposed model in this dissertation,
-\gls{augmentednet} is the only model that seems to be able
-to recognize that chord, the $\rnGer$ \gls{augsix} in
-measure 8. Other models seem to provide either an $\rnIt$
-label, or in the case of \textcite{mcleod2021modular}, a
-label of g:$\rn{VI}\rnsix$, which is a reasonable prediction
-when ignoring the C$\musSharp$ in the first violin. However,
-this intervallic relationship between E$\musFlat$4 and
-C$\musSharp$5 is precisely what characterizes the
-\gls{augsix} chord. The prediction of $\rnIt$ here is
-expected in \textcite{chen2021attend} and
-\textcite{micchi2021deep}, as these models collapse the
-various flavours of \gls{augsix} chords into one category,
-which makes it difficult (perhaps impossible) to distinguish
-between $\rnIt$ and $\rnGer$. Notice also that there are two
-errors in the human analysis. In measure 2, beat 1, the
-analyst indicated a $\rni\rnsix$ label, however, because the
-viola crosses the violoncello at that point, the chord is
-really in root position. All \gls{arna} models unequivocally
-get this annotation right. The second error in the
-annotation lies in the inversion of the $\rnGer$ chord,
-indicated by the annotator as ``root position''. The
-\gls{augmentednet} model gets the annotation in the proper
-inversion, according to the convention for chord inversions
-used in the \gls{romantext} format.\footnote{This particular
-set of chords, \gls{augsix}, often have differing
-conventions when it comes to annotating their inversions. }
+reference. The key of the excerpt is $\keyg{}$, which all of
+the models except \gls{melisma} predict correctly. In
+general, the \gls{melisma} model presents several other
+flaws. For example, it misses the initial annotation of the
+$\pitchG{}$ minor triad at the beginning of measure 1, and
+it shows a long stream of chord annotations in measure 3,
+which greatly differs from the harmonic rhythm implied by
+the human annotator, or the other \gls{arna} models. After
+the \gls{melisma} model, the \textcite{chen2021attend} model
+provides better performance. Importantly, all but one of the
+annotations (the $\rnIt$ chord on measure 8, beat 2) in
+\textcite{chen2021attend} are either tonic or dominant
+chords. This speaks of the bias that exists for the Roman
+numeral classes that appear more often in the dataset, as
+shown in \reftab{rare_chords}. The \textcite{micchi2021deep}
+model predicts the same chord as the human annotator in
+various instances, however, it seems to struggle with the
+segmentation of the chords, as these are often in odd
+locations. For example, the quick chord changes in measure
+9. The \textcite{mcleod2021modular} model is fairly similar
+to the human annotator. Two drawbacks of this model is that
+it often predicts the wrong inversion (e.g., measure 1, beat
+3; or measure 6, beat 3). In addition to this, it is unable
+to recognize the $\rnGer$ chord in measure 8, beat 2. The
+proposed model in this dissertation, \gls{augmentednet} is
+the only model that seems to be able to recognize that
+chord, the $\rnGer$ \gls{augsix} in measure 8. Other models
+seem to provide either an $\rnIt$ label, or in the case of
+\textcite{mcleod2021modular}, a label of g:$\rn{VI}\rnsix$,
+which is a reasonable prediction when ignoring the
+C$\musSharp$ in the first violin. However, this intervallic
+relationship between E$\musFlat$4 and C$\musSharp$5 is
+precisely what characterizes the \gls{augsix} chord. The
+prediction of $\rnIt$ here is expected in
+\textcite{chen2021attend} and \textcite{micchi2021deep}, as
+these models collapse the various flavours of \gls{augsix}
+chords into one category, which makes it difficult (perhaps
+impossible) to distinguish between $\rnIt$ and $\rnGer$.
+Notice also that there are two errors in the human analysis.
+In measure 2, beat 1, the analyst indicated a $\rni\rnsix$
+label, however, because the viola crosses the violoncello at
+that point, the chord is really in root position. All
+\gls{arna} models unequivocally get this annotation right.
+The second error in the annotation lies in the inversion of
+the $\rnGer$ chord, indicated by the annotator as ``root
+position''. The \gls{augmentednet} model gets the annotation
+in the proper inversion, according to the convention for
+chord inversions used in the \gls{romantext}
+format.\footnote{This particular set of chords,
+\gls{augsix}, often have differing conventions when it comes
+to annotating their inversions. }
 
 % The string quartet example features a polyphonic texture,
 % which would be difficult to analyze by a simple model
