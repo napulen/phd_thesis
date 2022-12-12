@@ -88,38 +88,43 @@ the harmonic rhythm.
 
 \paragraph{Analysis of the McLeod and Rohrmeier model}
 
-The \textcite{mcleod2021modular} model is fairly similar to
-the human annotator. Two drawbacks of this model is that it
-often predicts the wrong inversion (e.g., measure 1, beat 3;
-or measure 6, beat 3). In addition to this, it is unable to
-recognize the $\rnGer$ chord in measure 8, beat 2. The
-proposed model in this dissertation, \gls{augmentednet} is
-the only model that seems to be able to recognize that
-chord, the $\rnGer$ \gls{augsix} in measure 8. Other models
-provide either an $\rnIt$ label, or in the case of
-\textcite{mcleod2021modular}, a label of $\rn{VI}\rnsix$,
-which is a reasonable prediction when ignoring the
-$\pitchC{}\musSharp$ in the first violin. However, this
-intervallic relationship between $\pitchE{}\musFlat$4 and
-$\pitchC{}\musSharp$5 is precisely what characterizes the
-\gls{augsix} chord. The prediction of $\rnIt$ here is
-expected in \textcite{chen2021attend} and
-\textcite{micchi2021deep}, as these models collapse the
-various flavours of \gls{augsix} chords into one category,
-which makes it difficult (maybe impossible) to distinguish
-between a $\rnIt$ and $\rnGer$. Notice also that there are
-two errors in the human analysis. In measure 2, beat 1, the
-analyst indicated a $\rni\rnsix$ label, however, because the
-viola crosses the violoncello at that point, the chord is in
-fact in root position. All \gls{arna} models unequivocally
-get this annotation right. The second error in the
-annotation lies in the inversion of the $\rnGer$ chord,
-indicated by the annotator as ``root position.'' The
-\gls{augmentednet} model gets the annotation in the proper
-inversion, according to the convention for chord inversions
-used in the \gls{romantext} format.\footnote{This particular
-set of chords, \gls{augsix}, often have differing regarding
-their inversions.}
+The \textcite{mcleod2021modular} model does not seem to
+suffer from segmentation problems. In general, it also seems
+fairly similar to the human annotator. Two drawbacks of this
+model is that it often predicts the wrong inversion (e.g.,
+m.~1, beat 3; m.~5, beat 3; and m.~6, beat 3). In addition
+to this, it is unable to recognize the $\rnGer$ chord in the
+musical excerpt (m.~8, beat 2), proposing an annotation of
+$\rnVI\rnsix$ instead. The label of $\rnVI\rnsix$ is a
+reasonable prediction when ignoring the $\pitchCs$ in the
+first violin. However, this intervallic relationship between
+$\pitchEb$4 and $\pitchCs$5 is precisely what characterizes
+the \gls{augsix} chord.
+
+\paragraph{Analysis of the AugmentedNet}
+
+The proposed model in this dissertation, \gls{augmentednet},
+is the only model that seems to be able to recognize the
+chord discussed above, the $\rnGer$ \gls{augsix} in measure
+8. Other models provide either an $\rnIt$ label, or in the
+case of The prediction of $\rnIt$ here is expected in
+\textcite{chen2021attend} and \textcite{micchi2021deep}, as
+these models collapse the various flavours of \gls{augsix}
+chords into one category, which makes it difficult (maybe
+impossible) to distinguish between a $\rnIt$ and $\rnGer$.
+Notice also that there are two errors in the human analysis.
+In measure 2, beat 1, the analyst indicated a $\rni\rnsix$
+label, however, because the viola crosses the violoncello at
+that point, the chord is in fact in root position. All
+\gls{arna} models unequivocally get this annotation right.
+The second error in the annotation lies in the inversion of
+the $\rnGer$ chord, indicated by the annotator as ``root
+position.'' The \gls{augmentednet} model gets the annotation
+in the proper inversion, according to the convention for
+chord inversions used in the \gls{romantext}
+format.\footnote{This particular set of chords,
+\gls{augsix}, often have differing regarding their
+inversions.}
 
 % The string quartet example features a polyphonic texture,
 % which would be difficult to analyze by a simple model
