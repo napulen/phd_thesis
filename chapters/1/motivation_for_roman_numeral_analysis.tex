@@ -22,25 +22,48 @@ context of the musical key.
 within Chopin's Op.~28 No.~20. The first succession occurs
 in measure 2. The second one in measure 12. Both successions
 begin with the same chords, however, their \gls{rna} labels
-are different due to the key]{op28no20_intro_analysis}
+are different]{op28no20_intro_analysis}
+
+In the first instance (i.e., m.~2), the chords can be
+analyzed in the context of the $\keyAb$ major key. The first
+and second chord, $\pitchAb$ major and $\pitchDb$ major, are
+a tonic and subdominant chords, respectively. These are
+followed by the third chord, a dominant seventh chord
+($\pitchEb\rnseven$ dominant seventh), and the fourth chord,
+a tonic triad again ($\pitchAb$ major). In the second
+succession of chords (i.e., m.~12), these can be analyzed in
+the context of the $\keyc$ minor key, which is the global
+key of the piece. Here, the first chord ($\pitchAb$ major)
+is a submediant chord and the second chord ($\pitchDb$
+major) is a flattened second degree, commonly known as a
+\gls{neapolitan}.\footnote{Although this chord is expressed
+here as $\musFlat{}\rn{II}$, it is more commonly represented
+as $\rnN$ in \gls{rna}.} The third chord is a dominant
+seventh chord ($\pitchG\rnseven$ dominant seventh), and the
+last chord is the tonic of the piece, $\pitchC$ minor.
 
 Thus, annotating a musical score with \gls{rna} requires the
 inspection of several attributes related to chords and keys.
-Chords can be inspected in terms of their properties: root,
-quality, inversion, and function. Keys can be inspected in
-terms of their temporal scope as modulations or
-tonicizations. The Roman numeral notation is often used to
-describe complex---sometimes exotic---chords, fluctuations
-of musical key, and other tonal situations. This is maybe
+Regarding chords, it is necessary to analyze their root,
+quality, inversion, and function. Regarding keys, it is
+necessary to analyze their temporal scope as modulations or
+tonicizations. All of this information is accomodated in a
+compact text representation, as shown in
+\reffig{op28no20_intro_analysis}. This compactness is maybe
 the reason why a number of musicians have adopted the
-notation throughout the years. From the computational
-perspective, it is also convenient that \gls{rna}
-annotations are popular and compact. Clearly, if a \gls{rna}
-is computed automatically, these tonal attributes become
-automatically available too for musical applications. One
+notation throughout the years. The Roman numeral notation
+can describe complex---sometimes exotic, like the
+\gls{neapolitan}---chords, fluctuations of musical key, and
+other tonal situations in a few letters. This is also
+motivating from the computational perspective, as it is
+possible to encode and retrieve such tonal information from
+the annotations. Clearly, if a \gls{rna} is computed
+automatically, these tonal attributes become automatically
+available too for musical applications. An important
 disadvantage, of course, is that because there are multiple
-analytical dimensions, it is a challenging problem to solve
-computationally.
+analytical dimensions involved in producing each of these
+labels, it is a challenging problem to retrieve them
+automatically via a computational model.
 
 % Something interesting about these two successions is that
 % they start with the same two chords. Namely, an $\pitchAb$
